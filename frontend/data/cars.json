@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": 2022,
+    "price": 17500,
+    "image": "/images/toyota-corolla.jpg",
+    "description": "Reliable and fuel-efficient sedan, perfect for city driving.",
+    "mileage": 15000
+  },
+  {
+    "id": "2",
+    "make": "Volkswagen",
+    "model": "Golf",
+    "year": 2021,
+    "price": 16500,
+    "image": "/images/vw-golf.jpg",
+    "description": "Sporty hatchback with low mileage and great features.",
+    "mileage": 12000
+  },
+  {
+  "id": "3",
+  "make": "Peugeot",
+  "model": "3008",
+  "year": 2023,
+  "price": 28500,
+  "image": "/images/peugeot-3008.jpg",
+  "description": "Spacious, stylish, and packed with technology, the Peugeot 3008 is an award-winning SUV ideal for family adventures.",
+  "mileage": 8000
+}
+]
