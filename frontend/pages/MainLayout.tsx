@@ -1,25 +1,46 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+const NAV_LINKS = [
+  { href: "/", label: "Início" },
+  { href: "/viaturas", label: "Viaturas" },
+  { href: "/simulador", label: "Simulador ISV" },
+  { href: "/como-funciona", label: "Como Funciona" },
+  { href: "/pedido", label: "Pedido" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contacto", label: "Contacto" },
+];
+
+export default function MainLayout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+
   return (
-    <div>
-      <nav style={{ 
-        background: "#1a237e", 
-        padding: "1rem", 
-        display: "flex", 
-        justifyContent: "center",
-        gap: "2rem"
-      }}>
-        <Link href="/" style={{ color: "#fff", fontWeight: "bold" }}>Início</Link>
-        <Link href="/viaturas" style={{ color: "#fff" }}>Viaturas</Link>
-        <Link href="/simulador" style={{ color: "#fff" }}>Simulador ISV</Link>
-        <Link href="/como-funciona" style={{ color: "#fff" }}>Como Funciona</Link>
-        <Link href="/pedido" style={{ color: "#fff" }}>Pedido</Link>
-        <Link href="/blog" style={{ color: "#fff" }}>Blog</Link>
-        <Link href="/contacto" style={{ color: "#fff" }}>Contacto</Link>
+    <div className="min-h-screen bg-[#f5f6fa] text-[#1a1a1a]">
+      {/* NAVBAR */}
+      <nav className="bg-white shadow-md flex flex-wrap items-center justify-center py-5 px-4 gap-8">
+        {NAV_LINKS.map(({ href, label }) => {
+          const isActive = router.pathname === href;
+          return (
+            <Link
+              key={href}
+              href={href}
+              className={`relative text-lg font-medium transition
+                ${isActive ? "text-[#0055b8] font-bold" : "text-gray-700 hover:text-[#0055b8]"}
+                after:absolute after:left-0 after:-bottom-1 after:h-1
+                after:bg-[#0055b8] after:rounded-full
+                ${isActive ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                after:transition-all after:duration-300
+                px-2`}
+            >
+              {label}
+            </Link>
+          );
+        })}
       </nav>
-      <main>{children}</main>
+
+      {/* CONTEÚDO */}
+      <main className="max-w-7xl mx-auto px-4 md:px-0 py-12">{children}</main>
     </div>
   );
 }

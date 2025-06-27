@@ -7,7 +7,8 @@
     "price": 17500,
     "image": "/images/toyota-corolla.jpg",
     "description": "Reliable and fuel-efficient sedan, perfect for city driving.",
-    "mileage": 15000
+    "mileage": 15000,
+    "country": "DE"
   },
   {
     "id": "2",
@@ -17,7 +18,8 @@
     "price": 16500,
     "image": "/images/vw-golf.jpg",
     "description": "Sporty hatchback with low mileage and great features.",
-    "mileage": 12000
+    "mileage": 12000,
+    "country": "FR"
   },
   {
   "id": "3",
@@ -27,6 +29,7 @@
   "price": 28500,
   "image": "/images/peugeot-3008.jpg",
   "description": "Spacious, stylish, and packed with technology, the Peugeot 3008 is an award-winning SUV ideal for family adventures.",
-  "mileage": 8000
+  "mileage": 8000,
+  "country": "PT"
 }
 ]

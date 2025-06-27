@@ -18,8 +18,17 @@ export default function CarDetail() {
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50">
-        <header className="p-8 bg-blue-900 text-white text-center">
+        <header className="p-8 bg-blue-900 text-white text-center relative">
           <h1 className="text-4xl font-bold mb-2">{car.make} {car.model}</h1>
+          {car.country && (
+            <span className="absolute top-8 right-8 bg-[#b42121] text-white px-3 py-1 rounded-full text-xs font-bold shadow">
+              {car.country === "DE"
+                ? "Importado da Alemanha"
+                : car.country === "PT"
+                ? "Nacional"
+                : `Importado de ${car.country}`}
+            </span>
+          )}
         </header>
         <main className="max-w-3xl mx-auto p-8">
           <img src={car.image} alt={`${car.make} ${car.model}`} className="w-full h-64 object-cover rounded mb-6" />
