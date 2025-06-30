@@ -18,14 +18,14 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="min-h-screen bg-[#f5f6fa] text-[#1a1a1a]">
       {/* NAVBAR */}
-      <nav className="bg-white shadow-md flex items-center justify-between py-3 px-4 gap-8 relative min-h-[6px]">
+      <nav className="bg-white shadow-md flex items-center justify-between px-4 gap-8 relative" style={{ height: '56px' }}>
         <div className="flex items-center">
-          <Link href="/">
+          <Link href="/sobre-nos">
             <img
               src="/images/auto-logonb.png"
               alt="AutoGo.pt"
-              className="h-40 w-auto max-h-44 object-contain scale-200 -my-4 z-10"
-              style={{ maxWidth: '140px' }}
+              className="h-full w-auto object-contain z-10 scale-x-110"
+              style={{ maxWidth: '180px' }}
             />
           </Link>
         </div>

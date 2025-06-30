@@ -31,5 +31,35 @@
   "description": "Spacious, stylish, and packed with technology, the Peugeot 3008 is an award-winning SUV ideal for family adventures.",
   "mileage": 8000,
   "country": "PT"
-}
+},
+  {
+    "id": "4",
+    "make": "Citroen",
+    "model": "C3",
+    "year": 2020,
+    "price": 13900,
+    "image": "/images/cars/citroenc3-1.jpg",
+    "description": "Citroen C3 em excelente estado, importado de França.",
+    "mileage": 32000,
+    "country": "FR",
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Citadino",
+    "engineSize": "1199 CC",
+    "power": "82 Hp 60 kW",
+    "places": 5,
+    "unitNumber": "6040319",
+    "origin": "França - WAVRIN",
+    "firstRegistration": "24/06/2020",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "123 CO2",
+    "color": "Cinzento",
+    "images": [
+      "/images/cars/citroenc3-1.jpg",
+      "/images/cars/citroenc3-2.jpg",
+      "/images/cars/citroenc3-3.jpg"
+    ]
+  }
 ]
