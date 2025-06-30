@@ -27,7 +27,7 @@ export default function Home() {
         {/* Imagem de fundo com overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/bmw-black.png')" }}
+          style={{ backgroundImage: "url('/images/cars/bmw-black.png')" }}
         >
           <div className="absolute inset-0 bg-black opacity-70"></div>
         </div>
