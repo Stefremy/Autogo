@@ -18,25 +18,37 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="min-h-screen bg-[#f5f6fa] text-[#1a1a1a]">
       {/* NAVBAR */}
-      <nav className="bg-white shadow-md flex flex-wrap items-center justify-center py-5 px-4 gap-8">
-        {NAV_LINKS.map(({ href, label }) => {
-          const isActive = router.pathname === href;
-          return (
-            <Link
-              key={href}
-              href={href}
-              className={`relative text-lg font-medium transition
-                ${isActive ? "text-[#0055b8] font-bold" : "text-gray-700 hover:text-[#0055b8]"}
-                after:absolute after:left-0 after:-bottom-1 after:h-1
-                after:bg-[#0055b8] after:rounded-full
-                ${isActive ? "after:w-full" : "after:w-0 hover:after:w-full"}
-                after:transition-all after:duration-300
-                px-2`}
-            >
-              {label}
-            </Link>
-          );
-        })}
+      <nav className="bg-white shadow-md flex items-center justify-between py-3 px-4 gap-8 relative min-h-[6px]">
+        <div className="flex items-center">
+          <Link href="/">
+            <img
+              src="/images/auto-logonb.png"
+              alt="AutoGo.pt"
+              className="h-40 w-auto max-h-44 object-contain scale-200 -my-4 z-10"
+              style={{ maxWidth: '140px' }}
+            />
+          </Link>
+        </div>
+        <div className="flex flex-wrap items-center justify-end gap-8 flex-1">
+          {NAV_LINKS.map(({ href, label }) => {
+            const isActive = router.pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`relative text-lg font-medium transition
+                  ${isActive ? "text-[#b42121] font-bold" : "text-[#b42121] hover:text-[#a11a1a]"}
+                  after:absolute after:left-0 after:-bottom-1 after:h-1
+                  after:bg-[#b42121] after:rounded-full
+                  ${isActive ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                  after:transition-all after:duration-300
+                  px-2`}
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </div>
       </nav>
 
       {/* CONTEÚDO */}

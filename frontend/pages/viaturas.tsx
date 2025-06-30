@@ -1,5 +1,6 @@
 import MainLayout from './MainLayout';
 import cars from '../data/cars.json';
+import Link from 'next/link'; // Add this at the top if not already imported
 
 export default function Viaturas() {
   return (
@@ -28,16 +29,19 @@ export default function Viaturas() {
               <div className="text-gray-500 mb-1">
                 {car.year} · {car.mileage} km
               </div>
-              <div className="font-bold text-green-700 text-lg mb-3">
-                {car.price}
-              </div>
-              <button className="bg-[#0055b8] hover:bg-[#003e8a] text-white rounded-full py-2 px-8 font-bold text-base shadow transition mt-auto">
-                Ver detalhes
-              </button>
-            </div>
-          ))}
+        <div className="font-bold text-green-700 text-lg mb-3">
+          {car.price}
         </div>
-      </section>
+        <Link
+          href={`/cars/${car.id}`}
+          className="bg-[#0055b8] hover:bg-[#003e8a] text-white rounded-full py-2 px-8 font-bold text-base shadow transition mt-auto text-center"
+        >
+          Ver detalhes
+        </Link>
+      </div>
+    ))}
+  </div>
+</section>
     </MainLayout>
   );
 }
