@@ -44,7 +44,7 @@ export default function CarDetail() {
           <div className="relative mb-6">
             {/* Imagem do carro */}
             <img src={car.image} alt={`${car.make} ${car.model}`} className="w-full h-64 object-cover rounded" />
-            {/* Bandeira por cima da imagem, canto superior esquerdo */}
+            {/* Bandeira por cima da imagem, canto su perior esquerdo */}
             {car.country && (
               <img
                 src={`/images/flags/${car.country.toLowerCase()}.png`}
