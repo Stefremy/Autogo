@@ -40,6 +40,7 @@ type Car = {
 export default function CarDetail() {
   const router = useRouter();
   const { id } = router.query;
+  if (!id) return null; // Guard clause to prevent hook mismatch
   const car = (cars as Car[]).find(c => String(c.id) === id);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -61,6 +62,15 @@ export default function CarDetail() {
       </Layout>
     );
   }
+
+  // Find similar cars (show all except current)
+  const similarCars = (cars as Car[])
+    .filter(c => String(c.id) !== String(car.id))
+    .slice(0, 6); // limit to 6 similar cars
+
+  // Swiper state
+  const [swiperIndex, setSwiperIndex] = useState(0);
+  const slidesToShow = 3;
 
   return (
     <Layout>
@@ -176,7 +186,6 @@ export default function CarDetail() {
               </div>
               {/* Botões de ação */}
               <div className="flex gap-3 mt-4">
-                <button className="bg-[#b42121] hover:bg-[#a31212] text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Simular ISV</button>
                 <button className="bg-white border border-[#b42121] text-[#b42121] font-bold py-2 px-4 rounded-xl shadow-lg hover:bg-[#b42121] hover:text-white transition-all duration-200">WhatsApp</button>
                 <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Pedir Contacto</button>
               </div>
@@ -256,6 +265,68 @@ export default function CarDetail() {
               </div>
             </section>
           )}
+
+          {/* SECÇÃO CARROS SEMELHANTES - Swiper-like Carousel */}
+          <section id="similar" className="mt-12">
+            <div className="card rounded-3xl border-0 mb-3 shadow-sm flex flex-col bg-white/90">
+              <div className="card-body pt-6 px-6">
+                <h2 className="text-2xl font-extrabold mb-6 flex items-center gap-3 text-[#b42121] tracking-tight">
+                  <FaCarSide className="text-[#b42121] text-2xl" /> Carros semelhantes
+                </h2>
+                <div className="relative similar-swiper-container swiper-container-horizontal">
+                  {/* Navigation Arrows */}
+                  <button
+                    className="arrow arrow--left absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full shadow p-2 border border-gray-200 hover:bg-[#b42121] hover:text-white transition-all"
+                    aria-label="Anterior"
+                    onClick={() => setSwiperIndex(i => Math.max(i - 1, 0))}
+                  >
+                    <FaChevronDown className="rotate-90 text-2xl" />
+                  </button>
+                  <button
+                    className="arrow arrow--right absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full shadow p-2 border border-gray-200 hover:bg-[#b42121] hover:text-white transition-all"
+                    aria-label="Seguinte"
+                    onClick={() => setSwiperIndex(i => Math.min(i + 1, similarCars.length - slidesToShow))}
+                  >
+                    <FaChevronDown className="-rotate-90 text-2xl" />
+                  </button>
+                  {/* Swiper Wrapper */}
+                  <div className="swiper-wrapper flex transition-transform duration-500" style={{ transform: `translateX(-${swiperIndex * (100 / slidesToShow)}%)` }}>
+                    {similarCars.map((simCar, idx) => (
+                      <div
+                        key={simCar.id}
+                        className="swiper-slide bg-white rounded-2xl shadow-lg w-72 flex-shrink-0 cursor-pointer group relative overflow-hidden transition-all duration-300 hover:shadow-2xl mx-2"
+                        style={{ minWidth: '18rem', maxWidth: '18rem' }}
+                        data-id={simCar.id}
+                      >
+                        <a href={`/cars/${simCar.id}`} className="block h-full">
+                          <div className="similar-swiper-item relative">
+                            <img
+                              width="100%"
+                              src={simCar.image}
+                              alt={`${simCar.make} ${simCar.model}`}
+                              className="w-full h-40 object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-105"
+                            />
+                            <div className="slide-overlay absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                              <div className="car-info p-4 text-white w-full">
+                                <span className="make font-bold block text-lg">{simCar.make}</span>
+                                <span className="model block text-base">{simCar.model}</span>
+                                <span className="year block text-sm">{simCar.year}</span>
+                                <span className="km block text-sm">{simCar.mileage?.toLocaleString()} km</span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Pagination Fraction */}
+                  <div className="swiper-pagination-fraction absolute right-6 bottom-2 bg-white/80 rounded px-3 py-1 text-sm font-semibold text-[#b42121] shadow">
+                    {swiperIndex + 1}/{similarCars.length}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           <a href="/viaturas" className="text-blue-700 hover:underline block mt-6">&larr; Voltar às viaturas</a>
         </main>
         <footer className="p-4 bg-gray-200 text-center text-gray-600 mt-8">
@@ -263,6 +334,83 @@ export default function CarDetail() {
         </footer>
       </div>
     </Layout>
+  );
+}
+
+// --- SimilarCarsCarousel component ---
+
+function SimilarCarsCarousel({ cars, allCars, currentModel, currentMake }: { cars: Car[], allCars: Car[], currentModel: string, currentMake: string }) {
+  const [index, setIndex] = useState(0);
+  const visibleCount = 3;
+  const maxIndex = Math.max(0, cars.length - visibleCount);
+
+  const handlePrev = () => setIndex(i => Math.max(0, i - 1));
+  const handleNext = () => setIndex(i => Math.min(maxIndex, i + 1));
+
+  return (
+    <div className="relative">
+      {/* Arrows */}
+      <button
+        className={`arrow arrow--left absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-gray-200 rounded-full shadow w-10 h-10 flex items-center justify-center text-2xl text-[#b42121] transition hover:bg-[#b42121] hover:text-white ${index === 0 ? 'opacity-40 cursor-not-allowed' : 'hover:scale-110'}`}
+        onClick={handlePrev}
+        aria-label="Anterior"
+        disabled={index === 0}
+        type="button"
+      >
+        <FaChevronDown style={{ transform: 'rotate(90deg)' }} />
+      </button>
+      <button
+        className={`arrow arrow--right absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-gray-200 rounded-full shadow w-10 h-10 flex items-center justify-center text-2xl text-[#b42121] transition hover:bg-[#b42121] hover:text-white ${index === maxIndex ? 'opacity-40 cursor-not-allowed' : 'hover:scale-110'}`}
+        onClick={handleNext}
+        aria-label="Seguinte"
+        disabled={index === maxIndex}
+        type="button"
+      >
+        <FaChevronDown style={{ transform: 'rotate(-90deg)' }} />
+      </button>
+      {/* Carousel slides */}
+      <div className="overflow-hidden px-12">
+        <div
+          className="flex transition-transform duration-500 gap-6"
+          style={{ transform: `translateX(-${index * (18 + 1.5)}rem)` }}
+        >
+          {cars.map((simCar, idx) => (
+            <div
+              key={simCar.id}
+              className="swiper-slide bg-white rounded-2xl shadow-lg w-72 flex-shrink-0 cursor-pointer group relative overflow-hidden transition-all duration-300 hover:shadow-2xl"
+              style={{ minWidth: '18rem', maxWidth: '18rem' }}
+              data-id={simCar.id}
+            >
+              <a href={`/cars/${simCar.id}`} className="block h-full">
+                <div className="similar-swiper-item relative">
+                  <img
+                    width="100%"
+                    src={simCar.image}
+                    alt={`${simCar.make} ${simCar.model}`}
+                    className="w-full h-40 object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="slide-overlay absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <div className="car-info p-4 w-full">
+                      <span className="block text-white font-bold text-lg leading-tight">{simCar.make}</span>
+                      <span className="block text-white font-semibold text-base">{simCar.model}</span>
+                      <span className="block text-gray-200 text-sm">{simCar.year}</span>
+                      <span className="block text-gray-200 text-sm">{simCar.mileage?.toLocaleString()} km</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="block text-center py-2 bg-[#0055b8] hover:bg-[#003e8a] text-white font-bold rounded-b-2xl transition">
+                  Ver detalhes
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Pagination fraction */}
+      <div className="swiper-pagination-fraction absolute right-1/2 translate-x-1/2 bottom-[-2.2rem] text-gray-500 text-sm font-semibold bg-white/80 px-3 py-1 rounded-full shadow">
+        {Math.min(index + 1, cars.length)}/{cars.length}
+      </div>
+    </div>
   );
 }
 

@@ -20,7 +20,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       {/* NAVBAR */}
       <nav className="bg-white shadow-md flex items-center justify-between px-4 gap-8 relative" style={{ height: '56px' }}>
         <div className="flex items-center">
-          <Link href="/sobre-nos">
+          <Link href="/">
             <img
               src="/images/auto-logonb.png"
               alt="AutoGo.pt"
@@ -52,7 +52,24 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       </nav>
 
       {/* CONTEÚDO */}
-      <main className="max-w-7xl mx-auto px-4 md:px-0 py-12">{children}</main>
+      <main>
+        {React.Children.map(children, child => {
+          // If the child is a full-width section, render it outside the wrapper
+          if (
+            React.isValidElement(child) &&
+            (child.props['data-fullwidth'] ||
+              (typeof child.props === 'object' &&
+                child.props !== null &&
+                'className' in child.props &&
+                typeof child.props.className === 'string' &&
+                child.props.className.includes('w-screen')))
+          ) {
+            return child;
+          }
+          // Otherwise, wrap in the centered container
+          return <div className="max-w-7xl mx-auto px-4 md:px-0">{child}</div>;
+        })}
+      </main>
     </div>
   );
 }

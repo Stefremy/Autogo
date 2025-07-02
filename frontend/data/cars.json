@@ -5,7 +5,7 @@
     "model": "Corolla",
     "year": 2022,
     "price": 17500,
-    "image": "/images/toyota-corolla.jpg",
+    "image": "/images/cars/Corolla22.jpg",
     "description": "Reliable and fuel-efficient sedan, perfect for city driving.",
     "mileage": 15000,
     "country": "DE"
@@ -16,7 +16,7 @@
     "model": "Golf",
     "year": 2021,
     "price": 16500,
-    "image": "/images/vw-golf.jpg",
+    "image": "/images/cars/golf21.jpg",
     "description": "Sporty hatchback with low mileage and great features.",
     "mileage": 12000,
     "country": "FR"
@@ -146,6 +146,76 @@
         "Filtro de partículas",
         "Sistema de som",
         "Controlo de tração"
+      ]
+    }
+  },
+  {
+    "id": "5",
+    "make": "Volkswagen",
+    "model": "e‑Up!",
+    "year": 2020,
+    "price": 10990,
+    "image": "/images/cars/vweup-1 .jpg",
+    "description": "Volkswagen e‑Up! elétrico, importado, em ótimo estado.",
+    "mileage": 30000,
+    "country": "DE",
+    "gearboxType": "Automático",
+    "gearbox": 1,
+    "category": "Citadino elétrico",
+    "engineSize": "−",
+    "power": "61 kW (83 CV)",
+    "places": 4,
+    "unitNumber": "VW2020EUP001",
+    "origin": "Alemanha",
+    "firstRegistration": "15/03/2020",
+    "doors": 5,
+    "fuel": "Elétrico",
+    "emissionClass": "Zero Emissões",
+    "co2": "0 CO2",
+    "color": "Branco",
+    "specs": {
+      "battery_kWh": 32.3,
+      "real_range_km": 205,
+      "ac_charging_kW": 7.2,
+      "dc_charging_kW": 30,
+      "acceleration_0_100": 11.9,
+      "top_speed_kmh": 130,
+      "efficiency_kWh_per_100km": 12.9
+    },
+    "equipamento_opcoes": {
+      "conforto": [
+        "Climatronic automático",
+        "Volante multifunções em pele",
+        "Bancos aquecidos",
+        "Sensor de chuva",
+        "Sensor de luz"
+      ],
+      "seguranca": [
+        "6 airbags (frontais, laterais e cortina)",
+        "ABS",
+        "ESP",
+        "Lane Assist",
+        "Câmara de marcha‑atrás"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Rádio Composition Phone + DAB+",
+        "Dock smartphone (Maps+More)"
+      ],
+      "interior": [
+        "Revestimentos Fusion",
+        "Iluminação azul no interior"
+      ],
+      "exterior": [
+        "Jantes de liga leve 15\"",
+        "Faróis LED diurnos",
+        "Pintura bicolor (tejadilho opcional)"
+      ],
+      "outras_opcoes": [
+        "Controlo de cruzeiro",
+        "Aquecimento adicional (pré‑condicionamento)",
+        "Fecho centralizado",
+        "Pára‑choques de design específico"
       ]
     }
   }

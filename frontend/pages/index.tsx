@@ -17,67 +17,76 @@ export default function Home() {
         />
       </Head>
 
-      {/* HERO SECTION COM ANIMAÇÃO */}
-      <motion.div
+      {/* HERO SECTION FULL SCREEN EDGE TO EDGE - EXTENDED WHITE FADE LEFT */}
+      <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative h-[80vh] bg-black flex items-center px-8 overflow-hidden rounded-2xl shadow-2xl max-w-6xl mx-auto mt-10"
+        className="relative w-screen h-[550px] md:h-[76vh] flex items-center overflow-hidden"
+        style={{ borderRadius: "0 0 32px 32px" }}
       >
-        {/* Imagem de fundo com overlay */}
+        {/* Background image covers full width, fades left */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/cars/bmw-black.png')" }}
+          className="absolute inset-0 bg-cover bg-right"
+          style={{
+            backgroundImage: "url('/images/cars/bmw-black.png')",
+          }}
         >
-          <div className="absolute inset-0 bg-black opacity-70"></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%, rgba(0,0,0,1) 100%)",
+            }}
+          />
         </div>
 
-        {/* Conteúdo principal */}
-        <div className="relative z-10 flex flex-col items-start max-w-3xl">
-          <h1 className="text-white text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-            Rápido. Seguro. Teu.
-          </h1>
-          <p className="text-white text-xl md:text-2xl mb-10 drop-shadow">
-            O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.
-          </p>
-          <div className="flex gap-6 mb-8">
-            <Link
-              href="/viaturas"
-              className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold px-10 py-4 rounded-lg text-xl shadow-lg transition-all duration-200 hover:scale-105"
-            >
-              Ver Viaturas
-            </Link>
-            <Link
-              href="/simulador"
-              className="border-2 border-white text-white font-bold px-10 py-4 rounded-lg text-xl shadow-lg transition-all duration-200 hover:bg-white hover:text-black hover:scale-105"
-            >
-              Simular Importação
-            </Link>
-          </div>
-
-          {/* Linhas decorativas centrais */}
-          <img src="/images/red_lines.png" alt="Linhas decorativas" className="mt-6 w-32" />
-        </div>
-
-        {/* Logótipo no canto superior direito */}
-        <img
-          src="/images/auto-logonb.png"
-          alt="AutoGo.pt"
-          className="absolute top-6 right-10 w-40 opacity-90"
-        />
-
-        {/* Decoração adicional (opcional) */}
+        {/* Red lines decorativas */}
         <img
           src="/images/red_lines.png"
           alt="Decoração superior esquerda"
-          className="absolute top-8 left-8 w-20 opacity-20 rotate-45"
+          className="absolute top-8 left-8 w-20 opacity-20 rotate-45 z-20"
         />
         <img
           src="/images/red_lines.png"
           alt="Decoração inferior direita"
-          className="absolute bottom-10 right-10 w-28 opacity-80"
+          className="absolute bottom-10 right-10 w-28 opacity-80 z-20"
         />
-      </motion.div>
+        {/* (Opcional) logotipo no canto superior direito */}
+        <img
+          src="/images/auto-logonb.png"
+          alt="AutoGo.pt"
+          className="absolute top-6 right-10 w-40 opacity-90 z-20"
+        />
+
+        {/* Main Content */}
+        <div className="relative z-10 flex flex-col items-start justify-center h-full pl-8 md:pl-20 max-w-2xl w-full">
+          <h1 className="text-neutral-900 text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Rápido. Seguro. Teu.
+          </h1>
+          <p className="text-neutral-700 text-lg md:text-2xl mb-10 max-w-xl">
+            O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.
+          </p>
+          <div className="flex w-full rounded-2xl bg-white/95 shadow-lg p-2 items-center gap-3 mb-5">
+            <Link
+              href="/viaturas"
+              className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold px-8 py-3 text-lg rounded-xl shadow transition-all duration-200 whitespace-nowrap"
+            >
+              Procurar viaturas
+            </Link>
+            <Link
+              href="/simulador"
+              className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold px-8 py-3 text-lg rounded-xl shadow transition-all duration-200 whitespace-nowrap"
+            >
+              Simulador
+            </Link>
+          </div>
+          <div className="ml-1 mb-1 flex items-center gap-2 cursor-pointer text-neutral-800 hover:text-[#b42121] font-medium text-base transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" className="inline mr-1 opacity-70" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="1.6" d="M4 6h16M7 12h10M10 18h4"></path></svg>
+            Filtros avançados
+          </div>
+        </div>
+      </motion.section>
 
       {/* Como Funciona section */}
       <section
