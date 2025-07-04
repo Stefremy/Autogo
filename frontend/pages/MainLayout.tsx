@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { href: "/", label: "Início" },
@@ -14,11 +14,23 @@ const NAV_LINKS = [
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#f5f6fa] text-[#1a1a1a]">
       {/* NAVBAR */}
-      <nav className="bg-white shadow-md flex items-center justify-between px-4 gap-8 relative" style={{ height: '56px' }}>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 bg-white flex items-center justify-between px-4 gap-8 shadow-md transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-white/80 shadow-lg' : 'bg-white/95'}`}
+        style={{ height: '56px' }}
+      >
         <div className="flex items-center">
           <Link href="/">
             <img
@@ -52,7 +64,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       </nav>
 
       {/* CONTEÚDO */}
-      <main>
+      <main className="pt-[56px]">
         {React.Children.map(children, child => {
           // If the child is a full-width section, render it outside the wrapper
           if (

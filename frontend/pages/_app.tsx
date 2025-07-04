@@ -1,6 +1,16 @@
 import '../styles/globals.css';
+import { useRouter } from 'next/router';
+import { IndexNavbar } from '../components/IndexNavbar';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  const router = useRouter();
+  // Hide IndexNavbar on /viaturas and /cars/[id]
+  const hideNavbar = router.pathname === '/viaturas' || router.pathname.startsWith('/cars');
+  return (
+    <>
+      {!hideNavbar && <IndexNavbar />}
+      <Component {...pageProps} />
+    </>
+  );
 }
 

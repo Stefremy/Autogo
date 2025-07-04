@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import cars from '../../data/cars.json';
 import Layout from '../MainLayout';
 import { FaCalendarAlt, FaTachometerAlt, FaMoneyBillWave, FaGasPump, FaCogs, FaCarSide, FaDoorOpen, FaRoad, FaFlag, FaPalette, FaBolt, FaUsers, FaHashtag, FaGlobeEurope, FaRegCalendarCheck, FaLayerGroup, FaCloud, FaChevronDown, FaChevronUp, FaStar } from "react-icons/fa";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
@@ -45,6 +45,19 @@ export default function CarDetail() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (!heroRef.current) return;
+      const rect = heroRef.current.getBoundingClientRect();
+      // Trigger sticky bar as soon as the navbar is out of view (navbar = 56px)
+      setShowStickyBar(rect.top < 56);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Fun facts dinâmicos
   const funFacts = [
@@ -72,12 +85,55 @@ export default function CarDetail() {
   const [swiperIndex, setSwiperIndex] = useState(0);
   const slidesToShow = 3;
 
+  // Sticky bar visually merges with navbar, seamless, premium animation
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* Main navbar stays at the very top, sticky bar is always below */}
+      {/* Sticky bar: only car info, never navigation */}
+      <div
+        className={`fixed left-0 w-full z-40 flex items-center bg-white/80 backdrop-blur-xl transition-all duration-500 px-4 overflow-hidden
+          ${showStickyBar ? 'h-[120px] py-4' : 'h-[60px] py-0'}
+          shadow-xl border-b border-[#b42121]/20`}
+        style={{
+          top: 56,
+          boxShadow: '0 2px 12px 0 rgba(180,33,33,0.08)',
+        }}
+      >
+        {/* Car image: scales up with bar, stays contained */}
+        <div className={`transition-all duration-500 flex items-center
+          ${showStickyBar ? 'opacity-100 translate-x-0 w-32 mr-6' : 'opacity-80 -translate-x-4 w-16 mr-2'}
+        `}>
+          <img
+            src={(car.images && car.images[0]) || car.image}
+            alt={car.make + ' ' + car.model}
+            className={`object-cover rounded-xl shadow border-2 border-white bg-gray-100 ring-2 ring-[#b42121]/30 transition-all duration-500
+              ${showStickyBar ? 'h-24 w-40 scale-110' : 'h-10 w-20 scale-100'}`}
+            style={{ maxHeight: showStickyBar ? 96 : 40, maxWidth: showStickyBar ? 160 : 80 }}
+          />
+        </div>
+        <div className={`flex-1 flex flex-col md:flex-row md:items-center gap-1 md:gap-6 transition-all duration-500
+          ${showStickyBar ? 'text-2xl' : 'text-base'}`}
+          style={{ fontSize: showStickyBar ? '2rem' : '1rem', lineHeight: showStickyBar ? '2.5rem' : '1.25rem' }}
+        >
+          <span className={`font-bold text-[#b42121] drop-shadow-sm transition-all duration-500 ${showStickyBar ? 'text-3xl' : 'text-lg'}`}>{car.make} {car.model} <span className={`text-gray-700 font-normal transition-all duration-500 ${showStickyBar ? 'text-2xl' : 'text-base'}`}>{car.year}</span></span>
+          <span className={`text-blue-700 font-bold drop-shadow transition-all duration-500 ${showStickyBar ? 'text-2xl' : 'text-base'}`}>{car.price.toLocaleString()} €</span>
+          <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km</span>
+          {car.fuel && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaGasPump className="text-[#b42121]" /> {car.fuel}</span>}
+          {car.power && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaBolt className="text-[#b42121]" /> {car.power}</span>}
+          {car.engineSize && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaRoad className="text-[#b42121]" /> {car.engineSize}</span>}
+          {car.firstRegistration && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaRegCalendarCheck className="text-[#b42121]" /> {car.firstRegistration}</span>}
+        </div>
+        {/* Action buttons aligned right */}
+        <div className="flex gap-3 ml-auto">
+          <button className="bg-white border border-[#b42121] text-[#b42121] font-bold py-2 px-4 rounded-xl shadow-lg hover:bg-[#b42121] hover:text-white transition-all duration-200">WhatsApp</button>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Pedir Contacto</button>
+        </div>
+      </div>
+      {/* Main content: dynamic padding to match sticky+navbar height */}
+      <div className={`min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 transition-all duration-500 pt-[116px]`} style={{ transition: 'padding-top 0.5s cubic-bezier(.4,0,.2,1)' }}>
         <main className="max-w-4xl mx-auto px-2 py-10 space-y-8">
           {/* HERO */}
-          <section className="flex flex-col md:flex-row gap-8 items-start">
+          <section ref={heroRef} className="flex flex-col md:flex-row gap-8 items-start">
             {/* Hero Image + Gallery */}
             <div className="flex-1 relative">
               <img
@@ -226,7 +282,7 @@ export default function CarDetail() {
 
           {/* SECÇÃO CAR CARETRISTICS */}
           <section className="bg-gradient-to-br from-white to-gray-100 rounded-2xl shadow p-6 mt-8">
-            <h3 className="text-lg font-bold mb-2 flex items-center gap-2"><FaCarSide className="text-[#b42121]" /> Curiosidades & Vantagens</h3>
+            <h3 className="text-lg font-bold mb-2 flex items-center gap-2">Curiosidades & Vantagens</h3>
             <ul className="list-disc pl-6 space-y-1 text-gray-700">
               {funFacts.length
                 ? funFacts.map((f, i) => <li key={i}>{f}</li>)
@@ -239,29 +295,41 @@ export default function CarDetail() {
           {car.equipamento_opcoes && (
             <section className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow p-6 mt-8">
               <h3 className="text-2xl font-extrabold mb-6 flex items-center gap-3 text-black tracking-tight">
-                <FaCarSide className="text-[#b42121] text-2xl" /> Equipamento & Opções
+                Equipamento & Opções
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {Object.entries(car.equipamento_opcoes).map(([categoria, lista]) => (
-                  Array.isArray(lista) && lista.length > 0 && (
-                    <div key={categoria} className="mb-2 bg-[#f7f7fa] rounded-xl shadow-sm p-4 border border-gray-100 hover:shadow-md transition-all">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="inline-block bg-[#b42121] text-white text-sm font-bold px-4 py-1 rounded-full shadow capitalize tracking-wide">
+                {Object.entries(car.equipamento_opcoes).map(([categoria, lista]) => {
+                  // Minimal, modern, grey icon mapping
+                  const categoryIcons = {
+                    conforto: <FaCogs className="text-gray-400 text-xl" />,
+                    tecnologia: <FaBolt className="text-gray-400 text-xl" />,
+                    seguranca: <FaRegCalendarCheck className="text-gray-400 text-xl" />,
+                    opcoes_valor_elevado: <FaStar className="text-gray-400 text-xl" />,
+                    exterior: <FaCarSide className="text-gray-400 text-xl" />,
+                    interior: <FaPalette className="text-gray-400 text-xl" />,
+                    assistencia: <FaUsers className="text-gray-400 text-xl" />,
+                    outros: <FaLayerGroup className="text-gray-400 text-xl" />,
+                  };
+                  const icon = categoryIcons[categoria] || <FaLayerGroup className="text-gray-300 text-xl" />;
+                  return Array.isArray(lista) && lista.length > 0 && (
+                    <div key={categoria} className="mb-2 bg-white rounded-xl shadow-sm p-4 border border-gray-100 flex flex-col gap-2 hover:shadow-md transition-all">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span>{icon}</span>
+                        <span className="inline-block text-gray-700 text-base font-semibold capitalize tracking-wide">
                           {categoria.replace(/_/g, ' ').replace('opcoes', 'opções')}
                         </span>
                       </div>
-                      <ul className="list-none pl-0 space-y-2 text-gray-900 text-base">
+                      <ul className="list-none pl-0 space-y-1 text-gray-800 text-sm">
                         {lista.map((item, idx) => (
                           <li key={idx} className="flex items-center gap-2">
-                            <span className={`inline-block w-2 h-2 rounded-full ${categoria === 'opcoes_valor_elevado' ? 'bg-yellow-400' : 'bg-[#b42121]'}`}></span>
-                            {categoria === 'opcoes_valor_elevado' && <FaStar className="text-yellow-400" title="Opção de valor elevado" />}
+                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-gray-300"></span>
                             <span className="leading-tight">{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                  )
-                ))}
+                  );
+                })}
               </div>
             </section>
           )}
@@ -334,83 +402,6 @@ export default function CarDetail() {
         </footer>
       </div>
     </Layout>
-  );
-}
-
-// --- SimilarCarsCarousel component ---
-
-function SimilarCarsCarousel({ cars, allCars, currentModel, currentMake }: { cars: Car[], allCars: Car[], currentModel: string, currentMake: string }) {
-  const [index, setIndex] = useState(0);
-  const visibleCount = 3;
-  const maxIndex = Math.max(0, cars.length - visibleCount);
-
-  const handlePrev = () => setIndex(i => Math.max(0, i - 1));
-  const handleNext = () => setIndex(i => Math.min(maxIndex, i + 1));
-
-  return (
-    <div className="relative">
-      {/* Arrows */}
-      <button
-        className={`arrow arrow--left absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-gray-200 rounded-full shadow w-10 h-10 flex items-center justify-center text-2xl text-[#b42121] transition hover:bg-[#b42121] hover:text-white ${index === 0 ? 'opacity-40 cursor-not-allowed' : 'hover:scale-110'}`}
-        onClick={handlePrev}
-        aria-label="Anterior"
-        disabled={index === 0}
-        type="button"
-      >
-        <FaChevronDown style={{ transform: 'rotate(90deg)' }} />
-      </button>
-      <button
-        className={`arrow arrow--right absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 border border-gray-200 rounded-full shadow w-10 h-10 flex items-center justify-center text-2xl text-[#b42121] transition hover:bg-[#b42121] hover:text-white ${index === maxIndex ? 'opacity-40 cursor-not-allowed' : 'hover:scale-110'}`}
-        onClick={handleNext}
-        aria-label="Seguinte"
-        disabled={index === maxIndex}
-        type="button"
-      >
-        <FaChevronDown style={{ transform: 'rotate(-90deg)' }} />
-      </button>
-      {/* Carousel slides */}
-      <div className="overflow-hidden px-12">
-        <div
-          className="flex transition-transform duration-500 gap-6"
-          style={{ transform: `translateX(-${index * (18 + 1.5)}rem)` }}
-        >
-          {cars.map((simCar, idx) => (
-            <div
-              key={simCar.id}
-              className="swiper-slide bg-white rounded-2xl shadow-lg w-72 flex-shrink-0 cursor-pointer group relative overflow-hidden transition-all duration-300 hover:shadow-2xl"
-              style={{ minWidth: '18rem', maxWidth: '18rem' }}
-              data-id={simCar.id}
-            >
-              <a href={`/cars/${simCar.id}`} className="block h-full">
-                <div className="similar-swiper-item relative">
-                  <img
-                    width="100%"
-                    src={simCar.image}
-                    alt={`${simCar.make} ${simCar.model}`}
-                    className="w-full h-40 object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="slide-overlay absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="car-info p-4 w-full">
-                      <span className="block text-white font-bold text-lg leading-tight">{simCar.make}</span>
-                      <span className="block text-white font-semibold text-base">{simCar.model}</span>
-                      <span className="block text-gray-200 text-sm">{simCar.year}</span>
-                      <span className="block text-gray-200 text-sm">{simCar.mileage?.toLocaleString()} km</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="block text-center py-2 bg-[#0055b8] hover:bg-[#003e8a] text-white font-bold rounded-b-2xl transition">
-                  Ver detalhes
-                </div>
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* Pagination fraction */}
-      <div className="swiper-pagination-fraction absolute right-1/2 translate-x-1/2 bottom-[-2.2rem] text-gray-500 text-sm font-semibold bg-white/80 px-3 py-1 rounded-full shadow">
-        {Math.min(index + 1, cars.length)}/{cars.length}
-      </div>
-    </div>
   );
 }
 
