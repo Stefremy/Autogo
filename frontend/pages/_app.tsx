@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/globals.scss';
 import { useRouter } from 'next/router';
 import { IndexNavbar } from '../components/IndexNavbar';
 

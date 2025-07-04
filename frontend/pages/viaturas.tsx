@@ -5,7 +5,7 @@ import Link from 'next/link'; // Add this at the top if not already imported
 export default function Viaturas() {
   return (
     <MainLayout>
-      <section className="max-w-7xl mx-auto px-4 py-12">
+      <section className="w-full px-0 py-12 bg-[#f5f6fa]">
         <h1 className="text-4xl font-bold mb-10 text-center text-[#b42121]">
           Viaturas Disponíveis
         </h1>
@@ -13,10 +13,10 @@ export default function Viaturas() {
           {cars.map((car) => (
             <div
               key={car.id}
-              className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:shadow-2xl transition-all duration-300 relative group"
+              className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:shadow-2xl transition-all duration-300 relative group border border-gray-100"
             >
               {/* Galeria dinâmica de imagens com efeito */}
-              <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200">
+              <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent">
                 {(car.images || [car.image]).map((img, idx) => (
                   <button
                     key={idx}
@@ -30,7 +30,7 @@ export default function Viaturas() {
                     <img
                       src={img}
                       alt={`${car.make} ${car.model} foto ${idx + 1}`}
-                      className="rounded-xl object-cover w-44 h-44 shadow transition-transform duration-300 group-hover:scale-105 hover:scale-125 cursor-pointer border-2 border-transparent hover:border-[#b42121]"
+                      className="rounded-xl object-cover w-44 h-44 shadow transition-transform duration-300 group-hover:scale-105 hover:scale-125 cursor-pointer border-2 border-transparent hover:border-[#b42121] bg-white"
                       style={{ minWidth: '11rem' }}
                     />
                   </button>
@@ -57,12 +57,15 @@ export default function Viaturas() {
               <div className="font-bold text-green-700 text-lg mb-3">
                 €{car.price.toLocaleString()}
               </div>
-              <Link
-                href={`/cars/${car.id}`}
-                className="bg-[#0055b8] hover:bg-[#003e8a] text-white rounded-full py-2 px-8 font-bold text-base shadow transition mt-auto text-center"
-              >
-                Ver detalhes
-              </Link>
+              <div className="flex gap-2 w-full mt-4">
+                {/* Remove Share and Download PDF buttons from car cards */}
+                <Link
+                  href={`/cars/${car.id}`}
+                  className="bg-[#0055b8] hover:bg-[#003e8a] text-white rounded-full py-2 px-8 font-bold text-base shadow transition mt-4 text-center w-full"
+                >
+                  Ver detalhes
+                </Link>
+              </div>
             </div>
           ))}
         </div>
