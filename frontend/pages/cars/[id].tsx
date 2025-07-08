@@ -101,7 +101,7 @@ export default function CarDetail() {
       });
     };
     // Logo
-    const logoUrl = '/images/auto-logonb.png';
+    const logoUrl = '/images/auto-logonb2.png';
     const logoBase64 = await loadImageAsBase64(logoUrl);
     doc.addImage(logoBase64, 'PNG', 40, 32, 90, 45);
     // Car image
