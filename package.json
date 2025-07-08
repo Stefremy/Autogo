@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "jspdf": "^3.0.1",
     "yet-another-react-lightbox": "^3.23.4"
   }
 }
