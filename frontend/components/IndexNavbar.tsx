@@ -31,7 +31,7 @@ export function IndexNavbar() {
         flex items-center justify-between px-4 gap-8`}
       style={{ height: "56px" }}
     >
-      <div className="flex items-center">
+      <div className="flex items-center relative">
         <Link href="/">
           <img
             src="/images/auto-logonb.png"
@@ -40,6 +40,12 @@ export function IndexNavbar() {
             style={{ maxWidth: "180px" }}
           />
         </Link>
+        {/* 3 red lines next to logo */}
+        <div className="flex flex-col justify-center ml-3 gap-1">
+          <span className="block w-8 h-1 rounded-full bg-[#b42121] opacity-90"></span>
+          <span className="block w-6 h-1 rounded-full bg-[#b42121] opacity-70"></span>
+          <span className="block w-4 h-1 rounded-full bg-[#b42121] opacity-50"></span>
+        </div>
       </div>
       <div className="flex flex-wrap items-center justify-end gap-8 flex-1">
         {NAV_LINKS.map(({ href, label }) => {

@@ -3,7 +3,41 @@ import Link from 'next/link';
 import MainLayout from '../pages/MainLayout';
 import cars from '../data/cars.json';
 import CarCard from '../components/CarCard';
+import PremiumCarCard from '../components/PremiumCarCard';
 import { motion } from "framer-motion";
+import Footer from '../components/Footer';
+
+// Placeholder reviews - replace with real data or API integration
+const googleReviews = [
+  {
+    name: 'João Silva',
+    rating: 5,
+    text: 'Serviço excelente! O processo foi rápido e transparente. Recomendo a AutoGo.pt a todos.',
+    date: 'há 2 semanas',
+    avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+  },
+  {
+    name: 'Maria Fernandes',
+    rating: 5,
+    text: 'Muito profissionais e sempre disponíveis para ajudar. O carro chegou impecável!',
+    date: 'há 1 mês',
+    avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+  },
+  {
+    name: 'Carlos Pinto',
+    rating: 4,
+    text: 'Boa experiência, recomendo. O processo foi simples e sem surpresas.',
+    date: 'há 3 semanas',
+    avatar: 'https://randomuser.me/api/portraits/men/65.jpg',
+  },
+  {
+    name: 'Ana Costa',
+    rating: 5,
+    text: 'Equipa fantástica! Fizeram tudo por mim, só tive de levantar o carro.',
+    date: 'há 5 dias',
+    avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
+  },
+];
 
 export default function Home() {
   return (
@@ -126,14 +160,25 @@ export default function Home() {
         </section>
 
         {/* Como Funciona section */}
-        <section className="w-full py-24 bg-[#f5f6fa]">
-          <div className="max-w-5xl mx-auto text-center z-10 px-4">
+        <section className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-24 overflow-hidden" style={{backgroundColor: '#f5f6fa'}}>
+          {/* Video watermark background edge-to-edge */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover opacity-30 blur-sm pointer-events-none z-0"
+            src="/images/reboque.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
+          <div className="relative z-20 max-w-5xl mx-auto text-center px-4">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-4xl md:text-5xl font-extrabold text-[#b42121] mb-8 tracking-tight drop-shadow-xl"
+              className="text-4xl md:text-5xl font-extrabold text-black mb-8 tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
             >
               Como Funciona
             </motion.h2>
@@ -182,16 +227,16 @@ export default function Home() {
         </section>
 
         {/* LISTAGEM DE VIATURAS */}
-        <section className="w-full py-24 bg-[#f5f6fa]">
+        <section className="w-full py-24">
           <div className="max-w-7xl mx-auto px-4">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-3xl md:text-4xl font-extrabold text-[#b42121] mb-12 text-center tracking-tight drop-shadow-xl"
+              className="text-3xl md:text-4xl font-extrabold text-black mb-12 text-center tracking-tight"
             >
-              Viaturas Disponíveis
+              Carros usados em Destaque
             </motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
               {cars.map(car => (
@@ -202,19 +247,171 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                 >
-                  <CarCard
+                  <PremiumCarCard
                     name={`${car.make} ${car.model}`}
                     image={car.image}
-                    description={`${car.year} • ${car.mileage} km`}
                     price={car.price}
                     id={car.id}
+                    year={car.year}
+                    make={car.make}
+                    transmission={
+                      car.gearboxType
+                        ? car.gearboxType.toString()
+                        : car.gearbox
+                        ? car.gearbox.toString()
+                        : ""
+                    }
+                    type={"SEDAN"}
+                    country={car.country}
                   />
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* GOOGLE REVIEWS SECTION - ORGANIC CAROUSEL */}
+        <section className="w-full py-20 bg-[#f5f6fa]">
+          <div className="flex flex-col items-center">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">Os nossos clientes</h2>
+            <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl">A satisfação dos nossos clientes é a nossa prioridade. Vê o que dizem sobre nós no Google!</p>
+            <div className="w-full relative">
+              <button
+                type="button"
+                aria-label="Scroll left"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#f5f6fa] border border-gray-300 shadow-lg rounded-full p-2 hover:bg-[#b42121] hover:text-white transition hidden md:block"
+                onClick={() => {
+                  const el = document.getElementById('reviews-carousel');
+                  if (el) el.scrollBy({ left: -340, behavior: 'smooth' });
+                }}
+              >
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+              <div id="reviews-carousel" className="flex gap-6 min-w-[700px] md:min-w-0 px-4 overflow-x-auto scroll-smooth pb-2">
+                {googleReviews.map((review, idx) => (
+                  <div key={idx} className="shadow-xl rounded-2xl p-6 min-w-[320px] max-w-xs flex flex-col justify-between hover:shadow-2xl transition-all duration-200 bg-[#f5f6fa]">
+                    <div className="flex items-center mb-3">
+                      <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full border-2 border-[#b42121] mr-3" />
+                      <div>
+                        <div className="font-bold text-gray-900 text-lg">{review.name}</div>
+                        <div className="flex items-center gap-1">
+                          {[...Array(5)].map((_, i) => (
+                            <svg key={i} width="18" height="18" viewBox="0 0 20 20" fill={i < review.rating ? '#FFD600' : '#E0E0E0'} className="inline">
+                              <polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-gray-800 text-base mb-4">“{review.text}”</div>
+                    <div className="text-xs text-gray-500 flex items-center gap-2">
+                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline"><path stroke="#b42121" strokeWidth="2" d="M8 7V3h8v4"/><rect width="16" height="18" x="4" y="3" rx="2" stroke="#b42121" strokeWidth="2"/><path stroke="#b42121" strokeWidth="2" d="M12 11v4"/></svg>
+                      {review.date}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <button
+                type="button"
+                aria-label="Scroll right"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#f5f6fa] border border-gray-300 shadow-lg rounded-full p-2 hover:bg-[#b42121] hover:text-white transition hidden md:block"
+                onClick={() => {
+                  const el = document.getElementById('reviews-carousel');
+                  if (el) el.scrollBy({ left: 340, behavior: 'smooth' });
+                }}
+              >
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+            </div>
+            <a
+              href="https://www.google.com/maps/place/AutoGo.pt/reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-block bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold px-8 py-3 text-lg rounded-xl shadow transition-all duration-200"
+            >
+              Ver mais avaliações no Google
+            </a>
+          </div>
+        </section>
+
+        {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
+        <section className="w-full py-16 bg-[#f5f6fa]">
+          <div className="flex flex-col items-center">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">Novos Artigos</h2>
+            <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl">Fica a par das últimas novidades, dicas e notícias do mundo automóvel e da importação premium.</p>
+            <div className="w-full relative">
+              <button
+                type="button"
+                aria-label="Scroll left"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#f5f6fa] border border-gray-300 shadow-lg rounded-full p-2 hover:bg-[#b42121] hover:text-white transition hidden md:block"
+                onClick={() => {
+                  const el = document.getElementById('articles-carousel');
+                  if (el) el.scrollBy({ left: -340, behavior: 'smooth' });
+                }}
+              >
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+              <div id="articles-carousel" className="flex gap-6 min-w-[700px] md:min-w-0 px-4 overflow-x-auto scroll-smooth pb-2">
+                {/* Example articles - replace with real data or dynamic fetch if needed */}
+                {[
+                  {
+                    title: 'Como importar um carro da Alemanha para Portugal',
+                    date: '07 Julho 2025',
+                    image: '/images/cars/bmw-black.png',
+                    excerpt: 'Descobre o passo a passo para importar o teu próximo carro alemão, sem complicações e com total transparência.',
+                    link: '/blog/como-importar-carro-alemanha',
+                  },
+                  {
+                    title: 'ISV 2025: O que muda este ano?',
+                    date: '02 Julho 2025',
+                    image: '/images/cars/peugeot-3008.jpg',
+                    excerpt: 'Fica a saber todas as alterações ao Imposto Sobre Veículos para 2025 e como te podem afetar.',
+                    link: '/blog/isv-2025-mudancas',
+                  },
+                  {
+                    title: 'Dicas para comprar um carro usado premium',
+                    date: '28 Junho 2025',
+                    image: '/images/cars/golf21.jpg',
+                    excerpt: 'Os melhores conselhos para garantir uma compra segura e vantajosa no mercado de usados.',
+                    link: '/blog/dicas-carro-usado-premium',
+                  },
+                  {
+                    title: 'Vantagens da importação premium AutoGo.pt',
+                    date: '20 Junho 2025',
+                    image: '/images/cars/giulia.jpg',
+                    excerpt: 'Descobre porque cada vez mais portugueses escolhem a AutoGo.pt para importar o seu automóvel.',
+                    link: '/blog/vantagens-importacao-autogo',
+                  },
+                ].map((article, idx) => (
+                  <a key={idx} href={article.link} className="block rounded-2xl shadow-xl bg-[#f5f6fa] min-w-[320px] max-w-xs hover:shadow-2xl transition-all duration-200 overflow-hidden group">
+                    <div className="h-44 w-full overflow-hidden flex items-center justify-center bg-gray-200">
+                      <img src={article.image} alt={article.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
+                    </div>
+                    <div className="p-5 flex flex-col h-[180px]">
+                      <div className="text-xs text-gray-500 mb-2">{article.date}</div>
+                      <div className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{article.title}</div>
+                      <div className="text-gray-700 text-sm mb-4 line-clamp-3">{article.excerpt}</div>
+                      <span className="mt-auto text-[#b42121] font-semibold hover:underline transition">Ler artigo &rarr;</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <button
+                type="button"
+                aria-label="Scroll right"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#f5f6fa] border border-gray-300 shadow-lg rounded-full p-2 hover:bg-[#b42121] hover:text-white transition hidden md:block"
+                onClick={() => {
+                  const el = document.getElementById('articles-carousel');
+                  if (el) el.scrollBy({ left: 340, behavior: 'smooth' });
+                }}
+              >
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
       </MainLayout>
+      <Footer />
     </>
   );
 }
