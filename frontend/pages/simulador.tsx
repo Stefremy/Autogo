@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from "./MainLayout";
+import Layout from "../components/MainLayout";
 
 export default function Simulador() {
   return (
@@ -11,5 +11,4 @@ export default function Simulador() {
         {/* TODO: Adicione aqui o formulário de simulação */}
       </main>
     </Layout>
-  );
-}
+  );}

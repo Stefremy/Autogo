@@ -1,4 +1,4 @@
-import MainLayout from './MainLayout';
+import MainLayout from '../components/MainLayout';
 import cars from '../data/cars.json';
 import Link from 'next/link'; // Add this at the top if not already imported
 

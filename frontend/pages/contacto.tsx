@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from "./MainLayout";
+import Layout from "../components/MainLayout";
 
 export default function Contacto() {
   return (
@@ -11,5 +11,4 @@ export default function Contacto() {
         {/* TODO: Adicione aqui o formulário e informações de contacto */}
       </main>
     </Layout>
-  );
-}
+  );}
