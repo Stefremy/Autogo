@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import cars from '../../data/cars.json';
-import Layout from '../MainLayout';
+import Layout from '../../components/MainLayout';
 import { FaCalendarAlt, FaTachometerAlt, FaMoneyBillWave, FaGasPump, FaCogs, FaCarSide, FaDoorOpen, FaRoad, FaFlag, FaPalette, FaBolt, FaUsers, FaHashtag, FaGlobeEurope, FaRegCalendarCheck, FaLayerGroup, FaCloud, FaChevronDown, FaChevronUp, FaStar } from "react-icons/fa";
 import React, { useState, useEffect, useRef } from 'react';
 import Lightbox from 'yet-another-react-lightbox';

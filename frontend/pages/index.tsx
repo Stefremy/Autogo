@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import MainLayout from '../pages/MainLayout';
+import MainLayout from '../components/MainLayout';
 import cars from '../data/cars.json';
 import CarCard from '../components/CarCard';
 import { motion } from "framer-motion";

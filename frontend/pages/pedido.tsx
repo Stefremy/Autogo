@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from "./MainLayout";
+import Layout from "../components/MainLayout";
 
 export default function Pedido() {
   return (
@@ -11,5 +11,4 @@ export default function Pedido() {
         {/* TODO: Adicione aqui o formulário de pedido */}
       </main>
     </Layout>
-  );
-}
+  );}
