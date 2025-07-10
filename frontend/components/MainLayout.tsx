@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 const NAV_LINKS = [
   { href: "/", label: "Início" },
@@ -34,7 +35,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <div className="flex items-center">
           <Link href="/">
             <img
-              src="/images/auto-logonb2.png"
+              src="/images/auto-logonb.png"
               alt="AutoGo.pt"
               className="h-full w-auto object-contain z-10 scale-x-110"
               style={{ maxWidth: '180px' }}
@@ -82,6 +83,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           return <div className="max-w-7xl mx-auto px-4 md:px-0">{child}</div>;
         })}
       </main>
+      <Footer />
     </div>
   );
 }
