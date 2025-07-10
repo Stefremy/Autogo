@@ -34,7 +34,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <div className="flex items-center">
           <Link href="/">
             <img
-              src="/images/auto-logonb.png"
+              src="/images/auto-logonb2.png"
               alt="AutoGo.pt"
               className="h-full w-auto object-contain z-10 scale-x-110"
               style={{ maxWidth: '180px' }}

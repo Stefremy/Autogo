@@ -34,7 +34,7 @@ export function IndexNavbar() {
       <div className="flex items-center relative">
         <Link href="/">
           <img
-            src="/images/auto-logonb.png"
+            src="/auto-logo.png"
             alt="AutoGo.pt"
             className="h-full w-auto object-contain z-10 scale-x-110"
             style={{ maxWidth: "180px" }}

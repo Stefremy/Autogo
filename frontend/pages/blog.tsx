@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from "./MainLayout";
+import Layout from "../components/MainLayout";
 export default function Blog() {
   return (
     <Layout>
@@ -11,5 +11,4 @@ export default function Blog() {
       {/* TODO: Adicione aqui a lista de artigos */}
     </main>
     </Layout>
-  );
-}
+  );}

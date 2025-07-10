@@ -1,5 +1,5 @@
 import React from 'react';
-import MainLayout from "./MainLayout";
+import MainLayout from "../components/MainLayout";
 
 export default function SobreNos() {
   return (
@@ -13,5 +13,4 @@ export default function SobreNos() {
         {/* Adicione mais conteúdo sobre a empresa, equipa, valores, etc. */}
       </main>
     </MainLayout>
-  );
-}
+  );}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from "./MainLayout";
+import Layout from "../components/MainLayout";
 
 export default function ComoFunciona() {
   return (
@@ -29,5 +29,4 @@ export default function ComoFunciona() {
         </main>
       </div>
     </Layout>
-  );
-}
+  );}
