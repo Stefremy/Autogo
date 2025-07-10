@@ -13,7 +13,7 @@ export default function Viaturas() {
           {cars.map((car) => (
             <div
               key={car.id}
-              className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center hover:shadow-2xl transition-all duration-300 relative group border border-gray-100"
+              className="premium-car-card"
             >
               {/* Galeria dinâmica de imagens com efeito */}
               <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent">
@@ -30,7 +30,7 @@ export default function Viaturas() {
                     <img
                       src={img}
                       alt={`${car.make} ${car.model} foto ${idx + 1}`}
-                      className="rounded-xl object-cover w-44 h-44 shadow transition-transform duration-300 group-hover:scale-105 hover:scale-125 cursor-pointer border-2 border-transparent hover:border-[#b42121] bg-white"
+                      className="premium-car-image shadow transition-transform duration-300 group-hover:scale-105 hover:scale-125 cursor-pointer border-2 border-transparent hover:border-[#b42121] bg-white"
                       style={{ minWidth: '11rem' }}
                     />
                   </button>

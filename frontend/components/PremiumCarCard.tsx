@@ -11,10 +11,15 @@ type PremiumCarCardProps = {
   transmission?: string;
   type?: string;
   country?: string;
+  bgColor?: string; // nova prop opcional
 };
 
-const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id, year, make, transmission, type = "SEDAN", country }) => (
-  <a href={`/cars/${id}`} className={styles["premium-car-card"]}>
+const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id, year, make, transmission, type = "SEDAN", country, bgColor }) => (
+  <a
+    href={`/cars/${id}`}
+    className={styles["premium-car-card"]}
+    style={bgColor ? { background: bgColor } : undefined}
+  >
     <div style={{ position: 'relative' }}>
       <img src={image} alt={name} className={styles["premium-car-image"]} />
       {country && (

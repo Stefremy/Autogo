@@ -1,22 +1,28 @@
-/* Premium car card style inspired by the provided screenshot */
+/* Premium car card style - clean base with card effect */
 .premium-car-card {
   background: #fff;
-  border-radius: 1.2rem;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
   overflow: hidden;
-  border: 3px solid #0074D9;
+  border: 1.5px solid #ececec;
   position: relative;
-  transition: transform 0.2s, border-color 0.2s;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1), transform 0.18s cubic-bezier(.4,0,.2,1), border-color 0.18s;
 }
 .premium-car-card:hover {
-  border-color: #FF4136;
-  transform: scale(1.04);
+  box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+  border-color: #b3b3b3;
+  transform: translateY(-6px) scale(1.025);
 }
 .premium-car-image {
   width: 100%;
-  height: 210px;
+  height: 170px;
   object-fit: cover;
   background: #f5f6fa;
+  border-radius: 1.1rem 1.1rem 0 0;
+  box-shadow: none;
 }
 .premium-car-price {
   position: absolute;
