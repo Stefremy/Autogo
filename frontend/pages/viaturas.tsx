@@ -9,18 +9,23 @@ export default function Viaturas() {
   const [marca, setMarca] = useState('');
   const [modelo, setModelo] = useState('');
   const [ano, setAno] = useState('');
+  const [mes, setMes] = useState('');
+  const [dia, setDia] = useState('');
   const [km, setKm] = useState('');
 
   // Unique options for selects
   const marcas = Array.from(new Set(cars.map(car => car.make)));
   const modelos = Array.from(new Set(cars.filter(car => !marca || car.make === marca).map(car => car.model)));
   const anos = Array.from(new Set(cars.map(car => car.year))).sort((a, b) => b - a);
+  const meses = Array.from({ length: 12 }, (_, i) => i + 1);
+  const dias = Array.from({ length: 31 }, (_, i) => i + 1);
 
-  // Filtering logic
+  // Filtering logic por dia, mês e ano (campos day, month, year)
   const filteredCars = cars.filter(car =>
     (!marca || car.make === marca) &&
     (!modelo || car.model === modelo) &&
     (!ano || String(car.year) === ano) &&
+    (!mes || (car.hasOwnProperty('month') && String((car as any).month).padStart(2, '0') === mes.padStart(2, '0'))) &&
     (!km || car.mileage <= parseInt(km))
   );
 
@@ -48,7 +53,15 @@ export default function Viaturas() {
           </div>
           <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
             <FaCalendarAlt className="text-[#b42121] text-lg" />
-            <select value={ano} onChange={e => setAno(e.target.value)} className="bg-transparent outline-none border-none text-base">
+            <select value={dia} onChange={e => setDia(e.target.value)} className="bg-transparent outline-none border-none text-base w-16">
+              <option value="">Dia</option>
+              {dias.map(d => <option key={d} value={d}>{d}</option>)}
+            </select>
+            <select value={mes} onChange={e => setMes(e.target.value)} className="bg-transparent outline-none border-none text-base w-20">
+              <option value="">Mês</option>
+              {meses.map(m => <option key={m} value={m}>{m.toString().padStart(2, '0')}</option>)}
+            </select>
+            <select value={ano} onChange={e => setAno(e.target.value)} className="bg-transparent outline-none border-none text-base w-24">
               <option value="">Ano</option>
               {anos.map(a => <option key={a} value={a}>{a}</option>)}
             </select>
@@ -68,7 +81,7 @@ export default function Viaturas() {
           </button>
           <button
             type="button"
-            onClick={() => { setMarca(''); setModelo(''); setAno(''); setKm(''); }}
+            onClick={() => { setMarca(''); setModelo(''); setAno(''); setMes(''); setDia(''); setKm(''); }}
             className="flex items-center gap-2 bg-white border border-[#b42121]/30 text-[#b42121] rounded-xl px-6 py-2 font-bold shadow transition-all duration-200 hover:bg-[#b42121] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 focus:ring-offset-2"
           >
             Limpar Filtros
