@@ -5,7 +5,7 @@ import cars from '../data/cars.json';
 import CarCard from '../components/CarCard';
 import PremiumCarCard from '../components/PremiumCarCard';
 import { motion } from "framer-motion";
-import Footer from '../components/Footer';
+
 
 // Placeholder reviews - replace with real data or API integration
 const googleReviews = [
@@ -411,7 +411,6 @@ export default function Home() {
           </div>
         </section>
       </MainLayout>
-      <Footer />
     </>
   );
 }
