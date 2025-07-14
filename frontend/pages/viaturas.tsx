@@ -1,9 +1,11 @@
+
 import MainLayout from '../components/MainLayout';
 import cars from '../data/cars.json';
 import Link from 'next/link';
 import styles from '../components/PremiumCarCard.module.css';
 import React, { useState } from 'react';
 import { FaCarSide, FaCalendarAlt, FaTachometerAlt, FaSearch } from 'react-icons/fa';
+import SimuladorTabela from '../components/SimuladorTabela';
 
 export default function Viaturas() {
   const [marca, setMarca] = useState('');
@@ -12,6 +14,7 @@ export default function Viaturas() {
   const [mes, setMes] = useState('');
   const [dia, setDia] = useState('');
   const [km, setKm] = useState('');
+  const [showSimulador, setShowSimulador] = useState(false);
 
   // Unique options for selects
   const marcas = Array.from(new Set(cars.map(car => car.make)));
@@ -30,13 +33,37 @@ export default function Viaturas() {
   );
 
   return (
-    <MainLayout>
-      <section className="w-full px-0 py-12 bg-[#f5f6fa]">
-        <h1 className="text-4xl font-bold mb-10 text-center text-black">
-          Viaturas Disponíveis
-        </h1>
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
+      {/* Edge-to-edge fixed background image with soft overlay for beauty */}
+      <img src="/images/viaturasfundo.jpg" alt="Viaturas Fundo" className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover opacity-30 z-0 transition-all duration-700" style={{objectPosition: 'center top', filter: 'blur(1px)'}} />
+      {/* Soft gradient overlay for extra depth */}
+      <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.95) 0%, rgba(251,233,233,0.85) 60%, rgba(245,246,250,0.95) 100%)'}} />
+      <MainLayout>
+        <section className="w-full px-0 py-12 bg-transparent">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10 gap-4">
+            <h1 className="text-4xl font-extrabold text-center sm:text-left text-black" style={{color:'#000', fontWeight:900, zIndex:10, position:'relative'}}>
+              Viaturas Disponíveis
+            </h1>
+            <div className="flex gap-2 justify-center sm:justify-end">
+              <style jsx>{`
+                @keyframes pulse-sleek {
+                  0%, 100% { box-shadow: 0 4px 18px 0 rgba(213,80,80,0.18), 0 0 0 0 rgba(213,80,80,0.25); }
+                  50% { box-shadow: 0 4px 28px 0 rgba(213,80,80,0.28), 0 0 0 8px rgba(213,80,80,0.10); }
+                }
+              `}</style>
+              <Link
+                href="/pedido"
+                className="rounded-full py-2 px-6 font-bold text-base shadow-lg transition-all duration-200 text-white border-0 animate-[pulse-sleek_1.6s_ease-in-out_infinite]"
+                style={{ background: 'rgba(213, 80, 80, 0.85)', color: '#fff', opacity: 1, boxShadow: '0 4px 18px 0 rgba(213,80,80,0.18)', zIndex: 20, position: 'relative', isolation: 'isolate' }}
+                onMouseOver={e => e.currentTarget.style.background = 'rgba(213, 80, 80, 1)'}
+                onMouseOut={e => e.currentTarget.style.background = 'rgba(213, 80, 80, 0.85)'}
+              >
+                Encomendar
+              </Link>
+            </div>
+          </div>
         {/* Filtros estilizados */}
-        <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center mb-10 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-[#b42121]/10 transition-all duration-300 hover:shadow-2xl" style={{ color: 'rgba(210, 56, 56, 0.85)' }}>
+        <div id="filtros-viaturas" className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center mb-10 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-[#b42121]/10 transition-all duration-300 hover:shadow-2xl" style={{ color: 'rgba(210, 56, 56, 0.85)' }}>
           <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
             <FaCarSide className="text-[#b42121] text-lg" />
             <select value={marca} onChange={e => { setMarca(e.target.value); setModelo(''); }} className="bg-transparent outline-none border-none text-base">
@@ -161,7 +188,39 @@ export default function Viaturas() {
             </div>
           ))}
         </div>
-      </section>
-    </MainLayout>
+        </section>
+      </MainLayout>
+
+      {/* Widget flutuante AutoGo logo */}
+      <button
+        onClick={() => setShowSimulador(true)}
+        className="fixed bottom-6 right-6 z-50 bg-white rounded-full shadow-xl border-4 border-white p-2 hover:scale-110 transition-all"
+        style={{ width: 70, height: 70, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        aria-label="Abrir simulador ISV"
+      >
+        <img src="/images/auto-logo.png" alt="Abrir simulador ISV" className="w-12 h-12 object-contain" />
+      </button>
+
+      {/* Drawer do simulador */}
+      <div
+        className={`fixed right-4 bottom-4 z-50 transition-transform duration-500 ${showSimulador ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'}`}
+        style={{ minWidth: 320, maxWidth: 380, width: '90vw' }}
+      >
+        <div className="bg-white/95 rounded-3xl shadow-2xl border border-[#b42121]/10 backdrop-blur-md p-4 sm:p-6 flex flex-col items-center relative">
+          <button
+            onClick={() => setShowSimulador(false)}
+            className="absolute top-3 right-4 text-[#b42121] text-2xl font-bold hover:scale-125 transition"
+            aria-label="Fechar simulador"
+          >
+            ×
+          </button>
+          <h2 className="text-xl font-bold mb-2 text-[#b42121]">Simulador ISV</h2>
+          {/* Simulador ISV compacto (apenas tabela) */}
+          <div className="w-full">
+            <SimuladorTabela />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

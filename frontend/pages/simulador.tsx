@@ -270,16 +270,19 @@ Number(form.co2)
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col overflow-x-hidden">
       {/* Edge-to-edge fixed background image with soft overlay for beauty */}
       <img src="/images/simulador fundo.jpg" alt="Simulador Fundo" className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover opacity-30 z-0 transition-all duration-700" style={{objectPosition: 'center top', filter: 'blur(1px)'}} />
       {/* Soft gradient overlay for extra depth */}
       <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.95) 0%, rgba(251,233,233,0.85) 60%, rgba(245,246,250,0.95) 100%)'}} />
+
+      {/* Decorative red lines removed as requested */}
+
       <MainLayout>
         <div className="relative w-full flex-1 z-10">
           <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-8 px-12 bg-transparent">
           {/* Info block */}
-          <div className="w-full max-w-3xl mb-10 lg:mb-0 pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left">
+          <div className="w-full max-w-3xl mb-10 lg:mb-0 pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left z-10">
             <h3 className="text-3xl font-bold text-[#b42121] mb-6 leading-tight">Simule o ISV da sua viatura em segundos!</h3>
             <p className="mb-4 text-lg font-bold">Poupe tempo e evite surpresas, recorrendo à nossa experiência técnica.</p>
             <p className="mb-4 text-lg">O nosso simulador de ISV (Imposto Sobre Veículos) é a ferramenta mais prática e fiável para calcular o custo de legalização de um veículo importado.<br />
@@ -287,6 +290,20 @@ Number(form.co2)
             <p className="mb-4 text-lg">Para um cálculo exato, vai precisar de alguns elementos da viatura — caso tenha dúvidas, pode contactar-nos por email e esclarecemos como usar o simulador.</p>
             <p className="mb-4 font-semibold text-[#b42121] text-lg">Dica AutoGo: <span className="font-normal text-black">Utilize sempre o simulador com todos os dados da viatura que pretende importar. Assim garante total transparência e evita custos inesperados.</span></p>
             <p className="text-lg">Conte connosco para o apoiar em todo o processo e tornar o seu negócio de importação ainda mais simples e seguro!</p>
+            <div className="relative w-full flex items-center mt-6">
+              {/* 3 horizontal, thick, long CSS red stripes behind car */}
+              <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 pointer-events-none" style={{zIndex:0, height:'100%'}}>
+                <div style={{position:'absolute',left:'-10%',width:'110%',top:'38%',height:'22px',background:'#b42121',borderRadius:'12px',opacity:0.8}} />
+                <div style={{position:'absolute',left:'0%',width:'105%',top:'50%',height:'22px',background:'#b42121',borderRadius:'12px',opacity:0.7}} />
+                <div style={{position:'absolute',left:'10%',width:'100%',top:'62%',height:'22px',background:'#b42121',borderRadius:'12px',opacity:0.6}} />
+              </div>
+              <img 
+                src="/images/amgsimulador.png" 
+                alt="Carro exemplo simulador ISV" 
+                className="relative w-full max-w-4xl mx-auto object-cover z-10" 
+                style={{background:'none', border:'none', borderRadius:0, boxShadow:'none'}}
+              />
+            </div>
           </div>
           {/* Simulator card toggleable by logo */}
           <div className="relative w-full max-w-lg ml-auto flex flex-col items-center pt-8">
@@ -424,7 +441,6 @@ Number(form.co2)
               </div>
             </div>
           </div>
-/* Add keyframes for spin animation */
 <style jsx global>{`
 @keyframes spin-slow { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
 .animate-spin-slow { animation: spin-slow 0.7s cubic-bezier(.68,-0.55,.27,1.55); }
