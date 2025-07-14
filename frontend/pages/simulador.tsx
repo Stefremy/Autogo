@@ -184,7 +184,7 @@ export default function Simulador() {
       } else {
         escAmb = getEscalao(
           form.norma === 'wltp' ? TABELA_AMBIENTAL_DIESEL_WLTP : TABELA_AMBIENTAL_DIESEL_NEDC,
-          Number(form.co2)
+Number(form.co2)
         );
       }
       isvAmbiental = Math.max(0, Number(form.co2) * escAmb.taxa - escAmb.abate);
@@ -223,116 +223,128 @@ export default function Simulador() {
   }
 
   return (
-    <MainLayout>
-      <section className="w-full px-0 py-12 bg-[#f5f6fa] min-h-screen">
-        <div className="p-8 max-w-xl mx-auto bg-white rounded-xl shadow-lg">
-          <h2 className="text-2xl font-bold text-teal-700 mb-4">Simulador ISV Portugal</h2>
-          <form
-            onSubmit={e => {
-              e.preventDefault();
-              calcularISV(e);
-            }}
-          >
-            <label>Tipo de veículo:</label>
-            <select name="tipo" value={form.tipo} onChange={handleChange} className="mb-2">
-              <option value="passageiro">Passageiro / Misto</option>
-              <option value="comercial">Comercial / Autocaravana / &lt;1970</option>
-            </select>
-
-            <label>Cilindrada (cm³):</label>
-            <input name="cilindrada" type="number" value={form.cilindrada} onChange={handleChange} required className="mb-2" />
-
-            {form.tipo === "passageiro" && (
-              <>
-                <label>Combustível:</label>
-                <select name="combustivel" value={form.combustivel} onChange={handleChange} className="mb-2">
-                  <option value="gasolina">Gasolina</option>
-                  <option value="gpl">GPL</option>
-                  <option value="gn">Gás Natural</option>
-                  <option value="diesel">Diesel</option>
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
+      <MainLayout>
+        <section className="w-full flex items-center justify-center py-12 px-2 bg-transparent">
+          <div className="relative w-full max-w-2xl mx-auto bg-white/80 rounded-3xl shadow-2xl border border-[#b42121]/10 backdrop-blur-md p-0 sm:p-10 flex flex-col items-center">
+            <img src="/images/auto-logo.png" alt="AutoGo Logo" className="w-32 h-32 object-contain mx-auto -mt-16 mb-2 drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg" style={{marginTop: '-4rem'}} />
+            <h2 className="text-3xl font-extrabold text-[#b42121] mb-8 text-center tracking-tight drop-shadow">Simulador ISV Portugal</h2>
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+                calcularISV(e);
+              }}
+              className="flex flex-col gap-5 w-full"
+            >
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold text-[#b42121]">Tipo de veículo</label>
+                <select name="tipo" value={form.tipo} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                  <option value="passageiro">Passageiro / Misto</option>
+                  <option value="comercial">Comercial / Autocaravana / &lt;1970</option>
                 </select>
-                <label>Norma de homologação:</label>
-                <select name="norma" value={form.norma} onChange={handleChange} className="mb-2">
-                  <option value="wltp">WLTP</option>
-                  <option value="nedc">NEDC</option>
-                </select>
-                <label>Emissões CO₂ (g/km):</label>
-                <input name="co2" type="number" value={form.co2} onChange={handleChange} required className="mb-2" />
-              </>
-            )}
-
-            {form.combustivel === "diesel" && form.tipo === "passageiro" && (
-              <>
-                <label>Emite partículas &gt;0,001g/km?</label>
-                <select name="particulas" value={form.particulas} onChange={handleChange} className="mb-2">
+              </div>
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold text-[#b42121]">Cilindrada (cm³)</label>
+                <input name="cilindrada" type="number" value={form.cilindrada} onChange={handleChange} required className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+              </div>
+              {form.tipo === "passageiro" && (
+                <>
+                  <div className="flex flex-col gap-1">
+                    <label className="font-semibold text-[#b42121]">Combustível</label>
+                    <select name="combustivel" value={form.combustivel} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                      <option value="gasolina">Gasolina</option>
+                      <option value="gpl">GPL</option>
+                      <option value="gn">Gás Natural</option>
+                      <option value="diesel">Diesel</option>
+                    </select>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label className="font-semibold text-[#b42121]">Norma de homologação</label>
+                    <select name="norma" value={form.norma} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                      <option value="wltp">WLTP</option>
+                      <option value="nedc">NEDC</option>
+                    </select>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label className="font-semibold text-[#b42121]">Emissões CO₂ (g/km)</label>
+                    <input name="co2" type="number" value={form.co2} onChange={handleChange} required className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                  </div>
+                </>
+              )}
+              {form.combustivel === "diesel" && form.tipo === "passageiro" && (
+                <div className="flex flex-col gap-1">
+                  <label className="font-semibold text-[#b42121]">Emite partículas &gt;0,001g/km?</label>
+                  <select name="particulas" value={form.particulas} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                    <option value="nao">Não</option>
+                    <option value="sim">Sim</option>
+                  </select>
+                </div>
+              )}
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold text-[#b42121]">Ano da 1ª matrícula (UE)</label>
+                <div className="flex gap-2">
+                  <select name="dia" value={form.dia} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/4 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required>
+                    <option value="">Dia</option>
+                    {[...Array(31)].map((_, i) => (
+                      <option key={i+1} value={i+1}>{i+1}</option>
+                    ))}
+                  </select>
+                  <select name="mes" value={form.mes} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required>
+                    <option value="">Mês</option>
+                    {[...Array(12)].map((_, i) => (
+                      <option key={i+1} value={i+1}>{(i+1).toString().padStart(2, '0')}</option>
+                    ))}
+                  </select>
+                  <input name="ano" type="number" min="1970" max="2025" value={form.ano} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required placeholder="Ano" />
+                </div>
+                {erroData && <div className="text-red-600 text-sm mt-1">{erroData}</div>}
+              </div>
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold text-[#b42121]">Veículo usado?</label>
+                <select name="usado" value={form.usado} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
                   <option value="nao">Não</option>
                   <option value="sim">Sim</option>
                 </select>
-              </>
-            )}
-
-            <label>Ano da 1ª matrícula (UE):</label>
-            <div className="flex gap-2 mb-2">
-              <select name="dia" value={form.dia} onChange={handleChange} className="border rounded px-2 py-2 w-1/4" required>
-                <option value="">Dia</option>
-                {[...Array(31)].map((_, i) => (
-                  <option key={i+1} value={i+1}>{i+1}</option>
-                ))}
-              </select>
-              <select name="mes" value={form.mes} onChange={handleChange} className="border rounded px-2 py-2 w-1/3" required>
-                <option value="">Mês</option>
-                {[...Array(12)].map((_, i) => (
-                  <option key={i+1} value={i+1}>{(i+1).toString().padStart(2, '0')}</option>
-                ))}
-              </select>
-              <input name="ano" type="number" min="1970" max="2025" value={form.ano} onChange={handleChange} className="border rounded px-2 py-2 w-1/3" required placeholder="Ano" />
-            </div>
-            {erroData && <div className="text-red-600 text-sm mt-1">{erroData}</div>}
-
-            <label>Veículo usado?</label>
-            <select name="usado" value={form.usado} onChange={handleChange} className="mb-2">
-              <option value="nao">Não</option>
-              <option value="sim">Sim</option>
-            </select>
-            {form.usado === 'sim' && (
-              <>
-                <label>Anos de uso completos:</label>
-                <input name="anosUso" type="number" value={form.anosUso} onChange={handleChange} min="0" max="30" className="mb-2" />
-              </>
-            )}
-
-            <label>Taxa intermédia:</label>
-            <select name="taxaIntermedia" value={form.taxaIntermedia} onChange={handleChange} className="mb-4">
-              <option value="">Nenhuma (normal)</option>
-              {TAXAS_INTERMEDIAS.map(t => (
-                <option key={t.key} value={t.key}>{t.label}</option>
-              ))}
-            </select>
-
-            <button type="submit" className="bg-[#b42121] text-white rounded-full py-3 px-8 font-bold text-lg shadow-lg hover:bg-[#a11a1a] transition">Calcular ISV</button>
-          </form>
-
-          {resultado && (
-            <div className="mt-6 p-4 bg-teal-50 rounded">
-              <h3 className="text-xl font-semibold mb-2">Resultado</h3>
-              <p><b>Cilindrada:</b> {resultado.isvCilindrada.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
-              {form.tipo === "passageiro" && (
-                <p><b>Ambiental:</b> {resultado.isvAmbiental.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+              </div>
+              {form.usado === 'sim' && (
+                <div className="flex flex-col gap-1">
+                  <label className="font-semibold text-[#b42121]">Anos de uso completos</label>
+                  <input name="anosUso" type="number" value={form.anosUso} onChange={handleChange} min="0" max="30" className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                </div>
               )}
-              <p><b>ISV bruto:</b> {resultado.isvBruto.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
-              <p><b>ISV final (após reduções e taxas):</b> <span className="text-teal-700">{resultado.isvFinal.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</span></p>
-              <p><b>Legalização/documentos:</b> {resultado.legalizacao.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
-              <ul className="mt-2 text-xs text-gray-600 list-disc list-inside">
-                {resultado.info.map((msg: string, i: number) => <li key={i}>{msg}</li>)}
-              </ul>
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold text-[#b42121]">Taxa intermédia</label>
+                <select name="taxaIntermedia" value={form.taxaIntermedia} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm mb-2">
+                  <option value="">Nenhuma (normal)</option>
+                  {TAXAS_INTERMEDIAS.map(t => (
+                    <option key={t.key} value={t.key}>{t.label}</option>
+                  ))}
+                </select>
+              </div>
+              <button type="submit" className="bg-[#b42121] text-white rounded-full py-3 px-8 font-bold text-lg shadow-lg hover:bg-[#a11a1a] hover:scale-105 transition-all duration-200 mt-2">Calcular ISV</button>
+            </form>
+            {resultado && (
+              <div className="mt-8 p-6 bg-[#f5f6fa] rounded-2xl shadow-inner border border-[#b42121]/10 animate-fade-in w-full">
+                <h3 className="text-xl font-semibold mb-2 text-[#b42121]">Resultado</h3>
+                <p><b>Cilindrada:</b> {resultado.isvCilindrada.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                {form.tipo === "passageiro" && (
+                  <p><b>Ambiental:</b> {resultado.isvAmbiental.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                )}
+                <p><b>ISV bruto:</b> {resultado.isvBruto.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                <p><b>ISV final (após reduções e taxas):</b> <span className="text-[#17826b] font-bold">{resultado.isvFinal.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</span></p>
+                <p><b>Legalização/documentos:</b> {resultado.legalizacao.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                <ul className="mt-2 text-xs text-gray-600 list-disc list-inside">
+                  {resultado.info.map((msg: string, i: number) => <li key={i}>{msg}</li>)}
+                </ul>
+              </div>
+            )}
+            <div className="mt-6 text-xs text-gray-500 text-center">
+              Fonte: Diário da República / Portal ISV Gov.pt.  
+              <a href="https://www2.gov.pt/servicos/tratar-do-imposto-de-um-veiculo-comprado-no-estrangeiro" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b42121] transition">Mais info</a>
             </div>
-          )}
-          <div className="mt-6 text-xs text-gray-500">
-            Fonte: Diário da República / Portal ISV Gov.pt.  
-            <a href="https://www2.gov.pt/servicos/tratar-do-imposto-de-um-veiculo-comprado-no-estrangeiro" target="_blank" rel="noopener noreferrer" className="underline">Mais info</a>
           </div>
-        </div>
-      </section>
-    </MainLayout>
+        </section>
+      </MainLayout>
+    </div>
   );
 }
