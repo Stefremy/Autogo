@@ -90,6 +90,21 @@ function getReducaoUsados(anos) {
   return r.reducao;
 }
 
+// Calcula anos de uso completos (arredondando para cima após cada aniversário)
+function calcularAnosUsoCompletos(dia, mes, ano) {
+  if (!dia || !mes || !ano) return '';
+  const dataMatricula = new Date(Number(ano), Number(mes) - 1, Number(dia));
+  const hoje = new Date();
+  let anos = hoje.getFullYear() - dataMatricula.getFullYear();
+  const m = hoje.getMonth() - dataMatricula.getMonth();
+  const d = hoje.getDate() - dataMatricula.getDate();
+  if (m > 0 || (m === 0 && d >= 0)) {
+    anos += 1; // Já passou o aniversário este ano
+  }
+  // Se ainda não fez aniversário este ano, não soma
+  return anos > 0 ? String(anos) : '1';
+}
+
 // export default function SimuladorISV() { ... }
 // The SimuladorISV component is commented out or removed to avoid duplicate default exports.
 // If you want to keep both simulators, export one as named and the other as default, or split into separate files.
@@ -131,8 +146,11 @@ function descontoIdade(ano) {
 }
 
 export default function Simulador() {
-  // Estados do formulário
-  const [form, setForm] = useState({
+  // State to toggle simulator card visibility
+  const [simulatorOpen, setSimulatorOpen] = useState(true);
+  const [logoAnim, setLogoAnim] = useState(false);
+  // Estados do formulário, persistidos em localStorage
+  const defaultForm = {
     tipo: 'passageiro',
     cilindrada: '',
     combustivel: 'gasolina',
@@ -145,12 +163,41 @@ export default function Simulador() {
     usado: 'nao',
     anosUso: '',
     taxaIntermedia: '',
+  };
+  const [form, setForm] = useState(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('simuladorISVForm');
+        if (saved) return { ...defaultForm, ...JSON.parse(saved) };
+      } catch {}
+    }
+    return defaultForm;
   });
+  // Atualiza anos de uso completos automaticamente se usado e data preenchida
+  React.useEffect(() => {
+    if (form.usado === 'sim' && form.dia && form.mes && form.ano) {
+      const anos = calcularAnosUsoCompletos(form.dia, form.mes, form.ano);
+      setForm(f => {
+        const updated = { ...f, anosUso: anos };
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('simuladorISVForm', JSON.stringify(updated));
+        }
+        return updated;
+      });
+    }
+  }, [form.usado, form.dia, form.mes, form.ano]);
+
+  // Salva o estado do formulário sempre que mudar
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('simuladorISVForm', JSON.stringify(form));
+    }
+  }, [form]);
   const [erroData, setErroData] = useState<string | null>(null);
   const [resultado, setResultado] = useState<any>(null);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm(f => ({ ...f, [e.target.name]: e.target.value }));
   }
 
   function calcularISV(e: React.FormEvent) {
@@ -224,126 +271,166 @@ Number(form.co2)
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
+      {/* Edge-to-edge fixed background image with soft overlay for beauty */}
+      <img src="/images/simulador fundo.jpg" alt="Simulador Fundo" className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover opacity-30 z-0 transition-all duration-700" style={{objectPosition: 'center top', filter: 'blur(1px)'}} />
+      {/* Soft gradient overlay for extra depth */}
+      <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.95) 0%, rgba(251,233,233,0.85) 60%, rgba(245,246,250,0.95) 100%)'}} />
       <MainLayout>
-        <section className="w-full flex items-center justify-center py-12 px-2 bg-transparent">
-          <div className="relative w-full max-w-2xl mx-auto bg-white/80 rounded-3xl shadow-2xl border border-[#b42121]/10 backdrop-blur-md p-0 sm:p-10 flex flex-col items-center">
-            <img src="/images/auto-logo.png" alt="AutoGo Logo" className="w-32 h-32 object-contain mx-auto -mt-16 mb-2 drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg" style={{marginTop: '-4rem'}} />
-            <h2 className="text-3xl font-extrabold text-[#b42121] mb-8 text-center tracking-tight drop-shadow">Simulador ISV Portugal</h2>
-            <form
-              onSubmit={e => {
-                e.preventDefault();
-                calcularISV(e);
+        <div className="relative w-full flex-1 z-10">
+          <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-8 px-12 bg-transparent">
+          {/* Info block */}
+          <div className="w-full max-w-3xl mb-10 lg:mb-0 pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left">
+            <h3 className="text-3xl font-bold text-[#b42121] mb-6 leading-tight">Simule o ISV da sua viatura em segundos!</h3>
+            <p className="mb-4 text-lg font-bold">Poupe tempo e evite surpresas, recorrendo à nossa experiência técnica.</p>
+            <p className="mb-4 text-lg">O nosso simulador de ISV (Imposto Sobre Veículos) é a ferramenta mais prática e fiável para calcular o custo de legalização de um veículo importado.<br />
+            Basta introduzir os dados essenciais da viatura e rapidamente obtém uma estimativa precisa do imposto a pagar.</p>
+            <p className="mb-4 text-lg">Para um cálculo exato, vai precisar de alguns elementos da viatura — caso tenha dúvidas, pode contactar-nos por email e esclarecemos como usar o simulador.</p>
+            <p className="mb-4 font-semibold text-[#b42121] text-lg">Dica AutoGo: <span className="font-normal text-black">Utilize sempre o simulador com todos os dados da viatura que pretende importar. Assim garante total transparência e evita custos inesperados.</span></p>
+            <p className="text-lg">Conte connosco para o apoiar em todo o processo e tornar o seu negócio de importação ainda mais simples e seguro!</p>
+          </div>
+          {/* Simulator card toggleable by logo */}
+          <div className="relative w-full max-w-lg ml-auto flex flex-col items-center pt-8">
+            <button
+              type="button"
+              aria-label="Abrir/Fechar Simulador"
+              onClick={() => {
+                setSimulatorOpen(v => !v);
+                setLogoAnim(true);
+                setTimeout(() => setLogoAnim(false), 700);
               }}
-              className="flex flex-col gap-5 w-full"
+              className="focus:outline-none mb-2"
+              style={{marginTop: 0}}
             >
-              <div className="flex flex-col gap-1">
-                <label className="font-semibold text-[#b42121]">Tipo de veículo</label>
-                <select name="tipo" value={form.tipo} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
-                  <option value="passageiro">Passageiro / Misto</option>
-                  <option value="comercial">Comercial / Autocaravana / &lt;1970</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-1">
-                <label className="font-semibold text-[#b42121]">Cilindrada (cm³)</label>
-                <input name="cilindrada" type="number" value={form.cilindrada} onChange={handleChange} required className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
-              </div>
-              {form.tipo === "passageiro" && (
-                <>
+              <img
+                src="/images/auto-logo.png"
+                alt="AutoGo Logo"
+                className={`w-32 h-32 object-contain mx-auto drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg transition-transform duration-700 ${logoAnim ? 'animate-spin-slow' : ''}`}
+              />
+            </button>
+            <div
+              className={`w-full transition-all duration-700 ${simulatorOpen ? 'opacity-100 scale-100 max-h-[2000px] pointer-events-auto' : 'opacity-0 scale-95 max-h-0 pointer-events-none overflow-hidden'}`}
+            >
+              <div className="bg-white/80 rounded-3xl shadow-2xl border border-[#b42121]/10 backdrop-blur-md p-0 sm:p-10 flex flex-col items-center">
+                <h2 className="text-3xl font-extrabold text-[#b42121] mb-8 text-center tracking-tight drop-shadow">Simulador ISV Portugal</h2>
+                <form
+                  onSubmit={e => {
+                    e.preventDefault();
+                    calcularISV(e);
+                  }}
+                  className="flex flex-col gap-5 w-full"
+                >
+                  {/* ...existing form fields... */}
                   <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-[#b42121]">Combustível</label>
-                    <select name="combustivel" value={form.combustivel} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
-                      <option value="gasolina">Gasolina</option>
-                      <option value="gpl">GPL</option>
-                      <option value="gn">Gás Natural</option>
-                      <option value="diesel">Diesel</option>
+                    <label className="font-semibold text-[#b42121]">Tipo de veículo</label>
+                    <select name="tipo" value={form.tipo} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                      <option value="passageiro">Passageiro / Misto</option>
+                      <option value="comercial">Comercial / Autocaravana / &lt;1970</option>
                     </select>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-[#b42121]">Norma de homologação</label>
-                    <select name="norma" value={form.norma} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
-                      <option value="wltp">WLTP</option>
-                      <option value="nedc">NEDC</option>
-                    </select>
+                    <label className="font-semibold text-[#b42121]">Cilindrada (cm³)</label>
+                    <input name="cilindrada" type="number" value={form.cilindrada} onChange={handleChange} required className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                  </div>
+                  {form.tipo === "passageiro" && (
+                    <>
+                      <div className="flex flex-col gap-1">
+                        <label className="font-semibold text-[#b42121]">Combustível</label>
+                        <select name="combustivel" value={form.combustivel} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                          <option value="gasolina">Gasolina</option>
+                          <option value="gpl">GPL</option>
+                          <option value="gn">Gás Natural</option>
+                          <option value="diesel">Diesel</option>
+                        </select>
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <label className="font-semibold text-[#b42121]">Norma de homologação</label>
+                        <select name="norma" value={form.norma} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                          <option value="wltp">WLTP</option>
+                          <option value="nedc">NEDC</option>
+                        </select>
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <label className="font-semibold text-[#b42121]">Emissões CO₂ (g/km)</label>
+                        <input name="co2" type="number" value={form.co2} onChange={handleChange} required className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                      </div>
+                    </>
+                  )}
+                  {form.combustivel === "diesel" && form.tipo === "passageiro" && (
+                    <div className="flex flex-col gap-1">
+                      <label className="font-semibold text-[#b42121]">Emite partículas &gt;0,001g/km?</label>
+                      <select name="particulas" value={form.particulas} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                        <option value="nao">Não</option>
+                        <option value="sim">Sim</option>
+                      </select>
+                    </div>
+                  )}
+                  <div className="flex flex-col gap-1">
+                    <label className="font-semibold text-[#b42121]">Ano da 1ª matrícula (UE)</label>
+                    <div className="flex gap-2">
+                      <select name="dia" value={form.dia} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/4 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required>
+                        <option value="">Dia</option>
+                        {[...Array(31)].map((_, i) => (
+                          <option key={i+1} value={i+1}>{i+1}</option>
+                        ))}
+                      </select>
+                      <select name="mes" value={form.mes} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required>
+                        <option value="">Mês</option>
+                        {[...Array(12)].map((_, i) => (
+                          <option key={i+1} value={i+1}>{(i+1).toString().padStart(2, '0')}</option>
+                        ))}
+                      </select>
+                      <input name="ano" type="number" min="1970" max="2025" value={form.ano} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required placeholder="Ano" />
+                    </div>
+                    {erroData && <div className="text-red-600 text-sm mt-1">{erroData}</div>}
                   </div>
                   <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-[#b42121]">Emissões CO₂ (g/km)</label>
-                    <input name="co2" type="number" value={form.co2} onChange={handleChange} required className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                    <label className="font-semibold text-[#b42121]">Veículo usado?</label>
+                    <select name="usado" value={form.usado} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                      <option value="nao">Não</option>
+                      <option value="sim">Sim</option>
+                    </select>
                   </div>
-                </>
-              )}
-              {form.combustivel === "diesel" && form.tipo === "passageiro" && (
-                <div className="flex flex-col gap-1">
-                  <label className="font-semibold text-[#b42121]">Emite partículas &gt;0,001g/km?</label>
-                  <select name="particulas" value={form.particulas} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
-                    <option value="nao">Não</option>
-                    <option value="sim">Sim</option>
-                  </select>
-                </div>
-              )}
-              <div className="flex flex-col gap-1">
-                <label className="font-semibold text-[#b42121]">Ano da 1ª matrícula (UE)</label>
-                <div className="flex gap-2">
-                  <select name="dia" value={form.dia} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/4 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required>
-                    <option value="">Dia</option>
-                    {[...Array(31)].map((_, i) => (
-                      <option key={i+1} value={i+1}>{i+1}</option>
-                    ))}
-                  </select>
-                  <select name="mes" value={form.mes} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required>
-                    <option value="">Mês</option>
-                    {[...Array(12)].map((_, i) => (
-                      <option key={i+1} value={i+1}>{(i+1).toString().padStart(2, '0')}</option>
-                    ))}
-                  </select>
-                  <input name="ano" type="number" min="1970" max="2025" value={form.ano} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required placeholder="Ano" />
-                </div>
-                {erroData && <div className="text-red-600 text-sm mt-1">{erroData}</div>}
-              </div>
-              <div className="flex flex-col gap-1">
-                <label className="font-semibold text-[#b42121]">Veículo usado?</label>
-                <select name="usado" value={form.usado} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
-                  <option value="nao">Não</option>
-                  <option value="sim">Sim</option>
-                </select>
-              </div>
-              {form.usado === 'sim' && (
-                <div className="flex flex-col gap-1">
-                  <label className="font-semibold text-[#b42121]">Anos de uso completos</label>
-                  <input name="anosUso" type="number" value={form.anosUso} onChange={handleChange} min="0" max="30" className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
-                </div>
-              )}
-              <div className="flex flex-col gap-1">
-                <label className="font-semibold text-[#b42121]">Taxa intermédia</label>
-                <select name="taxaIntermedia" value={form.taxaIntermedia} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm mb-2">
-                  <option value="">Nenhuma (normal)</option>
-                  {TAXAS_INTERMEDIAS.map(t => (
-                    <option key={t.key} value={t.key}>{t.label}</option>
-                  ))}
-                </select>
-              </div>
-              <button type="submit" className="bg-[#b42121] text-white rounded-full py-3 px-8 font-bold text-lg shadow-lg hover:bg-[#a11a1a] hover:scale-105 transition-all duration-200 mt-2">Calcular ISV</button>
-            </form>
-            {resultado && (
-              <div className="mt-8 p-6 bg-[#f5f6fa] rounded-2xl shadow-inner border border-[#b42121]/10 animate-fade-in w-full">
-                <h3 className="text-xl font-semibold mb-2 text-[#b42121]">Resultado</h3>
-                <p><b>Cilindrada:</b> {resultado.isvCilindrada.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
-                {form.tipo === "passageiro" && (
-                  <p><b>Ambiental:</b> {resultado.isvAmbiental.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                  {/* Anos de uso completos omitido da tabela, mas continua a ser calculado automaticamente */}
+                  <div className="flex flex-col gap-1">
+                    <label className="font-semibold text-[#b42121]">Taxa intermédia</label>
+                    <select name="taxaIntermedia" value={form.taxaIntermedia} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm mb-2">
+                      <option value="">Nenhuma (normal)</option>
+                      {TAXAS_INTERMEDIAS.map(t => (
+                        <option key={t.key} value={t.key}>{t.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <button type="submit" className="bg-[#b42121] text-white rounded-full py-3 px-8 font-bold text-lg shadow-lg hover:bg-[#a11a1a] hover:scale-105 transition-all duration-200 mt-2">Calcular ISV</button>
+                </form>
+                {resultado && (
+                  <div className="mt-8 p-6 bg-[#f5f6fa] rounded-2xl shadow-inner border border-[#b42121]/10 animate-fade-in w-full">
+                    <h3 className="text-xl font-semibold mb-2 text-[#b42121]">Resultado</h3>
+                    <p><b>Cilindrada:</b> {resultado.isvCilindrada.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                    {form.tipo === "passageiro" && (
+                      <p><b>Ambiental:</b> {resultado.isvAmbiental.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                    )}
+                    <p><b>ISV bruto:</b> {resultado.isvBruto.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                    <p><b>ISV final (após reduções e taxas):</b> <span className="text-[#17826b] text-[#b42121] font-bold">{resultado.isvFinal.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</span></p>
+                    <p><b>Legalização/documentos:</b> {resultado.legalizacao.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                    <ul className="mt-2 text-xs text-[#b42121] list-disc list-inside">
+                      {resultado.info.map((msg: string, i: number) => <li key={i}>{msg}</li>)}
+                    </ul>
+                  </div>
                 )}
-                <p><b>ISV bruto:</b> {resultado.isvBruto.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
-                <p><b>ISV final (após reduções e taxas):</b> <span className="text-[#17826b] font-bold">{resultado.isvFinal.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</span></p>
-                <p><b>Legalização/documentos:</b> {resultado.legalizacao.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
-                <ul className="mt-2 text-xs text-gray-600 list-disc list-inside">
-                  {resultado.info.map((msg: string, i: number) => <li key={i}>{msg}</li>)}
-                </ul>
+                <div className="mt-6 text-xs text-[#b42121] text-center">
+                  Fonte: Diário da República / Portal ISV Gov.pt.  
+                  <a href="https://www2.gov.pt/servicos/tratar-do-imposto-de-um-veiculo-comprado-no-estrangeiro" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b42121] transition">Mais info</a>
+                </div>
               </div>
-            )}
-            <div className="mt-6 text-xs text-gray-500 text-center">
-              Fonte: Diário da República / Portal ISV Gov.pt.  
-              <a href="https://www2.gov.pt/servicos/tratar-do-imposto-de-um-veiculo-comprado-no-estrangeiro" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b42121] transition">Mais info</a>
             </div>
           </div>
-        </section>
+/* Add keyframes for spin animation */
+<style jsx global>{`
+@keyframes spin-slow { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+.animate-spin-slow { animation: spin-slow 0.7s cubic-bezier(.68,-0.55,.27,1.55); }
+`}</style>
+          </section>
+        </div>
       </MainLayout>
     </div>
   );
