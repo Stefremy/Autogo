@@ -88,79 +88,85 @@ export default function ComoFunciona() {
 
   return (
     <Layout>
-      <div className="relative w-full min-h-screen overflow-hidden">
-        {/* Video watermark background behind only the header */}
-        <div className="relative">
-          <div className="absolute inset-0 w-full h-32 md:h-40 overflow-hidden rounded-b-3xl z-0">
-            <video
-              className="w-full h-full object-cover opacity-30 blur-sm pointer-events-none"
-              src="/images/reboque.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-            <div className="absolute inset-0 bg-white/60" />
-          </div>
-          <div className="relative z-10 max-w-3xl mx-auto pt-12 pb-8 px-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#1a237e] drop-shadow-lg mb-4 flex items-center gap-2">
-              <span className="text-4xl md:text-5xl">🚗</span> Como Funciona a Importação de Viaturas na Autogo
-            </h1>
-            <hr className="mb-6 border-[#1a237e]/30" />
-          </div>
+      {/* VIDEO EDGE TO EDGE FULL HEIGHT */}
+      <div className="fixed inset-0 w-screen h-full z-0 pointer-events-none">
+        <video
+          className="w-full h-full object-cover object-center opacity-30 blur-sm"
+          src="/images/reboque.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        {/* Modern gradient overlay for depth and focus */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f5f6fa]/90 via-white/70 to-[#fff0f0]/90" />
+      </div>
+      <div className="relative z-10 max-w-5xl mx-auto text-center px-4 pt-40">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-black drop-shadow-xl mb-4 tracking-tight leading-tight">
+          Como Funciona a Importação de Viaturas na Autogo
+        </h1>
+        <p className="text-lg md:text-xl text-[#b42121] font-medium mb-2">Transparência, rapidez e segurança em cada etapa.</p>
+      </div>
+      <main className="relative z-20 max-w-3xl mx-auto py-8 px-6">
+        <div className="mb-8 text-lg text-black bg-[#fff0f0] rounded-xl px-4 py-2 font-semibold border border-[#d50032]/10 shadow-sm flex items-center gap-2 justify-center">
+          Veja os passos do processo de importação de viaturas.
         </div>
-        <main className="relative z-20 max-w-3xl mx-auto py-8 px-6">
-          <div className="mb-8 text-lg text-gray-800">Veja os passos do processo de importação de viaturas.</div>
-          <div className="flex flex-col gap-6">
-            {steps.map((step, i) => (
-              <div key={i} className="rounded-2xl shadow-lg border border-[#b42121]/10 bg-white/90 overflow-hidden transition-all">
-                <button
-                  className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group hover:bg-[#fbe9e9]/60 transition"
-                  onClick={() => setOpenStep(openStep === i ? null : i)}
-                  aria-expanded={openStep === i}
-                >
-                  <span className="flex items-center gap-3">
-                    <span className="inline-block w-8 h-8 rounded-full bg-[#b42121] text-white font-bold flex items-center justify-center text-lg shadow">{i+1}</span>
-                    <span className="font-semibold text-[#b42121] text-lg md:text-xl">{step.title}</span>
-                  </span>
-                  <span className="ml-4 text-[#b42121] text-2xl transition-transform duration-200 group-hover:scale-125">{openStep === i ? '−' : '+'}</span>
-                </button>
-                <div
-                  className={`px-6 pb-5 pt-0 text-gray-800 text-base transition-all duration-300 ease-in-out ${openStep === i ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
-                  style={{}}
-                >
-                  {step.content}
-                </div>
+        <div className="flex flex-col gap-6">
+          {steps.map((step, i) => (
+            <div key={i} className={
+              `rounded-2xl shadow-xl border border-[#d50032]/20 bg-white overflow-hidden transition-all group duration-200
+              ${openStep === i ? '' : 'hover:bg-[#d50032]/10'}`
+            }>
+              <button
+                className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none bg-transparent"
+                onClick={() => setOpenStep(openStep === i ? null : i)}
+                aria-expanded={openStep === i}
+              >
+                <span className="flex items-center gap-3">
+                  <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-br from-[#d50032] to-[#b42121] text-white font-bold flex items-center justify-center text-lg shadow-lg border-2 border-white group-hover:scale-110 transition-transform">{i+1}</span>
+                  <span className="font-semibold text-[#b42121] text-lg md:text-xl group-hover:text-[#d50032] transition-colors">{step.title}</span>
+                </span>
+                <span className="ml-4 text-[#d50032] text-2xl transition-transform duration-200 group-hover:scale-125">{openStep === i ? '−' : '+'}</span>
+              </button>
+              <div
+                className={`px-6 pb-5 pt-0 text-[#222] text-base transition-all duration-300 ease-in-out ${openStep === i ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+                style={{}}
+              >
+                {step.content}
               </div>
-            ))}
-          </div>
-
-          {/* Por que escolher a Autogo */}
-          <div className="mt-12 p-6 rounded-2xl bg-[#fbe9e9]/80 border border-[#b42121]/10 shadow flex flex-col gap-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl">👷</span>
-              <span className="font-bold text-[#b42121] text-xl">Por que escolher a Autogo</span>
             </div>
-            <ul className="list-disc list-inside ml-4 text-base text-[#b42121]">
-              <li><b>Stock pronto a reservar:</b> rapidez na disponibilidade, com prioridade para reservas antecipadas.</li>
-              <li><b>Importação personalizada:</b> viaturas sob medida, com inspeção prévia e validação documental rigorosa.</li>
-              <li><b>Processo “chave na mão”:</b> cuidamos de toda a logística, burocracia, inspeção e legalização – sem preocupações para ti.</li>
-              <li><b>Especialistas e parceiros:</b> conhecemos imícias sobre taxas e procedimentos aduaneiros, como o ISV, IVA, homologação e inspeções.</li>
-            </ul>
+          ))}
+        </div>
+        {/* Por que escolher a Autogo */}
+        <div className="mt-12 p-6 rounded-2xl bg-white border border-[#d50032]/10 shadow-lg flex flex-col gap-3">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="font-bold text-black text-xl tracking-tight">Por que escolher a Autogo</span>
           </div>
-
-          {/* Prazos estimados */}
-          <div className="mt-8 p-6 rounded-2xl bg-[#e3fcec]/80 border border-[#17826b]/10 shadow flex flex-col gap-3">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl">🕒</span>
-              <span className="font-bold text-[#17826b] text-xl">Prazos estimados</span>
-            </div>
-            <ul className="list-disc list-inside ml-4 text-base text-[#17826b]">
-              <li><b>Stock UE:</b> entre 1 a 2 semanas até entrega, após a chegada e inspeção.</li>
-              <li><b>Encomendas internacionais:</b> de 4 a 8 semanas, dependendo do transporte e nacionalização.</li>
-            </ul>
+          <ul className="list-disc list-inside ml-4 text-base text-black space-y-1">
+            <li><b>Stock pronto a reservar:</b> rapidez na disponibilidade, com prioridade para reservas antecipadas.</li>
+            <li><b>Importação personalizada:</b> viaturas sob medida, com inspeção prévia e validação documental rigorosa.</li>
+            <li><b>Processo “chave na mão”:</b> cuidamos de toda a logística, burocracia, inspeção e legalização – sem preocupações para ti.</li>
+            <li><b>Especialistas e parceiros:</b> conhecemos imícias sobre taxas e procedimentos aduaneiros, como o ISV, IVA, homologação e inspeções.</li>
+          </ul>
+        </div>
+        {/* Prazos estimados */}
+        <div className="mt-8 p-6 rounded-2xl bg-white border border-[#b42121]/10 shadow-lg flex flex-col gap-3">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="font-bold text-black text-xl tracking-tight">Prazos estimados</span>
           </div>
-        </main>
+          <ul className="list-disc list-inside ml-4 text-base text-black space-y-1">
+            <li><b>Stock UE:</b> entre 1 a 2 semanas até entrega, após a chegada e inspeção.</li>
+            <li><b>Encomendas internacionais:</b> de 4 a 8 semanas, dependendo do transporte e nacionalização.</li>
+          </ul>
+        </div>
+      </main>
+      <div className="w-screen relative left-1/2 right-1/2 -translate-x-1/2 z-10" style={{marginTop: '-2rem'}}>
+        {/* Decorative SVG red lines for visual interest, inspired by red_lines.png, edge-to-edge, NOT overlapping footer */}
+        <svg className="w-full h-16 md:h-24" viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 80 Q 360 40 720 80 T 1440 80" stroke="#d50032" strokeWidth="6" fill="none"/>
+          <path d="M0 92 Q 480 48 960 92 T 1440 92" stroke="#b42121" strokeWidth="3" fill="none"/>
+          <path d="M0 95 Q 720 60 1440 95" stroke="#d50032" strokeWidth="1.5" fill="none"/>
+        </svg>
       </div>
     </Layout>
   );
