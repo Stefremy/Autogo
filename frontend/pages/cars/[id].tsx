@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import cars from '../../data/cars.json';
 import Layout from '../../components/MainLayout';
 import { FaCalendarAlt, FaTachometerAlt, FaMoneyBillWave, FaGasPump, FaCogs, FaCarSide, FaDoorOpen, FaRoad, FaFlag, FaPalette, FaBolt, FaUsers, FaHashtag, FaGlobeEurope, FaRegCalendarCheck, FaLayerGroup, FaCloud, FaChevronDown, FaChevronUp, FaStar } from "react-icons/fa";
@@ -531,5 +532,26 @@ export default function CarDetail() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticPaths({ locales }) {
+  // You may want to generate paths for all cars and all locales
+  const cars = require('../../data/cars.json');
+  const paths = [];
+  for (const locale of locales) {
+    for (const car of cars) {
+      paths.push({ params: { id: String(car.id) }, locale });
+    }
+  }
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params, locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      id: params.id,
+    },
+  };
 }
 

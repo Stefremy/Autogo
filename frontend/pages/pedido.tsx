@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from "../components/MainLayout";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Pedido() {
   return (
@@ -12,3 +13,11 @@ export default function Pedido() {
       </main>
     </Layout>
   );}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

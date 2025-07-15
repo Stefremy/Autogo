@@ -5,6 +5,8 @@ import cars from '../data/cars.json';
 import CarCard from '../components/CarCard';
 import PremiumCarCard from '../components/PremiumCarCard';
 import { motion } from "framer-motion";
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 
 // Placeholder reviews - replace with real data or API integration
@@ -40,14 +42,15 @@ const googleReviews = [
 ];
 
 export default function Home() {
+  const { t } = useTranslation('common');
   return (
     <>
       <MainLayout>
         <Head>
-          <title>AutoGo.pt - Importação de Carros Europeus</title>
+          <title>{t('AutoGo.pt - Importação de Carros Europeus')}</title>
           <meta
             name="description"
-            content="O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações."
+            content={t('O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.')}
           />
         </Head>
 
@@ -101,7 +104,7 @@ export default function Home() {
               transition={{ delay: 0.2, duration: 0.7 }}
               className="text-neutral-50 text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-xl"
             >
-              Rápido. Seguro. Teu.
+              {t('Rápido. Seguro. Teu.')}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -109,25 +112,25 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.7 }}
               className="text-neutral-200 text-lg md:text-2xl mb-10 max-w-xl drop-shadow-lg"
             >
-              O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.
+              {t('O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.')}
             </motion.p>
             <div className="flex w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-2 items-center gap-3 mb-5 border border-white/30">
               <Link
                 href="/viaturas"
                 className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold px-8 py-3 text-lg rounded-xl shadow transition-all duration-200 whitespace-nowrap"
               >
-                Procurar viaturas
+                {t('Procurar viaturas')}
               </Link>
               <Link
                 href="/simulador"
                 className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold px-8 py-3 text-lg rounded-xl shadow transition-all duration-200 whitespace-nowrap"
               >
-                Simulador
+                {t('Simulador')}
               </Link>
             </div>
             <div className="ml-1 mb-1 flex items-center gap-2 cursor-pointer text-neutral-200 hover:text-[#b42121] font-medium text-base transition">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" className="inline mr-1 opacity-70" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="1.6" d="M4 6h16M7 12h10M10 18h4"></path></svg>
-              Filtros avançados
+              {t('Filtros avançados')}
             </div>
           </div>
         </motion.section>
@@ -140,21 +143,21 @@ export default function Home() {
                 {/* Importação Premium: Globe/Import icon */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.7"/><path d="M2 12h20M12 2c2.5 2.5 2.5 17.5 0 20M12 2c-2.5 2.5-2.5 17.5 0 20" stroke="currentColor" strokeWidth="1.7"/></svg>
               </span>
-              <span className="font-semibold text-gray-800 text-lg">Importação Premium</span>
+              <span className="font-semibold text-gray-800 text-lg">{t('Importação Premium')}</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="bg-green-600 text-white rounded-full p-2 shadow-lg">
                 {/* Garantia Incluída: Shield/Check icon */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z" stroke="currentColor" strokeWidth="1.7"/><path d="M9.5 13l2 2 3-3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </span>
-              <span className="font-semibold text-gray-800 text-lg">Garantia Incluída</span>
+              <span className="font-semibold text-gray-800 text-lg">{t('Garantia Incluída')}</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="bg-blue-700 text-white rounded-full p-2 shadow-lg">
                 {/* Entrega em Todo o País: Delivery/Truck icon */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="10" rx="2" stroke="currentColor" strokeWidth="1.7"/><path d="M16 13h2.28a2 2 0 0 1 1.79 1.11l1.43 2.86A1 1 0 0 1 20.66 18H19a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3" stroke="currentColor" strokeWidth="1.7"/></svg>
               </span>
-              <span className="font-semibold text-gray-800 text-lg">Entrega em Todo o País</span>
+              <span className="font-semibold text-gray-800 text-lg">{t('Entrega em Todo o País')}</span>
             </div>
           </div>
         </section>
@@ -180,46 +183,46 @@ export default function Home() {
               transition={{ duration: 0.7 }}
               className="text-4xl md:text-5xl font-extrabold text-black mb-8 tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
             >
-              Como Funciona
+              {t('Como Funciona')}
             </motion.h2>
             <div className="flex justify-center gap-4 mb-10">
-              <span className="px-6 py-3 rounded-2xl bg-red-600 text-white text-lg font-semibold shadow-lg transition hover:scale-105">Simples</span>
-              <span className="px-6 py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">Transparente</span>
-              <span className="px-6 py-3 rounded-2xl bg-green-600 text-white text-lg font-semibold shadow-lg transition hover:scale-105">Rápido</span>
+              <span className="px-6 py-3 rounded-2xl bg-red-600 text-white text-lg font-semibold shadow-lg transition hover:scale-105">{t('Simples')}</span>
+              <span className="px-6 py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">{t('Transparente')}</span>
+              <span className="px-6 py-3 rounded-2xl bg-green-600 text-white text-lg font-semibold shadow-lg transition hover:scale-105">{t('Rápido')}</span>
             </div>
             <p className="text-2xl text-gray-800 mb-16 font-medium drop-shadow">
-              Importa o teu carro europeu sem stress — só precisas de escolher, simular e pedir.<br />
-              <span className="font-bold">Nós tratamos do resto!</span>
+              {t('Importa o teu carro europeu sem stress — só precisas de escolher, simular e pedir.')}<br />
+              <span className="font-bold">{t('Nós tratamos do resto!')}</span>
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white/95 rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-red-600 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
                 <div className="mb-3 text-3xl font-bold text-red-600">1</div>
-                <div className="font-semibold text-xl mb-2 text-gray-900">Escolhe o carro</div>
+                <div className="font-semibold text-xl mb-2 text-gray-900">{t('Escolhe o carro')}</div>
                 <p className="text-gray-600 mb-4 text-base">
-                  Seleciona entre dezenas de viaturas disponíveis ou pede uma pesquisa personalizada.
+                  {t('Seleciona entre dezenas de viaturas disponíveis ou pede uma pesquisa personalizada.')}
                 </p>
                 <Link href="/viaturas" className="mt-auto text-red-600 font-semibold hover:underline transition transform hover:scale-110 hover:text-white hover:bg-red-600 px-6 py-2 rounded-lg shadow">
-                  Ver Viaturas
+                  {t('Ver Viaturas')}
                 </Link>
               </div>
               <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
                 <div className="mb-3 text-3xl font-bold text-gray-800">2</div>
-                <div className="font-semibold text-xl mb-2 text-gray-900">Simula custos</div>
+                <div className="font-semibold text-xl mb-2 text-gray-900">{t('Simula custos')}</div>
                 <p className="text-gray-600 mb-4 text-base">
-                  Usa o nosso simulador para saber quanto vais pagar, sem surpresas.
+                  {t('Usa o nosso simulador para saber quanto vais pagar, sem surpresas.')}
                 </p>
                 <Link href="/simulador" className="mt-auto text-gray-900 font-semibold hover:underline transition transform hover:scale-110 hover:text-white hover:bg-gray-800 px-6 py-2 rounded-lg shadow">
-                  Simular ISV
+                  {t('Simular ISV')}
                 </Link>
               </div>
               <div className="bg-white/95 rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-green-600 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
                 <div className="mb-3 text-3xl font-bold text-green-600">3</div>
-                <div className="font-semibold text-xl mb-2 text-gray-900">Importação e entrega</div>
+                <div className="font-semibold text-xl mb-2 text-gray-900">{t('Importação e entrega')}</div>
                 <p className="text-gray-600 mb-4 text-base">
-                  Cuidamos de todo o processo legal e entregamos o carro pronto a rolar.
+                  {t('Cuidamos de todo o processo legal e entregamos o carro pronto a rolar.')}
                 </p>
                 <Link href="/pedido" className="mt-auto text-green-600 font-semibold hover:underline transition transform hover:scale-110 hover:text-white hover:bg-green-600 px-6 py-2 rounded-lg shadow">
-                  Fazer Pedido
+                  {t('Encomendar')}
                 </Link>
               </div>
             </div>
@@ -413,4 +416,12 @@ export default function Home() {
       </MainLayout>
     </>
   );
+}
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }

@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer
       className="w-full bg-[#f5f6fa] text-[#22223b] pt-12 pb-6 px-4 mt-16 shadow-2xl border-t-4 border-[#b42121]/20 relative overflow-hidden"
@@ -10,7 +12,7 @@ export default function Footer() {
       <div className="absolute inset-0 w-full h-full z-0">
         <img
           src="/images/giuliadisc.avif"
-          alt="Footer Background"
+          alt={t('Footer Background', 'Footer Background')}
           className="w-full h-full object-cover object-center opacity-40"
           style={{ minHeight: '100%', minWidth: '100%' }}
         />
@@ -19,37 +21,37 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-[#b42121]/10 pb-10 relative z-10">
         <div>
           <h3 className="text-xl font-bold mb-3 text-[#b42121] drop-shadow-xl">AutoGo.pt</h3>
-          <p className="text-xl text-gray-700 mb-4">Importação premium de viaturas europeias, legalizadas e prontas a rolar em Portugal.</p>
+          <p className="text-xl text-gray-700 mb-4">{t('Importação premium de viaturas europeias, legalizadas e prontas a rolar em Portugal.')}</p>
           <img src="/images/auto-logonb.png" alt="AutoGo.pt" className="w-52 mb-2 drop-shadow-lg mt-0" />
         </div>
         <div>
-          <h4 className="text-lg font-semibold mb-2">Navegação</h4>
+          <h4 className="text-lg font-semibold mb-2">{t('Navegação')}</h4>
           <ul className="space-y-1 text-gray-700">
-            <li><Link href="/" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">Início</Link></li>
-            <li><Link href="/viaturas" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">Viaturas</Link></li>
-            <li><Link href="/simulador" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">Simulador ISV</Link></li>
-            <li><Link href="/como-funciona" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">Como Funciona</Link></li>
-            <li><Link href="/pedido" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">Pedido</Link></li>
-            <li><Link href="/blog" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">Blog</Link></li>
-            <li><Link href="/contacto" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">Contacto</Link></li>
+            <li><Link href="/" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">{t('Início')}</Link></li>
+            <li><Link href="/viaturas" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">{t('Viaturas')}</Link></li>
+            <li><Link href="/simulador" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">{t('Simulador ISV')}</Link></li>
+            <li><Link href="/como-funciona" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">{t('Como Funciona')}</Link></li>
+            <li><Link href="/pedido" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">{t('Encomendar')}</Link></li>
+            <li><Link href="/blog" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">{t('Blog')}</Link></li>
+            <li><Link href="/contacto" className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">{t('Contacto')}</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-lg font-semibold mb-2">Serviços</h4>
+          <h4 className="text-lg font-semibold mb-2">{t('Serviços')}</h4>
           <ul className="space-y-1 text-gray-700">
-            <li>Importação de carros</li>
-            <li>Legalização e documentação</li>
-            <li>Simulação de ISV</li>
-            <li>Entrega em todo o país</li>
-            <li>Garantia incluída</li>
+            <li>{t('Importação de carros')}</li>
+            <li>{t('Legalização e documentação')}</li>
+            <li>{t('Simulação de ISV')}</li>
+            <li>{t('Entrega em todo o país')}</li>
+            <li>{t('Garantia incluída')}</li>
           </ul>
         </div>
         <div>
-          <h4 className="text-lg font-semibold mb-2">Contactos</h4>
+          <h4 className="text-lg font-semibold mb-2">{t('Contactos')}</h4>
           <ul className="space-y-1 text-gray-700">
-            <li>Email: <a href="mailto:info@autogo.pt" className="underline hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">info@autogo.pt</a></li>
-            <li>Telefone: <a href="tel:+351912345678" className="underline hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">+351 912 345 678</a></li>
-            <li>Morada: Lisboa, Portugal</li>
+            <li>{t('Email')}: <a href="mailto:info@autogo.pt" className="underline hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">info@autogo.pt</a></li>
+            <li>{t('Telefone')}: <a href="tel:+351912345678" className="underline hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">+351 912 345 678</a></li>
+            <li>{t('Morada')}: Lisboa, Portugal</li>
           </ul>
           <div className="flex space-x-4 mt-4">
             <a href="https://wa.me/351912345678" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:scale-110 transition-transform">
@@ -73,8 +75,8 @@ export default function Footer() {
       <div
         className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-6 text-sm text-gray-500 relative z-10"
       >
-        <span>&copy; {new Date().getFullYear()} AutoGo.pt. Todos os direitos reservados.</span>
-        <span className="mt-2 md:mt-0">Desenvolvido com paixão em Portugal.</span>
+        <span>&copy; {new Date().getFullYear()} AutoGo.pt. {t('Todos os direitos reservados.')}</span>
+        <span className="mt-2 md:mt-0">{t('Desenvolvido com paixão em Portugal.')}</span>
       </div>
     </footer>
   );

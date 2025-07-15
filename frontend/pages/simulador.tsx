@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import MainLayout from "../components/MainLayout";
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 // Tabelas ISV Diário da República
 const TABELA_CILINDRADA_A = [
@@ -145,7 +147,16 @@ function descontoIdade(ano) {
   return 0.80;
 }
 
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
 export default function Simulador() {
+  const { t } = useTranslation('common');
   // State to toggle simulator card visibility
   const [simulatorOpen, setSimulatorOpen] = useState(true);
   const [logoAnim, setLogoAnim] = useState(false);
@@ -283,13 +294,13 @@ Number(form.co2)
           <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-8 px-12 bg-transparent">
           {/* Info block */}
           <div className="w-full max-w-3xl mb-10 lg:mb-0 pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left z-10">
-            <h3 className="text-3xl font-bold text-[#b42121] mb-6 leading-tight">Simule o ISV da sua viatura em segundos!</h3>
-            <p className="mb-4 text-lg font-bold">Poupe tempo e evite surpresas, recorrendo à nossa experiência técnica.</p>
-            <p className="mb-4 text-lg">O nosso simulador de ISV (Imposto Sobre Veículos) é a ferramenta mais prática e fiável para calcular o custo de legalização de um veículo importado.<br />
-            Basta introduzir os dados essenciais da viatura e rapidamente obtém uma estimativa precisa do imposto a pagar.</p>
-            <p className="mb-4 text-lg">Para um cálculo exato, vai precisar de alguns elementos da viatura — caso tenha dúvidas, pode contactar-nos por email e esclarecemos como usar o simulador.</p>
-            <p className="mb-4 font-semibold text-[#b42121] text-lg">Dica AutoGo: <span className="font-normal text-black">Utilize sempre o simulador com todos os dados da viatura que pretende importar. Assim garante total transparência e evita custos inesperados.</span></p>
-            <p className="text-lg">Conte connosco para o apoiar em todo o processo e tornar o seu negócio de importação ainda mais simples e seguro!</p>
+            <h3 className="text-3xl font-bold text-[#b42121] mb-6 leading-tight">{t('Simule o ISV da sua viatura em segundos!')}</h3>
+            <p className="mb-4 text-lg font-bold">{t('Poupe tempo e evite surpresas, recorrendo à nossa experiência técnica.')}</p>
+            <p className="mb-4 text-lg">{t('O nosso simulador de ISV (Imposto Sobre Veículos) é a ferramenta mais prática e fiável para calcular o custo de legalização de um veículo importado.')}<br />
+            {t('Basta introduzir os dados essenciais da viatura e rapidamente obtém uma estimativa precisa do imposto a pagar.')}</p>
+            <p className="mb-4 text-lg">{t('Para um cálculo exato, vai precisar de alguns elementos da viatura — caso tenha dúvidas, pode contactar-nos por email e esclarecemos como usar o simulador.')}</p>
+            <p className="mb-4 font-semibold text-[#b42121] text-lg">{t('Dica AutoGo:')} <span className="font-normal text-black">{t('Utilize sempre o simulador com todos os dados da viatura que pretende importar. Assim garante total transparência e evita custos inesperados.')}</span></p>
+            <p className="text-lg">{t('Conte connosco para o apoiar em todo o processo e tornar o seu negócio de importação ainda mais simples e seguro!')}</p>
             <div className="relative w-full flex items-center mt-6">
               {/* 3 horizontal, thick, long CSS red stripes behind car */}
               <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 pointer-events-none" style={{zIndex:0, height:'100%'}}>
@@ -338,20 +349,20 @@ Number(form.co2)
                 >
                   {/* ...existing form fields... */}
                   <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-[#b42121]">Tipo de veículo</label>
+                    <label className="font-semibold text-[#b42121]">{t('Tipo de veículo')}</label>
                     <select name="tipo" value={form.tipo} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
                       <option value="passageiro">Passageiro / Misto</option>
                       <option value="comercial">Comercial / Autocaravana / &lt;1970</option>
                     </select>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-[#b42121]">Cilindrada (cm³)</label>
+                    <label className="font-semibold text-[#b42121]">{t('Cilindrada (cm³)')}</label>
                     <input name="cilindrada" type="number" value={form.cilindrada} onChange={handleChange} required className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
                   </div>
                   {form.tipo === "passageiro" && (
                     <>
                       <div className="flex flex-col gap-1">
-                        <label className="font-semibold text-[#b42121]">Combustível</label>
+                        <label className="font-semibold text-[#b42121]">{t('Combustível')}</label>
                         <select name="combustivel" value={form.combustivel} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
                           <option value="gasolina">Gasolina</option>
                           <option value="gpl">GPL</option>
@@ -360,21 +371,21 @@ Number(form.co2)
                         </select>
                       </div>
                       <div className="flex flex-col gap-1">
-                        <label className="font-semibold text-[#b42121]">Norma de homologação</label>
+                        <label className="font-semibold text-[#b42121]">{t('Norma de homologação')}</label>
                         <select name="norma" value={form.norma} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
                           <option value="wltp">WLTP</option>
                           <option value="nedc">NEDC</option>
                         </select>
                       </div>
                       <div className="flex flex-col gap-1">
-                        <label className="font-semibold text-[#b42121]">Emissões CO₂ (g/km)</label>
+                        <label className="font-semibold text-[#b42121]">{t('Emissões CO₂ (g/km)')}</label>
                         <input name="co2" type="number" value={form.co2} onChange={handleChange} required className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
                       </div>
                     </>
                   )}
                   {form.combustivel === "diesel" && form.tipo === "passageiro" && (
                     <div className="flex flex-col gap-1">
-                      <label className="font-semibold text-[#b42121]">Emite partículas &gt;0,001g/km?</label>
+                      <label className="font-semibold text-[#b42121]">{t('Emite partículas &gt;0,001g/km?')}</label>
                       <select name="particulas" value={form.particulas} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
                         <option value="nao">Não</option>
                         <option value="sim">Sim</option>
@@ -382,7 +393,7 @@ Number(form.co2)
                     </div>
                   )}
                   <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-[#b42121]">Ano da 1ª matrícula (UE)</label>
+                    <label className="font-semibold text-[#b42121]">{t('Ano da 1ª matrícula (UE)')}</label>
                     <div className="flex gap-2">
                       <select name="dia" value={form.dia} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/4 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" required>
                         <option value="">Dia</option>
@@ -401,7 +412,7 @@ Number(form.co2)
                     {erroData && <div className="text-red-600 text-sm mt-1">{erroData}</div>}
                   </div>
                   <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-[#b42121]">Veículo usado?</label>
+                    <label className="font-semibold text-[#b42121]">{t('Veículo usado?')}</label>
                     <select name="usado" value={form.usado} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
                       <option value="nao">Não</option>
                       <option value="sim">Sim</option>
@@ -409,34 +420,34 @@ Number(form.co2)
                   </div>
                   {/* Anos de uso completos omitido da tabela, mas continua a ser calculado automaticamente */}
                   <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-[#b42121]">Taxa intermédia</label>
+                    <label className="font-semibold text-[#b42121]">{t('Taxa intermédia')}</label>
                     <select name="taxaIntermedia" value={form.taxaIntermedia} onChange={handleChange} className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm mb-2">
-                      <option value="">Nenhuma (normal)</option>
+                      <option value="">{t('Nenhuma (normal)')}</option>
                       {TAXAS_INTERMEDIAS.map(t => (
                         <option key={t.key} value={t.key}>{t.label}</option>
                       ))}
                     </select>
                   </div>
-                  <button type="submit" className="bg-[#b42121] text-white rounded-full py-3 px-8 font-bold text-lg shadow-lg hover:bg-[#a11a1a] hover:scale-105 transition-all duration-200 mt-2">Calcular ISV</button>
+                  <button type="submit" className="bg-[#b42121] text-white rounded-full py-3 px-8 font-bold text-lg shadow-lg hover:bg-[#a11a1a] hover:scale-105 transition-all duration-200 mt-2">{t('Calcular ISV')}</button>
                 </form>
                 {resultado && (
                   <div className="mt-8 p-6 bg-[#f5f6fa] rounded-2xl shadow-inner border border-[#b42121]/10 animate-fade-in w-full">
-                    <h3 className="text-xl font-semibold mb-2 text-[#b42121]">Resultado</h3>
-                    <p><b>Cilindrada:</b> {resultado.isvCilindrada.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                    <h3 className="text-xl font-semibold mb-2 text-[#b42121]">{t('Resultado')}</h3>
+                    <p><b>{t('Cilindrada')}:</b> {resultado.isvCilindrada.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
                     {form.tipo === "passageiro" && (
-                      <p><b>Ambiental:</b> {resultado.isvAmbiental.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                      <p><b>{t('Ambiental')}:</b> {resultado.isvAmbiental.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
                     )}
-                    <p><b>ISV bruto:</b> {resultado.isvBruto.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
-                    <p><b>ISV final (após reduções e taxas):</b> <span className="text-[#17826b] text-[#b42121] font-bold">{resultado.isvFinal.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</span></p>
-                    <p><b>Legalização/documentos:</b> {resultado.legalizacao.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                    <p><b>{t('ISV bruto')}:</b> {resultado.isvBruto.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
+                    <p><b>{t('ISV final (após reduções e taxas)')}:</b> <span className="text-[#17826b] text-[#b42121] font-bold">{resultado.isvFinal.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</span></p>
+                    <p><b>{t('Legalização/documentos')}:</b> {resultado.legalizacao.toLocaleString("pt-PT", { style: "currency", currency: "EUR" })}</p>
                     <ul className="mt-2 text-xs text-[#b42121] list-disc list-inside">
                       {resultado.info.map((msg: string, i: number) => <li key={i}>{msg}</li>)}
                     </ul>
                   </div>
                 )}
                 <div className="mt-6 text-xs text-[#b42121] text-center">
-                  Fonte: Diário da República / Portal ISV Gov.pt.  
-                  <a href="https://www2.gov.pt/servicos/tratar-do-imposto-de-um-veiculo-comprado-no-estrangeiro" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b42121] transition">Mais info</a>
+                  {t('Fonte')}: Diário da República / Portal ISV Gov.pt.  
+                  <a href="https://www2.gov.pt/servicos/tratar-do-imposto-de-um-veiculo-comprado-no-estrangeiro" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#b42121] transition">{t('Mais info')}</a>
                 </div>
               </div>
             </div>

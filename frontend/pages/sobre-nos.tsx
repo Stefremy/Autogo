@@ -1,5 +1,6 @@
 import React from 'react';
 import MainLayout from "../components/MainLayout";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function SobreNos() {
   return (
@@ -14,3 +15,11 @@ export default function SobreNos() {
       </main>
     </MainLayout>
   );}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

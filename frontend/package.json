@@ -13,10 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "framer-motion": "^12.19.1",
+    "i18next": "^25.3.2",
     "jspdf": "^3.0.1",
     "next": "^15.4.1",
+    "next-i18next": "^15.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.1.0",
+    "react-i18next": "^15.6.0",
     "react-icons": "^5.5.0",
     "react-medium-image-zoom": "^5.2.14",
     "sass": "^1.89.2",

@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from "../components/MainLayout";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function ComoFunciona() {
   const [openStep, setOpenStep] = React.useState<number | null>(null);
@@ -170,4 +171,12 @@ export default function ComoFunciona() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }
