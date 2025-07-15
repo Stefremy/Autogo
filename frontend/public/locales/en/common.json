@@ -35,5 +35,55 @@
   "Para um cálculo exato, vai precisar de alguns elementos da viatura — caso tenha dúvidas, pode contactar-nos por email e esclarecemos como usar o simulador.": "For an exact calculation, you'll need some car details — if in doubt, contact us by email and we'll explain how to use the simulator.",
   "Dica AutoGo:": "AutoGo Tip:",
   "Utilize sempre o simulador com todos os dados da viatura que pretende importar. Assim garante total transparência e evita custos inesperados.": "Always use the simulator with all the details of the car you want to import. This ensures full transparency and avoids unexpected costs.",
-  "Conte connosco para o apoiar em todo o processo e tornar o seu negócio de importação ainda mais simples e seguro!": "Count on us to support you throughout the process and make your import experience even simpler and safer!"
+  "Conte connosco para o apoiar em todo o processo e tornar o seu negócio de importação ainda mais simples e seguro!": "Count on us to support you throughout the process and make your import experience even simpler and safer!",
+  "Viaturas Disponíveis": "Available Cars",
+  "Marca": "Brand",
+  "Modelo": "Model",
+  "Dia": "Day",
+  "Mês": "Month",
+  "Ano": "Year",
+  "Máx. KM": "Max. KM",
+  "Filtrar": "Filter",
+  "Limpar Filtros": "Clear Filters",
+  "Fechar": "Close",
+  "Ver detalhes": "View details",
+  "Abrir simulador ISV": "Open ISV simulator",
+  "Fechar simulador": "Close ISV simulator",
+  "ComoFunciona_Titulo": "How Car Import Works at Autogo",
+  "ComoFunciona_Subtitulo": "Transparency, speed and safety at every step.",
+  "ComoFunciona_Intro": "See the steps of the car import process.",
+  "ComoFunciona_Steps": [
+    {
+      "title": "Stock Vehicles & Pre-selection",
+      "content": "Autogo maintains a stock of imported vehicles, carefully selected from the main EU markets (such as Germany, France, Belgium and the Netherlands) or even outside the EU, depending on availability and interest. Any vehicle in stock can be reserved immediately, ensuring priority in shipping."
+    },
+    {
+      "title": "Custom Vehicle Orders",
+      "content": "If you are looking for a specific model, new version or limited edition, Autogo can handle the import by order directly from the supplier: We search and validate the vehicle with the supplier (dealer or sales platform). We confirm all details: make, model, year, mileage and documentation status (including the Certificate of Conformity – COC). After validation, we reserve the vehicle and start the purchase process."
+    },
+    {
+      "title": "Transport & Logistics",
+      "content": "After purchase, the vehicle is sent to Portugal using methods adapted to its origin: Within the EU, transport is faster and without additional taxes. Outside the EU, maritime transport is used (Ro-Ro or container), including insurance and customs clearance."
+    },
+    {
+      "title": "Documentation & Legalization in Portugal",
+      "content": "Customs Registration (DAV): Vehicle Customs Declaration (DAV) on the Finance Portal, allows temporary circulation. Deadline: 20 days after arrival. Technical Inspection (IPO/Inspection B): Mandatory for vehicles >4 years old. The vehicle is inspected and receives the Model 112 Certificate. COC Homologation: The Certificate of Conformity is homologated at IMT to ensure technical compliance with the vehicle. Payment of Taxes (ISV, VAT and IUC): Depending on the origin, model and age of the vehicle, ISV, VAT (23%) and, later, the Single Circulation Tax (IUC) are paid. Issuance of Portuguese Registration and DUA: After IMT approval and payment of taxes, the national registration and the Single Automobile Document (DUA) are requested."
+    },
+    {
+      "title": "Delivery to the Client",
+      "content": "Autogo delivers the vehicle anywhere in the country, already registered in Portugal, with all documents and insurance included."
+    }
+  ],
+  "ComoFunciona_PorqueAutogo": "Why choose Autogo",
+  "ComoFunciona_PorqueAutogo_Lista": [
+    "Ready-to-reserve stock: fast availability, with priority for early reservations.",
+    "Custom import: tailor-made vehicles, with prior inspection and strict document validation.",
+    "Turnkey process: we handle all logistics, bureaucracy, inspection and legalization – no worries for you.",
+    "Specialists and partners: we know all about taxes and customs procedures, such as ISV, VAT, homologation and inspections."
+  ],
+  "ComoFunciona_PrazosTitulo": "Estimated deadlines",
+  "ComoFunciona_PrazosLista": [
+    "EU stock: between 1 to 2 weeks until delivery, after arrival and inspection.",
+    "International orders: 4 to 8 weeks, depending on transport and nationalization."
+  ]
 }

@@ -1,4 +1,3 @@
-
 import MainLayout from '../components/MainLayout';
 import cars from '../data/cars.json';
 import Link from 'next/link';
@@ -6,8 +5,11 @@ import styles from '../components/PremiumCarCard.module.css';
 import React, { useState } from 'react';
 import { FaCarSide, FaCalendarAlt, FaTachometerAlt, FaSearch } from 'react-icons/fa';
 import SimuladorTabela from '../components/SimuladorTabela';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Viaturas() {
+  const { t } = useTranslation('common');
   const [marca, setMarca] = useState('');
   const [modelo, setModelo] = useState('');
   const [ano, setAno] = useState('');
@@ -42,7 +44,7 @@ export default function Viaturas() {
         <section className="w-full px-0 py-12 bg-transparent">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10 gap-4">
             <h1 className="text-4xl font-extrabold text-center sm:text-left text-black" style={{color:'#000', fontWeight:900, zIndex:10, position:'relative'}}>
-              Viaturas Disponíveis
+              {t('Viaturas Disponíveis')}
             </h1>
             <div className="flex gap-2 justify-center sm:justify-end">
               <style jsx>{`
@@ -58,7 +60,7 @@ export default function Viaturas() {
                 onMouseOver={e => e.currentTarget.style.background = 'rgba(213, 80, 80, 1)'}
                 onMouseOut={e => e.currentTarget.style.background = 'rgba(213, 80, 80, 0.85)'}
               >
-                Encomendar
+                {t('Encomendar')}
               </Link>
             </div>
           </div>
@@ -67,35 +69,35 @@ export default function Viaturas() {
           <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
             <FaCarSide className="text-[#b42121] text-lg" />
             <select value={marca} onChange={e => { setMarca(e.target.value); setModelo(''); }} className="bg-transparent outline-none border-none text-base">
-              <option value="">Marca</option>
+              <option value="">{t('Marca')}</option>
               {marcas.map(m => <option key={m} value={m}>{m}</option>)}
             </select>
           </div>
           <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
             <FaSearch className="text-[#b42121] text-lg" />
             <select value={modelo} onChange={e => setModelo(e.target.value)} className="bg-transparent outline-none border-none text-base">
-              <option value="">Modelo</option>
+              <option value="">{t('Modelo')}</option>
               {modelos.map(m => <option key={m} value={m}>{m}</option>)}
             </select>
           </div>
           <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
             <FaCalendarAlt className="text-[#b42121] text-lg" />
             <select value={dia} onChange={e => setDia(e.target.value)} className="bg-transparent outline-none border-none text-base w-16">
-              <option value="">Dia</option>
+              <option value="">{t('Dia')}</option>
               {dias.map(d => <option key={d} value={d}>{d}</option>)}
             </select>
             <select value={mes} onChange={e => setMes(e.target.value)} className="bg-transparent outline-none border-none text-base w-20">
-              <option value="">Mês</option>
+              <option value="">{t('Mês')}</option>
               {meses.map(m => <option key={m} value={m}>{m.toString().padStart(2, '0')}</option>)}
             </select>
             <select value={ano} onChange={e => setAno(e.target.value)} className="bg-transparent outline-none border-none text-base w-24">
-              <option value="">Ano</option>
+              <option value="">{t('Ano')}</option>
               {anos.map(a => <option key={a} value={a}>{a}</option>)}
             </select>
           </div>
           <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
             <FaTachometerAlt className="text-[#b42121] text-lg" />
-            <input type="number" min="0" value={km} onChange={e => setKm(e.target.value)} placeholder="Máx. KM" className="bg-transparent outline-none border-none text-base w-24" />
+            <input type="number" min="0" value={km} onChange={e => setKm(e.target.value)} placeholder={t('Máx. KM')} className="bg-transparent outline-none border-none text-base w-24" />
           </div>
           <button
             className="flex items-center gap-2 rounded-xl px-6 py-2 font-bold shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
@@ -104,14 +106,14 @@ export default function Viaturas() {
             onMouseOut={e => e.currentTarget.style.background = 'rgba(213, 80, 80, 0.85)'}
           >
             <FaSearch />
-            Filtrar
+            {t('Filtrar')}
           </button>
           <button
             type="button"
             onClick={() => { setMarca(''); setModelo(''); setAno(''); setMes(''); setDia(''); setKm(''); }}
             className="flex items-center gap-2 bg-white border border-[#b42121]/30 text-[#b42121] rounded-xl px-6 py-2 font-bold shadow transition-all duration-200 hover:bg-[#b42121] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 focus:ring-offset-2"
           >
-            Limpar Filtros
+            {t('Limpar Filtros')}
           </button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10">
@@ -145,7 +147,7 @@ export default function Viaturas() {
                   <dialog key={idx} id={`modal-img-${car.id}-${idx}`} className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full">
                     <div className="flex flex-col items-center">
                       <img src={img} alt="Foto expandida" className="max-h-[80vh] w-auto rounded-xl shadow-lg" />
-                      <button onClick={e => (e.currentTarget.closest('dialog') as HTMLDialogElement)?.close()} className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition">Fechar</button>
+                      <button onClick={e => (e.currentTarget.closest('dialog') as HTMLDialogElement)?.close()} className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition">{t('Fechar')}</button>
                     </div>
                   </dialog>
                 ))}
@@ -182,7 +184,7 @@ export default function Viaturas() {
                   onMouseOver={e => e.currentTarget.style.background = 'rgba(213, 80, 80, 0.85)'}
                   onMouseOut={e => e.currentTarget.style.background = 'rgba(213, 80, 80, 0.85)'}
                 >
-                  Ver detalhes
+                  {t('Ver detalhes')}
                 </Link>
               </div>
             </div>
@@ -196,9 +198,9 @@ export default function Viaturas() {
         onClick={() => setShowSimulador(true)}
         className="fixed bottom-6 right-6 z-50 bg-white rounded-full shadow-xl border-4 border-white p-2 hover:scale-110 transition-all"
         style={{ width: 70, height: 70, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-        aria-label="Abrir simulador ISV"
+        aria-label={t('Abrir simulador ISV')}
       >
-        <img src="/images/auto-logo.png" alt="Abrir simulador ISV" className="w-12 h-12 object-contain" />
+        <img src="/images/auto-logo.png" alt={t('Abrir simulador ISV')} className="w-12 h-12 object-contain" />
       </button>
 
       {/* Drawer do simulador */}
@@ -210,11 +212,11 @@ export default function Viaturas() {
           <button
             onClick={() => setShowSimulador(false)}
             className="absolute top-3 right-4 text-[#b42121] text-2xl font-bold hover:scale-125 transition"
-            aria-label="Fechar simulador"
+            aria-label={t('Fechar simulador')}
           >
             ×
           </button>
-          <h2 className="text-xl font-bold mb-2 text-[#b42121]">Simulador ISV</h2>
+          <h2 className="text-xl font-bold mb-2 text-[#b42121]">{t('Simulador ISV')}</h2>
           {/* Simulador ISV compacto (apenas tabela) */}
           <div className="w-full">
             <SimuladorTabela />
@@ -223,4 +225,12 @@ export default function Viaturas() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }

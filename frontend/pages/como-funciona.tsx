@@ -1,91 +1,14 @@
 import React from 'react';
 import Layout from "../components/MainLayout";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 export default function ComoFunciona() {
+  const { t } = useTranslation('common');
   const [openStep, setOpenStep] = React.useState<number | null>(null);
-  const steps = [
-    {
-      title: 'Veículos em Stock e Pré-seleção',
-      content: (
-        <>
-          <p>A Autogo mantém um <b>stock de viaturas importadas</b>, criteriosamente selecionadas nos principais mercados da UE (como Alemanha, França, Bélgica e Holanda) ou até fora da UE, conforme a disponibilidade e interesse. Qualquer veículo em stock pode ser <b>reservado de imediato</b>, garantindo prioridade no envio.</p>
-        </>
-      ),
-    },
-    {
-      title: 'Reserva de Viaturas “à Medida”',
-      content: (
-        <>
-          <p>Se procuras um modelo específico, nova versão ou versão limitada, a Autogo pode tratar da importação por encomenda diretamente ao fornecedor:</p>
-          <ul className="list-disc list-inside ml-4 mt-2">
-            <li>Procuramos e validamos o veículo junto do fornecedor (concessionário ou plataforma de vendas).</li>
-            <li>Confirmamos todos os detalhes: make, modelo, ano, quilometragem e estado documental (incluindo o Certificado de Conformidade – COC).</li>
-            <li>Após validação, reservamos o veículo e iniciamos o processo de compra.</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: 'Transporte e Logística',
-      content: (
-        <>
-          <p>Depois da compra, o veículo é enviado para Portugal utilizando métodos adaptados à origem:</p>
-          <ul className="list-disc list-inside ml-4 mt-2">
-            <li><b>Dentro da UE</b>, o transporte é mais rápido e sem taxas adicionais.</li>
-            <li><b>Fora da UE</b>, utiliza-se transporte marítimo (Ro‑Ro ou contentor), incluindo seguros e desembaraço aduaneiro.</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: 'Documentação e Legalização em Portugal',
-      content: (
-        <>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border border-[#b42121]/20 rounded-xl mb-2">
-              <thead>
-                <tr className="bg-[#fbe9e9] text-[#b42121]">
-                  <th className="p-2 text-left">Fase</th>
-                  <th className="p-2 text-left">O que acontece</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-[#b42121]/10">
-                  <td className="p-2 font-semibold">Registo Aduaneiro (DAV)</td>
-                  <td className="p-2">Declaração Aduaneira de Veículos (DAV) no Portal das Finanças, habilita circulação temporária. <b>Prazo: 20 dias após chegada</b></td>
-                </tr>
-                <tr className="border-b border-[#b42121]/10">
-                  <td className="p-2 font-semibold">Inspeção Técnica (IPO/Inspeção B)</td>
-                  <td className="p-2">Obrigatória em veículos &gt;4 anos. O veículo é inspecionado e recebe o Certificado Modelo 112.</td>
-                </tr>
-                <tr className="border-b border-[#b42121]/10">
-                  <td className="p-2 font-semibold">Homologação do COC</td>
-                  <td className="p-2">O Certificado de Conformidade é homologado no IMT para garantir conformidade técnica com o veículo.</td>
-                </tr>
-                <tr className="border-b border-[#b42121]/10">
-                  <td className="p-2 font-semibold">Pagamento de Impostos (ISV, IVA e IUC)</td>
-                  <td className="p-2">Dependendo da origem, modelo e idade do veículo, pagam-se o ISV, o IVA (23%) e, posteriormente, o Imposto Único de Circulação (IUC).</td>
-                </tr>
-                <tr>
-                  <td className="p-2 font-semibold">Emissão de Matrícula Portuguesa e DUA</td>
-                  <td className="p-2">Após aprovação do IMT e pagamento de impostos, solicita-se a matrícula nacional e o Documento Único Automóvel (DUA).</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </>
-      ),
-    },
-    {
-      title: 'Entrega ao Cliente',
-      content: (
-        <>
-          <p>A Autogo entrega o veículo em qualquer ponto do país, já matriculado em Portugal, com todos os documentos e seguro associados.</p>
-        </>
-      ),
-    },
-  ];
+  const steps = t('ComoFunciona_Steps', { returnObjects: true }) as Array<{ title: string, content: string }>;
+  const porqueAutogo = t('ComoFunciona_PorqueAutogo_Lista', { returnObjects: true }) as string[];
+  const prazos = t('ComoFunciona_PrazosLista', { returnObjects: true }) as string[];
 
   return (
     <Layout>
@@ -104,13 +27,13 @@ export default function ComoFunciona() {
       </div>
       <div className="relative z-10 max-w-5xl mx-auto text-center px-4 pt-40">
         <h1 className="text-3xl md:text-5xl font-extrabold text-black drop-shadow-xl mb-4 tracking-tight leading-tight">
-          Como Funciona a Importação de Viaturas na Autogo
+          {t('ComoFunciona_Titulo')}
         </h1>
-        <p className="text-lg md:text-xl text-[#b42121] font-medium mb-2">Transparência, rapidez e segurança em cada etapa.</p>
+        <p className="text-lg md:text-xl text-[#b42121] font-medium mb-2">{t('ComoFunciona_Subtitulo')}</p>
       </div>
       <main className="relative z-20 max-w-3xl mx-auto py-8 px-6">
         <div className="mb-8 text-lg text-black bg-[#fff0f0] rounded-xl px-4 py-2 font-semibold border border-[#d50032]/10 shadow-sm flex items-center gap-2 justify-center">
-          Veja os passos do processo de importação de viaturas.
+          {t('ComoFunciona_Intro')}
         </div>
         <div className="flex flex-col gap-6">
           {steps.map((step, i) => (
@@ -133,7 +56,8 @@ export default function ComoFunciona() {
                 className={`px-6 pb-5 pt-0 text-[#222] text-base transition-all duration-300 ease-in-out ${openStep === i ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
                 style={{}}
               >
-                {step.content}
+                {/* Permite HTML simples nas traduções (ex: <b>...</b>) */}
+                <span dangerouslySetInnerHTML={{ __html: step.content }} />
               </div>
             </div>
           ))}
@@ -141,23 +65,19 @@ export default function ComoFunciona() {
         {/* Por que escolher a Autogo */}
         <div className="mt-12 p-6 rounded-2xl bg-white border border-[#d50032]/10 shadow-lg flex flex-col gap-3">
           <div className="flex items-center gap-2 mb-2">
-            <span className="font-bold text-black text-xl tracking-tight">Por que escolher a Autogo</span>
+            <span className="font-bold text-black text-xl tracking-tight">{t('ComoFunciona_PorqueAutogo')}</span>
           </div>
           <ul className="list-disc list-inside ml-4 text-base text-black space-y-1">
-            <li><b>Stock pronto a reservar:</b> rapidez na disponibilidade, com prioridade para reservas antecipadas.</li>
-            <li><b>Importação personalizada:</b> viaturas sob medida, com inspeção prévia e validação documental rigorosa.</li>
-            <li><b>Processo “chave na mão”:</b> cuidamos de toda a logística, burocracia, inspeção e legalização – sem preocupações para ti.</li>
-            <li><b>Especialistas e parceiros:</b> conhecemos imícias sobre taxas e procedimentos aduaneiros, como o ISV, IVA, homologação e inspeções.</li>
+            {porqueAutogo.map((item, idx) => <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />)}
           </ul>
         </div>
         {/* Prazos estimados */}
         <div className="mt-8 p-6 rounded-2xl bg-white border border-[#b42121]/10 shadow-lg flex flex-col gap-3">
           <div className="flex items-center gap-2 mb-2">
-            <span className="font-bold text-black text-xl tracking-tight">Prazos estimados</span>
+            <span className="font-bold text-black text-xl tracking-tight">{t('ComoFunciona_PrazosTitulo')}</span>
           </div>
           <ul className="list-disc list-inside ml-4 text-base text-black space-y-1">
-            <li><b>Stock UE:</b> entre 1 a 2 semanas até entrega, após a chegada e inspeção.</li>
-            <li><b>Encomendas internacionais:</b> de 4 a 8 semanas, dependendo do transporte e nacionalização.</li>
+            {prazos.map((item, idx) => <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />)}
           </ul>
         </div>
       </main>
