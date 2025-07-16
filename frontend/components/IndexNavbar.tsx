@@ -60,6 +60,7 @@ export function IndexNavbar() {
   };
 
   return (
+    <>
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-between px-6 gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
       style={{
@@ -76,19 +77,15 @@ export function IndexNavbar() {
     >
       <div className="flex items-center relative">
         <Link href="/">
-          <img
-            src="/images/auto-logonb.png"
-            alt="AutoGo.pt"
-            className="h-20 w-auto object-contain z-10 transition-transform duration-300 hover:scale-105"
-            style={{ maxWidth: "240px", filter: "drop-shadow(0 2px 12px rgba(44,62,80,0.10))" }}
-          />
+          <div className="relative flex items-center group h-full">
+            <img
+              src="/images/auto-logonb.png"
+              alt="AutoGo.pt"
+              className="h-40 w-auto object-contain z-10 transition-transform duration-300 group-hover:scale-105"
+              style={{ maxWidth: "520px", filter: "drop-shadow(0 4px 18px rgba(44,62,80,0.13))" }}
+            />
+          </div>
         </Link>
-        {/* Red lines premium minimal */}
-        <div className="flex flex-col justify-center ml-3 gap-1">
-          <span className="block w-8 h-1 rounded-full bg-[#b42121] opacity-90"></span>
-          <span className="block w-6 h-1 rounded-full bg-[#b42121] opacity-70"></span>
-          <span className="block w-4 h-1 rounded-full bg-[#b42121] opacity-50"></span>
-        </div>
       </div>
       <div className="flex flex-wrap items-center justify-end gap-6 flex-1 min-w-0">
         {NAV_LINKS.map(({ href, label }) => {
@@ -106,22 +103,29 @@ export function IndexNavbar() {
             </Link>
           );
         })}
-      </div>
-      <div className="relative ml-2">
-        <select
-          value={currentLocale}
-          onChange={e => handleLocaleChange(e.target.value)}
-          className="bg-white border border-[#ececec] rounded-full px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 shadow-sm transition-all duration-200"
-          style={{ minWidth: 44, zIndex: 100 }}
-          aria-label="Selecionar idioma"
-        >
-          {AVAILABLE_LANGS.map(({ code, label }) => (
-            <option key={code} value={code}>
-              {label}
-            </option>
-          ))}
-        </select>
+        {/* Red lines between Contacto and language selector */}
+        <span className="flex flex-col justify-center ml-2 mr-2 gap-1">
+          <span className="block w-8 h-1 rounded-full bg-[#b42121] opacity-90"></span>
+          <span className="block w-6 h-1 rounded-full bg-[#b42121] opacity-70"></span>
+          <span className="block w-4 h-1 rounded-full bg-[#b42121] opacity-50"></span>
+        </span>
+        <div className="relative ml-2">
+          <select
+            value={currentLocale}
+            onChange={e => handleLocaleChange(e.target.value)}
+            className="bg-white border border-[#ececec] rounded-full px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 shadow-sm transition-all duration-200"
+            style={{ minWidth: 44, zIndex: 100 }}
+            aria-label="Selecionar idioma"
+          >
+            {AVAILABLE_LANGS.map(({ code, label }) => (
+              <option key={code} value={code}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
     </nav>
+    </>
   );
 }
