@@ -60,7 +60,6 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="relative w-screen h-[550px] md:h-[76vh] flex items-center overflow-hidden"
-          style={{ borderRadius: "0 0 32px 32px" }}
         >
           {/* Background image covers full width, fades left */}
           <div
@@ -69,11 +68,13 @@ export default function Home() {
               backgroundImage: "url('/images/cars/bmw-black.png')",
             }}
           >
+            {/* Fade gradiente ultra acentuado e mais diluído: branco puro até 25%, escuro forte até 60%, transição mais suave para transparente */}
             <div
-              className="absolute inset-0"
+              className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(90deg, rgba(30,30,30,0.92) 0%, rgba(255,255,255,0) 70%, rgba(0,0,0,0.7) 100%)",
+                  // Gradiente: transparente à direita, branco puro à esquerda, stops suaves para efeito premium
+                  "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.92) 18%, rgba(255,255,255,0.80) 32%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0.22) 68%, rgba(255,255,255,0.08) 82%, rgba(255,255,255,0.00) 100%)",
               }}
             />
           </div>
@@ -102,7 +103,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="text-neutral-50 text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-xl"
+              className="text-black text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-xl"
             >
               {t('Rápido. Seguro. Teu.')}
             </motion.h1>
@@ -110,25 +111,82 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7 }}
-              className="text-neutral-200 text-lg md:text-2xl mb-10 max-w-xl drop-shadow-lg"
+              className="text-black text-lg md:text-2xl mb-10 max-w-xl drop-shadow-lg"
             >
               {t('O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.')}
             </motion.p>
             <div className="flex w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-2 items-center gap-3 mb-5 border border-white/30">
-              <Link
-                href="/viaturas"
-                className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold px-8 py-3 text-lg rounded-xl shadow transition-all duration-200 whitespace-nowrap"
-              >
-                {t('Procurar viaturas')}
+              <Link href="/viaturas" legacyBehavior passHref>
+                <a className="beauty-fade-btn">{t('Procurar viaturas')}</a>
               </Link>
-              <Link
-                href="/simulador"
-                className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold px-8 py-3 text-lg rounded-xl shadow transition-all duration-200 whitespace-nowrap"
-              >
-                {t('Simulador')}
+              <Link href="/simulador" legacyBehavior passHref>
+                <a className="beauty-fade-btn">{t('Simulador')}</a>
+              </Link>
+              <Link href="/pedido" legacyBehavior passHref>
+                <a className="beauty-fade-btn" style={{ marginLeft: '0.5rem' }}>{t('Encomendar')}</a>
               </Link>
             </div>
-            <div className="ml-1 mb-1 flex items-center gap-2 cursor-pointer text-neutral-200 hover:text-[#b42121] font-medium text-base transition">
+            <style jsx>{`
+              .beauty-fade-btn {
+                display: inline-block;
+                background: linear-gradient(90deg, #b42121 0%, #e05252 100%);
+                color: #fff;
+                font-weight: bold;
+                padding: 0.75rem 2rem;
+                font-size: 1.125rem;
+                border-radius: 0.75rem;
+                box-shadow: 0 4px 24px 0 rgba(180,33,33,0.18), 0 1.5px 8px 0 rgba(44,62,80,0.10);
+                transition: background 0.3s, box-shadow 0.3s, transform 0.18s, filter 0.3s;
+                position: relative;
+                overflow: hidden;
+                outline: none;
+                border: none;
+                text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+                z-index: 1;
+                white-space: nowrap;
+                cursor: pointer;
+                min-width: 170px;
+              }
+              .beauty-fade-btn:before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 100%);
+                opacity: 0.7;
+                z-index: 2;
+                pointer-events: none;
+                transition: opacity 0.3s;
+              }
+              .beauty-fade-btn:after {
+                content: '';
+                position: absolute;
+                left: -60%;
+                top: -50%;
+                width: 220%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 80%);
+                opacity: 0.5;
+                z-index: 3;
+                pointer-events: none;
+                animation: beauty-fade-glow 2.8s linear infinite;
+              }
+              @keyframes beauty-fade-glow {
+                0% { left: -60%; top: -50%; opacity: 0.5; }
+                50% { left: 0%; top: 0%; opacity: 0.8; }
+                100% { left: -60%; top: -50%; opacity: 0.5; }
+              }
+              .beauty-fade-btn:hover, .beauty-fade-btn:focus {
+                background: linear-gradient(90deg, #d55050 0%, #b42121 100%);
+                box-shadow: 0 8px 32px 0 rgba(180,33,33,0.28), 0 2px 12px 0 rgba(44,62,80,0.13);
+                filter: brightness(1.08) saturate(1.15);
+                transform: translateY(-2px) scale(1.035);
+              }
+              .beauty-fade-btn:active {
+                filter: brightness(0.98);
+                transform: scale(0.98);
+              }
+            `}</style>
+            <div className="ml-1 mb-1 flex items-center gap-2 cursor-pointer text-[#22272a] hover:text-[#b42121] font-medium text-base transition">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" className="inline mr-1 opacity-70" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="1.6" d="M4 6h16M7 12h10M10 18h4"></path></svg>
               {t('Filtros avançados')}
             </div>
@@ -146,14 +204,14 @@ export default function Home() {
               <span className="font-semibold text-gray-800 text-lg">{t('Importação Premium')}</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="bg-green-600 text-white rounded-full p-2 shadow-lg">
+              <span className="bg-[#b42121] text-white rounded-full p-2 shadow-lg">
                 {/* Garantia Incluída: Shield/Check icon */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z" stroke="currentColor" strokeWidth="1.7"/><path d="M9.5 13l2 2 3-3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </span>
               <span className="font-semibold text-gray-800 text-lg">{t('Garantia Incluída')}</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="bg-blue-700 text-white rounded-full p-2 shadow-lg">
+              <span className="bg-[#b42121] text-white rounded-full p-2 shadow-lg">
                 {/* Entrega em Todo o País: Delivery/Truck icon */}
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="10" rx="2" stroke="currentColor" strokeWidth="1.7"/><path d="M16 13h2.28a2 2 0 0 1 1.79 1.11l1.43 2.86A1 1 0 0 1 20.66 18H19a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3" stroke="currentColor" strokeWidth="1.7"/></svg>
               </span>
@@ -186,22 +244,38 @@ export default function Home() {
               {t('Como Funciona')}
             </motion.h2>
             <div className="flex justify-center gap-4 mb-10">
-              <span className="px-6 py-3 rounded-2xl bg-red-600 text-white text-lg font-semibold shadow-lg transition hover:scale-105">{t('Simples')}</span>
+              <span className="px-6 py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">{t('Simples')}</span>
               <span className="px-6 py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">{t('Transparente')}</span>
-              <span className="px-6 py-3 rounded-2xl bg-green-600 text-white text-lg font-semibold shadow-lg transition hover:scale-105">{t('Rápido')}</span>
+              <span className="px-6 py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">{t('Rápido')}</span>
             </div>
             <p className="text-2xl text-gray-800 mb-16 font-medium drop-shadow">
               {t('Importa o teu carro europeu sem stress — só precisas de escolher, simular e pedir.')}<br />
               <span className="font-bold">{t('Nós tratamos do resto!')}</span>
             </p>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/95 rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-red-600 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
-                <div className="mb-3 text-3xl font-bold text-red-600">1</div>
+              <div className="bg-white/95 rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+                <div className="mb-3 text-3xl font-bold text-gray-800">1</div>
                 <div className="font-semibold text-xl mb-2 text-gray-900">{t('Escolhe o carro')}</div>
                 <p className="text-gray-600 mb-4 text-base">
                   {t('Seleciona entre dezenas de viaturas disponíveis ou pede uma pesquisa personalizada.')}
                 </p>
-                <Link href="/viaturas" className="mt-auto text-red-600 font-semibold hover:underline transition transform hover:scale-110 hover:text-white hover:bg-red-600 px-6 py-2 rounded-lg shadow">
+                <Link href="/viaturas" className="mt-auto text-gray-900 font-semibold transition transform hover:scale-110 px-6 py-2 rounded-lg shadow-lg border-2 border-[#b42121] text-base tracking-wide"
+                  style={{ transition: 'all 0.2s', background: 'none', letterSpacing: '0.5px', fontWeight: 700, textDecoration: 'none' }}
+                  onMouseOver={e => {
+                    e.currentTarget.style.background = 'rgba(213, 80, 80, 1)';
+                    e.currentTarget.style.color = '#fff';
+                    e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(213,80,80,0.18)';
+                    e.currentTarget.style.borderColor = '#b42121';
+                    e.currentTarget.style.textDecoration = 'none';
+                  }}
+                  onMouseOut={e => {
+                    e.currentTarget.style.background = 'none';
+                    e.currentTarget.style.color = '#222';
+                    e.currentTarget.style.boxShadow = '0 2px 8px 0 rgba(44,62,80,0.10)';
+                    e.currentTarget.style.borderColor = '#b42121';
+                    e.currentTarget.style.textDecoration = 'none';
+                  }}
+                >
                   {t('Ver Viaturas')}
                 </Link>
               </div>
@@ -211,17 +285,49 @@ export default function Home() {
                 <p className="text-gray-600 mb-4 text-base">
                   {t('Usa o nosso simulador para saber quanto vais pagar, sem surpresas.')}
                 </p>
-                <Link href="/simulador" className="mt-auto text-gray-900 font-semibold hover:underline transition transform hover:scale-110 hover:text-white hover:bg-gray-800 px-6 py-2 rounded-lg shadow">
+                <Link href="/simulador" className="mt-auto text-gray-900 font-semibold transition transform hover:scale-110 px-6 py-2 rounded-lg shadow-lg border-2 border-[#b42121] text-base tracking-wide"
+                  style={{ transition: 'all 0.2s', background: 'none', letterSpacing: '0.5px', fontWeight: 700, textDecoration: 'none' }}
+                  onMouseOver={e => {
+                    e.currentTarget.style.background = 'rgba(213, 80, 80, 1)';
+                    e.currentTarget.style.color = '#fff';
+                    e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(213,80,80,0.18)';
+                    e.currentTarget.style.borderColor = '#b42121';
+                    e.currentTarget.style.textDecoration = 'none';
+                  }}
+                  onMouseOut={e => {
+                    e.currentTarget.style.background = 'none';
+                    e.currentTarget.style.color = '#222';
+                    e.currentTarget.style.boxShadow = '0 2px 8px 0 rgba(44,62,80,0.10)';
+                    e.currentTarget.style.borderColor = '#b42121';
+                    e.currentTarget.style.textDecoration = 'none';
+                  }}
+                >
                   {t('Simular ISV')}
                 </Link>
               </div>
-              <div className="bg-white/95 rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-green-600 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
-                <div className="mb-3 text-3xl font-bold text-green-600">3</div>
+              <div className="bg-white/95 rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+                <div className="mb-3 text-3xl font-bold text-gray-800">3</div>
                 <div className="font-semibold text-xl mb-2 text-gray-900">{t('Importação e entrega')}</div>
                 <p className="text-gray-600 mb-4 text-base">
                   {t('Cuidamos de todo o processo legal e entregamos o carro pronto a rolar.')}
                 </p>
-                <Link href="/pedido" className="mt-auto text-green-600 font-semibold hover:underline transition transform hover:scale-110 hover:text-white hover:bg-green-600 px-6 py-2 rounded-lg shadow">
+                <Link href="/pedido" className="mt-auto text-gray-900 font-semibold transition transform hover:scale-110 px-6 py-2 rounded-lg shadow-lg border-2 border-[#b42121] text-base tracking-wide"
+                  style={{ transition: 'all 0.2s', background: 'none', letterSpacing: '0.5px', fontWeight: 700, textDecoration: 'none' }}
+                  onMouseOver={e => {
+                    e.currentTarget.style.background = 'rgba(213, 80, 80, 1)';
+                    e.currentTarget.style.color = '#fff';
+                    e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(213,80,80,0.18)';
+                    e.currentTarget.style.borderColor = '#b42121';
+                    e.currentTarget.style.textDecoration = 'none';
+                  }}
+                  onMouseOut={e => {
+                    e.currentTarget.style.background = 'none';
+                    e.currentTarget.style.color = '#222';
+                    e.currentTarget.style.boxShadow = '0 2px 8px 0 rgba(44,62,80,0.10)';
+                    e.currentTarget.style.borderColor = '#b42121';
+                    e.currentTarget.style.textDecoration = 'none';
+                  }}
+                >
                   {t('Encomendar')}
                 </Link>
               </div>
