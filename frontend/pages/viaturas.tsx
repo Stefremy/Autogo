@@ -43,7 +43,7 @@ export default function Viaturas() {
       <MainLayout>
         <section className="w-full px-0 py-12 bg-transparent">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10 gap-4">
-            <h1 className="text-4xl font-extrabold text-center sm:text-left text-black" style={{color:'#000', fontWeight:900, zIndex:10, position:'relative'}}>
+            <h1 className="text-4xl font-semibold text-center sm:text-left text-black" style={{color:'#000', fontWeight:600, zIndex:10, position:'relative'}}>
               {t('Viaturas Disponíveis')}
             </h1>
             <div className="flex gap-2 justify-center sm:justify-end">
@@ -162,7 +162,7 @@ export default function Viaturas() {
                   />
                 )}
               </span>
-              <h2 className="text-xl font-bold mb-1 text-[#222] text-center px-2">
+              <h2 className="text-xl font-semibold mb-1 text-[#222] text-center px-2">
                 {car.make} {car.model}
               </h2>
               <div className="text-gray-500 mb-1 text-center px-2">
@@ -216,7 +216,7 @@ export default function Viaturas() {
           >
             ×
           </button>
-          <h2 className="text-xl font-bold mb-2 text-[#b42121]">{t('Simulador ISV')}</h2>
+          <h2 className="text-xl font-semibold mb-2 text-[#b42121]">{t('Simulador ISV')}</h2>
           {/* Simulador ISV compacto (apenas tabela) */}
           <div className="w-full">
             <SimuladorTabela />

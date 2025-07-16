@@ -61,19 +61,17 @@ export function IndexNavbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
-        flex items-center justify-between px-4 gap-8
-        ${scrolled ? "backdrop-blur-md shadow-xl" : "shadow-lg"}`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-between px-6 gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
       style={{
-        height: "56px",
+        height: "64px",
         minWidth: 320,
         background: scrolled
-          ? "linear-gradient(0deg, rgba(236,236,236,0.85) 0%, rgba(245,246,250,0.7) 100%)"
-          : "linear-gradient(0deg, rgba(245,246,250,0.85) 0%, rgba(236,236,236,0.7) 100%)",
-        borderBottom: "1.5px solid #e5e7eb",
+          ? "rgba(255,255,255,0.92)"
+          : "rgba(255,255,255,0.98)",
+        borderBottom: "1.5px solid #ececec",
         boxShadow: scrolled
-          ? "0 4px 24px 0 rgba(213,0,50,0.10), 0 1.5px 0 0 #d50032"
-          : "0 2px 16px 0 rgba(213,0,50,0.08), 0 1.5px 0 0 #d50032"
+          ? "0 4px 24px 0 rgba(44,62,80,0.10)"
+          : "0 2px 12px 0 rgba(44,62,80,0.06)"
       }}
     >
       <div className="flex items-center relative">
@@ -81,51 +79,49 @@ export function IndexNavbar() {
           <img
             src="/images/auto-logonb.png"
             alt="AutoGo.pt"
-            className="h-full w-auto object-contain z-10 scale-x-110"
-            style={{ maxWidth: "180px" }}
+            className="h-20 w-auto object-contain z-10 transition-transform duration-300 hover:scale-105"
+            style={{ maxWidth: "240px", filter: "drop-shadow(0 2px 12px rgba(44,62,80,0.10))" }}
           />
         </Link>
-        {/* 3 red lines next to logo */}
+        {/* Red lines premium minimal */}
         <div className="flex flex-col justify-center ml-3 gap-1">
           <span className="block w-8 h-1 rounded-full bg-[#b42121] opacity-90"></span>
           <span className="block w-6 h-1 rounded-full bg-[#b42121] opacity-70"></span>
           <span className="block w-4 h-1 rounded-full bg-[#b42121] opacity-50"></span>
         </div>
       </div>
-      <div className="flex flex-wrap items-center justify-end gap-8 flex-1 min-w-0">
+      <div className="flex flex-wrap items-center justify-end gap-6 flex-1 min-w-0">
         {NAV_LINKS.map(({ href, label }) => {
           const isActive = router.pathname === href;
           return (
             <Link
               key={href}
               href={href}
-              className={`relative text-lg font-medium transition
-                ${isActive ? "text-[#b42121] font-bold" : "text-[#b42121] hover:text-[#a11a1a]"}
-                after:absolute after:left-0 after:-bottom-1 after:h-1
-                after:bg-[#b42121] after:rounded-full
-                ${isActive ? "after:w-full" : "after:w-0 hover:after:w-full"}
-                after:transition-all after:duration-300
-                px-2`}
+              className={`relative text-base font-medium transition-all duration-200 px-2 py-1 rounded-lg
+                ${isActive ? "text-[#b42121] bg-[#f5f6fa] shadow-sm" : "text-[#22272a] hover:text-[#b42121] hover:bg-[#f5f6fa]"}
+                focus:outline-none focus:ring-2 focus:ring-[#b42121]/30`}
+              style={{ letterSpacing: 0.2, fontWeight: 500 }}
             >
               {t(label)}
             </Link>
           );
         })}
       </div>
-      {/* Simple language selector dropdown */}
-      <select
-        value={currentLocale}
-        onChange={e => handleLocaleChange(e.target.value)}
-        className="ml-2 bg-white border border-[#e5e7eb] rounded-full px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#b42121]"
-        style={{ minWidth: 44, zIndex: 100 }}
-        aria-label="Selecionar idioma"
-      >
-        {AVAILABLE_LANGS.map(({ code, label }) => (
-          <option key={code} value={code}>
-            {label}
-          </option>
-        ))}
-      </select>
+      <div className="relative ml-2">
+        <select
+          value={currentLocale}
+          onChange={e => handleLocaleChange(e.target.value)}
+          className="bg-white border border-[#ececec] rounded-full px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 shadow-sm transition-all duration-200"
+          style={{ minWidth: 44, zIndex: 100 }}
+          aria-label="Selecionar idioma"
+        >
+          {AVAILABLE_LANGS.map(({ code, label }) => (
+            <option key={code} value={code}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </div>
     </nav>
   );
 }

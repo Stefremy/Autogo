@@ -20,7 +20,7 @@ export default function Footer() {
       </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-[#b42121]/10 pb-10 relative z-10">
         <div>
-          <h3 className="text-xl font-bold mb-3 text-[#b42121] drop-shadow-xl">AutoGo.pt</h3>
+          <h3 className="text-xl font-semibold mb-3 text-[#b42121] drop-shadow-xl">AutoGo.pt</h3>
           <p className="text-xl text-gray-700 mb-4">{t('Importação premium de viaturas europeias, legalizadas e prontas a rolar em Portugal.')}</p>
           <img src="/images/auto-logonb.png" alt="AutoGo.pt" className="w-52 mb-2 drop-shadow-lg mt-0" />
         </div>

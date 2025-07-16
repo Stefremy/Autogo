@@ -282,7 +282,7 @@ export default function CarDetail() {
             </div>
             {/* Detalhes principais */}
             <div className="flex-1 space-y-6 px-0 md:px-8 xl:px-16">
-              <h1 className="text-5xl font-extrabold mb-4 tracking-tight text-gray-900 drop-shadow-sm">
+              <h1 className="text-5xl font-semibold mb-4 tracking-tight text-gray-900 drop-shadow-sm">
                 {car.make} {car.model} <span className="text-[#b42121]">{car.year}</span>
               </h1>
               <div className="flex flex-wrap gap-3 text-base mb-6">
@@ -411,7 +411,7 @@ export default function CarDetail() {
 
           {/* SECÇÃO CAR CARETRISTICS */}
           <section className="w-full bg-gradient-to-br from-white to-gray-100 rounded-3xl shadow p-10 mt-8 px-0 md:px-12 lg:px-24 xl:px-32">
-            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">Curiosidades & Vantagens</h3>
+            <h3 className="text-2xl font-semibold mb-4 flex items-center gap-2">Curiosidades & Vantagens</h3>
             <ul className="list-disc pl-8 space-y-2 text-gray-700 text-lg">
               {funFacts.length
                 ? funFacts.map((f, i) => <li key={i}>{f}</li>)
@@ -423,7 +423,7 @@ export default function CarDetail() {
           {/* SECÇÃO EQUIPAMENTO & OPÇÕES */}
           {car.equipamento_opcoes && (
             <section className="w-full bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow p-10 mt-8 px-0 md:px-12 lg:px-24 xl:px-32">
-              <h3 className="text-3xl font-extrabold mb-8 flex items-center gap-3 text-black tracking-tight">
+              <h3 className="text-3xl font-semibold mb-8 flex items-center gap-3 text-black tracking-tight">
                 Equipamento & Opções
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -467,7 +467,7 @@ export default function CarDetail() {
           <section id="similar" className="mt-12">
             <div className="card rounded-3xl border-0 mb-3 shadow-sm flex flex-col bg-white/90">
               <div className="card-body pt-6 px-6">
-                <h2 className="text-2xl font-extrabold mb-6 flex items-center gap-3 text-[#b42121] tracking-tight">
+                <h2 className="text-2xl font-semibold mb-6 flex items-center gap-3 text-[#b42121] tracking-tight">
                   <FaCarSide className="text-[#b42121] text-2xl" /> Carros semelhantes
                 </h2>
                 <div className="relative similar-swiper-container swiper-container-horizontal">

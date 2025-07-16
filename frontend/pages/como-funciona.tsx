@@ -26,7 +26,7 @@ export default function ComoFunciona() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#f5f6fa]/90 via-white/70 to-[#fff0f0]/90" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto text-center px-4 pt-40">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-black drop-shadow-xl mb-4 tracking-tight leading-tight">
+        <h1 className="text-3xl md:text-5xl font-semibold text-black drop-shadow-xl mb-4 tracking-tight leading-tight">
           {t('ComoFunciona_Titulo')}
         </h1>
         <p className="text-lg md:text-xl text-[#b42121] font-medium mb-2">{t('ComoFunciona_Subtitulo')}</p>

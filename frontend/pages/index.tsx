@@ -79,31 +79,13 @@ export default function Home() {
             />
           </div>
 
-          {/* Red lines decorativas */}
-          <img
-            src="/images/red_lines.png"
-            alt="Decoração superior esquerda"
-            className="absolute top-8 left-8 w-20 opacity-20 rotate-45 z-20"
-          />
-          <img
-            src="/images/red_lines.png"
-            alt="Decoração inferior direita"
-            className="absolute bottom-10 right-10 w-28 opacity-80 z-20"
-          />
-          {/* (Opcional) logotipo no canto superior direito */}
-          <img
-            src="/images/auto-logonb.png"
-            alt="AutoGo.pt"
-            className="absolute top-6 right-10 w-40 opacity-90 z-20"
-          />
-
           {/* Main Content */}
           <div className="relative z-10 flex flex-col items-start justify-center h-full pl-8 md:pl-20 max-w-2xl w-full">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="text-black text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-xl"
+              className="text-black text-4xl md:text-6xl font-semibold mb-6 leading-tight drop-shadow-xl"
             >
               {t('Rápido. Seguro. Teu.')}
             </motion.h1>
@@ -239,7 +221,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-4xl md:text-5xl font-extrabold text-black mb-8 tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
+              className="text-4xl md:text-5xl font-semibold text-black mb-8 tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
             >
               {t('Como Funciona')}
             </motion.h2>
@@ -343,7 +325,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-3xl md:text-4xl font-extrabold text-black mb-12 text-center tracking-tight"
+              className="text-3xl md:text-4xl font-semibold text-black mb-12 text-center tracking-tight"
             >
               Carros usados em Destaque
             </motion.h2>
@@ -382,7 +364,7 @@ export default function Home() {
         {/* GOOGLE REVIEWS SECTION - ORGANIC CAROUSEL */}
         <section className="w-full py-20 bg-[#f5f6fa]">
           <div className="flex flex-col items-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">Os nossos clientes</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">Os nossos clientes</h2>
             <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl">A satisfação dos nossos clientes é a nossa prioridade. Vê o que dizem sobre nós no Google!</p>
             <div className="w-full relative">
               <button
@@ -446,7 +428,7 @@ export default function Home() {
         {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
         <section className="w-full py-16 bg-[#f5f6fa]">
           <div className="flex flex-col items-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">Novos Artigos</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">Novos Artigos</h2>
             <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl">Fica a par das últimas novidades, dicas e notícias do mundo automóvel e da importação premium.</p>
             <div className="w-full relative">
               <button
