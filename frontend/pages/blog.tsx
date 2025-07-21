@@ -1,9 +1,13 @@
 import React from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import Link from 'next/link';
 
 import Layout from "../components/MainLayout";
-export default function Blog() {
+export default function Blog({ posts }) {
   const { t } = useTranslation('common');
   return (
     <Layout>
@@ -42,18 +46,53 @@ export default function Blog() {
 })();
 `}} />
       <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem' }}>
-        <h1 style={{ color: '#1a237e' }}>{t('Blog')}</h1>
-        <hr />
-        <p>{t('Artigos e novidades sobre o mundo automóvel.')}</p>
-        {/* TODO: Adicione aqui a lista de artigos */}
+        {/* Removido título e subtítulo do blog conforme solicitado */}
+        <div className="mt-8 space-y-8">
+          {posts.map(post => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} legacyBehavior>
+              <a className="block rounded-xl bg-white/70 backdrop-blur-md shadow-lg border border-gray-200 hover:shadow-xl transition p-6 group focus:outline-none focus:ring-2 focus:ring-[#d50032]">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase tracking-wide shadow-sm ${post.type === 'review' ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800'}`}>{post.type === 'review' ? 'Review' : 'Notícia'}</span>
+                  <span className="text-gray-500 text-xs">{new Date(post.date).toLocaleDateString('pt-PT')}</span>
+                </div>
+                <h2 className="text-2xl font-bold text-[#1a237e] group-hover:underline underline-offset-4 mb-2">{post.title}</h2>
+                <p className="text-gray-700 line-clamp-3">{post.excerpt}</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {post.tags.map(tag => (
+                    <span key={tag} className="bg-gray-200 text-gray-700 px-2 py-0.5 rounded text-xs">#{tag}</span>
+                  ))}
+                </div>
+              </a>
+            </Link>
+          ))}
+        </div>
       </main>
     </Layout>
-  );}
+  );
+}
 
 export async function getStaticProps({ locale }) {
+  const blogDir = path.join(process.cwd(), 'data/blog');
+  const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
+  const posts = files.map(filename => {
+    const filePath = path.join(blogDir, filename);
+    const slug = filename.replace(/\.md$/, '');
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContent);
+    return {
+      slug,
+      title: data.title || slug,
+      date: data.date || '',
+      type: data.type || 'news',
+      tags: data.tags || [],
+      lang: data.lang || 'pt-PT',
+      excerpt: content.split('\n').slice(0, 3).join(' ').replace(/[#*]/g, '').slice(0, 180) + '...'
+    };
+  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
+      posts,
     },
   };
 }
