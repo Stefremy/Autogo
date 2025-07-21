@@ -8,8 +8,7 @@
     "image": "/images/cars/Corolla22.jpg",
     "description": "Reliable and fuel-efficient sedan, perfect for city driving.",
     "mileage": 15000,
-    "country": "DE",
-    "status": "disponivel"
+    "country": "DE"
   },
   {
     "id": "2",
@@ -21,7 +20,7 @@
     "description": "Sporty hatchback with low mileage and great features.",
     "mileage": 12000,
     "country": "FR",
-    "status": "vendido"
+    "status": "novidade"
   },
   {
     "id": "3",
@@ -59,7 +58,7 @@
     "emissionClass": "Euro6",
     "co2": "123 CO2",
     "color": "Cinzento",
-  "status": "disponivel",
+
     "images": [
       "/images/cars/citroenc3-1.jpg",
       "/images/cars/citroenc3-2.jpg",

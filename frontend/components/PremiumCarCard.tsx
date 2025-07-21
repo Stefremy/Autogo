@@ -25,9 +25,17 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id,
       {/* Status badge */}
       {status && (
         <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${
-          status === 'disponivel' ? 'bg-green-500' : status === 'vendido' ? 'bg-gray-400' : status === 'sob_consulta' ? 'bg-yellow-400' : 'bg-gray-400'
+          status === 'disponivel' ? 'bg-green-500' :
+          status === 'vendido' ? 'bg-gray-400' :
+          status === 'sob_consulta' ? 'bg-yellow-400' :
+          status === 'novidade' ? 'bg-blue-500' :
+          'bg-gray-400'
         }`} style={{letterSpacing: '0.5px', minWidth: 90, textAlign: 'center'}}>
-          {status === 'disponivel' ? 'Disponível' : status === 'vendido' ? 'Vendido' : status === 'sob_consulta' ? 'Sob Consulta' : status}
+          {status === 'disponivel' ? 'Disponível' :
+           status === 'vendido' ? 'Vendido' :
+           status === 'sob_consulta' ? 'Sob Consulta' :
+           status === 'novidade' ? 'Novidade' :
+           status}
         </span>
       )}
       <img src={image} alt={name} className={styles["premium-car-image"]} />

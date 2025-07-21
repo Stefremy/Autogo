@@ -39,11 +39,13 @@ export default function Viaturas() {
     disponivel: t('Disponível'),
     vendido: t('Vendido'),
     sob_consulta: t('Sob Consulta'),
+    novidade: t('Novidade'), // Added novidade label
   };
   const statusColors = {
     disponivel: 'bg-green-500',
     vendido: 'bg-gray-400',
     sob_consulta: 'bg-yellow-400',
+    novidade: 'bg-blue-500', // Added novidade color
   };
 
   return (
