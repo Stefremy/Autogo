@@ -49,12 +49,12 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-2">{t('Contactos')}</h4>
           <ul className="space-y-1 text-gray-700">
-            <li>{t('Email')}: <a href="mailto:info@autogo.pt" className="underline hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">info@autogo.pt</a></li>
-            <li>{t('Telefone')}: <a href="tel:+351912345678" className="underline hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">+351 912 345 678</a></li>
-            <li>{t('Morada')}: Lisboa, Portugal</li>
+            <li>{t('Email')}: <a href="mailto:AutoGO.stand@gmail.com" className="underline hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">AutoGO.stand@gmail.com</a></li>
+            <li>{t('Telefone')}: <a href="tel:+351935179591" className="underline hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block">+351 935 179 591</a></li>
+            <li>{t('Morada')}: R. Rómulo de Carvalho 388 SITIO, 4800-019 Guimarães</li>
           </ul>
           <div className="flex space-x-4 mt-4">
-            <a href="https://wa.me/351912345678" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:scale-110 transition-transform">
+            <a href="https://wa.me/351935179591" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:scale-110 transition-transform">
               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" className="text-[#25D366]">
                 <path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12c0 1.85.504 3.58 1.38 5.07L2 22l5.13-1.35A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Zm0 18a7.95 7.95 0 0 1-4.07-1.13l-.29-.17-3.04.8.81-2.97-.19-.3A7.95 7.95 0 1 1 20 12c0 4.418-3.582 8-8 8Zm4.13-5.47c-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.51.12-.15.23-.58.75-.71.9-.13.15-.26.17-.49.06-.23-.12-.97-.36-1.85-1.13-.68-.6-1.14-1.34-1.28-1.57-.13-.23-.01-.36.1-.48.1-.1.23-.26.34-.39.11-.13.15-.23.23-.38.08-.15.04-.29-.02-.41-.06-.12-.51-1.23-.7-1.68-.18-.44-.37-.38-.51-.39-.13-.01-.29-.01-.45-.01-.16 0-.41.06-.62.29-.21.23-.81.79-.81 1.93 0 1.14.83 2.24.95 2.4.12.15 1.63 2.5 3.95 3.4.55.19.98.3 1.31.38.55.14 1.05.12 1.44.07.44-.07 1.36-.56 1.55-1.1.19-.54.19-1.01.13-1.1-.06-.09-.21-.15-.44-.27Z"/>
               </svg>

@@ -3,6 +3,7 @@ import Layout from "../components/MainLayout";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { FaUser, FaEnvelope, FaPhone, FaCarSide, FaCalendarAlt, FaEuroSign, FaGasPump, FaCogs, FaList, FaCommentDots, FaWhatsapp } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 export default function Pedido() {
   const { t } = useTranslation('common');
@@ -21,8 +22,17 @@ export default function Pedido() {
   async function handleSend(e) {
     e.preventDefault();
     setLoading(true); setError(''); setSuccess(false);
-    // TODO: Integrar EmailJS ou backend seguro
-    setTimeout(() => { setLoading(false); setSuccess(true); }, 1200);
+
+    emailjs.send(
+      'service_ngduxdg',
+      'template_1wwfd2v',
+      form,
+      'VzMmXG4l4EqvuhAIl'
+    ).then(() => {
+      setLoading(false); setSuccess(true);
+    }).catch(() => {
+      setLoading(false); setError('Erro ao enviar. Tente novamente.');
+    });
   }
 
   return (
@@ -83,34 +93,93 @@ export default function Pedido() {
             <form className="flex flex-col gap-4 w-full" onSubmit={handleSend}>
               <div className="flex items-center gap-2">
                 <FaUser className="text-[#b42121] text-lg" />
-                <input name="nome" required placeholder={t('Nome')} value={form.nome} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                <input
+                  name="nome"
+                  required
+                  aria-label={t('Nome')}
+                  placeholder={t('Nome')}
+                  value={form.nome}
+                  onChange={handleChange}
+                  className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                />
               </div>
               <div className="flex items-center gap-2">
                 <FaEnvelope className="text-[#b42121] text-lg" />
-                <input name="email" type="email" required placeholder={t('Email')} value={form.email} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  aria-label={t('Email')}
+                  placeholder={t('Email')}
+                  value={form.email}
+                  onChange={handleChange}
+                  className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                />
               </div>
               <div className="flex items-center gap-2">
                 <FaPhone className="text-[#b42121] text-lg" />
-                <input name="telefone" type="tel" placeholder={t('Telefone (WhatsApp)')} value={form.telefone} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                <input
+                  name="telefone"
+                  type="tel"
+                  aria-label={t('Telefone (WhatsApp)')}
+                  placeholder={t('Telefone (WhatsApp)')}
+                  value={form.telefone}
+                  onChange={handleChange}
+                  className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                />
               </div>
               <div className="flex items-center gap-2">
                 <FaCarSide className="text-[#b42121] text-lg" />
-                <input name="marcaModelo" required placeholder={t('Marca e Modelo desejado')} value={form.marcaModelo} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                <input
+                  name="marcaModelo"
+                  required
+                  aria-label={t('Marca e Modelo desejado')}
+                  placeholder={t('Marca e Modelo desejado')}
+                  value={form.marcaModelo}
+                  onChange={handleChange}
+                  className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                />
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div className="flex items-center gap-2">
                   <FaCalendarAlt className="text-[#b42121] text-lg" />
-                  <input name="ano" type="number" min="2010" max="2026" placeholder={t('Ano de fabrico pretendido')} value={form.ano} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                  <input
+                    name="ano"
+                    type="number"
+                    min="2010"
+                    max="2026"
+                    aria-label={t('Ano de fabrico pretendido')}
+                    placeholder={t('Ano de fabrico pretendido')}
+                    value={form.ano}
+                    onChange={handleChange}
+                    className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                  />
                 </div>
                 <div className="flex items-center gap-2">
                   <FaEuroSign className="text-[#b42121] text-lg" />
-                  <input name="orcamento" type="number" min="0" placeholder={t('Orçamento máximo (€)')} value={form.orcamento} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                  <input
+                    name="orcamento"
+                    type="number"
+                    min="0"
+                    aria-label={t('Orçamento máximo (€)')}
+                    placeholder={t('Orçamento máximo (€)')}
+                    value={form.orcamento}
+                    onChange={handleChange}
+                    className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                  />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div className="flex items-center gap-2">
                   <FaGasPump className="text-[#b42121] text-lg" />
-                  <select name="combustivel" required value={form.combustivel} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                  <select
+                    name="combustivel"
+                    required
+                    aria-label={t('Tipo de combustível')}
+                    value={form.combustivel}
+                    onChange={handleChange}
+                    className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                  >
                     <option value="">{t('Tipo de combustível')}</option>
                     <option value="Gasolina">{t('Gasolina')}</option>
                     <option value="Diesel">{t('Diesel')}</option>
@@ -120,7 +189,14 @@ export default function Pedido() {
                 </div>
                 <div className="flex items-center gap-2">
                   <FaCogs className="text-[#b42121] text-lg" />
-                  <select name="caixa" required value={form.caixa} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm">
+                  <select
+                    name="caixa"
+                    required
+                    aria-label={t('Caixa de velocidades')}
+                    value={form.caixa}
+                    onChange={handleChange}
+                    className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                  >
                     <option value="">{t('Caixa de velocidades')}</option>
                     <option value="Manual">{t('Manual')}</option>
                     <option value="Automático">{t('Automático')}</option>
@@ -129,18 +205,50 @@ export default function Pedido() {
               </div>
               <div className="flex items-center gap-2">
                 <FaList className="text-[#b42121] text-lg" />
-                <input name="extras" placeholder={t('Extras pretendidos')} value={form.extras} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm" />
+                <input
+                  name="extras"
+                  aria-label={t('Extras pretendidos')}
+                  placeholder={t('Extras pretendidos')}
+                  value={form.extras}
+                  onChange={handleChange}
+                  className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                />
               </div>
               <div className="flex items-center gap-2">
                 <FaCommentDots className="text-[#b42121] text-lg" />
-                <textarea name="mensagem" placeholder={t('Mensagem adicional')} value={form.mensagem} onChange={handleChange} className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm min-h-[60px]" />
+                <textarea
+                  name="mensagem"
+                  aria-label={t('Mensagem adicional')}
+                  placeholder={t('Mensagem adicional')}
+                  value={form.mensagem}
+                  onChange={handleChange}
+                  className="flex-1 rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm min-h-[60px]"
+                />
               </div>
               <label className="flex items-center gap-2 mt-2">
-                <input type="checkbox" name="whatsapp" checked={form.whatsapp} onChange={handleChange} className="accent-[#b42121] w-5 h-5" />
+                <input
+                  type="checkbox"
+                  name="whatsapp"
+                  aria-label={t('Quero receber opções diretamente no WhatsApp')}
+                  checked={form.whatsapp}
+                  onChange={handleChange}
+                  className="accent-[#b42121] w-5 h-5"
+                />
                 <FaWhatsapp className="text-[#25d366] text-lg" />
                 {t('Quero receber opções diretamente no WhatsApp')}
               </label>
-              <button type="submit" disabled={loading} className="mt-4 bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold rounded-xl py-3 px-8 shadow-lg transition-all duration-200 text-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
+              <button
+                type="submit"
+                aria-label={loading ? t('A enviar...') : t('Pedir Viatura')}
+                disabled={loading}
+                className="mt-4 bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold rounded-xl py-3 px-8 shadow-lg transition-all duration-200 text-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {loading && (
+                  <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                  </svg>
+                )}
                 {loading ? t('A enviar...') : t('Pedir Viatura')}
               </button>
               {success && <div className="text-green-700 font-semibold text-center mt-2">{t('Pedido enviado com sucesso! Em breve entramos em contacto.')}</div>}
@@ -154,7 +262,7 @@ export default function Pedido() {
             <a href="https://www.ecarstrade.com/" target="_blank" rel="noopener noreferrer" className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg font-bold shadow-md transition-all duration-200 inline-block">{t('Ver Stock Europeu')}</a>
           </div>
           {/* Copy inspiradora */}
-          <div className="mt-10 text-center text-gray-700 text-base max-w-2xl mx-auto">
+          <div className="text-center text-gray-700 text-base max-w-2xl mx-auto mt-8">
             <p className="mb-2 font-semibold">{t('Procuras um modelo específico? Faz o teu pedido personalizado – tratamos de todo o processo de importação, legalização e entrega em Portugal, sempre com transparência total.')}</p>
             <ul className="list-disc list-inside text-left mx-auto max-w-lg mb-2">
               <li>{t('Serviço premium com garantia incluída')}</li>
@@ -162,6 +270,9 @@ export default function Pedido() {
               <li>{t('Entrega em todo o país')}</li>
             </ul>
             <p className="mt-2">{t('Preenche o formulário ou acede ao nosso portal de parceiros para veres o stock europeu disponível.')}</p>
+            <p className="mt-4">
+              <a href="mailto:AutoGO.stand@gmail.com" className="text-[#b42121] underline font-semibold hover:text-[#a11a1a] transition">Contactar por email: AutoGO.stand@gmail.com</a>
+            </p>
           </div>
         </main>
       </div>
