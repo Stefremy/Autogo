@@ -5,8 +5,8 @@ export default function Footer() {
   const { t } = useTranslation();
   return (
     <footer
-      className="w-full bg-[#f5f6fa] text-[#22223b] pt-12 pb-6 px-4 mt-16 shadow-2xl border-t-4 border-[#b42121]/20 relative overflow-hidden"
-      style={{ position: 'relative', overflow: 'hidden' }}
+      className="w-full bg-[#f5f6fa] text-[#22223b] pt-12 pb-6 px-4 shadow-2xl border-t-4 border-[#b42121]/20 relative overflow-hidden"
+      style={{ overflow: 'hidden' }}
     >
       {/* Background image with overlay */}
       <div className="absolute inset-0 w-full h-full z-0">

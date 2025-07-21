@@ -400,6 +400,7 @@ export default function Home() {
                     }
                     type={"SEDAN"}
                     country={car.country}
+                    status={car.status}
                   />
                 </motion.div>
               ))}
@@ -426,26 +427,28 @@ export default function Home() {
               </button>
               <div id="reviews-carousel" className="flex gap-6 min-w-[700px] md:min-w-0 px-4 overflow-x-auto scroll-smooth pb-2">
                 {googleReviews.map((review, idx) => (
-                  <div key={idx} className="shadow-xl rounded-2xl p-6 min-w-[320px] max-w-xs flex flex-col justify-between hover:shadow-2xl transition-all duration-200 bg-[#f5f6fa]">
-                    <div className="flex items-center mb-3">
-                      <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full border-2 border-[#b42121] mr-3" />
-                      <div>
-                        <div className="font-bold text-gray-900 text-lg">{review.name}</div>
-                        <div className="flex items-center gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <svg key={i} width="18" height="18" viewBox="0 0 20 20" fill={i < review.rating ? '#FFD600' : '#E0E0E0'} className="inline">
-                              <polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36" />
-                            </svg>
-                          ))}
-                        </div>
+                  <div key={idx} className="shadow-xl rounded-2xl p-6 min-w-[320px] max-w-xs flex flex-col justify-between hover:shadow-2xl transition-all duration-200 bg-gradient-to-br from-white via-[#fbe9e9] to-[#f5f6fa] border border-[#b42121]/10 relative">
+                  {/* Decorative quote icon */}
+                  <svg className="absolute top-4 right-4 opacity-10" width="32" height="32" fill="#b42121" viewBox="0 0 24 24"><path d="M7.17 17.66c-1.1 0-2-.9-2-2v-2.34c0-2.21 1.79-4 4-4h.17c.55 0 1 .45 1 1v2.34c0 2.21-1.79 4-4 4zm9 0c-1.1 0-2-.9-2-2v-2.34c0-2.21 1.79-4 4-4h.17c.55 0 1 .45 1 1v2.34c0 2.21-1.79 4-4 4z"/></svg>
+                  <div className="flex items-center mb-3">
+                    <img src={review.avatar} alt={review.name} className="w-12 h-12 rounded-full border-2 border-[#b42121] mr-3 shadow-md" />
+                    <div>
+                      <div className="font-bold text-gray-900 text-lg">{review.name}</div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} width="18" height="18" viewBox="0 0 20 20" fill={i < review.rating ? '#FFD600' : '#E0E0E0'} className="inline drop-shadow">
+                            <polygon points="10,1 12.59,7.36 19.51,7.64 14,12.14 15.82,19.02 10,15.27 4.18,19.02 6,12.14 0.49,7.64 7.41,7.36" />
+                          </svg>
+                        ))}
                       </div>
                     </div>
-                    <div className="text-gray-800 text-base mb-4">“{review.text}”</div>
-                    <div className="text-xs text-gray-500 flex items-center gap-2">
-                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline"><path stroke="#b42121" strokeWidth="2" d="M8 7V3h8v4"/><rect width="16" height="18" x="4" y="3" rx="2" stroke="#b42121" strokeWidth="2"/><path stroke="#b42121" strokeWidth="2" d="M12 11v4"/></svg>
-                      {review.date}
-                    </div>
                   </div>
+                  <div className="text-gray-800 text-base mb-4 italic font-medium leading-relaxed">“{review.text}”</div>
+                  <div className="text-xs text-gray-500 flex items-center gap-2 mt-auto">
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" className="inline"><path stroke="#b42121" strokeWidth="2" d="M8 7V3h8v4"/><rect width="16" height="18" x="4" y="3" rx="2" stroke="#b42121" strokeWidth="2"/><path stroke="#b42121" strokeWidth="2" d="M12 11v4"/></svg>
+                    {review.date}
+                  </div>
+                </div>
                 ))}
               </div>
               <button

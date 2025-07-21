@@ -8,7 +8,8 @@
     "image": "/images/cars/Corolla22.jpg",
     "description": "Reliable and fuel-efficient sedan, perfect for city driving.",
     "mileage": 15000,
-    "country": "DE"
+    "country": "DE",
+    "status": "disponivel"
   },
   {
     "id": "2",
@@ -19,7 +20,8 @@
     "image": "/images/cars/golf21.jpg",
     "description": "Sporty hatchback with low mileage and great features.",
     "mileage": 12000,
-    "country": "FR"
+    "country": "FR",
+    "status": "vendido"
   },
   {
     "id": "3",
@@ -30,7 +32,8 @@
     "image": "/images/cars/peugeot-3008.jpg",
     "description": "Spacious, stylish, and packed with technology, the Peugeot 3008 is an award-winning SUV ideal for family adventures.",
     "mileage": 8000,
-    "country": "PT"
+    "country": "PT",
+    "status": "sob_consulta"
   },
   {
     "id": "4",
@@ -56,10 +59,12 @@
     "emissionClass": "Euro6",
     "co2": "123 CO2",
     "color": "Cinzento",
+  "status": "disponivel",
     "images": [
       "/images/cars/citroenc3-1.jpg",
       "/images/cars/citroenc3-2.jpg",
       "/images/cars/citroenc3-3.jpg"
+     
     ],
     "equipamento_opcoes": {
       "opcoes_valor_elevado": [

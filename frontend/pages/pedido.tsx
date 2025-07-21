@@ -83,8 +83,8 @@ export default function Pedido() {
 })();
 `}} />
       <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col overflow-x-hidden relative">
-        <img src="/images/viaturasfundo.jpg" alt="Fundo" className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover opacity-30 z-0 transition-all duration-700" style={{objectPosition: 'center top', filter: 'blur(1px)'}} />
-        <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.95) 0%, rgba(251,233,233,0.85) 60%, rgba(245,246,250,0.95) 100%)'}} />
+        <img src="/images/pedido-fundo.jpg" alt="Fundo" className="pointer-events-none select-none fixed inset-0 w-full h-full object-cover opacity-60 z-0 transition-all duration-700" style={{objectPosition: 'center top', filter: 'blur(0.5px)'}} />
+        <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.80) 0%, rgba(251,233,233,0.65) 60%, rgba(245,246,250,0.80) 100%)'}} />
         <main className="relative z-10 max-w-2xl mx-auto mt-10 mb-16 p-0">
           <h1 className="text-4xl font-extrabold text-center text-black mb-2 drop-shadow-xl tracking-tight">{t('Pedido de Viatura à Medida')}</h1>
           <p className="text-lg text-center text-[#b42121] mb-6 font-medium">{t('Trazemos o carro dos teus sonhos da Europa para Portugal')}</p>

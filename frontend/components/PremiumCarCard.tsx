@@ -12,15 +12,24 @@ type PremiumCarCardProps = {
   type?: string;
   country?: string;
   bgColor?: string; // nova prop opcional
+  status?: string;
 };
 
-const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id, year, make, transmission, type = "SEDAN", country, bgColor }) => (
+const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id, year, make, transmission, type = "SEDAN", country, bgColor, status }) => (
   <a
     href={`/cars/${id}`}
     className={styles["premium-car-card"]}
     style={bgColor ? { background: bgColor } : undefined}
   >
     <div style={{ position: 'relative' }}>
+      {/* Status badge */}
+      {status && (
+        <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${
+          status === 'disponivel' ? 'bg-green-500' : status === 'vendido' ? 'bg-gray-400' : status === 'sob_consulta' ? 'bg-yellow-400' : 'bg-gray-400'
+        }`} style={{letterSpacing: '0.5px', minWidth: 90, textAlign: 'center'}}>
+          {status === 'disponivel' ? 'Disponível' : status === 'vendido' ? 'Vendido' : status === 'sob_consulta' ? 'Sob Consulta' : status}
+        </span>
+      )}
       <img src={image} alt={name} className={styles["premium-car-image"]} />
       {country && (
         <img

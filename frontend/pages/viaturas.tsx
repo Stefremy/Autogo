@@ -34,8 +34,22 @@ export default function Viaturas() {
     (!km || car.mileage <= parseInt(km))
   );
 
+  // Status translation map
+  const statusLabels = {
+    disponivel: t('Disponível'),
+    vendido: t('Vendido'),
+    sob_consulta: t('Sob Consulta'),
+  };
+  const statusColors = {
+    disponivel: 'bg-green-500',
+    vendido: 'bg-gray-400',
+    sob_consulta: 'bg-yellow-400',
+  };
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
+      <img src="/images/viaturas-fundo.jpg" alt="Fundo" className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover object-center opacity-50 md:opacity-60 z-0 transition-all duration-700" style={{objectFit: 'cover', objectPosition: 'center', filter: 'blur(0.5px)', width: '100vw', height: '100vh', maxWidth: '100vw', maxHeight: '100vh'}} />
+      <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.80) 0%, rgba(251,233,233,0.65) 60%, rgba(245,246,250,0.80) 100%)'}} />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div id="hero-redline" className="fixed top-[64px] left-0 w-full z-40 pointer-events-none" style={{height:'0'}}>
         <div id="hero-redline-bar" className="w-full flex justify-center">
@@ -82,7 +96,7 @@ export default function Viaturas() {
 })();
 `}} />
       {/* Soft gradient overlay for extra depth */}
-      <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.95) 0%, rgba(251,233,233,0.85) 60%, rgba(245,246,250,0.95) 100%)'}} />
+      <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.80) 0%, rgba(251,233,233,0.65) 60%, rgba(245,246,250,0.80) 100%)'}} />
       <MainLayout>
         <section className="w-full px-0 py-12 bg-transparent">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10 gap-4">
@@ -165,6 +179,13 @@ export default function Viaturas() {
               key={car.id}
               className={styles['premium-car-card']}
             >
+              {/* Status badge */}
+              {car.status && (
+                <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${statusColors[car.status] || 'bg-gray-400'}`}
+                  style={{letterSpacing: '0.5px', minWidth: 90, textAlign: 'center'}}>
+                  {statusLabels[car.status] || car.status}
+                </span>
+              )}
               {/* Galeria dinâmica de imagens com efeito */}
               <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent">
                 {(car.images || [car.image]).map((img, idx) => (
