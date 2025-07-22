@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Layout from '../../components/MainLayout';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import Link from 'next/link';
 
 export default function BlogPost({ post }) {
@@ -31,7 +32,7 @@ export default function BlogPost({ post }) {
           ))}
         </div>
         <article className="prose prose-lg max-w-none bg-white/80 rounded-xl p-6 shadow-md backdrop-blur-md">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{post.content}</ReactMarkdown>
         </article>
       </main>
     </Layout>
