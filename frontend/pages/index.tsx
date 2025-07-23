@@ -247,35 +247,81 @@ export default function Home({ blogArticles }) {
           </div>
         </motion.section>
 
-        {/* PREMIUM FEATURES BAR */}
-        <section className="w-full bg-transparent -mt-8 z-30 relative">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 px-6 py-6 rounded-2xl shadow-2xl bg-white/60 backdrop-blur-md border border-white/30">
-            <div className="flex items-center gap-3">
-              <span className="bg-[#b42121] text-white rounded-full p-2 shadow-lg">
-                {/* Importação Premium: Globe/Import icon */}
-                <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.7"/><path d="M2 12h20M12 2c2.5 2.5 2.5 17.5 0 20M12 2c-2.5 2.5-2.5 17.5 0 20" stroke="currentColor" strokeWidth="1.7"/></svg>
-              </span>
-              <span className="font-semibold text-gray-800 text-lg">{t('Importação Premium')}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="bg-[#b42121] text-white rounded-full p-2 shadow-lg">
-                {/* Garantia Incluída: Shield/Check icon */}
-                <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z" stroke="currentColor" strokeWidth="1.7"/><path d="M9.5 13l2 2 3-3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </span>
-              <span className="font-semibold text-gray-800 text-lg">{t('Garantia Incluída')}</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="bg-[#b42121] text-white rounded-full p-2 shadow-lg">
-                {/* Entrega em Todo o País: Delivery/Truck icon */}
-                <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="10" rx="2" stroke="currentColor" strokeWidth="1.7"/><path d="M16 13h2.28a2 2 0 0 1 1.79 1.11l1.43 2.86A1 1 0 0 1 20.66 18H19a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3" stroke="currentColor" strokeWidth="1.7"/></svg>
-              </span>
-              <span className="font-semibold text-gray-800 text-lg">{t('Entrega em Todo o País')}</span>
-            </div>
-          </div>
-        </section>
-
         {/* Como Funciona section */}
         <section className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-24 overflow-hidden" style={{backgroundColor: '#f5f6fa'}}>
+          {/* Features bar floating above video */}
+          <div className="absolute top-0 left-0 w-full flex justify-center z-30 pointer-events-auto">
+            <section className="relative w-full max-w-7xl mx-auto py-2 flex justify-center" style={{boxShadow: 'none', background: 'none'}}>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 w-full px-2 md:px-8">
+                {/* Feature: Importação Premium */}
+                <div className="flex flex-col items-center text-center min-w-[120px]">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Importação Premium: Serviço seguro. Acompanhamento total.">
+                    {/* Globe icon */}
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#22272a" strokeWidth="1.5"/><path d="M2 12h20M12 2c2.5 2.5 2.5 17.5 0 20M12 2c-2.5 2.5-2.5 17.5 0 20" stroke="#22272a" strokeWidth="1"/></svg>
+                  </span>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Importação Premium</div>
+                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                    Serviço seguro.<br />Acompanhamento total.
+                  </div>
+                </div>
+                {/* Feature: Garantia Incluída */}
+                <div className="flex flex-col items-center text-center min-w-[120px]">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Garantia Incluída: Garantia total. Transparência garantida.">
+                    {/* Shield/Check icon */}
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z" stroke="#22272a" strokeWidth="1.5"/><path d="M9.5 13l2 2 3-3" stroke="#22272a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </span>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Garantia Incluída</div>
+                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                    Garantia total.<br />Transparência garantida.
+                  </div>
+                </div>
+                {/* Feature: Entrega em Todo o País */}
+                <div className="flex flex-col items-center text-center min-w-[120px]">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Entrega em Todo o País: Entrega flexível. Todo Portugal.">
+                    {/* Truck icon */}
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="10" rx="2" stroke="#22272a" strokeWidth="1.5"/><path d="M16 13h2.28a2 2 0 0 1 1.79 1.11l1.43 2.86A1 1 0 0 1 20.66 18H19a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3" stroke="#22272a" strokeWidth="1.5"/></svg>
+                  </span>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Entrega em Todo o País</div>
+                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                    Entrega flexível.<br />Todo Portugal.
+                  </div>
+                </div>
+                {/* Feature: Apoio ao Cliente */}
+                <div className="flex flex-col items-center text-center min-w-[120px]">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Apoio ao Cliente: Equipa dedicada para ajudar. Resolvemos tudo por ti.">
+                    {/* Headset/Support icon */}
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3a3 3 0 0 0 3 3h1v-4H6a1 1 0 0 1-1-1v-1a7 7 0 0 1 14 0v1a1 1 0 0 1-1 1h-1v4h1a3 3 0 0 0 3-3v-3a9 9 0 0 0-9-9Z" stroke="#22272a" strokeWidth="1.5"/><circle cx="12" cy="17" r="2" stroke="#22272a" strokeWidth="1.5"/></svg>
+                  </span>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Apoio ao Cliente</div>
+                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                    Equipa dedicada para ajudar.<br />Resolvemos tudo por ti.
+                  </div>
+                </div>
+                {/* Feature: Sem Complicações */}
+                <div className="flex flex-col items-center text-center min-w-[120px]">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Sem Complicações: Processo simples e rápido. Tu escolhes, nós tratamos.">
+                    {/* Check/No stress icon */}
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#22272a" strokeWidth="1.5"/><path d="M8 12l2 2 4-4" stroke="#22272a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </span>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Sem Complicações</div>
+                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                    Processo simples e rápido.<br />Tu escolhes, nós tratamos.
+                  </div>
+                </div>
+                {/* Feature: Melhor Preço */}
+                <div className="flex flex-col items-center text-center min-w-[120px]">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Melhor Preço: Garantimos o melhor valor. Sem custos escondidos.">
+                    {/* Tag/Best price icon */}
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M3 12V7a2 2 0 0 1 2-2h5l9 9-7 7-9-9Z" stroke="#22272a" strokeWidth="1.5"/><circle cx="7.5" cy="7.5" r="1.5" fill="#22272a"/></svg>
+                  </span>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Melhor Preço</div>
+                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                    Garantimos o melhor valor.<br />Sem custos escondidos.
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
           {/* Video watermark background edge-to-edge */}
           <video
             className="absolute inset-0 w-full h-full object-cover opacity-30 blur-sm pointer-events-none z-0"
@@ -287,7 +333,7 @@ export default function Home({ blogArticles }) {
           />
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
-          <div className="relative z-20 max-w-5xl mx-auto text-center px-4">
+          <div className="relative z-20 max-w-5xl mx-auto text-center px-4 pt-24">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
