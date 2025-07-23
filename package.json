@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "jspdf": "^3.0.1",
+    "react-markdown": "^10.1.0",
     "yet-another-react-lightbox": "^3.23.4"
   }
 }
