@@ -7,7 +7,33 @@ import PremiumCarCard from '../components/PremiumCarCard';
 import { motion } from "framer-motion";
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
+export async function getServerSideProps({ locale }) {
+  // Fetch blog articles from markdown files
+  const blogDir = path.join(process.cwd(), 'data/blog'); // FIXED PATH
+  const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
+  const blogArticles = files.map(filename => {
+    const filePath = path.join(blogDir, filename);
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContent);
+    return {
+      title: data.title || filename,
+      date: data.date || '',
+      image: content.match(/!\[.*?\]\((.*?)\)/)?.[1] || '/images/auto-logo.png',
+      excerpt: content.split('\n').slice(0, 3).join(' ').replace(/[#*]/g, '').slice(0, 120) + '...',
+      link: `/blog/${filename.replace(/\.md$/, '')}`,
+    };
+  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      blogArticles,
+    },
+  };
+}
 
 // Placeholder reviews - replace with real data or API integration
 const googleReviews = [
@@ -41,7 +67,7 @@ const googleReviews = [
   },
 ];
 
-export default function Home() {
+export default function Home({ blogArticles }) {
   const { t } = useTranslation('common');
   return (
     <>
@@ -492,43 +518,13 @@ export default function Home() {
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
               <div id="articles-carousel" className="flex gap-6 min-w-[700px] md:min-w-0 px-4 overflow-x-auto scroll-smooth pb-2">
-                {/* Example articles - replace with real data or dynamic fetch if needed */}
-                {[
-                  {
-                    title: 'Como importar um carro da Alemanha para Portugal',
-                    date: '07 Julho 2025',
-                    image: '/images/cars/bmw-black.png',
-                    excerpt: 'Descobre o passo a passo para importar o teu próximo carro alemão, sem complicações e com total transparência.',
-                    link: '/blog/como-importar-carro-alemanha',
-                  },
-                  {
-                    title: 'ISV 2025: O que muda este ano?',
-                    date: '02 Julho 2025',
-                    image: '/images/cars/peugeot-3008.jpg',
-                    excerpt: 'Fica a saber todas as alterações ao Imposto Sobre Veículos para 2025 e como te podem afetar.',
-                    link: '/blog/isv-2025-mudancas',
-                  },
-                  {
-                    title: 'Dicas para comprar um carro usado premium',
-                    date: '28 Junho 2025',
-                    image: '/images/cars/golf21.jpg',
-                    excerpt: 'Os melhores conselhos para garantir uma compra segura e vantajosa no mercado de usados.',
-                    link: '/blog/dicas-carro-usado-premium',
-                  },
-                  {
-                    title: 'Vantagens da importação premium AutoGo.pt',
-                    date: '20 Junho 2025',
-                    image: '/images/cars/giulia.jpg',
-                    excerpt: 'Descobre porque cada vez mais portugueses escolhem a AutoGo.pt para importar o seu automóvel.',
-                    link: '/blog/vantagens-importacao-autogo',
-                  },
-                ].map((article, idx) => (
+                {blogArticles.map((article, idx) => (
                   <a key={idx} href={article.link} className="block rounded-2xl shadow-xl bg-[#f5f6fa] min-w-[320px] max-w-xs hover:shadow-2xl transition-all duration-200 overflow-hidden group">
                     <div className="h-44 w-full overflow-hidden flex items-center justify-center bg-gray-200">
                       <img src={article.image} alt={article.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
                     </div>
                     <div className="p-5 flex flex-col h-[180px]">
-                      <div className="text-xs text-gray-500 mb-2">{article.date}</div>
+                      <div className="text-xs text-gray-500 mb-2">{new Date(article.date).toLocaleDateString('pt-PT')}</div>
                       <div className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{article.title}</div>
                       <div className="text-gray-700 text-sm mb-4 line-clamp-3">{article.excerpt}</div>
                       <span className="mt-auto text-[#b42121] font-semibold hover:underline transition">Ler artigo &rarr;</span>
@@ -553,12 +549,4 @@ export default function Home() {
       </MainLayout>
     </>
   );
-}
-
-export async function getServerSideProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
 }

@@ -15,9 +15,41 @@ export default function BlogPost({ post }) {
   const router = useRouter();
   if (router.isFallback) return <div>Loading...</div>;
   if (!post) return <div>Artigo não encontrado.</div>;
+
+  // Detect a background image from the post content (first image, or a frontmatter field)
+  const getBackgroundImage = (post) => {
+    // Try frontmatter field first
+    if (post.backgroundImage) return post.backgroundImage;
+    // Otherwise, find the first image in the markdown content
+    const match = post.content.match(/!\[.*?\]\((.*?)\)/);
+    return match ? match[1] : null;
+  };
+  const backgroundImage = getBackgroundImage(post);
+
+  // Blog post background image (if any) should not extend under the footer
+  const footerHeight = 120; // px, adjust if needed
   return (
     <Layout>
-      <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem' }}>
+      {backgroundImage && (
+        <div
+          className="fixed inset-0 w-full h-full z-0 pointer-events-none select-none"
+          style={{
+            backgroundImage: `url('${backgroundImage}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'blur(2px) brightness(0.85)',
+            opacity: 0.35,
+            bottom: '120px', // do not overlay footer
+            position: 'fixed',
+            left: 0,
+            right: 0,
+            top: 0,
+          }}
+          aria-hidden="true"
+          data-fullwidth
+        />
+      )}
+      <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem', position: 'relative', zIndex: 1 }}>
         <Link href="/blog" legacyBehavior>
           <a className="text-[#d50032] underline underline-offset-4 hover:text-[#b42121]">← {t('Voltar ao Blog')}</a>
         </Link>

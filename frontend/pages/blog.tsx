@@ -45,28 +45,32 @@ export default function Blog({ posts }) {
   setTimeout(onScroll, 100);
 })();
 `}} />
-      <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem' }}>
-        {/* Removido título e subtítulo do blog conforme solicitado */}
-        <div className="mt-8 space-y-8">
-          {posts.map(post => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} legacyBehavior>
-              <a className="block rounded-xl bg-white/70 backdrop-blur-md shadow-lg border border-gray-200 hover:shadow-xl transition p-6 group focus:outline-none focus:ring-2 focus:ring-[#d50032]">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase tracking-wide shadow-sm ${post.type === 'review' ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800'}`}>{post.type === 'review' ? 'Review' : 'Notícia'}</span>
-                  <span className="text-gray-500 text-xs">{new Date(post.date).toLocaleDateString('pt-PT')}</span>
-                </div>
-                <h2 className="text-2xl font-bold text-[#1a237e] group-hover:underline underline-offset-4 mb-2">{post.title}</h2>
-                <p className="text-gray-700 line-clamp-3">{post.excerpt}</p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {post.tags.map(tag => (
-                    <span key={tag} className="bg-gray-200 text-gray-700 px-2 py-0.5 rounded text-xs">#{tag}</span>
-                  ))}
-                </div>
-              </a>
-            </Link>
-          ))}
-        </div>
-      </main>
+      <div className="min-h-screen w-full flex flex-col overflow-x-hidden relative">
+        <img src="/images/japans-car-magazines.jpg" alt="Fundo Blog" className="pointer-events-none select-none fixed inset-0 w-full h-full object-cover opacity-60 z-0 transition-all duration-700" style={{objectPosition: 'center top', filter: 'blur(0.5px)'}} />
+        <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.80) 0%, rgba(251,233,233,0.65) 60%, rgba(245,246,250,0.80) 100%)'}} />
+        <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem', position: 'relative', zIndex: 1 }}>
+          {/* Removido título e subtítulo do blog conforme solicitado */}
+          <div className="mt-8 space-y-8">
+            {posts.map(post => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} legacyBehavior>
+                <a className="block rounded-xl bg-white/70 backdrop-blur-md shadow-lg border border-gray-200 hover:shadow-xl transition p-6 group focus:outline-none focus:ring-2 focus:ring-[#d50032]">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase tracking-wide shadow-sm ${post.type === 'review' ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800'}`}>{post.type === 'review' ? 'Review' : 'Notícia'}</span>
+                    <span className="text-gray-500 text-xs">{new Date(post.date).toLocaleDateString('pt-PT')}</span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-[#1a237e] group-hover:underline underline-offset-4 mb-2">{post.title}</h2>
+                  <p className="text-gray-700 line-clamp-3">{post.excerpt}</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {post.tags.map(tag => (
+                      <span key={tag} className="bg-gray-200 text-gray-700 px-2 py-0.5 rounded text-xs">#{tag}</span>
+                    ))}
+                  </div>
+                </a>
+              </Link>
+            ))}
+          </div>
+        </main>
+      </div>
     </Layout>
   );
 }
