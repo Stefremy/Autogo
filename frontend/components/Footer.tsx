@@ -5,7 +5,7 @@ export default function Footer() {
   const { t } = useTranslation();
   return (
     <footer
-      className="w-full bg-[#f5f6fa] text-[#22223b] pt-8 pb-4 px-4 shadow-2xl border-t-4 border-[#b42121]/20 relative overflow-hidden"
+      className="w-full bg-[#f5f6fa] text-[#22223b] pt-8 pb-4 px-4 shadow-2xl border-t-4 border-[#b42121]/20 relative overflow-hidden opacity-100"
       style={{ overflow: 'hidden' }}
     >
       {/* Restored premium animated gradient overlay */}

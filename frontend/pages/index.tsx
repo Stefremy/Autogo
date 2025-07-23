@@ -73,11 +73,14 @@ export default function Home({ blogArticles }) {
     <>
       <MainLayout>
         <Head>
-          <title>{t('AutoGo.pt - Importação de Carros Europeus')}</title>
-          <meta
-            name="description"
-            content={t('O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.')}
-          />
+          <title>Simulador ISV exclusivo, carros importados e usados à venda em Portugal | AutoGo.pt</title>
+          <meta name="description" content="AutoGo.pt oferece o único Simulador ISV de carros importados e usados em Portugal. Calcule impostos, compare preços e encontre carros BMW, Audi, Mercedes, Peugeot e outros modelos europeus. Serviço exclusivo e inovador." />
+          <meta name="keywords" content="simulador ISV, simulador de carros, simulador impostos carros, carros importados, carros usados, carros BMW, Audi, Mercedes, Peugeot, carros europeus, AutoGo.pt, exclusivo, inovador" />
+          <meta property="og:title" content="Simulador ISV exclusivo, carros importados e usados à venda em Portugal | AutoGo.pt" />
+          <meta property="og:description" content="AutoGo.pt oferece o único Simulador ISV de carros importados e usados em Portugal. Calcule impostos, compare preços e encontre carros BMW, Audi, Mercedes, Peugeot e outros modelos europeus." />
+          <meta property="og:url" content="https://autogo.pt/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="https://autogo.pt/images/auto-logo.png" />
         </Head>
 
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}

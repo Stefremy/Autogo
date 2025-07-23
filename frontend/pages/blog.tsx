@@ -5,12 +5,23 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
+import Head from 'next/head';
 
 import Layout from "../components/MainLayout";
 export default function Blog({ posts }) {
   const { t } = useTranslation('common');
   return (
     <Layout>
+      <Head>
+        <title>Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot</title>
+        <meta name="description" content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal." />
+        <meta name="keywords" content="blog carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados, carros importados à venda, carros importados Portugal, carros usados europeus, carros seminovos europeus" />
+        <meta property="og:title" content="Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot" />
+        <meta property="og:description" content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal." />
+        <meta property="og:url" content="https://autogo.pt/blog" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://autogo.pt/images/auto-logo.png" />
+      </Head>
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div id="hero-redline" className="fixed top-[64px] left-0 w-full z-40 pointer-events-none" style={{height:'0'}}>
         <div id="hero-redline-bar" className="w-full flex justify-center">
