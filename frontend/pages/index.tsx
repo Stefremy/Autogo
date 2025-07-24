@@ -258,68 +258,68 @@ export default function Home({ blogArticles }) {
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 w-full px-2 md:px-8">
                 {/* Feature: Importação Premium */}
                 <div className="flex flex-col items-center text-center min-w-[120px]">
-                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Importação Premium: Serviço seguro. Acompanhamento total.">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label={t('Importação Premium') + ': ' + t('Serviço seguro') + '. ' + t('Acompanhamento total') + '.'}>
                     {/* Globe icon */}
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#22272a" strokeWidth="1.5"/><path d="M2 12h20M12 2c2.5 2.5 2.5 17.5 0 20M12 2c-2.5 2.5-2.5 17.5 0 20" stroke="#22272a" strokeWidth="1"/></svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Importação Premium</div>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">{t('Importação Premium')}</div>
                   <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
-                    Serviço seguro.<br />Acompanhamento total.
+                    {t('Serviço seguro')}<br />{t('Acompanhamento total')}
                   </div>
                 </div>
                 {/* Feature: Garantia Incluída */}
                 <div className="flex flex-col items-center text-center min-w-[120px]">
-                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Garantia Incluída: Garantia total. Transparência garantida.">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label={t('Garantia Incluída') + ': ' + t('Garantia total') + '. ' + t('Transparência garantida') + '.'}>
                     {/* Shield/Check icon */}
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z" stroke="#22272a" strokeWidth="1.5"/><path d="M9.5 13l2 2 3-3" stroke="#22272a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Garantia Incluída</div>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">{t('Garantia Incluída')}</div>
                   <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
-                    Garantia total.<br />Transparência garantida.
+                    {t('Garantia total')}<br />{t('Transparência garantida')}
                   </div>
                 </div>
                 {/* Feature: Entrega em Todo o País */}
                 <div className="flex flex-col items-center text-center min-w-[120px]">
-                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Entrega em Todo o País: Entrega flexível. Todo Portugal.">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label={t('Entrega em Todo o País') + ': ' + t('Entrega flexível') + '. ' + t('Todo Portugal') + '.'}>
                     {/* Truck icon */}
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="10" rx="2" stroke="#22272a" strokeWidth="1.5"/><path d="M16 13h2.28a2 2 0 0 1 1.79 1.11l1.43 2.86A1 1 0 0 1 20.66 18H19a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3" stroke="#22272a" strokeWidth="1.5"/></svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Entrega em Todo o País</div>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">{t('Entrega em Todo o País')}</div>
                   <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
-                    Entrega flexível.<br />Todo Portugal.
+                    {t('Entrega flexível')}<br />{t('Todo Portugal')}
                   </div>
                 </div>
                 {/* Feature: Apoio ao Cliente */}
                 <div className="flex flex-col items-center text-center min-w-[120px]">
-                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Apoio ao Cliente: Equipa dedicada para ajudar. Resolvemos tudo por ti.">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label={t('Apoio ao Cliente') + ': ' + t('Equipa dedicada para ajudar') + '. ' + t('Resolvemos tudo por ti') + '.'}>
                     {/* Headset/Support icon */}
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v3a3 3 0 0 0 3 3h1v-4H6a1 1 0 0 1-1-1v-1a7 7 0 0 1 14 0v1a1 1 0 0 1-1 1h-1v4h1a3 3 0 0 0 3-3v-3a9 9 0 0 0-9-9Z" stroke="#22272a" strokeWidth="1.5"/><circle cx="12" cy="17" r="2" stroke="#22272a" strokeWidth="1.5"/></svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Apoio ao Cliente</div>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">{t('Apoio ao Cliente')}</div>
                   <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
-                    Equipa dedicada para ajudar.<br />Resolvemos tudo por ti.
+                    {t('Equipa dedicada para ajudar')}<br />{t('Resolvemos tudo por ti')}
                   </div>
                 </div>
                 {/* Feature: Sem Complicações */}
                 <div className="flex flex-col items-center text-center min-w-[120px]">
-                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Sem Complicações: Processo simples e rápido. Tu escolhes, nós tratamos.">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label={t('Sem Complicações') + ': ' + t('Processo simples e rápido') + '. ' + t('Tu escolhes, nós tratamos') + '.'}>
                     {/* Check/No stress icon */}
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#22272a" strokeWidth="1.5"/><path d="M8 12l2 2 4-4" stroke="#22272a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Sem Complicações</div>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">{t('Sem Complicações')}</div>
                   <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
-                    Processo simples e rápido.<br />Tu escolhes, nós tratamos.
+                    {t('Processo simples e rápido')}<br />{t('Tu escolhes, nós tratamos')}
                   </div>
                 </div>
                 {/* Feature: Melhor Preço */}
                 <div className="flex flex-col items-center text-center min-w-[120px]">
-                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label="Melhor Preço: Garantimos o melhor valor. Sem custos escondidos.">
+                  <span className="mb-3 text-gray-800" tabIndex={0} aria-label={t('Melhor Preço') + ': ' + t('Garantimos o melhor valor') + '. ' + t('Sem custos escondidos') + '.'}>
                     {/* Tag/Best price icon */}
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M3 12V7a2 2 0 0 1 2-2h5l9 9-7 7-9-9Z" stroke="#22272a" strokeWidth="1.5"/><circle cx="7.5" cy="7.5" r="1.5" fill="#22272a"/></svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">Melhor Preço</div>
+                  <div className="font-semibold text-gray-900 text-sm mb-3.5">{t('Melhor Preço')}</div>
                   <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
-                    Garantimos o melhor valor.<br />Sem custos escondidos.
+                    {t('Garantimos o melhor valor')}<br />{t('Sem custos escondidos')}
                   </div>
                 </div>
               </div>

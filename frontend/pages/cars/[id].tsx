@@ -38,11 +38,6 @@ type Car = {
   equipamento_opcoes?: {
     [categoria: string]: string[];
   };
-  reviews?: {
-    rating: number;
-    name: string;
-    text: string;
-  }[];
 };
 
 export default function CarDetail() {
@@ -380,32 +375,32 @@ export default function CarDetail() {
           {/* Botões de ação - minimalist, side by side, no vibrant colors */}
           <div className="flex gap-4 mt-6">
           <button
-            className="flex items-center gap-2 border border-gray
-                  onClick={async () => {
-                    if (isSharing) return;
-                    setIsSharing(true);
-                    try {
-                      if (navigator.share) {
-                        await navigator.share({
-                          title: `${car.make} ${car.model} (${car.year}) em AutoGo.pt`,
-                          text: `Vê este carro: ${car.make} ${car.model} (${car.year})`,
-                          url: window.location.href,
-                        });
-                      } else {
-                        await navigator.clipboard.writeText(window.location.href);
-                        alert('Link copiado para a área de transferência!');
-                      }
-                    } catch (e) {
-                      // Optionally handle error
-                    }
-                    setIsSharing(false);
-                  }}
-                  aria-label="Partilhar esta viatura"
-                  disabled={isSharing}
-                >
-                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M15 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M20 10V5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 19H5V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  <span>Partilhar</span>
-                </button>
+            className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-3 px-6 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-lg"
+            onClick={async () => {
+              if (isSharing) return;
+              setIsSharing(true);
+              try {
+                if (navigator.share) {
+                  await navigator.share({
+                    title: `${car.make} ${car.model} (${car.year}) em AutoGo.pt`,
+                    text: `Vê este carro: ${car.make} ${car.model} (${car.year})`,
+                    url: window.location.href,
+                  });
+                } else {
+                  await navigator.clipboard.writeText(window.location.href);
+                  alert('Link copiado para a área de transferência!');
+                }
+              } catch (e) {
+                // Optionally handle error
+              }
+              setIsSharing(false);
+            }}
+            aria-label="Partilhar esta viatura"
+            disabled={isSharing}
+          >
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M15 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M20 10V5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 19H5V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>Partilhar</span>
+          </button>
                 <button
                   onClick={handleDownloadPDF}
                   className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-3 px-6 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-lg"
@@ -598,21 +593,6 @@ export default function CarDetail() {
             },
             "image": car.images ? car.images.map(img => `https://autogo.pt${img}`) : [`https://autogo.pt${car.image}`],
             "url": `https://autogo.pt/cars/${car.id}`,
-            ...(car.reviews && Array.isArray(car.reviews) && car.reviews.length > 0 ? {
-              "review": car.reviews.map(r => ({
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": r.rating,
-                  "bestRating": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": r.name
-                },
-                "reviewBody": r.text
-              }))
-            } : {})
           })
         }} />
       )}

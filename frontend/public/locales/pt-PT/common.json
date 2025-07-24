@@ -42,7 +42,7 @@
   "ComoFunciona_Steps": [
     {
       "title": "Viaturas em stock e pré-seleção",
-      "content": "A Autogo mantém um stock de viaturas importadas, cuidadosamente selecionadas nos principais mercados da UE (como Alemanha, França, Bélgica e Países Baixos) ou até fora da UE, consoante disponibilidade e interesse. Qualquer viatura em stock pode ser reservada de imediato, garantindo prioridade no envio."
+      "content": "A Autogo mantém um stock de viaturas importadas, cuidadosamente selecionadas nos principais mercados da UE (como Alemanha, França, Bélgica e Países Baixos) ou até fora da UE, consoante disponibilidade e interesse."
     },
     {
       "title": "Reserva de viaturas por encomenda",
@@ -58,7 +58,7 @@
     },
     {
       "title": "Entrega ao cliente",
-      "content": "A Autogo entrega a viatura em qualquer ponto do país, já matriculada em Portugal, com todos os documentos e seguro incluídos."
+      "content": "A Autogo entrega a viatura em qualquer ponto do país, já matriculada em Portugal, com todos os documentos incluídos."
     }
   ],
   "ComoFunciona_PorqueAutogo": "Porque escolher a Autogo",
@@ -70,7 +70,7 @@
   ],
   "ComoFunciona_PrazosTitulo": "Prazos estimados",
   "ComoFunciona_PrazosLista": [
-    "Stock UE: entre 1 a 2 semanas até à entrega, após chegada e inspeção.",
+    "Stock UE: entre 2 a 4 semanas até à entrega, podendo variar consoante a procura e disponibilidade.",
     "Encomendas internacionais: de 4 a 8 semanas, dependendo do transporte e da nacionalização."
   ],
   "Importação premium de viaturas europeias, legalizadas e prontas a rolar em Portugal.": "Importação premium de viaturas europeias, legalizadas e prontas a rolar em Portugal.",
