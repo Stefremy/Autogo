@@ -3,8 +3,15 @@ import fs from 'fs';
 import path from 'path';
 
 const carsFile = path.join(process.cwd(), 'frontend/data/cars.json');
+const API_KEY = process.env.API_KEY;
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (['POST', 'DELETE'].includes(req.method as string)) {
+    const key = req.headers['x-api-key'];
+    if (!API_KEY || key !== API_KEY) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+  }
   if (req.method === 'GET') {
     // List all cars
     try {

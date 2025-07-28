@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 const blogDir = path.join(process.cwd(), 'frontend/data/blog');
+const API_KEY = process.env.API_KEY;
 
 function getAllPosts() {
   const files = fs.readdirSync(blogDir);
@@ -14,6 +15,12 @@ function getAllPosts() {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (['POST', 'DELETE'].includes(req.method as string)) {
+    const key = req.headers['x-api-key'];
+    if (!API_KEY || key !== API_KEY) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+  }
   if (req.method === 'GET') {
     // List all blog posts
     try {
