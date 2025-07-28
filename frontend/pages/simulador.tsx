@@ -283,7 +283,7 @@ Number(form.co2)
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col overflow-x-hidden">
       {/* Edge-to-edge fixed background image with soft overlay for beauty */}
-      <img src="/images/simulador fundo.jpg" alt="Simulador Fundo" className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover object-center opacity-30 md:opacity-40 z-0 transition-all duration-700" style={{objectPosition: 'center', filter: 'blur(0.5px)', width: '100vw', height: '100vh', maxWidth: '100vw', maxHeight: '100vh'}} />
+      <img src="/images/simulador-fundo.jpg" alt="Simulador Fundo" className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover object-center opacity-30 md:opacity-40 z-0 transition-all duration-700" style={{objectPosition: 'center', filter: 'blur(0.5px)', width: '100vw', height: '100vh', maxWidth: '100vw', maxHeight: '100vh'}} />
       {/* Soft gradient overlay for extra depth */}
       <div className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0" style={{background: 'linear-gradient(120deg, rgba(245,246,250,0.95) 0%, rgba(251,233,233,0.85) 60%, rgba(245,246,250,0.95) 100%)'}} />
 
