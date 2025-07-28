@@ -3,6 +3,8 @@ import '../styles/globals.scss';
 import { useRouter } from 'next/router';
 import { IndexNavbar } from '../components/IndexNavbar';
 import { appWithTranslation } from 'next-i18next';
+import type { UserConfig } from 'next-i18next';
+import nextI18NextConfig from '../next-i18next.config.js';
 import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -17,5 +19,5 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18NextConfig as UserConfig);
 

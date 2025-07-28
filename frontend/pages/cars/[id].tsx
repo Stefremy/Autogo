@@ -8,6 +8,7 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import jsPDF from 'jspdf';
+import Head from 'next/head';
 
 type Car = {
   id: string;
@@ -186,15 +187,15 @@ export default function CarDetail() {
     <Layout>
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div id="hero-redline" className="fixed top-[64px] left-0 w-full z-40 pointer-events-none" style={{height:'0'}}>
-        <div id="hero-redline-bar" className="w-full flex justify-center">
-          <span id="hero-redline-span" className="block h-1.5 rounded-full bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90 shadow-[0_0_16px_4px_rgba(213,0,50,0.18)] animate-pulse transition-all duration-700" style={{width:'16rem', margin:'0 auto'}} />
-        </div>
+      <div id="hero-redline-bar" className="w-full flex justify-center">
+        <span id="hero-redline-span" className="block h-1.5 rounded-full bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90 shadow-[0_0_16px_4px_rgba(213,0,50,0.18)] animate-pulse transition-all duration-700" style={{width:'16rem', margin:'0 auto'}} />
+      </div>
       </div>
       <script dangerouslySetInnerHTML={{__html:`
-(function(){
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function clamp(x, min, max) { return Math.max(min, Math.min(max, x)); }
-  function onScroll() {
+  (function(){
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function clamp(x, min, max) { return Math.max(min, Math.min(max, x)); }
+    function onScroll() {
     var el = document.getElementById('hero-redline-span');
     var bar = document.getElementById('hero-redline-bar');
     var footer = document.querySelector('footer');
@@ -212,194 +213,194 @@ export default function CarDetail() {
     var fadeProgress = clamp((progress - fadeStart) / (1 - fadeStart), 0, 1);
     el.style.opacity = 0.9 - 0.6 * fadeProgress;
     el.style.marginLeft = el.style.marginRight = 'auto';
-  }
-  window.addEventListener('scroll', onScroll);
-  window.addEventListener('resize', onScroll);
-  setTimeout(onScroll, 100);
-})();
-`}} />
+    }
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll);
+    setTimeout(onScroll, 100);
+  })();
+  `}} />
       {/* Main navbar stays at the very top, sticky bar is always below */}
       {/* Sticky bar: only car info, never navigation */}
       <div
-        className={`fixed left-0 w-full z-40 flex items-center bg-white/80 backdrop-blur-xl transition-all duration-500 px-4 overflow-hidden
-          ${showStickyBar ? 'h-[120px] py-4' : 'h-[60px] py-0'}
-          shadow-xl border-b border-[#b42121]/20`}
-        style={{
-          top: 56,
-          boxShadow: '0 2px 12px 0 rgba(180,33,33,0.08)',
-        }}
+      className={`fixed left-0 w-full z-40 flex items-center bg-white/80 backdrop-blur-xl transition-all duration-500 px-4 overflow-hidden
+        ${showStickyBar ? 'h-[120px] py-4' : 'h-[60px] py-0'}
+        shadow-xl border-b border-[#b42121]/20`}
+      style={{
+        top: 56,
+        boxShadow: '0 2px 12px 0 rgba(180,33,33,0.08)',
+      }}
       >
-        {/* Car image: scales up with bar, stays contained */}
-        <div className={`transition-all duration-500 flex items-center
-          ${showStickyBar ? 'opacity-100 translate-x-0 w-32 mr-6' : 'opacity-80 -translate-x-4 w-16 mr-2'}
-        `}>
-          <img
-            src={(car.images && car.images[0]) || car.image}
-            alt={car.make + ' ' + car.model}
-            className={`object-cover rounded-xl shadow border-2 border-white bg-gray-100 ring-2 ring-[#b42121]/30 transition-all duration-500
-              ${showStickyBar ? 'h-24 w-40 scale-110' : 'h-10 w-20 scale-100'}`}
-            style={{ maxHeight: showStickyBar ? 96 : 40, maxWidth: showStickyBar ? 160 : 80 }}
-          />
-        </div>
-        <div className={`flex-1 flex flex-col md:flex-row md:items-center gap-1 md:gap-6 transition-all duration-500
-          ${showStickyBar ? 'text-2xl' : 'text-base'}`}
-          style={{ fontSize: showStickyBar ? '2rem' : '1rem', lineHeight: showStickyBar ? '2.5rem' : '1.25rem' }}
-        >
-          <span className={`font-bold text-[#b42121] drop-shadow-sm transition-all duration-500 ${showStickyBar ? 'text-3xl' : 'text-lg'}`}>{car.make} {car.model} <span className={`text-gray-700 font-normal transition-all duration-500 ${showStickyBar ? 'text-2xl' : 'text-base'}`}>{car.year}</span></span>
-          <span className={`text-blue-700 font-bold drop-shadow transition-all duration-500 ${showStickyBar ? 'text-2xl' : 'text-base'}`}>{car.price.toLocaleString()} €</span>
-          <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km</span>
-          {car.fuel && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaGasPump className="text-[#b42121]" /> {car.fuel}</span>}
-          {car.power && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaBolt className="text-[#b42121]" /> {car.power}</span>}
-          {car.engineSize && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaRoad className="text-[#b42121]" /> {car.engineSize}</span>}
-          {car.firstRegistration && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaRegCalendarCheck className="text-[#b42121]" /> {car.firstRegistration}</span>}
-        </div>
-        {/* Action buttons aligned right */}
-        <div className="flex gap-3 ml-auto">
-          {/* <button className="bg-white border border-[#b42121] text-[#b42121] font-bold py-2 px-4 rounded-xl shadow-lg hover:bg-[#b42121] hover:text-white transition-all duration-200">WhatsApp</button>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Pedir Contacto</button> */}
-          {/* <button onClick={handleDownloadPDF} className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Download PDF</button> */}
-        </div>
+      {/* Car image: scales up with bar, stays contained */}
+      <div className={`transition-all duration-500 flex items-center
+        ${showStickyBar ? 'opacity-100 translate-x-0 w-32 mr-6' : 'opacity-80 -translate-x-4 w-16 mr-2'}
+      `}>
+        <img
+        src={(car.images && car.images[0]) || car.image}
+        alt={car.make + ' ' + car.model}
+        className={`object-cover rounded-xl shadow border-2 border-white bg-gray-100 ring-2 ring-[#b42121]/30 transition-all duration-500
+          ${showStickyBar ? 'h-24 w-40 scale-110' : 'h-10 w-20 scale-100'}`}
+        style={{ maxHeight: showStickyBar ? 96 : 40, maxWidth: showStickyBar ? 160 : 80 }}
+        />
+      </div>
+      <div className={`flex-1 flex flex-col md:flex-row md:items-center gap-1 md:gap-6 transition-all duration-500
+        ${showStickyBar ? 'text-2xl' : 'text-base'}`}
+        style={{ fontSize: showStickyBar ? '2rem' : '1rem', lineHeight: showStickyBar ? '2.5rem' : '1.25rem' }}
+      >
+        <span className={`font-bold text-[#b42121] drop-shadow-sm transition-all duration-500 ${showStickyBar ? 'text-3xl' : 'text-lg'}`}>{car.make} {car.model} <span className={`text-gray-700 font-normal transition-all duration-500 ${showStickyBar ? 'text-2xl' : 'text-base'}`}>{car.year}</span></span>
+        <span className={`text-blue-700 font-bold drop-shadow transition-all duration-500 ${showStickyBar ? 'text-2xl' : 'text-base'}`}>{car.price.toLocaleString()} €</span>
+        <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km</span>
+        {car.fuel && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaGasPump className="text-[#b42121]" /> {car.fuel}</span>}
+        {car.power && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaBolt className="text-[#b42121]" /> {car.power}</span>}
+        {car.engineSize && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaRoad className="text-[#b42121]" /> {car.engineSize}</span>}
+        {car.firstRegistration && <span className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? 'text-xl' : 'text-sm'}`}><FaRegCalendarCheck className="text-[#b42121]" /> {car.firstRegistration}</span>}
+      </div>
+      {/* Action buttons aligned right */}
+      <div className="flex gap-3 ml-auto">
+        {/* <button className="bg-white border border-[#b42121] text-[#b42121] font-bold py-2 px-4 rounded-xl shadow-lg hover:bg-[#b42121] hover:text-white transition-all duration-200">WhatsApp</button>
+        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Pedir Contacto</button> */}
+        {/* <button onClick={handleDownloadPDF} className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Download PDF</button> */}
+      </div>
       </div>
       {/* Main content: dynamic padding to match sticky+navbar height */}
       <div className={`min-h-screen bg-[#f5f6fa] transition-all duration-500 pt-[116px]`} style={{ transition: 'padding-top 0.5s cubic-bezier(.4,0,.2,1)' }}>
-        <main className="w-full px-0 py-0 space-y-12">
-          {/* HERO */}
-          <section ref={heroRef} className="w-full flex flex-col md:flex-row gap-12 items-start px-0 md:px-12 lg:px-24 xl:px-32 pt-10">
-            {/* Hero Image + Gallery */}
-            <div className="flex-1 relative flex flex-col items-center">
-              <img
-                src={(car.images && car.images[0]) || car.image}
-                alt={car.make + ' ' + car.model}
-                className="rounded-3xl shadow-2xl w-full object-cover aspect-video ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in"
-                style={{ maxHeight: 420, background: '#eee' }}
-                onClick={() => { setLightboxIndex(0); setLightboxOpen(true); }}
-              />
-              {/* Bandeira sobreposta */}
-              {car.country && (
-                <span className="absolute top-6 left-6 bg-white/90 px-4 py-2 rounded-2xl shadow flex items-center gap-2 border border-gray-200 backdrop-blur-sm">
-                  <img
-                    src={`/images/flags/${car.country.toLowerCase()}.png`}
-                    alt={car.country}
-                    className="w-7 h-7 rounded-full border border-white"
-                  />
-                  <span className="text-sm font-bold text-gray-700">
-                    {car.country === "DE"
-                      ? "Importado da Alemanha"
-                      : car.country === "PT"
-                        ? "Nacional"
-                        : car.country === "FR"
-                          ? "Importado de França"
-                          : `Importado de ${car.country}`}
-                  </span>
-                </span>
-              )}
-              {/* Mini galeria horizontal */}
-              <div className="flex gap-3 mt-5">
-                {(car.images || [car.image]).map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    alt={`${car.make} ${car.model} galeria ${idx + 1}`}
-                    className={`rounded-xl object-cover w-24 h-16 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === idx ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
-                    onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
-                  />
-                ))}
-              </div>
-              <Lightbox
-                open={lightboxOpen}
-                close={() => setLightboxOpen(false)}
-                slides={(car.images || [car.image]).map(img => ({ src: img }))}
-                index={lightboxIndex}
-                plugins={[Zoom]}
-                zoom={{ maxZoomPixelRatio: 3 }}
-              />
-            </div>
-            {/* Detalhes principais */}
-            <div className="flex-1 space-y-6 px-0 md:px-8 xl:px-16">
-              <h1 className="text-5xl font-semibold mb-4 tracking-tight text-gray-900 drop-shadow-sm">
-                {car.make} {car.model} <span className="text-[#b42121]">{car.year}</span>
-              </h1>
-              <div className="flex flex-wrap gap-3 text-base mb-6">
-                <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
-                  <FaCalendarAlt className="text-[#b42121]" /> {car.year}
-                </span>
-                <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
-                  <FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km
-                </span>
-                {car.engineSize && (
-                  <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
-                    <FaRoad className="text-[#b42121]" /> {car.engineSize}
-                  </span>
-                )}
-                {car.fuel && (
-                  <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
-                    <FaGasPump className="text-[#b42121]" /> {car.fuel}
-                  </span>
-                )}
-                {car.gearboxType && (
-                  <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
-                    <FaCogs className="text-[#b42121]" /> {car.gearboxType}
-                  </span>
-                )}
-                {car.power && (
-                  <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
-                    <FaBolt className="text-[#b42121]" /> {car.power}
-                  </span>
-                )}
-              </div>
-              <div className="text-3xl font-bold text-blue-700 drop-shadow-sm">{car.price.toLocaleString()} €</div>
-              {/* Botão ver mais detalhes */}
-              <button
-                className="flex items-center gap-2 mt-2 mb-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-2xl shadow font-semibold text-gray-700 transition-all duration-200 text-lg"
-                onClick={() => setShowMore(v => !v)}
-                aria-expanded={showMore}
-              >
-                <span>Ver mais detalhes</span>
-                {showMore ? <FaChevronUp className="text-[#b42121]" /> : <FaChevronDown className="text-[#b42121]" />}
-              </button>
-              {/* Detalhes extra, animados */}
-              <div
-                className={`overflow-hidden transition-all duration-500 ${showMore ? 'max-h-96 opacity-100 mb-2 bg-[#f5f6fa] px-6 py-4 rounded-2xl' : 'max-h-0 opacity-0 mb-0'}`}
-                style={{ willChange: 'max-height, opacity' }}
-              >
-                <ul className="space-y-3 py-2">
-                  {car.category && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaCarSide className="text-[#b42121]" /> <strong>Categoria:</strong> {car.category}</li>}
-                  {car.gearbox && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaLayerGroup className="text-[#b42121]" /> <strong>Caixa de Velocidades:</strong> {car.gearbox}</li>}
-                  {car.origin && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaGlobeEurope className="text-[#b42121]" /> <strong>País de Origem:</strong> {car.origin}</li>}
-                  {car.unitNumber && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaHashtag className="text-[#b42121]" /> <strong>Nº de Unidade:</strong> {car.unitNumber}</li>}
-                  {car.firstRegistration && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaRegCalendarCheck className="text-[#b42121]" /> <strong>Data da Primeira Matrícula:</strong> {car.firstRegistration}</li>}
-                  {car.emissionClass && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaLayerGroup className="text-[#b42121]" /> <strong>Classe de Emissões:</strong> {car.emissionClass}</li>}
-                </ul>
-              </div>
-              {/* Botões de ação - minimalist, side by side, no vibrant colors */}
-              <div className="flex gap-4 mt-6">
-                <button
-                  className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-3 px-6 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-lg"
-                  onClick={async () => {
-                    if (isSharing) return;
-                    setIsSharing(true);
-                    try {
-                      if (navigator.share) {
-                        await navigator.share({
-                          title: `${car.make} ${car.model} (${car.year}) em AutoGo.pt`,
-                          text: `Vê este carro: ${car.make} ${car.model} (${car.year})`,
-                          url: window.location.href,
-                        });
-                      } else {
-                        await navigator.clipboard.writeText(window.location.href);
-                        alert('Link copiado para a área de transferência!');
-                      }
-                    } catch (e) {
-                      // Optionally handle error
-                    }
-                    setIsSharing(false);
-                  }}
-                  aria-label="Partilhar esta viatura"
-                  disabled={isSharing}
-                >
-                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M15 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M20 10V5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 19H5V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  <span>Partilhar</span>
-                </button>
+      <main className="w-full px-0 py-0 space-y-12">
+        {/* HERO */}
+        <section ref={heroRef} className="w-full flex flex-col md:flex-row gap-12 items-start px-0 md:px-12 lg:px-24 xl:px-32 pt-10">
+        {/* Hero Image + Gallery */}
+        <div className="flex-1 relative flex flex-col items-center">
+          <img
+          src={(car.images && car.images[0]) || car.image}
+          alt={car.make + ' ' + car.model}
+          className="rounded-3xl shadow-2xl w-full object-cover aspect-video ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in"
+          style={{ maxHeight: 420, background: '#eee' }}
+          onClick={() => { setLightboxIndex(0); setLightboxOpen(true); }}
+          />
+          {/* Bandeira sobreposta */}
+          {car.country && (
+          <span className="absolute top-6 left-6 bg-white/90 px-4 py-2 rounded-2xl shadow flex items-center gap-2 border border-gray-200 backdrop-blur-sm">
+            <img
+            src={`/images/flags/${car.country.toLowerCase()}.png`}
+            alt={car.country}
+            className="w-7 h-7 rounded-full border border-white"
+            />
+            <span className="text-sm font-bold text-gray-700">
+            {car.country === "DE"
+              ? "Importado da Alemanha"
+              : car.country === "PT"
+              ? "Nacional"
+              : car.country === "FR"
+                ? "Importado de França"
+                : `Importado de ${car.country}`}
+            </span>
+          </span>
+          )}
+          {/* Mini galeria horizontal */}
+          <div className="flex gap-3 mt-5">
+          {(car.images || [car.image]).map((img, idx) => (
+            <img
+            key={idx}
+            src={img}
+            alt={`${car.make} ${car.model} galeria ${idx + 1}`}
+            className={`rounded-xl object-cover w-24 h-16 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === idx ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
+            onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
+            />
+          ))}
+          </div>
+          <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={(car.images || [car.image]).map(img => ({ src: img }))}
+          index={lightboxIndex}
+          plugins={[Zoom]}
+          zoom={{ maxZoomPixelRatio: 3 }}
+          />
+        </div>
+        {/* Detalhes principais */}
+        <div className="flex-1 space-y-6 px-0 md:px-8 xl:px-16">
+          <h1 className="text-5xl font-semibold mb-4 tracking-tight text-gray-900 drop-shadow-sm">
+          {car.make} {car.model} <span className="text-[#b42121]">{car.year}</span>
+          </h1>
+          <div className="flex flex-wrap gap-3 text-base mb-6">
+          <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
+            <FaCalendarAlt className="text-[#b42121]" /> {car.year}
+          </span>
+          <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
+            <FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km
+          </span>
+          {car.engineSize && (
+            <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
+            <FaRoad className="text-[#b42121]" /> {car.engineSize}
+            </span>
+          )}
+          {car.fuel && (
+            <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
+            <FaGasPump className="text-[#b42121]" /> {car.fuel}
+            </span>
+          )}
+          {car.gearboxType && (
+            <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
+            <FaCogs className="text-[#b42121]" /> {car.gearboxType}
+            </span>
+          )}
+          {car.power && (
+            <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
+            <FaBolt className="text-[#b42121]" /> {car.power}
+            </span>
+          )}
+          </div>
+          <div className="text-3xl font-bold text-blue-700 drop-shadow-sm">{car.price.toLocaleString()} €</div>
+          {/* Botão ver mais detalhes */}
+          <button
+          className="flex items-center gap-2 mt-2 mb-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-2xl shadow font-semibold text-gray-700 transition-all duration-200 text-lg"
+          onClick={() => setShowMore(v => !v)}
+          aria-expanded={showMore}
+          >
+          <span>Ver mais detalhes</span>
+          {showMore ? <FaChevronUp className="text-[#b42121]" /> : <FaChevronDown className="text-[#b42121]" />}
+          </button>
+          {/* Detalhes extra, animados */}
+          <div
+          className={`overflow-hidden transition-all duration-500 ${showMore ? 'max-h-96 opacity-100 mb-2 bg-[#f5f6fa] px-6 py-4 rounded-2xl' : 'max-h-0 opacity-0 mb-0'}`}
+          style={{ willChange: 'max-height, opacity' }}
+          >
+          <ul className="space-y-3 py-2">
+            {car.category && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaCarSide className="text-[#b42121]" /> <strong>Categoria:</strong> {car.category}</li>}
+            {car.gearbox && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaLayerGroup className="text-[#b42121]" /> <strong>Caixa de Velocidades:</strong> {car.gearbox}</li>}
+            {car.origin && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaGlobeEurope className="text-[#b42121]" /> <strong>País de Origem:</strong> {car.origin}</li>}
+            {car.unitNumber && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaHashtag className="text-[#b42121]" /> <strong>Nº de Unidade:</strong> {car.unitNumber}</li>}
+            {car.firstRegistration && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaRegCalendarCheck className="text-[#b42121]" /> <strong>Data da Primeira Matrícula:</strong> {car.firstRegistration}</li>}
+            {car.emissionClass && <li className="flex items-center gap-2 text-gray-700 text-lg"><FaLayerGroup className="text-[#b42121]" /> <strong>Classe de Emissões:</strong> {car.emissionClass}</li>}
+          </ul>
+          </div>
+          {/* Botões de ação - minimalist, side by side, no vibrant colors */}
+          <div className="flex gap-4 mt-6">
+          <button
+            className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-3 px-6 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-lg"
+            onClick={async () => {
+              if (isSharing) return;
+              setIsSharing(true);
+              try {
+                if (navigator.share) {
+                  await navigator.share({
+                    title: `${car.make} ${car.model} (${car.year}) em AutoGo.pt`,
+                    text: `Vê este carro: ${car.make} ${car.model} (${car.year})`,
+                    url: window.location.href,
+                  });
+                } else {
+                  await navigator.clipboard.writeText(window.location.href);
+                  alert('Link copiado para a área de transferência!');
+                }
+              } catch (e) {
+                // Optionally handle error
+              }
+              setIsSharing(false);
+            }}
+            aria-label="Partilhar esta viatura"
+            disabled={isSharing}
+          >
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M15 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M20 10V5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 19H5V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>Partilhar</span>
+          </button>
                 <button
                   onClick={handleDownloadPDF}
                   className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-3 px-6 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-lg"
@@ -564,6 +565,37 @@ export default function CarDetail() {
           &copy; 2025 Autogo. All rights reserved.
         </footer>
       </div>
+      <Head>
+        <title>{car ? `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt` : 'Carro importado europeu à venda | AutoGo.pt'}</title>
+        <meta name="description" content={car ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${car.mileage} km. Preço: €${car.price.toLocaleString()}. Carros usados e seminovos com garantia.` : 'Carro importado europeu à venda em AutoGo.pt'} />
+        <meta name="keywords" content={car ? `${car.make} importado, ${car.model} importado, carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados, carros importados à venda, carros importados Portugal, carros usados europeus, carros seminovos europeus` : 'carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados'} />
+        <meta property="og:title" content={car ? `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt` : 'Carro importado europeu à venda | AutoGo.pt'} />
+        <meta property="og:description" content={car ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${car.mileage} km. Preço: €${car.price.toLocaleString()}. Carros usados e seminovos com garantia.` : 'Carro importado europeu à venda em AutoGo.pt'} />
+        <meta property="og:url" content={car ? `https://autogo.pt/cars/${car.id}` : 'https://autogo.pt/cars/'} />
+        <meta property="og:type" content="product" />
+        <meta property="og:image" content={car ? `https://autogo.pt${car.image}` : 'https://autogo.pt/images/auto-logo.png'} />
+      </Head>
+      {/* Dados estruturados JSON-LD para carros (Schema.org Vehicle) */}
+      {car && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Vehicle",
+            "brand": car.make,
+            "model": car.model,
+            "vehicleModelDate": car.year,
+            "mileageFromOdometer": car.mileage,
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "price": car.price,
+              "availability": "https://schema.org/InStock"
+            },
+            "image": car.images ? car.images.map(img => `https://autogo.pt${img}`) : [`https://autogo.pt${car.image}`],
+            "url": `https://autogo.pt/cars/${car.id}`,
+          })
+        }} />
+      )}
     </Layout>
   );
 }
