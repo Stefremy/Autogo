@@ -1,2 +1,7 @@
 node_modules
 node_modules/node_modules/
+
+# Editor directories and workspace files
+.vscode/
+.idea/
+*.code-workspace
