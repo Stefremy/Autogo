@@ -2,7 +2,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-const carsFile = path.join(process.cwd(), 'frontend/data/cars.json');
+// Resolve the cars JSON file relative to the project. When the Next.js
+// server is started from the `frontend` directory, `process.cwd()` points
+// there, so joining with `data/cars.json` locates the file correctly.
+const carsFile = path.join(process.cwd(), 'data/cars.json');
 const API_KEY = process.env.API_KEY;
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
