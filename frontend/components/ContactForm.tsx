@@ -16,10 +16,10 @@ export default function ContactForm() {
     setLoading(true); setError(''); setSuccess(false);
     try {
       await emailjs.send(
-        'service_ngduxdg',
-        'template_3cb4rfl',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT || '',
         form,
-        'VzMmXG4l4EqvuhAIl'
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
       );
       setSuccess(true);
       setForm({ nome: '', email: '', telefone: '', mensagem: '' });
