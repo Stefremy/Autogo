@@ -3,7 +3,6 @@ import Layout from "../components/MainLayout";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import ContactForm from '../components/ContactForm'; // Import the ContactForm component
-// TODO: Uncomment the above line and ensure ContactForm.tsx exists in ../components, or update the path below if it's elsewhere.
 
 export default function Contacto() {
   const { t } = useTranslation('common');
