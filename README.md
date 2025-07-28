@@ -3,8 +3,9 @@ Autogo Website
 
 ## Running the Next.js project
 
-The Next.js application lives inside the `frontend` folder. You can use either
-Yarn or npm to install dependencies and run the project.
+The Next.js application and all of its dependencies live inside the `frontend`
+folder. Use either Yarn or npm to install modules **from that directory** and
+run the project.
 
 ### Using npm
 
