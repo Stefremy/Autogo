@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-const blogDir = path.join(process.cwd(), 'frontend/data/blog');
+const blogDir = path.join(process.cwd(), 'data/blog');
 
 function getAllPosts() {
   const files = fs.readdirSync(blogDir);

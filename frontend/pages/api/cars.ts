@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-const carsFile = path.join(process.cwd(), 'frontend/data/cars.json');
+const carsFile = path.join(process.cwd(), 'data/cars.json');
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
