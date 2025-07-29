@@ -11,6 +11,14 @@ const blogDir = path.join(process.cwd(), 'data/blog');
 const API_KEY = process.env.API_KEY;
 
 function getAllPosts() {
+  let blogDir = path.join(process.cwd(), 'data/blog');
+  if (!fs.existsSync(blogDir)) {
+    // fallback if running from repo root
+    const altBlogDir = path.join(process.cwd(), 'frontend/data/blog');
+    if (fs.existsSync(altBlogDir)) {
+      blogDir = altBlogDir;
+    }
+  }
   const files = fs.readdirSync(blogDir);
   return files.filter(f => f.endsWith('.md')).map(filename => {
     const filePath = path.join(blogDir, filename);
