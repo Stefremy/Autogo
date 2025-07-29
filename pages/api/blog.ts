@@ -2,10 +2,23 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-const blogDir = path.join(process.cwd(), 'frontend/data/blog');
+// Resolve the blog directory relative to the project when running from
+// the `frontend` folder. `process.cwd()` inside Next.js points to the
+// directory the dev server is started in, so joining with `data/blog`
+// ensures correct paths whether running `yarn dev` inside `frontend`
+// or executing tests from the repository root.
+const blogDir = path.join(process.cwd(), 'data/blog');
 const API_KEY = process.env.API_KEY;
 
 function getAllPosts() {
+  let blogDir = path.join(process.cwd(), 'data/blog');
+  if (!fs.existsSync(blogDir)) {
+    // fallback if running from repo root
+    const altBlogDir = path.join(process.cwd(), 'frontend/data/blog');
+    if (fs.existsSync(altBlogDir)) {
+      blogDir = altBlogDir;
+    }
+  }
   const files = fs.readdirSync(blogDir);
   return files.filter(f => f.endsWith('.md')).map(filename => {
     const filePath = path.join(blogDir, filename);
