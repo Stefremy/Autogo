@@ -134,7 +134,7 @@ export default function Home({ blogArticles }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative w-screen h-[550px] md:h-[76vh] flex items-center overflow-hidden"
+          className="relative w-full min-h-[420px] md:h-[76vh] flex flex-col md:flex-row items-center md:items-stretch overflow-hidden px-2 sm:px-4 md:px-0"
         >
           {/* Background image covers full width, fades left */}
           <div
@@ -148,19 +148,18 @@ export default function Home({ blogArticles }) {
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  // Gradiente: transparente à direita, branco puro à esquerda, stops suaves para efeito premium
                   "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.92) 18%, rgba(255,255,255,0.80) 32%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0.22) 68%, rgba(255,255,255,0.08) 82%, rgba(255,255,255,0.00) 100%)",
               }}
             />
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pl-8 md:pl-20 max-w-2xl w-full">
+          <div className="relative z-10 flex flex-col items-center md:items-start justify-center h-full w-full max-w-2xl mx-auto py-10 md:py-0 px-2 sm:px-6">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="text-black text-4xl md:text-6xl font-semibold mb-6 leading-tight drop-shadow-xl"
+              className="text-black text-3xl sm:text-4xl md:text-6xl font-semibold mb-4 md:mb-6 leading-tight drop-shadow-xl text-center md:text-left"
             >
               {t('Rápido. Seguro. Teu.')}
             </motion.h1>
@@ -168,19 +167,19 @@ export default function Home({ blogArticles }) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7 }}
-              className="text-black text-lg md:text-2xl mb-10 max-w-xl drop-shadow-lg"
+              className="text-black text-base sm:text-lg md:text-2xl mb-6 md:mb-10 max-w-xl drop-shadow-lg text-center md:text-left"
             >
               {t('O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.')}
             </motion.p>
-            <div className="flex w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-2 items-center gap-3 mb-5 border border-white/30">
+            <div className="flex flex-col sm:flex-row w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-2 items-center gap-3 mb-4 md:mb-5 border border-white/30">
               <Link href="/viaturas" legacyBehavior passHref>
-                <a className="beauty-fade-btn">{t('Procurar viaturas')}</a>
+                <a className="beauty-fade-btn w-full sm:w-auto text-center">{t('Procurar viaturas')}</a>
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
-                <a className="beauty-fade-btn">{t('Simulador')}</a>
+                <a className="beauty-fade-btn w-full sm:w-auto text-center">{t('Simulador')}</a>
               </Link>
               <Link href="/pedido" legacyBehavior passHref>
-                <a className="beauty-fade-btn" style={{ marginLeft: '0.5rem' }}>{t('Encomendar')}</a>
+                <a className="beauty-fade-btn w-full sm:w-auto text-center" style={{ marginLeft: '0.5rem' }}>{t('Encomendar')}</a>
               </Link>
             </div>
             <style jsx>{`
@@ -202,7 +201,7 @@ export default function Home({ blogArticles }) {
                 z-index: 1;
                 white-space: nowrap;
                 cursor: pointer;
-                min-width: 170px;
+                min-width: 140px;
               }
               .beauty-fade-btn:before {
                 content: '';
@@ -243,7 +242,7 @@ export default function Home({ blogArticles }) {
                 transform: scale(0.98);
               }
             `}</style>
-            <div className="ml-1 mb-1 flex items-center gap-2 cursor-pointer text-[#22272a] hover:text-[#b42121] font-medium text-base transition">
+            <div className="ml-1 mb-1 flex items-center gap-2 cursor-pointer text-[#22272a] hover:text-[#b42121] font-medium text-base transition justify-center md:justify-start">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" className="inline mr-1 opacity-70" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="1.6" d="M4 6h16M7 12h10M10 18h4"></path></svg>
               {t('Filtros avançados')}
             </div>
