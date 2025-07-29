@@ -1,0 +1,226 @@
+[
+  {
+    "id": "1",
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": 2022,
+    "price": 17500,
+    "image": "/images/cars/Corolla22.jpg",
+    "description": "Reliable and fuel-efficient sedan, perfect for city driving.",
+    "mileage": 15000,
+    "country": "DE"
+  },
+  {
+    "id": "2",
+    "make": "Volkswagen",
+    "model": "Golf",
+    "year": 2021,
+    "price": 16500,
+    "image": "/images/cars/golf21.jpg",
+    "description": "Sporty hatchback with low mileage and great features.",
+    "mileage": 12000,
+    "country": "FR",
+    "status": "novidade"
+  },
+  {
+    "id": "3",
+    "make": "Peugeot",
+    "model": "3008",
+    "year": 2023,
+    "price": 28500,
+    "image": "/images/cars/peugeot-3008.jpg",
+    "description": "Spacious, stylish, and packed with technology, the Peugeot 3008 is an award-winning SUV ideal for family adventures.",
+    "mileage": 8000,
+    "country": "PT",
+    "status": "sob_consulta"
+  },
+  {
+    "id": "4",
+    "make": "Citroen",
+    "model": "C3",
+    "year": 2020,
+    "price": 13900,
+    "image": "/images/cars/citroenc3-1.jpg",
+    "description": "Citroen C3 em excelente estado, importado de França.",
+    "mileage": 32000,
+    "country": "FR",
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Citadino",
+    "engineSize": "1199 CC",
+    "power": "82 Hp 60 kW",
+    "places": 5,
+    "unitNumber": "6040319",
+    "origin": "França - WAVRIN",
+    "firstRegistration": "24/06/2020",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "123 CO2",
+    "color": "Cinzento",
+
+    "images": [
+      "/images/cars/citroenc3-1.jpg",
+      "/images/cars/citroenc3-2.jpg",
+      "/images/cars/citroenc3-3.jpg"
+     
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Espelhos retrovisores elétricos",
+        "Vidros elétricos",
+        "Acesso mãos livres (Keyless Go)",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema Start-Stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Volante em pele",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Vidros: outros",
+        "Decoração interior: outros",
+        "Terceira luz de travão",
+        "Iluminação exterior: outros",
+        "Sistema móvel de pneus",
+        "Sistema check-control",
+        "Documentação a bordo",
+        "Instrumentação adicional",
+        "Termómetro exterior",
+        "Entretenimento a bordo: outros acessórios",
+        "Interior: outros",
+        "Fecho centralizado com comando",
+        "Características de transmissão selecionáveis",
+        "Banco do condutor com regulação em altura",
+        "Interface iPod",
+        "Estofos em tecido",
+        "Spoiler de tejadilho",
+        "Leitor de DVD",
+        "Ajuste lombar do condutor elétrico",
+        "Ajuste lombar do passageiro elétrico",
+        "Iluminação do chão",
+        "Banco do passageiro com regulação em altura",
+        "Fita colorida no para-brisas",
+        "Luz de presença LED frontal",
+        "Comando de voz para sistema de áudio",
+        "Leitor MP3",
+        "Redução catalítica seletiva (SCR)",
+        "Assistente automático de máximos",
+        "Aquecimento adicional",
+        "Servotronic",
+        "Spoiler traseiro",
+        "Interface MP3",
+        "Design exterior desportivo",
+        "Faróis LED",
+        "Porta traseira elétrica",
+        "Filtro de partículas",
+        "Sistema de som",
+        "Controlo de tração"
+      ]
+    }
+  },
+  {
+    "id": "5",
+    "make": "Volkswagen",
+    "model": "e‑Up!",
+    "year": 2020,
+    "price": 10990,
+    "image": "/images/cars/vweup-1.jpg",
+    "description": "Volkswagen e‑Up! elétrico, importado, em ótimo estado.",
+    "mileage": 30000,
+    "country": "DE",
+    "gearboxType": "Automático",
+    "gearbox": 1,
+    "category": "Citadino elétrico",
+    "engineSize": "−",
+    "power": "61 kW (83 CV)",
+    "places": 4,
+    "unitNumber": "VW2020EUP001",
+    "origin": "Alemanha",
+    "firstRegistration": "15/03/2020",
+    "doors": 5,
+    "fuel": "Elétrico",
+    "emissionClass": "Zero Emissões",
+    "co2": "0 CO2",
+    "color": "Branco",
+    "specs": {
+      "battery_kWh": 32.3,
+      "real_range_km": 205,
+      "ac_charging_kW": 7.2,
+      "dc_charging_kW": 30,
+      "acceleration_0_100": 11.9,
+      "top_speed_kmh": 130,
+      "efficiency_kWh_per_100km": 12.9
+    },
+    "equipamento_opcoes": {
+      "conforto": [
+        "Climatronic automático",
+        "Volante multifunções em pele",
+        "Bancos aquecidos",
+        "Sensor de chuva",
+        "Sensor de luz"
+      ],
+      "seguranca": [
+        "6 airbags (frontais, laterais e cortina)",
+        "ABS",
+        "ESP",
+        "Lane Assist",
+        "Câmara de marcha‑atrás"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Rádio Composition Phone + DAB+",
+        "Dock smartphone (Maps+More)"
+      ],
+      "interior": [
+        "Revestimentos Fusion",
+        "Iluminação azul no interior"
+      ],
+      "exterior": [
+        "Jantes de liga leve 15\"",
+        "Faróis LED diurnos",
+        "Pintura bicolor (tejadilho opcional)"
+      ],
+      "outras_opcoes": [
+        "Controlo de cruzeiro",
+        "Aquecimento adicional (pré‑condicionamento)",
+        "Fecho centralizado",
+        "Pára‑choques de design específico"
+      ]
+    }
+  }
+]
