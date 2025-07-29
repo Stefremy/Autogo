@@ -27,6 +27,7 @@ const AVAILABLE_LANGS = Object.entries(LOCALE_TO_FLAG)
 
 export function IndexNavbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const router = useRouter();
   const { t } = useTranslation();
@@ -59,6 +60,8 @@ export function IndexNavbar() {
     }
   };
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
     <nav
@@ -87,13 +90,23 @@ export function IndexNavbar() {
           </div>
         </Link>
       </div>
-      <div className="flex flex-wrap items-center justify-end gap-6 flex-1 min-w-0">
+      <button
+        className="md:hidden p-2 rounded-lg focus:outline-none"
+        onClick={() => setMenuOpen(o => !o)}
+        aria-label="Abrir menu"
+      >
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <div className={`${menuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row items-center justify-end gap-6 flex-1 min-w-0 bg-white md:bg-transparent absolute md:static top-16 left-0 w-full md:w-auto shadow md:shadow-none p-4 md:p-0 z-40`}>
         {NAV_LINKS.map(({ href, label }) => {
           const isActive = router.pathname === href;
           return (
             <Link
               key={href}
               href={href}
+              onClick={closeMenu}
               className={`relative text-base font-medium transition-all duration-200 px-2 py-1 rounded-lg
                 ${isActive ? "text-[#b42121] bg-[#f5f6fa] shadow-sm" : "text-[#22272a] hover:text-[#b42121] hover:bg-[#f5f6fa]"}
                 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30`}
