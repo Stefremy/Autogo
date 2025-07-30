@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
-import { IndexNavbar } from "./IndexNavbar";
+import { IndexNavbar } from "./Index";
 
 const NAV_LINKS = [
   { href: "/", label: "Início" },
