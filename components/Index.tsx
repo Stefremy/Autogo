@@ -6,36 +6,7 @@ import CarCard from './CarCard';
 import PremiumCarCard from './PremiumCarCard';
 import { motion } from "framer-motion";
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 
-export async function getServerSideProps({ locale }) {
-  // Fetch blog articles from markdown files
-  const blogDir = path.join(process.cwd(), 'data/blog'); // FIXED PATH
-  const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
-  const blogArticles = files.map(filename => {
-    const filePath = path.join(blogDir, filename);
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContent);
-    return {
-      title: data.title || filename,
-      date: data.date || '',
-      image: content.match(/!\[.*?\]\((.*?)\)/)?.[1] || '/images/auto-logo.png',
-      excerpt: content.split('\n').slice(0, 3).join(' ').replace(/[#*]/g, '').slice(0, 120) + '...',
-      link: `/blog/${filename.replace(/\.md$/, '')}`,
-    };
-  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-      blogArticles,
-    },
-  };
-}
-
-// Placeholder reviews - replace with real data or API integration
 const googleReviews = [
   {
     name: 'João Silva',
@@ -67,7 +38,9 @@ const googleReviews = [
   },
 ];
 
-export default function Home({ blogArticles }) {
+import blogArticles from '../data/blogArticles.json';
+
+export default function Index() {
   const { t } = useTranslation('common');
   return (
     <>

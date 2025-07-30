@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import '../styles/globals.scss';
 import { useRouter } from 'next/router';
-import { IndexNavbar } from '../components/Index';
+import { IndexNavbar } from '../components/IndexNavbar';
 import { appWithTranslation } from 'next-i18next';
 import type { UserConfig } from 'next-i18next';
 import nextI18NextConfig from '../next-i18next.config.js';

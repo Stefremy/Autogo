@@ -1,17 +1,21 @@
+---
 title: "2024 Alfa Romeo Giulia Quadrifoglio Review"
 date: "2024-07-29"
-image: "/images/giulia-2024.jpg"
-lang: "pt"
-
-
-![2024 Alfa Romeo Giulia Quadrifoglio]
-![2024 Alfa Romeo Giulia Quadrifoglio](/images/giulia-2024.jpg)
-
-## Visão Geral
-O Alfa Romeo Giulia Quadrifoglio 2024 une o design italiano à performance emocionante. Equipado com um V6 biturbo de 505 cv, este sedan desportivo proporciona uma experiência de condução inesquecível — e garantiu lugar na lista Editors' Choice 2024 da Car and Driver. Embora o interior não seja tão refinado quanto alguns rivais alemães, a sua beleza, velocidade e agilidade são difíceis de igualar.
-
+type: "review"
+tags: ["Alfa Romeo", "Giulia Quadrifoglio", "review"]
+lang: "pt-PT"
+image: "https://hips.hearstapps.com/hmg-prod/images/2024-alfa-romeo-giulia-quadrifoglio-100th-anniversario-103-643961f239a2d.jpg?crop=1xw:1xh;center,top&resize=980:*"
 ---
 
+## 2024 Alfa Romeo Giulia Quadrifoglio Review
+
+O Alfa Romeo Giulia Quadrifoglio 2024 une o design italiano à performance emocionante. Equipado com um V6 biturbo de 505 cv, este sedan desportivo proporciona uma experiência de condução inesquecível — e garantiu lugar na lista Editors' Choice 2024 da Car and Driver. Embora o interior não seja tão refinado quanto alguns rivais alemães, a sua beleza, velocidade e agilidade são difíceis de igualar.
+
+![2024 Alfa Romeo Giulia Quadrifoglio](https://hips.hearstapps.com/hmg-prod/images/2024-alfa-romeo-giulia-quadrifoglio-100th-anniversario-103-643961f239a2d.jpg?crop=1xw:1xh;center,top&resize=980:*)
+
+### #AlfaRomeo #GiuliaQuadrifoglio #review
+
+---
 
 ## Novidades para 2024
 Para celebrar o 100º aniversário do icónico emblema Quadrifoglio, a Alfa Romeo lançou a edição exclusiva **100th Anniversario**, limitada a apenas 100 unidades. Destaques:
@@ -28,7 +32,6 @@ Outras novidades de 2024:
 
 ---
 
-
 ## Preços
 - **Preço base:** $81,855
 - **Totalmente equipado:** Até $89,025
@@ -41,7 +44,6 @@ Outras novidades de 2024:
 De série: navegação, monitorização de ângulo morto, bancos dianteiros aquecidos, sensores de estacionamento, estofos em pele e sistema de som Harman/Kardon com 15 altifalantes. O pacote Active Assist Plus adiciona cruise control adaptativo, assistente de faixa e monitorização de atenção do condutor.
 
 ---
-
 
 ## Performance
 - **Motor:** V6 biturbo 2.9 litros
@@ -56,7 +58,6 @@ Conduzir o Giulia Quadrifoglio é puro prazer — graças ao chassis afiado, mot
 
 ---
 
-
 ## Interior & Conforto
 O interior combina pele e camurça sintética, detalhes em fibra de carbono e bancos desportivos dianteiros. Os bancos Recaro opcionais oferecem mais apoio, mas não têm aquecimento nem ajustes elétricos. A bagageira acomoda quatro malas de mão; o espaço traseiro é modesto.
 
@@ -67,7 +68,6 @@ O interior combina pele e camurça sintética, detalhes em fibra de carbono e ba
 - Sistema de som premium Harman/Kardon com 15 altifalantes
 
 ---
-
 
 ## Segurança & Garantia
 
@@ -85,14 +85,12 @@ O interior combina pele e camurça sintética, detalhes em fibra de carbono e ba
 
 ---
 
-
 ## Galeria
 
 - [Galeria completa na Car and Driver](https://www.caranddriver.com/photos/g43601268/2024-alfa-romeo-giulia-quadrifoglio-revealed-gallery/)
 - ![Vista lateral](https://hips.hearstapps.com/hmg-prod/images/2024-alfa-romeo-giulia-quadrifoglio-100th-anniversario-115-643961f4c3c57.jpg?crop=1xw:1xh;center,top&resize=980:*)
 
 ---
-
 
 ## Veredito Final
 
