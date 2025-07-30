@@ -5,7 +5,7 @@ lang: "pt"
 ---
 
 
-![2024 Alfa Romeo Giulia Quadrifoglio](https://hips.hearstapps.com/hmg-prod/images/2024-alfa-romeo-giulia-quadrifoglio-100th-anniversario-103-643961f239a2d.jpg?crop=1xw:1xh;center,top&resize=980:*)
+![2024 Alfa Romeo Giulia Quadrifoglio]
 
 ## Visão Geral
 O Alfa Romeo Giulia Quadrifoglio 2024 une o design italiano à performance emocionante. Equipado com um V6 biturbo de 505 cv, este sedan desportivo proporciona uma experiência de condução inesquecível — e garantiu lugar na lista Editors' Choice 2024 da Car and Driver. Embora o interior não seja tão refinado quanto alguns rivais alemães, a sua beleza, velocidade e agilidade são difíceis de igualar.
