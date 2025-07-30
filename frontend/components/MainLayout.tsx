@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -50,7 +49,6 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           return <div className="max-w-7xl mx-auto px-4 md:px-0">{child}</div>;
         })}
       </main>
-      <Analytics />
       <Footer />
     </div>
   );

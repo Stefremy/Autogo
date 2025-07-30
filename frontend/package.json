@@ -17,7 +17,7 @@
     "gray-matter": "^4.0.3",
     "i18next": "^25.3.2",
     "jspdf": "^3.0.1",
-    "next": "^15.4.1",
+    "next": "^15.4.5",
     "next-i18next": "^15.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.1.0",
@@ -30,6 +30,7 @@
     "yet-another-react-lightbox": "^3.23.4"
   },
   "devDependencies": {
+    "@types/next": "^8.0.7",
     "@types/node": "22.15.29",
     "@types/react": "19.1.6",
     "autoprefixer": "^10.4.21",
