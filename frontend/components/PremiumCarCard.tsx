@@ -52,44 +52,48 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id,
             style={{ position: 'absolute', top: '0.9rem', left: '0.9rem', width: 32, height: 22, borderRadius: '0.2rem', border: '1.5px solid #fff', boxShadow: '0 2px 8px rgba(44,62,80,0.10)', zIndex: 2, background: '#fff', objectFit: 'cover' }}
           />
         )}
-        <div className={styles["premium-car-price"]}>€{price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
       </div>
       <div className={styles["premium-car-info"]}>
-        <div className={styles["premium-car-type"]} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-          {/* Car make logo with fallback for case and extension */}
-          {make && (
-            <>
-              <img
-                src={`/images/carmake/${make.toLowerCase().replace(/[^a-z0-9]/gi, '')}-logo.png`}
-                alt={make}
-                style={{
-                  height: 22,
-                  width: "auto",
-                  maxWidth: 60,
-                  objectFit: "contain",
-                  display: "inline-block",
-                  verticalAlign: "middle",
-                  filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.10))"
-                }}
-                loading="lazy"
-                onError={e => {
-                  const img = e.currentTarget as HTMLImageElement;
-                  // Try .jpg if .png fails
-                  if (!img.src.endsWith('.jpg')) {
-                    img.src = img.src.replace('.png', '.jpg');
-                  } else {
-                    // Try original-case make (e.g. BMW-logo.png)
-                    const originalCase = `/images/carmake/${make.replace(/[^a-z0-9]/gi, '')}-logo.png`;
-                    if (img.src !== window.location.origin + originalCase) {
-                      img.src = originalCase;
+        <div className={styles["premium-car-type"]} style={{ display: "flex", alignItems: "center", gap: "0.5rem", justifyContent: "space-between", width: "100%" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            {/* Car make logo with fallback for case and extension */}
+            {make && (
+              <>
+                <img
+                  src={`/images/carmake/${make.toLowerCase().replace(/[^a-z0-9]/gi, '')}-logo.png`}
+                  alt={make}
+                  style={{
+                    height: 30, // increased from 22
+                    width: "auto",
+                    maxWidth: 80, // increased from 60
+                    objectFit: "contain",
+                    display: "inline-block",
+                    verticalAlign: "middle",
+                    filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.10))"
+                  }}
+                  loading="lazy"
+                  onError={e => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    // Try .jpg if .png fails
+                    if (!img.src.endsWith('.jpg')) {
+                      img.src = img.src.replace('.png', '.jpg');
                     } else {
-                      img.style.display = 'none';
+                      // Try original-case make (e.g. BMW-logo.png)
+                      const originalCase = `/images/carmake/${make.replace(/[^a-z0-9]/gi, '')}-logo.png`;
+                      if (img.src !== window.location.origin + originalCase) {
+                        img.src = originalCase;
+                      } else {
+                        img.style.display = 'none';
+                      }
                     }
-                  }
-                }}
-              />
-            </>
-          )}
+                  }}
+                />
+              </>
+            )}
+          </div>
+          <div style={{ fontWeight: 700, color: '#1a1a1a', fontSize: '1.15rem', letterSpacing: '0.5px', minWidth: 90, textAlign: 'right' }}>
+            €{price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          </div>
         </div>
         <div className={styles["premium-car-title"]}>{name}</div>
         <div className={styles["premium-car-meta-row"]}>

@@ -70,7 +70,13 @@ export default function Footer() {
         className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-4 text-sm text-gray-600 relative z-10"
       >
         <span>&copy; {new Date().getFullYear()} AutoGo.pt. {t('Todos os direitos reservados.')}</span>
-        <span className="mt-2 md:mt-0">{t('Desenvolvido com paixão em Portugal.')}</span>
+        <span className="mt-2 md:mt-0 flex items-center gap-2">
+          Desenvolvido pela
+          <a href="https://linke.pt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center group">
+            <img src="/images/linke-logo.png" alt="Linke.pt" className="h-6 w-auto ml-1 mr-1 align-middle group-hover:scale-110 transition-transform duration-200" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
+          </a>
+          com paixão em Portugal
+        </span>
       </div>
     </footer>
   );

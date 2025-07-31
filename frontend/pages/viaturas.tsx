@@ -240,9 +240,31 @@ export default function Viaturas() {
                     />
                   )}
                 </span>
-                <h2 className="text-xl font-semibold mb-1 text-[#222] text-center px-2">
-                  {car.make} {car.model}
-                </h2>
+                <div className="relative flex flex-col items-center">
+                  <img
+                    src={`/images/carmake/${car.make.toLowerCase().replace(/[^a-z0-9]/gi, '')}-logo.png`}
+                    alt={car.make}
+                    className="h-7 w-auto absolute left-0 top-1/2 -translate-y-1/2 ml-3"
+                    style={{ maxWidth: 48, minWidth: 28, objectFit: 'contain', display: 'inline-block', verticalAlign: 'middle' }}
+                    loading="lazy"
+                    onError={e => {
+                      const img = e.currentTarget;
+                      if (!img.src.endsWith('.jpg')) {
+                        img.src = img.src.replace('.png', '.jpg');
+                      } else {
+                        const originalCase = `/images/carmake/${car.make.replace(/[^a-z0-9]/gi, '')}-logo.png`;
+                        if (img.src !== window.location.origin + originalCase) {
+                          img.src = originalCase;
+                        } else {
+                          img.style.display = 'none';
+                        }
+                      }
+                    }}
+                  />
+                  <h2 className="text-xl font-semibold mb-1 text-[#222] text-center px-2 w-full flex items-center justify-center gap-2" style={{ minHeight: '2.5rem' }}>
+                    {car.make} {car.model}
+                  </h2>
+                </div>
                 <div className="text-gray-500 mb-1 text-center px-2">
                   {car.year} · {car.mileage} km
                 </div>

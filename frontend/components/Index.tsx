@@ -540,19 +540,22 @@ export default function Index() {
                 <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
               <div id="articles-carousel" className="flex gap-6 min-w-[700px] md:min-w-0 px-4 overflow-x-auto scroll-smooth pb-2">
-                {blogArticles.map((article, idx) => (
-                  <a key={idx} href={article.link} className="block rounded-2xl shadow-xl bg-[#f5f6fa] min-w-[320px] max-w-xs hover:shadow-2xl transition-all duration-200 overflow-hidden group">
-                    <div className="h-44 w-full overflow-hidden flex items-center justify-center bg-gray-200">
-                      <img src={article.image} alt={article.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
-                    </div>
-                    <div className="p-5 flex flex-col h-[180px]">
-                      <div className="text-xs text-gray-500 mb-2">{new Date(article.date).toLocaleDateString('pt-PT')}</div>
-                      <div className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{article.title}</div>
-                      <div className="text-gray-700 text-sm mb-4 line-clamp-3">{article.excerpt}</div>
-                      <span className="mt-auto text-[#b42121] font-semibold hover:underline transition">Ler artigo &rarr;</span>
-                    </div>
-                  </a>
-                ))}
+                {blogArticles
+                  .slice() // copy array
+                  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // sort by date descending
+                  .map((article, idx) => (
+                    <a key={idx} href={article.link} className="block rounded-2xl shadow-xl bg-[#f5f6fa] min-w-[320px] max-w-xs hover:shadow-2xl transition-all duration-200 overflow-hidden group">
+                      <div className="h-44 w-full overflow-hidden flex items-center justify-center bg-gray-200">
+                        <img src={article.image} alt={article.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
+                      </div>
+                      <div className="p-5 flex flex-col h-[180px]">
+                        <div className="text-xs text-gray-500 mb-2">{new Date(article.date).toLocaleDateString('pt-PT')}</div>
+                        <div className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{article.title}</div>
+                        <div className="text-gray-700 text-sm mb-4 line-clamp-3">{article.excerpt}</div>
+                        <span className="mt-auto text-[#b42121] font-semibold hover:underline transition">Ler artigo &rarr;</span>
+                      </div>
+                    </a>
+                  ))}
               </div>
               <button
                 type="button"
