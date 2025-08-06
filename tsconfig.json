@@ -1,15 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-<<<<<<< HEAD
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-=======
-    "lib": ["dom", "dom.iterable", "esnext"],
->>>>>>> af80f1e (after Cursor 1.0)
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -22,7 +18,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-<<<<<<< HEAD
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -31,8 +26,4 @@
   "exclude": [
     "node_modules"
   ]
-=======
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
->>>>>>> af80f1e (after Cursor 1.0)
 }
