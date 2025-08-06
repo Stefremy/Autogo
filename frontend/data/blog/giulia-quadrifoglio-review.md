@@ -18,13 +18,16 @@ O Alfa Romeo Giulia Quadrifoglio 2024 une o design italiano à performance emoci
 ---
 
 ## Novidades para 2024
+
 Para celebrar o 100º aniversário do icónico emblema Quadrifoglio, a Alfa Romeo lançou a edição exclusiva **100th Anniversario**, limitada a apenas 100 unidades. Destaques:
+
 - Pinças de travão douradas
 - Jantes exclusivas
 - Grelha e capas dos espelhos em fibra de carbono
 - Costuras douradas no interior e emblemas comemorativos
 
 Outras novidades de 2024:
+
 - Novos faróis e luzes traseiras LED
 - Painel de instrumentos digital maior, com 12,3 polegadas
 
@@ -33,10 +36,12 @@ Outras novidades de 2024:
 ---
 
 ## Preços
+
 - **Preço base:** $81,855
 - **Totalmente equipado:** Até $89,025
 
 **Edições especiais:**
+
 - Quadrifoglio Carbon: $87,625
 - Quadrifoglio Supersport: $88,365
 - Quadrifoglio 100th Anniversario: $88,505
@@ -46,6 +51,7 @@ De série: navegação, monitorização de ângulo morto, bancos dianteiros aque
 ---
 
 ## Performance
+
 - **Motor:** V6 biturbo 2.9 litros
 - **Potência:** 505 cv / 600 Nm
 - **Transmissão:** Automática de 8 velocidades (sem manual)
@@ -59,9 +65,11 @@ Conduzir o Giulia Quadrifoglio é puro prazer — graças ao chassis afiado, mot
 ---
 
 ## Interior & Conforto
+
 O interior combina pele e camurça sintética, detalhes em fibra de carbono e bancos desportivos dianteiros. Os bancos Recaro opcionais oferecem mais apoio, mas não têm aquecimento nem ajustes elétricos. A bagageira acomoda quatro malas de mão; o espaço traseiro é modesto.
 
 **Infotainment:**
+
 - Ecrã tátil de 8,8" com comando rotativo
 - Painel de instrumentos digital de 12,3"
 - Navegação, Apple CarPlay & Android Auto de série
@@ -72,14 +80,17 @@ O interior combina pele e camurça sintética, detalhes em fibra de carbono e ba
 ## Segurança & Garantia
 
 **Assistentes de condução de série:**
+
 - Travagem automática de emergência
 - Monitorização de ângulo morto
 
 **Opcionais:**
+
 - Cruise control adaptativo com centragem de faixa
 - Assistente de manutenção na faixa
 
 **Garantia:**
+
 - 4 anos / 80.000 km (limitada e motorização)
 - Manutenção gratuita: 1 ano / 16.000 km
 

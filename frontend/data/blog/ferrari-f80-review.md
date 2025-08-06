@@ -9,15 +9,19 @@ lang: "pt-PT"
 A Ferrari apresenta o novo modelo topo de gama, o F80, equipado com um inovador motor V6 biturbo híbrido plug-in, capaz de debitar uns impressionantes 1.184 cv. Este supercarro acelera dos 0 aos 100 km/h em apenas 2,15 segundos e dos 0 aos 200 km/h em 5,75 segundos, graças à aerodinâmica ativa, transmissão automática de dupla embraiagem de oito velocidades e suspensão especialmente afinada.
 
 ## Frontal
+
 ![Ferrari F80 Frontal](https://tse2.mm.bing.net/th/id/OIP.MXg4LOfeYY_k_P3l0UVHJgHaEK?pid=Api)
 
 ## Perfil
+
 ![Ferrari F80 Perfil](https://tse2.mm.bing.net/th/id/OIP.0GjrvCAwuVgppj7GNgtQYQHaEK?pid=Api)
 
 ## Traseira
+
 ![Ferrari F80 Traseira](https://tse3.mm.bing.net/th/id/OIP.pzSYpoi1gGs-6Bko1CcScwHaEK?pid=Api)
 
 ## Cockpit / Interior
+
 ![Ferrari F80 Interior](https://tse3.mm.bing.net/th/id/OIP.o0KrJJrpsL-XRb8lVT8HhwHaEK?pid=Api)
 
 ---
@@ -52,23 +56,23 @@ Serão produzidas apenas 799 unidades do F80, com velocidade máxima de 350 km/h
 
 ## Especificações Ferrari F80
 
-- **Fabricante:** Ferrari  
-- **Produção:** 2025 -  
-- **Unidades:** Limitado a 799  
-- **Montagem:** Maranello, Itália  
-- **Designer:** Flavio Manzoni  
-- **Classe:** Desportivo (S)  
-- **Carroçaria:** Coupé 2 portas  
-- **Layout:** Motor central traseiro, AWD  
-- **Motor:** V6 biturbo 120° de 2.992 cc  
-- **Motores Elétricos:** Dois dianteiros  
-- **Potência:** Motor: 888 cv, Elétrico: 296 cv, Combinado: 1.184 cv  
-- **Transmissão:** Automática de 8 velocidades  
-- **Distância entre eixos:** 2.665 mm  
-- **Comprimento:** 4.840 mm  
-- **Largura:** 2.060 mm  
-- **Altura:** 1.138 mm  
-- **Peso:** 1.525 kg  
+- **Fabricante:** Ferrari
+- **Produção:** 2025 -
+- **Unidades:** Limitado a 799
+- **Montagem:** Maranello, Itália
+- **Designer:** Flavio Manzoni
+- **Classe:** Desportivo (S)
+- **Carroçaria:** Coupé 2 portas
+- **Layout:** Motor central traseiro, AWD
+- **Motor:** V6 biturbo 120° de 2.992 cc
+- **Motores Elétricos:** Dois dianteiros
+- **Potência:** Motor: 888 cv, Elétrico: 296 cv, Combinado: 1.184 cv
+- **Transmissão:** Automática de 8 velocidades
+- **Distância entre eixos:** 2.665 mm
+- **Comprimento:** 4.840 mm
+- **Largura:** 2.060 mm
+- **Altura:** 1.138 mm
+- **Peso:** 1.525 kg
 
 ---
 

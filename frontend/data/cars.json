@@ -63,7 +63,6 @@
       "/images/cars/citroenc3-1.jpg",
       "/images/cars/citroenc3-2.jpg",
       "/images/cars/citroenc3-3.jpg"
-     
     ],
     "equipamento_opcoes": {
       "opcoes_valor_elevado": [
@@ -206,10 +205,7 @@
         "Rádio Composition Phone + DAB+",
         "Dock smartphone (Maps+More)"
       ],
-      "interior": [
-        "Revestimentos Fusion",
-        "Iluminação azul no interior"
-      ],
+      "interior": ["Revestimentos Fusion", "Iluminação azul no interior"],
       "exterior": [
         "Jantes de liga leve 15\"",
         "Faróis LED diurnos",

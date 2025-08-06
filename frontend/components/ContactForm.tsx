@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ nome: '', email: '', telefone: '', mensagem: 'Olá AutoGo.pt, gostaria de saber mais sobre os vossos serviços. Obrigado!' });
+  const [form, setForm] = useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    mensagem:
+      "Olá AutoGo.pt, gostaria de saber mais sobre os vossos serviços. Obrigado!",
+  });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -13,18 +19,20 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); setError(''); setSuccess(false);
+    setLoading(true);
+    setError("");
+    setSuccess(false);
     try {
       await emailjs.send(
-        'service_ngduxdg',
-        'template_3cb4rfl',
+        "service_ngduxdg",
+        "template_3cb4rfl",
         form,
-        'VzMmXG4l4EqvuhAIl'
+        "VzMmXG4l4EqvuhAIl",
       );
       setSuccess(true);
-      setForm({ nome: '', email: '', telefone: '', mensagem: '' });
+      setForm({ nome: "", email: "", telefone: "", mensagem: "" });
     } catch (err) {
-      setError('Erro ao enviar. Tente novamente.');
+      setError("Erro ao enviar. Tente novamente.");
     } finally {
       setLoading(false);
     }
@@ -99,15 +107,32 @@ export default function ContactForm() {
         type="submit"
         className="bg-[#b42121] text-white rounded-lg px-4 py-2 mt-2 font-semibold hover:bg-[#a11a1a] transition flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
         disabled={loading}
-        aria-label={loading ? 'A enviar...' : 'Enviar Mensagem'}
+        aria-label={loading ? "A enviar..." : "Enviar Mensagem"}
       >
         {loading && (
-          <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          <svg
+            className="animate-spin h-5 w-5 mr-2 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+            ></path>
           </svg>
         )}
-        {loading ? 'A enviar...' : 'Enviar Mensagem'}
+        {loading ? "A enviar..." : "Enviar Mensagem"}
       </button>
       {success && (
         <div className="text-green-600 font-medium mt-2" role="status">

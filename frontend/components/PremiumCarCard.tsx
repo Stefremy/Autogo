@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PremiumCarCard.module.css";
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 type PremiumCarCardProps = {
   name: string;
@@ -16,14 +16,26 @@ type PremiumCarCardProps = {
   status?: string;
 };
 
-const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id, year, make, transmission, type = "SEDAN", country, bgColor, status }) => {
-  const { t } = useTranslation('common');
+const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
+  name,
+  image,
+  price,
+  id,
+  year,
+  make,
+  transmission,
+  type = "SEDAN",
+  country,
+  bgColor,
+  status,
+}) => {
+  const { t } = useTranslation("common");
   // Status translation
   const statusLabels: Record<string, string> = {
-    disponivel: t('Disponível'),
-    vendido: t('Vendido'),
-    sob_consulta: t('Sob Consulta'),
-    novidade: t('Novidade'),
+    disponivel: t("Disponível"),
+    vendido: t("Vendido"),
+    sob_consulta: t("Sob Consulta"),
+    novidade: t("Novidade"),
   };
   return (
     <a
@@ -31,16 +43,27 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id,
       className={styles["premium-car-card"]}
       style={bgColor ? { background: bgColor } : undefined}
     >
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: "relative" }}>
         {/* Status badge */}
         {status && (
-          <span className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${
-            status === 'disponivel' ? 'bg-green-500' :
-            status === 'vendido' ? 'bg-gray-400' :
-            status === 'sob_consulta' ? 'bg-yellow-400' :
-            status === 'novidade' ? 'bg-blue-500' :
-            'bg-gray-400'
-          }`} style={{letterSpacing: '0.5px', minWidth: 90, textAlign: 'center'}}>
+          <span
+            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${
+              status === "disponivel"
+                ? "bg-green-500"
+                : status === "vendido"
+                  ? "bg-gray-400"
+                  : status === "sob_consulta"
+                    ? "bg-yellow-400"
+                    : status === "novidade"
+                      ? "bg-blue-500"
+                      : "bg-gray-400"
+            }`}
+            style={{
+              letterSpacing: "0.5px",
+              minWidth: 90,
+              textAlign: "center",
+            }}
+          >
             {statusLabels[status] || status}
           </span>
         )}
@@ -49,18 +72,39 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id,
           <img
             src={`/images/flags/${country.toLowerCase()}.png`}
             alt={country}
-            style={{ position: 'absolute', top: '0.9rem', left: '0.9rem', width: 32, height: 22, borderRadius: '0.2rem', border: '1.5px solid #fff', boxShadow: '0 2px 8px rgba(44,62,80,0.10)', zIndex: 2, background: '#fff', objectFit: 'cover' }}
+            style={{
+              position: "absolute",
+              top: "0.9rem",
+              left: "0.9rem",
+              width: 32,
+              height: 22,
+              borderRadius: "0.2rem",
+              border: "1.5px solid #fff",
+              boxShadow: "0 2px 8px rgba(44,62,80,0.10)",
+              zIndex: 2,
+              background: "#fff",
+              objectFit: "cover",
+            }}
           />
         )}
       </div>
       <div className={styles["premium-car-info"]}>
-        <div className={styles["premium-car-type"]} style={{ display: "flex", alignItems: "center", gap: "0.5rem", justifyContent: "space-between", width: "100%" }}>
+        <div
+          className={styles["premium-car-type"]}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            justifyContent: "space-between",
+            width: "100%",
+          }}
+        >
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             {/* Car make logo with fallback for case and extension */}
             {make && (
               <>
                 <img
-                  src={`/images/carmake/${make.toLowerCase().replace(/[^a-z0-9]/gi, '')}-logo.png`}
+                  src={`/images/carmake/${make.toLowerCase().replace(/[^a-z0-9]/gi, "")}-logo.png`}
                   alt={make}
                   style={{
                     height: 30, // increased from 22
@@ -69,21 +113,21 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id,
                     objectFit: "contain",
                     display: "inline-block",
                     verticalAlign: "middle",
-                    filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.10))"
+                    filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.10))",
                   }}
                   loading="lazy"
-                  onError={e => {
+                  onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement;
                     // Try .jpg if .png fails
-                    if (!img.src.endsWith('.jpg')) {
-                      img.src = img.src.replace('.png', '.jpg');
+                    if (!img.src.endsWith(".jpg")) {
+                      img.src = img.src.replace(".png", ".jpg");
                     } else {
                       // Try original-case make (e.g. BMW-logo.png)
-                      const originalCase = `/images/carmake/${make.replace(/[^a-z0-9]/gi, '')}-logo.png`;
+                      const originalCase = `/images/carmake/${make.replace(/[^a-z0-9]/gi, "")}-logo.png`;
                       if (img.src !== window.location.origin + originalCase) {
                         img.src = originalCase;
                       } else {
-                        img.style.display = 'none';
+                        img.style.display = "none";
                       }
                     }
                   }}
@@ -91,24 +135,41 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({ name, image, price, id,
               </>
             )}
           </div>
-          <div style={{ fontWeight: 700, color: '#1a1a1a', fontSize: '1.15rem', letterSpacing: '0.5px', minWidth: 90, textAlign: 'right' }}>
-            €{price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          <div
+            style={{
+              fontWeight: 700,
+              color: "#1a1a1a",
+              fontSize: "1.15rem",
+              letterSpacing: "0.5px",
+              minWidth: 90,
+              textAlign: "right",
+            }}
+          >
+            €
+            {price.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </div>
         </div>
         <div className={styles["premium-car-title"]}>{name}</div>
         <div className={styles["premium-car-meta-row"]}>
           <div>
-            <div className={styles["premium-car-meta-label"]}>{t('Ano')}</div>
+            <div className={styles["premium-car-meta-label"]}>{t("Ano")}</div>
             <div className={styles["premium-car-meta-value"]}>{year}</div>
           </div>
           <div>
-            <div className={styles["premium-car-meta-label"]}>{t('Marca')}</div>
+            <div className={styles["premium-car-meta-label"]}>{t("Marca")}</div>
             <div className={styles["premium-car-meta-value"]}>{make}</div>
           </div>
           {transmission && (
             <div>
-              <div className={styles["premium-car-meta-label"]}>{t('Transmissão')}</div>
-              <div className={styles["premium-car-meta-value"]}>{transmission}</div>
+              <div className={styles["premium-car-meta-label"]}>
+                {t("Transmissão")}
+              </div>
+              <div className={styles["premium-car-meta-value"]}>
+                {transmission}
+              </div>
             </div>
           )}
         </div>

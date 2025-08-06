@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 const NAV_LINKS = [
   { href: "/", label: "Início" },
@@ -15,14 +15,14 @@ const NAV_LINKS = [
 
 // Dynamically generate available languages from /public/locales and match to flags
 const LOCALE_TO_FLAG = {
-  'pt-PT': { flag: '/images/flags/pt.png', label: 'Português' },
-  'es': { flag: '/images/flags/es.png', label: 'Español' },
-  'en': { flag: '/images/flags/en.png', label: 'English' },
-  'fr': { flag: '/images/flags/fr.png', label: 'Français' },
-  'de': { flag: '/images/flags/de.png', label: 'Deutsch' },
+  "pt-PT": { flag: "/images/flags/pt.png", label: "Português" },
+  es: { flag: "/images/flags/es.png", label: "Español" },
+  en: { flag: "/images/flags/en.png", label: "English" },
+  fr: { flag: "/images/flags/fr.png", label: "Français" },
+  de: { flag: "/images/flags/de.png", label: "Deutsch" },
 };
 const AVAILABLE_LANGS = Object.entries(LOCALE_TO_FLAG)
-  .filter(([code]) => ['pt-PT','es','en','fr','de'].includes(code))
+  .filter(([code]) => ["pt-PT", "es", "en", "fr", "de"].includes(code))
   .map(([code, { flag, label }]) => ({ code, flag, label }));
 
 export function IndexNavbar() {
@@ -35,7 +35,6 @@ export function IndexNavbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10);
-      
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -44,15 +43,18 @@ export function IndexNavbar() {
   useEffect(() => {
     if (!langOpen) return;
     function handleClick(e) {
-      if (langSelectorRef.current && !langSelectorRef.current.contains(e.target)) {
+      if (
+        langSelectorRef.current &&
+        !langSelectorRef.current.contains(e.target)
+      ) {
         setLangOpen(false);
       }
     }
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
   }, [langOpen]);
 
-  const currentLocale = router.locale || 'pt-PT';
+  const currentLocale = router.locale || "pt-PT";
   const handleLocaleChange = (locale) => {
     if (locale !== currentLocale) {
       router.push(router.asPath, router.asPath, { locale });
@@ -61,71 +63,74 @@ export function IndexNavbar() {
 
   return (
     <>
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-between px-6 gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
-      style={{
-        height: "64px",
-        minWidth: 320,
-        background: scrolled
-          ? "rgba(255,255,255,0.92)"
-          : "rgba(255,255,255,0.98)",
-        borderBottom: "1.5px solid #ececec",
-        boxShadow: scrolled
-          ? "0 4px 24px 0 rgba(44,62,80,0.10)"
-          : "0 2px 12px 0 rgba(44,62,80,0.06)"
-      }}
-    >
-      <div className="flex items-center relative">
-        <Link href="/">
-          <div className="relative flex items-center group h-full">
-            <img
-              src="/images/auto-logonb.png"
-              alt="AutoGo.pt"
-              className="h-40 w-auto object-contain z-10 transition-transform duration-300 group-hover:scale-105"
-              style={{ maxWidth: "520px", filter: "drop-shadow(0 4px 18px rgba(44,62,80,0.13))" }}
-            />
-          </div>
-        </Link>
-      </div>
-      <div className="flex flex-wrap items-center justify-end gap-6 flex-1 min-w-0">
-        {NAV_LINKS.map(({ href, label }) => {
-          const isActive = router.pathname === href;
-          return (
-            <Link
-              key={href}
-              href={href}
-              className={`relative text-base font-medium transition-all duration-200 px-2 py-1 rounded-lg
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-between px-6 gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
+        style={{
+          height: "64px",
+          minWidth: 320,
+          background: scrolled
+            ? "rgba(255,255,255,0.92)"
+            : "rgba(255,255,255,0.98)",
+          borderBottom: "1.5px solid #ececec",
+          boxShadow: scrolled
+            ? "0 4px 24px 0 rgba(44,62,80,0.10)"
+            : "0 2px 12px 0 rgba(44,62,80,0.06)",
+        }}
+      >
+        <div className="flex items-center relative">
+          <Link href="/">
+            <div className="relative flex items-center group h-full">
+              <img
+                src="/images/auto-logonb.png"
+                alt="AutoGo.pt"
+                className="h-40 w-auto object-contain z-10 transition-transform duration-300 group-hover:scale-105"
+                style={{
+                  maxWidth: "520px",
+                  filter: "drop-shadow(0 4px 18px rgba(44,62,80,0.13))",
+                }}
+              />
+            </div>
+          </Link>
+        </div>
+        <div className="flex flex-wrap items-center justify-end gap-6 flex-1 min-w-0">
+          {NAV_LINKS.map(({ href, label }) => {
+            const isActive = router.pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`relative text-base font-medium transition-all duration-200 px-2 py-1 rounded-lg
                 ${isActive ? "text-[#b42121] bg-[#f5f6fa] shadow-sm" : "text-[#22272a] hover:text-[#b42121] hover:bg-[#f5f6fa]"}
                 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30`}
-              style={{ letterSpacing: 0.2, fontWeight: 500 }}
+                style={{ letterSpacing: 0.2, fontWeight: 500 }}
+              >
+                {t(label)}
+              </Link>
+            );
+          })}
+          {/* Red lines between Contacto and language selector */}
+          <span className="flex flex-col justify-center ml-2 mr-2 gap-1">
+            <span className="block w-8 h-1 rounded-full bg-[#b42121] opacity-90"></span>
+            <span className="block w-6 h-1 rounded-full bg-[#b42121] opacity-70"></span>
+            <span className="block w-4 h-1 rounded-full bg-[#b42121] opacity-50"></span>
+          </span>
+          <div className="relative ml-2">
+            <select
+              value={currentLocale}
+              onChange={(e) => handleLocaleChange(e.target.value)}
+              className="bg-white border border-[#ececec] rounded-full px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 shadow-sm transition-all duration-200"
+              style={{ minWidth: 44, zIndex: 100 }}
+              aria-label="Selecionar idioma"
             >
-              {t(label)}
-            </Link>
-          );
-        })}
-        {/* Red lines between Contacto and language selector */}
-        <span className="flex flex-col justify-center ml-2 mr-2 gap-1">
-          <span className="block w-8 h-1 rounded-full bg-[#b42121] opacity-90"></span>
-          <span className="block w-6 h-1 rounded-full bg-[#b42121] opacity-70"></span>
-          <span className="block w-4 h-1 rounded-full bg-[#b42121] opacity-50"></span>
-        </span>
-        <div className="relative ml-2">
-          <select
-            value={currentLocale}
-            onChange={e => handleLocaleChange(e.target.value)}
-            className="bg-white border border-[#ececec] rounded-full px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 shadow-sm transition-all duration-200"
-            style={{ minWidth: 44, zIndex: 100 }}
-            aria-label="Selecionar idioma"
-          >
-            {AVAILABLE_LANGS.map(({ code, label }) => (
-              <option key={code} value={code}>
-                {label}
-              </option>
-            ))}
-          </select>
+              {AVAILABLE_LANGS.map(({ code, label }) => (
+                <option key={code} value={code}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </>
   );
 }
