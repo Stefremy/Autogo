@@ -86,7 +86,12 @@ export default function CarDetail() {
   }, []);
 
   // If id is not available yet, show loading
-  if (!id) return <Layout><div className="p-8">Loading...</div></Layout>;
+  if (!id)
+    return (
+      <Layout>
+        <div className="p-8">Loading...</div>
+      </Layout>
+    );
 
   const car = (cars as Car[]).find((c) => String(c.id) === id);
 

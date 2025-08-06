@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 // Resolve the blog directory relative to the project when running from
 // the `frontend` folder. `process.cwd()` inside Next.js points to the

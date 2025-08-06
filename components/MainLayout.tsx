@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import CookieConsent from "react-cookie-consent";
 import Footer from "./Footer";
 import { IndexNavbar } from "./IndexNavbar";
-import CookieConsent from "react-cookie-consent";
 
 const NAV_LINKS = [
   { href: "/", label: "Início" },
@@ -51,7 +51,11 @@ export default function MainLayout({
             return child;
           }
           // Otherwise, wrap in the centered container
-          return <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-0">{child}</div>;
+          return (
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-0">
+              {child}
+            </div>
+          );
         })}
       </main>
       <CookieConsent
@@ -60,14 +64,26 @@ export default function MainLayout({
         declineButtonText="Rejeitar"
         enableDeclineButton
         style={{ background: "#222", color: "#fff", fontSize: "1rem" }}
-        buttonStyle={{ background: "#e53e3e", color: "#fff", fontWeight: "bold" }}
-        declineButtonStyle={{ background: "#aaa", color: "#222", fontWeight: "bold" }}
+        buttonStyle={{
+          background: "#e53e3e",
+          color: "#fff",
+          fontWeight: "bold",
+        }}
+        declineButtonStyle={{
+          background: "#aaa",
+          color: "#222",
+          fontWeight: "bold",
+        }}
         cookieName="autogoCookieConsent"
       >
-        Utilizamos cookies para melhorar a sua experiência. Saiba mais na nossa {" "}
-        <a href="/cookie-policy" style={{ color: "#fff", textDecoration: "underline" }}>
+        Utilizamos cookies para melhorar a sua experiência. Saiba mais na nossa{" "}
+        <a
+          href="/cookie-policy"
+          style={{ color: "#fff", textDecoration: "underline" }}
+        >
           Política de Cookies
-        </a>.
+        </a>
+        .
       </CookieConsent>
       <Footer />
     </div>

@@ -1,8 +1,8 @@
+import fs from "fs";
+import path from "path";
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import Head from "next/head";

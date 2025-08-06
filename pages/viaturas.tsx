@@ -1,7 +1,4 @@
-import MainLayout from "../components/MainLayout";
-import cars from "../data/cars.json";
 import Link from "next/link";
-import styles from "../components/PremiumCarCard.module.css";
 import React, { useState } from "react";
 import {
   FaCarSide,
@@ -9,10 +6,13 @@ import {
   FaTachometerAlt,
   FaSearch,
 } from "react-icons/fa";
-import SimuladorTabela from "../components/SimuladorTabela";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import SimuladorTabela from "../components/SimuladorTabela";
+import styles from "../components/PremiumCarCard.module.css";
+import cars from "../data/cars.json";
+import MainLayout from "../components/MainLayout";
 
 export default function Viaturas() {
   const { t } = useTranslation("common");

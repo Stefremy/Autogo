@@ -5,10 +5,10 @@ import React from "react";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import Layout from "../../components/MainLayout";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import Link from "next/link";
+import Layout from "../../components/MainLayout";
 
 export default function BlogPost({ post }) {
   const { t } = useTranslation("common");

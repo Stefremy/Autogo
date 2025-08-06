@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 // Resolve the cars JSON file relative to the project. When the Next.js
 // server is started from the `frontend` directory, `process.cwd()` points

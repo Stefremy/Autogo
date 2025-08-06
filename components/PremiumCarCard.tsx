@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./PremiumCarCard.module.css";
 import { useTranslation } from "next-i18next";
+import styles from "./PremiumCarCard.module.css";
 
 type PremiumCarCardProps = {
   name: string;

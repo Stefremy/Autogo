@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 import MainLayout from "./MainLayout";
 import cars from "../data/cars.json";
 import CarCard from "./CarCard";
 import PremiumCarCard from "./PremiumCarCard";
-import { motion } from "framer-motion";
-import { useTranslation } from "next-i18next";
 
 const googleReviews = [
   {

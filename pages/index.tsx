@@ -1,15 +1,15 @@
+import fs from "fs";
+import path from "path";
 import Head from "next/head";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import matter from "gray-matter";
 import MainLayout from "../components/MainLayout";
 import cars from "../data/cars.json";
 import CarCard from "../components/CarCard";
 import PremiumCarCard from "../components/PremiumCarCard";
-import { motion } from "framer-motion";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 
 export async function getServerSideProps({ locale }) {
   // Fetch blog articles from markdown files
@@ -752,7 +752,10 @@ export default function Home({ blogArticles }) {
         </section>
 
         {/* LISTAGEM DE VIATURAS */}
-        <section data-fullwidth className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 sm:py-24">
+        <section
+          data-fullwidth
+          className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 sm:py-24"
+        >
           <div className="max-w-7xl mx-auto px-2 sm:px-4">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}

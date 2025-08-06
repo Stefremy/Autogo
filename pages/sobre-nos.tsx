@@ -1,6 +1,6 @@
 import React from "react";
-import MainLayout from "../components/MainLayout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import MainLayout from "../components/MainLayout";
 
 export default function SobreNos() {
   return (

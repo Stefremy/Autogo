@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MainLayout from "../components/MainLayout";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import MainLayout from "../components/MainLayout";
 
 // Tabelas ISV Diário da República
 const TABELA_CILINDRADA_A = [

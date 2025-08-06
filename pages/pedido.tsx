@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Layout from "../components/MainLayout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import {
@@ -16,6 +15,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import Layout from "../components/MainLayout";
 
 export default function Pedido() {
   const { t } = useTranslation("common");
