@@ -61,12 +61,13 @@ export function IndexNavbar() {
   }, []);
 
   const openMobileMenu = useCallback(() => {
-    setIsMenuAnimating(true);
     setMobileMenuOpen(true);
+    setIsMenuAnimating(false);
   }, []);
 
   const closeMobileMenu = useCallback(() => {
     setIsMenuAnimating(true);
+    // First trigger the closing animation
     setTimeout(() => {
       setMobileMenuOpen(false);
       setIsMenuAnimating(false);
@@ -228,7 +229,7 @@ export function IndexNavbar() {
       {(mobileMenuOpen || isMenuAnimating) && (
         <div
           className={`lg:hidden fixed left-0 w-full h-screen z-50 transition-all duration-300 ease-in-out ${
-            mobileMenuOpen 
+            mobileMenuOpen && !isMenuAnimating
               ? "bg-black/50 opacity-100" 
               : "bg-black/0 opacity-0 pointer-events-none"
           }`}
@@ -237,7 +238,7 @@ export function IndexNavbar() {
         >
           <div
             className={`bg-white shadow-2xl border-b border-gray-200 backdrop-blur-sm transition-all duration-300 ease-out transform ${
-              mobileMenuOpen 
+              mobileMenuOpen && !isMenuAnimating
                 ? "translate-y-0 opacity-100" 
                 : "-translate-y-full opacity-0"
             } ${isLandscape ? "max-h-72" : ""}`}
@@ -251,7 +252,7 @@ export function IndexNavbar() {
                     key={href}
                     href={href}
                     className={`group block ${isLandscape ? "text-xs py-2" : "text-lg py-3"} font-medium transition-all duration-300 px-4 sm:px-5 rounded-xl transform hover:scale-[1.02] hover:translate-x-1 ${
-                      mobileMenuOpen 
+                      mobileMenuOpen && !isMenuAnimating
                         ? "translate-x-0 opacity-100" 
                         : "-translate-x-4 opacity-0"
                     }
@@ -263,7 +264,7 @@ export function IndexNavbar() {
                     style={{ 
                       letterSpacing: 0.2, 
                       fontWeight: 500,
-                      transitionDelay: mobileMenuOpen ? `${index * 50}ms` : "0ms"
+                      transitionDelay: (mobileMenuOpen && !isMenuAnimating) ? `${index * 50}ms` : "0ms"
                     }}
                     onClick={closeMobileMenu}
                   >
