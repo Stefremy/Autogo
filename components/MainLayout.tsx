@@ -32,11 +32,11 @@ export default function MainLayout({
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f5f6fa] text-[#1a1a1a]">
+    <div className="min-h-screen flex flex-col bg-[#f5f6fa] text-[#1a1a1a] overflow-x-hidden">
       {/* NAVBAR */}
       <IndexNavbar />
       {/* CONTEÚDO */}
-      <main className="pt-[64px] flex-1 flex flex-col">
+      <main className="pt-[64px] flex-1 flex flex-col overflow-x-hidden">
         {React.Children.map(children, (child) => {
           // If the child is a full-width section, render it outside the wrapper
           if (

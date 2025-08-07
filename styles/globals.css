@@ -6,4 +6,18 @@ html,
 body,
 #__next {
   font-family: "Montserrat", "Inter", "Helvetica Neue", Arial, "sans-serif";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure full-width sections don't cause horizontal scroll */
+[data-fullwidth] {
+  width: 100vw;
+  position: relative;
 }

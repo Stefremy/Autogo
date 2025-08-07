@@ -351,8 +351,12 @@ export default function Home({ blogArticles }) {
         {/* Como Funciona section */}
         <section
           data-fullwidth
-          className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 sm:py-24 overflow-hidden"
-          style={{ backgroundColor: "#f5f6fa" }}
+          className="relative w-screen py-16 sm:py-24 overflow-hidden"
+          style={{ 
+            backgroundColor: "#f5f6fa",
+            marginLeft: "calc(-50vw + 50%)",
+            marginRight: "calc(-50vw + 50%)"
+          }}
         >
           {/* Features bar floating above video */}
           <div className="absolute top-0 left-0 w-full flex justify-center z-30 pointer-events-auto">
@@ -763,7 +767,11 @@ export default function Home({ blogArticles }) {
         {/* LISTAGEM DE VIATURAS */}
         <section
           data-fullwidth
-          className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 sm:py-24"
+          className="relative w-screen py-16 sm:py-24"
+          style={{ 
+            marginLeft: "calc(-50vw + 50%)",
+            marginRight: "calc(-50vw + 50%)"
+          }}
         >
           <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4">
             <motion.h2
