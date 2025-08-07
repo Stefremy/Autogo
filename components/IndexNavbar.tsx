@@ -165,19 +165,35 @@ export function IndexNavbar() {
           </div>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1 sm:p-2 rounded-lg hover:bg-[#f5f6fa] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30"
+            className={`group relative p-2 sm:p-3 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-3 focus:ring-[#b42121]/30 ${
+              mobileMenuOpen 
+                ? "bg-[#b42121] shadow-lg scale-105" 
+                : "bg-white hover:bg-[#f5f6fa] shadow-md hover:shadow-lg"
+            }`}
             aria-label="Toggle mobile menu"
             style={{ display: "block", visibility: "visible" }}
           >
-            <div className="w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center relative">
               <span
-                className={`block w-4 sm:w-5 h-0.5 bg-[#22272a] transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1"}`}
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-300 ease-in-out transform origin-center ${
+                  mobileMenuOpen 
+                    ? "bg-white rotate-45 translate-y-[2px] scale-110" 
+                    : "bg-[#22272a] group-hover:bg-[#b42121] -translate-y-[3px]"
+                }`}
               ></span>
               <span
-                className={`block w-4 sm:w-5 h-0.5 bg-[#22272a] transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : "opacity-100"}`}
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-300 ease-in-out ${
+                  mobileMenuOpen 
+                    ? "bg-white opacity-0 scale-0" 
+                    : "bg-[#22272a] group-hover:bg-[#b42121] opacity-100 scale-100"
+                }`}
               ></span>
               <span
-                className={`block w-4 sm:w-5 h-0.5 bg-[#22272a] transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-1"}`}
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-300 ease-in-out transform origin-center ${
+                  mobileMenuOpen 
+                    ? "bg-white -rotate-45 -translate-y-[2px] scale-110" 
+                    : "bg-[#22272a] group-hover:bg-[#b42121] translate-y-[3px]"
+                }`}
               ></span>
             </div>
           </button>
@@ -187,28 +203,42 @@ export function IndexNavbar() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
-          className="lg:hidden fixed left-0 w-full h-screen bg-black bg-opacity-50 z-50"
+          className="lg:hidden fixed left-0 w-full h-screen bg-black/50 z-50 animate-in fade-in duration-300"
           style={{ top: isLandscape ? "56px" : "64px" }}
           onClick={() => setMobileMenuOpen(false)}
         >
           <div
-            className={`bg-white shadow-xl border-b border-gray-200 ${isLandscape ? "max-h-72" : ""}`}
+            className={`bg-white shadow-2xl border-b border-gray-200 backdrop-blur-sm animate-in slide-in-from-top duration-300 ease-out ${isLandscape ? "max-h-72" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="px-3 sm:px-4 py-3 sm:py-4 space-y-2 sm:space-y-3">
-              {NAV_LINKS.map(({ href, label }) => {
+            <div className="px-3 sm:px-4 py-4 sm:py-5 space-y-1 sm:space-y-2">
+              {NAV_LINKS.map(({ href, label }, index) => {
                 const isActive = router.pathname === href;
                 return (
                   <Link
                     key={href}
                     href={href}
-                    className={`block ${isLandscape ? "text-xs py-1.5" : "text-lg py-3"} font-medium transition-all duration-200 px-3 sm:px-4 rounded-lg
-                    ${isActive ? "text-[#b42121] bg-[#f5f6fa] shadow-sm" : "text-[#22272a] hover:text-[#b42121] hover:bg-[#f5f6fa]"}
-                    focus:outline-none focus:ring-2 focus:ring-[#b42121]/30`}
-                    style={{ letterSpacing: 0.2, fontWeight: 500 }}
+                    className={`group block ${isLandscape ? "text-xs py-2" : "text-lg py-3"} font-medium transition-all duration-300 px-4 sm:px-5 rounded-xl transform hover:scale-[1.02] hover:translate-x-1
+                    ${isActive 
+                      ? "text-white bg-gradient-to-r from-[#b42121] to-[#d55050] shadow-lg" 
+                      : "text-[#22272a] hover:text-[#b42121] hover:bg-gradient-to-r hover:from-[#f5f6fa] hover:to-[#fbe9e9] hover:shadow-md"
+                    }
+                    focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 animate-in fade-in slide-in-from-left duration-300`}
+                    style={{ 
+                      letterSpacing: 0.2, 
+                      fontWeight: 500,
+                      animationDelay: `${index * 50}ms`
+                    }}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {t(label)}
+                    <span className="flex items-center gap-2">
+                      <span className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        isActive 
+                          ? "bg-white scale-100" 
+                          : "bg-[#b42121] scale-0 group-hover:scale-100"
+                      }`}></span>
+                      {t(label)}
+                    </span>
                   </Link>
                 );
               })}
