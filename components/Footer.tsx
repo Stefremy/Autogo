@@ -201,10 +201,18 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-4 text-sm text-gray-600 relative z-10">
-        <span>
-          &copy; {new Date().getFullYear()} AutoGo.pt.{" "}
-          {t("Todos os direitos reservados.")}
-        </span>
+        <div className="flex flex-col items-center md:items-start">
+          <span>
+            &copy; {new Date().getFullYear()} AutoGo.pt.{" "}
+            {t("Todos os direitos reservados.")}
+          </span>
+          <Link
+            href="/cookie-policy"
+            className="text-xs text-gray-500 hover:text-[#b42121] transition-colors duration-200 mt-1"
+          >
+            Políticas de Cookies
+          </Link>
+        </div>
         <span className="mt-2 md:mt-0 flex items-center gap-2">
           Desenvolvido pela
           <a
