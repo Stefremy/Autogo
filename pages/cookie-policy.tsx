@@ -16,7 +16,12 @@ export default function CookiePolicy() {
             fontSize: "2.5rem",
             marginBottom: "2.5rem",
             color: "#222",
-          }}
+               // Fix: Type assertion to access style property
+               }}
+               onClick={(e) => {
+                 const target = e.currentTarget as HTMLElement;
+                 target.style.background = "#f5f6fa";
+               }}
         >
           Política de Cookies
         </h1>
@@ -238,12 +243,18 @@ export default function CookiePolicy() {
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.fontWeight = "600";
-                e.target.style.color = "#8b1a1a";
+                const target = e.target;
+                if (target && target instanceof HTMLElement) {
+                  target.style.fontWeight = "600";
+                  target.style.color = "#8b1a1a";
+                }
               }}
               onMouseLeave={(e) => {
-                e.target.style.fontWeight = "500";
-                e.target.style.color = "#b42121";
+                const target = e.target;
+                if (target && target instanceof HTMLElement) {
+                  target.style.fontWeight = "500";
+                  target.style.color = "#b42121";
+                }
               }}
             >
               Google Chrome
@@ -261,12 +272,18 @@ export default function CookiePolicy() {
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.fontWeight = "600";
-                e.target.style.color = "#8b1a1a";
+                const target = e.target;
+                if (target && target instanceof HTMLElement) {
+                  target.style.fontWeight = "600";
+                  target.style.color = "#8b1a1a";
+                }
               }}
               onMouseLeave={(e) => {
-                e.target.style.fontWeight = "500";
-                e.target.style.color = "#b42121";
+                const target = e.target;
+                if (target && target instanceof HTMLElement) {
+                  target.style.fontWeight = "500";
+                  target.style.color = "#b42121";
+                }
               }}
             >
               Mozilla Firefox
@@ -284,12 +301,18 @@ export default function CookiePolicy() {
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.fontWeight = "600";
-                e.target.style.color = "#8b1a1a";
+                const target = e.target;
+                if (target && target instanceof HTMLElement) {
+                  target.style.fontWeight = "600";
+                  target.style.color = "#8b1a1a";
+                }
               }}
               onMouseLeave={(e) => {
-                e.target.style.fontWeight = "500";
-                e.target.style.color = "#b42121";
+                const target = e.target;
+                if (target && target instanceof HTMLElement) {
+                  target.style.fontWeight = "500";
+                  target.style.color = "#b42121";
+                }
               }}
             >
               Safari
@@ -307,12 +330,18 @@ export default function CookiePolicy() {
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.fontWeight = "600";
-                e.target.style.color = "#8b1a1a";
+                const target = e.target;
+                if (target && target instanceof HTMLElement) {
+                  target.style.fontWeight = "600";
+                  target.style.color = "#8b1a1a";
+                }
               }}
               onMouseLeave={(e) => {
-                e.target.style.fontWeight = "500";
-                e.target.style.color = "#b42121";
+                const target = e.target;
+                if (target && target instanceof HTMLElement) {
+                  target.style.fontWeight = "500";
+                  target.style.color = "#b42121";
+                }
               }}
             >
               Microsoft Edge
