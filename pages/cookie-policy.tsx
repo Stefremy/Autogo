@@ -230,6 +230,21 @@ export default function CookiePolicy() {
               href="https://support.google.com/chrome/answer/95647?hl=pt-PT"
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                fontWeight: 500,
+                color: "#b42121",
+                textDecoration: "underline",
+                textDecorationColor: "#b42121",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.fontWeight = "600";
+                e.target.style.color = "#8b1a1a";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fontWeight = "500";
+                e.target.style.color = "#b42121";
+              }}
             >
               Google Chrome
             </a>
@@ -238,6 +253,21 @@ export default function CookiePolicy() {
               href="https://support.mozilla.org/pt-PT/kb/ativar-desativar-cookies"
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                fontWeight: 500,
+                color: "#b42121",
+                textDecoration: "underline",
+                textDecorationColor: "#b42121",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.fontWeight = "600";
+                e.target.style.color = "#8b1a1a";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fontWeight = "500";
+                e.target.style.color = "#b42121";
+              }}
             >
               Mozilla Firefox
             </a>
@@ -246,6 +276,21 @@ export default function CookiePolicy() {
               href="https://support.apple.com/pt-pt/guide/safari/sfri11471/mac"
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                fontWeight: 500,
+                color: "#b42121",
+                textDecoration: "underline",
+                textDecorationColor: "#b42121",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.fontWeight = "600";
+                e.target.style.color = "#8b1a1a";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fontWeight = "500";
+                e.target.style.color = "#b42121";
+              }}
             >
               Safari
             </a>
@@ -254,6 +299,21 @@ export default function CookiePolicy() {
               href="https://support.microsoft.com/pt-pt/help/4027947/microsoft-edge-delete-cookies"
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                fontWeight: 500,
+                color: "#b42121",
+                textDecoration: "underline",
+                textDecorationColor: "#b42121",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.fontWeight = "600";
+                e.target.style.color = "#8b1a1a";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fontWeight = "500";
+                e.target.style.color = "#b42121";
+              }}
             >
               Microsoft Edge
             </a>
