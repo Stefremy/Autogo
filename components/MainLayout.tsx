@@ -36,7 +36,7 @@ export default function MainLayout({
       {/* NAVBAR */}
       <IndexNavbar />
       {/* CONTEÚDO */}
-      <main className="pt-[56px] flex-1 flex flex-col">
+      <main className="pt-[64px] flex-1 flex flex-col">
         {React.Children.map(children, (child) => {
           // If the child is a full-width section, render it outside the wrapper
           if (
@@ -52,7 +52,7 @@ export default function MainLayout({
           }
           // Otherwise, wrap in the centered container
           return (
-            <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-0">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-0">
               {child}
             </div>
           );

@@ -90,7 +90,7 @@ export function IndexNavbar() {
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-between px-2 sm:px-4 md:px-6 gap-2 sm:gap-4 md:gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
         style={{
-          height: isLandscape ? "48px" : "64px",
+          height: isLandscape ? "56px" : "64px",
           minWidth: 320,
           background: scrolled
             ? "rgba(255,255,255,0.92)"
@@ -188,7 +188,7 @@ export function IndexNavbar() {
       {mobileMenuOpen && (
         <div
           className="lg:hidden fixed left-0 w-full h-screen bg-black bg-opacity-50 z-50"
-          style={{ top: isLandscape ? "48px" : "64px" }}
+          style={{ top: isLandscape ? "56px" : "64px" }}
           onClick={() => setMobileMenuOpen(false)}
         >
           <div

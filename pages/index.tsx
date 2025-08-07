@@ -174,7 +174,7 @@ export default function Home({ blogArticles }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative w-screen h-[450px] sm:h-[550px] md:h-[76vh] flex items-center overflow-hidden"
+          className="relative w-screen h-[450px] sm:h-[500px] md:h-[70vh] lg:h-[76vh] flex items-center overflow-hidden"
         >
           {/* Background image covers full width, fades left */}
           <div
@@ -195,12 +195,12 @@ export default function Home({ blogArticles }) {
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pl-4 pr-4 md:pl-20 md:pr-0 w-full max-w-full md:max-w-2xl">
+          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-6 pb-6 px-4 sm:px-6 md:pl-20 md:pr-0 w-full max-w-full md:max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="text-black text-4xl md:text-6xl font-semibold mb-6 leading-tight drop-shadow-xl"
+              className="text-black text-2xl sm:text-3xl md:text-6xl font-semibold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-xl"
             >
               {t("Rápido. Seguro. Teu.")}
             </motion.h1>
@@ -208,13 +208,13 @@ export default function Home({ blogArticles }) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7 }}
-              className="text-black text-lg md:text-2xl mb-10 max-w-xl drop-shadow-lg"
+              className="text-black text-sm sm:text-base md:text-2xl mb-4 sm:mb-6 md:mb-10 max-w-xl drop-shadow-lg"
             >
               {t(
                 "O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.",
               )}
             </motion.p>
-            <div className="flex w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-2 items-center gap-3 mb-5 border border-white/30">
+            <div className="flex flex-col sm:flex-row w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a className="beauty-fade-btn">{t("Procurar viaturas")}</a>
               </Link>
@@ -233,9 +233,11 @@ export default function Home({ blogArticles }) {
                 background: linear-gradient(90deg, #b42121 0%, #e05252 100%);
                 color: #fff;
                 font-weight: bold;
-                padding: 0.75rem 2rem;
-                font-size: 1.125rem;
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
                 border-radius: 0.75rem;
+                width: 100%;
+                text-align: center;
                 box-shadow:
                   0 4px 24px 0 rgba(180, 33, 33, 0.18),
                   0 1.5px 8px 0 rgba(44, 62, 80, 0.1);
@@ -318,6 +320,13 @@ export default function Home({ blogArticles }) {
                 filter: brightness(0.98);
                 transform: scale(0.98);
               }
+              @media (min-width: 640px) {
+                .beauty-fade-btn {
+                  width: auto;
+                  padding: 0.75rem 2rem;
+                  font-size: 1.125rem;
+                }
+              }
             `}</style>
             <div className="ml-1 mb-1 flex items-center gap-2 cursor-pointer text-[#22272a] hover:text-[#b42121] font-medium text-base transition">
               <svg
@@ -351,9 +360,9 @@ export default function Home({ blogArticles }) {
               className="relative w-full max-w-7xl mx-auto py-2 flex justify-center"
               style={{ boxShadow: "none", background: "none" }}
             >
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 w-full px-2 md:px-8">
+              <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:flex-row md:gap-12 w-full px-4 md:px-8">
                 {/* Feature: Importação Premium */}
-                <div className="flex flex-col items-center text-center min-w-[120px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
                   <span
                     className="mb-3 text-gray-800"
                     tabIndex={0}
@@ -382,17 +391,17 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
                     {t("Importação Premium")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
                     {t("Serviço seguro")}
                     <br />
                     {t("Acompanhamento total")}
                   </div>
                 </div>
                 {/* Feature: Garantia Incluída */}
-                <div className="flex flex-col items-center text-center min-w-[120px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
                   <span
                     className="mb-3 text-gray-800"
                     tabIndex={0}
@@ -421,17 +430,17 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
                     {t("Garantia Incluída")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
                     {t("Garantia total")}
                     <br />
                     {t("Transparência garantida")}
                   </div>
                 </div>
                 {/* Feature: Entrega em Todo o País */}
-                <div className="flex flex-col items-center text-center min-w-[120px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
                   <span
                     className="mb-3 text-gray-800"
                     tabIndex={0}
@@ -462,17 +471,17 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
                     {t("Entrega em Todo o País")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
                     {t("Entrega flexível")}
                     <br />
                     {t("Todo Portugal")}
                   </div>
                 </div>
                 {/* Feature: Apoio ao Cliente */}
-                <div className="flex flex-col items-center text-center min-w-[120px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
                   <span
                     className="mb-3 text-gray-800"
                     tabIndex={0}
@@ -501,17 +510,17 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
                     {t("Apoio ao Cliente")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
                     {t("Equipa dedicada para ajudar")}
                     <br />
                     {t("Resolvemos tudo por ti")}
                   </div>
                 </div>
                 {/* Feature: Sem Complicações */}
-                <div className="flex flex-col items-center text-center min-w-[120px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
                   <span
                     className="mb-3 text-gray-800"
                     tabIndex={0}
@@ -542,17 +551,17 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
                     {t("Sem Complicações")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
                     {t("Processo simples e rápido")}
                     <br />
                     {t("Tu escolhes, nós tratamos")}
                   </div>
                 </div>
                 {/* Feature: Melhor Preço */}
-                <div className="flex flex-col items-center text-center min-w-[120px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
                   <span
                     className="mb-3 text-gray-800"
                     tabIndex={0}
@@ -575,10 +584,10 @@ export default function Home({ blogArticles }) {
                       <circle cx="7.5" cy="7.5" r="1.5" fill="#22272a" />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-sm mb-3.5">
+                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
                     {t("Melhor Preço")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
                     {t("Garantimos o melhor valor")}
                     <br />
                     {t("Sem custos escondidos")}
@@ -608,26 +617,26 @@ export default function Home({ blogArticles }) {
             >
               {t("Como Funciona")}
             </motion.h2>
-            <div className="flex justify-center gap-4 mb-10">
-              <span className="px-6 py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-10">
+              <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-sm sm:text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">
                 {t("Simples")}
               </span>
-              <span className="px-6 py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">
+              <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-sm sm:text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">
                 {t("Transparente")}
               </span>
-              <span className="px-6 py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">
+              <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-sm sm:text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">
                 {t("Rápido")}
               </span>
             </div>
-            <p className="text-2xl text-gray-800 mb-16 font-medium drop-shadow">
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-800 mb-12 sm:mb-16 font-medium drop-shadow">
               {t(
                 "Importa o teu carro europeu sem stress — só precisas de escolher, simular e pedir.",
               )}
               <br />
               <span className="font-bold">{t("Nós tratamos do resto!")}</span>
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/95 rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="bg-white/95 rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
                 <div className="mb-3 text-3xl font-bold text-gray-800">1</div>
                 <div className="font-semibold text-xl mb-2 text-gray-900">
                   {t("Escolhe o carro")}
@@ -667,7 +676,7 @@ export default function Home({ blogArticles }) {
                   {t("Ver Viaturas")}
                 </Link>
               </div>
-              <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+              <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
                 <div className="mb-3 text-3xl font-bold text-gray-800">2</div>
                 <div className="font-semibold text-xl mb-2 text-gray-900">
                   {t("Simula custos")}
@@ -707,7 +716,7 @@ export default function Home({ blogArticles }) {
                   {t("Simular ISV")}
                 </Link>
               </div>
-              <div className="bg-white/95 rounded-2xl shadow-2xl p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
+              <div className="bg-white/95 rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
                 <div className="mb-3 text-3xl font-bold text-gray-800">3</div>
                 <div className="font-semibold text-xl mb-2 text-gray-900">
                   {t("Importação e entrega")}
@@ -756,7 +765,7 @@ export default function Home({ blogArticles }) {
           data-fullwidth
           className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 sm:py-24"
         >
-          <div className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -766,7 +775,7 @@ export default function Home({ blogArticles }) {
             >
               Carros usados em Destaque
             </motion.h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
               {cars.map((car) => (
                 <motion.div
                   key={car.id}
