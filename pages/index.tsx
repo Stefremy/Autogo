@@ -351,7 +351,7 @@ export default function Home({ blogArticles }) {
         {/* Como Funciona section */}
         <section
           data-fullwidth
-          className="relative w-screen py-16 sm:py-24 overflow-hidden"
+          className="relative w-screen py-16 sm:py-24 overflow-hidden mt-10 sm:mt-14 md:mt-16 lg:mt-0"
           style={{ 
             backgroundColor: "#f5f6fa",
             marginLeft: "calc(-50vw + 50%)",
@@ -611,7 +611,7 @@ export default function Home({ blogArticles }) {
           />
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
-          <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-24">
+          <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-40 sm:pt-48 md:pt-56 lg:pt-32">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -632,6 +632,8 @@ export default function Home({ blogArticles }) {
                 {t("Rápido")}
               </span>
             </div>
+            {/* Increased top margin for tagline/intro on mobile/tablet */}
+            <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-8"></div>
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-800 mb-12 sm:mb-16 font-medium drop-shadow">
               {t(
                 "Importa o teu carro europeu sem stress — só precisas de escolher, simular e pedir.",
@@ -639,6 +641,8 @@ export default function Home({ blogArticles }) {
               <br />
               <span className="font-bold">{t("Nós tratamos do resto!")}</span>
             </p>
+            {/* Add extra space below intro for mobile/tablet */}
+            <div className="block mb-8 sm:mb-12 md:mb-16 lg:mb-8"></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               <div className="bg-white/95 rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-10 flex flex-col items-center border-t-4 border-gray-300 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-105">
                 <div className="mb-3 text-3xl font-bold text-gray-800">1</div>
