@@ -29,7 +29,6 @@ export function IndexNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMenuAnimating, setIsMenuAnimating] = useState(false);
   const [isLandscape, setIsLandscape] = useState(false);
   const router = useRouter();
   const { t } = useTranslation();
@@ -60,27 +59,9 @@ export function IndexNavbar() {
     };
   }, []);
 
-  const openMobileMenu = useCallback(() => {
-    setMobileMenuOpen(true);
-    setIsMenuAnimating(false);
-  }, []);
-
-  const closeMobileMenu = useCallback(() => {
-    setIsMenuAnimating(true);
-    // First trigger the closing animation
-    setTimeout(() => {
-      setMobileMenuOpen(false);
-      setIsMenuAnimating(false);
-    }, 300); // Match animation duration
-  }, []);
-
   const toggleMobileMenu = useCallback(() => {
-    if (mobileMenuOpen) {
-      closeMobileMenu();
-    } else {
-      openMobileMenu();
-    }
-  }, [mobileMenuOpen, closeMobileMenu, openMobileMenu]);
+    setMobileMenuOpen(!mobileMenuOpen);
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     if (!langOpen) return;
@@ -98,10 +79,8 @@ export function IndexNavbar() {
 
   // Close mobile menu when route changes
   useEffect(() => {
-    if (mobileMenuOpen) {
-      closeMobileMenu();
-    }
-  }, [router.pathname, mobileMenuOpen, closeMobileMenu]);
+    setMobileMenuOpen(false);
+  }, [router.pathname]);
 
   const currentLocale = router.locale || "pt-PT";
   const handleLocaleChange = (locale) => {
@@ -226,22 +205,14 @@ export function IndexNavbar() {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      {(mobileMenuOpen || isMenuAnimating) && (
+      {mobileMenuOpen && (
         <div
-          className={`lg:hidden fixed left-0 w-full h-screen z-50 transition-all duration-300 ease-in-out ${
-            mobileMenuOpen && !isMenuAnimating
-              ? "bg-black/50 opacity-100" 
-              : "bg-black/0 opacity-0 pointer-events-none"
-          }`}
+          className={`lg:hidden fixed left-0 w-full h-screen z-50 transition-all duration-300 ease-in-out bg-black/50 opacity-100 animate-in fade-in`}
           style={{ top: isLandscape ? "56px" : "64px" }}
-          onClick={closeMobileMenu}
+          onClick={() => setMobileMenuOpen(false)}
         >
           <div
-            className={`bg-white shadow-2xl border-b border-gray-200 backdrop-blur-sm transition-all duration-300 ease-out transform ${
-              mobileMenuOpen && !isMenuAnimating
-                ? "translate-y-0 opacity-100" 
-                : "-translate-y-full opacity-0"
-            } ${isLandscape ? "max-h-72" : ""}`}
+            className={`bg-white shadow-2xl border-b border-gray-200 backdrop-blur-sm transition-all duration-300 ease-out transform translate-y-0 opacity-100 animate-in slide-in-from-top ${isLandscape ? "max-h-72" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="px-3 sm:px-4 py-4 sm:py-5 space-y-1 sm:space-y-2">
@@ -251,11 +222,7 @@ export function IndexNavbar() {
                   <Link
                     key={href}
                     href={href}
-                    className={`group block ${isLandscape ? "text-xs py-2" : "text-lg py-3"} font-medium transition-all duration-300 px-4 sm:px-5 rounded-xl transform hover:scale-[1.02] hover:translate-x-1 ${
-                      mobileMenuOpen && !isMenuAnimating
-                        ? "translate-x-0 opacity-100" 
-                        : "-translate-x-4 opacity-0"
-                    }
+                    className={`group block ${isLandscape ? "text-xs py-2" : "text-lg py-3"} font-medium transition-all duration-300 px-4 sm:px-5 rounded-xl transform hover:scale-[1.02] hover:translate-x-1 translate-x-0 opacity-100 animate-in slide-in-from-left
                     ${isActive 
                       ? "text-white bg-gradient-to-r from-[#b42121] to-[#d55050] shadow-lg" 
                       : "text-[#22272a] hover:text-[#b42121] hover:bg-gradient-to-r hover:from-[#f5f6fa] hover:to-[#fbe9e9] hover:shadow-md"
@@ -264,9 +231,9 @@ export function IndexNavbar() {
                     style={{ 
                       letterSpacing: 0.2, 
                       fontWeight: 500,
-                      transitionDelay: (mobileMenuOpen && !isMenuAnimating) ? `${index * 50}ms` : "0ms"
+                      animationDelay: `${index * 50}ms`
                     }}
-                    onClick={closeMobileMenu}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="flex items-center gap-2">
                       <span className={`w-2 h-2 rounded-full transition-all duration-300 ${
