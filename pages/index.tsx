@@ -364,11 +364,11 @@ export default function Home({ blogArticles }) {
               className="relative w-full max-w-7xl mx-auto py-2 flex justify-center"
               style={{ boxShadow: "none", background: "none" }}
             >
-              <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:flex-row md:gap-12 w-full px-2 sm:px-4 md:px-8">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 md:flex md:flex-row md:items-center md:justify-center md:gap-12 w-full px-2 sm:px-4 md:px-8">
                 {/* Feature: Importação Premium */}
-                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] md:min-w-[120px] md:max-w-[150px]">
                   <span
-                    className="mb-3 text-gray-800"
+                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
                     aria-label={
                       t("Importação Premium") +
@@ -380,7 +380,7 @@ export default function Home({ blogArticles }) {
                     }
                   >
                     {/* Globe icon */}
-                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24">
                       <circle
                         cx="12"
                         cy="12"
@@ -395,22 +395,22 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
+                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs md:text-sm mb-1 sm:mb-2 md:mb-3">
                     {t("Importação Premium")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-[9px] sm:text-xs leading-tight max-w-[90px] sm:max-w-[110px] md:max-w-[120px] mb-1 sm:mb-2">
                     {t("Serviço seguro")}
                     <br />
                     {t("Acompanhamento total")}
                   </div>
                 </div>
                 {/* Feature: Garantia Incluída */}
-                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] md:min-w-[120px] md:max-w-[150px]">
                   <span
-                    className="mb-3 text-gray-800"
+                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
                     aria-label={
-                      t("Garantia Incluída") +
+                      t("Garantia de Excelência") +
                       ": " +
                       t("Garantia total") +
                       ". " +
@@ -419,7 +419,7 @@ export default function Home({ blogArticles }) {
                     }
                   >
                     {/* Shield/Check icon */}
-                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24">
                       <path
                         d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z"
                         stroke="#22272a"
@@ -434,19 +434,19 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
-                    {t("Garantia Incluída")}
+                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs md:text-sm mb-1 sm:mb-2 md:mb-3">
+                    {t("Garantia de Excelência")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
-                    {t("Garantia total")}
+                  <div className="text-gray-700 text-[9px] sm:text-xs leading-tight max-w-[90px] sm:max-w-[110px] md:max-w-[120px] mb-1 sm:mb-2">
+                    {t("O melhor atendimento")}
                     <br />
                     {t("Transparência garantida")}
                   </div>
                 </div>
                 {/* Feature: Entrega em Todo o País */}
-                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] md:min-w-[120px] md:max-w-[150px]">
                   <span
-                    className="mb-3 text-gray-800"
+                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
                     aria-label={
                       t("Entrega em Todo o País") +
@@ -458,7 +458,7 @@ export default function Home({ blogArticles }) {
                     }
                   >
                     {/* Truck icon */}
-                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24">
                       <rect
                         x="3"
                         y="7"
@@ -475,19 +475,19 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
+                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs md:text-sm mb-1 sm:mb-2 md:mb-3">
                     {t("Entrega em Todo o País")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-[9px] sm:text-xs leading-tight max-w-[90px] sm:max-w-[110px] md:max-w-[120px] mb-1 sm:mb-2">
                     {t("Entrega flexível")}
                     <br />
                     {t("Todo Portugal")}
                   </div>
                 </div>
                 {/* Feature: Apoio ao Cliente */}
-                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] md:min-w-[120px] md:max-w-[150px]">
                   <span
-                    className="mb-3 text-gray-800"
+                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
                     aria-label={
                       t("Apoio ao Cliente") +
@@ -499,7 +499,7 @@ export default function Home({ blogArticles }) {
                     }
                   >
                     {/* Headset/Support icon */}
-                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24">
                       <path
                         d="M12 3a9 9 0 0 0-9 9v3a3 3 0 0 0 3 3h1v-4H6a1 1 0 0 1-1-1v-1a7 7 0 0 1 14 0v1a1 1 0 0 1-1 1h-1v4h1a3 3 0 0 0 3-3v-3a9 9 0 0 0-9-9Z"
                         stroke="#22272a"
@@ -514,19 +514,19 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
+                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs md:text-sm mb-1 sm:mb-2 md:mb-3">
                     {t("Apoio ao Cliente")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-[9px] sm:text-xs leading-tight max-w-[90px] sm:max-w-[110px] md:max-w-[120px] mb-1 sm:mb-2">
                     {t("Equipa dedicada para ajudar")}
                     <br />
                     {t("Resolvemos tudo por ti")}
                   </div>
                 </div>
                 {/* Feature: Sem Complicações */}
-                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] md:min-w-[120px] md:max-w-[150px]">
                   <span
-                    className="mb-3 text-gray-800"
+                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
                     aria-label={
                       t("Sem Complicações") +
@@ -538,7 +538,7 @@ export default function Home({ blogArticles }) {
                     }
                   >
                     {/* Check/No stress icon */}
-                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24">
                       <circle
                         cx="12"
                         cy="12"
@@ -555,19 +555,19 @@ export default function Home({ blogArticles }) {
                       />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
+                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs md:text-sm mb-1 sm:mb-2 md:mb-3">
                     {t("Sem Complicações")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-[9px] sm:text-xs leading-tight max-w-[90px] sm:max-w-[110px] md:max-w-[120px] mb-1 sm:mb-2">
                     {t("Processo simples e rápido")}
                     <br />
                     {t("Tu escolhes, nós tratamos")}
                   </div>
                 </div>
                 {/* Feature: Melhor Preço */}
-                <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] md:min-w-[120px] md:max-w-[150px]">
                   <span
-                    className="mb-3 text-gray-800"
+                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
                     aria-label={
                       t("Melhor Preço") +
@@ -579,7 +579,7 @@ export default function Home({ blogArticles }) {
                     }
                   >
                     {/* Tag/Best price icon */}
-                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24">
                       <path
                         d="M3 12V7a2 2 0 0 1 2-2h5l9 9-7 7-9-9Z"
                         stroke="#22272a"
@@ -588,10 +588,10 @@ export default function Home({ blogArticles }) {
                       <circle cx="7.5" cy="7.5" r="1.5" fill="#22272a" />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3.5">
+                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs md:text-sm mb-1 sm:mb-2 md:mb-3">
                     {t("Melhor Preço")}
                   </div>
-                  <div className="text-gray-700 text-xs leading-tight max-w-[140px] sm:max-w-[120px] mb-2">
+                  <div className="text-gray-700 text-[9px] sm:text-xs leading-tight max-w-[90px] sm:max-w-[110px] md:max-w-[120px] mb-1 sm:mb-2">
                     {t("Garantimos o melhor valor")}
                     <br />
                     {t("Sem custos escondidos")}
