@@ -360,7 +360,7 @@ export default function Home({ blogArticles }) {
               className="relative w-full max-w-7xl mx-auto py-2 flex justify-center"
               style={{ boxShadow: "none", background: "none" }}
             >
-              <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:flex-row md:gap-12 w-full px-4 md:px-8">
+              <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:flex-row md:gap-12 w-full px-2 sm:px-4 md:px-8">
                 {/* Feature: Importação Premium */}
                 <div className="flex flex-col items-center text-center w-full max-w-[180px] sm:max-w-[200px] md:min-w-[120px] md:max-w-[150px]">
                   <span
@@ -607,7 +607,7 @@ export default function Home({ blogArticles }) {
           />
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
-          <div className="relative z-20 max-w-5xl mx-auto text-center px-4 pt-24">
+          <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-24">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -765,7 +765,7 @@ export default function Home({ blogArticles }) {
           data-fullwidth
           className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 sm:py-24"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -840,7 +840,7 @@ export default function Home({ blogArticles }) {
               </button>
               <div
                 id="reviews-carousel"
-                className="flex gap-6 min-w-[700px] md:min-w-0 px-4 overflow-x-auto scroll-smooth pb-2"
+                className="flex gap-6 min-w-[700px] md:min-w-0 px-2 sm:px-4 overflow-x-auto scroll-smooth pb-2"
               >
                 {googleReviews.map((review, idx) => (
                   <div
@@ -974,7 +974,7 @@ export default function Home({ blogArticles }) {
               </button>
               <div
                 id="articles-carousel"
-                className="flex gap-6 min-w-[700px] md:min-w-0 px-4 overflow-x-auto scroll-smooth pb-2"
+                className="flex gap-6 min-w-[700px] md:min-w-0 px-2 sm:px-4 overflow-x-auto scroll-smooth pb-2"
               >
                 {blogArticles.map((article, idx) => (
                   <a
