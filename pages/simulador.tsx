@@ -337,7 +337,7 @@ export default function Simulador() {
 
       <MainLayout>
         <div className="relative w-full flex-1 z-10">
-          <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-8 px-12 bg-transparent">
+          <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-6 px-2 sm:px-6 md:px-12 bg-transparent">
             {/* Info block */}
             <div className="w-full max-w-3xl mb-10 lg:mb-0 pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left z-10">
               <h3 className="text-3xl font-bold text-[#b42121] mb-6 leading-tight">
@@ -453,7 +453,7 @@ export default function Simulador() {
               <div
                 className={`w-full transition-all duration-700 ${simulatorOpen ? "opacity-100 scale-100 max-h-[2000px] pointer-events-auto" : "opacity-0 scale-95 max-h-0 pointer-events-none overflow-hidden"}`}
               >
-                <div className="bg-white/80 rounded-3xl shadow-2xl border border-[#b42121]/10 backdrop-blur-md p-0 sm:p-10 flex flex-col items-center">
+                <div className="bg-white/80 rounded-3xl shadow-2xl border border-[#b42121]/10 backdrop-blur-md p-2 sm:p-6 md:p-10 flex flex-col items-center w-full max-w-full overflow-x-auto">
                   <h2 className="text-3xl font-extrabold text-[#b42121] mb-8 text-center tracking-tight drop-shadow">
                     Simulador ISV Portugal
                   </h2>

@@ -5,7 +5,7 @@ export default function Footer() {
   const { t } = useTranslation();
   return (
     <footer
-      className="w-full bg-[#f5f6fa] text-[#22223b] pt-8 pb-4 px-4 shadow-2xl border-t-4 border-[#b42121]/20 relative overflow-hidden opacity-100"
+      className="w-full bg-[#f5f6fa] text-[#22223b] pt-4 pb-2 px-2 sm:pt-6 sm:pb-4 sm:px-4 shadow-2xl border-t-4 border-[#b42121]/20 relative overflow-hidden opacity-100"
       style={{ overflow: "hidden" }}
     >
       {/* Restored premium animated gradient overlay */}
@@ -18,7 +18,7 @@ export default function Footer() {
         />
         <div className="absolute inset-0 bg-black/0" />
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-[#b42121]/10 pb-6 relative z-10 text-[1.15rem] md:text-[1.18rem]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 border-b border-[#b42121]/10 pb-4 sm:pb-6 relative z-10 text-[1rem] sm:text-[1.15rem] md:text-[1.18rem]">
         <div>
           <h3
             className="text-2xl font-extrabold mb-3 text-[#b42121] drop-shadow-xl tracking-wide"
@@ -34,12 +34,12 @@ export default function Footer() {
           <img
             src="/images/auto-logonb.png"
             alt="AutoGo.pt"
-            className="w-52 mb-2 drop-shadow-lg mt-0 rounded-xl"
+            className="w-32 sm:w-44 mb-2 drop-shadow-lg mt-0 rounded-xl"
           />
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">{t("Navegação")}</h4>
-          <ul className="space-y-3 text-gray-700">
+          <ul className="space-y-2 sm:space-y-3 text-gray-700 text-[0.95rem]">
             <li>
               <Link
                 href="/"
@@ -100,7 +100,7 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">{t("Serviços")}</h4>
-          <ul className="space-y-3 text-gray-700">
+          <ul className="space-y-2 sm:space-y-3 text-gray-700 text-[0.95rem]">
             <li>{t("Importação de carros")}</li>
             <li>{t("Legalização e documentação")}</li>
             <li>{t("Simulação de ISV")}</li>
@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">{t("Contactos")}</h4>
-          <ul className="space-y-3 text-gray-700">
+          <ul className="space-y-2 sm:space-y-3 text-gray-700 text-[0.95rem]">
             <li>
               {t("Email")}:{" "}
               <a
@@ -133,7 +133,7 @@ export default function Footer() {
               {t("Morada")}: R. Rómulo de Carvalho 388 SITIO, 4800-019 Guimarães
             </li>
           </ul>
-          <div className="flex space-x-4 mt-4">
+          <div className="flex space-x-2 sm:space-x-4 mt-2 sm:mt-4">
             <a
               href="https://wa.me/351935179591"
               target="_blank"
@@ -200,10 +200,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-4 text-sm text-gray-600 relative z-10">
-        <div className="flex flex-col items-center md:items-start">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-2 sm:pt-4 text-xs sm:text-sm text-gray-600 relative z-10">
+        <div className="flex flex-col items-center md:items-start gap-0">
           <span>
-            &copy; {new Date().getFullYear()} AutoGo.pt.{" "}
+            &copy; {new Date().getFullYear()} AutoGo.pt{" "}
             {t("Todos os direitos reservados.")}
           </span>
           <Link
