@@ -24,7 +24,6 @@ export default function Footer() {
             className="text-2xl font-extrabold mb-3 text-[#b42121] drop-shadow-xl tracking-wide"
             style={{ letterSpacing: "0.04em" }}
           >
-            AutoGo.pt
           </h3>
           <p className="text-lg text-gray-700 mb-4 font-medium italic">
             {t(
@@ -32,7 +31,7 @@ export default function Footer() {
             )}
           </p>
           <img
-            src="/images/auto-logonb.png"
+            src="/images/autologonb.png"
             alt="AutoGo.pt"
             className="w-32 sm:w-44 mb-2 drop-shadow-lg mt-0 rounded-xl"
           />

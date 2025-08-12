@@ -92,7 +92,7 @@ export function IndexNavbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-between px-2 sm:px-4 md:px-6 gap-2 sm:gap-4 md:gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-center px-2 sm:px-4 md:px-6 gap-2 sm:gap-4 md:gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
         style={{
           height: isLandscape ? "56px" : "64px",
           minWidth: 320,
@@ -106,15 +106,15 @@ export function IndexNavbar() {
         }}
       >
         {/* Logo */}
-        <div className="flex items-center relative">
+  <div className="flex items-center justify-center relative mx-auto" style={{ marginTop: '-18px', marginLeft: '54px' }}>
           <Link href="/">
             <div className="relative flex items-center group h-full">
               <img
-                src="/images/auto-logonb.png"
+                src="/images/autologonb.png"
                 alt="AutoGo.pt"
-                className={`${isLandscape ? "h-24" : "h-32"} md:h-40 w-auto object-contain z-10 transition-transform duration-300 group-hover:scale-105`}
+                className={`${isLandscape ? "h-12" : "h-16"} md:h-20 w-auto object-contain z-10 transition-transform duration-300 group-hover:scale-105`}
                 style={{
-                  maxWidth: isLandscape ? "240px" : "320px",
+                  maxWidth: isLandscape ? "120px" : "160px",
                   filter: "drop-shadow(0 4px 18px rgba(44,62,80,0.13))",
                 }}
               />
