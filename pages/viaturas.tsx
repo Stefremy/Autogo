@@ -435,12 +435,12 @@ export default function Viaturas() {
                     <img
                       src={`/images/carmake/${car.make.toLowerCase().replace(/[^a-z0-9]/gi, "")}-logo.png`}
                       alt={car.make}
-                      className="h-7 w-auto absolute left-0 top-1/2 -translate-y-1/2 ml-3"
+                      className="h-12 w-auto mb-2 mx-auto"
                       style={{
-                        maxWidth: 48,
-                        minWidth: 28,
+                        maxWidth: 64,
+                        minWidth: 36,
                         objectFit: "contain",
-                        display: "inline-block",
+                        display: "block",
                         verticalAlign: "middle",
                       }}
                       loading="lazy"
@@ -471,7 +471,7 @@ export default function Viaturas() {
                   <div className="text-gray-500 mb-1 text-center px-2">
                     {car.year} · {car.mileage} km
                   </div>
-                  <div className="font-bold text-green-700 text-lg mb-3 text-center px-2">
+                  <div className="font-bold text-black text-lg mb-3 text-center px-2">
                     €{car.price.toLocaleString()}
                   </div>
                   <div className="flex gap-2 w-full mt-4">

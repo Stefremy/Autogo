@@ -400,6 +400,7 @@ export default function CarDetail() {
           >
             {/* Hero Image + Gallery */}
             <div className="flex-1 relative flex flex-col items-center">
+              {/* Main image (first image) */}
               <img
                 src={(car.images && car.images[0]) || car.image}
                 alt={car.make + " " + car.model}
@@ -429,20 +430,38 @@ export default function CarDetail() {
                   </span>
                 </span>
               )}
-              {/* Mini galeria horizontal */}
-              <div className="flex gap-3 mt-5">
-                {(car.images || [car.image]).map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    alt={`${car.make} ${car.model} galeria ${idx + 1}`}
-                    className={`rounded-xl object-cover w-24 h-16 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === idx ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
-                    onClick={() => {
-                      setLightboxIndex(idx);
-                      setLightboxOpen(true);
-                    }}
-                  />
-                ))}
+              {/* Gallery: first 4 images in grid, rest scrollable */}
+              <div className="w-full mt-5">
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  {(car.images || [car.image]).slice(0, 4).map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img}
+                      alt={`${car.make} ${car.model} galeria ${idx + 1}`}
+                      className={`rounded-xl object-cover w-full h-32 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === idx ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
+                      onClick={() => {
+                        setLightboxIndex(idx);
+                        setLightboxOpen(true);
+                      }}
+                    />
+                  ))}
+                </div>
+                {(car.images && car.images.length > 4) && (
+                  <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#b42121]/40 scrollbar-track-gray-200">
+                    {(car.images || []).slice(4).map((img, idx) => (
+                      <img
+                        key={idx + 4}
+                        src={img}
+                        alt={`${car.make} ${car.model} galeria ${idx + 5}`}
+                        className={`rounded-xl object-cover w-24 h-16 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === (idx + 4) ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
+                        onClick={() => {
+                          setLightboxIndex(idx + 4);
+                          setLightboxOpen(true);
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
               <Lightbox
                 open={lightboxOpen}
@@ -490,7 +509,7 @@ export default function CarDetail() {
                   </span>
                 )}
               </div>
-              <div className="text-3xl font-bold text-blue-700 drop-shadow-sm">
+              <div className="text-3xl font-bold text-black drop-shadow-md ml-2">
                 {car.price.toLocaleString()} €
               </div>
               {/* Botão ver mais detalhes */}

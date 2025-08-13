@@ -176,6 +176,7 @@
     "emissionClass": "Zero Emissões",
     "co2": "0 CO2",
     "color": "Branco",
+    "status":"sob_consulta",
     "specs": {
       "battery_kWh": 32.3,
       "real_range_km": 205,
@@ -216,6 +217,85 @@
         "Aquecimento adicional (pré‑condicionamento)",
         "Fecho centralizado",
         "Pára‑choques de design específico"
+      ]
+    }
+  },
+  {
+    "id": "6",
+    "make": "Nissan",
+    "model": "Leaf N-Connecta",
+    "year": 2023,
+    "price": 17500,
+    "image": "/images/cars/nissanleaf1.webp",
+    "description": "Nissan Leaf N-Connecta, origem Alemanha.",
+    "mileage": 6105,
+    "country": "DE",
+    "gearboxType": "Automático",
+    "gearbox": 1,
+    "category": "Veículo sedan",
+    "engineSize": "n/a",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "6027658",
+    "origin": "Alemanha",
+    "firstRegistration": "15/06/2023",
+    "doors": 5,
+    "status":"sob_consulta",
+    "fuel": "Elétrico",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Branco",
+    "images": [
+      "/images/cars/nissanleaf1.webp",
+      "/images/cars/nissanleaf2.jpg",
+      "/images/cars/nissanleaf3.jpg",
+      "/images/cars/nissanleaf4.jpg",
+      "/images/cars/nissanleaf5.jpg",
+      "/images/cars/nissanleaf6.jpg",
+      "/images/cars/nissanleaf7.jpg",
+      "/images/cars/nissanleaf8.jpg",
+      "/images/cars/nissanleaf9.jpg",
+      "/images/cars/nissanleaf10.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Sistema de iluminação adaptável",
+        "Ar condicionado: Automático",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start/Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Leitor MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Faróis LED"
+      ],
+      "outras_opcoes": [
+        "Controlo de Velocidade (Cruise Control)",
+        "Controlo de tração"
       ]
     }
   }

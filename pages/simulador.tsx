@@ -445,7 +445,7 @@ export default function Simulador() {
                 style={{ marginTop: 0 }}
               >
                 <img
-                  src="/images/auto-logo.png"
+                  src="/images/autogoblack.png"
                   alt="AutoGo Logo"
                   className={`w-32 h-32 object-contain mx-auto drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg transition-transform duration-700 ${logoAnim ? "animate-spin-slow" : ""}`}
                 />
