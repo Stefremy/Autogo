@@ -32,6 +32,10 @@ export default function MainLayout({
   }, []);
 
   return (
+    <>
+      <head>
+        <link rel="icon" href="/images/favicon.png" type="image/png" />
+      </head>
     <div className="min-h-screen flex flex-col bg-[#f5f6fa] text-[#1a1a1a] overflow-x-hidden">
       {/* NAVBAR */}
       <IndexNavbar />
@@ -87,5 +91,6 @@ export default function MainLayout({
       </CookieConsent>
       <Footer />
     </div>
+    </>
   );
 }
