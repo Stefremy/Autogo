@@ -10,6 +10,7 @@ type PremiumCarCardProps = {
   year: string | number;
   make: string;
   transmission?: string;
+  type?: string;   // mantida para compatibilidade
   country?: string;
   bgColor?: string;
   status?: string;
@@ -23,6 +24,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   year,
   make,
   transmission,
+  type: _type,   // ✅ renomeada para evitar warning do ESLint
   country,
   bgColor,
   status,
