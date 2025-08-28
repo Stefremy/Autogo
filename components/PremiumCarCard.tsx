@@ -10,9 +10,8 @@ type PremiumCarCardProps = {
   year: string | number;
   make: string;
   transmission?: string;
-  type?: string;
   country?: string;
-  bgColor?: string; // nova prop opcional
+  bgColor?: string;
   status?: string;
 };
 
@@ -24,19 +23,19 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   year,
   make,
   transmission,
-  type = "SEDAN",
   country,
   bgColor,
   status,
 }) => {
   const { t } = useTranslation("common");
-  // Status translation
+
   const statusLabels: Record<string, string> = {
     disponivel: t("Disponível"),
     vendido: t("Vendido"),
     sob_consulta: t("Sob Consulta"),
     novidade: t("Novidade"),
   };
+
   return (
     <a
       href={`/cars/${id}`}
@@ -51,12 +50,12 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
               status === "disponivel"
                 ? "bg-green-500"
                 : status === "vendido"
-                  ? "bg-gray-400"
-                  : status === "sob_consulta"
-                    ? "bg-yellow-400"
-                    : status === "novidade"
-                      ? "bg-blue-500"
-                      : "bg-gray-400"
+                ? "bg-gray-400"
+                : status === "sob_consulta"
+                ? "bg-yellow-400"
+                : status === "novidade"
+                ? "bg-blue-500"
+                : "bg-gray-400"
             }`}
             style={{
               letterSpacing: "0.5px",
@@ -67,7 +66,9 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             {statusLabels[status] || status}
           </span>
         )}
+
         <img src={image} alt={name} className={styles["premium-car-image"]} />
+
         {country && (
           <img
             src={`/images/flags/${country.toLowerCase()}.png`}
@@ -88,6 +89,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           />
         )}
       </div>
+
       <div className={styles["premium-car-info"]}>
         <div
           className={styles["premium-car-type"]}
@@ -100,41 +102,42 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            {/* Car make logo with fallback for case and extension */}
             {make && (
-              <>
-                <img
-                  src={`/images/carmake/${make.toLowerCase().replace(/[^a-z0-9]/gi, "")}-logo.png`}
-                  alt={make}
-                  style={{
-                    height: 30, // increased from 22
-                    width: "auto",
-                    maxWidth: 80, // increased from 60
-                    objectFit: "contain",
-                    display: "inline-block",
-                    verticalAlign: "middle",
-                    filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.10))",
-                  }}
-                  loading="lazy"
-                  onError={(e) => {
-                    const img = e.currentTarget as HTMLImageElement;
-                    // Try .jpg if .png fails
-                    if (!img.src.endsWith(".jpg")) {
-                      img.src = img.src.replace(".png", ".jpg");
+              <img
+                src={`/images/carmake/${make
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]/gi, "")}-logo.png`}
+                alt={make}
+                style={{
+                  height: 30,
+                  width: "auto",
+                  maxWidth: 80,
+                  objectFit: "contain",
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                  filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.10))",
+                }}
+                loading="lazy"
+                onError={(e) => {
+                  const img = e.currentTarget as HTMLImageElement;
+                  if (!img.src.endsWith(".jpg")) {
+                    img.src = img.src.replace(".png", ".jpg");
+                  } else {
+                    const originalCase = `/images/carmake/${make.replace(
+                      /[^a-z0-9]/gi,
+                      ""
+                    )}-logo.png`;
+                    if (img.src !== window.location.origin + originalCase) {
+                      img.src = originalCase;
                     } else {
-                      // Try original-case make (e.g. BMW-logo.png)
-                      const originalCase = `/images/carmake/${make.replace(/[^a-z0-9]/gi, "")}-logo.png`;
-                      if (img.src !== window.location.origin + originalCase) {
-                        img.src = originalCase;
-                      } else {
-                        img.style.display = "none";
-                      }
+                      img.style.display = "none";
                     }
-                  }}
-                />
-              </>
+                  }
+                }}
+              />
             )}
           </div>
+
           <div
             style={{
               fontWeight: 700,
@@ -152,7 +155,9 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             })}
           </div>
         </div>
+
         <div className={styles["premium-car-title"]}>{name}</div>
+
         <div className={styles["premium-car-meta-row"]}>
           <div>
             <div className={styles["premium-car-meta-label"]}>{t("Ano")}</div>
