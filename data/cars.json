@@ -8,7 +8,8 @@
     "image": "/images/cars/Corolla22.jpg",
     "description": "Reliable and fuel-efficient sedan, perfect for city driving.",
     "mileage": 15000,
-    "country": "DE"
+    "country": "DE",
+    "slug": "toyota-corolla-2022"
   },
   {
     "id": "2",
@@ -20,7 +21,8 @@
     "description": "Sporty hatchback with low mileage and great features.",
     "mileage": 12000,
     "country": "FR",
-    "status": "novidade"
+    "status": "novidade",
+    "slug": "volkswagen-golf-2021"
   },
   {
     "id": "3",
@@ -32,7 +34,8 @@
     "description": "Spacious, stylish, and packed with technology, the Peugeot 3008 is an award-winning SUV ideal for family adventures.",
     "mileage": 8000,
     "country": "PT",
-    "status": "sob_consulta"
+    "status": "sob_consulta",
+    "slug": "peugeot-3008-2023"
   },
   {
     "id": "4",
@@ -58,7 +61,6 @@
     "emissionClass": "Euro6",
     "co2": "123 CO2",
     "color": "Cinzento",
-
     "images": [
       "/images/cars/citroenc3-1.jpg",
       "/images/cars/citroenc3-2.jpg",
@@ -150,16 +152,18 @@
         "Sistema de som",
         "Controlo de tração"
       ]
-    }
+    },
+    "transmission": "Manual",
+    "slug": "citroen-c3-2020"
   },
   {
     "id": "5",
     "make": "Volkswagen",
-    "model": "e‑Up!",
+    "model": "e-Up!",
     "year": 2020,
     "price": 10990,
     "image": "/images/cars/vweup-1.jpg",
-    "description": "Volkswagen e‑Up! elétrico, importado, em ótimo estado.",
+    "description": "Volkswagen e-Up! elétrico, importado, em ótimo estado.",
     "mileage": 30000,
     "country": "DE",
     "gearboxType": "Automático",
@@ -176,7 +180,7 @@
     "emissionClass": "Zero Emissões",
     "co2": "0 CO2",
     "color": "Branco",
-    "status":"sob_consulta",
+    "status": "sob_consulta",
     "specs": {
       "battery_kWh": 32.3,
       "real_range_km": 205,
@@ -199,7 +203,7 @@
         "ABS",
         "ESP",
         "Lane Assist",
-        "Câmara de marcha‑atrás"
+        "Câmara de marcha-atrás"
       ],
       "multimedia": [
         "Bluetooth",
@@ -214,11 +218,13 @@
       ],
       "outras_opcoes": [
         "Controlo de cruzeiro",
-        "Aquecimento adicional (pré‑condicionamento)",
+        "Aquecimento adicional (pré-condicionamento)",
         "Fecho centralizado",
-        "Pára‑choques de design específico"
+        "Pára-choques de design específico"
       ]
-    }
+    },
+    "transmission": "Automática",
+    "slug": "volkswagen-e-up-2020"
   },
   {
     "id": "6",
@@ -240,7 +246,7 @@
     "origin": "Alemanha",
     "firstRegistration": "15/06/2023",
     "doors": 5,
-    "status":"sob_consulta",
+    "status": "sob_consulta",
     "fuel": "Elétrico",
     "emissionClass": "Euro6",
     "co2": "1 CO2",
@@ -258,9 +264,7 @@
       "/images/cars/nissanleaf10.jpg"
     ],
     "equipamento_opcoes": {
-      "opcoes_valor_elevado": [
-        "Sistema de navegação"
-      ],
+      "opcoes_valor_elevado": ["Sistema de navegação"],
       "conforto": [
         "Sistema de iluminação adaptável",
         "Ar condicionado: Automático",
@@ -289,14 +293,13 @@
         "Rádio"
       ],
       "interior": [],
-      "exterior": [
-        "Jantes de liga leve",
-        "Faróis LED"
-      ],
+      "exterior": ["Jantes de liga leve", "Faróis LED"],
       "outras_opcoes": [
         "Controlo de Velocidade (Cruise Control)",
         "Controlo de tração"
       ]
-    }
+    },
+    "transmission": "Automática",
+    "slug": "nissan-leaf-n-connecta-2023"
   }
 ]
