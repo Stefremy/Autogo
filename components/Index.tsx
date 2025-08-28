@@ -461,20 +461,25 @@ export default function Index() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                 >
-                  <PremiumCarCard
-                    name={`${car.make} ${car.model}`}
-                    image={car.image}
-                    price={car.price}
-                    id={car.id}
-                    year={car.year}
-                    make={car.make}
-                    transmission={
-                      car.gearboxType
-                        ? String(car.gearboxType)
-                        : car.gearbox
-                        ? String(car.gearbox)
-                        : ""
-                    }
+              <PremiumCarCard
+  name={`${car.make} ${car.model}`}
+  image={car.image}
+  price={car.price}
+  id={car.id}
+  year={car.year}
+  make={car.make}
+  transmission={
+    car.gearboxType
+      ? String(car.gearboxType)
+      : car.gearbox
+      ? String(car.gearbox)
+      : ""
+  }
+  country={car.country}
+  status={car.status}
+  slug={car.slug}   // ✅ IMPORTANTE
+/>
+
                     type={"SEDAN"}
                     country={car.country}
                     status={car.status}
