@@ -21,15 +21,26 @@ export default function CarPage({ car }: { car: Car | null }) {
   if (!car) return <div style={{ padding: 24 }}>Carro não encontrado</div>;
 
   return (
-    <MainLayout
-      title={`${car.make} ${car.model} ${car.year} | AutoGo.pt`}
-      description={`Compre ${car.make} ${car.model} ${car.year} importado pela AutoGo.pt. Preço: €${car.price}.`}
-      ogImage={car.image}
-    >
+    <MainLayout>
       <Head>
-        {/* Dados estruturados mínimos (Product + Offer) */}
+        <title>{`${car.make} ${car.model} ${car.year} | AutoGo.pt`}</title>
+        <meta
+          name="description"
+          content={`Compre ${car.make} ${car.model} ${car.year} importado pela AutoGo.pt. Preço: €${car.price}.`}
+        />
+        <meta property="og:title" content={`${car.make} ${car.model} ${car.year} | AutoGo.pt`} />
+        <meta
+          property="og:description"
+          content={`Compre ${car.make} ${car.model} ${car.year} importado pela AutoGo.pt. Preço: €${car.price}.`}
+        />
+        <meta property="og:type" content="product" />
+        <meta property="og:image" content={car.image} />
+        <meta property="og:url" content={`https://www.autogo.pt/cars/${car.slug}`} />
+
+        {/* Dados estruturados (Product + Offer) */}
         <script
           type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -57,7 +68,7 @@ export default function CarPage({ car }: { car: Car | null }) {
 
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            {/* Troque por next/image depois para performance */}
+            {/* Trocar por next/image depois para performance */}
             <img
               src={car.image}
               alt={`${car.make} ${car.model}`}
@@ -69,7 +80,7 @@ export default function CarPage({ car }: { car: Car | null }) {
           <div className="space-y-3 text-lg">
             <p>
               <strong>Preço:</strong>{" "}
-              €{car.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+              €{car.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </p>
             <p>
               <strong>Transmissão:</strong> {car.transmission || "—"}
@@ -88,18 +99,15 @@ export default function CarPage({ car }: { car: Car | null }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // gera os caminhos a partir do slug no JSON
   const paths =
     (cars as Car[])
       .filter((c) => !!c.slug)
       .map((car) => ({ params: { slug: car.slug } })) || [];
-
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = String(params?.slug || "");
   const car = (cars as Car[]).find((c) => c.slug === slug) || null;
-
   return { props: { car } };
 };
