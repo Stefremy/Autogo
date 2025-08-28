@@ -8,7 +8,7 @@ type FormState = {
   mensagem: string;
 };
 
-export default function ContactForm(): JSX.Element {
+export default function ContactForm() {
   const [form, setForm] = useState<FormState>({
     nome: "",
     email: "",
@@ -43,7 +43,7 @@ export default function ContactForm(): JSX.Element {
       setSuccess(true);
       setForm({ nome: "", email: "", telefone: "", mensagem: "" });
     } catch (err) {
-      console.error(err);
+      console.error(err); // usa 'err' -> some o aviso do ESLint
       setError("Erro ao enviar. Tente novamente.");
     } finally {
       setLoading(false);
