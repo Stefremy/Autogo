@@ -7,6 +7,7 @@ type CarCardProps = {
   description: string;
   price: number;
   id: string | number;
+  slug: string; // 👈 adicionado slug
   country?: string;
   status?: string;
 };
@@ -17,11 +18,12 @@ const CarCard: React.FC<CarCardProps> = ({
   description,
   price,
   id,
+  slug, // 👈 recebido
   country,
   status,
 }) => (
   <a
-    href={`/cars/${id}`}
+    href={`/cars/${slug}`} // 👈 trocado id → slug
     className="bg-white rounded shadow p-4 hover:shadow-lg transition block relative"
   >
     {/* Status badge */}
@@ -31,22 +33,23 @@ const CarCard: React.FC<CarCardProps> = ({
           status === "disponivel"
             ? "bg-green-500"
             : status === "vendido"
-              ? "bg-gray-400"
-              : status === "sob_consulta"
-                ? "bg-yellow-400"
-                : "bg-gray-400"
+            ? "bg-gray-400"
+            : status === "sob_consulta"
+            ? "bg-yellow-400"
+            : "bg-gray-400"
         }`}
         style={{ letterSpacing: "0.5px", minWidth: 90, textAlign: "center" }}
       >
         {status === "disponivel"
           ? "Disponível"
           : status === "vendido"
-            ? "Vendido"
-            : status === "sob_consulta"
-              ? "Sob Consulta"
-              : status}
+          ? "Vendido"
+          : status === "sob_consulta"
+          ? "Sob Consulta"
+          : status}
       </span>
     )}
+
     {/* Bloco para imagem e bandeira */}
     <div className="relative">
       <img
@@ -63,14 +66,15 @@ const CarCard: React.FC<CarCardProps> = ({
             country === "DE"
               ? "Alemanha"
               : country === "FR"
-                ? "França"
-                : country === "PT"
-                  ? "Portugal"
-                  : country
+              ? "França"
+              : country === "PT"
+              ? "Portugal"
+              : country
           }
         />
       )}
     </div>
+
     <h3 className="text-xl font-bold">{name}</h3>
     <p className="text-gray-600">{description}</p>
     <p className="text-blue-700 font-semibold mt-2">
