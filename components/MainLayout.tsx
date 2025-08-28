@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import CookieConsent from "react-cookie-consent";
 import Footer from "./Footer";
 import { IndexNavbar } from "./IndexNavbar";
+import Head from 'next/head';
 
 const NAV_LINKS = [
   { href: "/", label: "Início" },
@@ -33,8 +34,28 @@ export default function MainLayout({
 
   return (
     <>
-      <head>
-        <link rel="icon" href="/images/favicon.png" type="image/png" />
+       <Head>
+  <title> AutoGo| Página inicial</title>
+  <meta
+    name="description"
+    content="AutoGo.pt facilita a importação de viaturas europeias para Portugal. Encontre carros usados, simule o ISV e receba o veículo legalizado com documentação e entrega rápida.
+"
+  />
+  <meta
+  name="keywords"
+  content="importação de carros, viaturas europeias, carros usados, simulador ISV, legalização de veículos, entrega em Portugal, importação premium"/>
+
+  />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="AutoGo.pt – Importação de viaturas europeias para Portugal" />
+
+  <meta
+    property="og:description"
+    content="Importe o seu carro europeu sem complicações. Encontre viaturas usadas, simule o ISV e receba o carro legalizado e pronto a andar em todo o país." />"
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.autogo.pt/images/auto-logo.png" />
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
+</Head>
       </head>
     <div className="min-h-screen flex flex-col bg-[#f5f6fa] text-[#1a1a1a] overflow-x-hidden">
       {/* NAVBAR */}
