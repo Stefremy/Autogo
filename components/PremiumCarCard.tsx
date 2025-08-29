@@ -1,20 +1,22 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import styles from "./PremiumCarCard.module.css";
 
 type PremiumCarCardProps = {
   name: string;
-  image: string;
+  image: string;            // caminhos locais em /public/images/* ou URL externa configurada
   price: number;
   id: string | number;
   year: string | number;
   make: string;
   transmission?: string;
-  type?: string; // compatibilidade; não usado
+  type?: string;            // compatibilidade; não usado
   country?: string;
   bgColor?: string;
   status?: string;
-  slug: string; // 👈 agora é obrigatório
+  slug?: string;            // URL amigável
 };
 
 const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
@@ -25,7 +27,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   year,
   make,
   transmission,
-  type: _type,
+  type: _type, // evita warning do ESLint
   country,
   bgColor,
   status,
@@ -40,11 +42,11 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
     novidade: t("Novidade"),
   };
 
-  // usa sempre o slug
-  const href = `/cars/${slug}`;
+  // se houver slug usa /cars/{slug}; senão cai para /cars/{id}
+  const href = slug ? `/cars/${slug}` : `/cars/${id}`;
 
   return (
-    <a
+    <Link
       href={href}
       className={styles["premium-car-card"]}
       style={bgColor ? { background: bgColor } : undefined}
@@ -70,26 +72,50 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           </span>
         )}
 
-        <img src={image} alt={name} className={styles["premium-car-image"]} />
+        {/* Imagem principal do carro (next/image) */}
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: 220,            // altura fixa para evitar layout shift; ajuste se quiser
+            overflow: "hidden",
+            borderRadius: "0.75rem",
+          }}
+        >
+          <Image
+            src={image}
+            alt={name}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className={styles["premium-car-image"]}
+            priority={false}
+          />
+        </div>
 
+        {/* Bandeira do país (next/image) */}
         {country && (
-          <img
-            src={`/images/flags/${country.toLowerCase()}.png`}
-            alt={country}
+          <div
             style={{
               position: "absolute",
               top: "0.9rem",
               left: "0.9rem",
-              width: 32,
-              height: 22,
-              borderRadius: "0.2rem",
-              border: "1.5px solid #fff",
-              boxShadow: "0 2px 8px rgba(44,62,80,0.10)",
               zIndex: 2,
-              background: "#fff",
-              objectFit: "cover",
             }}
-          />
+          >
+            <Image
+              src={`/images/flags/${country.toLowerCase()}.png`}
+              alt={country}
+              width={32}
+              height={22}
+              style={{
+                borderRadius: "0.2rem",
+                border: "1.5px solid #fff",
+                boxShadow: "0 2px 8px rgba(44,62,80,0.10)",
+                background: "#fff",
+                objectFit: "cover",
+              }}
+            />
+          </div>
         )}
       </div>
 
@@ -105,6 +131,9 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            {/* Logo da marca
+               Dica: como temos fallback de extensão/casing, manter <img> simples aqui
+               (o next/image não lida tão bem com trocas frequentes de src via onError) */}
             {make && (
               <img
                 src={`/images/carmake/${make
@@ -126,7 +155,15 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
                   if (!img.src.endsWith(".jpg")) {
                     img.src = img.src.replace(".png", ".jpg");
                   } else {
-                    img.style.display = "none";
+                    const originalCase = `/images/carmake/${make.replace(
+                      /[^a-z0-9]/gi,
+                      ""
+                    )}-logo.png`;
+                    if (img.src !== window.location.origin + originalCase) {
+                      img.src = originalCase;
+                    } else {
+                      img.style.display = "none";
+                    }
                   }
                 }}
               />
@@ -174,7 +211,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           )}
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
