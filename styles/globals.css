@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
-/* Tailwind directives removed because Tailwind is not configured */
+/* ===============================
+   Tokens de cor (tema claro)
+   =============================== */
+:root {
+  --bg: #F7F7F9;       /* fundo do site (cinza muito claro) */
+  --text: #0F172A;     /* texto principal */
+  --card: #FFFFFF;     /* superfícies (cards, nav, modais) */
+  --muted: #6B7280;    /* texto secundário */
+  --border: #E5E7EB;   /* divisórias/bordas suaves */
+}
+
+/* Força apenas modo claro no navegador */
+html { color-scheme: only light; }
 
 html,
 body,
@@ -10,13 +22,45 @@ body,
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  height: 100%;
 }
 
-* {
-  box-sizing: border-box;
+/* Fundo claro e texto escuro em todo o app */
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure full-width sections don't cause horizontal scroll */
+* { box-sizing: border-box; }
+
+/* Garantir que se alguma classe "dark" for aplicada por engano,
+   o body continue no tema claro */
+.dark body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Links seguem a cor do texto por padrão */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Imagens responsivas por padrão */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bordas e linhas suaves usando o token */
+hr, .border, .divider {
+  border-color: var(--border);
+}
+
+/* Secções de largura total sem scroll horizontal */
 [data-fullwidth] {
   width: 100vw;
   position: relative;

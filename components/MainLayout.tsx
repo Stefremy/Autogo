@@ -40,7 +40,7 @@ export default function MainLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="AutoGo.pt – Importação de viaturas europeias para Portugal" />
+        <meta property="og:title" content={title || "AutoGo.pt – Importação de viaturas europeias para Portugal"} />
         <meta
           property="og:description"
           content="Importe o seu carro europeu sem complicações. Encontre viaturas usadas, simule o ISV e receba o carro legalizado e pronto a andar em todo o país."
@@ -49,11 +49,20 @@ export default function MainLayout({
         <meta property="og:image" content={ogImage} />
         <meta property="og:url" content="https://www.autogo.pt" />
 
+        {/* Tema claro garantido no render inicial */}
+        <meta name="color-scheme" content="light" />
+        <meta name="theme-color" content="#ffffff" />
+
         {/* Favicon */}
         <link rel="icon" href="/images/favicon.png" type="image/png" />
       </Head>
 
-      <div className="min-h-screen flex flex-col bg-[#f5f6fa] text-[#1a1a1a] overflow-x-hidden">
+      {/* Wrapper principal: força cores do tema claro.
+          Usa CSS variables (global.css) com fallback Tailwind. */}
+      <div
+        className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] overflow-x-hidden"
+        style={{ background: "var(--bg)", color: "var(--text)" }}
+      >
         {/* NAVBAR */}
         <IndexNavbar />
 
@@ -66,8 +75,8 @@ export default function MainLayout({
                 (typeof child.props === "object" &&
                   child.props !== null &&
                   "className" in child.props &&
-                  typeof child.props.className === "string" &&
-                  child.props.className.includes("w-screen")))
+                  typeof (child.props as any).className === "string" &&
+                  (child.props as any).className.includes("w-screen")))
             ) {
               return child;
             }
