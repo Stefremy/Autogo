@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import Head from "next/head";
 import CookieConsent from "react-cookie-consent";
 import Footer from "./Footer";
@@ -17,14 +17,6 @@ export default function MainLayout({
   description = "AutoGo.pt facilita a importação de viaturas europeias para Portugal. Encontre carros usados, simule o ISV e receba o veículo legalizado com documentação e entrega rápida.",
   ogImage = "https://www.autogo.pt/images/auto-logo.png",
 }: MainLayoutProps) {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <>
       <Head>
@@ -40,7 +32,10 @@ export default function MainLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={title || "AutoGo.pt – Importação de viaturas europeias para Portugal"} />
+        <meta
+          property="og:title"
+          content={title || "AutoGo.pt — Importação de viaturas europeias para Portugal"}
+        />
         <meta
           property="og:description"
           content="Importe o seu carro europeu sem complicações. Encontre viaturas usadas, simule o ISV e receba o carro legalizado e pronto a andar em todo o país."
@@ -57,8 +52,7 @@ export default function MainLayout({
         <link rel="icon" href="/images/favicon.png" type="image/png" />
       </Head>
 
-      {/* Wrapper principal: força cores do tema claro.
-          Usa CSS variables (global.css) com fallback Tailwind. */}
+      {/* Wrapper principal: força cores do tema claro */}
       <div
         className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] overflow-x-hidden"
         style={{ background: "var(--bg)", color: "var(--text)" }}
