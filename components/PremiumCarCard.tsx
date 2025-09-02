@@ -42,14 +42,16 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
     novidade: t("Novidade"),
   };
 
-  // se houver slug usa /cars/{slug}; senão cai para /cars/{id}
-  const href = slug ? `/cars/${slug}` : `/cars/${id}`;
+  // ✅ usa /viaturas/{slug} ou /viaturas/{id}
+  const href = slug ? `/viaturas/${slug}` : `/viaturas/${id}`;
+
 
   return (
     <Link
       href={href}
       className={styles["premium-car-card"]}
       style={bgColor ? { background: bgColor } : undefined}
+      aria-label={`${name} - Ver detalhes`}
     >
       <div style={{ position: "relative" }}>
         {/* Status badge */}
@@ -131,9 +133,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            {/* Logo da marca
-               Dica: como temos fallback de extensão/casing, manter <img> simples aqui
-               (o next/image não lida tão bem com trocas frequentes de src via onError) */}
+            {/* Logo da marca */}
             {make && (
               <img
                 src={`/images/carmake/${make
