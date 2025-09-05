@@ -121,7 +121,6 @@ export default function CarDetail() {
   // Find similar cars (show all except current)
   const similarCars = (cars as Car[])
     .filter((c) => String(c.id) !== String(car.id))
-    .slice(0, 6); // limit to 6 similar cars
 
   // Download PDF handler
   async function handleDownloadPDF() {
