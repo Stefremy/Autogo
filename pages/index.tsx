@@ -10,6 +10,7 @@ import MainLayout from "../components/MainLayout";
 import cars from "../data/cars.json";
 import CarCard from "../components/CarCard";
 import PremiumCarCard from "../components/PremiumCarCard";
+import React, { useState, useRef, useEffect } from "react";
 
 export async function getServerSideProps({ locale }) {
   // Fetch blog articles from markdown files
@@ -78,9 +79,14 @@ const googleReviews = [
 
 export default function Home({ blogArticles }) {
   const { t } = useTranslation("common");
+  // State for filtered cars (used by listing)
+  const [filteredCars, setFilteredCars] = useState(cars);
+
   return (
     <>
       <MainLayout>
+        {/* Add your content here */}
+        <div>Welcome to AutoGo!</div>
         <Head>
           <title>
             Simulador ISV exclusivo, carros importados e usados à venda em
@@ -88,7 +94,7 @@ export default function Home({ blogArticles }) {
           </title>
           <meta
             name="description"
-            content="AutoGo.pt oferece o único Simulador ISV de carros importados e usados em Portugal. Calcule impostos, compare preços e encontre carros BMW, Audi, Mercedes, Peugeot e outros modelos europeus. Serviço exclusivo e inovador."
+            content="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal com apoio completo."
           />
           <meta
             name="keywords"
@@ -96,11 +102,11 @@ export default function Home({ blogArticles }) {
           />
           <meta
             property="og:title"
-            content="Simulador ISV exclusivo, carros importados e usados à venda em Portugal | AutoGo.pt"
+            content=" Carros importados e usados à venda em Portugal, Simulador ISV exclusivo,| AutoGo.pt"
           />
           <meta
             property="og:description"
-            content="AutoGo.pt oferece o único Simulador ISV de carros importados e usados em Portugal. Calcule impostos, compare preços e encontre carros BMW, Audi, Mercedes, Peugeot e outros modelos europeus."
+            content="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal."
           />
           <meta property="og:url" content="https://autogo.pt/" />
           <meta property="og:type" content="website" />
@@ -111,22 +117,23 @@ export default function Home({ blogArticles }) {
         </Head>
 
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
-        <div
-          id="hero-redline"
-          className="fixed top-[64px] left-0 w-full z-40 pointer-events-none"
-          style={{ height: "0" }}
-        >
-          <div id="hero-redline-bar" className="w-full flex justify-center">
-            <span
-              id="hero-redline-span"
-              className="block h-1.5 rounded-full bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90 shadow-[0_0_16px_4px_rgba(213,0,50,0.18)] animate-pulse transition-all duration-700"
-              style={{ width: "16rem", margin: "0 auto" }}
-            />
+        <div>
+          <div
+            id="hero-redline"
+            className="fixed top-[64px] left-0 w-full z-40 pointer-events-none"
+            style={{ height: "0" }}
+          >
+            <div id="hero-redline-bar" className="w-full flex justify-center">
+              <span
+                id="hero-redline-span"
+                className="block h-1.5 rounded-full bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90 shadow-[0_0_16px_4px_rgba(213,0,50,0.18)] animate-pulse transition-all duration-700"
+                style={{ width: "16rem", margin: "0 auto" }}
+              />
+            </div>
           </div>
-        </div>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
 (function(){
   function lerp(a, b, t) { return a + (b - a) * t; }
   function clamp(x, min, max) { return Math.max(min, Math.min(max, x)); }
@@ -165,8 +172,9 @@ export default function Home({ blogArticles }) {
   }
 })();
 `,
-          }}
-        />
+            }}
+          />
+        </div>
 
         {/* HERO SECTION FULL SCREEN EDGE TO EDGE - EXTENDED WHITE FADE LEFT */}
         <motion.section
@@ -328,25 +336,10 @@ export default function Home({ blogArticles }) {
                 }
               }
             `}</style>
-            <div className="ml-1 mb-1 flex items-center gap-2 cursor-pointer text-[#22272a] hover:text-[#b42121] font-medium text-base transition">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                fill="none"
-                className="inline mr-1 opacity-70"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  d="M4 6h16M7 12h10M10 18h4"
-                ></path>
-              </svg>
-              {t("Filtros avançados")}
-            </div>
+          
           </div>
         </motion.section>
+        {/* HERO SECTION END */}
 
         {/* Como Funciona section */}
         <section
@@ -788,7 +781,7 @@ export default function Home({ blogArticles }) {
               Carros usados em Destaque
             </motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-              {cars.map((car) => (
+              {filteredCars.map((car) => (
                 <motion.div
                   key={car.id}
                   initial={{ opacity: 0, y: 30 }}
