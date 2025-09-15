@@ -14,6 +14,13 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#b42121" />
         </Head>
         <body>
+          {/*
+            Defensive inline script: remove any client-inserted favicon link that
+            points to the legacy `/images/favicon.png`. This runs early so that
+            crawlers or JS-rendering clients won't see the old icon after
+            hydration. Kept minimal and safe (no external deps).
+          */}
+          <script dangerouslySetInnerHTML={{ __html: `;(function(){try{var s=document.getElementsByTagName('link');for(var i=s.length-1;i>=0;--i){var el=s[i];if(el && el.rel && el.rel.indexOf('icon')!==-1 && el.href && el.href.indexOf('/images/favicon.png')!==-1){el.parentNode && el.parentNode.removeChild(el);} } }catch(e){} })();` }} />
           <Main />
           <NextScript />
         </body>
