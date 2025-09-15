@@ -7,6 +7,7 @@ type PremiumCarCardProps = {
   image: string;
   price: number;
   id: string | number;
+  slug?: string;
   year: string | number;
   make: string;
   transmission?: string;
@@ -21,6 +22,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   image,
   price,
   id,
+  slug,
   year,
   make,
   transmission,
@@ -37,12 +39,10 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
     sob_consulta: t("Sob Consulta"),
     novidade: t("Novidade"),
   };
+  const path = slug ? `/cars/${slug}` : `/cars/${id}`;
+
   return (
-    <a
-      href={`/cars/${id}`}
-      className={styles["premium-car-card"]}
-      style={bgColor ? { background: bgColor } : undefined}
-    >
+    <a href={path} className={styles["premium-car-card"]} style={bgColor ? { background: bgColor } : undefined}>
       <div style={{ position: "relative" }}>
         {/* Status badge */}
         {status && (

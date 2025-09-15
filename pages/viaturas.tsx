@@ -475,8 +475,8 @@ export default function Viaturas() {
                     €{car.price.toLocaleString()}
                   </div>
                   <div className="flex gap-2 w-full mt-4">
-                    <Link
-                      href={`/cars/${car.id}`}
+            <Link
+              href={`/cars/${car.slug || car.id}`}
                       className="rounded-full py-2 px-8 font-bold text-base shadow-lg transition-all duration-200 mt-4 text-center w-full transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
                       style={{
                         background: "rgba(210, 56, 56, 0.85)",

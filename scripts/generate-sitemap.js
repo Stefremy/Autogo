@@ -70,9 +70,11 @@ xml += entry(`${baseUrl}/blog`, today, 'weekly', '0.8', alternates);
 // Cars
 cars.forEach((car) => {
   const id = car.id || car.ID || car._id || '';
-  if (!id) return;
+  const slug = car.slug || '';
+  const urlId = slug || id;
+  if (!urlId) return;
   const last = car.updatedAt || car.updated || car.date || today;
-  xml += entry(`${baseUrl}/cars/${id}`, isoDate(last), 'monthly', '0.7');
+  xml += entry(`${baseUrl}/cars/${urlId}`, isoDate(last), 'monthly', '0.7');
 });
 
 // Blog posts

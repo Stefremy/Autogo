@@ -7,6 +7,7 @@ type CarCardProps = {
   description: string;
   price: number;
   id: string | number;
+  slug?: string;
   country?: string;
   status?: string;
 };
@@ -17,13 +18,14 @@ const CarCard: React.FC<CarCardProps> = ({
   description,
   price,
   id,
+  slug,
   country,
   status,
-}) => (
-  <a
-    href={`/cars/${id}`}
-    className="bg-white rounded shadow p-4 hover:shadow-lg transition block relative"
-  >
+}) => {
+  const path = slug ? `/cars/${slug}` : `/cars/${id}`;
+
+  return (
+    <a href={path} className="bg-white rounded shadow p-4 hover:shadow-lg transition block relative">
     {/* Status badge */}
     {status && (
       <span
@@ -77,6 +79,7 @@ const CarCard: React.FC<CarCardProps> = ({
       €{price.toLocaleString()}
     </p>
   </a>
-);
+  );
+};
 
 export default CarCard;
