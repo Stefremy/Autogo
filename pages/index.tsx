@@ -86,7 +86,6 @@ export default function Home({ blogArticles }) {
     <>
       <MainLayout>
         {/* Add your content here */}
-        <div>Welcome to AutoGo!</div>
         <Head>
           <title>Viaturas importadas e Simulador ISV  | AutoGo.pt</title>
           <meta

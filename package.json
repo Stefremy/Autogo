@@ -4,9 +4,10 @@
   "description": "Autogo Website",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "keywords": [],
   "author": "",
