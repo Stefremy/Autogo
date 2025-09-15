@@ -12,17 +12,7 @@
     "country": "DE"
   },
   {
-    "id": "2",
-    "make": "Volkswagen",
-    "model": "Golf",
-    "year": 2021,
-    "slug": "volkswagen-golf-2021",
-    "price": 16500,
-    "image": "/images/cars/golf21.jpg",
-    "description": "Sporty hatchback with low mileage and great features.",
-    "mileage": 12000,
-    "country": "FR",
-    "status": "novidade"
+   
   },
   {
     "id": "3",
@@ -443,6 +433,7 @@
     ]
   }
 }
+
 
 
 ]

@@ -1,4 +1,5 @@
 import React from "react";
+import MakeLogo from "./MakeLogo";
 import styles from "./CarCard.module.css";
 
 type CarCardProps = {
@@ -56,6 +57,14 @@ const CarCard: React.FC<CarCardProps> = ({
         alt={name}
         className="w-full h-40 object-cover rounded mb-4"
       />
+      {/* make logo shown on top-left of image (if available) */}
+      {/** position via absolute so it overlaps the image similar to PremiumCarCard */}
+      {/** Use country flag already in the card; show make logo bottom-left */}
+      {/** We render MakeLogo with a small absolute container */}
+      <div style={{ position: "absolute", bottom: 8, left: 8, zIndex: 2 }}>
+        {/* @ts-ignore */}
+        <MakeLogo make={name.split(" ")[0]} size={26} />
+      </div>
       {country && (
         <img
           src={`/images/flags/${country.toLowerCase()}.png`}
