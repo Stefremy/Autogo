@@ -31,6 +31,41 @@ import jsPDF from "jspdf";
 import Head from "next/head";
 import carsData from "../../data/cars.json";
 
+// Static generation helpers: produce only valid paths and return 404 when car is missing.
+export async function getStaticPaths() {
+  // Create paths for each car with a slug when available, else use id
+  const cars = (await import("../../data/cars.json")).default as any[];
+  const paths: { params: { slug: string }; locale?: string }[] = [];
+  // If i18n locales exist, Next will replicate paths per locale automatically when prerendering.
+  for (const c of cars) {
+    if (!c) continue;
+    const key = c.slug && String(c.slug).trim().length > 0 ? String(c.slug) : String(c.id);
+    if (!key || key === "undefined") continue;
+    paths.push({ params: { slug: key } });
+  }
+  return {
+    paths,
+    fallback: false, // unknown slugs -> 404
+  };
+}
+
+export async function getStaticProps({ params, locale }: { params: any; locale?: string }) {
+  const slug = params?.slug;
+  const cars = (await import("../../data/cars.json")).default as any[];
+  const requested = String(slug).toLowerCase();
+  const car = cars.find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested));
+  if (!car) {
+    return { notFound: true };
+  }
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "pt-PT", ["common"])),
+      // we pass minimal props; the client reads the data file as well
+      carId: car.id,
+    },
+  };
+}
+
 type Car = {
   id: string;
   slug?: string;
@@ -96,7 +131,11 @@ export default function CarDetail() {
 
   // Allow accessing car by numeric id or by human-friendly slug (case-insensitive)
   const requested = String(slug).toLowerCase();
-  const car = (carsData as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested));
+  // We assert non-null here with `!` to satisfy TypeScript - there's an
+  // immediate runtime guard below that returns a 404 when `car` is missing,
+  // so this assertion is safe and prevents many 'possibly undefined' warnings
+  // in the JSX and event handlers.
+  const car = (carsData as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested))!;
 
   // Fun facts dinâmicos
   const funFacts = [
@@ -913,26 +952,4 @@ export default function CarDetail() {
       )}
     </Layout>
   );
-}
-
-export async function getStaticPaths({ locales }) {
-  // Generate paths using slug when available so legacy links using id still work
-  const cars = require("../../data/cars.json");
-  const paths = [];
-  for (const locale of locales) {
-    for (const car of cars) {
-      const urlId = car.slug || String(car.id);
-      paths.push({ params: { slug: String(urlId) }, locale });
-    }
-  }
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps({ params, locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-      slug: params.slug,
-    },
-  };
 }

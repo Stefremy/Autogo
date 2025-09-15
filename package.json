@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
   "generate-sitemap": "node scripts/generate-sitemap.js",
-  "check:slugs": "node scripts/check-slugs.js"
+  "check:slugs": "node scripts/check-slugs.js",
+  "predeploy": "node scripts/predeploy-check.js"
   },
   "keywords": [],
   "author": "",
