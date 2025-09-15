@@ -88,10 +88,7 @@ export default function Home({ blogArticles }) {
         {/* Add your content here */}
         <div>Welcome to AutoGo!</div>
         <Head>
-          <title>
-            Simulador ISV exclusivo, carros importados e usados à venda em
-            Portugal | AutoGo.pt
-          </title>
+          <title>Viaturas importadas e Simulador ISV  | AutoGo.pt</title>
           <meta
             name="description"
             content="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal com apoio completo."
@@ -100,10 +97,7 @@ export default function Home({ blogArticles }) {
             name="keywords"
             content="simulador ISV, simulador de carros, simulador impostos carros, carros importados, carros usados, carros BMW, Audi, Mercedes, Peugeot, carros europeus, AutoGo.pt, exclusivo, inovador"
           />
-          <meta
-            property="og:title"
-            content=" Carros importados e usados à venda em Portugal, Simulador ISV exclusivo,| AutoGo.pt"
-          />
+          <meta property="og:title" content="Simulador ISV e viaturas importadas | AutoGo.pt" />
           <meta
             property="og:description"
             content="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal."
