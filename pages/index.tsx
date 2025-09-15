@@ -216,7 +216,7 @@ export default function Home({ blogArticles }) {
             </motion.p>
             <div className="flex flex-col sm:flex-row w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30">
               <Link href="/viaturas" legacyBehavior passHref>
-                <a className="beauty-fade-btn">{t("Procurar viaturas")}</a>
+                <a className="beauty-fade-btn">{t("Viaturas")}</a>
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
                 <a className="beauty-fade-btn">{t("Simulador")}</a>
