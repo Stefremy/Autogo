@@ -4,6 +4,7 @@
     "make": "Toyota",
     "model": "Corolla",
     "year": 2022,
+    "slug": "toyota-corolla-2022",
     "price": 17500,
     "image": "/images/cars/Corolla22.jpg",
     "description": "Reliable and fuel-efficient sedan, perfect for city driving.",
@@ -15,6 +16,7 @@
     "make": "Volkswagen",
     "model": "Golf",
     "year": 2021,
+    "slug": "volkswagen-golf-2021",
     "price": 16500,
     "image": "/images/cars/golf21.jpg",
     "description": "Sporty hatchback with low mileage and great features.",
@@ -27,6 +29,7 @@
     "make": "Peugeot",
     "model": "3008",
     "year": 2023,
+    "slug": "peugeot-3008-2023",
     "price": 28500,
     "image": "/images/cars/peugeot-3008.jpg",
     "description": "Spacious, stylish, and packed with technology, the Peugeot 3008 is an award-winning SUV ideal for family adventures.",
@@ -39,6 +42,7 @@
     "make": "Citroen",
     "model": "C3",
     "year": 2020,
+    "slug": "citroen-c3-2020",
     "price": 13900,
     "image": "/images/cars/citroenc3-1.jpg",
     "description": "Citroen C3 em excelente estado, importado de França.",
@@ -58,7 +62,6 @@
     "emissionClass": "Euro6",
     "co2": "123 CO2",
     "color": "Cinzento",
-
     "images": [
       "/images/cars/citroenc3-1.jpg",
       "/images/cars/citroenc3-2.jpg",
@@ -155,8 +158,9 @@
   {
     "id": "5",
     "make": "Volkswagen",
-    "model": "e‑Up!",
+    "model": "e-Up!",
     "year": 2020,
+    "slug": "volkswagen-e-up-2020",
     "price": 10990,
     "image": "/images/cars/vweup-1.jpg",
     "description": "Volkswagen e‑Up! elétrico, importado, em ótimo estado.",
@@ -208,7 +212,7 @@
       ],
       "interior": ["Revestimentos Fusion", "Iluminação azul no interior"],
       "exterior": [
-        "Jantes de liga leve 15\"",
+        "Jantes de liga leve 15\\\"",
         "Faróis LED diurnos",
         "Pintura bicolor (tejadilho opcional)"
       ],
@@ -225,6 +229,7 @@
     "make": "Nissan",
     "model": "Leaf N-Connecta",
     "year": 2023,
+    "slug": "nissan-leaf-n-connecta-2023",
     "price": 17500,
     "image": "/images/cars/nissanleaf1.webp",
     "description": "Nissan Leaf N-Connecta, origem Alemanha.",
@@ -299,4 +304,5 @@
       ]
     }
   }
+
 ]

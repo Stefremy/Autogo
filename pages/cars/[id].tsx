@@ -33,6 +33,7 @@ import cars from "../../data/cars.json";
 
 type Car = {
   id: string;
+  slug?: string;
   make: string;
   model: string;
   year: number;
@@ -93,7 +94,9 @@ export default function CarDetail() {
       </Layout>
     );
 
-  const car = (cars as Car[]).find((c) => String(c.id) === id);
+  // Allow accessing car by numeric id or by human-friendly slug (case-insensitive)
+  const requested = String(id).toLowerCase();
+  const car = (cars as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested));
 
   // Fun facts dinâmicos
   const funFacts = [
