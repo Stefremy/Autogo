@@ -4,10 +4,10 @@
   "description": "Autogo Website",
   "main": "index.js",
   "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "generate-sitemap": "node scripts/generate-sitemap.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +30,7 @@
     "react-medium-image-zoom": "^5.2.14",
     "rehype-raw": "^7.0.0",
     "sass": "^1.89.2",
+    "sharp": "^0.34.3",
     "yet-another-react-lightbox": "^3.23.4"
   },
   "devDependencies": {
