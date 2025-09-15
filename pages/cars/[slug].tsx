@@ -29,7 +29,7 @@ import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import jsPDF from "jspdf";
 import Head from "next/head";
-import cars from "../../data/cars.json";
+import carsData from "../../data/cars.json";
 
 type Car = {
   id: string;
@@ -64,7 +64,7 @@ type Car = {
 
 export default function CarDetail() {
   const router = useRouter();
-  const { id } = router.query;
+  const { slug } = router.query;
 
   // Always call hooks unconditionally
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -86,8 +86,8 @@ export default function CarDetail() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // If id is not available yet, show loading
-  if (!id)
+  // If slug (or id) is not available yet, show loading
+  if (!slug)
     return (
       <Layout>
         <div className="p-8">Loading...</div>
@@ -95,8 +95,8 @@ export default function CarDetail() {
     );
 
   // Allow accessing car by numeric id or by human-friendly slug (case-insensitive)
-  const requested = String(id).toLowerCase();
-  const car = (cars as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested));
+  const requested = String(slug).toLowerCase();
+  const car = (carsData as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested));
 
   // Fun facts dinâmicos
   const funFacts = [
@@ -122,8 +122,8 @@ export default function CarDetail() {
   }
 
   // Find similar cars (show all except current)
-  const similarCars = (cars as Car[])
-    .filter((c) => String(c.id) !== String(car.id))
+  const similarCars = (carsData as Car[])
+    .filter((c) => String(c.id) !== String(car.id));
 
   // Download PDF handler
   async function handleDownloadPDF() {
@@ -334,7 +334,7 @@ export default function CarDetail() {
           <span
             className={`font-bold text-[#b42121] drop-shadow-sm transition-all duration-500 ${showStickyBar ? "text-3xl" : "text-lg"}`}
           >
-            {car.make} {car.model}{" "}
+            {car.make} {car.model} {" "}
             <span
               className={`text-gray-700 font-normal transition-all duration-500 ${showStickyBar ? "text-2xl" : "text-base"}`}
             >
@@ -349,8 +349,7 @@ export default function CarDetail() {
           <span
             className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? "text-xl" : "text-sm"}`}
           >
-            <FaTachometerAlt className="text-[#b42121]" />{" "}
-            {car.mileage?.toLocaleString()} km
+            <FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km
           </span>
           {car.fuel && (
             <span
@@ -377,16 +376,13 @@ export default function CarDetail() {
             <span
               className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? "text-xl" : "text-sm"}`}
             >
-              <FaRegCalendarCheck className="text-[#b42121]" />{" "}
-              {car.firstRegistration}
+              <FaRegCalendarCheck className="text-[#b42121]" /> {car.firstRegistration}
             </span>
           )}
         </div>
         {/* Action buttons aligned right */}
         <div className="flex gap-3 ml-auto">
-          {/* <button className="bg-white border border-[#b42121] text-[#b42121] font-bold py-2 px-4 rounded-xl shadow-lg hover:bg-[#b42121] hover:text-white transition-all duration-200">WhatsApp</button>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Pedir Contacto</button> */}
-          {/* <button onClick={handleDownloadPDF} className="bg-[#b42121] hover:bg-[#a11a1a] text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-all duration-200">Download PDF</button> */}
+          {/* Action buttons placeholder */}
         </div>
       </div>
       {/* Main content: dynamic padding to match sticky+navbar height */}
@@ -479,7 +475,7 @@ export default function CarDetail() {
             {/* Detalhes principais */}
             <div className="flex-1 space-y-6 px-0 md:px-8 xl:px-16">
               <h1 className="text-5xl font-semibold mb-4 tracking-tight text-gray-900 drop-shadow-sm">
-                {car.make} {car.model}{" "}
+                {car.make} {car.model} {" "}
                 <span className="text-[#b42121]">{car.year}</span>
               </h1>
               <div className="flex flex-wrap gap-3 text-base mb-6">
@@ -487,8 +483,7 @@ export default function CarDetail() {
                   <FaCalendarAlt className="text-[#b42121]" /> {car.year}
                 </span>
                 <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
-                  <FaTachometerAlt className="text-[#b42121]" />{" "}
-                  {car.mileage?.toLocaleString()} km
+                  <FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km
                 </span>
                 {car.engineSize && (
                   <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
@@ -535,39 +530,32 @@ export default function CarDetail() {
                 <ul className="space-y-3 py-2">
                   {car.category && (
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
-                      <FaCarSide className="text-[#b42121]" />{" "}
-                      <strong>Categoria:</strong> {car.category}
+                      <FaCarSide className="text-[#b42121]" /> <strong>Categoria:</strong> {car.category}
                     </li>
                   )}
                   {car.gearbox && (
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
-                      <FaLayerGroup className="text-[#b42121]" />{" "}
-                      <strong>Caixa de Velocidades:</strong> {car.gearbox}
+                      <FaLayerGroup className="text-[#b42121]" /> <strong>Caixa de Velocidades:</strong> {car.gearbox}
                     </li>
                   )}
                   {car.origin && (
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
-                      <FaGlobeEurope className="text-[#b42121]" />{" "}
-                      <strong>País de Origem:</strong> {car.origin}
+                      <FaGlobeEurope className="text-[#b42121]" /> <strong>País de Origem:</strong> {car.origin}
                     </li>
                   )}
                   {car.unitNumber && (
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
-                      <FaHashtag className="text-[#b42121]" />{" "}
-                      <strong>Nº de Unidade:</strong> {car.unitNumber}
+                      <FaHashtag className="text-[#b42121]" /> <strong>Nº de Unidade:</strong> {car.unitNumber}
                     </li>
                   )}
                   {car.firstRegistration && (
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
-                      <FaRegCalendarCheck className="text-[#b42121]" />{" "}
-                      <strong>Data da Primeira Matrícula:</strong>{" "}
-                      {car.firstRegistration}
+                      <FaRegCalendarCheck className="text-[#b42121]" /> <strong>Data da Primeira Matrícula:</strong> {car.firstRegistration}
                     </li>
                   )}
                   {car.emissionClass && (
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
-                      <FaLayerGroup className="text-[#b42121]" />{" "}
-                      <strong>Classe de Emissões:</strong> {car.emissionClass}
+                      <FaLayerGroup className="text-[#b42121]" /> <strong>Classe de Emissões:</strong> {car.emissionClass}
                     </li>
                   )}
                 </ul>
@@ -795,7 +783,7 @@ export default function CarDetail() {
                         style={{ minWidth: "18rem", maxWidth: "18rem" }}
                         data-id={simCar.id}
                       >
-                        <a href={`/cars/${simCar.id}`} className="block h-full">
+                        <a href={`/cars/${simCar.slug || simCar.id}`} className="block h-full">
                           <div className="similar-swiper-item relative">
                             <img
                               width="100%"
@@ -884,7 +872,7 @@ export default function CarDetail() {
         <meta
           property="og:url"
           content={
-            car ? `https://autogo.pt/cars/${car.id}` : "https://autogo.pt/cars/"
+            car ? `https://autogo.pt/cars/${car.slug || car.id}` : "https://autogo.pt/cars/"
           }
         />
         <meta property="og:type" content="product" />
@@ -918,7 +906,7 @@ export default function CarDetail() {
               image: car.images
                 ? car.images.map((img) => `https://autogo.pt${img}`)
                 : [`https://autogo.pt${car.image}`],
-              url: `https://autogo.pt/cars/${car.id}`,
+              url: `https://autogo.pt/cars/${car.slug || car.id}`,
             }),
           }}
         />
@@ -928,12 +916,13 @@ export default function CarDetail() {
 }
 
 export async function getStaticPaths({ locales }) {
-  // You may want to generate paths for all cars and all locales
+  // Generate paths using slug when available so legacy links using id still work
   const cars = require("../../data/cars.json");
   const paths = [];
   for (const locale of locales) {
     for (const car of cars) {
-      paths.push({ params: { id: String(car.id) }, locale });
+      const urlId = car.slug || String(car.id);
+      paths.push({ params: { slug: String(urlId) }, locale });
     }
   }
   return { paths, fallback: false };
@@ -943,7 +932,7 @@ export async function getStaticProps({ params, locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-      id: params.id,
+      slug: params.slug,
     },
   };
 }
