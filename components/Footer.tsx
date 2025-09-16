@@ -184,12 +184,20 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} AutoGo.pt{" "}
             {t("Todos os direitos reservados.")}
           </span>
-          <Link
-            href="/cookie-policy"
-            className="text-xs text-gray-500 hover:text-[#b42121] transition-colors duration-200 mt-1"
-          >
-            Políticas de Cookies
-          </Link>
+          <div className="flex gap-3 items-center">
+            <Link
+              href="/cookie-policy"
+              className="text-xs text-gray-500 hover:text-[#b42121] transition-colors duration-200 mt-1"
+            >
+              Políticas de Cookies
+            </Link>
+            <Link
+              href="/politica-de-privacidade"
+              className="text-xs text-gray-500 hover:text-[#b42121] transition-colors duration-200 mt-1"
+            >
+              Política de Privacidade
+            </Link>
+          </div>
         </div>
         <span className="mt-2 md:mt-0 flex items-center gap-2">
           Desenvolvido pela
