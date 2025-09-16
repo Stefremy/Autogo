@@ -37,8 +37,7 @@ export default function MainLayout({
       {/* NAVBAR */}
       <IndexNavbar />
   {/* CONTEÚDO */}
-  {/* Add responsive top padding so the fixed navbar doesn't overlap page content. */}
-  <main className="pt-[64px] sm:pt-[72px] md:pt-[84px] flex-1 flex flex-col overflow-x-hidden">
+  <main className="pt-[64px] flex-1 flex flex-col overflow-x-hidden">
         {React.Children.map(children, (child) => {
           // If the child is a full-width section, render it outside the wrapper
           if (
