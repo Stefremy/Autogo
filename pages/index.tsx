@@ -196,7 +196,7 @@ export default function Home({ blogArticles }) {
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-14 sm:pt-16 md:pt-20 pb-6 px-4 sm:px-6 md:pl-20 md:pr-0 w-full max-w-full md:max-w-2xl">
+          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-6 pb-6 px-4 sm:px-6 md:pl-20 md:pr-0 w-full max-w-full md:max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -323,7 +323,7 @@ export default function Home({ blogArticles }) {
               }
               @media (min-width: 640px) {
                 .beauty-fade-btn {
-                  width: auto;
+3                  width: auto;
                   padding: 0.75rem 2rem;
                   font-size: 1.125rem;
                 }
@@ -757,10 +757,11 @@ export default function Home({ blogArticles }) {
         {/* LISTAGEM DE VIATURAS */}
         <section
           data-fullwidth
-          className="relative w-screen py-16 sm:py-24"
-          style={{ 
+          // Pull this section slightly up to reduce large vertical gap
+          className="relative w-screen py-8 sm:py-12 -mt-8 sm:-mt-10"
+          style={{
             marginLeft: "calc(-50vw + 50%)",
-            marginRight: "calc(-50vw + 50%)"
+            marginRight: "calc(-50vw + 50%)",
           }}
         >
           <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4">
@@ -769,7 +770,7 @@ export default function Home({ blogArticles }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-3xl md:text-4xl font-semibold text-black mb-12 text-center tracking-tight"
+              className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center tracking-tight"
             >
               Carros usados em Destaque
             </motion.h2>
@@ -806,8 +807,9 @@ export default function Home({ blogArticles }) {
           </div>
         </section>
 
-        {/* GOOGLE REVIEWS SECTION - ORGANIC CAROUSEL */}
-        <section data-fullwidth className="w-full py-12 sm:py-20 bg-[#f5f6fa]">
+  {/* GOOGLE REVIEWS SECTION - ORGANIC CAROUSEL */}
+  {/* Increase top padding so this section doesn't sit too close to the featured cars above */}
+  <section data-fullwidth className="w-full py-16 sm:py-24 bg-[#f5f6fa]">
           <div className="flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">
               Os nossos clientes
