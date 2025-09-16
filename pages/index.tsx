@@ -757,8 +757,7 @@ export default function Home({ blogArticles }) {
         {/* LISTAGEM DE VIATURAS */}
         <section
           data-fullwidth
-          // Pull this section slightly up to reduce large vertical gap
-          className="relative w-screen py-10 sm:py-15 -mt-8 sm:-mt-10"
+          className="relative w-screen py-16 sm:py-20"
           style={{
             marginLeft: "calc(-50vw + 50%)",
             marginRight: "calc(-50vw + 50%)",
@@ -770,7 +769,7 @@ export default function Home({ blogArticles }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center tracking-tight"
+              className="text-3xl md:text-4xl font-semibold text-black mb-12 text-center tracking-tight"
             >
               Carros usados em Destaque
             </motion.h2>
