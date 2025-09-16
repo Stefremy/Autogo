@@ -196,7 +196,7 @@ export default function Home({ blogArticles }) {
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-6 pb-6 px-4 sm:px-6 md:pl-20 md:pr-0 w-full max-w-full md:max-w-2xl">
+          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-14 sm:pt-16 md:pt-20 pb-6 px-4 sm:px-6 md:pl-20 md:pr-0 w-full max-w-full md:max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
