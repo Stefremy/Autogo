@@ -162,7 +162,7 @@ export default function Footer() {
               />
             </a>
             <a
-              href="https://instagram.com/autogo.pt"
+              href="https://www.instagram.com/autogo.pt/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
