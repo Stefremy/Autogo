@@ -531,12 +531,20 @@ export default function CarDetail() {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(16);
     doc.setTextColor(180, 33, 33);
-    doc.text("Contactos", 40, y);
-    y += 18;
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(12);
-    doc.setTextColor(55, 65, 81);
-    doc.text("A preencher futuramente com os contactos da AutoGo.", 40, y);
+  doc.text("Contactos", 40, y);
+  y += 18;
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(12);
+  doc.setTextColor(55, 65, 81);
+  // Insert real contact information
+  doc.text("Contacto: Gilberto Freitas", 40, y);
+  y += 16;
+  doc.text("Email: autogo.stand@gmail.com", 40, y);
+  y += 16;
+  doc.text("Tel: +351 935 179 591", 40, y);
+  y += 16;
+  doc.text("WhatsApp: +351 935 179 591", 40, y);
+  y += 18;
     // Insert gallery images after all textual sections (stacked vertically, 3 per page)
     if (uniqueGallery.length > 0) {
       try {
