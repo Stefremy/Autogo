@@ -132,6 +132,22 @@ export default function MainLayout({
         .
       </CookieConsent>
       <Footer />
+      {/* Manage preferences floating button */}
+      <button
+        aria-label="Gerir preferências"
+        onClick={() => {
+          try {
+            document.cookie = 'autogoCookieConsent=; Max-Age=0; path=/;';
+          } catch (e) {
+            // ignore
+          }
+          // reload to show cookie banner again
+          window.location.reload();
+        }}
+        className="fixed bottom-6 left-6 z-50 bg-white border border-gray-200 rounded-full px-4 py-2 shadow hover:shadow-md text-sm"
+      >
+        Gerir preferências
+      </button>
     </div>
     </>
   );
