@@ -5,8 +5,13 @@ export default function PoliticaDePrivacidade() {
   const { t } = useTranslation();
   const hoje = new Date();
   const dataAtual = hoje.toLocaleDateString("pt-PT");
+
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-4xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+  <p className="text-gray-700 mb-4">Na AutoGo.pt respeitamos a sua privacidade e procuramos ser transparentes sobre a forma como tratamos os seus dados pessoais. Esta página descreve as práticas que aplicamos em todas as interações realizadas através do nosso website.</p>
+  <p className="text-gray-700 mb-6">Se tiver alguma dúvida sobre esta política ou sobre como processamos os seus dados, por favor contacte-nos pelo email <a href="mailto:autogo.stand@gmail.com" className="underline">autogo.stand@gmail.com</a> e teremos todo o gosto em esclarecer.</p>
+  <p className="mb-6" />
+
       <h1 className="text-3xl font-extrabold text-[#b42121] mb-6">Política de Privacidade</h1>
 
       <p className="text-sm text-gray-600 mb-6">Última atualização: {dataAtual}</p>
