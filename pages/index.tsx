@@ -758,13 +758,13 @@ export default function Home({ blogArticles }) {
         <section
           data-fullwidth
           // Pull this section slightly up to reduce large vertical gap
-          className="relative w-screen py-8 sm:py-12 -mt-8 sm:-mt-10"
+          className="relative w-screen py-10 sm:py-15 -mt-8 sm:-mt-10"
           style={{
             marginLeft: "calc(-50vw + 50%)",
             marginRight: "calc(-50vw + 50%)",
           }}
         >
-          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4">
+          <div className="max-w-7xl mx-auto px-2 sm:px-7 lg:px-4">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -809,7 +809,7 @@ export default function Home({ blogArticles }) {
 
   {/* GOOGLE REVIEWS SECTION - ORGANIC CAROUSEL */}
   {/* Increase top padding so this section doesn't sit too close to the featured cars above */}
-  <section data-fullwidth className="w-full py-16 sm:py-24 bg-[#f5f6fa]">
+  <section data-fullwidth className="w-full py-8 sm:py-12 bg-[#f5f6fa]">
           <div className="flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">
               Os nossos clientes
@@ -942,8 +942,8 @@ export default function Home({ blogArticles }) {
           </div>
         </section>
 
-        {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
-        <section data-fullwidth className="w-full py-10 sm:py-16 bg-[#f5f6fa]">
+  {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
+  <section data-fullwidth className="w-full py-10 sm:py-14 bg-[#f5f6fa]">
           <div className="flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">
               Novos Artigos
