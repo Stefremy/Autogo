@@ -205,6 +205,44 @@ export default function CarDetail() {
             });
           }
 
+          // If blob is not PNG/JPEG (e.g., WebP), convert to PNG via canvas for jsPDF compatibility
+          if (!['image/png', 'image/jpeg'].includes(blob.type)) {
+            try {
+              const objectUrl = URL.createObjectURL(blob);
+              const converted = await new Promise<string>((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                img.onload = () => {
+                  try {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.naturalWidth || img.width || 800;
+                    canvas.height = img.naturalHeight || img.height || 600;
+                    const ctx = canvas.getContext('2d');
+                    if (!ctx) return reject(new Error('Canvas not supported'));
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    const dataUrl = canvas.toDataURL('image/png');
+                    resolve(dataUrl);
+                  } catch (err) {
+                    reject(err);
+                  } finally {
+                    URL.revokeObjectURL(objectUrl);
+                  }
+                };
+                img.onerror = () => {
+                  URL.revokeObjectURL(objectUrl);
+                  reject(new Error('Failed to load image for conversion'));
+                };
+                img.src = objectUrl;
+              });
+              return converted;
+            } catch (convErr) {
+              // fallthrough to try to read original blob as data URL
+              console.warn('Conversion to PNG failed, falling back to original blob', convErr);
+            }
+          }
+
           // Other images: read blob as data URL
           const base64 = await new Promise<string>((resolve, reject) => {
             const reader = new FileReader();
@@ -215,7 +253,7 @@ export default function CarDetail() {
           return base64;
         } catch (fetchErr) {
           // Fallback: try loading via Image element and canvas (may fail due to CORS)
-          return await new Promise<string | null>((resolve) => {
+          const tryViaImage = await new Promise<string | null>((resolve) => {
             const img = new Image();
             img.crossOrigin = 'anonymous';
             let settled = false;
@@ -259,44 +297,128 @@ export default function CarDetail() {
               resolve(null);
             }
           });
+
+          if (tryViaImage) return tryViaImage;
+
+          // As last resort, call our server-side image proxy to bypass CORS for remote hosts.
+          try {
+            // Avoid proxying local public images (they are same-origin)
+            if (url.startsWith('/') || url.startsWith(window.location.origin)) return null;
+            const proxyUrl = `/api/image-proxy?url=${encodeURIComponent(url)}`;
+            const pResp = await fetch(proxyUrl);
+            if (!pResp.ok) return null;
+            const pBlob = await pResp.blob();
+            const pBase64 = await new Promise<string>((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onloadend = () => resolve(reader.result as string);
+              reader.onerror = () => reject(new Error('Failed to read proxied blob'));
+              reader.readAsDataURL(pBlob);
+            });
+            return pBase64;
+          } catch (proxyErr) {
+            console.warn('Proxy image fetch failed', proxyErr);
+            return null;
+          }
         }
       } catch (err) {
         console.warn('loadImageAsBase64 failed for', url, err);
         return null;
       }
     };
-    // Logo
-    const logoUrl = "/images/auto-logonb2.png";
-  const logoBase64 = await loadImageAsBase64(logoUrl);
-  if (logoBase64) {
-    // choose format based on data URL header
-    const logoFormat = logoBase64.startsWith('data:image/png') ? 'PNG' : logoBase64.startsWith('data:image/jpeg') ? 'JPEG' : 'PNG';
+    // Try to embed Montserrat font (fallbacks handled if network fails)
     try {
-      doc.addImage(logoBase64, logoFormat as any, 40, 32, 90, 45);
+      const fontUrl = 'https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat-Regular.ttf';
+      const fontResp = await fetch(fontUrl);
+      if (fontResp.ok) {
+        const fontBuf = await fontResp.arrayBuffer();
+        // convert to base64
+        const bytes = new Uint8Array(fontBuf);
+        let binary = '';
+        const chunkSize = 0x8000;
+        for (let i = 0; i < bytes.length; i += chunkSize) {
+          binary += String.fromCharCode.apply(null, Array.from(bytes.subarray(i, i + chunkSize)));
+        }
+        const fontBase64 = btoa(binary);
+        doc.addFileToVFS('Montserrat-Regular.ttf', fontBase64);
+        doc.addFont('Montserrat-Regular.ttf', 'Montserrat', 'normal');
+        doc.setFont('Montserrat');
+      }
     } catch (err) {
-      console.warn('Failed to add logo to PDF:', err);
+      // if font load fails, continue with default fonts
+      console.warn('Could not load Montserrat for PDF, using fallback font', err);
     }
-  } else {
-    // If logo couldn't be embedded, write site name as fallback
-    doc.setFontSize(18);
-    doc.setTextColor(30, 41, 59);
-    doc.text('AutoGo.pt', 40, 60);
-  }
-    // Car image
-    const carImgUrl = (car.images && car.images[0]) || car.image;
-  const carImgBase64 = await loadImageAsBase64(carImgUrl);
-  if (carImgBase64) {
-    const carFormat = carImgBase64.startsWith('data:image/png') ? 'PNG' : carImgBase64.startsWith('data:image/jpeg') ? 'JPEG' : 'JPEG';
-    try {
-      doc.addImage(carImgBase64, carFormat as any, 400, 32, 140, 90);
-    } catch (err) {
-      console.warn('Failed to add car image to PDF:', err);
+
+    // Place site logo top-right (use autologonb.png from public)
+    const logoUrl = '/images/autologonb.png';
+    const logoBase64 = await loadImageAsBase64(logoUrl);
+    const pageW = doc.internal.pageSize.getWidth();
+    const margin = 40;
+    const logoW = 90;
+    const logoH = 45;
+    const logoX = pageW - margin - logoW;
+    const logoY = 32;
+    if (logoBase64) {
+      const logoFormat = logoBase64.startsWith('data:image/png') ? 'PNG' : logoBase64.startsWith('data:image/jpeg') ? 'JPEG' : 'PNG';
+      try {
+        doc.addImage(logoBase64, logoFormat as any, logoX, logoY, logoW, logoH);
+      } catch (err) {
+        console.warn('Failed to add logo to PDF:', err);
+      }
+    } else {
+      doc.setFontSize(18);
+      doc.setTextColor(30, 41, 59);
+      doc.text('AutoGo.pt', logoX, logoY + 20);
     }
-  } else {
-    doc.setFontSize(12);
-    doc.setTextColor(100, 100, 100);
-    doc.text('(Imagem não disponível)', 400, 60);
-  }
+
+    // Prepare gallery images: include main `image` and any `images` array
+    const gallerySrcs: string[] = [];
+    if (car.image) gallerySrcs.push(car.image);
+    if (car.images && Array.isArray(car.images)) {
+      for (const s of car.images) if (s) gallerySrcs.push(s);
+    }
+    // dedupe
+    const uniqueGallery = Array.from(new Set(gallerySrcs));
+
+    // helper to add images, 3 per page
+    const addGalleryPages = async (imgs: string[]) => {
+      const gap = 10;
+      const imgW = (pageW - margin * 2 - gap * 2) / 3; // three across
+      const imgH = imgW * 0.66;
+      for (let i = 0; i < imgs.length; i += 3) {
+        if (i > 0 || y > 700) doc.addPage();
+        // compute yStart at top area for gallery
+        let yStart = 60;
+        for (let j = 0; j < 3; j++) {
+          const idx = i + j;
+          const x = margin + j * (imgW + gap);
+          if (idx >= imgs.length) break;
+          const src = imgs[idx];
+          try {
+            const base64 = await loadImageAsBase64(src);
+            if (base64) {
+              const format = base64.startsWith('data:image/png') ? 'PNG' : base64.startsWith('data:image/jpeg') ? 'JPEG' : 'JPEG';
+              try {
+                doc.addImage(base64, format as any, x, yStart, imgW, imgH);
+              } catch (err) {
+                console.warn('Failed to add gallery image to PDF:', err);
+                doc.setFontSize(10);
+                doc.setTextColor(100, 100, 100);
+                doc.text('(Imagem indisponível)', x + imgW / 2 - 20, yStart + imgH / 2);
+              }
+            } else {
+              doc.setFontSize(10);
+              doc.setTextColor(100, 100, 100);
+              doc.text('(Imagem indisponível)', x + imgW / 2 - 20, yStart + imgH / 2);
+            }
+          } catch (err) {
+            console.warn('Error loading gallery image', src, err);
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text('(Imagem indisponível)', x + imgW / 2 - 20, yStart + imgH / 2);
+          }
+        }
+      }
+    };
     // Title and info
     doc.setFont("helvetica", "bold");
     doc.setFontSize(22);
