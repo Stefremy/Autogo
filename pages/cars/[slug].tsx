@@ -379,43 +379,65 @@ export default function CarDetail() {
     // dedupe
     const uniqueGallery = Array.from(new Set(gallerySrcs));
 
-    // helper to add images, 3 per page
+    // helper to add images stacked vertically, centered (3 images per page vertically)
     const addGalleryPages = async (imgs: string[]) => {
-      const gap = 10;
-      const imgW = (pageW - margin * 2 - gap * 2) / 3; // three across
-      const imgH = imgW * 0.66;
-      for (let i = 0; i < imgs.length; i += 3) {
-        if (i > 0 || y > 700) doc.addPage();
-        // compute yStart at top area for gallery
-        let yStart = 60;
-        for (let j = 0; j < 3; j++) {
-          const idx = i + j;
-          const x = margin + j * (imgW + gap);
+      if (!imgs || imgs.length === 0) return;
+      const perPage = 3;
+      const gap = 18;
+      const usableW = pageW - margin * 2;
+      const pageH = doc.internal.pageSize.getHeight();
+      const maxImgH = (pageH - margin * 2 - gap * (perPage - 1)) / perPage;
+
+      for (let i = 0; i < imgs.length; i += perPage) {
+        doc.addPage();
+        let yPos = margin;
+        for (let k = 0; k < perPage; k++) {
+          const idx = i + k;
           if (idx >= imgs.length) break;
           const src = imgs[idx];
           try {
             const base64 = await loadImageAsBase64(src);
-            if (base64) {
-              const format = base64.startsWith('data:image/png') ? 'PNG' : base64.startsWith('data:image/jpeg') ? 'JPEG' : 'JPEG';
-              try {
-                doc.addImage(base64, format as any, x, yStart, imgW, imgH);
-              } catch (err) {
-                console.warn('Failed to add gallery image to PDF:', err);
-                doc.setFontSize(10);
-                doc.setTextColor(100, 100, 100);
-                doc.text('(Imagem indisponível)', x + imgW / 2 - 20, yStart + imgH / 2);
-              }
-            } else {
+            if (!base64) {
               doc.setFontSize(10);
               doc.setTextColor(100, 100, 100);
-              doc.text('(Imagem indisponível)', x + imgW / 2 - 20, yStart + imgH / 2);
+              doc.text('(Imagem indisponível)', pageW / 2 - 40, yPos + maxImgH / 2);
+              yPos += maxImgH + gap;
+              continue;
+            }
+
+            // Measure actual image size by creating an Image element
+            const dims = await new Promise<{ w: number; h: number }>((resolve) => {
+              const img = new Image();
+              img.onload = () => {
+                resolve({ w: img.naturalWidth || img.width, h: img.naturalHeight || img.height });
+              };
+              img.onerror = () => resolve({ w: usableW, h: maxImgH });
+              img.src = base64;
+            });
+
+            // scale to fit usableW and maxImgH preserving aspect ratio
+            const ratio = Math.min(usableW / dims.w, maxImgH / dims.h, 1);
+            const drawW = dims.w * ratio;
+            const drawH = dims.h * ratio;
+            const x = (pageW - drawW) / 2;
+            const yCenter = yPos + (maxImgH - drawH) / 2;
+
+            try {
+              const format = base64.startsWith('data:image/png') ? 'PNG' : base64.startsWith('data:image/jpeg') ? 'JPEG' : 'JPEG';
+              doc.addImage(base64, format as any, x, yCenter, drawW, drawH);
+            } catch (err) {
+              console.warn('Failed to add gallery image to PDF:', err);
+              doc.setFontSize(10);
+              doc.setTextColor(100, 100, 100);
+              doc.text('(Imagem indisponível)', pageW / 2 - 40, yPos + maxImgH / 2);
             }
           } catch (err) {
             console.warn('Error loading gallery image', src, err);
             doc.setFontSize(10);
             doc.setTextColor(100, 100, 100);
-            doc.text('(Imagem indisponível)', x + imgW / 2 - 20, yStart + imgH / 2);
+            doc.text('(Imagem indisponível)', pageW / 2 - 40, yPos + maxImgH / 2);
           }
+          yPos += maxImgH + gap;
         }
       }
     };
@@ -515,6 +537,15 @@ export default function CarDetail() {
     doc.setFontSize(12);
     doc.setTextColor(55, 65, 81);
     doc.text("A preencher futuramente com os contactos da AutoGo.", 40, y);
+    // Insert gallery images after all textual sections (stacked vertically, 3 per page)
+    if (uniqueGallery.length > 0) {
+      try {
+        await addGalleryPages(uniqueGallery);
+      } catch (err) {
+        console.warn('Failed adding gallery pages', err);
+      }
+    }
+
     // Save
     doc.save(`${car.make}_${car.model}_${car.year}.pdf`);
   }
