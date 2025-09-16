@@ -42,7 +42,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block underline underline-offset-4"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
               >
                 {t("Início")}
               </Link>
@@ -50,7 +50,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/viaturas"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block underline underline-offset-4"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
               >
                 {t("Viaturas")}
               </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/simulador"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block underline underline-offset-4"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
               >
                 {t("Simulador ISV")}
               </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/como-funciona"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block underline underline-offset-4"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
               >
                 {t("Como Funciona")}
               </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/pedido"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block underline underline-offset-4"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
               >
                 {t("Encomendar")}
               </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/blog"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block underline underline-offset-4"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
               >
                 {t("Blog")}
               </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/contacto"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block underline underline-offset-4"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
               >
                 {t("Contacto")}
               </Link>

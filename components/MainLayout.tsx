@@ -23,6 +23,9 @@ export default function MainLayout({
 }) {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
+  const [prefsOpen, setPrefsOpen] = useState(false);
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const [adsEnabled, setAdsEnabled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -133,21 +136,110 @@ export default function MainLayout({
       </CookieConsent>
       <Footer />
       {/* Manage preferences floating button */}
-      <button
-        aria-label="Gerir preferências"
-        onClick={() => {
-          try {
-            document.cookie = 'autogoCookieConsent=; Max-Age=0; path=/;';
-          } catch (e) {
-            // ignore
-          }
-          // reload to show cookie banner again
-          window.location.reload();
-        }}
-        className="fixed bottom-6 left-6 z-50 bg-white border border-gray-200 rounded-full px-4 py-2 shadow hover:shadow-md text-sm"
-      >
-        Gerir preferências
-      </button>
+      <div className="fixed bottom-6 left-6 z-50">
+        <button
+          aria-label="Gerir preferências"
+          onClick={() => {
+            // open preferences panel and initialize toggles from cookie
+            if (typeof document !== 'undefined') {
+              try {
+                const raw = document.cookie.split('; ').find((c) => c.startsWith('autogoCookieConsent='));
+                if (raw) {
+                  const val = decodeURIComponent(raw.split('=')[1] || '');
+                  try {
+                    const parsed = JSON.parse(val);
+                    setAnalyticsEnabled(Boolean(parsed.analytics));
+                    setAdsEnabled(Boolean(parsed.ads));
+                  } catch (e) {
+                    // if cookie not JSON, default both to false
+                    setAnalyticsEnabled(false);
+                    setAdsEnabled(false);
+                  }
+                } else {
+                  setAnalyticsEnabled(false);
+                  setAdsEnabled(false);
+                }
+              } catch (e) {
+                setAnalyticsEnabled(false);
+                setAdsEnabled(false);
+              }
+            }
+            setPrefsOpen(true);
+          }}
+          className="bg-white border border-gray-200 rounded-full px-4 py-2 shadow hover:shadow-md text-sm"
+        >
+          Gerir preferências
+        </button>
+
+        {/* Inline preferences panel */}
+        {prefsOpen && (
+          <div className="mt-2 w-64 bg-white border border-gray-200 rounded p-3 shadow">
+            <h4 className="text-sm font-semibold mb-2">Preferências de cookies</h4>
+            <div className="flex items-center justify-between mb-2">
+              <div>
+                <div className="text-sm font-medium">Analytics</div>
+                <div className="text-xs text-gray-500">Coletas para melhorar o site</div>
+              </div>
+              <input
+                type="checkbox"
+                checked={analyticsEnabled}
+                onChange={(e) => setAnalyticsEnabled(e.target.checked)}
+                aria-label="Ativar Analytics"
+                className="w-5 h-5"
+              />
+            </div>
+            <div className="flex items-center justify-between mb-3">
+              <div>
+                <div className="text-sm font-medium">Publicidade</div>
+                <div className="text-xs text-gray-500">Personalização de anúncios</div>
+              </div>
+              <input
+                type="checkbox"
+                checked={adsEnabled}
+                onChange={(e) => setAdsEnabled(e.target.checked)}
+                aria-label="Ativar Publicidade"
+                className="w-5 h-5"
+              />
+            </div>
+            <div className="flex items-center gap-2 justify-end">
+              <button
+                className="text-sm text-gray-600 px-3 py-1 rounded hover:bg-gray-50"
+                onClick={() => setPrefsOpen(false)}
+              >
+                Cancelar
+              </button>
+              <button
+                className="text-sm bg-[#e53e3e] text-white px-3 py-1 rounded"
+                onClick={() => {
+                  // save preferences into cookie and update gtag consent
+                  try {
+                    const cookieVal = JSON.stringify({ analytics: analyticsEnabled, ads: adsEnabled });
+                    document.cookie = `autogoCookieConsent=${encodeURIComponent(cookieVal)}; path=/; max-age=${60 * 60 * 24 * 365}`;
+                  } catch (e) {
+                    // ignore
+                  }
+                  if (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && typeof (window as any) !== 'undefined') {
+                    try {
+                      (window as any).gtag('consent', 'update', {
+                        analytics_storage: analyticsEnabled ? 'granted' : 'denied',
+                        ad_storage: adsEnabled ? 'granted' : 'denied',
+                      });
+                      if (analyticsEnabled) {
+                        (window as any).gtag('event', 'page_view', { send_to: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID });
+                      }
+                    } catch (e) {
+                      // ignore
+                    }
+                  }
+                  setPrefsOpen(false);
+                }}
+              >
+                Guardar
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
     </>
   );
