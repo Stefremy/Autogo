@@ -2,7 +2,9 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const src = path.join(process.cwd(), 'public', 'images', 'favicon.png');
+// allow passing a source image path as first arg, default to public/images/favicon.png
+const srcArg = process.argv[2] || path.join('public', 'images', 'favicon.png');
+const src = path.isAbsolute(srcArg) ? srcArg : path.join(process.cwd(), srcArg);
 const out = path.join(process.cwd(), 'public');
 
 if (!fs.existsSync(src)) {
