@@ -168,23 +168,135 @@ export default function CarDetail() {
   async function handleDownloadPDF() {
     const doc = new jsPDF({ unit: "pt", format: "a4" });
     // Load logo and car image as base64
-    const loadImageAsBase64 = async (url: string) => {
-      const response = await fetch(url);
-      const blob = await response.blob();
-      return new Promise<string>((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result as string);
-        reader.readAsDataURL(blob);
-      });
+    const loadImageAsBase64 = async (url: string): Promise<string | null> => {
+      try {
+        if (!url) return null;
+        // If already a data URL, return as-is
+        if (typeof url === 'string' && url.startsWith('data:')) return url;
+
+        // Try fetch -> blob -> dataURL first
+        try {
+          const response = await fetch(url);
+          if (!response.ok) throw new Error(`Failed to fetch image: ${response.status}`);
+          const blob = await response.blob();
+
+          // SVG: convert to PNG via canvas
+          if (blob.type === 'image/svg+xml') {
+            const svgText = await blob.text();
+            return await new Promise<string>((resolve, reject) => {
+              const img = new Image();
+              img.onload = () => {
+                try {
+                  const canvas = document.createElement('canvas');
+                  canvas.width = img.naturalWidth || 1200;
+                  canvas.height = img.naturalHeight || 800;
+                  const ctx = canvas.getContext('2d');
+                  if (!ctx) return reject(new Error('Canvas not supported'));
+                  ctx.fillStyle = '#ffffff';
+                  ctx.fillRect(0, 0, canvas.width, canvas.height);
+                  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                  resolve(canvas.toDataURL('image/png'));
+                } catch (err) {
+                  reject(err);
+                }
+              };
+              img.onerror = () => reject(new Error('Failed to load SVG image'));
+              img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgText);
+            });
+          }
+
+          // Other images: read blob as data URL
+          const base64 = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result as string);
+            reader.onerror = () => reject(new Error('Failed to read image blob'));
+            reader.readAsDataURL(blob);
+          });
+          return base64;
+        } catch (fetchErr) {
+          // Fallback: try loading via Image element and canvas (may fail due to CORS)
+          return await new Promise<string | null>((resolve) => {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            let settled = false;
+            const cleanup = () => {
+              img.onload = null;
+              img.onerror = null as any;
+            };
+            img.onload = () => {
+              try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth || img.width || 800;
+                canvas.height = img.naturalHeight || img.height || 600;
+                const ctx = canvas.getContext('2d');
+                if (!ctx) {
+                  cleanup();
+                  return resolve(null);
+                }
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                const dataUrl = canvas.toDataURL('image/png');
+                settled = true;
+                cleanup();
+                resolve(dataUrl);
+              } catch (err) {
+                cleanup();
+                resolve(null);
+              }
+            };
+            img.onerror = () => {
+              cleanup();
+              // Instead of rejecting, resolve null so PDF generation can continue
+              if (!settled) resolve(null);
+            };
+            // Set src last to avoid race
+            try {
+              img.src = url;
+              // in some browsers, if cached, onload may fire synchronously
+            } catch (e) {
+              cleanup();
+              resolve(null);
+            }
+          });
+        }
+      } catch (err) {
+        console.warn('loadImageAsBase64 failed for', url, err);
+        return null;
+      }
     };
     // Logo
     const logoUrl = "/images/auto-logonb2.png";
-    const logoBase64 = await loadImageAsBase64(logoUrl);
-    doc.addImage(logoBase64, "PNG", 40, 32, 90, 45);
+  const logoBase64 = await loadImageAsBase64(logoUrl);
+  if (logoBase64) {
+    // choose format based on data URL header
+    const logoFormat = logoBase64.startsWith('data:image/png') ? 'PNG' : logoBase64.startsWith('data:image/jpeg') ? 'JPEG' : 'PNG';
+    try {
+      doc.addImage(logoBase64, logoFormat as any, 40, 32, 90, 45);
+    } catch (err) {
+      console.warn('Failed to add logo to PDF:', err);
+    }
+  } else {
+    // If logo couldn't be embedded, write site name as fallback
+    doc.setFontSize(18);
+    doc.setTextColor(30, 41, 59);
+    doc.text('AutoGo.pt', 40, 60);
+  }
     // Car image
     const carImgUrl = (car.images && car.images[0]) || car.image;
-    const carImgBase64 = await loadImageAsBase64(carImgUrl);
-    doc.addImage(carImgBase64, "JPEG", 400, 32, 140, 90);
+  const carImgBase64 = await loadImageAsBase64(carImgUrl);
+  if (carImgBase64) {
+    const carFormat = carImgBase64.startsWith('data:image/png') ? 'PNG' : carImgBase64.startsWith('data:image/jpeg') ? 'JPEG' : 'JPEG';
+    try {
+      doc.addImage(carImgBase64, carFormat as any, 400, 32, 140, 90);
+    } catch (err) {
+      console.warn('Failed to add car image to PDF:', err);
+    }
+  } else {
+    doc.setFontSize(12);
+    doc.setTextColor(100, 100, 100);
+    doc.text('(Imagem não disponível)', 400, 60);
+  }
     // Title and info
     doc.setFont("helvetica", "bold");
     doc.setFontSize(22);
@@ -355,7 +467,7 @@ export default function CarDetail() {
             src={(car.images && car.images[0]) || car.image}
             alt={car.make + " " + car.model}
             className={`object-cover rounded-xl shadow border-2 border-white bg-gray-100 ring-2 ring-[#b42121]/30 transition-all duration-500
-          ${showStickyBar ? "h-24 w-40 scale-110" : "h-10 w-20 scale-100"}`}
+            ${showStickyBar ? "h-24 w-40 scale-[1.03]" : "h-10 w-20 scale-100"}`}
             style={{
               maxHeight: showStickyBar ? 96 : 40,
               maxWidth: showStickyBar ? 160 : 80,
@@ -866,7 +978,7 @@ export default function CarDetail() {
             &larr; Voltar às viaturas
           </a>
         </main>
-        <footer className="p-4 bg-gray-200 text-center text-gray-600 mt-8">
+        <footer className="p-4 text-center text-gray-600 mt-8">
           &copy; 2025 Autogo. All rights reserved.
         </footer>
       </div>
