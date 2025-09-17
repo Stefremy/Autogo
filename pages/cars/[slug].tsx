@@ -610,7 +610,7 @@ export default function CarDetail() {
       {/* Main navbar stays at the very top, sticky bar is always below */}
       {/* Sticky bar: only car info, never navigation */}
       <div
-        className={`fixed left-0 w-full z-40 flex items-center bg-white/80 backdrop-blur-xl transition-all duration-500 px-4 overflow-hidden
+        className={`fixed left-0 w-full z-40 hidden lg:flex items-center bg-white/80 backdrop-blur-xl transition-all duration-500 px-4 overflow-hidden
         ${showStickyBar ? "h-[120px] py-4" : "h-[60px] py-0"}
         shadow-xl border-b border-[#b42121]/20`}
         style={{
@@ -699,14 +699,14 @@ export default function CarDetail() {
       </div>
       {/* Main content: dynamic padding to match sticky+navbar height */}
       <div
-        className={`min-h-screen bg-[#f5f6fa] transition-all duration-500 pt-[116px]`}
+        className={`min-h-screen bg-[#f5f6fa] transition-all duration-500 pt-[80px] lg:pt-[116px]`}
         style={{ transition: "padding-top 0.5s cubic-bezier(.4,0,.2,1)" }}
       >
         <main className="w-full px-0 py-0 space-y-12">
           {/* HERO */}
           <section
             ref={heroRef}
-            className="w-full flex flex-col md:flex-row gap-12 items-start px-0 md:px-12 lg:px-24 xl:px-32 pt-10"
+            className="w-full flex flex-col lg:flex-row gap-8 items-start px-4 lg:px-12 xl:px-24 pt-10"
           >
             {/* Hero Image + Gallery */}
             <div className="flex-1 relative flex flex-col items-center">
@@ -714,12 +714,13 @@ export default function CarDetail() {
               <img
                 src={(car.images && car.images[0]) || car.image}
                 alt={car.make + " " + car.model}
-                className="rounded-3xl shadow-2xl w-full object-cover aspect-video ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in"
-                style={{ maxHeight: 420, background: "#eee" }}
+                className="rounded-3xl shadow-2xl w-full object-cover ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in
+                  max-h-[180px] sm:max-h-[220px] md:max-h-[420px] lg:max-h-[480px]"
                 onClick={() => {
                   setLightboxIndex(0);
                   setLightboxOpen(true);
                 }}
+                style={{ objectPosition: 'center top' }}
               />
               {/* Bandeira sobreposta */}
               {car.country && (
@@ -742,13 +743,14 @@ export default function CarDetail() {
               )}
               {/* Gallery: first 4 images in grid, rest scrollable */}
               <div className="w-full mt-5">
-                <div className="grid grid-cols-2 gap-3 mb-4">
+                {/* Force single column on mobile and small tablets to ensure rectangular rows */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-4">
                   {(car.images || [car.image]).slice(0, 4).map((img, idx) => (
                     <img
                       key={idx}
                       src={img}
                       alt={`${car.make} ${car.model} galeria ${idx + 1}`}
-                      className={`rounded-xl object-cover w-full h-32 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === idx ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
+                      className={`rounded-xl object-cover w-full h-44 sm:h-56 md:h-28 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === idx ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
                       onClick={() => {
                         setLightboxIndex(idx);
                         setLightboxOpen(true);
@@ -757,13 +759,13 @@ export default function CarDetail() {
                   ))}
                 </div>
                 {(car.images && car.images.length > 4) && (
-                  <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#b42121]/40 scrollbar-track-gray-200">
+                  <div className="flex flex-col lg:flex-row lg:items-center gap-2 overflow-y-auto lg:overflow-x-auto max-h-56 pb-2 scrollbar-thin scrollbar-thumb-[#b42121]/40 scrollbar-track-gray-200">
                     {(car.images || []).slice(4).map((img, idx) => (
                       <img
                         key={idx + 4}
                         src={img}
                         alt={`${car.make} ${car.model} galeria ${idx + 5}`}
-                        className={`rounded-xl object-cover w-24 h-16 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === (idx + 4) ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
+                        className={`rounded-xl object-cover w-36 sm:w-20 h-16 sm:h-12 md:w-24 md:h-16 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === (idx + 4) ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
                         onClick={() => {
                           setLightboxIndex(idx + 4);
                           setLightboxOpen(true);
@@ -785,16 +787,16 @@ export default function CarDetail() {
               />
             </div>
             {/* Detalhes principais */}
-            <div className="flex-1 space-y-6 px-0 md:px-8 xl:px-16">
-              <h1 className="text-5xl font-semibold mb-4 tracking-tight text-gray-900 drop-shadow-sm">
+            <div className="flex-1 space-y-6 px-0 lg:px-8 xl:px-16 mt-6 lg:mt-0">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold mb-3 sm:mb-4 tracking-tight text-gray-900 drop-shadow-sm">
                 {car.make} {car.model} {" "}
                 <span className="text-[#b42121]">{car.year}</span>
               </h1>
-              <div className="flex flex-wrap gap-3 text-base mb-6">
-                <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
+              <div className="flex flex-wrap gap-2 text-sm sm:text-base mb-4">
+                <span className="bg-gray-100 rounded-2xl px-3 py-1.5 font-medium shadow-sm flex items-center gap-2 text-sm">
                   <FaCalendarAlt className="text-[#b42121]" /> {car.year}
                 </span>
-                <span className="bg-gray-100 rounded-2xl px-4 py-2 font-medium shadow-sm flex items-center gap-2">
+                <span className="bg-gray-100 rounded-2xl px-3 py-1.5 font-medium shadow-sm flex items-center gap-2 text-sm">
                   <FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km
                 </span>
                 {car.engineSize && (
@@ -818,12 +820,12 @@ export default function CarDetail() {
                   </span>
                 )}
               </div>
-              <div className="text-3xl font-bold text-black drop-shadow-md ml-2">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-black drop-shadow-md ml-2">
                 {car.price.toLocaleString()} €
               </div>
               {/* Botão ver mais detalhes */}
               <button
-                className="flex items-center gap-2 mt-2 mb-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-2xl shadow font-semibold text-gray-700 transition-all duration-200 text-lg"
+                className="flex items-center gap-2 mt-2 mb-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-2xl shadow font-semibold text-gray-700 transition-all duration-200 text-sm sm:text-base"
                 onClick={() => setShowMore((v) => !v)}
                 aria-expanded={showMore}
               >
@@ -873,9 +875,9 @@ export default function CarDetail() {
                 </ul>
               </div>
               {/* Botões de ação - minimalist, side by side, no vibrant colors */}
-              <div className="flex gap-4 mt-6">
+              <div className="flex flex-col lg:flex-row gap-3 mt-4 sm:mt-4 w-full">
                 <button
-                  className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-3 px-6 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-lg"
+                  className="flex items-center justify-center w-full lg:w-auto gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-2 px-4 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-sm sm:text-base"
                   onClick={async () => {
                     if (isSharing) return;
                     setIsSharing(true);
@@ -905,7 +907,7 @@ export default function CarDetail() {
                 </button>
                 <button
                   onClick={handleDownloadPDF}
-                  className="flex items-center gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-3 px-6 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-lg"
+                  className="flex items-center justify-center w-full lg:w-auto gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-2 px-4 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-sm sm:text-base"
                 >
                   <img src="/images/icons/pdf_logo.png" alt="Download PDF" className="w-5 h-5" />
                   <span>Download PDF</span>
@@ -915,32 +917,32 @@ export default function CarDetail() {
           </section>
 
           {/* CARDS DE CARACTERÍSTICAS */}
-          <section className="w-full grid grid-cols-2 md:grid-cols-4 gap-8 px-0 md:px-12 lg:px-24 xl:px-32">
+          <section className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 px-0 md:px-12 lg:px-24 xl:px-32">
             {car.doors && (
-              <div className="bg-white rounded-3xl shadow flex flex-col items-center p-6 hover:shadow-xl transition-all duration-200">
-                <FaDoorOpen className="text-3xl text-[#b42121] mb-2" />
-                <span className="font-bold text-lg">{car.doors}</span>
+              <div className="bg-white rounded-3xl shadow flex flex-col items-center p-3 hover:shadow-xl transition-all duration-200">
+                <FaDoorOpen className="text-2xl text-[#b42121] mb-1" />
+                <span className="font-bold text-md">{car.doors}</span>
                 <span className="text-xs text-gray-500">Portas</span>
               </div>
             )}
             {car.color && (
-              <div className="bg-white rounded-3xl shadow flex flex-col items-center p-6 hover:shadow-xl transition-all duration-200">
-                <FaPalette className="text-3xl text-[#b42121] mb-2" />
-                <span className="font-bold text-lg">{car.color}</span>
+              <div className="bg-white rounded-3xl shadow flex flex-col items-center p-3 hover:shadow-xl transition-all duration-200">
+                <FaPalette className="text-2xl text-[#b42121] mb-1" />
+                <span className="font-bold text-md">{car.color}</span>
                 <span className="text-xs text-gray-500">Cor</span>
               </div>
             )}
             {car.emissionClass && (
-              <div className="bg-white rounded-3xl shadow flex flex-col items-center p-6 hover:shadow-xl transition-all duration-200">
-                <FaLayerGroup className="text-3xl text-[#b42121] mb-2" />
-                <span className="font-bold text-lg">{car.emissionClass}</span>
+              <div className="bg-white rounded-3xl shadow flex flex-col items-center p-3 hover:shadow-xl transition-all duration-200">
+                <FaLayerGroup className="text-2xl text-[#b42121] mb-1" />
+                <span className="font-bold text-md">{car.emissionClass}</span>
                 <span className="text-xs text-gray-500">Classe Emissões</span>
               </div>
             )}
             {car.co2 && (
-              <div className="bg-white rounded-3xl shadow flex flex-col items-center p-6 hover:shadow-xl transition-all duration-200">
-                <FaCloud className="text-3xl text-[#b42121] mb-2" />
-                <span className="font-bold text-lg">{car.co2}</span>
+              <div className="bg-white rounded-3xl shadow flex flex-col items-center p-3 hover:shadow-xl transition-all duration-200">
+                <FaCloud className="text-2xl text-[#b42121] mb-1" />
+                <span className="font-bold text-md">{car.co2}</span>
                 <span className="text-xs text-gray-500">CO₂</span>
               </div>
             )}

@@ -42,7 +42,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
               >
                 {t("Início")}
               </Link>
@@ -50,7 +50,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/viaturas"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
               >
                 {t("Viaturas")}
               </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/simulador"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
               >
                 {t("Simulador ISV")}
               </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/como-funciona"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
               >
                 {t("Como Funciona")}
               </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/pedido"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
               >
                 {t("Encomendar")}
               </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/blog"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
               >
                 {t("Blog")}
               </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/contacto"
-                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-semibold no-underline"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
               >
                 {t("Contacto")}
               </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
             <li>{t("Legalização e documentação")}</li>
             <li>{t("Simulação de ISV")}</li>
             <li>{t("Entrega em todo o país")}</li>
-            <li>{t("Garantia incluída")}</li>
+            <li>{t("Garantia de Serviço")}</li>
           </ul>
         </div>
         <div>
