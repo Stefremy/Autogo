@@ -971,81 +971,73 @@ export default function CarDetail() {
           >
             {/* Hero Image + Gallery */}
             <div className="flex-1 relative flex flex-col items-center">
-              {/* Mobile-only title positioned as a pill close to the navbar to avoid being overlapped */}
-              <div className="w-full px-2 sm:px-0 block lg:hidden pointer-events-none">
-                <div className="absolute left-4 right-4 -top-6 z-40 pointer-events-auto bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-xl shadow-md">
-                  <h2 className="text-lg sm:text-xl font-semibold tracking-tight text-gray-900 whitespace-normal break-words leading-tight">
-                    {car.make} {car.model} <span className="text-[#b42121]">{car.year}</span>
-                  </h2>
-                </div>
+              {/* Mobile-only title above image */}
+              <div className="w-full px-2 sm:px-0 block lg:hidden mb-3">
+                <h2 className="text-2xl sm:text-xl font-semibold tracking-tight text-gray-900 whitespace-normal break-words leading-tight">
+                  {car.make} {car.model} <span className="text-[#b42121]">{car.year}</span>
+                </h2>
               </div>
               {/* Main image (first image) */}
               <img
                 src={(car.images && car.images[0]) || car.image}
                 alt={car.make + " " + car.model}
-                // ensure the main hero image is placed behind overlays like the country flag
-                className="relative z-0 rounded-3xl shadow-2xl w-full object-cover ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in
-                  max-h-[180px] sm:max-h-[220px] md:max-h-[420px] lg:max-h-[480px]"
+                className="rounded-3xl shadow-2xl w-full object-cover ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in max-h-[180px] sm:max-h-[220px] md:max-h-[420px] lg:max-h-[480px] photo-hoverable main-photo"
                 onClick={() => {
                   setLightboxIndex(0);
                   setLightboxOpen(true);
                 }}
                 style={{ objectPosition: 'center top' }}
               />
-              {/* Bandeira sobreposta */}
-              {car.country && (
-                // raise the flag above the hero image so it remains visible in portrait/stacking contexts
-                <span className="absolute top-6 left-6 z-30 bg-white/90 px-4 py-2 rounded-2xl shadow flex items-center gap-2 border border-gray-200 backdrop-blur-sm">
-                  <img
-                    src={`/images/flags/${car.country.toLowerCase()}.png`}
-                    alt={car.country}
-                    className="w-7 h-7 rounded-full border border-white"
-                  />
-                  <span className="text-sm font-bold text-gray-700">
-                    {car.country === "DE"
-                      ? "Importado da Alemanha"
-                      : car.country === "PT"
-                        ? "Nacional"
-                        : car.country === "FR"
-                          ? "Importado de França"
-                          : `Importado de ${car.country}`}
-                  </span>
-                </span>
-              )}
-              {/* Gallery: first 4 images in grid, rest scrollable */}
-              <div className="w-full mt-5">
-                {/* Force single column on mobile and small tablets to ensure rectangular rows */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-4">
-                  {(car.images || [car.image]).slice(0, 4).map((img, idx) => (
-                    <img
-                      key={idx}
-                      src={img}
-                      alt={`${car.make} ${car.model} galeria ${idx + 1}`}
-                      className={`rounded-xl object-cover w-full h-44 sm:h-56 md:h-28 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === idx ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
-                      onClick={() => {
-                        setLightboxIndex(idx);
-                        setLightboxOpen(true);
-                      }}
-                    />
-                  ))}
-                </div>
-                {(car.images && car.images.length > 4) && (
-                  <div className="flex flex-col lg:flex-row lg:items-center gap-2 overflow-y-auto lg:overflow-x-auto max-h-56 pb-2 scrollbar-thin scrollbar-thumb-[#b42121]/40 scrollbar-track-gray-200">
-                    {(car.images || []).slice(4).map((img, idx) => (
-                      <img
-                        key={idx + 4}
-                        src={img}
-                        alt={`${car.make} ${car.model} galeria ${idx + 5}`}
-                        className={`rounded-xl object-cover w-36 sm:w-20 h-16 sm:h-12 md:w-24 md:h-16 shadow cursor-pointer border-2 transition-all duration-300 ${lightboxIndex === (idx + 4) ? "border-[#b42121] scale-105" : "border-transparent hover:border-[#b42121] hover:scale-105"}`}
+
+              {/* Gallery thumbnails: render a larger first row (approx half the main image) then the rest */}
+              {(car.images && car.images.length > 1) && (
+                <>
+                  <div className="w-full mt-3 grid grid-cols-4 gap-2">
+                    {(car.images || []).slice(1, 5).map((img, i) => (
+                      <button
+                        key={`big-${i}`}
+                        type="button"
                         onClick={() => {
-                          setLightboxIndex(idx + 4);
+                          setLightboxIndex(i + 1); // +1 because main image is index 0
                           setLightboxOpen(true);
                         }}
-                      />
+                        className="overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm p-0 photo-hoverable thumb-big"
+                      >
+                        <img
+                          src={img}
+                          alt={`${car.make} ${car.model} ${i + 2}`}
+                          className="w-full h-24 sm:h-28 md:h-52 lg:h-60 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
+                        />
+                      </button>
                     ))}
                   </div>
-                )}
-              </div>
+
+                  {(car.images || []).length > 5 && (
+                    <div className="w-full mt-2 grid grid-cols-5 sm:grid-cols-6 gap-2">
+                      {(car.images || []).slice(5).map((img, j) => (
+                        <button
+                          key={`small-${j}`}
+                          type="button"
+                          onClick={() => {
+                            const globalIndex = 5 + j; // main(0) + first 4 thumbs (1..4) + this offset
+                            setLightboxIndex(globalIndex);
+                            setLightboxOpen(true);
+                          }}
+                          className="overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm p-0 photo-hoverable thumb-small"
+                        >
+                          <img
+                            src={img}
+                            alt={`${car.make} ${car.model} ${j + 6}`}
+                            className="w-full h-20 sm:h-24 md:h-28 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+
+              {/* removed overlayed flag — render a pill below the photos instead */}
               <Lightbox
                 open={lightboxOpen}
                 close={() => setLightboxOpen(false)}
@@ -1056,6 +1048,62 @@ export default function CarDetail() {
                 plugins={[Zoom]}
                 zoom={{ maxZoomPixelRatio: 3 }}
               />
+
+              {/* Hover styles for pointer devices only (desktop mice). Keeps mobile unchanged. */}
+              <style jsx global>{`
+                @media (hover: hover) and (pointer: fine) {
+                  .photo-hoverable img {
+                    transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease, filter 220ms ease;
+                    will-change: transform, box-shadow;
+                  }
+
+                  /* main image: subtle lift + scale */
+                  .main-photo:hover {
+                    transform: translateY(-6px) scale(1.02);
+                    box-shadow: 0 18px 40px rgba(12,18,26,0.12);
+                    filter: saturate(1.02);
+                  }
+
+                  /* larger first-row thumbs: slightly bigger hover */
+                  .thumb-big .thumb-img:hover {
+                    transform: translateY(-6px) scale(1.06) !important;
+                    box-shadow: 0 12px 28px rgba(12,18,26,0.10);
+                  }
+
+                  /* small thumbs: milder hover */
+                  .thumb-small .thumb-img:hover {
+                    transform: translateY(-4px) scale(1.045) !important;
+                    box-shadow: 0 10px 20px rgba(12,18,26,0.08);
+                  }
+
+                  /* make sure the hover doesn't create overflow of rounded corners */
+                  .photo-hoverable {
+                    overflow: visible;
+                  }
+                }
+              `}</style>
+
+              {/* Import / country pill: placed below the photos and above the car details */}
+              {car.country && (
+                <div className="w-full mt-4 flex">
+                  <span className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-2xl shadow flex items-center gap-2 border border-gray-200 backdrop-blur-sm">
+                    <img
+                      src={`/images/flags/${car.country.toLowerCase()}.png`}
+                      alt={car.country}
+                      className="w-7 h-7 rounded-full border border-white"
+                    />
+                    <span className="text-sm font-bold text-gray-700">
+                      {car.country === "DE"
+                        ? "Importado da Alemanha"
+                        : car.country === "PT"
+                        ? "Nacional"
+                        : car.country === "FR"
+                        ? "Importado de França"
+                        : `Importado de ${car.country}`}
+                    </span>
+                  </span>
+                </div>
+              )}
             </div>
             {/* Detalhes principais */}
             <div className="flex-1 space-y-6 px-0 lg:px-8 xl:px-16 mt-6 lg:mt-0">
