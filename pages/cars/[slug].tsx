@@ -1375,7 +1375,7 @@ export default function CarDetail() {
           )}
 
           {/* SECÇÃO CARROS SEMELHANTES - Swiper-like Carousel */}
-          <section id="similar" className="mt-12">
+          <section id="similar" className="mt-12" style={{ ['--accent' as any]: '#222' } as React.CSSProperties}>
             <div className="card rounded-3xl border-0 mb-3 shadow-sm flex flex-col bg-white/90">
               <div className="card-body pt-6 px-6">
                 <h2
