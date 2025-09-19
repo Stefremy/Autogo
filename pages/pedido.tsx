@@ -335,25 +335,7 @@ export default function Pedido() {
               )}
             </form>
           </div>
-          {/* Portal de fornecedor */}
-          <div className="mt-8 max-w-xl mx-auto p-6 rounded-2xl bg-gray-50 shadow border border-[#b42121]/10">
-            <h3 className="text-xl font-semibold mb-2 text-[#b42121]">
-              {t("Acesso ao Stock Europeu")}
-            </h3>
-            <p className="mb-3">
-              {t(
-                "Explora as viaturas disponíveis em tempo real no nosso portal parceiro:",
-              )}
-            </p>
-            <a
-              href="https://www.ecarstrade.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg font-bold shadow-md transition-all duration-200 inline-block"
-            >
-              {t("Ver Stock Europeu")}
-            </a>
-          </div>
+          {/* 'Portal de fornecedor' removed: external API not available yet */}
           {/* Copy inspiradora */}
           <div className="text-center text-gray-700 text-base max-w-2xl mx-auto mt-8">
             <p className="mb-2 font-semibold">

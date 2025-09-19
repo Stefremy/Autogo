@@ -110,6 +110,217 @@ export default function CarDetail() {
   const heroRef = useRef<HTMLDivElement>(null);
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [isMobileView, setIsMobileView] = useState(false);
+  // Watermark positioning state for lightbox overlay
+  const [watermarkStyle, setWatermarkStyle] = useState<React.CSSProperties | null>(null);
+
+  // Robust watermark: append into the lightbox/dialog container when present so the watermark
+  // shares the same stacking context and can sit above the image. Fallback to body (fixed) if
+  // no container is found. Uses RAF + resize/scroll listeners and measures the watermark after
+  // it's appended so we can align bottom-right to the visible lightbox image.
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+
+    const padX = 8; // px gap from image edge
+    const padY = 8;
+
+    const visibleArea = (r: DOMRect) => {
+      const left = Math.max(0, r.left);
+      const top = Math.max(0, r.top);
+      const right = Math.min(window.innerWidth, r.right);
+      const bottom = Math.min(window.innerHeight, r.bottom);
+      const w = Math.max(0, right - left);
+      const h = Math.max(0, bottom - top);
+      return w * h;
+    };
+    const isElementVisible = (el: Element) => {
+      try {
+        const style = getComputedStyle(el as Element);
+        if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) return false;
+      } catch (e) {}
+      const rect = (el as HTMLElement).getBoundingClientRect();
+      if (rect.width <= 8 || rect.height <= 8) return false;
+      if (rect.bottom <= 0 || rect.top >= window.innerHeight) return false;
+      if (rect.right <= 0 || rect.left >= window.innerWidth) return false;
+      return true;
+    };
+
+    const getLightboxImage = (): HTMLImageElement | null => {
+      const prioritySelectors = [
+        'div[role="dialog"] img',
+        '.yarl__slide img',
+        '.yarl__container img',
+        '.yet-another-react-lightbox img',
+        '.lightbox img',
+        '.ReactModal__Content img'
+      ];
+      for (const sel of prioritySelectors) {
+        const found = Array.from(document.querySelectorAll(sel)).filter(isElementVisible) as HTMLImageElement[];
+        if (found.length > 0) {
+          found.sort((a, b) => visibleArea(b.getBoundingClientRect()) - visibleArea(a.getBoundingClientRect()));
+          return found[0];
+        }
+      }
+      // fallback: choose the largest visible img near viewport center
+      const imgs = Array.from(document.querySelectorAll('img')) as HTMLImageElement[];
+      let best: HTMLImageElement | null = null;
+      let bestScore = -Infinity;
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      for (const img of imgs) {
+        if (!isElementVisible(img)) continue;
+        const r = img.getBoundingClientRect();
+        const area = visibleArea(r);
+        if (area <= 0) continue;
+        const dist = Math.hypot(r.left + r.width / 2 - cx, r.top + r.height / 2 - cy);
+        const score = area - dist * 20;
+        if (score > bestScore) {
+          bestScore = score;
+          best = img;
+        }
+      }
+      return best;
+    };
+
+    const findContainer = (): HTMLElement | null => {
+      const selectors = ['div[role="dialog"]', '.yarl__container', '.ReactModal__Content', '.yet-another-react-lightbox', '.lightbox', '.yarl__portal'];
+      for (const s of selectors) {
+        const el = document.querySelector(s);
+        if (el && el instanceof HTMLElement) return el as HTMLElement;
+      }
+      return null;
+    };
+
+    let watermarkEl: HTMLImageElement | null = document.getElementById('autogo-watermark-portal') as HTMLImageElement | null;
+    let appendedToContainer: HTMLElement | null = null;
+    let containerPositionPatched = false;
+    let rafId: number | null = null;
+    let mo: MutationObserver | null = null;
+
+    const createWatermark = () => {
+      if (watermarkEl) return watermarkEl;
+      const img = document.createElement('img');
+      img.id = 'autogo-watermark-portal';
+      img.src = '/images/autologonb.png';
+      img.alt = 'AutoGo watermark';
+      img.style.pointerEvents = 'none';
+      img.style.opacity = '0.40';
+      img.style.zIndex = '2147483647';
+      img.style.display = 'block';
+      img.style.userSelect = 'none';
+      img.style.margin = '0';
+      img.style.padding = '0';
+      img.style.boxSizing = 'border-box';
+      img.style.objectFit = 'contain';
+      img.style.transform = 'none';
+      img.style.transformOrigin = '100% 100%';
+      img.style.willChange = 'transform, left, top, right, bottom';
+      img.style.maxWidth = isMobileView ? '34vw' : '18vw';
+      img.style.maxHeight = isMobileView ? '18vh' : '12vh';
+      watermarkEl = img;
+      return img;
+    };
+
+    const removeWatermark = () => {
+      if (watermarkEl && watermarkEl.parentNode) watermarkEl.parentNode.removeChild(watermarkEl);
+      watermarkEl = null;
+      if (containerPositionPatched && appendedToContainer) {
+        try { appendedToContainer.style.position = ''; } catch (e) {}
+        containerPositionPatched = false;
+      }
+      appendedToContainer = null;
+    };
+
+    const positionWatermark = () => {
+      if (!lightboxOpen) { removeWatermark(); return; }
+      const targetImg = getLightboxImage();
+      const el = createWatermark();
+
+      // Try to attach to the lightbox container so the watermark shares stacking context.
+      const container = findContainer();
+      if (container) {
+        // If container is not positioned, patch it temporarily to allow absolute placement.
+        const computed = getComputedStyle(container).position;
+        if (computed === 'static') {
+          try { container.style.position = 'relative'; containerPositionPatched = true; } catch (e) {}
+        }
+        appendedToContainer = container;
+        if (el.parentNode !== container) container.appendChild(el);
+        el.style.position = 'absolute';
+      } else {
+        // fallback: attach to body and use fixed positioning
+        appendedToContainer = null;
+        if (el.parentNode !== document.body) document.body.appendChild(el);
+        el.style.position = 'fixed';
+      }
+
+      // if no image found, anchor to bottom-right of container/viewport
+      if (!targetImg) {
+        if (appendedToContainer) {
+          el.style.right = `${padX}px`;
+          el.style.bottom = `${padY}px`;
+          el.style.left = '';
+          el.style.top = '';
+        } else {
+          el.style.right = isMobileView ? '12px' : '40px';
+          el.style.bottom = isMobileView ? '80px' : '48px';
+          el.style.left = '';
+          el.style.top = '';
+        }
+        return;
+      }
+
+      const imgRect = targetImg.getBoundingClientRect();
+      const wmRect = el.getBoundingClientRect();
+      const wmW = wmRect.width || (el.naturalWidth || 0);
+      const wmH = wmRect.height || (el.naturalHeight || 0);
+
+      if (appendedToContainer) {
+        const containerRect = appendedToContainer.getBoundingClientRect();
+        // compute right/bottom relative to container box in pixels
+        const rightPx = Math.max(0, Math.round(containerRect.right - imgRect.right + padX));
+        const bottomPx = Math.max(0, Math.round(containerRect.bottom - imgRect.bottom + padY));
+        el.style.right = `${rightPx}px`;
+        el.style.bottom = `${bottomPx}px`;
+        el.style.left = '';
+        el.style.top = '';
+      } else {
+        // fixed relative to viewport
+        const rightPx = Math.max(0, Math.round(window.innerWidth - imgRect.right + padX));
+        const bottomPx = Math.max(0, Math.round(window.innerHeight - imgRect.bottom + padY));
+        el.style.right = `${rightPx}px`;
+        el.style.bottom = `${bottomPx}px`;
+        el.style.left = '';
+        el.style.top = '';
+      }
+    };
+
+    const rafTick = () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        try { positionWatermark(); } catch (e) { /* swallow */ }
+        rafId = null;
+      });
+    };
+
+    // Observe DOM changes to detect when the lightbox container appears/disappears
+    mo = new MutationObserver(() => rafTick());
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    // initial run
+    rafTick();
+
+    // update on resize/scroll
+    window.addEventListener('resize', rafTick);
+    window.addEventListener('scroll', rafTick, true);
+
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', rafTick);
+      window.removeEventListener('scroll', rafTick, true);
+      if (mo) { mo.disconnect(); mo = null; }
+      removeWatermark();
+    };
+  }, [lightboxOpen, lightboxIndex, isMobileView]);
 
   useEffect(() => {
     const check = () => {
@@ -590,15 +801,41 @@ export default function CarDetail() {
         id="hero-redline"
         className="fixed top-[64px] left-0 w-full z-40 pointer-events-none"
         style={{ height: "0" }}
-      >
-        <div id="hero-redline-bar" className="w-full flex justify-center">
-          <span
-            id="hero-redline-span"
-            className="block h-1.5 rounded-full bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90 shadow-[0_0_16px_4px_rgba(213,0,50,0.18)] animate-pulse transition-all duration-700"
-            style={{ width: "16rem", margin: "0 auto" }}
-          />
-        </div>
-      </div>
+      />
+      { /* Inject blur overlay styles only when the lightbox is open */ }
+      {lightboxOpen && (
+        <style jsx global>{`
+          /* Make common lightbox/dialog overlays translucent and blur the page behind them */
+          /* Targets Yet Another React Lightbox, ReactModal and generic dialog overlays */
+          .yarl__container,
+          .yarl__portal,
+          .yarl__backdrop,
+          [role="dialog"],
+          .ReactModal__Overlay {
+            background: rgba(0,0,0,0.36) !important;
+            backdrop-filter: blur(8px) saturate(105%) !important;
+            -webkit-backdrop-filter: blur(8px) saturate(105%) !important;
+          }
+
+          /* Ensure the lightbox inner content (image, slides, controls) remain sharp */
+          .yarl__container > *,
+          .yarl__portal > *,
+          [role="dialog"] > *,
+          .ReactModal__Overlay > * {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+          }
+
+          /* Slightly lift the overlay's opacity on mobile to keep contrast */
+          @media (max-width: 768px) {
+            .yarl__container,
+            .yarl__portal,
+            .ReactModal__Overlay {
+              background: rgba(0,0,0,0.44) !important;
+            }
+          }
+        `}</style>
+      )}
       <script
         dangerouslySetInnerHTML={{
           __html: `
