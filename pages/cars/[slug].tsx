@@ -1192,7 +1192,7 @@ export default function CarDetail() {
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
                       <FaLayerGroup className="text-[#b42121]" /> <strong>Classe de Emissões:</strong> {car.emissionClass}
                     </li>
-                  )}
+                )}
                 </ul>
               </div>
               {/* Botões de ação - minimalist, side by side, no vibrant colors */}
@@ -1378,23 +1378,25 @@ export default function CarDetail() {
           <section id="similar" className="mt-12">
             <div className="card rounded-3xl border-0 mb-3 shadow-sm flex flex-col bg-white/90">
               <div className="card-body pt-6 px-6">
-                <h2 className="text-xl sm:text-2xl font-semibold mb-6 flex items-center gap-3 text-[#b42121] tracking-tight whitespace-normal break-words leading-tight">
-                  <FaCarSide className="text-[#b42121] text-2xl" /> Carros
-                  semelhantes
+                <h2
+                  className="text-xl sm:text-2xl font-semibold mb-6 text-black tracking-tight whitespace-normal break-words leading-tight"
+                  style={{ fontFamily: 'Montserrat, sans-serif', color: '#000' }}
+                >
+                  Carros semelhantes
                 </h2>
                 <div className="relative similar-swiper-container swiper-container-horizontal overflow-hidden">
                   {/* Navigation Arrows */}
                   {!isMobileView && (
                     <>
                       <button
-                        className="arrow arrow--left absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full shadow p-2 border border-gray-200 hover:bg-[#b42121] hover:text-white transition-all"
+                        className="arrow arrow--left absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 border border-gray-200 hover:bg-gray-100 hover:text-gray-800 transition-all"
                         aria-label="Anterior"
                         onClick={() => setSwiperIndex((i) => Math.max(i - 1, 0))}
                       >
                         <FaChevronDown className="rotate-90 text-2xl" />
                       </button>
                       <button
-                        className="arrow arrow--right absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full shadow p-2 border border-gray-200 hover:bg-[#b42121] hover:text-white transition-all"
+                        className="arrow arrow--right absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 border border-gray-200 hover:bg-gray-100 hover:text-gray-800 transition-all"
                         aria-label="Seguinte"
                         onClick={() =>
                           setSwiperIndex((i) =>
@@ -1412,7 +1414,7 @@ export default function CarDetail() {
                     <div className="relative">
                       <div
                         ref={similarRef}
-                        className="flex flex-col transition-all duration-300 gap-4 px-2 overflow-y-auto scrollbar-thin scrollbar-thumb-[#b42121]/40 scrollbar-track-gray-200"
+                        className="flex flex-col transition-all duration-300 gap-4 px-2 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300/40 scrollbar-track-gray-200"
                         style={{ maxHeight: similarExpanded ? `${Math.min(similarCars.length, 6) * 220}px` : `${Math.min(similarCars.length, 3) * 220}px` }}
                         onScroll={() => {
                           if (!similarRef.current) return;
@@ -1508,7 +1510,7 @@ export default function CarDetail() {
                     </div>
                   )}
                   {/* Pagination Fraction */}
-                  <div className="swiper-pagination-fraction absolute right-6 bottom-2 bg-white/80 rounded px-3 py-1 text-sm font-semibold text-[#b42121] shadow">
+                  <div className="swiper-pagination-fraction absolute right-6 bottom-2 bg-white/80 rounded px-3 py-1 text-sm font-semibold text-black shadow">
                     {swiperIndex + 1}/{similarCars.length}
                   </div>
                 </div>
