@@ -971,17 +971,20 @@ export default function CarDetail() {
           >
             {/* Hero Image + Gallery */}
             <div className="flex-1 relative flex flex-col items-center">
-              {/* Mobile-only title above image */}
-              <div className="w-full px-2 sm:px-0 block lg:hidden mb-3 -mt-3">
-                <h2 className="text-2xl sm:text-xl font-semibold tracking-tight text-gray-900 whitespace-normal break-words leading-tight">
-                  {car.make} {car.model} <span className="text-[#b42121]">{car.year}</span>
-                </h2>
+              {/* Mobile-only title positioned as a pill close to the navbar to avoid being overlapped */}
+              <div className="w-full px-2 sm:px-0 block lg:hidden pointer-events-none">
+                <div className="absolute left-4 right-4 -top-6 z-40 pointer-events-auto bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-xl shadow-md">
+                  <h2 className="text-lg sm:text-xl font-semibold tracking-tight text-gray-900 whitespace-normal break-words leading-tight">
+                    {car.make} {car.model} <span className="text-[#b42121]">{car.year}</span>
+                  </h2>
+                </div>
               </div>
               {/* Main image (first image) */}
               <img
                 src={(car.images && car.images[0]) || car.image}
                 alt={car.make + " " + car.model}
-                className="rounded-3xl shadow-2xl w-full object-cover ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in
+                // ensure the main hero image is placed behind overlays like the country flag
+                className="relative z-0 rounded-3xl shadow-2xl w-full object-cover ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in
                   max-h-[180px] sm:max-h-[220px] md:max-h-[420px] lg:max-h-[480px]"
                 onClick={() => {
                   setLightboxIndex(0);
@@ -991,7 +994,8 @@ export default function CarDetail() {
               />
               {/* Bandeira sobreposta */}
               {car.country && (
-                <span className="absolute top-6 left-6 bg-white/90 px-4 py-2 rounded-2xl shadow flex items-center gap-2 border border-gray-200 backdrop-blur-sm">
+                // raise the flag above the hero image so it remains visible in portrait/stacking contexts
+                <span className="absolute top-6 left-6 z-30 bg-white/90 px-4 py-2 rounded-2xl shadow flex items-center gap-2 border border-gray-200 backdrop-blur-sm">
                   <img
                     src={`/images/flags/${car.country.toLowerCase()}.png`}
                     alt={car.country}
