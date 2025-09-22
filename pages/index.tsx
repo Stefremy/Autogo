@@ -312,7 +312,7 @@ export default function Home({ blogArticles }) {
 
         
 
-            <div className="flex flex-col sm:flex-row w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30">
+            <div className="flex flex-col sm:flex-row w-auto max-w-xl mx-auto rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30 overflow-hidden">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a className="beauty-fade-btn">{t("Viaturas")}</a>
               </Link>
@@ -352,7 +352,7 @@ export default function Home({ blogArticles }) {
                 z-index: 1;
                 white-space: nowrap;
                 cursor: pointer;
-                min-width: 170px;
+                min-width: 140px;
               }
               .beauty-fade-btn:before {
                 content: "";
@@ -421,8 +421,8 @@ export default function Home({ blogArticles }) {
               @media (min-width: 640px) {
                 .beauty-fade-btn {
                   width: auto;
-                  padding: 0.75rem 2rem;
-                  font-size: 1.125rem;
+                  padding: 0.65rem 1.6rem;
+                  font-size: 1.05rem;
                 }
               }
             `}</style>
