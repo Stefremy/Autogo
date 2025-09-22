@@ -268,6 +268,9 @@ export default function Home({ blogArticles }) {
                   "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.92) 18%, rgba(255,255,255,0.80) 32%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0.22) 68%, rgba(255,255,255,0.08) 82%, rgba(255,255,255,0.00) 100%)",
               }}
             />
+
+            {/* Mobile-only overlay to increase contrast on small screens (improves readability without affecting desktop) */}
+            <div className="mobile-hero-overlay pointer-events-none" />
           </div>
 
           {/* Main Content */}
@@ -401,6 +404,23 @@ export default function Home({ blogArticles }) {
 3                  width: auto;
                   padding: 0.75rem 2rem;
                   font-size: 1.125rem;
+                }
+              }
+
+              /* Mobile-only hero overlay styles: shown on narrow screens to improve text contrast */
+              .mobile-hero-overlay {
+                display: none;
+                position: absolute;
+                inset: 0;
+                z-index: 6;
+                pointer-events: none;
+                /* soft white veil with slight warmth to keep hero look */
+                background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.88) 100%);
+                backdrop-filter: saturate(1.02) blur(4px);
+              }
+              @media (max-width: 768px) {
+                .mobile-hero-overlay {
+                  display: block;
                 }
               }
             `}</style>
