@@ -250,7 +250,7 @@ export default function Home({ blogArticles }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative w-screen h-[450px] sm:h-[500px] md:h-[70vh] lg:h-[76vh] flex items-center overflow-hidden"
+          className="relative w-screen h-[360px] sm:h-[420px] md:h-[56vh] lg:h-[60vh] flex items-center overflow-hidden"
         >
           {/* Background image covers full width, fades left */}
           <div
@@ -287,7 +287,7 @@ export default function Home({ blogArticles }) {
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-6 pb-6 px-4 sm:px-6 md:pl-20 md:pr-0 w-full max-w-full md:max-w-2xl">
+          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-4 pb-4 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
