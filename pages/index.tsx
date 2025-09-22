@@ -414,11 +414,12 @@ export default function Home({ blogArticles }) {
                 inset: 0;
                 z-index: 6;
                 pointer-events: none;
-                /* soft white veil with slight warmth to keep hero look */
-                background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.88) 100%);
-                backdrop-filter: saturate(1.02) blur(4px);
+                /* stronger white veil left-to-right to improve contrast on portrait phones */
+                background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.96) 30%, rgba(255,255,255,0.92) 60%, rgba(255,255,255,0.88) 100%);
+                backdrop-filter: saturate(1.02) blur(6px);
               }
-              @media (max-width: 768px) {
+              /* show overlay on wider small screens too to improve readability on phablets */
+              @media (max-width: 900px) {
                 .mobile-hero-overlay {
                   display: block;
                 }
