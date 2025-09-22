@@ -271,6 +271,8 @@ export default function Home({ blogArticles }) {
 
             {/* Mobile-only overlay to increase contrast on small screens (improves readability without affecting desktop) */}
             <div className="mobile-hero-overlay pointer-events-none" />
+            {/* Extra right-side overlay to neutralize dark right-edge on portrait phones */}
+            <div className="mobile-hero-overlay-right pointer-events-none" />
           </div>
 
           {/* Main Content */}
@@ -415,7 +417,7 @@ export default function Home({ blogArticles }) {
                 z-index: 6;
                 pointer-events: none;
                 /* stronger white veil left-to-right to improve contrast on portrait phones */
-                background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.96) 30%, rgba(255,255,255,0.92) 60%, rgba(255,255,255,0.88) 100%);
+                background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.96) 30%, rgba(255,255,255,0.94) 60%, rgba(255,255,255,0.90) 100%);
                 backdrop-filter: saturate(1.02) blur(6px);
               }
               /* show overlay on wider small screens too to improve readability on phablets */
@@ -423,6 +425,38 @@ export default function Home({ blogArticles }) {
                 .mobile-hero-overlay {
                   display: block;
                 }
+              }
+              /* For narrow portrait phones, use a near-solid white veil to ensure readability even on the right side */
+              @media (max-width: 480px) {
+                .mobile-hero-overlay {
+                  background: rgba(255,255,255,0.995);
+                  backdrop-filter: blur(8px) saturate(1.02);
+                  z-index: 8; /* keep below content (z-10) */
+                }
+                .mobile-hero-overlay-right {
+                  /* make the right-side veil much stronger and extend further left to cover dark hood area */
+                  background: linear-gradient(270deg, rgba(255,255,255,0.995) 0%, rgba(255,255,255,0.995) 50%, rgba(255,255,255,0.96) 70%, rgba(255,255,255,0.88) 85%, rgba(255,255,255,0.00) 100%);
+                  backdrop-filter: blur(8px) saturate(1.02);
+                  /* ensure it's above the general overlay but still below text */
+                  z-index: 9;
+                  display: block;
+                }
+              }
+
+              /* Right-side overlay: stronger on mobile, fades towards left to keep composition */
+              .mobile-hero-overlay-right {
+                display: none;
+                position: absolute;
+                inset: 0;
+                /* keep below content (content z-10) but above background */
+                z-index: 9;
+                pointer-events: none;
+                /* gradient from right -> left: strong white on right, transparent towards center */
+                background: linear-gradient(270deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 30%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0.0) 100%);
+                mix-blend-mode: normal;
+              }
+              @media (max-width: 900px) {
+                .mobile-hero-overlay-right { display: block; }
               }
             `}</style>
           
