@@ -261,18 +261,29 @@ export default function Home({ blogArticles }) {
           >
             {/* Fade gradiente ultra acentuado e mais diluído: branco puro até 25%, escuro forte até 60%, transição mais suave para transparente */}
             <div
-              className="absolute inset-0 pointer-events-none"
+              className="absolute inset-0 pointer-events-none hero-fade-overlay"
               style={{
                 background:
-                  // Gradiente: transparente à direita, branco puro à esquerda, stops suaves para efeito premium
-                  "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.92) 18%, rgba(255,255,255,0.80) 32%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0.22) 68%, rgba(255,255,255,0.08) 82%, rgba(255,255,255,0.00) 100%)",
+                  "linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 12%, rgba(255,255,255,0.88) 30%, rgba(255,255,255,0.72) 50%, rgba(255,255,255,0.45) 68%, rgba(255,255,255,0.18) 82%, rgba(255,255,255,0.00) 90%)",
               }}
             />
 
-            {/* Mobile-only overlay to increase contrast on small screens (improves readability without affecting desktop) */}
-            <div className="mobile-hero-overlay pointer-events-none" />
-            {/* Extra right-side overlay to neutralize dark right-edge on portrait phones */}
-            <div className="mobile-hero-overlay-right pointer-events-none" />
+            <style jsx>{`
+              @media (max-width: 640px) {
+                .hero-fade-overlay {
+                  /* More transparent toward the right on phones: fade to fully transparent earlier so the image shows through */
+                  background: linear-gradient(
+                    90deg,
+                    rgba(255,255,255,1) 0%,
+                    rgba(255,255,255,0.98) 30%,
+                    rgba(255,255,255,0.92) 50%,
+                    rgba(255,255,255,0.75) 65%,
+                    rgba(255,255,255,0.30) 82%,
+                    rgba(255,255,255,0.00) 90%
+                  ) !important;
+                }
+              }
+            `}</style>
           </div>
 
           {/* Main Content */}
@@ -291,10 +302,16 @@ export default function Home({ blogArticles }) {
               transition={{ delay: 0.4, duration: 0.7 }}
               className="text-black text-sm sm:text-base md:text-2xl mb-4 sm:mb-6 md:mb-10 max-w-xl drop-shadow-lg"
             >
-              {t(
-                "O teu carro europeu, legalizado e pronto a rolar em Portugal — sem complicações.",
-              )}
+              {t("O teu carro europeu,")}
+              <br />
+              {t("Legalizado e pronto a rolar em Portugal")}
+              <br />
+              <span className="font-semibold">{t("Sem complicações")}</span>
+              <br />
             </motion.p>
+
+        
+
             <div className="flex flex-col sm:flex-row w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a className="beauty-fade-btn">{t("Viaturas")}</a>
@@ -403,60 +420,10 @@ export default function Home({ blogArticles }) {
               }
               @media (min-width: 640px) {
                 .beauty-fade-btn {
-3                  width: auto;
+                  width: auto;
                   padding: 0.75rem 2rem;
                   font-size: 1.125rem;
                 }
-              }
-
-              /* Mobile-only hero overlay styles: shown on narrow screens to improve text contrast */
-              .mobile-hero-overlay {
-                display: none;
-                position: absolute;
-                inset: 0;
-                z-index: 6;
-                pointer-events: none;
-                /* stronger white veil left-to-right to improve contrast on portrait phones */
-                background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.96) 30%, rgba(255,255,255,0.94) 60%, rgba(255,255,255,0.90) 100%);
-                backdrop-filter: saturate(1.02) blur(6px);
-              }
-              /* show overlay on wider small screens too to improve readability on phablets */
-              @media (max-width: 900px) {
-                .mobile-hero-overlay {
-                  display: block;
-                }
-              }
-              /* For narrow portrait phones, use a near-solid white veil to ensure readability even on the right side */
-              @media (max-width: 480px) {
-                .mobile-hero-overlay {
-                  background: rgba(255,255,255,0.995);
-                  backdrop-filter: blur(8px) saturate(1.02);
-                  z-index: 8; /* keep below content (z-10) */
-                }
-                .mobile-hero-overlay-right {
-                  /* make the right-side veil much stronger and extend further left to cover dark hood area */
-                  background: linear-gradient(270deg, rgba(255,255,255,0.995) 0%, rgba(255,255,255,0.995) 50%, rgba(255,255,255,0.96) 70%, rgba(255,255,255,0.88) 85%, rgba(255,255,255,0.00) 100%);
-                  backdrop-filter: blur(8px) saturate(1.02);
-                  /* ensure it's above the general overlay but still below text */
-                  z-index: 9;
-                  display: block;
-                }
-              }
-
-              /* Right-side overlay: stronger on mobile, fades towards left to keep composition */
-              .mobile-hero-overlay-right {
-                display: none;
-                position: absolute;
-                inset: 0;
-                /* keep below content (content z-10) but above background */
-                z-index: 9;
-                pointer-events: none;
-                /* gradient from right -> left: strong white on right, transparent towards center */
-                background: linear-gradient(270deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 30%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0.0) 100%);
-                mix-blend-mode: normal;
-              }
-              @media (max-width: 900px) {
-                .mobile-hero-overlay-right { display: block; }
               }
             `}</style>
           
