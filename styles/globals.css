@@ -21,3 +21,12 @@ body,
   width: 100vw;
   position: relative;
 }
+
+/* Increase default line-height for body/main content for better readability */
+body {
+  line-height: 1.85;
+}
+
+main, p {
+  line-height: 1.9;
+}

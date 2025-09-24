@@ -95,6 +95,14 @@ export default function Footer() {
                 {t("Contacto")}
               </Link>
             </li>
+            <li>
+              <Link
+                href="/sobre-nos"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
+              >
+                {t("Sobre Nós")}
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
