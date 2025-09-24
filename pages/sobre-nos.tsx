@@ -53,16 +53,53 @@ export default function SobreNos() {
           }}
         />
       </div>
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "2rem" }}>
-        <h1 style={{ color: "#1a237e" }}>Sobre nós</h1>
-        <hr />
-        <p>
-          A AutoGo.pt é especializada na importação de carros europeus,
-          oferecendo um serviço transparente, rápido e sem complicações. Nossa
-          missão é entregar o carro dos seus sonhos, legalizado e pronto a rolar
-          em Portugal.
-        </p>
-        {/* Adicione mais conteúdo sobre a empresa, equipa, valores, etc. */}
+      <main className="max-w-3xl mx-auto px-6 py-16">
+        <h1 className="text-3xl font-extrabold text-[#1a237e] mb-6">Sobre Nós</h1>
+        <hr className="mb-8 border-gray-200" />
+
+        <div className="text-lg text-gray-700 space-y-8 leading-loose">
+          <p>
+            A AutoGo.pt é uma empresa sediada no norte de Portugal, em Guimarães,
+            especializada na importação de carros europeus. A nossa missão é
+            simples: entregar-lhe o carro dos seus sonhos, legalizado e pronto a
+            rolar em Portugal, sem complicações desnecessárias.
+          </p>
+
+          <p>
+            A nossa equipa tem uma vasta experiência em atendimento ao cliente,
+            gestão e satisfação. Trabalhamos com total transparência e
+            profissionalismo, sem burocracias intermináveis nem surpresas
+            desagradáveis — só aquilo que interessa: o carro certo, ao preço certo.
+          </p>
+
+          <p>
+            Selecionamos veículos de confiança em mercados europeus de referência
+            como Alemanha, Holanda, França e Bélgica, garantindo sempre qualidade,
+            histórico verificado e uma compra inteligente.
+          </p>
+        </div>
+
+        <h2 className="mt-10 text-xl font-semibold text-gray-900">Os nossos pilares</h2>
+        <div className="mt-4 grid gap-6 sm:grid-cols-3">
+          <div className="p-4 bg-gray-50 rounded-lg shadow-sm">
+            <h3 className="font-bold">Confiança</h3>
+            <p className="text-sm text-gray-600 mt-2">Cada cliente sabe exatamente o que está a pagar e o que vai receber.</p>
+          </div>
+
+          <div className="p-4 bg-gray-50 rounded-lg shadow-sm">
+            <h3 className="font-bold">Rapidez</h3>
+            <p className="text-sm text-gray-600 mt-2">Tratamos de todo o processo burocrático para que o carro chegue legalizado, pronto a ser conduzido.</p>
+          </div>
+
+          <div className="p-4 bg-gray-50 rounded-lg shadow-sm">
+            <h3 className="font-bold">Experiência sem stress</h3>
+            <p className="text-sm text-gray-600 mt-2">Porque comprar um carro deve ser motivo de entusiasmo, não de dor de cabeça.</p>
+          </div>
+        </div>
+
+        <div className="mt-10 p-8 bg-gradient-to-r from-white via-gray-50 to-white rounded-lg border border-gray-100 shadow-sm">
+          <p className="text-gray-700">Com a AutoGo.pt, a sua experiência é sem complicações. Apenas carros de qualidade, um processo claro e a satisfação de saber que fez um excelente negócio.</p>
+        </div>
       </main>
     </MainLayout>
   );
