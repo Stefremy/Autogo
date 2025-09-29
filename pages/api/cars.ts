@@ -46,6 +46,27 @@ function toCSV(items: AnyObject[]) {
   return [headers.join(','), ...rows].join('\n');
 }
 
+// Defensive file read + optional restore from backup
+async function safeReadJson(filePath: string, restoreFrom?: string) {
+  try {
+    const raw = await fs.promises.readFile(filePath, 'utf-8');
+    return JSON.parse(raw);
+  } catch (err) {
+    console.error(`safeReadJson: failed to read/parse ${filePath}`, err);
+    if (restoreFrom) {
+      try {
+        const backupRaw = await fs.promises.readFile(restoreFrom, 'utf-8');
+        await fs.promises.writeFile(filePath, backupRaw, 'utf-8');
+        console.warn(`safeReadJson: restored ${filePath} from ${restoreFrom}`);
+        return JSON.parse(backupRaw);
+      } catch (err2) {
+        console.error(`safeReadJson: failed to restore ${filePath} from ${restoreFrom}`, err2);
+      }
+    }
+    throw err;
+  }
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const method = req.method || 'GET';
   try {
@@ -61,8 +82,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const fileParam = typeof req.query.file === 'string' ? req.query.file : 'cars';
       const format = typeof req.query.format === 'string' ? req.query.format : 'json';
       const target = fileParam === 'full' ? carsFullFile : carsFile;
-      const raw = await fs.promises.readFile(target, 'utf-8');
-      const data = JSON.parse(raw);
+      const data = await safeReadJson(target, target === carsFile ? carsFullFile : undefined);
       if (format === 'csv') {
         const csv = toCSV(Array.isArray(data) ? data : [data]);
         res.setHeader('Content-Type', 'text/csv');
@@ -84,8 +104,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (!body || typeof body !== 'object') {
         return res.status(400).json({ error: 'Invalid body' });
       }
-      const raw = await fs.promises.readFile(carsFile, 'utf-8');
-      const cars = JSON.parse(raw) as AnyObject[];
+      const cars = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
       // ensure unique id
       const existingIds = new Set(cars.map(c => String(c.id)));
       let newId = body.id ? String(body.id) : String(Date.now());
@@ -103,8 +122,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const id = idFromQuery || idFromBody;
       if (!id) return res.status(400).json({ error: 'Missing car id.' });
 
-      const raw = await fs.promises.readFile(carsFile, 'utf-8');
-      const cars = JSON.parse(raw) as AnyObject[];
+      const cars = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
       const filtered = cars.filter(c => String(c.id) !== String(id));
       if (filtered.length === cars.length) return res.status(404).json({ error: 'Car not found.' });
       await fs.promises.writeFile(carsFile, JSON.stringify(filtered, null, 2), 'utf-8');

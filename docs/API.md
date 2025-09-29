@@ -18,17 +18,46 @@ Reinicie o servidor Next.js após qualquer alteração no `.env.local`.
 
 - Produção: defina `API_KEY` nas Environment Variables do host (Vercel, Netlify, etc.) e redeploy.
 
-- Para expor o servidor local ao Make.com (ou a terceiros) use `ngrok`:
+- Testes locais e remotos:
+  - Para testar localmente aponte o Postman / curl para `http://localhost:3001` (ou outra porta onde o Next.js esteja a correr). Ex.: `http://localhost:3001/api/cars`.
+  - Para testar contra a deploy em produção use `https://www.autogo.pt/api/cars`.
 
-  1. Inicie o Next.js numa porta (ex.: 3001):
-     ```bash
-     PORT=3001 npm run dev
-     ```
-  2. Inicie o ngrok:
-     ```bash
-     ngrok http 3001
-     ```
-  3. Use o URL HTTPS gerado (ex.: `https://abcd-12-34-56.ngrok.io`) no Make.
+---
+
+## Testing with Postman
+
+- Crie um ambiente em Postman com as variáveis:
+  - `base_url` = `http://localhost:3001` (para testes locais) ou `https://www.autogo.pt` (produção)
+  - `api_key` = `TEST_TOKEN_12345`
+
+- Exemplo de configuração de request (GET):
+  - URL: `{{base_url}}/api/cars?file=cars&format=json`
+  - Method: `GET`
+  - Headers:
+    - `Authorization` : `Bearer {{api_key}}`
+  - Envie e verifique o corpo JSON ou CSV.
+
+- Exemplo POST (criar carro):
+  - URL: `{{base_url}}/api/cars`
+  - Method: `POST`
+  - Headers:
+    - `Authorization` : `Bearer {{api_key}}`
+    - `Content-Type` : `application/json`
+  - Body (raw JSON):
+    ```json
+    {
+      "make": "Fiat",
+      "model": "500",
+      "year": 2020
+    }
+    ```
+
+- Exemplo DELETE (por id):
+  - URL: `{{base_url}}/api/cars?id=THE_ID` (ou enviar body JSON `{ "id": "THE_ID" }`)
+  - Method: `DELETE`
+  - Headers: `Authorization` : `Bearer {{api_key}}`
+
+- Dica: guarde os requests numa Collection e partilhe com a equipa; inclua exemplos de sucesso e de erros esperados.
 
 ---
 
