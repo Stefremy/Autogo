@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Car",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "make": { "type": "string" },
+    "model": { "type": "string" },
+    "year": { "anyOf": [{ "type": "integer" }, { "type": "string" }] },
+    "slug": { "type": "string" },
+    "price": { "anyOf": [{ "type": "number" }, { "type": "string" }] },
+    "image": { "type": "string" },
+    "description": { "type": "string" },
+    "mileage": { "anyOf": [{ "type": "integer" }, { "type": "string" }] },
+    "country": { "type": "string" },
+    "status": { "type": "string" },
+    "gearboxType": { "type": "string" },
+    "gearbox": { "type": "integer" },
+    "category": { "type": "string" },
+    "engineSize": { "type": "string" },
+    "power": { "type": "string" },
+    "places": { "type": "integer" },
+    "unitNumber": { "type": "string" },
+    "origin": { "type": "string" },
+    "firstRegistration": { "type": "string" },
+    "doors": { "type": "integer" },
+    "fuel": { "type": "string" },
+    "emissionClass": { "type": "string" },
+    "co2": { "type": "string" },
+    "color": { "type": "string" },
+    "vin": { "type": "string" },
+    "images": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "equipamento_opcoes": {
+      "type": "object",
+      "properties": {
+        "opcoes_valor_elevado": { "type": "array", "items": { "type": "string" } },
+        "conforto": { "type": "array", "items": { "type": "string" } },
+        "seguranca": { "type": "array", "items": { "type": "string" } },
+        "multimedia": { "type": "array", "items": { "type": "string" } },
+        "interior": { "type": "array", "items": { "type": "string" } },
+        "exterior": { "type": "array", "items": { "type": "string" } },
+        "outras_opcoes": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "maintenance": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "type": "string" },
+          {
+            "type": "object",
+            "properties": {
+              "date": { "type": "string" },
+              "km": { "type": "integer" },
+              "shop": { "type": "string" },
+              "description": { "type": "string" },
+              "price": { "type": "number" },
+              "raw": { "type": "string" }
+            },
+            "required": ["date"],
+            "additionalProperties": true
+          }
+        ]
+      }
+    }
+  },
+  "required": ["id", "make", "model", "slug"],
+  "additionalProperties": true
+}

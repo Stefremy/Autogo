@@ -31,6 +31,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import jsPDF from "jspdf";
 import Head from "next/head";
 import carsData from "../../data/cars.json";
+import type { Car, MaintenanceItem } from '../../types/car.d';
 
 // Static generation helpers: produce only valid paths and return 404 when car is missing.
 export async function getStaticPaths() {
@@ -67,38 +68,20 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
   };
 }
 
-type Car = {
-  id: string;
-  slug?: string;
-  make: string;
-  model: string;
-  year: number | string; // accept numeric or string (e.g. "2019-12-10")
-  price: number | string; // price may be string in data
-  image: string;
-  images?: string[];
-  description: string;
-  mileage: number | string; // may be string or number
-  country: string;
-  fuel?: string;
-  gearboxType?: string;
-  gearbox?: number;
-  category?: string;
-  doors?: number;
-  engineSize?: string;
-  origin?: string;
-  color?: string;
-  power?: string;
-  places?: number;
-  unitNumber?: string; // internal id, keep in data but don't display publicly
-  vin?: string; // VIN added
-  firstRegistration?: string;
-  emissionClass?: string;
-  co2?: string;
-  equipamento_opcoes?: {
-    [categoria: string]: string[];
-  };
-  maintenance?: string[]; // Histórico de manutenção (opcional)
-};
+function numify(v: any): number | null {
+  if (v == null) return null;
+  if (typeof v === 'number') return v;
+  // remove non-digit except dot and comma
+  const cleaned = String(v).replace(/[^0-9.,-]/g, '').replace(/,/g, '.');
+  const n = parseFloat(cleaned);
+  return Number.isFinite(n) ? n : null;
+}
+
+function fmtNumber(v: any, opts?: Intl.NumberFormatOptions) {
+  const n = numify(v);
+  if (n == null) return String(v ?? '—');
+  return n.toLocaleString(undefined, opts);
+}
 
 export default function CarDetail() {
   const router = useRouter();
@@ -383,7 +366,7 @@ export default function CarDetail() {
     const n = Number(s);
     return Number.isFinite(n) ? n : null;
   };
-  const fmtNumber = (v: any) => {
+  const fmtNumber = (v: any, p0: { minimumFractionDigits: number; }) => {
     const n = numify(v);
     return n !== null ? n.toLocaleString() : "-";
   };
@@ -700,8 +683,8 @@ export default function CarDetail() {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(14);
     doc.setTextColor(30, 41, 59);
-    doc.text(`Preço: ${fmtNumber(car.price)} €`, 40, 125);
-    doc.text(`Quilometragem: ${fmtNumber(car.mileage)} km`, 40, 145);
+    doc.text(`Preço: ${fmtNumber(car.price, { minimumFractionDigits: 0 })} €`, 40, 125);
+    doc.text(`Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km`, 40, 145);
     let y = 165;
     if (car.fuel) {
       doc.text(`Combustível: ${car.fuel}`, 40, y);
@@ -933,12 +916,12 @@ export default function CarDetail() {
           <span
             className={`text-blue-700 font-bold drop-shadow transition-all duration-500 ${showStickyBar ? "text-2xl" : "text-base"}`}
           >
-            {fmtNumber(car.price)} €
+            {fmtNumber(car.price, { minimumFractionDigits: 0 })} €
           </span>
           <span
             className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? "text-xl" : "text-sm"}`}
           >
-            <FaTachometerAlt className="text-[#b42121]" /> {fmtNumber(car.mileage)} km
+            <FaTachometerAlt className="text-[#b42121]" /> {fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km
           </span>
           {car.fuel && (
             <span
@@ -1132,7 +1115,7 @@ export default function CarDetail() {
                   <FaCalendarAlt className="text-[#b42121]" /> {car.year}
                 </span>
                 <span className="bg-gray-100 rounded-2xl px-3 py-2 font-medium shadow-sm flex items-center gap-2 text-sm w-full sm:w-auto">
-                  <FaTachometerAlt className="text-[#b42121]" /> {fmtNumber(car.mileage)} km
+                  <FaTachometerAlt className="text-[#b42121]" /> {fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km
                 </span>
                 {car.engineSize && (
                   <span className="bg-gray-100 rounded-2xl px-3 py-2 font-medium shadow-sm flex items-center gap-2 w-full sm:w-auto">
@@ -1157,7 +1140,7 @@ export default function CarDetail() {
                 )}
               </div>
               <div className="text-xl sm:text-2xl md:text-3xl font-bold text-black drop-shadow-md ml-2">
-                {fmtNumber(car.price)} €
+                {fmtNumber(car.price, { minimumFractionDigits: 0 })} €
               </div>
               {/* Botão ver mais detalhes */}
               <button
@@ -1397,9 +1380,20 @@ export default function CarDetail() {
                 Histórico de manutenção
               </h3>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 text-base">
-                {car.maintenance.map((entry, idx) => (
-                  <li key={idx} className="break-words">{entry}</li>
-                ))}
+                {car.maintenance.map((item, idx) => {
+                  if (typeof item === 'string') {
+                    return <li key={idx}>{item}</li>;
+                  }
+                  // Defensive object rendering
+                  const mi = item as MaintenanceItem;
+                  const km = mi.km ?? numify(mi.km) ?? mi['km'] ?? '';
+                  const price = mi.price ?? numify(mi.price) ?? '';
+                  return (
+                    <li key={idx}>
+                      {mi.date ?? '—'}{km ? ` — ${km} km` : ''}{mi.shop ? ` — ${mi.shop}` : ''}{mi.description ? ` — ${mi.description}` : ''}{price ? ` — € ${fmtNumber(price, { minimumFractionDigits: 2 })}` : ''}
+                    </li>
+                  );
+                })}
               </ul>
             </section>
           )}
@@ -1472,7 +1466,7 @@ export default function CarDetail() {
                                   <span className="make font-bold block text-lg">{simCar.make}</span>
                                   <span className="model block text-base">{simCar.model}</span>
                                   <span className="year block text-sm">{simCar.year}</span>
-                                  <span className="km block text-sm">{fmtNumber(simCar.mileage)} km</span>
+                                  <span className="km block text-sm">{fmtNumber(simCar.mileage, { minimumFractionDigits: 0 })} km</span>
                                 </div>
                               </div>
                             </div>
@@ -1530,7 +1524,7 @@ export default function CarDetail() {
                                   <span className="make font-bold block text-lg">{simCar.make}</span>
                                   <span className="model block text-base">{simCar.model}</span>
                                   <span className="year block text-sm">{simCar.year}</span>
-                                  <span className="km block text-sm">{fmtNumber(simCar.mileage)} km</span>
+                                  <span className="km block text-sm">{fmtNumber(simCar.mileage, { minimumFractionDigits: 0 })} km</span>
                                 </div>
                               </div>
                             </div>
@@ -1568,7 +1562,7 @@ export default function CarDetail() {
           name="description"
           content={
             car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage)} km. Preço: €${fmtNumber(car.price)}. Carros usados e seminovos com garantia.`
+              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumber(car.price, { minimumFractionDigits: 0 })}. Carros usados e seminovos com garantia.`
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />
@@ -1592,7 +1586,7 @@ export default function CarDetail() {
           property="og:description"
           content={
             car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage)} km. Preço: €${fmtNumber(car.price)}. Carros usados e seminovos com garantia.`
+              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumber(car.price, { minimumFractionDigits: 0 })}. Carros usados e seminovos com garantia.`
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />
