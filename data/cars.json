@@ -117,7 +117,8 @@
         "Controlo de tração"
       ]
     }
-  },
+    }
+  ,
   {
     "id": "6387467",
     "make": "Mercedes-Benz",
@@ -257,6 +258,7 @@
         "Reservatório SCR de maior capacidade",
         "Service interval 25.000 km"
       ]
+      }
     }
-  }
-]
+  ]
+  

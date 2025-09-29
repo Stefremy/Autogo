@@ -36,9 +36,24 @@ export default function Viaturas() {
         .map((car) => car.model),
     ),
   );
-  const anos = Array.from(new Set(cars.map((car) => car.year))).sort(
-    (a, b) => b - a,
-  );
+  // Normalize year values to numbers (handles strings like "2019-12-10")
+  const anos: number[] = Array.from(
+    new Set(
+      cars
+        .map((car) => {
+          const y = (car as any).year;
+          if (typeof y === 'number') return y;
+          if (typeof y === 'string') {
+            const m = y.match(/^(\d{4})/);
+            if (m) return Number(m[1]);
+            const n = Number(y);
+            if (!Number.isNaN(n)) return n;
+          }
+          return null;
+        })
+        .filter((v) => v !== null) as number[],
+    ),
+  ).sort((a, b) => b - a);
   const meses = Array.from({ length: 12 }, (_, i) => i + 1);
   const dias = Array.from({ length: 31 }, (_, i) => i + 1);
 
