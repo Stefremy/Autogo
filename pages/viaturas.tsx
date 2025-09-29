@@ -53,7 +53,7 @@ export default function Viaturas() {
         })
         .filter((v) => v !== null) as number[],
     ),
-  ).sort((a, b) => b - a);
+  ).sort((a, b) => Number(b) - Number(a));
   const meses = Array.from({ length: 12 }, (_, i) => i + 1);
   const dias = Array.from({ length: 31 }, (_, i) => i + 1);
 
