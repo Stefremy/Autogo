@@ -43,6 +43,24 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   };
   const path = slug ? `/cars/${slug}` : `/cars/${id}`;
 
+  // Ensure we always have a numeric value to call toLocaleString on
+  const priceNumber =
+    typeof price === "number" && !Number.isNaN(price)
+      ? price
+      : typeof price === "string"
+      ? Number((price as string).replace(/[^0-9.-]/g, ""))
+      : 0;
+
+  // Display only the year portion (handles '2019-12-10' and numeric years)
+  const displayYear = (() => {
+    if (typeof year === 'number') return String(year);
+    if (typeof year === 'string') {
+      const m = year.match(/^(\d{4})/);
+      return m ? m[1] : year;
+    }
+    return '';
+  })();
+
   return (
     <a href={path} className={styles["premium-car-card"]} style={bgColor ? { background: bgColor } : undefined}>
       <div style={{ position: "relative" }}>
@@ -192,17 +210,19 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             }}
           >
             €
-            {price.toLocaleString(undefined, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
+            {(Number.isFinite(priceNumber))
+              ? priceNumber.toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })
+              : '-'}
           </div>
         </div>
         <div className={styles["premium-car-title"]}>{name}</div>
         <div className={styles["premium-car-meta-row"]}>
           <div>
             <div className={styles["premium-car-meta-label"]}>{t("Ano")}</div>
-            <div className={styles["premium-car-meta-value"]}>{year}</div>
+            <div className={styles["premium-car-meta-value"]}>{displayYear}</div>
           </div>
           <div>
             <div className={styles["premium-car-meta-label"]}>{t("Marca")}</div>
