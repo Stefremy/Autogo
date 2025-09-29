@@ -54,18 +54,18 @@ export default function SobreNos() {
         />
       </div>
 
-      <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col overflow-x-hidden relative">
+      <div className="min-h-screen w-full bg-[#f5f6fa] flex flex-col overflow-x-hidden relative">
         <img
           src="/images/icons/audi-wheel.jpg"
           alt="Fundo"
-          className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover opacity-60 z-0 transition-all duration-700"
-          style={{ objectPosition: "center center", filter: "blur(0.5px)" }}
+          className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover z-0 transition-all duration-700"
+          style={{ objectPosition: "center center", filter: "blur(0.5px)", opacity: 0.18 }}
         />
         <div
           className="pointer-events-none select-none fixed inset-0 w-screen h-screen z-0"
           style={{
             background:
-              "linear-gradient(120deg, rgba(245,246,250,0.80) 0%, rgba(251,233,233,0.65) 60%, rgba(245,246,250,0.80) 100%)",
+              "linear-gradient(120deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.18) 60%, rgba(255,255,255,0.28) 100%)",
           }}
         />
 
