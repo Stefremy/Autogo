@@ -22,6 +22,7 @@ import {
   FaChevronDown,
   FaChevronUp,
   FaStar,
+  FaBarcode,
 } from "react-icons/fa";
 import React, { useState, useEffect, useRef } from "react";
 import Lightbox from "yet-another-react-lightbox";
@@ -71,12 +72,12 @@ type Car = {
   slug?: string;
   make: string;
   model: string;
-  year: number;
-  price: number;
+  year: number | string; // accept numeric or string (e.g. "2019-12-10")
+  price: number | string; // price may be string in data
   image: string;
   images?: string[];
   description: string;
-  mileage: number;
+  mileage: number | string; // may be string or number
   country: string;
   fuel?: string;
   gearboxType?: string;
@@ -88,13 +89,15 @@ type Car = {
   color?: string;
   power?: string;
   places?: number;
-  unitNumber?: string;
+  unitNumber?: string; // internal id, keep in data but don't display publicly
+  vin?: string; // VIN added
   firstRegistration?: string;
   emissionClass?: string;
   co2?: string;
   equipamento_opcoes?: {
     [categoria: string]: string[];
   };
+  maintenance?: string[]; // Histórico de manutenção (opcional)
 };
 
 export default function CarDetail() {
@@ -371,6 +374,19 @@ export default function CarDetail() {
   // so this assertion is safe and prevents many 'possibly undefined' warnings
   // in the JSX and event handlers.
   const car = (carsData as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested))!;
+
+  // Helper: coerce possibly-string values to numbers safely and provide formatted output
+  const numify = (v: any): number | null => {
+    if (v == null) return null;
+    if (typeof v === "number") return Number.isFinite(v) ? v : null;
+    const s = String(v).replace(/[^0-9.-]+/g, "");
+    const n = Number(s);
+    return Number.isFinite(n) ? n : null;
+  };
+  const fmtNumber = (v: any) => {
+    const n = numify(v);
+    return n !== null ? n.toLocaleString() : "-";
+  };
 
   // Fun facts dinâmicos
   const funFacts = [
@@ -684,8 +700,8 @@ export default function CarDetail() {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(14);
     doc.setTextColor(30, 41, 59);
-    doc.text(`Preço: ${car.price.toLocaleString()} €`, 40, 125);
-    doc.text(`Quilometragem: ${car.mileage?.toLocaleString()} km`, 40, 145);
+    doc.text(`Preço: ${fmtNumber(car.price)} €`, 40, 125);
+    doc.text(`Quilometragem: ${fmtNumber(car.mileage)} km`, 40, 145);
     let y = 165;
     if (car.fuel) {
       doc.text(`Combustível: ${car.fuel}`, 40, y);
@@ -917,12 +933,12 @@ export default function CarDetail() {
           <span
             className={`text-blue-700 font-bold drop-shadow transition-all duration-500 ${showStickyBar ? "text-2xl" : "text-base"}`}
           >
-            {car.price.toLocaleString()} €
+            {fmtNumber(car.price)} €
           </span>
           <span
             className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? "text-xl" : "text-sm"}`}
           >
-            <FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km
+            <FaTachometerAlt className="text-[#b42121]" /> {fmtNumber(car.mileage)} km
           </span>
           {car.fuel && (
             <span
@@ -932,10 +948,9 @@ export default function CarDetail() {
             </span>
           )}
           {car.power && (
-            <span
-              className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? "text-xl" : "text-sm"}`}
-            >
-              <FaBolt className="text-[#b42121]" /> {car.power}
+            <span className="bg-gray-100 rounded-2xl px-3 py-2 font-medium shadow-sm flex items-center gap-2 w-full sm:w-auto">
+              <FaBolt className="text-[#b42121]" />
+              <span>{car.power}</span>
             </span>
           )}
           {car.engineSize && (
@@ -1117,7 +1132,7 @@ export default function CarDetail() {
                   <FaCalendarAlt className="text-[#b42121]" /> {car.year}
                 </span>
                 <span className="bg-gray-100 rounded-2xl px-3 py-2 font-medium shadow-sm flex items-center gap-2 text-sm w-full sm:w-auto">
-                  <FaTachometerAlt className="text-[#b42121]" /> {car.mileage?.toLocaleString()} km
+                  <FaTachometerAlt className="text-[#b42121]" /> {fmtNumber(car.mileage)} km
                 </span>
                 {car.engineSize && (
                   <span className="bg-gray-100 rounded-2xl px-3 py-2 font-medium shadow-sm flex items-center gap-2 w-full sm:w-auto">
@@ -1136,12 +1151,13 @@ export default function CarDetail() {
                 )}
                 {car.power && (
                   <span className="bg-gray-100 rounded-2xl px-3 py-2 font-medium shadow-sm flex items-center gap-2 w-full sm:w-auto">
-                    <FaBolt className="text-[#b42121]" /> {car.power}
+                    <FaBolt className="text-[#b42121]" />
+                    <span>{car.power}</span>
                   </span>
                 )}
               </div>
               <div className="text-xl sm:text-2xl md:text-3xl font-bold text-black drop-shadow-md ml-2">
-                {car.price.toLocaleString()} €
+                {fmtNumber(car.price)} €
               </div>
               {/* Botão ver mais detalhes */}
               <button
@@ -1178,9 +1194,9 @@ export default function CarDetail() {
                       <FaGlobeEurope className="text-[#b42121]" /> <strong>País de Origem:</strong> {car.origin}
                     </li>
                   )}
-                  {car.unitNumber && (
+                  {car.vin && (
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
-                      <FaHashtag className="text-[#b42121]" /> <strong>Nº de Unidade:</strong> {car.unitNumber}
+                      <FaBarcode className="text-[#b42121]" /> <strong>VIN:</strong> <span className="break-all">{car.vin}</span>
                     </li>
                   )}
                   {car.firstRegistration && (
@@ -1374,6 +1390,20 @@ export default function CarDetail() {
             </section>
           )}
 
+          {/* HISTÓRICO DE MANUTENÇÃO */}
+          {car.maintenance && Array.isArray(car.maintenance) && car.maintenance.length > 0 && (
+            <section className="w-full bg-gradient-to-br from-white to-gray-100 rounded-3xl shadow p-10 mt-8 px-0 md:px-12 lg:px-24 xl:px-32">
+              <h3 className="text-2xl sm:text-3xl font-semibold mb-4 text-black tracking-tight whitespace-normal break-words leading-tight">
+                Histórico de manutenção
+              </h3>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700 text-base">
+                {car.maintenance.map((entry, idx) => (
+                  <li key={idx} className="break-words">{entry}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {/* SECÇÃO CARROS SEMELHANTES - Swiper-like Carousel */}
           <section id="similar" className="mt-12" style={{ ['--accent' as any]: '#222' } as React.CSSProperties}>
             <div className="card rounded-3xl border-0 mb-3 shadow-sm flex flex-col bg-white/90">
@@ -1442,7 +1472,7 @@ export default function CarDetail() {
                                   <span className="make font-bold block text-lg">{simCar.make}</span>
                                   <span className="model block text-base">{simCar.model}</span>
                                   <span className="year block text-sm">{simCar.year}</span>
-                                  <span className="km block text-sm">{simCar.mileage?.toLocaleString()} km</span>
+                                  <span className="km block text-sm">{fmtNumber(simCar.mileage)} km</span>
                                 </div>
                               </div>
                             </div>
@@ -1500,7 +1530,7 @@ export default function CarDetail() {
                                   <span className="make font-bold block text-lg">{simCar.make}</span>
                                   <span className="model block text-base">{simCar.model}</span>
                                   <span className="year block text-sm">{simCar.year}</span>
-                                  <span className="km block text-sm">{simCar.mileage?.toLocaleString()} km</span>
+                                  <span className="km block text-sm">{fmtNumber(simCar.mileage)} km</span>
                                 </div>
                               </div>
                             </div>
@@ -1538,7 +1568,7 @@ export default function CarDetail() {
           name="description"
           content={
             car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${car.mileage} km. Preço: €${car.price.toLocaleString()}. Carros usados e seminovos com garantia.`
+              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage)} km. Preço: €${fmtNumber(car.price)}. Carros usados e seminovos com garantia.`
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />
@@ -1562,7 +1592,7 @@ export default function CarDetail() {
           property="og:description"
           content={
             car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${car.mileage} km. Preço: €${car.price.toLocaleString()}. Carros usados e seminovos com garantia.`
+              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage)} km. Preço: €${fmtNumber(car.price)}. Carros usados e seminovos com garantia.`
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />
@@ -1593,11 +1623,11 @@ export default function CarDetail() {
               brand: car.make,
               model: car.model,
               vehicleModelDate: car.year,
-              mileageFromOdometer: car.mileage,
+              mileageFromOdometer: numify(car.mileage),
               offers: {
                 "@type": "Offer",
                 priceCurrency: "EUR",
-                price: car.price,
+                price: numify(car.price),
                 availability: "https://schema.org/InStock",
               },
               image: car.images
