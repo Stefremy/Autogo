@@ -465,6 +465,56 @@
       "/images/cars/audia5-2.jpg",
       "/images/cars/audia5-3.jpg"
     ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Sistema Start-Stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: frente, lado e mais",
+        "Imobilizador",
+        "Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Alarme",
+        "Jantes de liga leve",
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
     "maintenance": [
       "24/12/2024 — 122381 km — Boel Marc bvba — car battery — € 273,10",
       "29/11/2024 — 120900 km — S.B.A.T. — payment technical check — € 43,96",
