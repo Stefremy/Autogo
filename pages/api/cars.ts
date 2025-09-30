@@ -4,7 +4,11 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 const carsFile = path.join(process.cwd(), "data/cars.json");
 const carsFullFile = path.join(process.cwd(), "data/cars.full.json");
+const schemaFile = path.join(process.cwd(), "data/schema/car.schema.json");
 const API_KEY = process.env.API_KEY;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_REPO = process.env.GITHUB_REPO; // owner/repo
+const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
 
 type AnyObject = { [k: string]: any };
 
@@ -67,12 +71,88 @@ async function safeReadJson(filePath: string, restoreFrom?: string) {
   }
 }
 
+async function validateAgainstSchema(data: any) {
+  // Try to use AJV if available for strict JSON Schema validation
+  try {
+    // dynamic import so project won't fail if ajv isn't installed
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const Ajv = require('ajv');
+    const ajv = new Ajv({ allErrors: true, strict: false });
+    const schemaRaw = await fs.promises.readFile(schemaFile, 'utf-8');
+    const schema = JSON.parse(schemaRaw);
+    const validate = ajv.compile(schema);
+    const valid = validate(data);
+    return { valid, errors: (validate.errors || []).map((e: any) => `${e.instancePath} ${e.message}`) };
+  } catch (err) {
+    // If AJV not available, perform a minimal defensive validation (best-effort)
+    const errors: string[] = [];
+    if (!data) errors.push('empty payload');
+    if (!data.make) errors.push('missing make');
+    if (!data.model) errors.push('missing model');
+    if (!data.price) errors.push('missing price');
+    const valid = errors.length === 0;
+    return { valid, errors };
+  }
+}
+
+function normalizeMaintenance(items: any[]): any[] {
+  if (!Array.isArray(items)) return [];
+  return items.map((it) => {
+    if (!it) return null;
+    if (typeof it === 'object') return it; // already normalized
+    const s = String(it || '').trim();
+    // Try to extract a leading date like 2023-05-12 or 12/05/2023
+    const iso = s.match(/(\d{4}-\d{2}-\d{2})/);
+    const euro = s.match(/(\d{2}\/\d{2}\/\d{4})/);
+    const date = iso ? iso[1] : euro ? euro[1] : null;
+    const desc = s.replace(date || '', '').trim();
+    return { date, desc: desc || s };
+  }).filter(Boolean);
+}
+
+async function commitToGitHub(repo: string, filePathInRepo: string, contentBuffer: Buffer, message = 'Update data') {
+  const apiBase = `https://api.github.com/repos/${repo}/contents/${filePathInRepo}`;
+  const b64 = contentBuffer.toString('base64');
+  // Try GET to obtain existing sha
+  const headers = {
+    'Authorization': `token ${GITHUB_TOKEN}`,
+    'User-Agent': 'autogo-api',
+    'Accept': 'application/vnd.github.v3+json',
+  };
+  let sha: string | undefined = undefined;
+  try {
+    const getResp = await fetch(apiBase + `?ref=${encodeURIComponent(GITHUB_BRANCH)}`, { headers });
+    if (getResp.status === 200) {
+      const existing = await getResp.json();
+      sha = existing.sha;
+    }
+  } catch (err) {
+    // ignore and attempt create
+  }
+
+  const body = {
+    message,
+    content: b64,
+    branch: GITHUB_BRANCH,
+    ...(sha ? { sha } : {}),
+  } as any;
+
+  const putResp = await fetch(apiBase, {
+    method: 'PUT',
+    headers: { ...headers, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  const result = await putResp.json();
+  if (!putResp.ok) throw new Error(JSON.stringify(result));
+  return result;
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const method = req.method || 'GET';
   try {
-    // Decide which file to operate on for GET reads (allows returning the full backup)
+    // Keep existing GET behavior
     if (method === 'GET') {
-      // If an API_KEY is set on the server, require a token for GET as well
       if (API_KEY) {
         const token = extractToken(req);
         if (!token || token !== API_KEY) {
@@ -91,7 +171,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json(data);
     }
 
-    // For write operations require a valid token
+    // For write operations require API key
     if (['POST', 'DELETE'].includes(method)) {
       const token = extractToken(req);
       if (!API_KEY || !token || token !== API_KEY) {
@@ -104,19 +184,79 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (!body || typeof body !== 'object') {
         return res.status(400).json({ error: 'Invalid body' });
       }
-      const cars = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
-      // ensure unique id
-      const existingIds = new Set(cars.map(c => String(c.id)));
+
+      // Validate against JSON Schema (AJV preferred)
+      const { valid, errors } = await validateAgainstSchema(body);
+
+      // Normalize maintenance and coercions defensively
+      const maintenance = normalizeMaintenance(Array.isArray(body.maintenance) ? body.maintenance : []);
+
+      // Read existing full cars file to compute a new id and to include in commit
+      const fullCars = (await safeReadJson(carsFullFile, carsFile)) as AnyObject[];
+      const existingIds = new Set(fullCars.map(c => String(c.id)));
       let newId = body.id ? String(body.id) : String(Date.now());
       while (existingIds.has(newId)) newId = String(Date.now() + Math.floor(Math.random() * 10000));
-      const newCar = { ...body, id: newId, status: body.status ?? '' };
-      cars.push(newCar);
-      await fs.promises.writeFile(carsFile, JSON.stringify(cars, null, 2), 'utf-8');
-      return res.status(201).json(newCar);
+
+      const newCar = {
+        ...body,
+        id: newId,
+        maintenance,
+        unitNumber: body.unitNumber ?? null, // keep for internal use
+      };
+
+      // Build envelope
+      const schemaRaw = await fs.promises.readFile(schemaFile, 'utf-8').catch(() => '{}');
+      let schemaVersion = '1';
+      try { const s = JSON.parse(schemaRaw); schemaVersion = s.$id || s.version || schemaVersion; } catch (e) {}
+      const envelope: any = { schemaVersion, valid: Boolean(valid), errors: errors || [], car: newCar, summary: '' };
+
+      // If GitHub token + repo configured, attempt to commit to repo
+      if (GITHUB_TOKEN && GITHUB_REPO) {
+        try {
+          // Update full dataset in memory
+          const updatedFull = Array.isArray(fullCars) ? [...fullCars, newCar] : [newCar];
+          const payload = JSON.stringify(updatedFull, null, 2);
+          const commitMsg = `Add car ${newId} via API`;
+          const result = await commitToGitHub(GITHUB_REPO, 'data/cars.full.json', Buffer.from(payload, 'utf-8'), commitMsg);
+          envelope.summary = `Committed to GitHub repo ${GITHUB_REPO} (${result.content?.path || 'data/cars.full.json'})`;
+
+          // Also update runtime cars.json locally for immediate availability in this environment
+          try {
+            const slim = Array.isArray(fullCars) ? [...fullCars, newCar] : [newCar];
+            await fs.promises.writeFile(carsFullFile, payload, 'utf-8');
+            // write a lightweight cars.json (slim) by mapping to existing structure if present
+            const existingSlim = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
+            const newSlim = Array.isArray(existingSlim) ? [...existingSlim, newCar] : [newCar];
+            await fs.promises.writeFile(carsFile, JSON.stringify(newSlim, null, 2), 'utf-8');
+          } catch (e) {
+            // ignore local write errors
+            console.warn('Local write after GitHub commit failed', e);
+          }
+
+          return res.status(201).json(envelope);
+        } catch (err) {
+          console.error('GitHub commit failed', err);
+          envelope.summary = `GitHub commit failed: ${String(err)}`;
+          // Fall through to local write fallback
+        }
+      }
+
+      // Fallback: write to local files (cars.full.json + cars.json) so site can use data without GitHub
+      try {
+        const updatedFull = Array.isArray(fullCars) ? [...fullCars, newCar] : [newCar];
+        await fs.promises.writeFile(carsFullFile, JSON.stringify(updatedFull, null, 2), 'utf-8');
+        const existingSlim = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
+        const newSlim = Array.isArray(existingSlim) ? [...existingSlim, newCar] : [newCar];
+        await fs.promises.writeFile(carsFile, JSON.stringify(newSlim, null, 2), 'utf-8');
+        envelope.summary = 'Wrote to local data files (no GitHub commit)';
+        return res.status(201).json(envelope);
+      } catch (err) {
+        console.error('Local write failed', err);
+        return res.status(500).json({ error: 'Failed to persist car', details: String(err) });
+      }
     }
 
     if (method === 'DELETE') {
-      // accept id in query or JSON body
       const idFromQuery = typeof req.query.id === 'string' ? req.query.id : undefined;
       const idFromBody = req.body && (req.body.id || req.body._id) ? String(req.body.id ?? req.body._id) : undefined;
       const id = idFromQuery || idFromBody;

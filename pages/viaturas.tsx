@@ -28,14 +28,16 @@ export default function Viaturas() {
   const PAGE_SIZE = 12;
 
   // Unique options for selects
-  const marcas = Array.from(new Set(cars.map((car) => car.make)));
+  const marcas = Array.from(
+    new Set(cars.map((car) => String((car as any).make ?? ""))),
+  ).filter(Boolean);
   const modelos = Array.from(
     new Set(
       cars
-        .filter((car) => !marca || car.make === marca)
-        .map((car) => car.model),
+        .filter((car) => !marca || String((car as any).make ?? "") === marca)
+        .map((car) => String((car as any).model ?? "")),
     ),
-  );
+  ).filter(Boolean);
   // Normalize year values to numbers (handles strings like "2019-12-10")
   const anos: number[] = Array.from(
     new Set(
@@ -68,18 +70,41 @@ export default function Viaturas() {
   }, [countryFilter]);
 
   // Filtering logic por dia, mês e ano (campos day, month, year)
-  const filteredCars = cars.filter(
-    (car) =>
+  const filteredCars = cars.filter((car) => {
+    const carCountry = String(car.country ?? "").toLowerCase();
+    const cf = String(countryFilter ?? "").toLowerCase();
+
+    // normalize year for comparison
+    const carYearStr = (() => {
+      const y = (car as any).year;
+      if (typeof y === 'number') return String(y);
+      if (typeof y === 'string') {
+        const m = y.match(/^(\d{4})/);
+        if (m) return m[1];
+        const n = Number(y);
+        if (!Number.isNaN(n)) return String(n);
+      }
+      return '';
+    })();
+
+    // safe mileage number
+    const mileageNum = (() => {
+      const v = (car as any).mileage;
+      if (v == null) return null;
+      if (typeof v === 'number') return v;
+      const n = parseInt(String(v).replace(/[^0-9]/g, ''), 10);
+      return Number.isFinite(n) ? n : null;
+    })();
+
+    return (
       (!marca || car.make === marca) &&
       (!modelo || car.model === modelo) &&
-      (!countryFilter || (car.country || "").toLowerCase() === countryFilter.toLowerCase()) &&
-      (!ano || String(car.year) === ano) &&
-      (!mes ||
-        (car.hasOwnProperty("month") &&
-          String((car as any).month).padStart(2, "0") ===
-            mes.padStart(2, "0"))) &&
-      (!km || car.mileage <= parseInt(km)),
-  );
+      (!countryFilter || carCountry === cf) &&
+      (!ano || carYearStr === ano) &&
+      (!mes || (car.hasOwnProperty('month') && String((car as any).month).padStart(2, '0') === mes.padStart(2, '0'))) &&
+      (!km || (mileageNum !== null && mileageNum <= parseInt(km, 10)))
+    );
+  });
 
   // Pagination calculations
   const totalPages = Math.max(1, Math.ceil(filteredCars.length / PAGE_SIZE));
@@ -185,7 +210,6 @@ export default function Viaturas() {
     var minW = 16 * 16; // 16rem
     var maxW = window.innerWidth; // allow edge-to-edge
     var newW = lerp(minW, maxW, progress);
-    el.style.width = newW + 'px';
     // Fade out as we approach the footer
     var fadeStart = 0.98;
     var fadeProgress = clamp((progress - fadeStart) / (1 - fadeStart), 0, 1);
@@ -479,20 +503,20 @@ export default function Viaturas() {
                       style={{ zIndex: 30 }}
                     >
                       <img
-                        src={`/images/flags/${car.country.toLowerCase()}.png`}
-                        alt={car.country}
+                        src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.png`}
+                        alt={String((car as any).country ?? "")}
                         style={{
                           width: 32,
                           height: 22,
                           borderRadius: "0.2rem",
                           border:
                             (countryFilter &&
-                            countryFilter.toLowerCase() === car.country.toLowerCase())
+                            String(countryFilter).toLowerCase() === String((car as any).country ?? "").toLowerCase())
                               ? "2.5px solid #b42121"
                               : "1.5px solid #fff",
                           boxShadow:
                             (countryFilter &&
-                            countryFilter.toLowerCase() === car.country.toLowerCase())
+                            String(countryFilter).toLowerCase() === String((car as any).country ?? "").toLowerCase())
                               ? "0 6px 18px rgba(180,33,33,0.18)"
                               : "0 2px 8px rgba(44,62,80,0.10)",
                           background: "#fff",
@@ -500,7 +524,7 @@ export default function Viaturas() {
                           transition: "box-shadow 160ms ease, transform 160ms ease, border 160ms ease",
                           transform:
                             (countryFilter &&
-                            countryFilter.toLowerCase() === car.country.toLowerCase())
+                            String(countryFilter).toLowerCase() === String((car as any).country ?? "").toLowerCase())
                               ? "translateY(-1px) scale(1.03)"
                               : "none",
                         }}
@@ -509,8 +533,8 @@ export default function Viaturas() {
                   )}
                   <div className="relative flex flex-col items-center">
                     <img
-                      src={`/images/carmake/${car.make.toLowerCase().replace(/[^a-z0-9]/gi, "")}-logo.png`}
-                      alt={car.make}
+                      src={`/images/carmake/${String((car as any).make ?? "").toLowerCase().replace(/[^a-z0-9]/gi, "")}-logo.png`}
+                      alt={String((car as any).make ?? "")}
                       className="h-12 w-auto mb-2 mx-auto"
                       style={{
                         maxWidth: 64,
@@ -525,7 +549,7 @@ export default function Viaturas() {
                         if (!img.src.endsWith(".jpg")) {
                           img.src = img.src.replace(".png", ".jpg");
                         } else {
-                          const originalCase = `/images/carmake/${car.make.replace(/[^a-z0-9]/gi, "")}-logo.png`;
+                          const originalCase = `/images/carmake/${String((car as any).make ?? "").replace(/[^a-z0-9]/gi, "")}-logo.png`;
                           if (
                             img.src !==
                             window.location.origin + originalCase
@@ -541,14 +565,14 @@ export default function Viaturas() {
                       className="text-xl font-semibold mb-1 text-[#222] text-center px-2 w-full flex items-center justify-center gap-2"
                       style={{ minHeight: "2.5rem" }}
                     >
-                      {car.make} {car.model}
+                      {String((car as any).make ?? "")} {String((car as any).model ?? "")}
                     </h2>
                   </div>
                   <div className="text-gray-500 mb-1 text-center px-2">
-                    {car.year} · {car.mileage} km
+                    {String((car as any).year ?? "")} · {String((car as any).mileage ?? "")} km
                   </div>
                   <div className="font-bold text-black text-lg mb-3 text-center px-2">
-                    €{car.price.toLocaleString()}
+                    €{(Number((car as any).price) || 0).toLocaleString()}
                   </div>
   <div className="flex gap-2 w-full mt-auto justify-center">
   <Link

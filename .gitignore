@@ -10,3 +10,4 @@ yarn-error.log*
 node_modules/
 # next.js build output
 .next/
+.env.local
