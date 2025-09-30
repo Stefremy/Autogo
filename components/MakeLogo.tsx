@@ -45,7 +45,7 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
 
   // lightweight SVG fallback (keeps space visible instead of broken icon)
   const svgFallback =
-    "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Crect fill='%23f3f4f6' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23959' font-size='10'%3Elogo%3C/text%3E%3C/svg%3E";
+    "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23959' font-size='10'%3Elogo%3C/text%3E%3C/svg%3E";
 
   return (
     <img
@@ -61,8 +61,21 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
         width: "auto",
         objectFit: "contain",
         display: "inline-block",
+        // start hidden and fade in when the real image has loaded to avoid flash
+        opacity: 0,
+        transition: "opacity 180ms ease-in-out, filter 180ms ease-in-out",
       }}
-      loading="eager"
+      loading={"lazy"}
+      onLoad={(e) => {
+        try {
+          const img = e.currentTarget as HTMLImageElement & { dataset: any };
+          // reveal smoothly when loaded
+          img.style.opacity = "1";
+          img.style.filter = "none";
+        } catch (err) {
+          // ignore
+        }
+      }}
       onError={(e) => {
         const img = e.currentTarget as HTMLImageElement & { dataset: any };
         try {
@@ -71,16 +84,22 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
           idx = Number.isNaN(idx) ? 0 : idx;
           const next = idx + 1;
           if (list && next < list.length) {
+            // fade out slightly before swapping to reduce perceived flash
             img.dataset.attempt = String(next);
-            img.src = list[next];
+            img.style.opacity = "0";
+            setTimeout(() => {
+              try { img.src = list[next]; } catch (err) { img.src = list[next]; }
+            }, 80);
           } else {
             // final fallback: keep visible but show neutral placeholder (no hide)
             img.src = svgFallback;
             img.style.objectFit = "contain";
             img.style.background = "transparent";
+            img.style.opacity = "1";
           }
         } catch (err) {
           img.src = svgFallback;
+          img.style.opacity = "1";
         }
       }}
     />

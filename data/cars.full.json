@@ -206,12 +206,12 @@
         "Faróis LED diurnos",
         "Pintura bicolor (tejadilho opcional)"
       ],
-    "outras_opcoes": [
-      "Controlo de cruzeiro",
-      "Aquecimento adicional (pré‑condicionamento)",
-      "Fecho centralizado",
-      "Pára‑choques de design específico"
-    ]
+      "outras_opcoes": [
+        "Controlo de cruzeiro",
+        "Aquecimento adicional (pré‑condicionamento)",
+        "Fecho centralizado",
+        "Pára‑choques de design específico"
+      ]
     }
   },
   {
@@ -261,37 +261,37 @@
         "Ar condicionado: Automático",
         "Vidros eléctricos",
         "Sem chave (Keyless Go)",
-      "Sensor da luz",
-      "Volante multifunções",
-      "Sensor de chuva",
-      "Sistema Start-Stop"
-    ],
-    "seguranca": [
-      "Sistema de travagem anti-bloqueio (ABS)",
-      "Luzes diurnas",
-      "Controlo eletrónico de estabilidade (ESP)",
-      "Luzes de nevoeiro",
-      "Airbags: Frente, lado e mais",
-      "Imobilizador",
-      "Isofix"
-    ],
-    "multimedia": [
-      "Bluetooth",
-      "Leitor de CD",
-      "Leitor MP3",
-      "Sistema de navegação",
-      "Computador de bordo",
-      "Rádio"
-    ],
-    "interior": [],
-    "exterior": [
-      "Jantes de liga leve",
-      "Faróis LED"
-    ],
-    "outras_opcoes": [
-      "Controlo de Velocidade (Cruise Control)",
-      "Controlo de tração"
-    ]
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start-Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Leitor MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Faróis LED"
+      ],
+      "outras_opcoes": [
+        "Controlo de Velocidade (Cruise Control)",
+        "Controlo de tração"
+      ]
     }
   },
   {
@@ -354,84 +354,84 @@
         "Cruise control com SPEEDTRONIC",
         "Bancos dianteiros aquecidos",
         "Regulação elétrica dos bancos",
-      "Vidros elétricos",
-      "Keyless Go",
-      "Sensor de luz",
-      "Volante multifunções em napa/DINAMICA",
-      "Sensor de chuva",
-      "Sistema Start/Stop",
-      "EASY-PACK (porta da bagageira elétrica)",
-      "Iluminação ambiente",
-      "Apoio lombar 4 vias"
-    ],
-    "seguranca": [
-      "ABS",
-      "Luzes diurnas",
-      "ESP",
-      "Faróis de nevoeiro",
-      "Airbags: frente, lado e mais",
-      "Imobilizador",
-      "Isofix",
-      "Assistente de Ângulo Morto",
-      "Active Brake Assist",
-      "Active Lane Keeping Assist",
-      "Active Parking Assist com PARKTRONIC",
-      "Câmara de marcha-atrás",
-      "Monitorização da pressão dos pneus",
-      "Traffic Sign Assist",
-      "URBAN GUARD Protection Plus"
-    ],
-    "multimedia": [
-      "Bluetooth",
-      "Leitor de CD",
-      "Kit mãos-livres",
-      "Interface MP3",
-      "Sistema de navegação",
-      "Computador de bordo",
-      "Rádio/DAB",
-      "Apple CarPlay",
-      "Android Auto",
-      "Wireless charging",
-      "Live Traffic Information",
-      "12.3\" IC Display",
-      "Head Unit 10.25\""
-    ],
-    "interior": [
-      "Interior desportivo",
-      "Bancos desportivos",
-      "Meio-couro/Alcântara (1/2)",
-      "Forro do tejadilho em preto",
-      "Acabamentos alumínio \"light longitudinal-grain\"",
-      "Tapetes AMG"
-    ],
-    "exterior": [
-      "Jantes liga leve AMG 18\" (5 raios)",
-      "Exterior desportivo",
-      "Pacote desportivo",
-      "Suspensão desportiva (AGILITY CONTROL conforto)",
-      "Engate de reboque",
-      "Barras de tejadilho em preto",
-      "Grelha diamante cromada",
-      "Retrovisores rebatíveis eletricamente",
-      "Vidros traseiros escurecidos"
-    ],
-    "outras_opcoes": [
-      "Filtro de partículas (DPF)",
-      "Controlo de tração",
-      "9G-TRONIC",
-      "DYNAMIC SELECT",
-      "KEYLESS GO starting",
-      "Carregador e tomada veículo (PHEV)",
-      "Cabo de carregamento 1.8 kW (5 m)",
-      "TIREFIT com compressor",
-      "Serviço Mercedes me (módulo LTE)",
-      "Pré-instalação GUARD 360°",
-      "Pack Conforto Bancos",
-      "Pack Espelhos",
-      "Pack Estacionamento",
-      "Reservatório SCR de maior capacidade",
-      "Service interval 25.000 km"
-    ]
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções em napa/DINAMICA",
+        "Sensor de chuva",
+        "Sistema Start/Stop",
+        "EASY-PACK (porta da bagageira elétrica)",
+        "Iluminação ambiente",
+        "Apoio lombar 4 vias"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: frente, lado e mais",
+        "Imobilizador",
+        "Isofix",
+        "Assistente de Ângulo Morto",
+        "Active Brake Assist",
+        "Active Lane Keeping Assist",
+        "Active Parking Assist com PARKTRONIC",
+        "Câmara de marcha-atrás",
+        "Monitorização da pressão dos pneus",
+        "Traffic Sign Assist",
+        "URBAN GUARD Protection Plus"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio/DAB",
+        "Apple CarPlay",
+        "Android Auto",
+        "Wireless charging",
+        "Live Traffic Information",
+        "12.3\" IC Display",
+        "Head Unit 10.25\""
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Meio-couro/Alcântara (1/2)",
+        "Forro do tejadilho em preto",
+        "Acabamentos alumínio \"light longitudinal-grain\"",
+        "Tapetes AMG"
+      ],
+      "exterior": [
+        "Jantes liga leve AMG 18\" (5 raios)",
+        "Exterior desportivo",
+        "Pacote desportivo",
+        "Suspensão desportiva (AGILITY CONTROL conforto)",
+        "Engate de reboque",
+        "Barras de tejadilho em preto",
+        "Grelha diamante cromada",
+        "Retrovisores rebatíveis eletricamente",
+        "Vidros traseiros escurecidos"
+      ],
+      "outras_opcoes": [
+        "Filtro de partículas (DPF)",
+        "Controlo de tração",
+        "9G-TRONIC",
+        "DYNAMIC SELECT",
+        "KEYLESS GO starting",
+        "Carregador e tomada veículo (PHEV)",
+        "Cabo de carregamento 1.8 kW (5 m)",
+        "TIREFIT com compressor",
+        "Serviço Mercedes me (módulo LTE)",
+        "Pré-instalação GUARD 360°",
+        "Pack Conforto Bancos",
+        "Pack Espelhos",
+        "Pack Estacionamento",
+        "Reservatório SCR de maior capacidade",
+        "Service interval 25.000 km"
+      ]
     }
   },
   {
@@ -585,6 +585,46 @@
       "28/07/2021 — 33095 km — DMC Drogenbos — Small parts and eco — € 18,01",
       "28/07/2021 — 33095 km — DMC Drogenbos — 0109 - Maintenance with oil change — € 296,19",
       "28/07/2021 — 33095 km — DMC Drogenbos — windscreen washer fluid — € 2,00"
+    ]
+  },
+  {
+    "id": "1759243001910",
+    "make": "Audi",
+    "model": "A5",
+    "year": 2019,
+    "slug": "audi-a5-6367789",
+    "price": 27950,
+    "image": "/images/audi-scotland.jpg",
+    "images": [
+      "/images/audi-scotland.jpg",
+      "/images/carmake/audi-logo.png"
+    ],
+    "description": "Audi A5 2.0 TDI S-line, imported from DE, full service history, excellent condition.",
+    "mileage": 95000,
+    "country": "DE",
+    "status": "disponivel",
+    "vin": "WAUZZZF55KA097288",
+    "unitNumber": "A5-00123",
+    "maintenance": [
+      {
+        "date": "2024-06-15",
+        "km": 90000,
+        "shop": "Autohaus Berlin",
+        "description": "Timing belt, water pump, front brake pads",
+        "price": 1200,
+        "raw": "Service at Autohaus Berlin: timing belt, water pump, front pads"
+      },
+      {
+        "date": "2023-03-01",
+        "desc": "Minor oil change  85000km - 89EUR"
+      },
+      {
+        "date": "2022-08-20",
+        "km": 75000,
+        "shop": "Garage Stuttgart",
+        "description": "Rear suspension bushes replaced",
+        "price": 350
+      }
     ]
   }
 ]
