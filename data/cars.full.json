@@ -626,5 +626,47 @@
         "price": 350
       }
     ]
+  },
+  {
+    "id": "1759249224088",
+    "make": "Ferrari",
+    "model": "A5",
+    "year": 2019,
+    "slug": "audi-a5-6367789",
+    "price": 27950,
+    "image": "/images/audi-scotland.jpg",
+    "description": "Audi A5 2.0 TDI S-line, imported from DE, full service history, excellent condition.",
+    "mileage": 95000,
+    "country": "DE",
+    "status": "disponivel",
+    "vin": "WAUZZZF55KA097288",
+    "unitNumber": "A5-00123",
+    "maintenance": [
+      {
+        "date": "2024-06-15",
+        "km": 90000,
+        "shop": "Autohaus Berlin",
+        "description": "Timing belt, water pump, front brake pads",
+        "price": 1200,
+        "raw": "Service at Autohaus Berlin: timing belt, water pump, front pads"
+      },
+      {
+        "date": "2022-08-20",
+        "km": 75000,
+        "shop": "Garage Stuttgart",
+        "description": "Rear suspension bushes replaced",
+        "price": 350
+      }
+    ],
+    "equipamento_opcoes": {
+      "conforto": [
+        "Ar condicionado",
+        "Bancos em pele"
+      ]
+    },
+    "images": [
+      "/images/audi-scotland.jpg",
+      "/images/carmake/audi-logo.png"
+    ]
   }
 ]
