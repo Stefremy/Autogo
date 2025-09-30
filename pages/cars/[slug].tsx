@@ -994,7 +994,7 @@ export default function CarDetail() {
                   src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.png`}
                   alt={car.country}
                   title={car.country}
-                  className="hidden lg:block absolute top-3 left-3 z-20"
+                  className="hidden lg:block absolute top-3 left-3 z-40"
                   style={{
                     width: 32,
                     height: 22,
@@ -1003,6 +1003,7 @@ export default function CarDetail() {
                     boxShadow: '0 2px 8px rgba(44,62,80,0.10)',
                     background: '#fff',
                     objectFit: 'cover',
+                    pointerEvents: 'none', // ensure thumbnails/hover don't get blocked by the flag
                   }}
                 />
               )}
@@ -1024,14 +1025,19 @@ export default function CarDetail() {
                         <img
                           src={img}
                           alt={`${car.make} ${car.model} ${i + 2}`}
+                          loading="lazy"
                           className="w-full h-24 sm:h-28 md:h-52 lg:h-60 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
                         />
                       </button>
                     ))}
                   </div>
 
+                  {/* If there are many remaining images, show a vertical scroll area to avoid huge page length */}
                   {(car.images || []).length > 5 && (
-                    <div className="w-full mt-2 grid grid-cols-5 sm:grid-cols-6 gap-2">
+                    <div
+                      className="w-full mt-2 max-h-[320px] md:max-h-[420px] overflow-y-auto space-y-2 pr-2"
+                      style={{ WebkitOverflowScrolling: 'touch' }}
+                    >
                       {(car.images || []).slice(5).map((img, j) => (
                         <button
                           key={`small-${j}`}
@@ -1041,11 +1047,12 @@ export default function CarDetail() {
                             setLightboxIndex(globalIndex);
                             setLightboxOpen(true);
                           }}
-                          className="overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm p-0 photo-hoverable thumb-small"
+                          className="w-full overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm p-0 photo-hoverable"
                         >
                           <img
                             src={img}
                             alt={`${car.make} ${car.model} ${j + 6}`}
+                            loading="lazy"
                             className="w-full h-20 sm:h-24 md:h-28 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
                           />
                         </button>

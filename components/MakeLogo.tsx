@@ -64,6 +64,7 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
         // start hidden and fade in when the real image has loaded to avoid flash
         opacity: 0,
         transition: "opacity 180ms ease-in-out, filter 180ms ease-in-out",
+        background: 'transparent',
       }}
       loading={"lazy"}
       onLoad={(e) => {
