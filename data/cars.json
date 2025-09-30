@@ -588,6 +588,7 @@
         "raw": "11/07/2023 142950 km Aandrijfas compl midden € 0,00"
       },
       {
+        
         "date": "04/05/2023",
         "km": 137598,
         "description": "140.000 kilometer beurt",
@@ -726,9 +727,5 @@
         "raw": "14/12/2018 20863 km Alfa Romeo olieservice € 0,00"
       }
     ]
-  },
-  {
-    "id": "1759138449478",
-    "status": ""
   }
 ]
