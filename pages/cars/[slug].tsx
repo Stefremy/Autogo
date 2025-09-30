@@ -32,6 +32,7 @@ import jsPDF from "jspdf";
 import Head from "next/head";
 import carsData from "../../data/cars.json";
 import type { Car, MaintenanceItem } from '../../types/car.d';
+import MakeLogo from "../../components/MakeLogo";
 
 // Static generation helpers: produce only valid paths and return 404 when car is missing.
 export async function getStaticPaths() {
@@ -987,6 +988,25 @@ export default function CarDetail() {
                 style={{ objectPosition: 'center top' }}
               />
 
+              {/* overlayed imported-from flag: desktop only (top-left of main image) */}
+              {car.country && (
+                <img
+                  src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.png`}
+                  alt={car.country}
+                  title={car.country}
+                  className="hidden lg:block absolute top-3 left-3 z-20"
+                  style={{
+                    width: 32,
+                    height: 22,
+                    borderRadius: '0.2rem',
+                    border: '1.5px solid #fff',
+                    boxShadow: '0 2px 8px rgba(44,62,80,0.10)',
+                    background: '#fff',
+                    objectFit: 'cover',
+                  }}
+                />
+              )}
+
               {/* Gallery thumbnails: render a larger first row (approx half the main image) then the rest */}
               {(car.images && car.images.length > 1) && (
                 <>
@@ -1035,7 +1055,6 @@ export default function CarDetail() {
                 </>
               )}
 
-              {/* removed overlayed flag — render a pill below the photos instead */}
               <Lightbox
                 open={lightboxOpen}
                 close={() => setLightboxOpen(false)}
@@ -1080,28 +1099,6 @@ export default function CarDetail() {
                   }
                 }
               `}</style>
-
-              {/* Import / country pill: placed below the photos and above the car details */}
-              {car.country && (
-                <div className="w-full mt-4 flex">
-                  <span className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-2xl shadow flex items-center gap-2 border border-gray-200 backdrop-blur-sm">
-                    <img
-                      src={`/images/flags/${car.country.toLowerCase()}.png`}
-                      alt={car.country}
-                      className="w-7 h-7 rounded-full border border-white"
-                    />
-                    <span className="text-sm font-bold text-gray-700">
-                      {car.country === "DE"
-                        ? "Importado da Alemanha"
-                        : car.country === "PT"
-                        ? "Nacional"
-                        : car.country === "FR"
-                        ? "Importado de França"
-                        : `Importado de ${car.country}`}
-                    </span>
-                  </span>
-                </div>
-              )}
             </div>
             {/* Detalhes principais */}
             <div className="flex-1 space-y-6 px-0 lg:px-8 xl:px-16 mt-6 lg:mt-0">
@@ -1111,9 +1108,30 @@ export default function CarDetail() {
                 <span className="text-[#b42121]">{car.year}</span>
               </h1>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 text-sm sm:text-base mb-4">
-                <span className="bg-gray-100 rounded-2xl px-3 py-2 font-medium shadow-sm flex items-center gap-2 text-sm w-full sm:w-auto">
-                  <FaCalendarAlt className="text-[#b42121]" /> {car.year}
-                </span>
+                {/* Make logo replaces the year pill: no background, subtle drop shadow for a slick look */}
+                <div className="flex items-center w-full sm:w-auto">
+                  {/* size tuned to match previous visual weight of the year; change size prop if you prefer larger/smaller */}
+                  <MakeLogo make={car.make} size={28} className="drop-shadow-md" />
+
+                  {/* Mobile-only flag: placed next to MakeLogo, same style as desktop rectangular flag; hidden on lg to avoid duplicate with overlay */}
+                  {car.country && (
+                    <img
+                      src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.png`}
+                      alt={car.country}
+                      title={car.country}
+                      className="ml-3 lg:hidden inline-block"
+                      style={{
+                        width: 32,
+                        height: 22,
+                        borderRadius: '0.2rem',
+                        border: '1.5px solid #fff',
+                        boxShadow: '0 2px 8px rgba(44,62,80,0.10)',
+                        background: '#fff',
+                        objectFit: 'cover',
+                      }}
+                    />
+                  )}
+                </div>
                 <span className="bg-gray-100 rounded-2xl px-3 py-2 font-medium shadow-sm flex items-center gap-2 text-sm w-full sm:w-auto">
                   <FaTachometerAlt className="text-[#b42121]" /> {fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km
                 </span>
