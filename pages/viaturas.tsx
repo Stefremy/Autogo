@@ -13,6 +13,7 @@ import SimuladorTabela from "../components/SimuladorTabela";
 import styles from "../components/PremiumCarCard.module.css";
 import cars from "../data/cars.json";
 import MainLayout from "../components/MainLayout";
+import MakeLogo from "../components/MakeLogo";
 
 export default function Viaturas() {
   const { t } = useTranslation("common");
@@ -532,35 +533,11 @@ export default function Viaturas() {
                     </button>
                   )}
                   <div className="relative flex flex-col items-center">
-                    <img
-                      src={`/images/carmake/${String((car as any).make ?? "").toLowerCase().replace(/[^a-z0-9]/gi, "")}-logo.png`}
-                      alt={String((car as any).make ?? "")}
-                      className="h-12 w-auto mb-2 mx-auto"
-                      style={{
-                        maxWidth: 64,
-                        minWidth: 36,
-                        objectFit: "contain",
-                        display: "block",
-                        verticalAlign: "middle",
-                      }}
-                      loading="lazy"
-                      onError={(e) => {
-                        const img = e.currentTarget;
-                        if (!img.src.endsWith(".jpg")) {
-                          img.src = img.src.replace(".png", ".jpg");
-                        } else {
-                          const originalCase = `/images/carmake/${String((car as any).make ?? "").replace(/[^a-z0-9]/gi, "")}-logo.png`;
-                          if (
-                            img.src !==
-                            window.location.origin + originalCase
-                          ) {
-                            img.src = originalCase;
-                          } else {
-                            img.style.display = "none";
-                          }
-                        }
-                      }}
-                    />
+                    {/* Use shared MakeLogo to handle camelCase/hyphen variants and fallback cleanly */}
+                    <div className="mb-2">
+                      {/* @ts-ignore */}
+                      <MakeLogo make={String((car as any).make ?? "")} size={36} className="h-12 w-auto mx-auto" />
+                    </div>
                     <h2
                       className="text-xl font-semibold mb-1 text-[#222] text-center px-2 w-full flex items-center justify-center gap-2"
                       style={{ minHeight: "2.5rem" }}
