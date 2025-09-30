@@ -213,23 +213,34 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // If GitHub token + repo configured, attempt to commit to repo
       if (GITHUB_TOKEN && GITHUB_REPO) {
         try {
-          // Update full dataset in memory
+          // Build updated arrays
           const updatedFull = Array.isArray(fullCars) ? [...fullCars, newCar] : [newCar];
-          const payload = JSON.stringify(updatedFull, null, 2);
-          const commitMsg = `Add car ${newId} via API`;
-          const result = await commitToGitHub(GITHUB_REPO, 'data/cars.full.json', Buffer.from(payload, 'utf-8'), commitMsg);
-          envelope.summary = `Committed to GitHub repo ${GITHUB_REPO} (${result.content?.path || 'data/cars.full.json'})`;
+          const payloadFull = JSON.stringify(updatedFull, null, 2);
 
-          // Also update runtime cars.json locally for immediate availability in this environment
+          // Build a slim payload by reading existing slim file and appending
+          let existingSlim: AnyObject[] = [];
+          try { existingSlim = (await safeReadJson(carsFile, carsFullFile)) || []; } catch (e) { existingSlim = []; }
+          const updatedSlim = Array.isArray(existingSlim) ? [...existingSlim, newCar] : [newCar];
+          const payloadSlim = JSON.stringify(updatedSlim, null, 2);
+
+          const commitMsg = `Add car ${newId} via API`;
+
+          // Commit both files to GitHub (full + slim). If slim commit fails, continue and record it.
+          const resultFull = await commitToGitHub(GITHUB_REPO, 'data/cars.full.json', Buffer.from(payloadFull, 'utf-8'), commitMsg);
+          let resultSlim: any = null;
           try {
-            const slim = Array.isArray(fullCars) ? [...fullCars, newCar] : [newCar];
-            await fs.promises.writeFile(carsFullFile, payload, 'utf-8');
-            // write a lightweight cars.json (slim) by mapping to existing structure if present
-            const existingSlim = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
-            const newSlim = Array.isArray(existingSlim) ? [...existingSlim, newCar] : [newCar];
-            await fs.promises.writeFile(carsFile, JSON.stringify(newSlim, null, 2), 'utf-8');
+            resultSlim = await commitToGitHub(GITHUB_REPO, 'data/cars.json', Buffer.from(payloadSlim, 'utf-8'), commitMsg);
           } catch (e) {
-            // ignore local write errors
+            console.warn('Commit of data/cars.json to GitHub failed', e);
+          }
+
+          envelope.summary = `Committed to GitHub repo ${GITHUB_REPO} (${resultFull.content?.path || 'data/cars.full.json'}${resultSlim ? ', ' + (resultSlim.content?.path || 'data/cars.json') : ''})`;
+
+          // Also update runtime local files so the Next.js server (and local scripts) read the slim file immediately
+          try {
+            await fs.promises.writeFile(carsFullFile, payloadFull, 'utf-8');
+            await fs.promises.writeFile(carsFile, payloadSlim, 'utf-8');
+          } catch (e) {
             console.warn('Local write after GitHub commit failed', e);
           }
 
