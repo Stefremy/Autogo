@@ -431,299 +431,304 @@
       "28/07/2021 — 33095 km — DMC Drogenbos — windscreen washer fluid — € 2,00"
     ]
   },
-
   {
-  "id": "5982264",
-  "make": "Alfa Romeo",
-  "model": "Giulia",
-  "year": 2018,
-  "slug": "alfa-romeo-giulia-5982264",
-  "price": 7900,
-  "image": "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_046.jpg",
-  "description": "Este Alfa Romeo Giulia de 2018 é uma combinação perfeita de estilo e desempenho. Equipado com um motor de 2143 CC que entrega 150 Hp (110 kW), este carro oferece uma experiência de condução emocionante. A transmissão manual de 6 velocidades proporciona um controle preciso e uma sensação de condução esportiva. O veículo vem com uma variedade de opções de conforto, incluindo ar condicionado automático de duas zonas, controle de cruzeiro, vidros elétricos, e sistema de navegação. A segurança é garantida com ABS, ESP, e múltiplos airbags. Este Giulia está em excelente estado, com um histórico de manutenção completo, incluindo serviços regulares de óleo e inspeções. Com um design elegante e uma cor vermelha vibrante, este Alfa Romeo é uma escolha ideal para quem procura um carro sofisticado e confiável.",
-  "mileage":191465,
-  "country": "NL",
-  "status": "available",
-  "gearboxType": "Manual",
-  "gearbox": 6,
-  "category": "Saloon",
-  "engineSize": "2143 CC",
-  "power": "150 Hp 110 kW",
-  "places": 5,
-  "unitNumber": "NL-32-Nijkerk-Macadam_Smitspol",
-  "origin": "The Netherlands",
-  "firstRegistration": "2018-10-04",
-  "doors": null,
-  "fuel": "Diesel",
-  "emissionClass": "Euro 6",
-  "co2": null,
-  "color": "Red",
-  "vin": "ZAREAECU7J7587312",
-  "images": [
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_046.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_051.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_047.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_049.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_048.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_050.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_053.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_059.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_060.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_054.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_057.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_056.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_058.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_061.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_062.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_052.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_055.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_067.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_072.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_068.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_070.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_071.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_069.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_073.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_074.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_063.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_064.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_065.jpg",
-    "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_066.jpg"
-  ],
-  "equipamento_opcoes": {
-    "opcoes_valor_elevado": ["Navigation system"],
-    "conforto": [
-      "Air conditioning: Automatic (2 zones)",
-      "Cruise control",
-      "Electric windows",
-      "Keyless go",
-      "Light sensor",
-      "Multifunction steering wheel",
-      "Rain sensor",
-      "Start-stop system"
+    "id": "5982264",
+    "make": "Alfa Romeo",
+    "model": "Giulia",
+    "year": 2018,
+    "slug": "alfa-romeo-giulia-5982264",
+    "price": 7900,
+    "image": "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_046.jpg",
+    "description": "Este Alfa Romeo Giulia de 2018 é uma combinação perfeita de estilo e desempenho. Equipado com um motor de 2143 CC que entrega 150 Hp (110 kW), este carro oferece uma experiência de condução emocionante. A transmissão manual de 6 velocidades proporciona um controle preciso e uma sensação de condução esportiva. O veículo vem com uma variedade de opções de conforto, incluindo ar condicionado automático de duas zonas, controle de cruzeiro, vidros elétricos, e sistema de navegação. A segurança é garantida com ABS, ESP, e múltiplos airbags. Este Giulia está em excelente estado, com um histórico de manutenção completo, incluindo serviços regulares de óleo e inspeções. Com um design elegante e uma cor vermelha vibrante, este Alfa Romeo é uma escolha ideal para quem procura um carro sofisticado e confiável.",
+    "mileage": 191465,
+    "country": "NL",
+    "status": "available",
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Saloon",
+    "engineSize": "2143 CC",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "NL-32-Nijkerk-Macadam_Smitspol",
+    "origin": "The Netherlands",
+    "firstRegistration": "2018-10-04",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro 6",
+    "co2": null,
+    "color": "Red",
+    "vin": "ZAREAECU7J7587312",
+    "images": [
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/5980001-5990000/5982264/photo_066.jpg"
     ],
-    "seguranca": [
-      "ABS",
-      "Daytime running lights",
-      "ESP",
-      "Fog lights",
-      "Airbags: Front, side and more",
-      "Immobilizer",
-      "Isofix"
-    ],
-    "multimedia": [
-      "Bluetooth",
-      "CD player",
-      "MP3 interface",
-      "Navigation system",
-      "On-board computer",
-      "Radio"
-    ],
-    "interior": [],
-    "exterior": [
-      "Alloy wheels",
-      "Trailer coupling"
-    ],
-    "outras_opcoes": [
-      "Infotainment-systeem: uconnect nav (kleurenbeeldsc",
-      "Upholstering extra series 1",
-      "Start-/stopsysteem",
-      "Bandenspanningscontrolesysteem",
-      "Roetfilter",
-      "Centrale vergrendeling met afstandsbediening",
-      "Elektron. tractiecontrole",
-      "Steering wheel commands 2",
-      "Particulate filter",
-      "Traction control"
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Navigation system"
+      ],
+      "conforto": [
+        "Air conditioning: Automatic (2 zones)",
+        "Cruise control",
+        "Electric windows",
+        "Keyless go",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Rain sensor",
+        "Start-stop system"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "MP3 interface",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Alloy wheels",
+        "Trailer coupling"
+      ],
+      "outras_opcoes": [
+        "Infotainment-systeem: uconnect nav (kleurenbeeldsc",
+        "Upholstering extra series 1",
+        "Start-/stopsysteem",
+        "Bandenspanningscontrolesysteem",
+        "Roetfilter",
+        "Centrale vergrendeling met afstandsbediening",
+        "Elektron. tractiecontrole",
+        "Steering wheel commands 2",
+        "Particulate filter",
+        "Traction control"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "27/11/2024",
+        "km": 182446,
+        "description": "Alfa Romeo olieservice",
+        "raw": "27/11/2024 182446 km Alfa Romeo olieservice € 0,00"
+      },
+      {
+        "date": "27/11/2024",
+        "km": 182446,
+        "description": "Motormanagementcomputer",
+        "raw": "27/11/2024 182446 km Motormanagementcomputer € 0,00"
+      },
+      {
+        "date": "27/11/2024",
+        "km": 182446,
+        "description": "180.000 kilometer beurt",
+        "raw": "27/11/2024 182446 km 180.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "29/03/2024",
+        "km": 166335,
+        "description": "APK",
+        "raw": "29/03/2024 166335 km APK € 0,00"
+      },
+      {
+        "date": "29/03/2024",
+        "km": 166335,
+        "description": "deeltjesteller EURO 6",
+        "raw": "29/03/2024 166335 km deeltjesteller EURO 6 € 0,00"
+      },
+      {
+        "date": "21/12/2023",
+        "km": 158987,
+        "description": "160.000 kilometer beurt",
+        "raw": "21/12/2023 158987 km 160.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "21/12/2023",
+        "km": 158987,
+        "description": "Alfa Romeo olieservice",
+        "raw": "21/12/2023 158987 km Alfa Romeo olieservice € 0,00"
+      },
+      {
+        "date": "11/07/2023",
+        "km": 142950,
+        "description": "Aandrijfas compl midden",
+        "raw": "11/07/2023 142950 km Aandrijfas compl midden € 0,00"
+      },
+      {
+        "date": "04/05/2023",
+        "km": 137598,
+        "description": "140.000 kilometer beurt",
+        "raw": "04/05/2023 137598 km 140.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "04/05/2023",
+        "km": 137598,
+        "description": "Alfa Romeo olieservice",
+        "raw": "04/05/2023 137598 km Alfa Romeo olieservice € 0,00"
+      },
+      {
+        "date": "14/03/2023",
+        "km": 134112,
+        "description": "APK",
+        "raw": "14/03/2023 134112 km APK € 0,00"
+      },
+      {
+        "date": "14/03/2023",
+        "km": 134112,
+        "description": "Remvloeistof",
+        "raw": "14/03/2023 134112 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "20/09/2022",
+        "km": 120923,
+        "description": "120.000 kilometer beurt",
+        "raw": "20/09/2022 120923 km 120.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "20/09/2022",
+        "km": 120923,
+        "description": "Vliegwiel",
+        "raw": "20/09/2022 120923 km Vliegwiel € 0,00"
+      },
+      {
+        "date": "20/09/2022",
+        "km": 120923,
+        "description": "Koelvloeistof",
+        "raw": "20/09/2022 120923 km Koelvloeistof € 0,00"
+      },
+      {
+        "date": "04/03/2022",
+        "km": 107598,
+        "description": "APK",
+        "raw": "04/03/2022 107598 km APK € 0,00"
+      },
+      {
+        "date": "19/11/2021",
+        "km": 97500,
+        "description": "100.000 kilometer beurt",
+        "raw": "19/11/2021 97500 km 100.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "19/11/2021",
+        "km": 97500,
+        "description": "Alfa Romeo olieservice",
+        "raw": "19/11/2021 97500 km Alfa Romeo olieservice € 0,00"
+      },
+      {
+        "date": "19/11/2021",
+        "km": 97500,
+        "description": "Distr. geleider boven",
+        "raw": "19/11/2021 97500 km Distr. geleider boven € 0,00"
+      },
+      {
+        "date": "02/09/2021",
+        "km": 93606,
+        "description": "Olie",
+        "raw": "02/09/2021 93606 km Olie € 0,00"
+      },
+      {
+        "date": "04/03/2021",
+        "km": 85737,
+        "description": "APK",
+        "raw": "04/03/2021 85737 km APK € 0,00"
+      },
+      {
+        "date": "06/11/2020",
+        "km": 80000,
+        "description": "80.000 kilometer beurt",
+        "raw": "06/11/2020 80000 km 80.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "06/11/2020",
+        "km": 80000,
+        "description": "Alfa Romeo olieservice",
+        "raw": "06/11/2020 80000 km Alfa Romeo olieservice € 0,00"
+      },
+      {
+        "date": "06/11/2020",
+        "km": 80000,
+        "description": "Remvloeistof",
+        "raw": "06/11/2020 80000 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "06/11/2020",
+        "km": 80000,
+        "description": "Ruitenwisserblad voorzijde links en rechts",
+        "raw": "06/11/2020 80000 km Ruitenwisserblad voorzijde links en rechts € 0,00"
+      },
+      {
+        "date": "15/01/2020",
+        "km": 60550,
+        "description": "60.000 kilometer beurt",
+        "raw": "15/01/2020 60550 km 60.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "11/10/2019",
+        "km": 51000,
+        "description": "Alfa Romeo olieservice",
+        "raw": "11/10/2019 51000 km Alfa Romeo olieservice € 0,00"
+      },
+      {
+        "date": "11/06/2019",
+        "km": 40837,
+        "description": "40.000 kilometer beurt",
+        "raw": "11/06/2019 40837 km 40.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "11/06/2019",
+        "km": 40837,
+        "description": "Alfa Romeo olieservice",
+        "raw": "11/06/2019 40837 km Alfa Romeo olieservice € 0,00"
+      },
+      {
+        "date": "14/12/2018",
+        "km": 20863,
+        "description": "20.000 kilometer beurt",
+        "raw": "14/12/2018 20863 km 20.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "14/12/2018",
+        "km": 20863,
+        "description": "Alfa Romeo olieservice",
+        "raw": "14/12/2018 20863 km Alfa Romeo olieservice € 0,00"
+      }
     ]
   },
-  "maintenance": [
-    {
-      "date": "27/11/2024",
-      "km": 182446,
-      "description": "Alfa Romeo olieservice",
-      "raw": "27/11/2024 182446 km Alfa Romeo olieservice € 0,00"
-    },
-    {
-      "date": "27/11/2024",
-      "km": 182446,
-      "description": "Motormanagementcomputer",
-      "raw": "27/11/2024 182446 km Motormanagementcomputer € 0,00"
-    },
-    {
-      "date": "27/11/2024",
-      "km": 182446,
-      "description": "180.000 kilometer beurt",
-      "raw": "27/11/2024 182446 km 180.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "29/03/2024",
-      "km": 166335,
-      "description": "APK",
-      "raw": "29/03/2024 166335 km APK € 0,00"
-    },
-    {
-      "date": "29/03/2024",
-      "km": 166335,
-      "description": "deeltjesteller EURO 6",
-      "raw": "29/03/2024 166335 km deeltjesteller EURO 6 € 0,00"
-    },
-    {
-      "date": "21/12/2023",
-      "km": 158987,
-      "description": "160.000 kilometer beurt",
-      "raw": "21/12/2023 158987 km 160.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "21/12/2023",
-      "km": 158987,
-      "description": "Alfa Romeo olieservice",
-      "raw": "21/12/2023 158987 km Alfa Romeo olieservice € 0,00"
-    },
-    {
-      "date": "11/07/2023",
-      "km": 142950,
-      "description": "Aandrijfas compl midden",
-      "raw": "11/07/2023 142950 km Aandrijfas compl midden € 0,00"
-    },
-    {
-      "date": "04/05/2023",
-      "km": 137598,
-      "description": "140.000 kilometer beurt",
-      "raw": "04/05/2023 137598 km 140.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "04/05/2023",
-      "km": 137598,
-      "description": "Alfa Romeo olieservice",
-      "raw": "04/05/2023 137598 km Alfa Romeo olieservice € 0,00"
-    },
-    {
-      "date": "14/03/2023",
-      "km": 134112,
-      "description": "APK",
-      "raw": "14/03/2023 134112 km APK € 0,00"
-    },
-    {
-      "date": "14/03/2023",
-      "km": 134112,
-      "description": "Remvloeistof",
-      "raw": "14/03/2023 134112 km Remvloeistof € 0,00"
-    },
-    {
-      "date": "20/09/2022",
-      "km": 120923,
-      "description": "120.000 kilometer beurt",
-      "raw": "20/09/2022 120923 km 120.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "20/09/2022",
-      "km": 120923,
-      "description": "Vliegwiel",
-      "raw": "20/09/2022 120923 km Vliegwiel € 0,00"
-    },
-    {
-      "date": "20/09/2022",
-      "km": 120923,
-      "description": "Koelvloeistof",
-      "raw": "20/09/2022 120923 km Koelvloeistof € 0,00"
-    },
-    {
-      "date": "04/03/2022",
-      "km": 107598,
-      "description": "APK",
-      "raw": "04/03/2022 107598 km APK € 0,00"
-    },
-    {
-      "date": "19/11/2021",
-      "km": 97500,
-      "description": "100.000 kilometer beurt",
-      "raw": "19/11/2021 97500 km 100.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "19/11/2021",
-      "km": 97500,
-      "description": "Alfa Romeo olieservice",
-      "raw": "19/11/2021 97500 km Alfa Romeo olieservice € 0,00"
-    },
-    {
-      "date": "19/11/2021",
-      "km": 97500,
-      "description": "Distr. geleider boven",
-      "raw": "19/11/2021 97500 km Distr. geleider boven € 0,00"
-    },
-    {
-      "date": "02/09/2021",
-      "km": 93606,
-      "description": "Olie",
-      "raw": "02/09/2021 93606 km Olie € 0,00"
-    },
-    {
-      "date": "04/03/2021",
-      "km": 85737,
-      "description": "APK",
-      "raw": "04/03/2021 85737 km APK € 0,00"
-    },
-    {
-      "date": "06/11/2020",
-      "km": 80000,
-      "description": "80.000 kilometer beurt",
-      "raw": "06/11/2020 80000 km 80.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "06/11/2020",
-      "km": 80000,
-      "description": "Alfa Romeo olieservice",
-      "raw": "06/11/2020 80000 km Alfa Romeo olieservice € 0,00"
-    },
-    {
-      "date": "06/11/2020",
-      "km": 80000,
-      "description": "Remvloeistof",
-      "raw": "06/11/2020 80000 km Remvloeistof € 0,00"
-    },
-    {
-      "date": "06/11/2020",
-      "km": 80000,
-      "description": "Ruitenwisserblad voorzijde links en rechts",
-      "raw": "06/11/2020 80000 km Ruitenwisserblad voorzijde links en rechts € 0,00"
-    },
-    {
-      "date": "15/01/2020",
-      "km": 60550,
-      "description": "60.000 kilometer beurt",
-      "raw": "15/01/2020 60550 km 60.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "11/10/2019",
-      "km": 51000,
-      "description": "Alfa Romeo olieservice",
-      "raw": "11/10/2019 51000 km Alfa Romeo olieservice € 0,00"
-    },
-    {
-      "date": "11/06/2019",
-      "km": 40837,
-      "description": "40.000 kilometer beurt",
-      "raw": "11/06/2019 40837 km 40.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "11/06/2019",
-      "km": 40837,
-      "description": "Alfa Romeo olieservice",
-      "raw": "11/06/2019 40837 km Alfa Romeo olieservice € 0,00"
-    },
-    {
-      "date": "14/12/2018",
-      "km": 20863,
-      "description": "20.000 kilometer beurt",
-      "raw": "14/12/2018 20863 km 20.000 kilometer beurt € 0,00"
-    },
-    {
-      "date": "14/12/2018",
-      "km": 20863,
-      "description": "Alfa Romeo olieservice",
-      "raw": "14/12/2018 20863 km Alfa Romeo olieservice € 0,00"
-    }
-  ]
+  {
+    "id": "1759138449478",
+    "status": ""
   }
 ]
