@@ -265,8 +265,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             console.warn('Local write after GitHub commit failed', e);
           }
 
-          // Run normalization/sync in background
-          runBackgroundScripts();
+          // Run normalization/sync in background only if explicitly enabled via env
+          if (process.env.RUN_NORMALIZE_ON_WRITE === 'true') runBackgroundScripts();
 
           // Attempt secure revalidation if ADMIN_REVALIDATE_TOKEN provided and matches header
           try {
@@ -296,8 +296,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // If we already wrote locally above return success; otherwise attempt local fallback write to slim file
       if (localWritten) {
-        // Run normalization/sync in background
-        runBackgroundScripts();
+        // Run normalization/sync in background only if explicitly enabled via env
+        if (process.env.RUN_NORMALIZE_ON_WRITE === 'true') runBackgroundScripts();
 
         // Revalidation attempt (secure)
         try {
@@ -327,8 +327,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         await fs.promises.writeFile(carsFile, JSON.stringify(newSlim, null, 2), 'utf-8');
         envelope.summary = 'Wrote to local slim data file (no GitHub commit)';
 
-        // Run background scripts and attempt revalidation as above
-        runBackgroundScripts();
+        // Run background scripts and attempt revalidation as above (conditional)
+        if (process.env.RUN_NORMALIZE_ON_WRITE === 'true') runBackgroundScripts();
         try {
           const revalidateHeader = (req.headers['x-admin-revalidate'] as string) || '';
           if (ADMIN_REVALIDATE_TOKEN && revalidateHeader === ADMIN_REVALIDATE_TOKEN) {
