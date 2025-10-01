@@ -1481,5 +1481,116 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6381049",
+    "make": "Audi",
+    "model": "A3 Sportback 2.0 35 TDi Advanced Aut.",
+    "year": null,
+    "slug": "audi-a3-sportback-2-0-35-tdi-advanced-aut-6381049",
+    "price": 21200,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_038.jpg",
+    "description": "Audi A3 Sportback 2.0 35 TDi Advanced Automático com motor Diesel de 1968 cc e potência de 150 Hp (110 kW). Equipado com caixa automática, sistema de navegação, faróis LED, e interior em pele com Keyless Go. Inclui conforto superior com ar condicionado automático a duas zonas, bancos aquecidos, cruise control, janelas elétricas, sensor de luz e chuva, volante multifunções e sistema start-stop. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Sistema multimédia com Bluetooth, leitor de CD, interface MP3 e computador de bordo. Exterior com jantes de liga leve e pintura metálica. Histórico de manutenção não disponível. Veículo em excelente estado, ideal para quem procura conforto, segurança e tecnologia num compacto premium.",
+    "mileage": 16200,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon7",
+    "engineSize": "1968 CC",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "6381049",
+    "origin": "Belgium",
+    "firstRegistration": null,
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Black",
+    "vin": "WAUZZZGY4MA027258",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381049/photo_059.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Janelas elétricas",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica"
+      ],
+      "outras_opcoes": [
+        "Opção áudio (de fábrica)",
+        "Chave principal",
+        "Chave reserva",
+        "Kit reparação de pneus",
+        "Manual de instruções",
+        "Livro de manutenção (digital)",
+        "Prateleira traseira/rolhão",
+        "Filtro de partículas",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
