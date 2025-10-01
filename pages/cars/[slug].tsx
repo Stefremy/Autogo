@@ -988,13 +988,14 @@ export default function CarDetail() {
                 style={{ objectPosition: 'center top' }}
               />
 
-              {/* overlayed imported-from flag: desktop only (top-left of main image) */}
+              {/* overlayed imported-from flag: desktop only (top-left of main image)
+                  Keep the element in the DOM but animate opacity/translate when sticky bar shows */}
               {car.country && (
                 <img
                   src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.png`}
                   alt={car.country}
                   title={car.country}
-                  className="hidden lg:block absolute top-3 left-3 z-40"
+                  className="hidden lg:block absolute top-3 left-3"
                   style={{
                     width: 32,
                     height: 22,
@@ -1004,6 +1005,10 @@ export default function CarDetail() {
                     background: '#fff',
                     objectFit: 'cover',
                     pointerEvents: 'none', // ensure thumbnails/hover don't get blocked by the flag
+                    zIndex: 30,
+                    transition: 'opacity 220ms cubic-bezier(.2,.9,.2,1), transform 220ms cubic-bezier(.2,.9,.2,1)',
+                    opacity: showStickyBar ? 0 : 1,
+                    transform: showStickyBar ? 'translateY(-8px) scale(0.98)' : 'translateY(0) scale(1)'
                   }}
                 />
               )}
