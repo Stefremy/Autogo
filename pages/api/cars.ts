@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { spawn } from 'child_process';
 
 const carsFile = path.join(process.cwd(), "data/cars.json");
 const carsFullFile = path.join(process.cwd(), "data/cars.full.json");
@@ -9,6 +10,7 @@ const API_KEY = process.env.API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = process.env.GITHUB_REPO; // owner/repo
 const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
+const ADMIN_REVALIDATE_TOKEN = process.env.ADMIN_REVALIDATE_TOKEN;
 
 type AnyObject = { [k: string]: any };
 
@@ -148,6 +150,27 @@ async function commitToGitHub(repo: string, filePathInRepo: string, contentBuffe
   return result;
 }
 
+// Helper: spawn normalization/sync scripts in background (non-blocking)
+function runBackgroundScripts() {
+  try {
+    const node = process.execPath;
+    const scripts = [
+      path.join(process.cwd(), 'scripts', 'normalize-cars.js'),
+      path.join(process.cwd(), 'scripts', 'sync-car-data.js'),
+    ];
+    scripts.forEach((s) => {
+      if (!fs.existsSync(s)) return;
+      const child = spawn(node, [s], {
+        detached: true,
+        stdio: 'ignore',
+      });
+      child.unref();
+    });
+  } catch (err) {
+    console.warn('runBackgroundScripts error', err);
+  }
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const method = req.method || 'GET';
   try {
@@ -191,9 +214,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // Normalize maintenance and coercions defensively
       const maintenance = normalizeMaintenance(Array.isArray(body.maintenance) ? body.maintenance : []);
 
-      // Read existing full cars file to compute a new id and to include in commit
-      const fullCars = (await safeReadJson(carsFullFile, carsFile)) as AnyObject[];
-      const existingIds = new Set(fullCars.map(c => String(c.id)));
+      // Read existing slim cars file to compute a new id and to include in commit/write
+      let existingSlim = [] as AnyObject[];
+      try { existingSlim = (await safeReadJson(carsFile, carsFullFile)) || []; } catch (e) { existingSlim = []; }
+      const existingIds = new Set(existingSlim.map(c => String(c.id)));
       let newId = body.id ? String(body.id) : String(Date.now());
       while (existingIds.has(newId)) newId = String(Date.now() + Math.floor(Math.random() * 10000));
 
@@ -210,56 +234,118 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       try { const s = JSON.parse(schemaRaw); schemaVersion = s.$id || s.version || schemaVersion; } catch (e) {}
       const envelope: any = { schemaVersion, valid: Boolean(valid), errors: errors || [], car: newCar, summary: '' };
 
-      // If GitHub token + repo configured, attempt to commit to repo
+      // Prepare slim payload to use for local write and optional GitHub commit
+      const updatedSlimLocal = Array.isArray(existingSlim) ? [...existingSlim, newCar] : [newCar];
+      const payloadSlimLocal = JSON.stringify(updatedSlimLocal, null, 2);
+
+      // Always write runtime slim file first so Next.js runtime sees the new car immediately
+      let localWritten = false;
+      try {
+        await fs.promises.writeFile(carsFile, payloadSlimLocal, 'utf-8');
+        envelope.summary = 'Wrote to local slim data file (data/cars.json)';
+        localWritten = true;
+      } catch (e) {
+        console.warn('Initial local write to data/cars.json failed', e);
+      }
+
+      // If GitHub token + repo configured, attempt to commit only the slim file to repo using the prepared payload
       if (GITHUB_TOKEN && GITHUB_REPO) {
         try {
-          // Build updated arrays
-          const updatedFull = Array.isArray(fullCars) ? [...fullCars, newCar] : [newCar];
-          const payloadFull = JSON.stringify(updatedFull, null, 2);
-
-          // Build a slim payload by reading existing slim file and appending
-          let existingSlim: AnyObject[] = [];
-          try { existingSlim = (await safeReadJson(carsFile, carsFullFile)) || []; } catch (e) { existingSlim = []; }
-          const updatedSlim = Array.isArray(existingSlim) ? [...existingSlim, newCar] : [newCar];
-          const payloadSlim = JSON.stringify(updatedSlim, null, 2);
-
           const commitMsg = `Add car ${newId} via API`;
+          const resultSlim = await commitToGitHub(GITHUB_REPO, 'data/cars.json', Buffer.from(payloadSlimLocal, 'utf-8'), commitMsg);
+          envelope.summary = `Committed to GitHub repo ${GITHUB_REPO} (data/cars.json)`;
 
-          // Commit both files to GitHub (full + slim). If slim commit fails, continue and record it.
-          const resultFull = await commitToGitHub(GITHUB_REPO, 'data/cars.full.json', Buffer.from(payloadFull, 'utf-8'), commitMsg);
-          let resultSlim: any = null;
+          // Ensure runtime local file exists (in case commit path was used earlier)
           try {
-            resultSlim = await commitToGitHub(GITHUB_REPO, 'data/cars.json', Buffer.from(payloadSlim, 'utf-8'), commitMsg);
-          } catch (e) {
-            console.warn('Commit of data/cars.json to GitHub failed', e);
-          }
-
-          envelope.summary = `Committed to GitHub repo ${GITHUB_REPO} (${resultFull.content?.path || 'data/cars.full.json'}${resultSlim ? ', ' + (resultSlim.content?.path || 'data/cars.json') : ''})`;
-
-          // Also update runtime local files so the Next.js server (and local scripts) read the slim file immediately
-          try {
-            await fs.promises.writeFile(carsFullFile, payloadFull, 'utf-8');
-            await fs.promises.writeFile(carsFile, payloadSlim, 'utf-8');
+            if (!localWritten) {
+              await fs.promises.writeFile(carsFile, payloadSlimLocal, 'utf-8');
+              localWritten = true;
+            }
           } catch (e) {
             console.warn('Local write after GitHub commit failed', e);
+          }
+
+          // Run normalization/sync in background
+          runBackgroundScripts();
+
+          // Attempt secure revalidation if ADMIN_REVALIDATE_TOKEN provided and matches header
+          try {
+            const revalidateHeader = (req.headers['x-admin-revalidate'] as string) || '';
+            if (ADMIN_REVALIDATE_TOKEN && revalidateHeader === ADMIN_REVALIDATE_TOKEN) {
+              try {
+                await (res as any).revalidate(`/cars/${newCar.slug || newCar.id}`);
+                await (res as any).revalidate('/viaturas');
+                envelope.revalidated = true;
+              } catch (e) {
+                envelope.revalidateError = String(e);
+              }
+            } else {
+              envelope.revalidated = false;
+            }
+          } catch (e) {
+            envelope.revalidateError = String(e);
           }
 
           return res.status(201).json(envelope);
         } catch (err) {
           console.error('GitHub commit failed', err);
           envelope.summary = `GitHub commit failed: ${String(err)}`;
-          // Fall through to local write fallback
+          // Fall through to return local-written result or attempt fallback write
         }
       }
 
-      // Fallback: write to local files (cars.full.json + cars.json) so site can use data without GitHub
+      // If we already wrote locally above return success; otherwise attempt local fallback write to slim file
+      if (localWritten) {
+        // Run normalization/sync in background
+        runBackgroundScripts();
+
+        // Revalidation attempt (secure)
+        try {
+          const revalidateHeader = (req.headers['x-admin-revalidate'] as string) || '';
+          if (ADMIN_REVALIDATE_TOKEN && revalidateHeader === ADMIN_REVALIDATE_TOKEN) {
+            try {
+              await (res as any).revalidate(`/cars/${newCar.slug || newCar.id}`);
+              await (res as any).revalidate('/viaturas');
+              envelope.revalidated = true;
+            } catch (e) {
+              envelope.revalidateError = String(e);
+            }
+          } else {
+            envelope.revalidated = false;
+          }
+        } catch (e) {
+          envelope.revalidateError = String(e);
+        }
+
+        return res.status(201).json(envelope);
+      }
+
+      // Fallback: write to local slim file (cars.json) so site can use data without GitHub
       try {
-        const updatedFull = Array.isArray(fullCars) ? [...fullCars, newCar] : [newCar];
-        await fs.promises.writeFile(carsFullFile, JSON.stringify(updatedFull, null, 2), 'utf-8');
-        const existingSlim = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
-        const newSlim = Array.isArray(existingSlim) ? [...existingSlim, newCar] : [newCar];
+        const existing = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
+        const newSlim = Array.isArray(existing) ? [...existing, newCar] : [newCar];
         await fs.promises.writeFile(carsFile, JSON.stringify(newSlim, null, 2), 'utf-8');
-        envelope.summary = 'Wrote to local data files (no GitHub commit)';
+        envelope.summary = 'Wrote to local slim data file (no GitHub commit)';
+
+        // Run background scripts and attempt revalidation as above
+        runBackgroundScripts();
+        try {
+          const revalidateHeader = (req.headers['x-admin-revalidate'] as string) || '';
+          if (ADMIN_REVALIDATE_TOKEN && revalidateHeader === ADMIN_REVALIDATE_TOKEN) {
+            try {
+              await (res as any).revalidate(`/cars/${newCar.slug || newCar.id}`);
+              await (res as any).revalidate('/viaturas');
+              envelope.revalidated = true;
+            } catch (e) {
+              envelope.revalidateError = String(e);
+            }
+          } else {
+            envelope.revalidated = false;
+          }
+        } catch (e) {
+          envelope.revalidateError = String(e);
+        }
+
         return res.status(201).json(envelope);
       } catch (err) {
         console.error('Local write failed', err);
@@ -273,11 +359,81 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const id = idFromQuery || idFromBody;
       if (!id) return res.status(400).json({ error: 'Missing car id.' });
 
+      // Remove from slim runtime file
       const cars = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
       const filtered = cars.filter(c => String(c.id) !== String(id));
       if (filtered.length === cars.length) return res.status(404).json({ error: 'Car not found.' });
-      await fs.promises.writeFile(carsFile, JSON.stringify(filtered, null, 2), 'utf-8');
-      return res.status(200).json({ success: true });
+
+      // Write updated slim file locally
+      try {
+        await fs.promises.writeFile(carsFile, JSON.stringify(filtered, null, 2), 'utf-8');
+      } catch (e) {
+        console.error('Failed to write slim cars file on delete', e);
+        return res.status(500).json({ error: 'Failed to update slim dataset', details: String(e) });
+      }
+
+      // Soft-delete in full dataset: add status and removed metadata
+      try {
+        const full = (await safeReadJson(carsFullFile)) as AnyObject[];
+        const idx = (full || []).findIndex((c: AnyObject) => String(c.id) === String(id));
+        let fullUpdated = full || [];
+        const removedByHeader = (req.headers['x-removed-by'] as string) || (req.headers['x-deleted-by'] as string) || 'api';
+        const removedAt = new Date().toISOString();
+        if (idx >= 0) {
+          // mark existing entry as removed (preserve original data)
+          const updated = { ...(fullUpdated[idx] || {}), status: 'removed', removedAt, removedBy: removedByHeader } as AnyObject;
+          fullUpdated = [...fullUpdated];
+          fullUpdated[idx] = updated;
+        } else {
+          // if not present in full, create a minimal removed record
+          fullUpdated = [...fullUpdated, { id, status: 'removed', removedAt, removedBy: removedByHeader }];
+        }
+
+        // write full locally
+        await fs.promises.writeFile(carsFullFile, JSON.stringify(fullUpdated, null, 2), 'utf-8');
+
+        const responseEnvelope: any = { success: true, deletedId: id, summary: 'Removed from slim and soft-marked in full dataset' };
+
+        // If GitHub configured, attempt to commit both files (full + slim)
+        if (GITHUB_TOKEN && GITHUB_REPO) {
+          try {
+            await commitToGitHub(GITHUB_REPO, 'data/cars.full.json', Buffer.from(JSON.stringify(fullUpdated, null, 2), 'utf-8'), `Soft-remove car ${id} in full dataset via API`);
+            await commitToGitHub(GITHUB_REPO, 'data/cars.json', Buffer.from(JSON.stringify(filtered, null, 2), 'utf-8'), `Remove car ${id} from slim dataset via API`);
+            responseEnvelope.summary = `Committed both data/cars.full.json and data/cars.json to ${GITHUB_REPO}`;
+            responseEnvelope.committed = true;
+          } catch (e) {
+            console.error('GitHub commit during delete failed', e);
+            responseEnvelope.commitError = String(e);
+            responseEnvelope.committed = false;
+          }
+        }
+
+        // Run background scripts
+        runBackgroundScripts();
+
+        // Attempt secure revalidation
+        try {
+          const revalidateHeader = (req.headers['x-admin-revalidate'] as string) || '';
+          if (ADMIN_REVALIDATE_TOKEN && revalidateHeader === ADMIN_REVALIDATE_TOKEN) {
+            try {
+              await (res as any).revalidate('/viaturas');
+              // Also revalidate list endpoints or index if present
+              responseEnvelope.revalidated = true;
+            } catch (e) {
+              responseEnvelope.revalidateError = String(e);
+            }
+          } else {
+            responseEnvelope.revalidated = false;
+          }
+        } catch (e) {
+          responseEnvelope.revalidateError = String(e);
+        }
+
+        return res.status(200).json(responseEnvelope);
+      } catch (err) {
+        console.error('Failed to update full dataset on delete', err);
+        return res.status(500).json({ error: 'Failed to update full dataset', details: String(err) });
+      }
     }
 
     res.setHeader('Allow', ['GET', 'POST', 'DELETE']);

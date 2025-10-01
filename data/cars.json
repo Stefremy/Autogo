@@ -184,7 +184,7 @@
         "Sensor de luz",
         "Volante multifunções em napa/DINAMICA",
         "Sensor de chuva",
-        "Sistema Start-Stop",
+        "Sistema Start/Stop",
         "EASY-PACK (porta da bagageira elétrica)",
         "Iluminação ambiente",
         "Apoio lombar 4 vias"
@@ -287,148 +287,613 @@
     "color": "Grey",
     "vin": "WAUZZZF55KA097288",
     "images": [
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_001.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_003.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_002.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_004.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_005.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_006.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_007.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_009.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_008.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_010.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_094.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_011.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_091.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_093.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_028.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_027.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_025.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_024.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_023.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_020.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_037.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_038.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_039.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_040.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_043.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_044.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_060.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_069.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_059.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_063.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_064.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_071.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_070.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_089.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_090.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_081.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_076.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_075.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_079.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_088.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_087.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_015.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_016.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_018.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_017.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_014.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_013.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_052.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_053.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_030.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_031.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_045.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_085.jpg",
-      "https://ecarstrade.com/carsphotos/6360001-6370000/6367789/photo_074.jpg"
+      "/images/cars/audia5-1.jpg",
+      "/images/cars/audia5-2.jpg",
+      "/images/cars/audia5-3.jpg"
     ],
     "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Exterior desportivo"
+      ],
       "conforto": [
-        "Ar condicionado automático",
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
         "Cruise control",
-        "Sensores de estacionamento"
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Sistema Start-Stop"
       ],
       "seguranca": [
         "ABS",
-        "Airbags",
-        "Isofix"
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: frente, lado e mais",
+        "Imobilizador",
+        "Isofix",
+        "Faróis LED"
       ],
       "multimedia": [
         "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
         "Sistema de navegação",
-        "Apple CarPlay / Android Auto"
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Alarme",
+        "Jantes de liga leve",
+        "Filtro de partículas",
+        "Controlo de tração"
       ]
     },
     "maintenance": [
-      "24/12/2024 — 122381 km — Boel Marc bvba — car battery — € 273,10",
-      "29/11/2024 — 120900 km — S.B.A.T. — payment technical check — € 43,96",
-      "29/11/2024 — 120946 km — TSE Labrum St-Niklaas — tire storage (LUX) — € 16,00",
-      "29/11/2024 — 120946 km — TSE Labrum St-Niklaas — tire change summer/winter — € 72,00",
-      "26/11/2024 — 120896 km — Garage Mertens Audi — diagnosis — € 93,81",
-      "26/11/2024 — 120900 km — Enes Tasdemir — AdBlue or additive tank — € 0,00",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — brake discs and shoes front — € 637,97",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — AdBlue refilling (except Elolys) — € 20,00",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — brake discs and shoes rear — € 571,69",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — gearbox oil — € 203,47",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — cooling water liquid — € 3,24",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — Small parts and eco — € 26,45",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — fuel filter cartridge — € 153,17",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — 0109 - Maintenance with oil change — € 341,67",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — wiper blade front — € 55,68",
-      "15/11/2024 — 120038 km — Garage Mertens Audi — windscreen washer fluid — € 9,00",
-      "31/05/2024 — 110155 km — TSE Labrum St-Niklaas — tire storage (LUX) — € 16,00",
-      "31/05/2024 — 110155 km — TSE Labrum St-Niklaas — tire change summer/winter — € 72,00",
-      "29/12/2023 — 98275 km — S.B.A.T. — payment technical check — € 12,64",
-      "18/12/2023 — 98275 km — TSE Labrum St-Niklaas — tire change summer/winter — € 72,00",
-      "18/12/2023 — 98275 km — TSE Labrum St-Niklaas — tire storage (LUX) — € 16,00",
-      "11/12/2023 — 98003 km — Garage Mertens Audi — shock absorber rear — € 758,77",
-      "11/12/2023 — 98003 km — Garage Mertens Audi — Small parts and eco — € 18,45",
-      "11/12/2023 — 98003 km — Garage Mertens Audi — small parts — € 0,00",
-      "30/11/2023 — 92610 km — S.B.A.T. — payment technical check — € 47,68",
-      "15/11/2023 — 92610 km — On Time Distribution — . — € 62,20",
-      "15/11/2023 — 92610 km — On Time Distribution — Tire transfer BTT — € 0,00",
-      "15/11/2023 — 92610 km — On Time Distribution — . — € 62,20",
-      "18/09/2023 — 92610 km — EC Espace Pneus — wheel balancing (tire center) — € 0,00",
-      "18/09/2023 — 92610 km — EC Espace Pneus — summer tires — € 78,21",
-      "11/08/2023 — 90254 km — DMC Drogenbos — windscreen washer fluid — € 2,52",
-      "11/08/2023 — 90254 km — DMC Drogenbos — battery remote wireless — € 11,24",
-      "11/08/2023 — 90254 km — DMC Drogenbos — Small parts and eco — € 18,45",
-      "11/08/2023 — 90254 km — DMC Drogenbos — air filter — € 65,89",
-      "11/08/2023 — 90254 km — DMC Drogenbos — cooling water liquid — € 3,42",
-      "11/08/2023 — 90254 km — DMC Drogenbos — brake fluid — € 51,06",
-      "11/08/2023 — 90254 km — DMC Drogenbos — 0109 - Maintenance with oil change — € 333,60",
-      "11/08/2023 — 90254 km — DMC Drogenbos — cabin air filter — € 104,32",
-      "24/03/2023 — 75000 km — DMC Drogenbos — brake pad rear — € 372,95",
-      "24/03/2023 — 75000 km — DMC Drogenbos — check up levels — € 17,36",
-      "24/03/2023 — 75000 km — DMC Drogenbos — windscreen washer fluid — € 2,10",
-      "24/03/2023 — 75000 km — DMC Drogenbos — Small parts and eco — € 18,45",
-      "24/03/2023 — 75000 km — DMC Drogenbos — brake pad front — € 292,79",
-      "23/08/2022 — 62642 km — DMC Drogenbos — Small parts and eco — € 18,45",
-      "23/08/2022 — 62642 km — DMC Drogenbos — cooling water liquid — € 2,86",
-      "23/08/2022 — 62642 km — DMC Drogenbos — fuel filter cartridge — € 141,96",
-      "23/08/2022 — 62642 km — DMC Drogenbos — battery remote wireless — € 10,01",
-      "23/08/2022 — 62642 km — DMC Drogenbos — windscreen washer fluid — € 7,56",
-      "23/08/2022 — 62642 km — DMC Drogenbos — 0109 - Maintenance with oil change — € 316,57",
-      "23/08/2022 — 62642 km — DMC Drogenbos — wiper blade front — € 54,36",
-      "23/08/2022 — 62642 km — DMC Drogenbos — gearbox oil — € 216,84",
-      "19/07/2022 — 60748 km — EC Espace Pneus — summer tires — € 311,00",
-      "19/07/2022 — 60748 km — EC Espace Pneus — tire storage (LUX) — € 20,00",
-      "19/07/2022 — 60748 km — EC Espace Pneus — wheel balancing (tire center) — € 28,72",
-      "19/07/2022 — 60748 km — EC Espace Pneus — tire change summer/winter — € 42,00",
-      "29/12/2021 — 48093 km — EC Espace Pneus — wheel balancing (tire center) — € 26,72",
-      "29/12/2021 — 48093 km — EC Espace Pneus — tire change summer/winter — € 0,00",
-      "29/12/2021 — 48093 km — EC Espace Pneus — wheel balancing (tire center) — € 26,72",
-      "29/12/2021 — 48093 km — EC Espace Pneus — winter tires — € 326,00",
-      "29/12/2021 — 48093 km — EC Espace Pneus — winter tires — € 326,00",
-      "29/12/2021 — 48093 km — EC Espace Pneus — wheel alignment front/rear (tire center) — € 55,00",
-      "30/07/2021 — 33111 km — EC Espace Pneus — summer tires — € 223,92",
-      "30/07/2021 — 33111 km — EC Espace Pneus — wheel balancing (tire center) — € 0,00",
-      "28/07/2021 — 33095 km — DMC Drogenbos — AdBlue refilling (except Elolys) — € 11,43",
-      "28/07/2021 — 33095 km — DMC Drogenbos — brake fluid — € 46,07",
-      "28/07/2021 — 33095 km — DMC Drogenbos — cabin air filter — € 99,99",
-      "28/07/2021 — 33095 km — DMC Drogenbos — Small parts and eco — € 18,01",
-      "28/07/2021 — 33095 km — DMC Drogenbos — 0109 - Maintenance with oil change — € 296,19",
-      "28/07/2021 — 33095 km — DMC Drogenbos — windscreen washer fluid — € 2,00"
+      {
+        "raw": "24/12/2024 — 122381 km — Boel Marc bvba — car battery — € 273,10",
+        "date": "24/12/2024",
+        "km": 122381,
+        "shop": "Boel Marc bvba",
+        "price": 273.1,
+        "description": "car battery"
+      },
+      {
+        "raw": "29/11/2024 — 120900 km — S.B.A.T. — payment technical check — € 43,96",
+        "date": "29/11/2024",
+        "km": 120900,
+        "shop": "S.B.A.T.",
+        "price": 43.96,
+        "description": "payment technical check"
+      },
+      {
+        "raw": "29/11/2024 — 120946 km — TSE Labrum St-Niklaas — tire storage (LUX) — € 16,00",
+        "date": "29/11/2024",
+        "km": 120946,
+        "shop": "TSE Labrum St-Niklaas",
+        "price": 16,
+        "description": "tire storage (LUX)"
+      },
+      {
+        "raw": "29/11/2024 — 120946 km — TSE Labrum St-Niklaas — tire change summer/winter — € 72,00",
+        "date": "29/11/2024",
+        "km": 120946,
+        "shop": "TSE Labrum St-Niklaas",
+        "price": 72,
+        "description": "tire change summer/winter"
+      },
+      {
+        "raw": "26/11/2024 — 120896 km — Garage Mertens Audi — diagnosis — € 93,81",
+        "date": "26/11/2024",
+        "km": 120896,
+        "shop": "Garage Mertens Audi",
+        "price": 93.81,
+        "description": "diagnosis"
+      },
+      {
+        "raw": "26/11/2024 — 120900 km — Enes Tasdemir — AdBlue or additive tank — € 0,00",
+        "date": "26/11/2024",
+        "km": 120900,
+        "shop": "Enes Tasdemir",
+        "price": 0,
+        "description": "AdBlue or additive tank"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — brake discs and shoes front — € 637,97",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 637.97,
+        "description": "brake discs and shoes front"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — AdBlue refilling (except Elolys) — € 20,00",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 20,
+        "description": "AdBlue refilling (except Elolys)"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — brake discs and shoes rear — € 571,69",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 571.69,
+        "description": "brake discs and shoes rear"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — gearbox oil — € 203,47",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 203.47,
+        "description": "gearbox oil"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — cooling water liquid — € 3,24",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 3.24,
+        "description": "cooling water liquid"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — Small parts and eco — € 26,45",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 26.45,
+        "description": "Small parts and eco"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — fuel filter cartridge — € 153,17",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 153.17,
+        "description": "fuel filter cartridge"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — 0109 - Maintenance with oil change — € 341,67",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 341.67,
+        "description": "0109 - Maintenance with oil change"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — wiper blade front — € 55,68",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 55.68,
+        "description": "wiper blade front"
+      },
+      {
+        "raw": "15/11/2024 — 120038 km — Garage Mertens Audi — windscreen washer fluid — € 9,00",
+        "date": "15/11/2024",
+        "km": 120038,
+        "shop": "Garage Mertens Audi",
+        "price": 9,
+        "description": "windscreen washer fluid"
+      },
+      {
+        "raw": "31/05/2024 — 110155 km — TSE Labrum St-Niklaas — tire storage (LUX) — € 16,00",
+        "date": "31/05/2024",
+        "km": 110155,
+        "shop": "TSE Labrum St-Niklaas",
+        "price": 16,
+        "description": "tire storage (LUX)"
+      },
+      {
+        "raw": "31/05/2024 — 110155 km — TSE Labrum St-Niklaas — tire change summer/winter — € 72,00",
+        "date": "31/05/2024",
+        "km": 110155,
+        "shop": "TSE Labrum St-Niklaas",
+        "price": 72,
+        "description": "tire change summer/winter"
+      },
+      {
+        "raw": "29/12/2023 — 98275 km — S.B.A.T. — payment technical check — € 12,64",
+        "date": "29/12/2023",
+        "km": 98275,
+        "shop": "S.B.A.T.",
+        "price": 12.64,
+        "description": "payment technical check"
+      },
+      {
+        "raw": "18/12/2023 — 98275 km — TSE Labrum St-Niklaas — tire change summer/winter — € 72,00",
+        "date": "18/12/2023",
+        "km": 98275,
+        "shop": "TSE Labrum St-Niklaas",
+        "price": 72,
+        "description": "tire change summer/winter"
+      },
+      {
+        "raw": "18/12/2023 — 98275 km — TSE Labrum St-Niklaas — tire storage (LUX) — € 16,00",
+        "date": "18/12/2023",
+        "km": 98275,
+        "shop": "TSE Labrum St-Niklaas",
+        "price": 16,
+        "description": "tire storage (LUX)"
+      },
+      {
+        "raw": "11/12/2023 — 98003 km — Garage Mertens Audi — shock absorber rear — € 758,77",
+        "date": "11/12/2023",
+        "km": 98003,
+        "shop": "Garage Mertens Audi",
+        "price": 758.77,
+        "description": "shock absorber rear"
+      },
+      {
+        "raw": "11/12/2023 — 98003 km — Garage Mertens Audi — Small parts and eco — € 18,45",
+        "date": "11/12/2023",
+        "km": 98003,
+        "shop": "Garage Mertens Audi",
+        "price": 18.45,
+        "description": "Small parts and eco"
+      },
+      {
+        "raw": "11/12/2023 — 98003 km — Garage Mertens Audi — small parts — € 0,00",
+        "date": "11/12/2023",
+        "km": 98003,
+        "shop": "Garage Mertens Audi",
+        "price": 0,
+        "description": "small parts"
+      },
+      {
+        "raw": "30/11/2023 — 92610 km — S.B.A.T. — payment technical check — € 47,68",
+        "date": "30/11/2023",
+        "km": 92610,
+        "shop": "S.B.A.T.",
+        "price": 47.68,
+        "description": "payment technical check"
+      },
+      {
+        "raw": "15/11/2023 — 92610 km — On Time Distribution — . — € 62,20",
+        "date": "15/11/2023",
+        "km": 92610,
+        "shop": "On Time Distribution",
+        "price": 62.2,
+        "description": "."
+      },
+      {
+        "raw": "15/11/2023 — 92610 km — On Time Distribution — Tire transfer BTT — € 0,00",
+        "date": "15/11/2023",
+        "km": 92610,
+        "shop": "On Time Distribution",
+        "price": 0,
+        "description": "Tire transfer BTT"
+      },
+      {
+        "raw": "15/11/2023 — 92610 km — On Time Distribution — . — € 62,20",
+        "date": "15/11/2023",
+        "km": 92610,
+        "shop": "On Time Distribution",
+        "price": 62.2,
+        "description": "."
+      },
+      {
+        "raw": "18/09/2023 — 92610 km — EC Espace Pneus — wheel balancing (tire center) — € 0,00",
+        "date": "18/09/2023",
+        "km": 92610,
+        "shop": "EC Espace Pneus",
+        "price": 0,
+        "description": "wheel balancing (tire center)"
+      },
+      {
+        "raw": "18/09/2023 — 92610 km — EC Espace Pneus — summer tires — € 78,21",
+        "date": "18/09/2023",
+        "km": 92610,
+        "shop": "EC Espace Pneus",
+        "price": 78.21,
+        "description": "summer tires"
+      },
+      {
+        "raw": "11/08/2023 — 90254 km — DMC Drogenbos — windscreen washer fluid — € 2,52",
+        "date": "11/08/2023",
+        "km": 90254,
+        "shop": "DMC Drogenbos",
+        "price": 2.52,
+        "description": "windscreen washer fluid"
+      },
+      {
+        "raw": "11/08/2023 — 90254 km — DMC Drogenbos — battery remote wireless — € 11,24",
+        "date": "11/08/2023",
+        "km": 90254,
+        "shop": "DMC Drogenbos",
+        "price": 11.24,
+        "description": "battery remote wireless"
+      },
+      {
+        "raw": "11/08/2023 — 90254 km — DMC Drogenbos — Small parts and eco — € 18,45",
+        "date": "11/08/2023",
+        "km": 90254,
+        "shop": "DMC Drogenbos",
+        "price": 18.45,
+        "description": "Small parts and eco"
+      },
+      {
+        "raw": "11/08/2023 — 90254 km — DMC Drogenbos — air filter — € 65,89",
+        "date": "11/08/2023",
+        "km": 90254,
+        "shop": "DMC Drogenbos",
+        "price": 65.89,
+        "description": "air filter"
+      },
+      {
+        "raw": "11/08/2023 — 90254 km — DMC Drogenbos — cooling water liquid — € 3,42",
+        "date": "11/08/2023",
+        "km": 90254,
+        "shop": "DMC Drogenbos",
+        "price": 3.42,
+        "description": "cooling water liquid"
+      },
+      {
+        "raw": "11/08/2023 — 90254 km — DMC Drogenbos — brake fluid — € 51,06",
+        "date": "11/08/2023",
+        "km": 90254,
+        "shop": "DMC Drogenbos",
+        "price": 51.06,
+        "description": "brake fluid"
+      },
+      {
+        "raw": "11/08/2023 — 90254 km — DMC Drogenbos — 0109 - Maintenance with oil change — € 333,60",
+        "date": "11/08/2023",
+        "km": 90254,
+        "shop": "DMC Drogenbos",
+        "price": 333.6,
+        "description": "0109 - Maintenance with oil change"
+      },
+      {
+        "raw": "11/08/2023 — 90254 km — DMC Drogenbos — cabin air filter — € 104,32",
+        "date": "11/08/2023",
+        "km": 90254,
+        "shop": "DMC Drogenbos",
+        "price": 104.32,
+        "description": "cabin air filter"
+      },
+      {
+        "raw": "24/03/2023 — 75000 km — DMC Drogenbos — brake pad rear — € 372,95",
+        "date": "24/03/2023",
+        "km": 75000,
+        "shop": "DMC Drogenbos",
+        "price": 372.95,
+        "description": "brake pad rear"
+      },
+      {
+        "raw": "24/03/2023 — 75000 km — DMC Drogenbos — check up levels — € 17,36",
+        "date": "24/03/2023",
+        "km": 75000,
+        "shop": "DMC Drogenbos",
+        "price": 17.36,
+        "description": "check up levels"
+      },
+      {
+        "raw": "24/03/2023 — 75000 km — DMC Drogenbos — windscreen washer fluid — € 2,10",
+        "date": "24/03/2023",
+        "km": 75000,
+        "shop": "DMC Drogenbos",
+        "price": 2.1,
+        "description": "windscreen washer fluid"
+      },
+      {
+        "raw": "24/03/2023 — 75000 km — DMC Drogenbos — Small parts and eco — € 18,45",
+        "date": "24/03/2023",
+        "km": 75000,
+        "shop": "DMC Drogenbos",
+        "price": 18.45,
+        "description": "Small parts and eco"
+      },
+      {
+        "raw": "24/03/2023 — 75000 km — DMC Drogenbos — brake pad front — € 292,79",
+        "date": "24/03/2023",
+        "km": 75000,
+        "shop": "DMC Drogenbos",
+        "price": 292.79,
+        "description": "brake pad front"
+      },
+      {
+        "raw": "23/08/2022 — 62642 km — DMC Drogenbos — Small parts and eco — € 18,45",
+        "date": "23/08/2022",
+        "km": 62642,
+        "shop": "DMC Drogenbos",
+        "price": 18.45,
+        "description": "Small parts and eco"
+      },
+      {
+        "raw": "23/08/2022 — 62642 km — DMC Drogenbos — cooling water liquid — € 2,86",
+        "date": "23/08/2022",
+        "km": 62642,
+        "shop": "DMC Drogenbos",
+        "price": 2.86,
+        "description": "cooling water liquid"
+      },
+      {
+        "raw": "23/08/2022 — 62642 km — DMC Drogenbos — fuel filter cartridge — € 141,96",
+        "date": "23/08/2022",
+        "km": 62642,
+        "shop": "DMC Drogenbos",
+        "price": 141.96,
+        "description": "fuel filter cartridge"
+      },
+      {
+        "raw": "23/08/2022 — 62642 km — DMC Drogenbos — battery remote wireless — € 10,01",
+        "date": "23/08/2022",
+        "km": 62642,
+        "shop": "DMC Drogenbos",
+        "price": 10.01,
+        "description": "battery remote wireless"
+      },
+      {
+        "raw": "23/08/2022 — 62642 km — DMC Drogenbos — windscreen washer fluid — € 7,56",
+        "date": "23/08/2022",
+        "km": 62642,
+        "shop": "DMC Drogenbos",
+        "price": 7.56,
+        "description": "windscreen washer fluid"
+      },
+      {
+        "raw": "23/08/2022 — 62642 km — DMC Drogenbos — 0109 - Maintenance with oil change — € 316,57",
+        "date": "23/08/2022",
+        "km": 62642,
+        "shop": "DMC Drogenbos",
+        "price": 316.57,
+        "description": "0109 - Maintenance with oil change"
+      },
+      {
+        "raw": "23/08/2022 — 62642 km — DMC Drogenbos — wiper blade front — € 54,36",
+        "date": "23/08/2022",
+        "km": 62642,
+        "shop": "DMC Drogenbos",
+        "price": 54.36,
+        "description": "wiper blade front"
+      },
+      {
+        "raw": "23/08/2022 — 62642 km — DMC Drogenbos — gearbox oil — € 216,84",
+        "date": "23/08/2022",
+        "km": 62642,
+        "shop": "DMC Drogenbos",
+        "price": 216.84,
+        "description": "gearbox oil"
+      },
+      {
+        "raw": "19/07/2022 — 60748 km — EC Espace Pneus — summer tires — € 311,00",
+        "date": "19/07/2022",
+        "km": 60748,
+        "shop": "EC Espace Pneus",
+        "price": 311,
+        "description": "summer tires"
+      },
+      {
+        "raw": "19/07/2022 — 60748 km — EC Espace Pneus — tire storage (LUX) — € 20,00",
+        "date": "19/07/2022",
+        "km": 60748,
+        "shop": "EC Espace Pneus",
+        "price": 20,
+        "description": "tire storage (LUX)"
+      },
+      {
+        "raw": "19/07/2022 — 60748 km — EC Espace Pneus — wheel balancing (tire center) — € 28,72",
+        "date": "19/07/2022",
+        "km": 60748,
+        "shop": "EC Espace Pneus",
+        "price": 28.72,
+        "description": "wheel balancing (tire center)"
+      },
+      {
+        "raw": "19/07/2022 — 60748 km — EC Espace Pneus — tire change summer/winter — € 42,00",
+        "date": "19/07/2022",
+        "km": 60748,
+        "shop": "EC Espace Pneus",
+        "price": 42,
+        "description": "tire change summer/winter"
+      },
+      {
+        "raw": "29/12/2021 — 48093 km — EC Espace Pneus — wheel balancing (tire center) — € 26,72",
+        "date": "29/12/2021",
+        "km": 48093,
+        "shop": "EC Espace Pneus",
+        "price": 26.72,
+        "description": "wheel balancing (tire center)"
+      },
+      {
+        "raw": "29/12/2021 — 48093 km — EC Espace Pneus — tire change summer/winter — € 0,00",
+        "date": "29/12/2021",
+        "km": 48093,
+        "shop": "EC Espace Pneus",
+        "price": 0,
+        "description": "tire change summer/winter"
+      },
+      {
+        "raw": "29/12/2021 — 48093 km — EC Espace Pneus — wheel balancing (tire center) — € 26,72",
+        "date": "29/12/2021",
+        "km": 48093,
+        "shop": "EC Espace Pneus",
+        "price": 26.72,
+        "description": "wheel balancing (tire center)"
+      },
+      {
+        "raw": "29/12/2021 — 48093 km — EC Espace Pneus — winter tires — € 326,00",
+        "date": "29/12/2021",
+        "km": 48093,
+        "shop": "EC Espace Pneus",
+        "price": 326,
+        "description": "winter tires"
+      },
+      {
+        "raw": "29/12/2021 — 48093 km — EC Espace Pneus — winter tires — € 326,00",
+        "date": "29/12/2021",
+        "km": 48093,
+        "shop": "EC Espace Pneus",
+        "price": 326,
+        "description": "winter tires"
+      },
+      {
+        "raw": "29/12/2021 — 48093 km — EC Espace Pneus — wheel alignment front/rear (tire center) — € 55,00",
+        "date": "29/12/2021",
+        "km": 48093,
+        "shop": "EC Espace Pneus",
+        "price": 55,
+        "description": "wheel alignment front/rear (tire center)"
+      },
+      {
+        "raw": "30/07/2021 — 33111 km — EC Espace Pneus — summer tires — € 223,92",
+        "date": "30/07/2021",
+        "km": 33111,
+        "shop": "EC Espace Pneus",
+        "price": 223.92,
+        "description": "summer tires"
+      },
+      {
+        "raw": "30/07/2021 — 33111 km — EC Espace Pneus — wheel balancing (tire center) — € 0,00",
+        "date": "30/07/2021",
+        "km": 33111,
+        "shop": "EC Espace Pneus",
+        "price": 0,
+        "description": "wheel balancing (tire center)"
+      },
+      {
+        "raw": "28/07/2021 — 33095 km — DMC Drogenbos — AdBlue refilling (except Elolys) — € 11,43",
+        "date": "28/07/2021",
+        "km": 33095,
+        "shop": "DMC Drogenbos",
+        "price": 11.43,
+        "description": "AdBlue refilling (except Elolys)"
+      },
+      {
+        "raw": "28/07/2021 — 33095 km — DMC Drogenbos — brake fluid — € 46,07",
+        "date": "28/07/2021",
+        "km": 33095,
+        "shop": "DMC Drogenbos",
+        "price": 46.07,
+        "description": "brake fluid"
+      },
+      {
+        "raw": "28/07/2021 — 33095 km — DMC Drogenbos — cabin air filter — € 99,99",
+        "date": "28/07/2021",
+        "km": 33095,
+        "shop": "DMC Drogenbos",
+        "price": 99.99,
+        "description": "cabin air filter"
+      },
+      {
+        "raw": "28/07/2021 — 33095 km — DMC Drogenbos — Small parts and eco — € 18,01",
+        "date": "28/07/2021",
+        "km": 33095,
+        "shop": "DMC Drogenbos",
+        "price": 18.01,
+        "description": "Small parts and eco"
+      },
+      {
+        "raw": "28/07/2021 — 33095 km — DMC Drogenbos — 0109 - Maintenance with oil change — € 296,19",
+        "date": "28/07/2021",
+        "km": 33095,
+        "shop": "DMC Drogenbos",
+        "price": 296.19,
+        "description": "0109 - Maintenance with oil change"
+      },
+      {
+        "raw": "28/07/2021 — 33095 km — DMC Drogenbos — windscreen washer fluid — € 2,00",
+        "date": "28/07/2021",
+        "km": 33095,
+        "shop": "DMC Drogenbos",
+        "price": 2,
+        "description": "windscreen washer fluid"
+      }
     ]
   },
   {

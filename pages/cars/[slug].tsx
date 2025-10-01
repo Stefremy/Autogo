@@ -372,17 +372,17 @@ export default function CarDetail() {
     return n !== null ? n.toLocaleString() : "-";
   };
 
-  // Fun facts dinâmicos
+  // Try to derive a full model label (prefer explicit fullModel, otherwise use the leading part of description)
+  const fullModelCandidate = (car as any).fullModel
+    || (car.description ? String(car.description).split(/[,.;]/)[0].trim() : null);
+
+  // Fun facts dinâmicos (include full model + description when available, de-duplicated)
   const funFacts = [
-    car?.engineSize &&
-      car.engineSize.includes("1.2") &&
-      "Motor premiado pela eficiência na Europa.",
-    car?.fuel &&
-      car.fuel === "Gasolina" &&
-      "ISV reduzido devido às baixas emissões.",
-    car?.power &&
-      Number(car.power.replace(/\D/g, "")) > 100 &&
-      "Performance de referência para o segmento.",
+    fullModelCandidate ? `Modelo: ${fullModelCandidate}` : null,
+    car.description && car.description !== fullModelCandidate ? car.description : null,
+    car?.engineSize && car.engineSize.includes("1.2") && "Motor premiado pela eficiência na Europa.",
+    car?.fuel && car.fuel === "Gasolina" && "ISV reduzido devido às baixas emissões.",
+    car?.power && Number(String(car.power).replace(/\D/g, "")) > 100 && "Performance de referência para o segmento.",
     "Disponível com Apple CarPlay / Android Auto.",
     car?.country === "FR" && "Tecnologia inspirada pelo legado Citroën no WRC.",
   ].filter(Boolean);
