@@ -245,6 +245,74 @@ async function commitSlimWithRetry(repo: string, filePathInRepo: string, newCar:
   }
 }
 
+async function commitArrayWithRetry(repo: string, filePathInRepo: string, items: AnyObject[], message = 'Update data', maxAttempts = 5) {
+  const apiBase = `https://api.github.com/repos/${repo}/contents/${filePathInRepo}`;
+  const headers = {
+    'Authorization': `token ${GITHUB_TOKEN}`,
+    'User-Agent': 'autogo-api',
+    'Accept': 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json',
+  };
+  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const getResp = await fetch(apiBase + `?ref=${encodeURIComponent(GITHUB_BRANCH)}`, { headers });
+      let remoteArr: AnyObject[] = [];
+      let sha: string | undefined;
+      if (getResp.status === 200) {
+        const existing = await getResp.json();
+        sha = existing.sha;
+        try {
+          const raw = Buffer.from(existing.content || '', existing.encoding || 'base64').toString('utf-8');
+          const parsed = JSON.parse(raw);
+          remoteArr = Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+          remoteArr = [];
+        }
+      } else if (getResp.status === 404) {
+        remoteArr = [];
+      } else {
+        const txt = await getResp.text().catch(() => '');
+        throw new Error(`Failed to fetch remote file: status ${getResp.status} ${txt}`);
+      }
+
+      // Merge items into remoteArr by id (replace or append)
+      const byId = new Map<string, AnyObject>();
+      remoteArr.forEach((r) => { if (r && r.id) byId.set(String(r.id), r); });
+      items.forEach((it) => { if (it && it.id) {
+        const id = String(it.id);
+        const existing = byId.get(id) || {};
+        byId.set(id, { ...existing, ...it });
+      }});
+      const merged = Array.from(byId.values());
+
+      const payload = JSON.stringify(merged, null, 2);
+      const b64 = Buffer.from(payload, 'utf-8').toString('base64');
+
+      const body: any = { message, content: b64, branch: GITHUB_BRANCH };
+      if (sha) body.sha = sha;
+
+      const putResp = await fetch(apiBase, { method: 'PUT', headers, body: JSON.stringify(body) });
+      const putResult = await putResp.json().catch(() => ({}));
+      if (putResp.ok) return { result: putResult, attempts: attempt };
+
+      const errMsg = JSON.stringify(putResult || {});
+      if (putResp.status === 409 || errMsg.includes('sha') || errMsg.includes('merge')) {
+        const backoff = Math.min(2000 * attempt, 10000);
+        await sleep(backoff + Math.floor(Math.random() * 200));
+        continue; // retry
+      }
+
+      throw new Error(`GitHub PUT failed: ${putResp.status} ${errMsg}`);
+    } catch (err) {
+      if (attempt === maxAttempts) throw err;
+      const backoff = Math.min(500 * attempt, 3000);
+      await sleep(backoff + Math.floor(Math.random() * 100));
+    }
+  }
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const method = req.method || 'GET';
   try {
@@ -471,10 +539,36 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // If GitHub configured, attempt to commit both files (full + slim)
         if (GITHUB_TOKEN && GITHUB_REPO) {
           try {
-            await commitToGitHub(GITHUB_REPO, 'data/cars.full.json', Buffer.from(JSON.stringify(fullUpdated, null, 2), 'utf-8'), `Soft-remove car ${id} in full dataset via API`);
-            await commitToGitHub(GITHUB_REPO, 'data/cars.json', Buffer.from(JSON.stringify(filtered, null, 2), 'utf-8'), `Remove car ${id} from slim dataset via API`);
-            responseEnvelope.summary = `Committed both data/cars.full.json and data/cars.json to ${GITHUB_REPO}`;
-            responseEnvelope.committed = true;
+            // Commit full dataset using merge+retry so we don't clobber remote changes
+            let fullCommitInfo: any = null;
+            try {
+              fullCommitInfo = await commitArrayWithRetry(GITHUB_REPO, 'data/cars.full.json', fullUpdated, `Soft-remove car ${id} in full dataset via API`, 5);
+            } catch (e) {
+              responseEnvelope.fullCommitError = String(e);
+            }
+
+            // Commit slim dataset using existing commitSlimWithRetry (merge+retry for slim)
+            let slimCommitInfo: any = null;
+            try {
+              slimCommitInfo = await commitSlimWithRetry(GITHUB_REPO, 'data/cars.json', null as any, `Remove car ${id} from slim dataset via API`, 5);
+              // Note: commitSlimWithRetry expects a car object to merge; for deletes we supply null to trigger a fetch+write of filtered content below
+            } catch (e) {
+              // Fallback: perform a direct commit of the filtered slim array using commitArrayWithRetry
+              try {
+                slimCommitInfo = await commitArrayWithRetry(GITHUB_REPO, 'data/cars.json', filtered, `Remove car ${id} from slim dataset via API`, 5);
+              } catch (ee) {
+                responseEnvelope.slimCommitError = String(ee);
+              }
+            }
+
+            if (fullCommitInfo || slimCommitInfo) {
+              responseEnvelope.summary = `Committed updates to ${GITHUB_REPO}`;
+              responseEnvelope.committed = true;
+              if (fullCommitInfo) responseEnvelope.fullCommitAttempts = fullCommitInfo.attempts || 1;
+              if (slimCommitInfo) responseEnvelope.slimCommitAttempts = slimCommitInfo.attempts || 1;
+            } else {
+              responseEnvelope.committed = false;
+            }
           } catch (e) {
             console.error('GitHub commit during delete failed', e);
             responseEnvelope.commitError = String(e);
