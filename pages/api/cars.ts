@@ -171,6 +171,80 @@ function runBackgroundScripts() {
   }
 }
 
+async function commitSlimWithRetry(repo: string, filePathInRepo: string, newCar: AnyObject, message = 'Update data', maxAttempts = 5) {
+  const apiBase = `https://api.github.com/repos/${repo}/contents/${filePathInRepo}`;
+  const headers = {
+    'Authorization': `token ${GITHUB_TOKEN}`,
+    'User-Agent': 'autogo-api',
+    'Accept': 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json',
+  };
+
+  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      // Fetch current remote file (if exists)
+      const getResp = await fetch(apiBase + `?ref=${encodeURIComponent(GITHUB_BRANCH)}`, { headers });
+      let remoteArr: AnyObject[] = [];
+      let sha: string | undefined;
+      if (getResp.status === 200) {
+        const existing = await getResp.json();
+        sha = existing.sha;
+        try {
+          const raw = Buffer.from(existing.content || '', existing.encoding || 'base64').toString('utf-8');
+          const parsed = JSON.parse(raw);
+          remoteArr = Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+          // if parse fails, treat as empty array
+          remoteArr = [];
+        }
+      } else if (getResp.status === 404) {
+        remoteArr = [];
+      } else {
+        // unexpected status, throw to trigger retry
+        const txt = await getResp.text().catch(() => '');
+        throw new Error(`Failed to fetch remote file: status ${getResp.status} ${txt}`);
+      }
+
+      // Merge new car (dedupe by id)
+      const id = String(newCar.id);
+      const idx = remoteArr.findIndex((c: AnyObject) => String(c.id) === id);
+      if (idx >= 0) {
+        remoteArr[idx] = { ...remoteArr[idx], ...newCar };
+      } else {
+        remoteArr.push(newCar);
+      }
+
+      const payload = JSON.stringify(remoteArr, null, 2);
+      const b64 = Buffer.from(payload, 'utf-8').toString('base64');
+
+      const body: any = { message, content: b64, branch: GITHUB_BRANCH };
+      if (sha) body.sha = sha;
+
+      const putResp = await fetch(apiBase, { method: 'PUT', headers, body: JSON.stringify(body) });
+      const putResult = await putResp.json().catch(() => ({}));
+      if (putResp.ok) return putResult;
+
+      // If the error suggests a sha conflict or remote changed, retry
+      const errMsg = JSON.stringify(putResult || {});
+      if (putResp.status === 409 || errMsg.includes('sha') || errMsg.includes('merge')) {
+        const backoff = Math.min(2000 * attempt, 10000);
+        await sleep(backoff + Math.floor(Math.random() * 200));
+        continue; // retry loop
+      }
+
+      // Non-retryable error
+      throw new Error(`GitHub PUT failed: ${putResp.status} ${errMsg}`);
+    } catch (err) {
+      if (attempt === maxAttempts) throw err;
+      const backoff = Math.min(500 * attempt, 3000);
+      await sleep(backoff + Math.floor(Math.random() * 100));
+      // continue to next attempt
+    }
+  }
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const method = req.method || 'GET';
   try {
@@ -248,12 +322,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         console.warn('Initial local write to data/cars.json failed', e);
       }
 
-      // If GitHub token + repo configured, attempt to commit only the slim file to repo using the prepared payload
+      // If GitHub token + repo configured, attempt to commit only the slim file to repo using a merge-and-retry approach
       if (GITHUB_TOKEN && GITHUB_REPO) {
         try {
           const commitMsg = `Add car ${newId} via API`;
-          const resultSlim = await commitToGitHub(GITHUB_REPO, 'data/cars.json', Buffer.from(payloadSlimLocal, 'utf-8'), commitMsg);
-          envelope.summary = `Committed to GitHub repo ${GITHUB_REPO} (data/cars.json)`;
+          const resultSlim = await commitSlimWithRetry(GITHUB_REPO, 'data/cars.json', newCar, commitMsg, 5);
+          envelope.summary = `Committed merged car to GitHub repo ${GITHUB_REPO} (data/cars.json)`;
 
           // Ensure runtime local file exists (in case commit path was used earlier)
           try {
@@ -288,7 +362,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
           return res.status(201).json(envelope);
         } catch (err) {
-          console.error('GitHub commit failed', err);
+          console.error('GitHub commit (merge+retry) failed', err);
           envelope.summary = `GitHub commit failed: ${String(err)}`;
           // Fall through to return local-written result or attempt fallback write
         }
