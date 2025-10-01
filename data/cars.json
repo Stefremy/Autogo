@@ -1244,15 +1244,15 @@
     ]
   },
   {
-    "id": "6370869",
-    "make": "Audi",
-    "model": "A3 Sportback 2.0 30 TDi Platinum",
-    "year": null,
+  "id": "6370869",
+  "make": "Audi",
+  "model": "A3 Sportback 2.0 30 TDi Platinum",
+  "year": 2021,
     "slug": "audi-a3-sportback-2-0-30-tdi-platinum-6370869",
     "price": 14500,
     "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_000.jpg",
     "description": "Audi A3 Sportback 2.0 30 TDi Platinum with LED-Matrix headlights, Virtual cockpit, Navigation Pro, Sport leather interior, KeylessGo, automatic dual-zone climate control, and parking sensors. This diesel saloon offers a manual gearbox with 6 gears, 116 hp (85 kW) power, and a 1968 CC engine. Equipped with high-value options like LED headlights, navigation system, sports interior and seats, adaptive lights, heated seats, cruise control, and multifunction steering wheel. Safety features include ABS, ESP, airbags front and side, immobilizer, Isofix anchor points, and fog lights. Multimedia options include Bluetooth, CD player, hands-free kit, MP3 interface, onboard computer, and radio. Exterior features alloy wheels and sports package. Additional options include luggage cover, particulate filter, traction control, and last service at 100,000 km. This vehicle is in good condition with a comprehensive equipment list and is ideal for those seeking a sporty and comfortable compact car.",
-    "mileage": null,
+    "mileage": 111221,
     "country": "BE",
     "status": null,
     "gearboxType": "Manual gearbox",
@@ -1263,7 +1263,7 @@
     "places": 5,
     "unitNumber": "",
     "origin": "Belgium",
-    "firstRegistration": null,
+  "firstRegistration": "26/05/2021",
     "doors": null,
     "fuel": "Diesel",
     "emissionClass": "Euro6",
@@ -1357,6 +1357,13 @@
         "Traction control"
       ]
     },
-    "maintenance": []
+    "maintenance": [
+      {
+        "km": 111221,
+        "date": "26/05/2021",
+        "description": "Maintenance record added",
+        "raw": "26/05/2021 111221 km Maintenance record added"
+      }
+    ]
   }
 ]
