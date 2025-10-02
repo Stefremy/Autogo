@@ -2667,5 +2667,94 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6354469",
+    "make": "Audi",
+    "model": "Q3 Sportback 1.5 35 TFSI",
+    "year": 2020,
+    "slug": "audi-q3-sportback-1-5-35-tfsi-2020-6354469",
+    "price": 28100,
+    "image": "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_020.jpg",
+    "description": "Audi Q3 Sportback 1.5 35 TFSI de 2020 com motor 1.5L a gasolina, 150 cv (110 kW), caixa automática e categoria SUV/Off-road. Equipado com faróis LED, sistema de navegação Virtual Navi-Pro, ar condicionado automático de duas zonas, controlo de cruzeiro, bancos aquecidos, vidros elétricos, sensor de luz e de chuva, volante multifunções e sistema start-stop. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e Isofix. Entre o equipamento multimédia destacam-se Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. Exterior com jantes de liga leve e controlo de tração. O veículo apresenta 150.000 km e está em bom estado, ideal para quem procura conforto, segurança e tecnologia num SUV compacto. Histórico de manutenção não disponível. Um modelo versátil e moderno, perfeito para condução urbana e viagens.",
+    "mileage": 150000,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.5",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "27/01/2020",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "135",
+    "color": "Grey",
+    "vin": "WAUZZZF38L1050188",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6354469/photo_004.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado automático (2 zonas)",
+        "Controlo de cruzeiro",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
