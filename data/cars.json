@@ -6034,5 +6034,102 @@
         "raw": "25/01/2024 14550 km COURTOIS AUTOMOBILES Révision € 1,00"
       }
     ]
+  },
+  {
+    "id": "6375854",
+    "make": "Mercedes",
+    "model": "C 300e Plug-In Hybrid AMG",
+    "year": 2020,
+    "slug": "mercedes-c-300e-plug-in-hybrid-amg-2020-6375854",
+    "price": 24800,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_000.jpg",
+    "description": "Este Mercedes C 300e Plug-In Hybrid AMG de 2020 combina potência e eficiência com um motor híbrido de 1991 cc e 320 cv (235 kW). Equipado com caixa automática e tecnologia LED-Multibeam, oferece uma condução confortável e segura. Destaca-se pelo sistema de navegação, áudio Burmester de alta performance, interior desportivo em pele e Alcantara, e uma vasta gama de opções de conforto como bancos aquecidos, ar condicionado automático de duas zonas, e sistema keyless go. A segurança é reforçada com ABS, ESP, múltiplos airbags e Isofix. O veículo apresenta um histórico de manutenção completo e encontra-se em excelente estado, ideal para quem procura um carro familiar com tecnologia avançada e design desportivo.",
+    "mileage": 141060,
+    "country": "DE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Estate Car",
+    "engineSize": "1991 cc",
+    "power": "320cv",
+    "places": 5,
+    "unitNumber": "6375854",
+    "origin": "Germany - MC Germany",
+    "firstRegistration": "2020-01-05",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "41",
+    "color": "Preto",
+    "vin": "W1K2052531G023537",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_021.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
