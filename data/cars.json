@@ -7199,5 +7199,105 @@
         "raw": "28/09/2023 18839 km Olio motore € 0,00"
       }
     ]
+  },
+  {
+    "id": "6417485",
+    "make": "MG",
+    "model": "EHS 1.5 PHEV Hybrid Luxury Aut.",
+    "year": 2022,
+    "slug": "mg-ehs-1-5-phev-hybrid-luxury-aut-2022-6417485",
+    "price": 17500,
+    "image": "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_004.jpg",
+    "description": "O MG EHS 1.5 PHEV Hybrid Luxury Automático de 2022 é um SUV híbrido plug-in que combina um motor de 1490 CC com 189 cv (139 kW) de potência, oferecendo uma condução eficiente e potente. Equipado com caixa automática e sistema híbrido (gasolina/eléctrico), este veículo destaca-se pelo seu teto panorâmico, sistema de navegação virtual, interior desportivo em pele e funcionalidades chave KeylessGo. O conforto é garantido com ar condicionado automático de duas zonas, vidros eléctricos, sensor de luz, sensor de chuva, cruise control e volante multifunções. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, imobilizador e sistema Isofix. A componente multimédia é completa com Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. O exterior é valorizado com jantes de liga leve e pacote desportivo, além de faróis LED e controlo de tracção. Com uma quilometragem de 125410 km e certificação Euro 6, este MG EHS apresenta um histórico de manutenção não especificado, sendo uma excelente opção para quem procura um SUV moderno, confortável e tecnologicamente avançado.",
+    "mileage": 125410,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.5",
+    "power": "189 Hp 139 kW",
+    "places": 5,
+    "unitNumber": "6397973",
+    "origin": "France - WALON Mitry-Mory",
+    "firstRegistration": "2022-04-01",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / eléctrico)",
+    "emissionClass": "Euro6",
+    "co2": "43",
+    "color": "Red",
+    "vin": "LSJA24396NN053424",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_024.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros eléctricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Faróis LED",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
