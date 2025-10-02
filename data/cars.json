@@ -2984,5 +2984,663 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6327776",
+    "make": "Audi",
+    "model": "A3 Limousine 1.5 35 TFSI S-Line",
+    "year": 2021,
+    "slug": "audi-a3-limousine-1-5-35-tfsi-s-line-6327776",
+    "price": 19300,
+    "image": "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_056.jpg",
+    "description": "Audi A3 Limousine 1.5 35 TFSI S-Line de 2021 com motor 1.5L a gasolina, potência de 116cv (85 kW), caixa manual de 6 velocidades. Equipado com faróis LED, sistema de navegação Virtual Navi-Pro, Keyless Go, ar condicionado automático de duas zonas, sensores de estacionamento, cruise control, sensores de luz e chuva, volante multifunções, sistema start-stop, entre outros. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Sistema multimédia com Bluetooth, leitor de CD, interface MP3 e computador de bordo. Exterior com jantes de liga leve e pacote desportivo. Histórico de manutenção completo com várias revisões e serviços realizados em oficinas reconhecidas, garantindo excelente estado de conservação e fiabilidade. Um veículo elegante, confortável e seguro, ideal para quem procura desempenho e tecnologia num sedan compacto.",
+    "mileage": 136448,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Saloon6",
+    "engineSize": "1.5",
+    "power": "116cv",
+    "places": 5,
+    "unitNumber": "6327776",
+    "origin": "Belgium - Machelen",
+    "firstRegistration": "18/06/2021",
+    "doors": 4,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "127",
+    "color": "Black",
+    "vin": "WAUZZZGYXMA121631",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_090.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6327776/photo_073.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Alarme",
+        "Jantes de liga leve",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "17/06/2025",
+        "km": 133390,
+        "shop": "Steveny Waterloo",
+        "description": "Substituição de lâmpada universal",
+        "price": 58.92,
+        "raw": "17/06/2025 133390 km Steveny Waterloo universal light bulb € 58,92"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Limpeza do ar condicionado",
+        "price": 48.76,
+        "raw": "16/04/2025 128696 km Steveny Waterloo air conditioning cleaning € 48,76"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Manutenção com troca de óleo",
+        "price": 354.95,
+        "raw": "16/04/2025 128696 km Steveny Waterloo 0109 - Maintenance with oil change € 354,95"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Filtro de ar",
+        "price": 49.45,
+        "raw": "16/04/2025 128696 km Steveny Waterloo air filter € 49,45"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Velas de ignição",
+        "price": 172.65,
+        "raw": "16/04/2025 128696 km Steveny Waterloo ignition spark € 172,65"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Peças pequenas e eco",
+        "price": 26.45,
+        "raw": "16/04/2025 128696 km Steveny Waterloo Small parts and eco € 26,45"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Discos e pastilhas de travão dianteiros",
+        "price": 0,
+        "raw": "16/04/2025 128696 km Steveny Waterloo brake discs and shoes front € 0,00"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Discos e pastilhas de travão traseiros",
+        "price": 544.2,
+        "raw": "16/04/2025 128696 km Steveny Waterloo brake discs and shoes rear € 544,20"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Fluido de travão",
+        "price": 104.46,
+        "raw": "16/04/2025 128696 km Steveny Waterloo brake fluid € 104,46"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Filtro de ar da cabine",
+        "price": 55.38,
+        "raw": "16/04/2025 128696 km Steveny Waterloo cabin air filter € 55,38"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 128696,
+        "shop": "Steveny Waterloo",
+        "description": "Check-up para inspeção técnica",
+        "price": 40.5,
+        "raw": "16/04/2025 128696 km Steveny Waterloo check up technical inspection € 40,50"
+      },
+      {
+        "date": "09/04/2025",
+        "km": 128185,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 20,
+        "raw": "09/04/2025 128185 km FSC Fleet Service Center tire storage (LUX) € 20,00"
+      },
+      {
+        "date": "09/04/2025",
+        "km": 128185,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 74,
+        "raw": "09/04/2025 128185 km FSC Fleet Service Center tire change summer/winter € 74,00"
+      },
+      {
+        "date": "09/04/2025",
+        "km": 128185,
+        "shop": "FSC Fleet Service Center",
+        "description": "Stock de salvados",
+        "price": 26,
+        "raw": "09/04/2025 128185 km FSC Fleet Service Center salvage stock € 26,00"
+      },
+      {
+        "date": "09/04/2025",
+        "km": 128185,
+        "shop": "FSC Fleet Service Center",
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 55.36,
+        "raw": "09/04/2025 128185 km FSC Fleet Service Center wiper blade front € 55,36"
+      },
+      {
+        "date": "04/04/2025",
+        "km": 127000,
+        "shop": "EC Bandencentrale Van Eetvelde",
+        "description": "Transferência de pneus sem custo",
+        "price": 30,
+        "raw": "04/04/2025 127000 km EC Bandencentrale Van Eetvelde Tire transfer no cost € 30,00"
+      },
+      {
+        "date": "04/04/2025",
+        "km": 127000,
+        "shop": "EC Bandencentrale Van Eetvelde",
+        "description": "Reciclagem de pneus (LUX)",
+        "price": 140,
+        "raw": "04/04/2025 127000 km EC Bandencentrale Van Eetvelde tire recycling (LUX) € 140,00"
+      },
+      {
+        "date": "06/01/2025",
+        "km": 119818,
+        "shop": "EC De Rudder Autocenter",
+        "description": "Pneus de inverno",
+        "price": 431,
+        "raw": "06/01/2025 119818 km EC De Rudder Autocenter winter tires € 431,00"
+      },
+      {
+        "date": "06/01/2025",
+        "km": 119818,
+        "shop": "EC De Rudder Autocenter",
+        "description": "Balanceamento de rodas (centro de pneus)",
+        "price": 32.52,
+        "raw": "06/01/2025 119818 km EC De Rudder Autocenter wheel balancing (tire center) € 32,52"
+      },
+      {
+        "date": "09/10/2024",
+        "km": 115984,
+        "shop": "FSC Fleet Service Center",
+        "description": "Stock de salvados",
+        "price": 26,
+        "raw": "09/10/2024 115984 km FSC Fleet Service Center salvage stock € 26,00"
+      },
+      {
+        "date": "09/10/2024",
+        "km": 115984,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 70,
+        "raw": "09/10/2024 115984 km FSC Fleet Service Center tire change summer/winter € 70,00"
+      },
+      {
+        "date": "09/10/2024",
+        "km": 115984,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 20,
+        "raw": "09/10/2024 115984 km FSC Fleet Service Center tire storage (LUX) € 20,00"
+      },
+      {
+        "date": "02/10/2024",
+        "km": 111592,
+        "shop": "Steveny Waterloo",
+        "description": "Painel de controlo do ar condicionado",
+        "price": 478.09,
+        "raw": "02/10/2024 111592 km Steveny Waterloo airco controlpanel € 478,09"
+      },
+      {
+        "date": "02/10/2024",
+        "km": 111592,
+        "shop": "Steveny Waterloo",
+        "description": "Revestimento do teto interior",
+        "price": 174.32,
+        "raw": "02/10/2024 111592 km Steveny Waterloo interior roof garniture € 174,32"
+      },
+      {
+        "date": "02/10/2024",
+        "km": 111592,
+        "shop": "Steveny Waterloo",
+        "description": "Peças pequenas e eco",
+        "price": 26.45,
+        "raw": "02/10/2024 111592 km Steveny Waterloo Small parts and eco € 26,45"
+      },
+      {
+        "date": "02/10/2024",
+        "km": 111592,
+        "shop": "Steveny Waterloo",
+        "description": "Diagnóstico",
+        "price": 117.26,
+        "raw": "02/10/2024 111592 km Steveny Waterloo diagnosis € 117,26"
+      },
+      {
+        "date": "26/08/2024",
+        "km": 105441,
+        "shop": "EC Bandencentrale Van Eetvelde",
+        "description": "Transferência de pneus sem custo",
+        "price": 30,
+        "raw": "26/08/2024 105441 km EC Bandencentrale Van Eetvelde Tire transfer no cost € 30,00"
+      },
+      {
+        "date": "26/08/2024",
+        "km": 105441,
+        "shop": "EC Bandencentrale Van Eetvelde",
+        "description": "Reciclagem de pneus (LUX)",
+        "price": 80,
+        "raw": "26/08/2024 105441 km EC Bandencentrale Van Eetvelde tire recycling (LUX) € 80,00"
+      },
+      {
+        "date": "28/06/2024",
+        "km": 104441,
+        "shop": "Steveny Waterloo",
+        "description": "Verificação dos níveis",
+        "price": 37.62,
+        "raw": "28/06/2024 104441 km Steveny Waterloo check up levels € 37,62"
+      },
+      {
+        "date": "28/06/2024",
+        "km": 104441,
+        "shop": "Steveny Waterloo",
+        "description": "Peças pequenas e eco",
+        "price": 16.62,
+        "raw": "28/06/2024 104441 km Steveny Waterloo Small parts and eco € 16,62"
+      },
+      {
+        "date": "28/06/2024",
+        "km": 104441,
+        "shop": "Steveny Waterloo",
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 74.43,
+        "raw": "28/06/2024 104441 km Steveny Waterloo wiper blade front € 74,43"
+      },
+      {
+        "date": "28/06/2024",
+        "km": 104441,
+        "shop": "Steveny Waterloo",
+        "description": "Bateria do comando remoto sem fios",
+        "price": 17.76,
+        "raw": "28/06/2024 104441 km Steveny Waterloo battery remote wireless € 17,76"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 96954,
+        "shop": "FSC Fleet Service Center",
+        "description": "Manutenção com troca de óleo",
+        "price": 249.28,
+        "raw": "28/03/2024 96954 km FSC Fleet Service Center 0109 - Maintenance with oil change € 249,28"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 96954,
+        "shop": "FSC Fleet Service Center",
+        "description": "Pneus de verão",
+        "price": 261,
+        "raw": "28/03/2024 96954 km FSC Fleet Service Center summer tires € 261,00"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 96954,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 10,
+        "raw": "28/03/2024 96954 km FSC Fleet Service Center tire storage (LUX) € 10,00"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 96954,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 35,
+        "raw": "28/03/2024 96954 km FSC Fleet Service Center tire change summer/winter € 35,00"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 96954,
+        "shop": "FSC Fleet Service Center",
+        "description": "Balanceamento de rodas (centro de pneus)",
+        "price": 32.52,
+        "raw": "28/03/2024 96954 km FSC Fleet Service Center wheel balancing (tire center) € 32,52"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 96954,
+        "shop": "FSC Fleet Service Center",
+        "description": "Peças pequenas e eco",
+        "price": 10,
+        "raw": "28/03/2024 96954 km FSC Fleet Service Center Small parts and eco € 10,00"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 96954,
+        "shop": "FSC Fleet Service Center",
+        "description": "Filtro de ar",
+        "price": 44.07,
+        "raw": "28/03/2024 96954 km FSC Fleet Service Center air filter € 44,07"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 96954,
+        "shop": "FSC Fleet Service Center",
+        "description": "Filtro de ar da cabine",
+        "price": 48.97,
+        "raw": "28/03/2024 96954 km FSC Fleet Service Center cabin air filter € 48,97"
+      },
+      {
+        "date": "07/02/2024",
+        "km": 83740,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 10,
+        "raw": "07/02/2024 83740 km FSC Fleet Service Center tire storage (LUX) € 10,00"
+      },
+      {
+        "date": "01/09/2023",
+        "km": 63214,
+        "shop": "Spacebel Vlaanderen",
+        "description": "Assistência no local",
+        "price": 490.05,
+        "raw": "01/09/2023 63214 km Spacebel Vlaanderen assistance on site € 490,05"
+      },
+      {
+        "date": "29/08/2023",
+        "km": 82240,
+        "shop": "Donckers Zaventem",
+        "description": "Balanceamento de rodas (centro de pneus)",
+        "price": 0,
+        "raw": "29/08/2023 82240 km Donckers Zaventem wheel balancing (tire center) € 0,00"
+      },
+      {
+        "date": "29/08/2023",
+        "km": 82240,
+        "shop": "Donckers Zaventem",
+        "description": "Pneus de inverno",
+        "price": 98.64,
+        "raw": "29/08/2023 82240 km Donckers Zaventem winter tires € 98,64"
+      },
+      {
+        "date": "30/03/2023",
+        "km": 63214,
+        "shop": "Overijse Automotive",
+        "description": "Pastilhas de travão traseiras",
+        "price": 281.59,
+        "raw": "30/03/2023 63214 km Overijse Automotive brake pad rear € 281,59"
+      },
+      {
+        "date": "30/03/2023",
+        "km": 63214,
+        "shop": "Overijse Automotive",
+        "description": "Bateria do comando remoto sem fios",
+        "price": 12.79,
+        "raw": "30/03/2023 63214 km Overijse Automotive battery remote wireless € 12,79"
+      },
+      {
+        "date": "30/03/2023",
+        "km": 63214,
+        "shop": "Overijse Automotive",
+        "description": "Peças pequenas e eco",
+        "price": 18.45,
+        "raw": "30/03/2023 63214 km Overijse Automotive Small parts and eco € 18,45"
+      },
+      {
+        "date": "30/03/2023",
+        "km": 63214,
+        "shop": "Overijse Automotive",
+        "description": "Velas de ignição",
+        "price": 167.45,
+        "raw": "30/03/2023 63214 km Overijse Automotive ignition spark € 167,45"
+      },
+      {
+        "date": "30/03/2023",
+        "km": 63214,
+        "shop": "Overijse Automotive",
+        "description": "Manutenção com troca de óleo",
+        "price": 339.76,
+        "raw": "30/03/2023 63214 km Overijse Automotive 0109 - Maintenance with oil change € 339,76"
+      },
+      {
+        "date": "30/03/2023",
+        "km": 63214,
+        "shop": "Overijse Automotive",
+        "description": "Pastilhas de travão dianteiras",
+        "price": 244.35,
+        "raw": "30/03/2023 63214 km Overijse Automotive brake pad front € 244,35"
+      },
+      {
+        "date": "30/03/2023",
+        "km": 63214,
+        "shop": "Overijse Automotive",
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 65.89,
+        "raw": "30/03/2023 63214 km Overijse Automotive wiper blade front € 65,89"
+      },
+      {
+        "date": "13/12/2022",
+        "km": 55613,
+        "shop": "FSC Fleet Service Center",
+        "description": "Verificação dos níveis",
+        "price": 43,
+        "raw": "13/12/2022 55613 km FSC Fleet Service Center check up levels € 43,00"
+      },
+      {
+        "date": "13/12/2022",
+        "km": 55613,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 70,
+        "raw": "13/12/2022 55613 km FSC Fleet Service Center tire change summer/winter € 70,00"
+      },
+      {
+        "date": "13/12/2022",
+        "km": 55613,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 20,
+        "raw": "13/12/2022 55613 km FSC Fleet Service Center tire storage (LUX) € 20,00"
+      },
+      {
+        "date": "24/05/2022",
+        "km": 34028,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 64,
+        "raw": "24/05/2022 34028 km FSC Fleet Service Center tire change summer/winter € 64,00"
+      },
+      {
+        "date": "24/05/2022",
+        "km": 34028,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 14,
+        "raw": "24/05/2022 34028 km FSC Fleet Service Center tire storage (LUX) € 14,00"
+      },
+      {
+        "date": "30/04/2022",
+        "km": 30741,
+        "shop": "Auto 5 Waterloo",
+        "description": "Balanceamento de rodas (centro de pneus)",
+        "price": 0,
+        "raw": "30/04/2022 30741 km Auto 5 Waterloo wheel balancing (tire center) € 0,00"
+      },
+      {
+        "date": "30/04/2022",
+        "km": 30741,
+        "shop": "Auto 5 Waterloo",
+        "description": "Pneus de inverno",
+        "price": 61.44,
+        "raw": "30/04/2022 30741 km Auto 5 Waterloo winter tires € 61,44"
+      },
+      {
+        "date": "24/03/2022",
+        "km": 25973,
+        "shop": "D'Ieteren Mobility Company",
+        "description": "Manutenção com troca de óleo",
+        "price": 288.27,
+        "raw": "24/03/2022 25973 km D'Ieteren Mobility Company 0109 - Maintenance with oil change € 288,27"
+      },
+      {
+        "date": "24/03/2022",
+        "km": 25973,
+        "shop": "D'Ieteren Mobility Company",
+        "description": "Fluido de travão",
+        "price": 91.08,
+        "raw": "24/03/2022 25973 km D'Ieteren Mobility Company brake fluid € 91,08"
+      },
+      {
+        "date": "24/03/2022",
+        "km": 25973,
+        "shop": "D'Ieteren Mobility Company",
+        "description": "Filtro de ar da cabine",
+        "price": 43.29,
+        "raw": "24/03/2022 25973 km D'Ieteren Mobility Company cabin air filter € 43,29"
+      },
+      {
+        "date": "24/03/2022",
+        "km": 25973,
+        "shop": "D'Ieteren Mobility Company",
+        "description": "Líquido para limpa para-brisas",
+        "price": 7.77,
+        "raw": "24/03/2022 25973 km D'Ieteren Mobility Company windscreen washer fluid € 7,77"
+      },
+      {
+        "date": "24/03/2022",
+        "km": 25973,
+        "shop": "D'Ieteren Mobility Company",
+        "description": "Peças pequenas e eco",
+        "price": 14.48,
+        "raw": "24/03/2022 25973 km D'Ieteren Mobility Company Small parts and eco € 14,48"
+      },
+      {
+        "date": "24/03/2022",
+        "km": 25973,
+        "shop": "D'Ieteren Mobility Company",
+        "description": "Líquido de refrigeração",
+        "price": 5.44,
+        "raw": "24/03/2022 25973 km D'Ieteren Mobility Company cooling water liquid € 5,44"
+      },
+      {
+        "date": "21/10/2021",
+        "km": 14395,
+        "shop": "FSC Fleet Service Center",
+        "description": "Balanceamento de rodas (centro de pneus)",
+        "price": 26.72,
+        "raw": "21/10/2021 14395 km FSC Fleet Service Center wheel balancing (tire center) € 26,72"
+      },
+      {
+        "date": "21/10/2021",
+        "km": 14395,
+        "shop": "FSC Fleet Service Center",
+        "description": "Pneus de inverno",
+        "price": 321,
+        "raw": "21/10/2021 14395 km FSC Fleet Service Center winter tires € 321,00"
+      },
+      {
+        "date": "21/10/2021",
+        "km": 14395,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 0,
+        "raw": "21/10/2021 14395 km FSC Fleet Service Center tire change summer/winter € 0,00"
+      },
+      {
+        "date": "21/10/2021",
+        "km": 14395,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 14,
+        "raw": "21/10/2021 14395 km FSC Fleet Service Center tire storage (LUX) € 14,00"
+      }
+    ]
   }
 ]
