@@ -7615,5 +7615,110 @@
         "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
       }
     ]
+  },
+  {
+    "id": "6400838",
+    "make": "BMW",
+    "model": "116i",
+    "year": 2020,
+    "slug": "bmw-116i-2020-6400838",
+    "price": 17900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_000.jpg",
+    "description": "Este BMW 116i de 2020 apresenta-se com motor Diesel de 1496 CC e potência de 116 Hp (85 kW). Equipado com caixa manual, faróis LED-Xenon, sistema de navegação, Keyless Go, ar condicionado automático de duas zonas, controlo de velocidade de cruzeiro, sensores de luz e chuva, volante multifunções, sistema start-stop, e jantes de liga leve com pintura metálica. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Sistema multimédia com Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. O veículo tem um histórico de manutenção completo e encontra-se em excelente estado, ideal para quem procura conforto, segurança e tecnologia num modelo compacto e eficiente.",
+    "mileage": 61979,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "1496 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "6390769",
+    "origin": "Belgium",
+    "firstRegistration": "25/08/2020",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "119",
+    "color": "Grey",
+    "vin": "WBA7M710807G60515",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400838/photo_032.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruzeiro",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica"
+      ],
+      "outras_opcoes": [
+        "Conectividade de fábrica",
+        "Opção áudio (de fábrica)",
+        "Câmara de marcha atrás",
+        "Chave principal",
+        "Chave reserva",
+        "Kit reparação de pneus",
+        "Manual de instruções",
+        "Livro de manutenção (digital)",
+        "Prateleira traseira/rolo",
+        "Filtro de partículas",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
