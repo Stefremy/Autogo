@@ -6896,5 +6896,115 @@
         "raw": "16/07/2021 13426 km FRS ABSENT Révision € 1,00"
       }
     ]
+  },
+  {
+    "id": "6373440",
+    "make": "BMW",
+    "model": "X2 2.0 sDrive18d Aut.",
+    "year": 2021,
+    "slug": "bmw-x2-2-0-sdrive18d-aut-2021-6373440",
+    "price": 26850,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_065.jpg",
+    "description": "Este BMW X2 2.0 sDrive18d automático de 2021 destaca-se pelo seu motor Diesel de 1995 cc com 190 cv (140 kW), equipado com caixa automática e tração dianteira (sDrive). O veículo pertence à categoria SUV/Off-road, com uma excelente combinação de conforto, segurança e tecnologia. Equipado com faróis LED-Xenon, sistema de navegação profissional, ambiente interior em pele, KeylessGo, ar condicionado automático de duas zonas, sensores de chuva e luz, bancos aquecidos, cruise control e jantes de liga leve. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. O sistema multimédia oferece Bluetooth, leitor de CD, interface MP3 e computador de bordo. O carro apresenta uma cor azul elegante, 5 portas e 5 lugares, com uma quilometragem de 44.085 km e classe de emissão Euro 6, com CO2 de 141 g/km. Veículo importado da Bélgica, com origem em HM Tongeren. Estado geral muito bom, ideal para quem procura um SUV premium com tecnologia avançada e conforto superior.",
+    "mileage": 44085,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2.0",
+    "power": "190cv",
+    "places": 5,
+    "unitNumber": "6373440",
+    "origin": "Belgium - HM Tongeren",
+    "firstRegistration": "2021-02-23",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "141",
+    "color": "Azul",
+    "vin": "WBAYK510205T26438",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_055.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação profissional"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Bancos em pele"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
