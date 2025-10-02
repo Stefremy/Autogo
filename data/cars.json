@@ -11685,5 +11685,256 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6387510",
+    "make": "Mercedes",
+    "model": "CLA 180d",
+    "year": 2020,
+    "slug": "mercedes-cla-180d-2020-6387510",
+    "price": 25400,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_035.jpg",
+    "description": "Este Mercedes CLA 180d de 2020 apresenta-se com um motor de 1461 CC, potência de 116 Hp (85 kW) e caixa manual. Equipado com faróis LED-Xenon, sistema de navegação, Keyless Go, câmara traseira, ar condicionado automático de duas zonas, sensores de estacionamento, sensores de luz e chuva, bancos aquecidos, e volante multifunções. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Sistema multimédia com Bluetooth, leitor de CD, interface MP3 e computador de bordo. Exterior com jantes de liga leve e filtro de partículas. Histórico de manutenção completo com revisões e serviços realizados em oficinas certificadas, incluindo troca de fluído de travões, filtros, recarga de AdBlue e pequenas reparações. Um veículo em excelente estado, ideal para quem procura conforto, segurança e tecnologia num sedan elegante e eficiente.",
+    "mileage": 45404,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "1461 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "6387510",
+    "origin": "Belgium - Machelen",
+    "firstRegistration": "2020-09-09",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "119",
+    "color": "Silver",
+    "vin": "W1K1183031N159991",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6387510/photo_024.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Heated seats",
+        "Electric windows",
+        "Keyless go",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Parking sensors",
+        "Rain sensor",
+        "Start-stop system"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix anchor points"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "Hands-free kit",
+        "MP3 interface",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Alloy wheels"
+      ],
+      "outras_opcoes": [
+        "Alarm",
+        "Rims alloy",
+        "Particulate filter",
+        "Traction control"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "03/12/2024",
+        "km": 34202,
+        "shop": "Ghistelinck Autobedrijven nv",
+        "description": "Troca de fluído de travões",
+        "price": 79.22,
+        "raw": "03/12/2024 34202 km Ghistelinck Autobedrijven nv brake fluid € 79,22"
+      },
+      {
+        "date": "03/12/2024",
+        "km": 34202,
+        "shop": "Ghistelinck Autobedrijven nv",
+        "description": "Mercedes/Smart Assyst B",
+        "price": 319.5,
+        "raw": "03/12/2024 34202 km Ghistelinck Autobedrijven nv Mercedes/Smart Assyst B € 319,50"
+      },
+      {
+        "date": "03/12/2024",
+        "km": 34202,
+        "shop": "Ghistelinck Autobedrijven nv",
+        "description": "Peças pequenas e eco",
+        "price": 5.29,
+        "raw": "03/12/2024 34202 km Ghistelinck Autobedrijven nv Small parts and eco € 5,29"
+      },
+      {
+        "date": "03/12/2024",
+        "km": 34202,
+        "shop": "Ghistelinck Autobedrijven nv",
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 54.01,
+        "raw": "03/12/2024 34202 km Ghistelinck Autobedrijven nv wiper blade front € 54,01"
+      },
+      {
+        "date": "29/09/2023",
+        "km": 26290,
+        "shop": "Van Mossel Brugge",
+        "description": "Mercedes/Smart Assyst A",
+        "price": 240.52,
+        "raw": "29/09/2023 26290 km Van Mossel Brugge Mercedes/Smart Assyst A € 240,52"
+      },
+      {
+        "date": "29/09/2023",
+        "km": 26290,
+        "shop": "Van Mossel Brugge",
+        "description": "Filtro de ar",
+        "price": 58,
+        "raw": "29/09/2023 26290 km Van Mossel Brugge air filter € 58,00"
+      },
+      {
+        "date": "29/09/2023",
+        "km": 26290,
+        "shop": "Van Mossel Brugge",
+        "description": "Filtro de combustível",
+        "price": 117.36,
+        "raw": "29/09/2023 26290 km Van Mossel Brugge fuel filter assembly € 117,36"
+      },
+      {
+        "date": "29/09/2023",
+        "km": 26290,
+        "shop": "Van Mossel Brugge",
+        "description": "Reabastecimento AdBlue (exceto Elolys)",
+        "price": 25.65,
+        "raw": "29/09/2023 26290 km Van Mossel Brugge AdBlue refilling (except Elolys) € 25,65"
+      },
+      {
+        "date": "29/09/2023",
+        "km": 26290,
+        "shop": "Van Mossel Brugge",
+        "description": "Peças pequenas e eco",
+        "price": 10,
+        "raw": "29/09/2023 26290 km Van Mossel Brugge Small parts and eco € 10,00"
+      },
+      {
+        "date": "29/09/2023",
+        "km": 26290,
+        "shop": "Van Mossel Brugge",
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 49.69,
+        "raw": "29/09/2023 26290 km Van Mossel Brugge wiper blade front € 49,69"
+      },
+      {
+        "date": "12/09/2022",
+        "km": 16650,
+        "shop": "Van Mossel Brugge",
+        "description": "Peças pequenas e eco",
+        "price": 10,
+        "raw": "12/09/2022 16650 km Van Mossel Brugge Small parts and eco € 10,00"
+      },
+      {
+        "date": "12/09/2022",
+        "km": 16650,
+        "shop": "Van Mossel Brugge",
+        "description": "Reabastecimento AdBlue (exceto Elolys)",
+        "price": 20.05,
+        "raw": "12/09/2022 16650 km Van Mossel Brugge AdBlue refilling (except Elolys) € 20,05"
+      },
+      {
+        "date": "12/09/2022",
+        "km": 16650,
+        "shop": "Van Mossel Brugge",
+        "description": "Troca de fluído de travões",
+        "price": 62.95,
+        "raw": "12/09/2022 16650 km Van Mossel Brugge brake fluid € 62,95"
+      },
+      {
+        "date": "12/09/2022",
+        "km": 16650,
+        "shop": "Van Mossel Brugge",
+        "description": "Mercedes/Smart Assyst B",
+        "price": 251.5,
+        "raw": "12/09/2022 16650 km Van Mossel Brugge Mercedes/Smart Assyst B € 251,50"
+      },
+      {
+        "date": "17/09/2021",
+        "km": 9496,
+        "shop": "Vereenooghe Etn",
+        "description": "Mercedes/Smart Assyst A",
+        "price": 193.35,
+        "raw": "17/09/2021 9496 km Vereenooghe Etn Mercedes/Smart Assyst A € 193,35"
+      },
+      {
+        "date": "17/09/2021",
+        "km": 9496,
+        "shop": "Vereenooghe Etn",
+        "description": "Peças pequenas e eco",
+        "price": 6.18,
+        "raw": "17/09/2021 9496 km Vereenooghe Etn Small parts and eco € 6,18"
+      },
+      {
+        "date": "17/09/2021",
+        "km": 9496,
+        "shop": "Vereenooghe Etn",
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 45.8,
+        "raw": "17/09/2021 9496 km Vereenooghe Etn wiper blade front € 45,80"
+      },
+      {
+        "date": "17/09/2021",
+        "km": 9496,
+        "shop": "Vereenooghe Etn",
+        "description": "Reabastecimento AdBlue (exceto Elolys)",
+        "price": 31.6,
+        "raw": "17/09/2021 9496 km Vereenooghe Etn AdBlue refilling (except Elolys) € 31,60"
+      },
+      {
+        "date": "17/09/2021",
+        "km": 9496,
+        "shop": "Vereenooghe Etn",
+        "description": "Bateria remota wireless",
+        "price": 25.63,
+        "raw": "17/09/2021 9496 km Vereenooghe Etn battery remote wireless € 25,63"
+      }
+    ]
   }
 ]
