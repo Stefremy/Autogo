@@ -3642,5 +3642,117 @@
         "raw": "21/10/2021 14395 km FSC Fleet Service Center tire storage (LUX) € 14,00"
       }
     ]
+  },
+  {
+    "id": "6380266",
+    "make": "Audi",
+    "model": "Q5 2.0 35 TDi Sport Aut.",
+    "year": 2020,
+    "slug": "audi-q5-2-0-35-tdi-sport-aut-2020-6380266",
+    "price": 30000,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_000.jpg",
+    "description": "Este Audi Q5 2.0 35 TDi Sport Automático de 2020 destaca-se pelo seu motor diesel de 1968 cc com 136 cv (100 kW), caixa automática e tração SUV/Off-road. Equipado com teto panorâmico, faróis LED-Xenon, sistema de navegação virtual, interior e bancos desportivos em pele, Keyless Go, ar condicionado automático de duas zonas, sensores de estacionamento, cruise control e muito mais. Segurança reforçada com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. O veículo apresenta um histórico de manutenção completo e encontra-se em excelente estado, com 95.652 km percorridos. Uma escolha perfeita para quem procura conforto, tecnologia e desempenho num SUV premium.",
+    "mileage": 95652,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1968 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "24/06/2020",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "150",
+    "color": "Blue",
+    "vin": "WAUZZZFY9L2086736",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380266/photo_030.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Engate de reboque"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
