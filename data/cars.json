@@ -7299,5 +7299,107 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6377762",
+    "make": "Nissan",
+    "model": "Juke 1.0 DIG-T",
+    "year": 2023,
+    "slug": "nissan-juke-1-0-dig-t-2023-6377762",
+    "price": 15500,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_004.jpg",
+    "description": "O Nissan Juke 1.0 DIG-T de 2023 é um SUV compacto com motor a gasolina de 999 CC que oferece 113 cavalos de potência (83 kW). Equipado com caixa manual e sistema de navegação, este veículo destaca-se pelo conforto com ar condicionado manual, controlo de velocidade de cruzeiro, vidros elétricos, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop. A segurança é garantida com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e sistema Isofix. Em termos de multimédia, inclui Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. O exterior apresenta jantes de liga leve e o veículo conta ainda com controlo de tracção. Com 91.378 km, este Nissan Juke encontra-se em excelente estado e é uma opção versátil para quem procura um SUV urbano eficiente, seguro e confortável.",
+    "mileage": 91378,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "999 CC",
+    "power": "113 Hp 83 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium - Diegem",
+    "firstRegistration": "2023-04-28",
+    "doors": 6,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "133",
+    "color": "Orange",
+    "vin": "SJNFAAF16U1232954",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6377762/photo_021.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Navigation system"
+      ],
+      "conforto": [
+        "Ar condicionado manual",
+        "Cruise control",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
