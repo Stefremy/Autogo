@@ -889,6 +889,7 @@ export default function Home({ blogArticles }) {
                       name={`${car.make} ${car.model}`}
                       image={car.image}
                       price={car.price}
+                      priceDisplay={car.priceDisplay}
                       id={car.id}
                       year={car.year}
                       make={car.make}

@@ -84,15 +84,16 @@ function fmtNumber(v: any, opts?: Intl.NumberFormatOptions) {
   return n.toLocaleString(undefined, opts);
 }
 
+import { formatPriceDisplay } from '../../utils/formatPrice';
+
 function fmtPriceOrText(v: any) {
-  // if explicitly null or empty -> show 'Sob Consulta'
-  if (v == null || (typeof v === 'string' && String(v).trim() === '')) return 'Sob Consulta';
+  // reuse normalized numify + shared formatter so behaviour matches listing cards
   const n = numify(v);
-  if (n == null) {
-    // if not numeric, but it's a string we return it as-is
-    return String(v);
-  }
-  return '€' + n.toLocaleString(undefined, { minimumFractionDigits: 0 });
+  // try to pick up priceDisplay from the car object at callsites by falling back to v when it's a string
+  const display = formatPriceDisplay(n, typeof v === 'string' ? v : undefined);
+  // formatPriceDisplay returns '—' for unknown; the older behaviour used 'Sob Consulta' for nulls
+  if ((v == null || (typeof v === 'string' && String(v).trim() === '')) && display === '—') return 'Sob Consulta';
+  return display;
 }
 
 function fmtNumberForMeta(v: any) {

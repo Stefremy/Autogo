@@ -1,6 +1,7 @@
 import React from "react";
 import MakeLogo from "./MakeLogo";
 import styles from "./CarCard.module.css";
+import { formatPriceDisplay } from "../utils/formatPrice";
 
 type CarCardProps = {
   name: string;
@@ -29,22 +30,14 @@ const CarCard: React.FC<CarCardProps> = ({
 }) => {
   const path = slug ? `/cars/${slug}` : `/cars/${id}`;
 
-  // prefer numeric price; if not available, use display string
+  // prefer numeric price; if not available, delegate to format helper
   let numericPrice: number | null = null;
-  let displayPrice: string | null = null;
-  if (typeof price === 'number' && Number.isFinite(price)) numericPrice = price;
-  else if (typeof price === 'string' && price.trim().length > 0) {
-    const p = Number(String(price).replace(/[^0-9.-]/g, ''));
+  if (typeof price === "number" && Number.isFinite(price)) numericPrice = price;
+  else if (typeof price === "string" && price.trim().length > 0) {
+    const p = Number(String(price).replace(/[^0-9.-]/g, ""));
     if (!Number.isNaN(p) && Number.isFinite(p)) numericPrice = p;
-    else displayPrice = price;
   }
-
-  // If numericPrice not found but a display string exists that is numeric (e.g. "29400"), parse it
-  if (numericPrice === null && !displayPrice && typeof priceDisplay === 'string' && priceDisplay.trim().length > 0) {
-    const p2 = Number(String(priceDisplay).replace(/[^0-9.-]/g, ''));
-    if (!Number.isNaN(p2) && Number.isFinite(p2)) numericPrice = p2;
-    else displayPrice = priceDisplay;
-  }
+  const display = formatPriceDisplay(numericPrice, priceDisplay ?? (typeof price === "string" ? price : undefined));
 
   // simple SVG fallback so broken-image icon doesn't show
   const svgCarFallback =
@@ -121,13 +114,7 @@ const CarCard: React.FC<CarCardProps> = ({
     </div>
     <h3 className="text-xl font-bold">{name}</h3>
     <p className="text-gray-600">{description}</p>
-    <p className="text-blue-700 font-semibold mt-2">
-      {numericPrice !== null ? (
-        `€${numericPrice.toLocaleString(undefined, { minimumFractionDigits: 0 })}`
-      ) : (
-        displayPrice ? displayPrice : '—'
-      )}
-    </p>
+    <p className="text-blue-700 font-semibold mt-2">{display}</p>
   </a>
   );
 };

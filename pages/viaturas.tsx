@@ -211,6 +211,7 @@ export default function Viaturas() {
     var minW = 16 * 16; // 16rem
     var maxW = window.innerWidth; // allow edge-to-edge
     var newW = lerp(minW, maxW, progress);
+    el.style.width = newW + 'px';
     // Fade out as we approach the footer
     var fadeStart = 0.98;
     var fadeProgress = clamp((progress - fadeStart) / (1 - fadeStart), 0, 1);
@@ -550,28 +551,17 @@ export default function Viaturas() {
                   </div>
                   <div className="font-bold text-black text-lg mb-3 text-center px-2">
                     {(() => {
+                      // use format helper to render price or textual fallback
                       const rawPrice = (car as any).price;
                       const priceDisplay = (car as any).priceDisplay;
-                      // determine numeric price only when it's a finite number > 0
                       let numeric = null as number | null;
-                      if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) {
-                        numeric = rawPrice;
-                      } else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
+                      if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) numeric = rawPrice;
+                      else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
                         const parsed = Number(String(rawPrice).replace(/[^0-9.-]/g, ''));
-                        if (Number.isFinite(parsed) && parsed > 0) numeric = parsed;
+                        if (!Number.isNaN(parsed) && Number.isFinite(parsed)) numeric = parsed;
                       }
-
-                      if (numeric !== null && Number.isFinite(numeric) && numeric > 0) {
-                        return '€' + numeric.toLocaleString();
-                      }
-
-                      // fall back to explicit priceDisplay (e.g. "Sob consulta") when present
-                      if (priceDisplay && String(priceDisplay).trim().length > 0) {
-                        return String(priceDisplay);
-                      }
-
-                      // ultimate fallback
-                      return '—';
+                      const { formatPriceDisplay } = require('../utils/formatPrice');
+                      return formatPriceDisplay(numeric, priceDisplay ?? (typeof rawPrice === 'string' ? rawPrice : undefined));
                     })()}
                   </div>
   <div className="flex gap-2 w-full mt-auto justify-center">
