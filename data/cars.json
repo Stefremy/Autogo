@@ -6712,5 +6712,189 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6402011",
+    "make": "Peugeot",
+    "model": "208",
+    "year": 2020,
+    "slug": "peugeot-208-2020-6402011",
+    "price": 10900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_001.jpg",
+    "description": "Este Peugeot 208 1.2 PureTech de 2020 destaca-se pelo seu motor eficiente de 1199 CC com 129 cv (95 kW) e caixa manual, ideal para condução urbana e conforto. Equipado com LED, navegação, ar condicionado e sensores de estacionamento (PDC), oferece uma experiência moderna e prática. Com histórico de manutenção detalhado, incluindo revisões e substituições de discos e filtros, assegura fiabilidade e bom estado. A cor vermelha confere-lhe um visual atraente e dinâmico. Um carro compacto, económico e bem equipado, perfeito para quem procura qualidade e segurança no segmento dos pequenos veículos.",
+    "mileage": 54991,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Small Car6",
+    "engineSize": "1.2",
+    "power": "129cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "ST AIGNAN DE GRAND LIEU, France",
+    "firstRegistration": "21/07/2020",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Red",
+    "vin": "VR3UPHNKKLT055889",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_000.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_057.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "Ar condicionado",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [],
+      "multimedia": [
+        "Navegação",
+        "LED"
+      ],
+      "interior": [],
+      "exterior": [
+        "Cor vermelha"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Discos dianteiros",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Disques AV € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Discos dianteiros",
+        "price": 2,
+        "raw": "16/09/2024 48853 km SIAO REZE Disques AV € 2,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Vidange liquide frein",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Révision",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Révision € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Diagnostic",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Diagnostic € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Niveaux",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Niveaux € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Révision",
+        "price": 3.5,
+        "raw": "16/09/2024 48853 km SIAO REZE Révision € 3,50"
+      },
+      {
+        "date": "03/07/2024",
+        "km": 47848,
+        "shop": "CTAR",
+        "description": "Controles Técnicos",
+        "price": 1,
+        "raw": "03/07/2024 47848 km CTAR ContRôles Techniques € 1,00"
+      },
+      {
+        "date": "17/10/2022",
+        "km": 26366,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "17/10/2022 26366 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "17/10/2022",
+        "km": 26366,
+        "shop": "FRS ABSENT",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "17/10/2022 26366 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "17/10/2022",
+        "km": 26366,
+        "shop": "FRS ABSENT",
+        "description": "Vidange liquide frein",
+        "price": 0.4,
+        "raw": "17/10/2022 26366 km FRS ABSENT Vidange liquide frein € 0,40"
+      },
+      {
+        "date": "16/07/2021",
+        "km": 13426,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "16/07/2021 13426 km FRS ABSENT Révision € 1,00"
+      }
+    ]
   }
 ]
