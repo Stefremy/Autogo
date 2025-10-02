@@ -8495,5 +8495,133 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6288923",
+    "make": "BMW",
+    "model": "X6 3.0d xDrive M-Sport",
+    "year": 2023,
+    "slug": "bmw-x6-3-0d-xdrive-m-sport-2023-6288923",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_024.jpg",
+    "description": "Este BMW X6 3.0d xDrive M-Sport de 2023 destaca-se pelo seu motor potente de 2993 CC com 286 cavalos (210 kW), caixa automática de 8 velocidades e tração integral. Equipado com faróis LED, sistema de navegação profissional, interior desportivo em pele, assentos desportivos e pacote desportivo exterior, oferece conforto e segurança com ar condicionado automático de duas zonas, cruise control, sensores de luz e chuva, sistema start-stop, ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. O sistema multimédia inclui Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. O veículo apresenta histórico de manutenção detalhado com várias intervenções mecânicas e troca de óleo realizadas a 31.392 km. A cor azul realça o design robusto deste SUV de luxo. Um carro ideal para quem procura performance, conforto e tecnologia num só veículo.",
+    "mileage": 35971,
+    "country": "IT",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2993 CC",
+    "power": "286 Hp",
+    "places": 5,
+    "unitNumber": "6288923",
+    "origin": "Italy - CAPUA",
+    "firstRegistration": "29/03/2023",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "181",
+    "color": "Azul",
+    "vin": "WBAGT810709R64932",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288923/photo_046.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Assentos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "2 apoios de cabeça nos bancos dianteiros com regulação em altura",
+        "4 travões de disco com 4 discos ventilados",
+        "Configuração de 5 lugares (2+3)",
+        "6 altifalantes com subwoofer"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "14/10/2024",
+        "km": 31392,
+        "shop": "Meccanica altro",
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "14/10/2024 31392 km Meccanica altro € 0,00"
+      },
+      {
+        "date": "14/10/2024",
+        "km": 31392,
+        "shop": "Oleo motore",
+        "description": "Troca de óleo motor",
+        "price": 0,
+        "raw": "14/10/2024 31392 km Olio motore € 0,00"
+      }
+    ]
   }
 ]
