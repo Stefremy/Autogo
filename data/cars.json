@@ -13578,5 +13578,125 @@
         "raw": "08/12/2023 0 km HERTZ CAT C - PERREVE CAMILLE - DU 18/12/2023 AU 02/01/2024 € 15,00"
       }
     ]
+  },
+  {
+    "id": "6373523",
+    "make": "Mercedes",
+    "model": "A 160",
+    "year": 2020,
+    "slug": "mercedes-a-160-2020-6373523",
+    "price": 19900,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_046.jpg",
+    "description": "Este Mercedes A 160 de 2020 destaca-se pelo seu motor Diesel de 1461 CC com 116 cv (85 kW), caixa manual e consumo eficiente com emissões CO2 de 120 g/km, cumprindo a norma Euro 6. Equipado com sistema de navegação, interior desportivo com bancos desportivos em couro, e comodidades como ar condicionado automático de duas zonas, cruise control, vidros elétricos, Keyless Go, sensores de luz e chuva, volante multifunções e sistema start-stop. A segurança é garantida com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. Multimedia inclui Bluetooth, leitor de CD, kit mãos livres, interface MP3, computador de bordo e rádio. Exterior com jantes de liga leve e pacote desportivo. Outras opções valiosas incluem câmara de marcha-atrás, assistente ativo de faixa, alarme, controlo de pressão dos pneus e estofos em couro sintético Artico/tecido preto. Veículo com 54.579 km, primeira matrícula em 13/01/2020, proveniente da Bélgica (BE). Estado geral muito bom, ideal para quem procura um carro compacto, confortável e seguro com manutenção regular e histórico conhecido.",
+    "mileage": 54579,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "1461 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium - ASSE II",
+    "firstRegistration": "13/01/2020",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "120",
+    "color": "Silver",
+    "vin": "WDD1770021J164487",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373523/photo_067.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Comando à distância",
+        "Alarme",
+        "Descanso de braços central",
+        "Sensor de chuva",
+        "Direção assistida",
+        "Telefone",
+        "Jantes de liga leve",
+        "Apoio lombar ajustável",
+        "Câmara de marcha-atrás",
+        "Assistente ativo de faixa",
+        "Assistente ativo de travagem",
+        "Sistema de alarme com proteção interior e reboque",
+        "Ativação automática dos faróis",
+        "Sistema de controlo da pressão dos pneus",
+        "Estofos em couro sintético Artico/tecido preto"
+      ]
+    },
+    "maintenance": []
   }
 ]
