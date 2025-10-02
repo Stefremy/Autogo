@@ -4396,5 +4396,124 @@
         "raw": "01/03/2022 28 km 0109 Onderhoud met olie-flex € 0,00"
       }
     ]
+  },
+  {
+    "id": "6347963",
+    "make": "Audi",
+    "model": "A5 Sportback 2.0 40 TFSI CNG g-tron Aut.",
+    "year": 2018,
+    "slug": "audi-a5-sportback-2-0-40-tfsi-cng-g-tron-aut-6347963",
+    "price": 23400,
+    "image": "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_033.jpg",
+    "description": "Audi A5 Sportback 2.0 40 TFSI CNG g-tron automático de 2018, equipado com motor 2.0L, 136 cv (100 kW), e caixa automática. Destaca-se pelos faróis LED Matrix, sistema de navegação, interior desportivo em pele, bancos desportivos e Keyless Go. Conforto garantido com ar condicionado automático a duas zonas, cruise control, sensores de luz e chuva, e sistema start-stop. Segurança reforçada com ABS, ESP, airbags frontais e laterais, Isofix, e imobilizador. Equipado com Bluetooth, leitor CD, MP3, computador de bordo e rádio. Exterior com jantes de liga leve e gancho de reboque. Manutenção e estado geral cuidados, com histórico de revisões. Um veículo elegante, eficiente e confortável, ideal para quem procura tecnologia e performance com baixo impacto ambiental.",
+    "mileage": 127110,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon7",
+    "engineSize": "1984 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": "6347963",
+    "origin": "Belgium",
+    "firstRegistration": "2018-06-11",
+    "doors": null,
+    "fuel": "Natural Gas",
+    "emissionClass": "Euro6",
+    "co2": "109",
+    "color": "Black",
+    "vin": "WAUZZZF58JA114633",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6347963/photo_055.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Faróis adaptativos",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Volante em pele",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Gancho de reboque"
+      ],
+      "outras_opcoes": [
+        "Porta da mala",
+        "Chassis: outro",
+        "Decoração interior: outro",
+        "Terceira luz de travagem",
+        "Iluminação exterior: outro",
+        "Sistema móvel de pneus",
+        "Manómetros adicionais",
+        "Sistema de informação ao condutor",
+        "Comunicação a bordo: outro"
+      ]
+    },
+    "maintenance": []
   }
 ]
