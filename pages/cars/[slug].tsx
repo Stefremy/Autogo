@@ -1332,7 +1332,13 @@ export default function CarDetail() {
             <ul className="list-disc pl-6 sm:pl-8 space-y-2 text-gray-700 text-base sm:text-lg">
               {funFacts.length ? (
                 funFacts.map((f, i) => (
-                  <li key={i} className="break-words">{f}</li>
+                  <li key={i} className="break-words">
+                    {f === car.description ? (
+                      <span className="font-semibold">{f}</span>
+                    ) : (
+                      <span>{f}</span>
+                    )}
+                  </li>
                 ))
               ) : (
                 <li className="break-words">Carro muito equilibrado para o mercado português.</li>
