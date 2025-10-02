@@ -2558,5 +2558,114 @@
         "raw": "21/10/2019 4617 km Qteam Berchem tire change summer/winter"
       }
     ]
+  },
+  {
+    "id": "6321063",
+    "make": "Audi",
+    "model": "Q3 SportBack 1.5 35 TFSI Aut.",
+    "year": 2020,
+    "slug": "audi-q3-sportback-1-5-35-tfsi-aut-2020-6321063",
+    "price": 28100,
+    "image": "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_000.jpg",
+    "description": "Este Audi Q3 SportBack 1.5 35 TFSI Automático de 2020 destaca-se pelo seu design elegante e moderno, equipado com faróis LED, sistema de navegação Virtual Navi-Pro e interior desportivo em pele e Alcantara. Conta com motor 1.5 litros a gasolina, 150 cv e caixa automática, oferecendo uma condução confortável e eficiente. Equipado com ar condicionado automático de duas zonas, sensores de estacionamento, câmara traseira, e sistema start-stop para maior economia. Segurança reforçada com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. Manutenção recente aos 90000 km assegura bom estado de conservação. Um SUV compacto ideal para quem procura estilo, conforto e tecnologia avançada.",
+    "mileage": 97002,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.5",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2020-12-17",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "156",
+    "color": "Black",
+    "vin": "WAUZZZF33M1045479",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6321063/photo_035.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Controlo de tracção"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Cobertura da bagageira",
+        "Sem reboque",
+        "Automóvel de passageiros",
+        "Última revisão aos 90000 km"
+      ]
+    },
+    "maintenance": []
   }
 ]
