@@ -13117,5 +13117,274 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6375443",
+    "make": "Mercedes",
+    "model": "A 180d",
+    "year": 2020,
+    "slug": "mercedes-a-180d-2020-6375443",
+    "price": 17900,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_070.jpg",
+    "description": "Este Mercedes A 180d de 2020 destaca-se pelo seu motor Diesel de 1461 CC com 95 cv (70 kW), caixa manual e um consumo eficiente com emissões CO2 de 119 g/km. Equipado com sistema de navegação, Keyless Go, câmara de marcha-atrás e ar condicionado automático de duas zonas, oferece conforto e segurança com bancos aquecidos, controlo de velocidade de cruzeiro, sensores de chuva e luz, e sistema start-stop. A segurança é reforçada com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. Multimedia inclui Bluetooth, leitor de CD, interface MP3 e computador de bordo. Exterior com jantes de liga leve e assistência ativa à condução. Histórico de manutenção completo com várias revisões Assyst A e B, troca de materiais e filtros, e manutenção regular desde 2020. Um veículo em excelente estado, ideal para quem procura fiabilidade e tecnologia num compacto premium.",
+    "mileage": 99507,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Saloon6",
+    "engineSize": "1461 CC",
+    "power": "95cv",
+    "places": 5,
+    "unitNumber": "6375443",
+    "origin": "Belgium",
+    "firstRegistration": "19/06/2020",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "119",
+    "color": "Black",
+    "vin": "W1K1770031N173461",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_090.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_099.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_100.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_096.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_097.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_098.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_093.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375443/photo_094.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Pack de estacionamento",
+        "Sistema de assistência à condução ativo",
+        "Ecrã multimédia",
+        "Câmara de ajuda ao estacionamento",
+        "Sistema de assistência à condução: agility select",
+        "Filtro de partículas",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/11/2024",
+        "km": 90,
+        "description": "Klein materiaal & milieu",
+        "price": 0,
+        "raw": "01/11/2024 90 km Klein materiaal & milieu € 0,00"
+      },
+      {
+        "date": "01/11/2024",
+        "km": 90,
+        "description": "Substituição do limpa-vidros dianteiro",
+        "price": 0,
+        "raw": "01/11/2024 90 km ruitenwisserblad voor € 0,00"
+      },
+      {
+        "date": "01/11/2024",
+        "km": 90,
+        "description": "Substituição do limpa-vidros traseiro",
+        "price": 0,
+        "raw": "01/11/2024 90 km ruitenwisserblad achter € 0,00"
+      },
+      {
+        "date": "01/11/2024",
+        "km": 90,
+        "description": "Assyst B revisão",
+        "price": 0,
+        "raw": "01/11/2024 90 km Assyst B beurt € 0,00"
+      },
+      {
+        "date": "01/05/2024",
+        "km": 81,
+        "description": "Substituição da vela de incandescência",
+        "price": 0,
+        "raw": "01/05/2024 81 km de gloeistift € 0,00"
+      },
+      {
+        "date": "01/05/2024",
+        "km": 81,
+        "description": "Substituição da bateria da chave",
+        "price": 0,
+        "raw": "01/05/2024 81 km de sleutelbatterij € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 67,
+        "description": "Assyst A revisão",
+        "price": 0,
+        "raw": "01/11/2023 67 km Assyst A beurt € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 67,
+        "description": "Klein materiaal & milieu",
+        "price": 0,
+        "raw": "01/11/2023 67 km Klein materiaal & milieu € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 67,
+        "description": "Substituição do limpa-vidros dianteiro",
+        "price": 0,
+        "raw": "01/11/2023 67 km ruitenwisserblad voor € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 67,
+        "description": "Substituição do limpa-vidros traseiro",
+        "price": 0,
+        "raw": "01/11/2023 67 km ruitenwisserblad achter € 0,00"
+      },
+      {
+        "date": "01/03/2023",
+        "km": 52,
+        "description": "Substituição do braço do limpa-vidros",
+        "price": 0,
+        "raw": "01/03/2023 52 km de ruitenwisserarm € 0,00"
+      },
+      {
+        "date": "01/03/2023",
+        "km": 52,
+        "description": "Substituição do limpa-vidros dianteiro",
+        "price": 0,
+        "raw": "01/03/2023 52 km ruitenwisserblad voor € 0,00"
+      },
+      {
+        "date": "01/11/2022",
+        "km": 46,
+        "description": "Assyst B revisão",
+        "price": 0,
+        "raw": "01/11/2022 46 km Assyst B beurt € 0,00"
+      },
+      {
+        "date": "01/11/2022",
+        "km": 46,
+        "description": "Klein materiaal & milieu",
+        "price": 0,
+        "raw": "01/11/2022 46 km Klein materiaal & milieu € 0,00"
+      },
+      {
+        "date": "01/11/2022",
+        "km": 46,
+        "description": "Substituição do fluido de travões",
+        "price": 0,
+        "raw": "01/11/2022 46 km de remvloeistof € 0,00"
+      },
+      {
+        "date": "01/11/2022",
+        "km": 46,
+        "description": "Substituição do filtro de ar",
+        "price": 0,
+        "raw": "01/11/2022 46 km de luchtfilter € 0,00"
+      },
+      {
+        "date": "01/11/2022",
+        "km": 46,
+        "description": "Substituição do filtro de combustível Mercedes",
+        "price": 0,
+        "raw": "01/11/2022 46 km brandstoffilter Mercedes € 0,00"
+      },
+      {
+        "date": "01/11/2022",
+        "km": 46,
+        "description": "Substituição da vela de incandescência",
+        "price": 0,
+        "raw": "01/11/2022 46 km de gloeistift € 0,00"
+      },
+      {
+        "date": "01/10/2021",
+        "km": 27,
+        "description": "Assyst A revisão",
+        "price": 0,
+        "raw": "01/10/2021 27 km Assyst A beurt € 0,00"
+      },
+      {
+        "date": "01/10/2021",
+        "km": 27,
+        "description": "Klein materiaal & milieu",
+        "price": 0,
+        "raw": "01/10/2021 27 km Klein materiaal & milieu € 0,00"
+      },
+      {
+        "date": "01/10/2021",
+        "km": 27,
+        "description": "Substituição do limpa-vidros dianteiro",
+        "price": 0,
+        "raw": "01/10/2021 27 km ruitenwisserblad voor € 0,00"
+      },
+      {
+        "date": "01/05/2021",
+        "km": 19,
+        "description": "Controlo de níveis",
+        "price": 0,
+        "raw": "01/05/2021 19 km controle niveaus € 0,00"
+      },
+      {
+        "date": "01/11/2020",
+        "km": 7,
+        "description": "Controlo de níveis",
+        "price": 0,
+        "raw": "01/11/2020 7 km controle niveaus € 0,00"
+      }
+    ]
   }
 ]
