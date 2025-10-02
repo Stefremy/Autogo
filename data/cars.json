@@ -3863,5 +3863,116 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6011735",
+    "make": "Audi",
+    "model": "Q5 2.0 30 TDi Aut.",
+    "year": 2020,
+    "slug": "audi-q5-2-0-30-tdi-aut-2020-6011735",
+    "price": 29900,
+    "image": "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_042.jpg",
+    "description": "Audi Q5 2.0 30 TDi Automático de 2020, com motor de 1968 CC e potência de 265 Hp (195 kW). Equipado com caixa automática, tração SUV/Off-road e consumo eficiente Diesel Euro6. Destaca-se pelos faróis LED-Xenon, sistema de navegação virtual, interior desportivo em pele, assentos desportivos e KeylessGo. Conforto garantido com ar condicionado automático de 2 zonas, cruise control, bancos aquecidos, vidros elétricos, sensor de luz e chuva, volante multifunções e sistema start-stop. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e Isofix. Multimédia com Bluetooth, leitor CD, interface MP3, rádio e computador de bordo. Exterior com jantes de liga leve e outras opções como teto panorâmico, bancos em pele e sistema de controlo à distância. Veículo com 52.346 km, cor preta e histórico de manutenção disponível. Um SUV premium que combina performance, conforto e tecnologia para uma condução segura e prazerosa.",
+    "mileage": 52346,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1968 CC",
+    "power": "265 Hp 195 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium - ASSE III",
+    "firstRegistration": "2020-11-18",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "145",
+    "color": "Black",
+    "vin": "WAUZZZFY7L2124335",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6010001-6020000/6011735/photo_064.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor CD",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Assentos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo à distância",
+        "Descanso de braço central",
+        "Teto panorâmico",
+        "Espelhos exteriores ajustáveis eletricamente",
+        "Interior em pele",
+        "Assentos desportivos",
+        "Volante em pele",
+        "Direção assistida",
+        "Telefone",
+        "Jantes de alumínio",
+        "Bancos dianteiros aquecidos"
+      ]
+    },
+    "maintenance": []
   }
 ]
