@@ -5584,5 +5584,208 @@
         "raw": "26/07/2022 8352 km GARAGE STARTER Filtres € 0,10"
       }
     ]
+  },
+  {
+    "id": "6372510",
+    "make": "Mercedes",
+    "model": "GLC 300e Coupe Hybrid",
+    "year": 2021,
+    "slug": "mercedes-glc-300e-coupe-hybrid-2021-6372510",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_000.jpg",
+    "description": "Este Mercedes GLC 300e Coupe Hybrid de 2021 combina potência híbrida de 320cv com tração 4Matic e caixa automática AMG, oferecendo uma condução desportiva e confortável. Equipado com teto panorâmico, faróis LED-Xenon, sistema de navegação, interior desportivo em pele, bancos desportivos e sistema KeylessGo. Destaca-se pela sua tecnologia avançada e conforto, incluindo ar condicionado automático de duas zonas, sensores de luz e chuva, e sistema start-stop. Segurança reforçada com ABS, ESP, airbags múltiplos e Isofix. Histórico de manutenção detalhado com revisões regulares e substituição de componentes essenciais. Um veículo ideal para quem procura desempenho, luxo e eficiência híbrida num coupé desportivo.",
+    "mileage": 132495,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 9,
+    "category": "Sports Car / Coupe",
+    "engineSize": "1950 CC",
+    "power": "320Hp",
+    "places": 5,
+    "unitNumber": "6362305",
+    "origin": "France - INGRANDES",
+    "firstRegistration": "05/03/2021",
+    "doors": 2,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "135 CO2",
+    "color": "Blue",
+    "vin": "W1N2533151F966584",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6362305/photo_007.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop",
+        "Teto de abrir"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "20/02/2025",
+        "km": 123760,
+        "description": "Revisão",
+        "price": 1,
+        "raw": "20/02/2025 123760 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "26/04/2024",
+        "km": 98683,
+        "description": "Nível Ad Blue",
+        "price": 1,
+        "raw": "26/04/2024 98683 km FRS ABSENT NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "26/04/2024",
+        "km": 98683,
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/04/2024 98683 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "23/01/2024",
+        "km": 88902,
+        "description": "Discos dianteiros",
+        "price": 1,
+        "raw": "23/01/2024 88902 km FRS ABSENT Disques AV € 1,00"
+      },
+      {
+        "date": "23/01/2024",
+        "km": 88902,
+        "description": "Pastilhas dianteiras",
+        "price": 1,
+        "raw": "23/01/2024 88902 km FRS ABSENT Plaquettes AV € 1,00"
+      },
+      {
+        "date": "05/07/2023",
+        "km": 72581,
+        "description": "Participação construtor",
+        "price": 1,
+        "raw": "05/07/2023 72581 km FRS ABSENT PARTICIPATION CONSTRUCTEUR € 1,00"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 72581,
+        "description": "Injectores",
+        "price": 1,
+        "raw": "04/07/2023 72581 km FRS ABSENT Injecteurs € 1,00"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 72581,
+        "description": "Pastilhas traseiras",
+        "price": 1,
+        "raw": "04/07/2023 72581 km FRS ABSENT Plaquettes AR € 1,00"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 72581,
+        "description": "Revisão",
+        "price": 1,
+        "raw": "04/07/2023 72581 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 72581,
+        "description": "Reparação do reservatório",
+        "price": 1,
+        "raw": "04/07/2023 72581 km FRS ABSENT Réservoir € 1,00"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 72581,
+        "description": "Mudança do líquido dos travões",
+        "price": 1,
+        "raw": "04/07/2023 72581 km FRS ABSENT Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 72581,
+        "description": "Nível Ad Blue",
+        "price": 1,
+        "raw": "04/07/2023 72581 km FRS ABSENT NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 48203,
+        "description": "Nível Ad Blue",
+        "price": 1,
+        "raw": "28/11/2022 48203 km FRS ABSENT NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 48203,
+        "description": "Diversos serviços de manutenção",
+        "price": 1,
+        "raw": "28/11/2022 48203 km FRS ABSENT Divers Entretien € 1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 48203,
+        "description": "Revisão",
+        "price": 1,
+        "raw": "28/11/2022 48203 km FRS ABSENT Révision € 1,00"
+      }
+    ]
   }
 ]
