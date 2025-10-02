@@ -15041,5 +15041,166 @@
         "raw": "21/12/2021 653 km Qteam Wanze wheel balancing (tire center) € 26,72"
       }
     ]
+  },
+  {
+    "id": "6401839",
+    "make": "Peugeot",
+    "model": "2008",
+    "year": 2021,
+    "slug": "peugeot-2008-2021-6401839",
+    "price": 9900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_000.jpg",
+    "description": "O Peugeot 2008 1.2 PureTech de 2021 é um SUV moderno e eficiente, equipado com motor 1.2 litros a gasolina, potência de 129 cv, e caixa manual. Destaca-se pelo seu design elegante na cor cinzento, tecnologia LED, navegação integrada, ar condicionado e sensores de estacionamento (PDC). O veículo tem um histórico de manutenção detalhado, com revisões e substituições regulares de filtros, bateria e balaios limpa-vidros, assegurando excelente estado de conservação. É uma escolha ideal para quem procura um SUV compacto, confortável e económico, com boa performance e baixo consumo de combustível.",
+    "mileage": 102066,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.2",
+    "power": "129cv",
+    "places": 5,
+    "unitNumber": "6401839",
+    "origin": "France - Fleury Mérogis",
+    "firstRegistration": "11/02/2021",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "112",
+    "color": "Grey",
+    "vin": "VF3CUHMRPKY059111",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401839/photo_029.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "24/04/2024",
+        "km": 50785,
+        "shop": "FRS ABSENT",
+        "description": "Controlo Técnico",
+        "price": 1,
+        "raw": "24/04/2024 50785 km FRS ABSENT ContRôles Techniques € 1,00"
+      },
+      {
+        "date": "18/04/2024",
+        "km": 50785,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "18/04/2024 50785 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "18/04/2024",
+        "km": 50785,
+        "shop": "FRS ABSENT",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "18/04/2024 50785 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "18/04/2024",
+        "km": 50785,
+        "shop": "FRS ABSENT",
+        "description": "Bateria",
+        "price": 1,
+        "raw": "18/04/2024 50785 km FRS ABSENT Batterie € 1,00"
+      },
+      {
+        "date": "18/04/2024",
+        "km": 50785,
+        "shop": "FRS ABSENT",
+        "description": "Balai essuie-glace",
+        "price": 0.1,
+        "raw": "18/04/2024 50785 km FRS ABSENT Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "14/03/2023",
+        "km": 50269,
+        "shop": "FRS ABSENT",
+        "description": "Controlo Técnico",
+        "price": 1,
+        "raw": "14/03/2023 50269 km FRS ABSENT ContRôles Techniques € 1,00"
+      },
+      {
+        "date": "16/01/2023",
+        "km": 49942,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "16/01/2023 49942 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "16/01/2023",
+        "km": 49942,
+        "shop": "FRS ABSENT",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "16/01/2023 49942 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "16/01/2023",
+        "km": 49942,
+        "shop": "FRS ABSENT",
+        "description": "Bougies",
+        "price": 1,
+        "raw": "16/01/2023 49942 km FRS ABSENT Bougies € 1,00"
+      },
+      {
+        "date": "12/08/2021",
+        "km": 33158,
+        "shop": "FRS ABSENT",
+        "description": "Vidange liquide frein",
+        "price": 1,
+        "raw": "12/08/2021 33158 km FRS ABSENT Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "12/08/2021",
+        "km": 33158,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "12/08/2021 33158 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "18/06/2020",
+        "km": 21077,
+        "shop": "NEUBAUER",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "18/06/2020 21077 km NEUBAUER Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "18/06/2020",
+        "km": 21077,
+        "shop": "NEUBAUER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "18/06/2020 21077 km NEUBAUER Révision € 1,00"
+      }
+    ]
   }
 ]
