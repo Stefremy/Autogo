@@ -664,7 +664,7 @@ export default function Viaturas() {
             {/* Right-aligned pagination bar placed below the grid and above the footer */}
             <div className="max-w-7xl mx-auto mt-8 px-4">
               <div className="flex justify-end">
-                <nav className="inline-flex items-center gap-3 bg-white/90 shadow-md rounded-xl p-2 border border-[#e9e9e9]">
+                <nav className="inline-flex items-center gap-3 bg-white/90 shadow-md rounded-xl p-2 border border-[#e9e9e9] relative z-[60] pointer-events-auto">
                   <button
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={prevDisabled}
