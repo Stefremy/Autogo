@@ -1951,5 +1951,118 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6357327",
+    "make": "Audi",
+    "model": "A3 Sportback 1.5 35 TFSI",
+    "year": 2020,
+    "slug": "audi-a3-sportback-1-5-35-tfsi-2020-6357327",
+    "price": 17600,
+    "image": "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_056.jpg",
+    "description": "Este Audi A3 Sportback 1.5 35 TFSI de 2020 destaca-se pelo seu motor a gasolina de 1498 CC com 116 cv (85 kW) e caixa manual. Equipado com faróis LED, sistema de navegação virtual, KeylessGo, ar condicionado automático de duas zonas, cruise control, sensores de luz e chuva, volante multifunções, sistema start-stop e jantes de liga leve. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Multimédia com Bluetooth, leitor de CD, interface MP3 e computador de bordo. Veículo proveniente de leasing, com livro de revisões presente e garantia do odómetro. Inspeção válida até 30/06/2024. Cor cinza, 5 portas e 5 lugares. Um modelo versátil e confortável, ideal para quem procura um carro eficiente e bem equipado com histórico de manutenção garantido.",
+    "mileage": null,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "1498 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium - Belcar Zuid, Bist 12, 2630, Aartselaar",
+    "firstRegistration": null,
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "111",
+    "color": "Grey",
+    "vin": "WAUZZZGY2MA005694",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357327/photo_076.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Controlo de tração"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Livro de revisões presente: Sim",
+        "Data de fabrico: 30/06/2020",
+        "Origem do veículo: Leasing",
+        "Garantia do fabricante: Desconhecida",
+        "Garantia do odómetro: Sim",
+        "Data da inspeção: 30/06/2024",
+        "Lado do condutor: Esquerdo",
+        "2ª chave disponível: Sim",
+        "Número de chaves: 2",
+        "Revestimento da cabina: Desconhecido"
+      ]
+    },
+    "maintenance": []
   }
 ]
