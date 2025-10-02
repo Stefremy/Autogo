@@ -11058,5 +11058,110 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6310696",
+    "make": "Mini",
+    "model": "One D Clubman",
+    "year": 2020,
+    "slug": "mini-one-d-clubman-2020-6310696",
+    "price": 19300,
+    "image": "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_001.jpg",
+    "description": "Este Mini One D Clubman de 2020 destaca-se pelo seu motor híbrido (gasolina/eléctrico) de 1.5L com 125cv (92 kW), caixa automática e um design SUV/Off-road. Equipado com teto panorâmico, faróis LED, head-up display, sistema de áudio de alta performance e navegação, oferece conforto com bancos desportivos aquecidos, ar condicionado automático a duas zonas, cruise control e sistema keyless go. A segurança é garantida com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. O veículo apresenta 118449 km e uma excelente manutenção, sendo uma escolha ideal para quem procura um carro versátil, moderno e bem equipado.",
+    "mileage": 118449,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.5",
+    "power": "125cv",
+    "places": 5,
+    "unitNumber": "6357202",
+    "origin": "Belgium",
+    "firstRegistration": "2020-09-03",
+    "doors": null,
+    "fuel": "Hybrid (petrol / electric)",
+    "emissionClass": "Euro6",
+    "co2": "42",
+    "color": "Blue",
+    "vin": "WMW21BS0403M43360",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6310696/photo_026.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Head-up display",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Head-up display",
+        "Sistema de áudio de alta performance",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
