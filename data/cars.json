@@ -10206,5 +10206,109 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6395076",
+    "make": "BMW",
+    "model": "330e Touring",
+    "year": 2020,
+    "slug": "bmw-330e-touring-2020-6395076",
+    "price": 25400,
+    "image": "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_032.jpg",
+    "description": "Este BMW 330e Touring Plug-In Hybrid de 2020 combina desempenho e eficiência com um motor híbrido de 1998 cc e 292 cv. Equipado com caixa automática e tecnologia avançada como faróis LED, sistema de navegação profissional e interior desportivo em pele, oferece conforto e segurança superiores. Destaca-se pelo pacote M-Sport, assentos desportivos, e sistemas de assistência como sensores de chuva e luz, cruise control e sistema start-stop. A manutenção está atualizada, garantindo fiabilidade e excelente estado geral. Um veículo ideal para quem procura inovação, estilo e sustentabilidade num só automóvel.",
+    "mileage": 189333,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Estate Car",
+    "engineSize": "1998 CC",
+    "power": "292 Hp 215 kW",
+    "places": 5,
+    "unitNumber": "6395076",
+    "origin": "The Netherlands - Koopman Car Terminal bv",
+    "firstRegistration": "09/11/2020",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "37",
+    "color": "Cinza",
+    "vin": "WBA6N31050FK28677",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6395076/photo_019.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva",
+        "Engate de reboque"
+      ],
+      "outras_opcoes": [
+        "Pacote de áudio",
+        "Sistema de áudio"
+      ]
+    },
+    "maintenance": []
   }
 ]
