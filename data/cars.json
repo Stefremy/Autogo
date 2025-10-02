@@ -15980,5 +15980,254 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6170560",
+    "make": "Mercedes",
+    "model": "GLB 200d AMG 7PL",
+    "year": 2022,
+    "slug": "mercedes-glb-200d-amg-7pl-2022-6170560",
+    "price": 35900,
+    "image": "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_040.jpg",
+    "description": "Este Mercedes GLB 200d AMG 7PL de 2022 é um SUV robusto e elegante, equipado com motor Diesel de 1950 cc e potência de 150 Hp (110 kW). Destaca-se pela transmissão automática e um conjunto completo de equipamentos de alta qualidade, incluindo teto panorâmico, faróis LED Multibeam, sistema de navegação, interior desportivo em pele e Alcantara, bancos desportivos, e sistema KeylessGo. O veículo possui histórico de manutenção detalhado com revisões regulares e substituição de componentes essenciais como discos e pastilhas de travão, realizados na ETOILE 69 VAISE-GROUPE CHOPARD. Com um design exterior desportivo e tecnologia avançada de segurança como ABS, ESP, airbags múltiplos e Isofix, este Mercedes oferece conforto e segurança para até 7 lugares. Um automóvel ideal para quem procura performance, estilo e fiabilidade num SUV premium.",
+    "mileage": 147804,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1950 CC",
+    "power": "150 Hp (110 kW)",
+    "places": 7,
+    "unitNumber": "6170560",
+    "origin": "France - CERTINES",
+    "firstRegistration": "12/01/2022",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "148 CO2",
+    "color": "Black",
+    "vin": "W1N2476121W207801",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6170001-6180000/6170560/photo_062.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruzeiro automático",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop",
+        "Teto de abrir"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de fixação Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes em liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "16/04/2025",
+        "km": 144296,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Substituição de discos dianteiros",
+        "price": 1,
+        "raw": "16/04/2025 144296 km ETOILE 69 VAISE-GROUPE CHOPARD Disques AV € 1,00"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 144296,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Substituição de pastilhas dianteiras",
+        "price": 1,
+        "raw": "16/04/2025 144296 km ETOILE 69 VAISE-GROUPE CHOPARD Plaquettes AV € 1,00"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 144296,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "16/04/2025 144296 km ETOILE 69 VAISE-GROUPE CHOPARD Révision € 1,00"
+      },
+      {
+        "date": "16/04/2025",
+        "km": 144296,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Troca de óleo da caixa de velocidades",
+        "price": 1,
+        "raw": "16/04/2025 144296 km ETOILE 69 VAISE-GROUPE CHOPARD Vidange boite de vitesse € 1,00"
+      },
+      {
+        "date": "23/10/2024",
+        "km": 118517,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "23/10/2024 118517 km ETOILE 69 VAISE-GROUPE CHOPARD Révision € 1,00"
+      },
+      {
+        "date": "23/10/2024",
+        "km": 118517,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Substituição de palhetas do limpa-vidros",
+        "price": 1,
+        "raw": "23/10/2024 118517 km ETOILE 69 VAISE-GROUPE CHOPARD Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "21/05/2024",
+        "km": 95529,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Troca do líquido dos travões",
+        "price": 1,
+        "raw": "21/05/2024 95529 km ETOILE 69 VAISE-GROUPE CHOPARD Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "21/05/2024",
+        "km": 95529,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Reabastecimento de AdBlue",
+        "price": 1,
+        "raw": "21/05/2024 95529 km ETOILE 69 VAISE-GROUPE CHOPARD NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "21/05/2024",
+        "km": 95529,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "21/05/2024 95529 km ETOILE 69 VAISE-GROUPE CHOPARD Révision € 1,00"
+      },
+      {
+        "date": "26/01/2024",
+        "km": 73407,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/01/2024 73407 km ETOILE 69 VAISE-GROUPE CHOPARD Révision € 1,00"
+      },
+      {
+        "date": "26/01/2024",
+        "km": 73407,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Reabastecimento de AdBlue",
+        "price": 1,
+        "raw": "26/01/2024 73407 km ETOILE 69 VAISE-GROUPE CHOPARD NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "26/01/2024",
+        "km": 73407,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Substituição de palhetas do limpa-vidros",
+        "price": 1,
+        "raw": "26/01/2024 73407 km ETOILE 69 VAISE-GROUPE CHOPARD Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "31/08/2023",
+        "km": 23969,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Reabastecimento de AdBlue",
+        "price": 1,
+        "raw": "31/08/2023 23969 km ETOILE 69 VAISE-GROUPE CHOPARD NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "31/08/2023",
+        "km": 23969,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Substituição de palhetas do limpa-vidros",
+        "price": 1,
+        "raw": "31/08/2023 23969 km ETOILE 69 VAISE-GROUPE CHOPARD Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "31/08/2023",
+        "km": 23969,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "31/08/2023 23969 km ETOILE 69 VAISE-GROUPE CHOPARD Révision € 1,00"
+      },
+      {
+        "date": "13/04/2023",
+        "km": 23969,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "13/04/2023 23969 km ETOILE 69 VAISE-GROUPE CHOPARD Révision € 1,00"
+      },
+      {
+        "date": "13/04/2023",
+        "km": 23969,
+        "shop": "ETOILE 69 VAISE-GROUPE CHOPARD",
+        "description": "Reabastecimento de AdBlue",
+        "price": 1,
+        "raw": "13/04/2023 23969 km ETOILE 69 VAISE-GROUPE CHOPARD NIVEAU AD BLUE € 1,00"
+      }
+    ]
   }
 ]
