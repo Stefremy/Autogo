@@ -6202,5 +6202,253 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6358783",
+    "make": "BMW",
+    "model": "318d M-Sport",
+    "year": 2020,
+    "slug": "bmw-318d-m-sport-2020-6358783",
+    "price": 29800,
+    "image": "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_039.jpg",
+    "description": "Este BMW 318d M-Sport de 2020 destaca-se pelo seu motor Diesel de 1995 cc com 136 cv (100 kW), caixa automática e design elegante em branco. Equipado com faróis LED-Xenon, sistema de navegação LC-Pro, som Harman/Kardon, bancos desportivos em pele e Alcantara, KeylessGo, câmara traseira, ar condicionado e sensores de estacionamento (PDC). O veículo tem um histórico completo de manutenção, incluindo revisões regulares e cuidados com pneus, garantindo um estado excelente. Um modelo que combina desempenho, conforto e tecnologia avançada, ideal para quem procura um sedan premium com estilo e fiabilidade.",
+    "mileage": 83653,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon8",
+    "engineSize": "1.995",
+    "power": "136cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "France",
+    "firstRegistration": "31/03/2020",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "134",
+    "color": "Branco",
+    "vin": "WBA5V31020FJ56087",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6358783/photo_057.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED-Xenon",
+        "Harman/Kardon",
+        "Navegação LC-Pro"
+      ],
+      "conforto": [
+        "Ar condicionado",
+        "KeylessGo",
+        "Bancos desportivos em pele e Alcantara"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "multimedia": [
+        "Sistema de navegação",
+        "Som Harman/Kardon"
+      ],
+      "interior": [
+        "Bancos em pele e Alcantara",
+        "Ambient lighting"
+      ],
+      "exterior": [
+        "Jantes desportivas",
+        "Faróis LED-Xenon"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "01/04/2025",
+        "km": 79,
+        "description": "Dépose/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/04/2025 79 km Dépose/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/04/2025",
+        "km": 79,
+        "description": "Liquide de frein/Pré diag constructeur/Recyclage",
+        "price": 0,
+        "raw": "01/04/2025 79 km Liquide de frein/Pré diag constructeur/Recyclage € 0,00"
+      },
+      {
+        "date": "01/01/2025",
+        "km": 73,
+        "description": "Filtre d'habitacle/Révision",
+        "price": 0,
+        "raw": "01/01/2025 73 km Filtre d'habitacle/Révision € 0,00"
+      },
+      {
+        "date": "01/11/2024",
+        "km": 70,
+        "description": "Gardiennage pneu verão/inverno",
+        "price": 0,
+        "raw": "01/11/2024 70 km Gardiennage pneu été/hiver € 0,00"
+      },
+      {
+        "date": "01/11/2024",
+        "km": 70,
+        "description": "Dépose/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/11/2024 70 km Dépose/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 66,
+        "description": "Réparation pneumatique",
+        "price": 0,
+        "raw": "01/09/2024 66 km Réparation pneumatique € 0,00"
+      },
+      {
+        "date": "01/07/2024",
+        "km": 61,
+        "description": "Disques de freins AV/Essai/Kit de frein arrière/Recyclage/Révision intermédiaire",
+        "price": 0,
+        "raw": "01/07/2024 61 km Disques de freins AV/Essai/Kit de frein arrière/Recyclage/Révision intermédiaire € 0,00"
+      },
+      {
+        "date": "01/06/2024",
+        "km": 59,
+        "description": "Gardiennage pneu verão/inverno",
+        "price": 0,
+        "raw": "01/06/2024 59 km Gardiennage pneu été/hiver € 0,00"
+      },
+      {
+        "date": "01/06/2024",
+        "km": 59,
+        "description": "Dépose/Pneu verão/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/06/2024 59 km Dépose/Pneu été/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/05/2024",
+        "km": 58,
+        "description": "Controle technique autorise",
+        "price": 0,
+        "raw": "01/05/2024 58 km Controle technique autorise € 0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 48,
+        "description": "Dépose/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/10/2023 48 km Dépose/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 47,
+        "description": "ADBLUE/Filtre d'habitacle/Filtre à air/Recyclage/Révision",
+        "price": 0,
+        "raw": "01/10/2023 47 km ADBLUE/Filtre d'habitacle/Filtre à air/Recyclage/Révision € 0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 48,
+        "description": "Gardiennage pneu verão/inverno",
+        "price": 0,
+        "raw": "01/10/2023 48 km Gardiennage pneu été/hiver € 0,00"
+      },
+      {
+        "date": "01/04/2023",
+        "km": 39,
+        "description": "Dépose/Gardiennage pneu verão/inverno/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/04/2023 39 km Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/03/2023",
+        "km": 38,
+        "description": "Balai d'essuie-glace AR/Balais d'essuie-glace AV/Liquide de frein/Plaquettes frein AR/Recyclage",
+        "price": 0,
+        "raw": "01/03/2023 38 km Balai d'essuie-glace AR/Balais d'essuie-glace AV/Liquide de frein/Plaquettes frein AR/Recyclage € 0,00"
+      },
+      {
+        "date": "01/10/2022",
+        "km": 35,
+        "description": "Dépose/Gardiennage pneu verão/inverno/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/10/2022 35 km Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/04/2022",
+        "km": 23,
+        "description": "Dépose/Gardiennage pneu verão/inverno/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/04/2022 23 km Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/03/2022",
+        "km": 21,
+        "description": "ADBLUE/Balais d'essuie-glace AV/Filtre à pollen/Révision",
+        "price": 0,
+        "raw": "01/03/2022 21 km ADBLUE/Balais d'essuie-glace AV/Filtre à pollen/Révision € 0,00"
+      },
+      {
+        "date": "01/10/2021",
+        "km": 20,
+        "description": "Dépose/Gardiennage pneu verão/inverno/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/10/2021 20 km Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/09/2021",
+        "km": 19,
+        "description": "Plaquettes frein AR/Recyclage",
+        "price": 0,
+        "raw": "01/09/2021 19 km Plaquettes frein AR/Recyclage € 0,00"
+      },
+      {
+        "date": "01/05/2021",
+        "km": 12,
+        "description": "Dépose/Gardiennage pneu verão/inverno/pose pneumatique inverno/verão",
+        "price": 0,
+        "raw": "01/05/2021 12 km Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+      },
+      {
+        "date": "01/11/2020",
+        "km": 8,
+        "description": "Gardiennage pneu verão/inverno",
+        "price": 0,
+        "raw": "01/11/2020 8 km Gardiennage pneu été/hiver € 0,00"
+      },
+      {
+        "date": "01/11/2020",
+        "km": 8,
+        "description": "Pneu inverno",
+        "price": 0,
+        "raw": "01/11/2020 8 km Pneu hiver € 0,00"
+      }
+    ]
   }
 ]
