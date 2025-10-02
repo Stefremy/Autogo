@@ -7401,5 +7401,219 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6402013",
+    "make": "Peugeot",
+    "model": "208",
+    "year": 2021,
+    "slug": "peugeot-208-2021-6402013",
+    "price": 12900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_054.jpg",
+    "description": "O Peugeot 208 1.2 PureTech GT-Line de 2021 é um carro compacto e moderno, equipado com motor 1.2 PureTech de 99 cv, caixa manual e tecnologia LED-Xenon. Destaca-se pelo seu design desportivo com interior em pele, sistema I-Cockpit, navegação integrada, KeylessGo, câmara traseira e sensores de estacionamento (PDC). O veículo apresenta um histórico de manutenção completo, com revisões regulares e substituições de componentes essenciais, garantindo fiabilidade e bom estado geral. Ideal para quem procura um carro urbano eficiente, confortável e bem equipado, com baixo consumo e emissões Euro 6. Um modelo que combina estilo, tecnologia e segurança para uma condução agradável e segura.",
+    "mileage": 49369,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Small Car6",
+    "engineSize": "1.2",
+    "power": "99cv",
+    "places": 5,
+    "unitNumber": "6402013",
+    "origin": "France - Fleury Mérogis",
+    "firstRegistration": "13/06/2021",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Grey",
+    "vin": "VR3UPHNEKMT056535",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402014/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED-Xenon",
+        "I-Cockpit",
+        "KeylessGo"
+      ],
+      "conforto": [
+        "Climatização (Klima)",
+        "Bancos em pele",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Airbags"
+      ],
+      "multimedia": [
+        "Navegação (Navi)",
+        "Sistema áudio"
+      ],
+      "interior": [
+        "Bancos desportivos 1/2 em pele"
+      ],
+      "exterior": [
+        "Jantes liga leve",
+        "Cor cinzenta (Grey)"
+      ],
+      "outras_opcoes": [
+        "Sport"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "03/09/2024",
+        "km": 44859,
+        "shop": "FRS ABSENT",
+        "description": "Vidange liquide frein",
+        "price": 1,
+        "raw": "03/09/2024 44859 km FRS ABSENT Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "03/09/2024",
+        "km": 44859,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "03/09/2024 44859 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "03/09/2024",
+        "km": 44859,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "03/09/2024 44859 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "10/03/2023",
+        "km": 39906,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "10/03/2023 39906 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "10/03/2023",
+        "km": 39906,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de velas (Bougies)",
+        "price": 1,
+        "raw": "10/03/2023 39906 km FRS ABSENT Bougies € 1,00"
+      },
+      {
+        "date": "10/03/2023",
+        "km": 39906,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "10/03/2023 39906 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Diversos outros serviços",
+        "price": 0,
+        "raw": "27/04/2022 20339 km BERNIER Divers autres € 0,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 3.5,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 3,50"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Filtros",
+        "price": 0.1,
+        "raw": "27/04/2022 20339 km BERNIER Filtres € 0,10"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Filtres € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Filtres € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Diversos outros serviços",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Divers autres € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      }
+    ]
   }
 ]
