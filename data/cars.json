@@ -13386,5 +13386,197 @@
         "raw": "01/11/2020 7 km controle niveaus € 0,00"
       }
     ]
+  },
+  {
+    "id": "6401815",
+    "make": "Peugeot",
+    "model": "2008",
+    "year": 2020,
+    "slug": "peugeot-2008-2020-6401815",
+    "price": 15900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_000.jpg",
+    "description": "O Peugeot 2008 1.5 BlueHDI GT-Line de 2020 é um SUV compacto que combina design moderno com tecnologia avançada. Equipado com motor 1.5 BlueHDI de 131cv, caixa manual e uma eficiente classificação Euro6, este modelo destaca-se pelo teto panorâmico, faróis LED-Xenon, sistema I-Cockpit com ambiente interior personalizado, navegação integrada, bancos em pele, KeylessGo, câmara traseira e ar condicionado automático. O veículo apresenta um histórico de manutenção detalhado e rigoroso, com revisões e substituições de componentes essenciais realizadas na PSA Peugeot, garantindo fiabilidade e segurança. A cor cinza e o baixo consumo de combustível tornam-no ideal para uso urbano e viagens. Um SUV versátil, confortável e seguro, pronto para oferecer uma excelente experiência de condução.",
+    "mileage": 54019,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.2",
+    "power": "131cv",
+    "places": 5,
+    "unitNumber": "6400619",
+    "origin": "France - Quincieux",
+    "firstRegistration": "2020-05-08",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Grey",
+    "vin": "VR3USHNKKMJ861684",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_024.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED-Xenon"
+      ],
+      "conforto": [
+        "Ar condicionado",
+        "KeylessGo",
+        "Bancos em pele"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "PDC (sensores de estacionamento)"
+      ],
+      "multimedia": [
+        "Navegação integrada",
+        "I-Cockpit",
+        "Sistema de som ambiente"
+      ],
+      "interior": [
+        "Ambiente interior personalizado",
+        "Bancos em pele"
+      ],
+      "exterior": [
+        "Jantes específicas GT-Line",
+        "Cor cinza"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Révision € 1,00"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Révision € 0,30"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de velas (Bougies)",
+        "price": 3,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Bougies € 3,00"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de balai essuie-glace (limpadores de para-brisas)",
+        "price": 0.1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de kit distribuição / courroie / galets",
+        "price": 1.9,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Kit distribution / Courroie /galets € 1,90"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de plaquettes AV (pastilhas de travão dianteiras)",
+        "price": 1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Plaquettes AV € 1,00"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Filtres € 1,00"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de joints motor",
+        "price": 1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Joints Moteur € 1,00"
+      },
+      {
+        "date": "21/05/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Grande reparação e manutenção",
+        "price": 1,
+        "raw": "21/05/2025 47857 km PSA PEUGEOT GROSSE REPARATION MAINTENANCE € 1,00"
+      },
+      {
+        "date": "25/01/2024",
+        "km": 25609,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "25/01/2024 25609 km PSA PEUGEOT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "25/01/2024",
+        "km": 25609,
+        "shop": "PSA PEUGEOT",
+        "description": "Vidange do líquido de travão",
+        "price": 2,
+        "raw": "25/01/2024 25609 km PSA PEUGEOT Vidange liquide frein € 2,00"
+      },
+      {
+        "date": "18/12/2023",
+        "km": 0,
+        "shop": "HERTZ",
+        "description": "CAT C - Período de aluguer Perreve Camille de 19/12/2023 a 03/01/2024",
+        "price": 15,
+        "raw": "18/12/2023 0 km HERTZ CAT C - PERREVE CAMILLE - DU 19/12/2023 AU 03/01/2024 € 15,00"
+      },
+      {
+        "date": "18/12/2023",
+        "km": 0,
+        "shop": "HERTZ",
+        "description": "CAT C - Período de aluguer Perreve Camille de 19/12/2023 a 29/12/2023",
+        "price": 10,
+        "raw": "18/12/2023 0 km HERTZ CAT C - PERREVE CAMILLE - DU 19/12/2023 AU 29/12/2023 € 10,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 0,
+        "shop": "HERTZ",
+        "description": "CAT C - Período de aluguer Perreve Camille de 18/12/2023 a 02/01/2024",
+        "price": 15,
+        "raw": "08/12/2023 0 km HERTZ CAT C - PERREVE CAMILLE - DU 18/12/2023 AU 02/01/2024 € 15,00"
+      }
+    ]
   }
 ]
