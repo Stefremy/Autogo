@@ -2158,5 +2158,112 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6149494",
+    "make": "Land Rover",
+    "model": "Defender 2.0 P400e Hybrid",
+    "year": 2024,
+    "slug": "land-rover-defender-2-0-p400e-hybrid-2024-6149494",
+    "price": "sob consulta",
+    "image": "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_035.jpg",
+    "description": "O Land Rover Defender 2.0 P400e Hybrid de 2024 é um SUV/Off-road robusto e sofisticado, equipado com um motor híbrido de 1999 cc que entrega 404 cavalos de potência (297 kW). Com transmissão automática e tração integral AWD, oferece uma condução dinâmica e confortável para até 6 lugares. Destaca-se pelo teto panorâmico, faróis LED-Xenon, sistema de navegação virtual Meridian, interior desportivo em pele, sistema de áudio de alta performance e funcionalidades como Keyless Go, câmara traseira e sensores de estacionamento. Equipado com tecnologias de segurança avançadas como ABS, ESP, airbags múltiplos e pontos Isofix, garante máxima proteção. O veículo apresenta controlo de clima automático a duas zonas, bancos aquecidos, cruise control, sensores de luz e chuva, e suspensão desportiva. A manutenção e o histórico do veículo não foram especificados, mas o estado geral é excelente, ideal para quem procura um veículo versátil e potente com tecnologia híbrida e conforto premium.",
+    "mileage": 160,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2.0",
+    "power": "404 Hp 297 kW",
+    "places": 6,
+    "unitNumber": "",
+    "origin": "France - TEA LE MEUX",
+    "firstRegistration": "2024-08-04",
+    "doors": 5,
+    "fuel": "Hybrid (petrol / electric)",
+    "emissionClass": "Euro6",
+    "co2": "62",
+    "color": "Grey",
+    "vin": "SALEA7BY9R2295463",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6149494/photo_059.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema Start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Bancos dianteiros aquecidos reguláveis semi-elétricos",
+        "Estilo 5098",
+        "5 braços",
+        "Tração às quatro rodas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
