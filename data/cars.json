@@ -116,7 +116,8 @@
         "Sistema de som",
         "Controlo de tração"
       ]
-    }
+    },
+    "priceDisplay": "13900"
   },
   {
     "id": "6387467",
@@ -257,7 +258,8 @@
         "Reservatório SCR de maior capacidade",
         "Service interval 25.000 km"
       ]
-    }
+    },
+    "priceDisplay": "34990"
   },
   {
     "id": "6367789",
@@ -945,7 +947,8 @@
         "price": 2,
         "description": "windscreen washer fluid"
       }
-    ]
+    ],
+    "priceDisplay": "31990"
   },
   {
     "id": "5982264",
@@ -1241,7 +1244,8 @@
         "description": "Alfa Romeo olieservice",
         "raw": "14/12/2018 20863 km Alfa Romeo olieservice € 0,00"
       }
-    ]
+    ],
+    "priceDisplay": "7900"
   },
   {
     "id": "1759335674016",
@@ -1357,7 +1361,8 @@
         "Filtro de partículas"
       ]
     },
-    "maintenance": []
+    "maintenance": [],
+    "priceDisplay": "19500"
   },
   {
     "id": "6390148",
@@ -1485,7 +1490,8 @@
         "Cobertura da bagageira"
       ]
     },
-    "maintenance": []
+    "maintenance": [],
+    "priceDisplay": "18200"
   },
   {
     "id": "6357327",
@@ -1598,7 +1604,8 @@
         "Revestimento da cabina: Desconhecido"
       ]
     },
-    "maintenance": []
+    "maintenance": [],
+    "priceDisplay": "17600"
   },
   {
     "id": "6340793",
@@ -1818,7 +1825,8 @@
         "price": 1,
         "raw": "10/10/2023 20237 km EDENAUTOS Niveaux € 1,00"
       }
-    ]
+    ],
+    "priceDisplay": "27400"
   },
   {
     "id": "6403464",
