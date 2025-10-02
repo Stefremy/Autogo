@@ -16381,5 +16381,107 @@
         "raw": "18/07/2022 28174 km MERCEDES-BENZ COLOMBES Révision € 1,00"
       }
     ]
+  },
+  {
+    "id": "6328077",
+    "make": "Mercedes",
+    "model": "CLA 200 Shooting Brake",
+    "year": 2021,
+    "slug": "mercedes-cla-200-shooting-brake-2021-6328077",
+    "price": 24400,
+    "image": "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_029.jpg",
+    "description": "Este Mercedes CLA 200 Shooting Brake de 2021 apresenta-se com um motor de 1332 CC e potência de 163 cv (120 kW), equipado com caixa manual. Destaca-se pelo seu teto panorâmico, faróis LED Multibeam, sistema de áudio de alta performance Burmester, navegação integrada e interior desportivo com bancos em pele e Alcantara. O veículo conta com ar condicionado automático a duas zonas, sensores de chuva e luz, cruise control, bancos aquecidos com memória e sistema Keyless Go. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, pontos de ancoragem Isofix e imobilizador. O carro tem uma quilometragem de 70146 km e está em excelente estado, com histórico de manutenção regular. Um modelo elegante e versátil, ideal para quem procura conforto, tecnologia e performance num veículo familiar de alta qualidade.",
+    "mileage": 70146,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Estate Car",
+    "engineSize": "1.3",
+    "power": "163cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "The Netherlands - Koopman Car Terminal bv",
+    "firstRegistration": "20/07/2021",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "140",
+    "color": "Black",
+    "vin": "W1K1186871N240892",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6328077/photo_008.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bancos com memória",
+        "Sistema Start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
