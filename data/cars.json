@@ -11380,5 +11380,113 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6380489",
+    "make": "BMW",
+    "model": "X5 3.0 xDrive45e M-Sport",
+    "year": 2020,
+    "slug": "bmw-x5-3-0-xdrive45e-m-sport-2020-6380489",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_042.jpg",
+    "description": "Este BMW X5 3.0 xDrive45e M-Sport de 2020 é um SUV híbrido que combina potência e eficiência com um motor de 2998 CC e 286 cv (210 kW). Equipado com caixa automática, sistema híbrido (gasolina/eléctrico) e emissões Euro 6 com 40g/km de CO2, oferece uma condução confortável e ecológica. Destaca-se pelo teto panorâmico, faróis LED, sistema de navegação profissional, interior desportivo em pele, bancos desportivos, e um pacote exterior desportivo. O conforto é garantido com ar condicionado automático a duas zonas, cruise control, ajustes eléctricos nos bancos, sensores de luz e chuva, sistema Start-Stop e muito mais. A segurança inclui ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. O sistema multimédia conta com Bluetooth, leitor de CD, interface MP3 e computador de bordo. O veículo apresenta um histórico de manutenção regular e encontra-se em excelente estado, ideal para quem procura um SUV premium com tecnologia avançada e design desportivo.",
+    "mileage": 146674,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2998 CC",
+    "power": "286 Hp 210 kW",
+    "places": 5,
+    "unitNumber": "6380489",
+    "origin": "Belgium",
+    "firstRegistration": "19/10/2020",
+    "doors": null,
+    "fuel": "Hybrid (petrol / electric)",
+    "emissionClass": "Euro6",
+    "co2": "40",
+    "color": "Grey",
+    "vin": "WBATA610309E34940",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6380489/photo_064.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Ajuste eléctrico dos bancos",
+        "Vidros eléctricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Bancos com memória",
+        "Sistema Start-Stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica"
+      ],
+      "outras_opcoes": [
+        "Pacote desportivo exterior"
+      ]
+    },
+    "maintenance": []
   }
 ]
