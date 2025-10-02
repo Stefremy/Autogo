@@ -8859,5 +8859,110 @@
         "raw": "12/10/2020 21566 km MASA LA VALENTINE Révision € 1,00"
       }
     ]
+  },
+  {
+    "id": "6403918",
+    "make": "BMW",
+    "model": "320e Touring Facelift Hybrid M-Sport",
+    "year": 2023,
+    "slug": "bmw-320e-touring-facelift-hybrid-m-sport-2023-6403918",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_000.jpg",
+    "description": "Este BMW 320e Touring Facelift Hybrid M-Sport de 2023 destaca-se pelo seu motor híbrido de 1998 cc com 163 cv (120 kW), caixa automática e um design elegante com faróis LED e Xenon. Equipado com sistema de navegação LC-Pro, interior desportivo em pele e Alcantara, e funcionalidades como KeylessGo, ar condicionado automático de duas zonas, sensores de chuva e luz, e sistema start-stop. A segurança é garantida com ABS, ESP, airbags frontais e laterais, e pontos de ancoragem Isofix. O veículo apresenta um histórico de manutenção completo e encontra-se em excelente estado, ideal para quem procura conforto, desempenho e tecnologia num carro familiar híbrido. O BMW inclui ainda jantes de liga leve, pacote desportivo e suspensão desportiva, reforçando o seu carácter dinâmico e exclusivo.",
+    "mileage": 73460,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Carrinha",
+    "engineSize": "1998",
+    "power": "163cv",
+    "places": 5,
+    "unitNumber": "6403918",
+    "origin": "France",
+    "firstRegistration": "17/01/2023",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "32",
+    "color": "Preto",
+    "vin": "WBA41FY090FP32112",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6403918/photo_020.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Espelhos laterais elétricos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Volante em pele",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Descanso de braços dianteiro",
+        "Descanso de braços traseiro"
+      ]
+    },
+    "maintenance": []
   }
 ]
