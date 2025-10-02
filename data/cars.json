@@ -2764,5 +2764,130 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6145562",
+    "make": "Audi",
+    "model": "A3 Sportback 2.0 30 TDi S-Line",
+    "year": 2021,
+    "slug": "audi-a3-sportback-2-0-30-tdi-s-line-2021-6145562",
+    "price": 24900,
+    "image": "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_018.jpg",
+    "description": "O Audi A3 Sportback 2.0 30 TDi S-Line de 2021 é um sedan diesel com motor de 1968 CC e potência de 150 Hp (110 kW). Equipado com caixa manual e tecnologia LED-Matrix, inclui navegação Virtual Navi-Pro, bancos desportivos em pele, sistema KeylessGo, câmara traseira, ar condicionado (Klima) e sensores de estacionamento (PDC). O veículo apresenta um histórico completo de manutenção com revisões regulares e substituições de componentes essenciais como líquido de travão e escovas limpa-vidros. Destaca-se pelo design elegante, conforto e segurança, sendo uma escolha excelente para quem procura performance e tecnologia num compacto premium. O carro tem 121456 km e está em conformidade com a norma Euro6, emitindo 122 g/km de CO2.",
+    "mileage": 121456,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "1968 CC",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "6145562",
+    "origin": "France",
+    "firstRegistration": "25/03/2021",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "122",
+    "color": "Grey",
+    "vin": "WAUZZZGY5MA090983",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6140001-6150000/6145562/photo_039.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED-Matrix",
+        "Virtual Navi-Pro",
+        "KeylessGo"
+      ],
+      "conforto": [
+        "Climatização (Klima)",
+        "Bancos desportivos em pele",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Sistemas avançados de segurança"
+      ],
+      "multimedia": [
+        "Navegação Virtual Navi-Pro"
+      ],
+      "interior": [
+        "Bancos em pele",
+        "Volante desportivo"
+      ],
+      "exterior": [
+        "Jantes desportivas",
+        "Cor Grey"
+      ],
+      "outras_opcoes": [
+        "S-Line",
+        "1/2 Sport"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "24/01/2025",
+        "km": 117472,
+        "description": "ADBLUE, Balai d'essuie-glace AR, Balais d'essuie-glace AV, Líquido de travão, Pastilhas de travão dianteiras, Reciclagem, Revisão",
+        "price": 0,
+        "raw": "24/01/2025 117472 km ADBLUE/Balai d'essuie-glace AR/Balais d'essuie-glace AV/Liquide de frein/Plaquettes freins AV/Recyclage/Révision € 0,00"
+      },
+      {
+        "date": "09/01/2025",
+        "km": 115467,
+        "description": "Controlo técnico autorizado",
+        "price": 0,
+        "raw": "09/01/2025 115467 km Controle technique autorise € 0,00"
+      },
+      {
+        "date": "18/01/2024",
+        "km": 88132,
+        "description": "Líquido de lava-vidros, Pastilhas de travão traseiras, Reciclagem, Revisão",
+        "price": 0,
+        "raw": "18/01/2024 88132 km Liquide lave-glace/Plaquettes frein AR/Recyclage/Révision € 0,00"
+      },
+      {
+        "date": "07/03/2023",
+        "km": 58190,
+        "description": "Balai d'essuie-glace AR, Balais d'essuie-glace AV, Líquido de travão, Revisão",
+        "price": 0,
+        "raw": "07/03/2023 58190 km Balai d'essuie-glace AR/Balais d'essuie-glace AV/Liquide de frein/Révision € 0,00"
+      },
+      {
+        "date": "15/03/2022",
+        "km": 30207,
+        "description": "ADBLUE, Revisão",
+        "price": 0,
+        "raw": "15/03/2022 30207 km ADBLUE/Révision € 0,00"
+      }
+    ]
   }
 ]
