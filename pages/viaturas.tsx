@@ -25,6 +25,8 @@ export default function Viaturas() {
   const [km, setKm] = useState("");
   const [showSimulador, setShowSimulador] = useState(false);
   const [countryFilter, setCountryFilter] = useState("");
+  const [minPrice, setMinPrice] = useState("1000");
+  const [maxPrice, setMaxPrice] = useState("10000");
   const [page, setPage] = useState(1);
   const PAGE_SIZE = 12;
 
@@ -63,7 +65,7 @@ export default function Viaturas() {
   // Reset page when filters change
   React.useEffect(() => {
     setPage(1);
-  }, [marca, modelo, ano, mes, km]);
+  }, [marca, modelo, ano, mes, km, minPrice, maxPrice]);
 
   // Reset page when country filter changes
   React.useEffect(() => {
@@ -97,13 +99,28 @@ export default function Viaturas() {
       return Number.isFinite(n) ? n : null;
     })();
 
+    // safe numeric price for filtering
+    const priceNum = (() => {
+      const v = (car as any).price;
+      if (v == null) return null;
+      if (typeof v === 'number') return Number.isFinite(v) ? v : null;
+      if (typeof v === 'string') {
+        const digits = String(v).replace(/[^0-9.-]/g, '');
+        const n = Number(digits);
+        return Number.isFinite(n) ? n : null;
+      }
+      return null;
+    })();
+
     return (
       (!marca || car.make === marca) &&
       (!modelo || car.model === modelo) &&
       (!countryFilter || carCountry === cf) &&
       (!ano || carYearStr === ano) &&
       (!mes || (car.hasOwnProperty('month') && String((car as any).month).padStart(2, '0') === mes.padStart(2, '0'))) &&
-      (!km || (mileageNum !== null && mileageNum <= parseInt(km, 10)))
+      (!km || (mileageNum !== null && mileageNum <= parseInt(km, 10))) &&
+      (!minPrice || (priceNum !== null && priceNum >= parseInt(minPrice || '0', 10))) &&
+      (!maxPrice || (priceNum !== null && priceNum <= parseInt(maxPrice || '0', 10)))
     );
   });
 
@@ -112,6 +129,9 @@ export default function Viaturas() {
   const clampedPage = Math.min(Math.max(1, page), totalPages);
   const startIndex = (clampedPage - 1) * PAGE_SIZE;
   const paginatedCars = filteredCars.slice(startIndex, startIndex + PAGE_SIZE);
+  // Pagination button state helpers to improve affordance
+  const prevDisabled = clampedPage <= 1;
+  const nextDisabled = clampedPage >= totalPages;
 
   // Status translation map
   const statusLabels = {
@@ -328,15 +348,42 @@ export default function Viaturas() {
                 <select
                   value={modelo}
                   onChange={(e) => setModelo(e.target.value)}
-                  className="bg-transparent outline-none border-none text-base"
+                  disabled={!marca}
+                  aria-disabled={!marca}
+                  title={!marca ? 'Selecione uma marca primeiro' : undefined}
+                  className={`bg-transparent outline-none border-none text-base w-32 ${!marca ? 'opacity-60 cursor-not-allowed' : ''}`}
                 >
                   <option value="">{t("Modelo")}</option>
-                  {modelos.map((m) => (
+                  {marca && modelos.map((m) => (
                     <option key={m} value={m}>
                       {m}
                     </option>
                   ))}
                 </select>
+                {/* Price range inputs placed next to model select */}
+                <div className="flex items-center gap-2 ml-2">
+                  <input
+                    type="number"
+                    min="0"
+                    step="100"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(e.target.value)}
+                    placeholder="Min €"
+                    className="bg-transparent outline-none border-none text-sm w-20 px-2 py-1 rounded text-right"
+                    aria-label="Preço mínimo"
+                  />
+                  <span className="text-gray-400">—</span>
+                  <input
+                    type="number"
+                    min="0"
+                    step="100"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(e.target.value)}
+                    placeholder="Max €"
+                    className="bg-transparent outline-none border-none text-sm w-20 px-2 py-1 rounded text-right"
+                    aria-label="Preço máximo"
+                  />
+                </div>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
                 <FaCalendarAlt className="text-[#b42121] text-lg" />
@@ -411,6 +458,8 @@ export default function Viaturas() {
                   setDia("");
                   setKm("");
                   setCountryFilter("");
+                  setMinPrice("");
+                  setMaxPrice("");
                 }}
                 className="flex items-center gap-2 bg-white border border-[#b42121]/30 text-[#b42121] rounded-xl px-6 py-2 font-bold shadow transition-all duration-200 hover:bg-[#b42121] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 focus:ring-offset-2"
               >
@@ -618,9 +667,9 @@ export default function Viaturas() {
                 <nav className="inline-flex items-center gap-3 bg-white/90 shadow-md rounded-xl p-2 border border-[#e9e9e9]">
                   <button
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
-                    disabled={clampedPage <= 1}
-                    className="px-3 py-1 rounded-md text-sm font-semibold text-[#b42121] bg-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={prevDisabled}
                     aria-label="Anterior"
+                    className={`px-3 py-1 rounded-md text-sm font-semibold ${prevDisabled ? 'text-gray-400 bg-white/90 border border-gray-200 cursor-not-allowed opacity-90' : 'text-[#b42121] bg-white border border-[#b42121]/10 shadow-md hover:shadow-lg cursor-pointer'} transition-all duration-150`}
                   >
                     ← {t("Anterior")}
                   </button>
@@ -629,9 +678,9 @@ export default function Viaturas() {
                   </div>
                   <button
                     onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                    disabled={clampedPage >= totalPages}
-                    className="px-3 py-1 rounded-md text-sm font-semibold text-white bg-[#b42121] hover:bg-[#a11a1a] disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={nextDisabled}
                     aria-label="Seguinte"
+                    className={`px-3 py-1 rounded-md text-sm font-semibold ${nextDisabled ? 'text-white bg-[#b42121]/60 cursor-not-allowed opacity-90' : 'text-white bg-[#b42121] hover:bg-[#a11a1a] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer'} transition-all duration-150`}
                   >
                     {t("Seguinte")} →
                   </button>
