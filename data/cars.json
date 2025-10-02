@@ -8076,5 +8076,339 @@
         "raw": "29/08/2020 220 km Eurocross International Holding B.V. Merkhulpdienst BI € 30,00"
       }
     ]
+  },
+  {
+    "id": "6388495",
+    "make": "BMW",
+    "model": "518d Touring",
+    "year": 2019,
+    "slug": "bmw-518d-touring-2019-6388495",
+    "price": 19900,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_070.jpg",
+    "description": "Este BMW 518d Touring de 2019 apresenta um motor de 1995 CC com 136 cv (100 kW), caixa automática e é um veículo Diesel com categoria Euro 6. Equipado com teto panorâmico, faróis LED-Xenon, sistema de navegação profissional, Keyless Go, ar condicionado automático de duas zonas, cruise control, bancos aquecidos e ajustáveis eletricamente, sensores de luz e chuva, volante multifunções, sistema start-stop, sensores de estacionamento (PDC) e muito mais. O carro tem um histórico completo de manutenção, incluindo várias revisões e serviços realizados regularmente, garantindo a sua excelente condição. A cor exterior é azul e o veículo tem 5 lugares e 5 portas. Um carro espaçoso e confortável, ideal para quem procura um estate car com tecnologia avançada e segurança reforçada.",
+    "mileage": 136051,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Estate Car",
+    "engineSize": "1.995",
+    "power": "136cv",
+    "places": 5,
+    "unitNumber": "6388495",
+    "origin": "Belgium",
+    "firstRegistration": "26/06/2019",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "152",
+    "color": "Azul",
+    "vin": "WBAJP11070BJ26751",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_090.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_094.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_096.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_101.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_097.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_099.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_100.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388495/photo_098.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Fixações Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Engate de reboque"
+      ],
+      "outras_opcoes": [
+        "Tomadas adicionais 12v",
+        "Revestimento interior em pele Dakota",
+        "Teto solar elétrico",
+        "Cortina solar mecânica para vidros traseiros",
+        "Pintura metalizada",
+        "Potência não reduzida",
+        "Reboque fixo",
+        "Capacidade de reboque 750kg",
+        "Bancos dianteiros aquecidos"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/06/2025",
+        "km": 135,
+        "description": "Serviço de óleo do motor",
+        "price": 0,
+        "raw": "01/06/2025 135 km serv motorolie € 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 135,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/06/2025 135 km serv microfilter € 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 135,
+        "description": "Material pequeno e ambiente",
+        "price": 0,
+        "raw": "01/06/2025 135 km Klein materiaal & milieu € 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 135,
+        "description": "Fluido de refrigeração e anticongelante",
+        "price": 0,
+        "raw": "01/06/2025 135 km de koelvloeistof-antivries € 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 135,
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 0,
+        "raw": "01/06/2025 135 km ruitenwisserblad voor € 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 135,
+        "description": "Palheta limpa para-brisas traseira",
+        "price": 0,
+        "raw": "01/06/2025 135 km ruitenwisserblad achter € 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 135,
+        "description": "Serviço padrão BMW",
+        "price": 0,
+        "raw": "01/06/2025 135 km BMW service standaard omvang € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 106,
+        "description": "Serviço padrão BMW",
+        "price": 0,
+        "raw": "01/09/2024 106 km BMW service standaard omvang € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 106,
+        "description": "Verificação do veículo BMW",
+        "price": 0,
+        "raw": "01/09/2024 106 km BMW service voertuig-check € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 106,
+        "description": "Serviço de óleo do motor",
+        "price": 0,
+        "raw": "01/09/2024 106 km serv motorolie € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 106,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/09/2024 106 km serv microfilter € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 106,
+        "description": "Serviço de filtro de ar",
+        "price": 0,
+        "raw": "01/09/2024 106 km serv luchtfilter € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 106,
+        "description": "Material pequeno e ambiente",
+        "price": 0,
+        "raw": "01/09/2024 106 km Klein materiaal & milieu € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 106,
+        "description": "Fluido de travões",
+        "price": 0,
+        "raw": "01/09/2024 106 km de remvloeistof € 0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 106,
+        "description": "Molas da tampa de carga dianteira",
+        "price": 0,
+        "raw": "01/09/2024 106 km de laadklepveren voor € 0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 81,
+        "description": "Bateria",
+        "price": 0,
+        "raw": "01/10/2023 81 km de accu € 0,00"
+      },
+      {
+        "date": "01/04/2023",
+        "km": 79,
+        "description": "Serviço de óleo do motor",
+        "price": 0,
+        "raw": "01/04/2023 79 km serv motorolie € 0,00"
+      },
+      {
+        "date": "01/04/2023",
+        "km": 79,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/04/2023 79 km serv microfilter € 0,00"
+      },
+      {
+        "date": "01/04/2023",
+        "km": 79,
+        "description": "Serviço de filtro de combustível",
+        "price": 0,
+        "raw": "01/04/2023 79 km serv brst. filt € 0,00"
+      },
+      {
+        "date": "01/11/2022",
+        "km": 66,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/11/2022 66 km de sleutelbatterij € 0,00"
+      },
+      {
+        "date": "01/04/2022",
+        "km": 54,
+        "description": "Verificação do veículo",
+        "price": 0,
+        "raw": "01/04/2022 54 km voertuigcheck € 0,00"
+      },
+      {
+        "date": "01/04/2022",
+        "km": 54,
+        "description": "Serviço de óleo do motor",
+        "price": 0,
+        "raw": "01/04/2022 54 km serv motorolie € 0,00"
+      },
+      {
+        "date": "01/04/2022",
+        "km": 54,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/04/2022 54 km serv microfilter € 0,00"
+      },
+      {
+        "date": "01/04/2022",
+        "km": 54,
+        "description": "Serviço de filtro de ar",
+        "price": 0,
+        "raw": "01/04/2022 54 km serv luchtfilter € 0,00"
+      },
+      {
+        "date": "01/04/2022",
+        "km": 54,
+        "description": "Fluido de travões",
+        "price": 0,
+        "raw": "01/04/2022 54 km de remvloeistof € 0,00"
+      },
+      {
+        "date": "01/12/2020",
+        "km": 29,
+        "description": "Serviço de óleo do motor",
+        "price": 0,
+        "raw": "01/12/2020 29 km serv motorolie € 0,00"
+      },
+      {
+        "date": "01/12/2020",
+        "km": 29,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/12/2020 29 km serv microfilter € 0,00"
+      },
+      {
+        "date": "01/12/2020",
+        "km": 29,
+        "description": "Placa isolante do motor",
+        "price": 0,
+        "raw": "01/12/2020 29 km de motor isolatie plaat € 0,00"
+      },
+      {
+        "date": "01/12/2020",
+        "km": 29,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/12/2020 29 km de sleutelbatterij € 0,00"
+      },
+      {
+        "date": "01/07/2020",
+        "km": 20,
+        "description": "Controlo de níveis",
+        "price": 0,
+        "raw": "01/07/2020 20 km controle niveaus € 0,00"
+      },
+      {
+        "date": "01/06/2020",
+        "km": 18,
+        "description": "Bateria",
+        "price": 0,
+        "raw": "01/06/2020 18 km de accu € 0,00"
+      }
+    ]
   }
 ]
