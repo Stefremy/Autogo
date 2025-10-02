@@ -11279,5 +11279,106 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6404807",
+    "make": "Jaguar",
+    "model": "E-Pace 2.0 P300e Plug-In Hybrid R-Dynamic",
+    "year": 2022,
+    "slug": "jaguar-e-pace-2-0-p300e-plug-in-hybrid-r-dynamic-2022-6404807",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_000.jpg",
+    "description": "Este Jaguar E-Pace 2.0 P300e Plug-In Hybrid R-Dynamic de 2022 é um SUV híbrido com 309 cavalos de potência e tração integral (AWD). Equipado com caixa automática, motor de 1997 cc e emissões CO2 de 44 g/km, oferece uma condução potente e eficiente. Destaca-se pelos faróis LED, sistema de navegação avançado, pacote desportivo exterior, e interior em couro com Keyless Go. O conforto é garantido com ar condicionado automático a duas zonas, controlo de velocidade de cruzeiro, sensores de luz e chuva, e volante multifunções. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. A conectividade é assegurada com Bluetooth, leitor de CD, interface MP3 e computador de bordo. O veículo apresenta um histórico de manutenção completo e encontra-se em excelente estado, ideal para quem procura um SUV híbrido premium com tecnologia e conforto de topo.",
+    "mileage": 97440,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2.0",
+    "power": "309 Hp 227 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "France - TEA MILLON",
+    "firstRegistration": "2022-04-12",
+    "doors": 5,
+    "fuel": "Hybrid (petrol / electric)",
+    "emissionClass": "Euro6",
+    "co2": "44",
+    "color": "Black",
+    "vin": "SADFA2BTCN1032933",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_032.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior em pele"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Tração integral",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
