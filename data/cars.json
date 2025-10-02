@@ -13800,5 +13800,184 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6408769",
+    "make": "BMW",
+    "model": "i3",
+    "year": 2020,
+    "slug": "bmw-i3-2020-6408769",
+    "price": 17900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_001.jpg",
+    "description": "Este BMW i3 de 2020 é um veículo elétrico com 170cv (125 kW) e transmissão automática, oferecendo uma condução eficiente e confortável. Equipado com faróis LED, sistema de navegação, exterior desportivo e diversas opções de conforto como ar condicionado automático, bancos aquecidos e cruise control. Inclui ainda segurança avançada com ABS, ESP, airbags múltiplos e sistema Isofix. O veículo apresenta histórico completo de manutenção, com inspeções recentes realizadas pela BMW, garantindo fiabilidade e bom estado. Destaca-se pela tecnologia Keyless Go, sensores de luz e chuva, e sistema start-stop para maior eficiência energética. Um carro ideal para quem procura inovação, conforto e segurança num automóvel urbano premium.",
+    "mileage": 100016,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 1,
+    "category": "Saloon1",
+    "engineSize": null,
+    "power": "170 Hp 125 kW",
+    "places": null,
+    "unitNumber": null,
+    "origin": "The Netherlands",
+    "firstRegistration": "24/08/2020",
+    "doors": 4,
+    "fuel": "Electric",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "White",
+    "vin": "WBY8P210507F94084",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408769/photo_017.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system",
+        "Sports exterior"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado automático",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo"
+      ],
+      "outras_opcoes": [
+        "Cabo de carregamento (5,0 m) com ficha tipo 2 (modo 3)",
+        "Sistema de assistência à condução driving assistant plus",
+        "Cruise control com função de travagem",
+        "Sistema de assistência ao estacionamento",
+        "Câmara de marcha-atrás",
+        "Sistema de assistência em filas",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/08/2024",
+        "km": 88,
+        "shop": "BMW Vrtgdiagn",
+        "description": "Inspeção",
+        "price": 0,
+        "raw": "01/08/2024 88 km BMW Vrtgdiagn € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 88,
+        "shop": "BMW Voert. Check",
+        "description": "Inspeção",
+        "price": 0,
+        "raw": "01/08/2024 88 km BMW Voert. Check € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 88,
+        "shop": "APK icm beurt",
+        "description": "Inspeção",
+        "price": 0,
+        "raw": "01/08/2024 88 km APK icm beurt € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 88,
+        "description": "Troca de fluído de travões",
+        "price": 0,
+        "raw": "01/08/2024 88 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 88,
+        "description": "Troca de filtro de ar interior",
+        "price": 0,
+        "raw": "01/08/2024 88 km interieurluchtfilter € 0,00"
+      },
+      {
+        "date": "01/01/2022",
+        "km": 41,
+        "shop": "BMW Voert. Check",
+        "description": "Inspeção",
+        "price": 0,
+        "raw": "01/01/2022 41 km BMW Voert. Check € 0,00"
+      },
+      {
+        "date": "01/01/2022",
+        "km": 41,
+        "description": "Troca de fluído de travões",
+        "price": 0,
+        "raw": "01/01/2022 41 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "01/01/2022",
+        "km": 41,
+        "description": "Troca de filtro de ar interior",
+        "price": 0,
+        "raw": "01/01/2022 41 km interieurluchtfilter € 0,00"
+      }
+    ]
   }
 ]
