@@ -9724,5 +9724,118 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6319034",
+    "make": "Opel",
+    "model": "Corsa 1.2i Display Klima",
+    "year": 2020,
+    "slug": "opel-corsa-1-2i-display-klima-2020-6319034",
+    "price": 15600,
+    "image": "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_029.jpg",
+    "description": "Este Opel Corsa 1.2i Display Klima de 2020 destaca-se pelo seu motor de 1199 CC com 101 cv (74 kW), caixa manual e uma excelente eficiência com classe de emissões Euro6 e CO2 de 122g/km. Equipado com faróis LED, sistema de navegação, interior e bancos desportivos, além de um pacote desportivo exterior. O conforto é garantido com ar condicionado automático, cruise control, janelas elétricas, keyless go, sensores de luz e chuva, volante multifunções e sistema start-stop. A segurança inclui ABS, ESP, airbags frontais e laterais, imobilizador, pontos de ancoragem Isofix e luzes diurnas. Multimedia com Bluetooth, leitor de CD, MP3 e computador de bordo. Exterior com jantes de liga leve e suspensão desportiva. Outras opções incluem alerta de deteção de sonolência, eco led, câmara de ajuda ao estacionamento com vista panorâmica a 180° e controlo de tração. Veículo com histórico de manutenção regular e em bom estado geral, ideal para quem procura um carro compacto, eficiente e bem equipado.",
+    "mileage": 68383,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Small Car6",
+    "engineSize": "1.2",
+    "power": "101cv",
+    "places": 5,
+    "unitNumber": "6339673",
+    "origin": "France - F2S DAGNEUX",
+    "firstRegistration": "2020-01-01",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "122",
+    "color": "Grey",
+    "vin": "VXKUPHNE5R4061895",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6330001-6340000/6339673/photo_049.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático",
+        "Cruise control",
+        "Janelas elétricas",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Alerta de deteção de sonolência do condutor",
+        "Eco led",
+        "Câmara de ajuda ao estacionamento com vista panorâmica a 180°",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
