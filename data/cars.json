@@ -4859,5 +4859,116 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6287267",
+    "make": "BMW",
+    "model": "M3 4.0i V8",
+    "year": 2009,
+    "slug": "bmw-m3-4-0i-v8-2009-6287267",
+    "price": 49900,
+    "image": "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_076.jpg",
+    "description": "Este BMW M3 4.0i V8 de 2009 apresenta um motor potente de 3999 CC com 420 cavalos de potência e caixa manual, oferecendo uma condução desportiva e emocionante. Equipado com sistema de navegação, interior desportivo com bancos desportivos em pele, ar condicionado automático de duas zonas, controlo de velocidade de cruzeiro, sensores de luz e chuva, e jantes em liga leve. Segurança garantida com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. Sistema multimédia com Bluetooth, leitor de CD, interface MP3 e computador de bordo. O veículo tem um histórico de manutenção adequado e encontra-se em excelente estado, ideal para entusiastas que procuram desempenho e conforto. CO2 de 295 g/km e classificação Euro4. Cor branca elegante e 4 portas. Um carro único para quem valoriza potência e estilo.",
+    "mileage": 183112,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Saloon6",
+    "engineSize": "3999 CC",
+    "power": "420 Hp 309 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2009-11-18",
+    "doors": 4,
+    "fuel": "Petrol",
+    "emissionClass": "Euro4",
+    "co2": "295",
+    "color": "White",
+    "vin": "WBSPM91070E195936",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_099.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_100.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_101.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_102.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_103.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_104.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_096.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_106.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_098.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_097.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_107.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_105.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_109.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6287267/photo_082.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos em pele",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Regulação elétrica dos bancos",
+        "Espelhos laterais elétricos",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bancos com memória"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes em liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Iluminação adaptativa",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
