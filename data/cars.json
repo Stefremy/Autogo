@@ -12809,5 +12809,85 @@
         "raw": "01/03/2021 19 km 24.000 kilometer beurt € 0,00"
       }
     ]
+  },
+  {
+    "id": "6342397",
+    "make": "BMW",
+    "model": "118i Aut.",
+    "year": 2023,
+    "slug": "bmw-118i-aut-2023-6342397",
+    "price": 23400,
+    "image": "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_003.jpg",
+    "description": "Este BMW 118i Aut. de 2023 apresenta um motor de 1499 CC com 136 cv (100 kW), equipado com caixa automática. O veículo destaca-se pelo sistema de navegação, faróis LED-Xenon, interior em pele, sistema KeylessGo, ar condicionado automático de duas zonas, sensores de luz e chuva, e controlo de velocidade de cruzeiro. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, Isofix, e imobilizador. O carro conta ainda com jantes de liga leve, interface MP3, e faróis LED. Com 78.531 km, este sedan a gasolina cumpre a norma Euro 6 e apresenta uma cor branca elegante. A manutenção e histórico do veículo são garantidos, assegurando uma condução segura e confortável. Um modelo ideal para quem procura tecnologia, conforto e segurança num veículo compacto e eficiente.",
+    "mileage": 78531,
+    "country": "ES",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon7",
+    "engineSize": "1499 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": "6342397",
+    "origin": "Spain",
+    "firstRegistration": "2023-06-30",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "131",
+    "color": "White",
+    "vin": "WBA7K310305W92943",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6342397/photo_010.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Navigation system"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Electric windows",
+        "Keyless go",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Rain sensor",
+        "Start-stop system"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Alloy wheels"
+      ],
+      "outras_opcoes": [
+        "Mp3 interface",
+        "Led headlights",
+        "Traction control"
+      ]
+    },
+    "maintenance": []
   }
 ]
