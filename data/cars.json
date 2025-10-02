@@ -5068,5 +5068,125 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6360911",
+    "make": "BMW",
+    "model": "518d Facelift M-Sport Aut.",
+    "year": 2021,
+    "slug": "bmw-518d-facelift-m-sport-aut-2021-6360911",
+    "price": 32450,
+    "image": "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_035.jpg",
+    "description": "Este BMW 518d Facelift M-Sport Automático de 2021 apresenta um motor diesel de 1995 cc com 150 cv (110 kW), equipado com caixa automática e um consumo eficiente. Destaca-se pelo seu design desportivo M-Sport, faróis LED-Xenon, sistema de navegação profissional LC-Pro, interior desportivo em pele, sistema KeylessGo, câmara traseira e climatização automática. O veículo conta com um histórico de manutenção cuidado e oferece conforto superior com bancos aquecidos, controlo de cruzeiro e sensores de chuva e luz. A segurança é garantida com ABS, ESP, airbags múltiplos e pontos Isofix. Um carro ideal para quem procura performance, conforto e tecnologia num sedan elegante e desportivo.",
+    "mileage": 114107,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Saloon8",
+    "engineSize": "1995",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "6360911",
+    "origin": "Belgium",
+    "firstRegistration": "2021-08-03",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "127",
+    "color": "Grey",
+    "vin": "WBA11BL040CH68152",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360911/photo_058.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Conectividade de fábrica",
+        "Opção áudio de fábrica"
+      ]
+    },
+    "maintenance": []
   }
 ]
