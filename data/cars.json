@@ -9499,5 +9499,114 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6238442",
+    "make": "BMW",
+    "model": "118i Advantage Aut.",
+    "year": 2021,
+    "slug": "bmw-118i-advantage-aut-2021-6238442",
+    "price": 19100,
+    "image": "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_071.jpg",
+    "description": "Este BMW 118i Advantage Automático de 2021 destaca-se pelo seu motor de 1499 CC com 136 cv (100 kW), caixa automática e design sedan de 5 portas. Equipado com faróis LED-Xenon, sistema de navegação LC-Pro, KeylessGo, câmara traseira, ar condicionado automático de duas zonas, cruise control, sensores de luz e chuva, volante multifunções, sistema start-stop e várias opções de segurança como ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. O veículo apresenta um histórico de manutenção completo e encontra-se em excelente estado, com 90605 km percorridos. Um carro confortável, seguro e tecnológico, ideal para quem procura qualidade e performance num veículo compacto e elegante.",
+    "mileage": 90605,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon7",
+    "engineSize": "1499 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium - \"ASSE II\"",
+    "firstRegistration": "2021-06-30",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "132",
+    "color": "Grey",
+    "vin": "WBA7K310207J67862",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_099.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_100.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_102.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_101.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_098.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_097.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_096.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_094.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_093.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6230001-6240000/6238442/photo_090.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Certificado de conformidade",
+        "Certificado de registo",
+        "Volante",
+        "Fecho centralizado",
+        "Direção assistida",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
