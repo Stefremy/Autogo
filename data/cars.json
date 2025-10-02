@@ -4623,5 +4623,115 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6400639",
+    "make": "Audi",
+    "model": "A4 Avant 2.0 35 TDi Ultra",
+    "year": 2019,
+    "slug": "audi-a4-avant-2-0-35-tdi-ultra-2019-6400639",
+    "price": 18900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_000.jpg",
+    "description": "Este Audi A4 Avant 2.0 35 TDi Ultra de 2019 apresenta um motor diesel de 1968 cc com 136 cv (100 kW), caixa automática e é um veículo familiar (Estate Car) com 5 lugares e 5 portas. Equipado com faróis LED, sistema de navegação, ar condicionado automático de duas zonas, cruise control, jantes em liga leve e câmara de marcha-atrás, oferece conforto, segurança e tecnologia de ponta. O carro conta com histórico de manutenção digital e filtro de partículas, garantindo uma condução eficiente e segura. Com 107549 km, está em excelente estado e pronto para uso. Um veículo versátil com sistema keyless go, sensores de chuva e luz, e sistema start-stop para economia de combustível.",
+    "mileage": 107549,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Estate Car",
+    "engineSize": "2.0",
+    "power": "136cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2019-03-08",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "142",
+    "color": "Grey",
+    "vin": "WAUZZZF45KA056599",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400639/photo_030.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes em liga leve",
+        "Cor metálica"
+      ],
+      "outras_opcoes": [
+        "Porta da mala elétrica",
+        "Conectividade de fábrica",
+        "Opção áudio (de fábrica)",
+        "Câmara de marcha-atrás",
+        "Chave principal",
+        "Chave reserva",
+        "Kit reparação de pneus",
+        "Manual de instruções",
+        "Livro de manutenção (digital)",
+        "Prateleira traseira/rolo",
+        "Filtro de partículas",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
