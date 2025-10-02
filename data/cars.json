@@ -13979,5 +13979,208 @@
         "raw": "01/01/2022 41 km interieurluchtfilter € 0,00"
       }
     ]
+  },
+  {
+    "id": "6408771",
+    "make": "BMW",
+    "model": "i3",
+    "year": 2020,
+    "slug": "bmw-i3-2020-6408771",
+    "price": 17700,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_001.jpg",
+    "description": "Este BMW i3 de 2020 é um veículo elétrico com 170 Hp (125 kW) e transmissão automática. Equipado com faróis LED, sistema de navegação, keyless go, câmara, ar condicionado automático, sensores de luz e chuva, controlo de velocidade de cruzeiro, bancos aquecidos e volante multifunções. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. Inclui sistema multimedia com Bluetooth, leitor de CD, interface MP3 e computador de bordo. Exterior com jantes de liga leve e pacote desportivo. Interior com design BMW i Atelier, tapetes de veludo e pacote de conforto avançado. Histórico de manutenção completo com várias inspeções e revisões realizadas pela BMW, incluindo verificações ao sistema de gestão do motor, fluídos e filtros. Um carro elétrico moderno, confortável e seguro, ideal para mobilidade urbana e viagens curtas, com excelente estado de conservação e manutenção rigorosa.",
+    "mileage": 105534,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 1,
+    "category": "Saloon1",
+    "engineSize": null,
+    "power": "170 Hp 125 kW",
+    "places": 5,
+    "unitNumber": "6408771",
+    "origin": "The Netherlands",
+    "firstRegistration": "24/08/2020",
+    "doors": 4,
+    "fuel": "Electric",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "White",
+    "vin": "WBY8P210307F91832",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_055.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system",
+        "Sports exterior"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado automático",
+        "Cruise control",
+        "Heated seats",
+        "Electric windows",
+        "Keyless go",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Rain sensor",
+        "Start-stop system"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix anchor points"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "Hands-free kit",
+        "MP3 interface",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Alloy wheels",
+        "Sports exterior",
+        "Sports package"
+      ],
+      "outras_opcoes": [
+        "BMW i interieur design Atelier",
+        "Capparisweiss met BMW i Blau accent",
+        "Comfort pack advanced",
+        "Driving Assistant Plus",
+        "Elektrisch verwarmde voorstoelen",
+        "Inbouwen inverse box",
+        "MIA",
+        "Parkeerpakket",
+        "Velours matten",
+        "Warmtepomp",
+        "Bmw i interieur design atelier",
+        "Capparisweiss met bmw i blau accent",
+        "Driving assistant plus"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/02/2025",
+        "km": 97,
+        "description": "BMW 12 P. Check",
+        "price": 0,
+        "raw": "01/02/2025 97 km BMW 12 P. Check € 0,00"
+      },
+      {
+        "date": "01/02/2025",
+        "km": 97,
+        "description": "Motormanagementcomputer",
+        "price": 0,
+        "raw": "01/02/2025 97 km Motormanagementcomputer € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "BMW Voert. Check",
+        "price": 0,
+        "raw": "01/08/2024 92 km BMW Voert. Check € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "APK icm beurt",
+        "price": 0,
+        "raw": "01/08/2024 92 km APK icm beurt € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "Remvloeistof",
+        "price": 0,
+        "raw": "01/08/2024 92 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "Koelvloeistof",
+        "price": 0,
+        "raw": "01/08/2024 92 km Koelvloeistof € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "Ruitenwisserblad voorzijde links en rechts",
+        "price": 0,
+        "raw": "01/08/2024 92 km Ruitenwisserblad voorzijde links en rechts € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "Interieurluchtfilter",
+        "price": 0,
+        "raw": "01/08/2024 92 km interieurluchtfilter € 0,00"
+      },
+      {
+        "date": "01/05/2022",
+        "km": 23,
+        "description": "BMW Voert. Check",
+        "price": 0,
+        "raw": "01/05/2022 23 km BMW Voert. Check € 0,00"
+      },
+      {
+        "date": "01/05/2022",
+        "km": 23,
+        "description": "Remvloeistof",
+        "price": 0,
+        "raw": "01/05/2022 23 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "01/05/2022",
+        "km": 23,
+        "description": "Interieurluchtfilter",
+        "price": 0,
+        "raw": "01/05/2022 23 km interieurluchtfilter € 0,00"
+      }
+    ]
   }
 ]
