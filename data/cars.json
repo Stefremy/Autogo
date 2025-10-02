@@ -5188,5 +5188,401 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6381591",
+    "make": "Peugeot",
+    "model": "208",
+    "year": 2021,
+    "slug": "peugeot-208-2021-6381591",
+    "price": 16250,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6381591/photo_008.jpg",
+    "description": "O Peugeot 208 1.2 PureTech GT-Line de 2021 é um carro compacto e moderno, equipado com motor 1.2 PureTech de 99 cavalos, caixa manual e tecnologia LED-Xenon. Destaca-se pelo seu design desportivo com interior em pele e Alcantara, sistema I-Cockpit, navegação integrada, KeylessGo, câmara traseira e sensores de estacionamento (PDC). O veículo apresenta histórico completo de manutenção, com revisões regulares e serviços efetuados no GARAGE STARTER, garantindo excelente estado de conservação. Ideal para quem procura um carro urbano eficiente, confortável e bem equipado.",
+    "mileage": 29808,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Small Car6",
+    "engineSize": "1.2",
+    "power": "99cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "France - Fleury Mérogis",
+    "firstRegistration": "2021-06-23",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Blue",
+    "vin": "VR3UPHNEKMT058885",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381591/photo_008.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED-Xenon",
+        "KeylessGo",
+        "Câmara traseira"
+      ],
+      "conforto": [
+        "Climatização",
+        "Bancos em pele e Alcantara",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [],
+      "multimedia": [
+        "Navegação integrada",
+        "I-Cockpit"
+      ],
+      "interior": [
+        "Bancos em pele e Alcantara",
+        "Volante desportivo"
+      ],
+      "exterior": [
+        "LED-Xenon"
+      ],
+      "outras_opcoes": [
+        "1/2 Sport"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "26/08/2025",
+        "km": 29615,
+        "shop": "FRS ABSENT",
+        "description": "Controlo Técnico",
+        "price": 1,
+        "raw": "26/08/2025 29615 km FRS ABSENT ContRôles Techniques € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Diversos outros serviços",
+        "price": 1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Divers autres € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Filtres € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Diversos outros serviços",
+        "price": 0,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Divers autres € 0,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Filtres € 1,00"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Révision € 0,30"
+      },
+      {
+        "date": "26/11/2024",
+        "km": 25182,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 0.1,
+        "raw": "26/11/2024 25182 km GARAGE STARTER Filtres € 0,10"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Mudança de líquido de travão",
+        "price": 2,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Vidange liquide frein € 2,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Diversos outros serviços",
+        "price": 0,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Divers autres € 0,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Révision € 0,30"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Palhetas limpa para-brisas",
+        "price": 0.1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Diversos outros serviços",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Divers autres € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 3.5,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Révision € 3,50"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Mudança de líquido de travão",
+        "price": 0.4,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Vidange liquide frein € 0,40"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Mudança de líquido de travão",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Palhetas limpa para-brisas",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Filtres € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 0.1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Filtres € 0,10"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Filtres € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "13/09/2023",
+        "km": 15575,
+        "shop": "GARAGE STARTER",
+        "description": "Palhetas limpa para-brisas",
+        "price": 1,
+        "raw": "13/09/2023 15575 km GARAGE STARTER Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Diversos outros serviços",
+        "price": 0,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Divers autres € 0,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Diversos outros serviços",
+        "price": 1,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Divers autres € 1,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Révision € 0,30"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 3.5,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Révision € 3,50"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 0,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Révision € 0,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Filtres € 1,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Filtres € 1,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Révision € 1,00"
+      },
+      {
+        "date": "26/07/2022",
+        "km": 8352,
+        "shop": "GARAGE STARTER",
+        "description": "Filtros",
+        "price": 0.1,
+        "raw": "26/07/2022 8352 km GARAGE STARTER Filtres € 0,10"
+      }
+    ]
   }
 ]
