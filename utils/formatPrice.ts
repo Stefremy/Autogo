@@ -6,8 +6,8 @@ export function formatPriceDisplay(price: number | null | undefined, priceDispla
   // If priceDisplay is provided and looks numeric, format it
   if (typeof priceDisplay === 'string' && priceDisplay.trim().length > 0) {
     const s = priceDisplay.trim();
-    // Treat common placeholder tokens as missing
-    if (/^(null|undefined|n\/a|na|-|—)$/i.test(s)) return 'Sob Consulta';
+// Treat common placeholder tokens as missing
+if (/^(null|undefined|n\/a|na|-|—)$/i.test(s)) return 'Sob Consulta';
     const digitsOnly = String(s).replace(/[^0-9.-]/g, '');
     if (digitsOnly.length > 0) {
       const parsed = Number(digitsOnly);

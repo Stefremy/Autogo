@@ -2,55 +2,109 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://autogo.pt/</loc>
-    <lastmod>2025-09-15</lastmod>
+    <lastmod>2025-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://autogo.pt/viaturas</loc>
-    <lastmod>2025-09-15</lastmod>
+    <lastmod>2025-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://autogo.pt/blog</loc>
-    <lastmod>2025-09-15</lastmod>
+    <lastmod>2025-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autogo.pt/cars/toyota-corolla-2022</loc>
-    <lastmod>2025-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://autogo.pt/cars/volkswagen-golf-2021</loc>
-    <lastmod>2025-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://autogo.pt/cars/peugeot-3008-2023</loc>
-    <lastmod>2025-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://autogo.pt/cars/citroen-c3-2020</loc>
-    <lastmod>2025-09-15</lastmod>
+    <lastmod>2025-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://autogo.pt/cars/volkswagen-e-up-2020</loc>
-    <lastmod>2025-09-15</lastmod>
+    <loc>https://autogo.pt/cars/mercedes-benz-c-300-de-2021-6387467</loc>
+    <lastmod>2025-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://autogo.pt/cars/nissan-leaf-n-connecta-2023</loc>
-    <lastmod>2025-09-15</lastmod>
+    <loc>https://autogo.pt/cars/audi-a5-sportback-2019-6367789</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/alfa-romeo-giulia-5982264</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/audi-a3-sportback-2-0-30-tdi-platinum-6370869</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/audi-a3-sportback-1-6-30-tdi-aut-6390148</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/audi-a3-sportback-1-5-35-tfsi-2020-6357327</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/kia-sportage-1-6-crdi-mhev-gt-line-aut-2025-6340793</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/bmw-x1-2-0-sdrive18d-aut-2021-6403464</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/bmw-x2-1-5i-sdrive18-x-line-aut-2020-6377379</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/audi-q5-2-0-30-tdi-aut-2021-6239362</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/land-rover-defender-2-0-p400e-hybrid-2024-6149494</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/bmw-x2-2-0-xdrive20d-2019-6417386</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/audi-q3-sportback-1-5-35-tfsi-aut-2020-6321063</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/cars/audi-q3-sportback-1-5-35-tfsi-2020-6354469</loc>
+    <lastmod>2025-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -81,6 +135,12 @@
   <url>
     <loc>https://autogo.pt/blog/pedir-matricula-veiculo-importado</loc>
     <lastmod>2025-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://autogo.pt/blog/volkswagen-golf-r-review</loc>
+    <lastmod>2025-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
