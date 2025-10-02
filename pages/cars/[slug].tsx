@@ -84,6 +84,23 @@ function fmtNumber(v: any, opts?: Intl.NumberFormatOptions) {
   return n.toLocaleString(undefined, opts);
 }
 
+function fmtPriceOrText(v: any) {
+  // if explicitly null or empty -> show 'Sob Consulta'
+  if (v == null || (typeof v === 'string' && String(v).trim() === '')) return 'Sob Consulta';
+  const n = numify(v);
+  if (n == null) {
+    // if not numeric, but it's a string we return it as-is
+    return String(v);
+  }
+  return '€' + n.toLocaleString(undefined, { minimumFractionDigits: 0 });
+}
+
+function fmtNumberForMeta(v: any) {
+  const n = numify(v);
+  if (n == null) return 'sob consulta';
+  return n.toLocaleString(undefined, { minimumFractionDigits: 0 });
+}
+
 export default function CarDetail() {
   const router = useRouter();
   const { slug } = router.query;
@@ -684,7 +701,7 @@ export default function CarDetail() {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(14);
     doc.setTextColor(30, 41, 59);
-    doc.text(`Preço: ${fmtNumber(car.price, { minimumFractionDigits: 0 })} €`, 40, 125);
+  doc.text(`Preço: ${fmtPriceOrText(car.price)}`, 40, 125);
     doc.text(`Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km`, 40, 145);
     let y = 165;
     if (car.fuel) {
@@ -917,7 +934,7 @@ export default function CarDetail() {
           <span
             className={`text-blue-700 font-bold drop-shadow transition-all duration-500 ${showStickyBar ? "text-2xl" : "text-base"}`}
           >
-            {fmtNumber(car.price, { minimumFractionDigits: 0 })} €
+            {fmtPriceOrText(car.price)}
           </span>
           <span
             className={`text-gray-600 flex items-center gap-2 transition-all duration-500 ${showStickyBar ? "text-xl" : "text-sm"}`}
@@ -1170,7 +1187,7 @@ export default function CarDetail() {
                 )}
               </div>
               <div className="text-xl sm:text-2xl md:text-3xl font-bold text-black drop-shadow-md ml-2">
-                {fmtNumber(car.price, { minimumFractionDigits: 0 })} €
+                {fmtPriceOrText(car.price)}
               </div>
               {/* Botão ver mais detalhes */}
               <button
@@ -1598,7 +1615,7 @@ export default function CarDetail() {
           name="description"
           content={
             car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumber(car.price, { minimumFractionDigits: 0 })}. Carros usados e seminovos com garantia.`
+              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumberForMeta(car.price)}. Carros usados e seminovos com garantia.`
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />
@@ -1622,7 +1639,7 @@ export default function CarDetail() {
           property="og:description"
           content={
             car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumber(car.price, { minimumFractionDigits: 0 })}. Carros usados e seminovos com garantia.`
+              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumberForMeta(car.price)}. Carros usados e seminovos com garantia.`
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />

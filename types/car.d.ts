@@ -41,7 +41,10 @@ export interface Car {
   power?: string;
   places?: number;
   unitNumber?: string;
-  origin?: string;
+  // Numeric price for programmatic use (sorting, filtering). Null when unavailable.
+  price?: number | null;
+  // Human-readable price string (e.g. "Sob consulta" or formatted number). Use for display when `price` is null.
+  priceDisplay?: string | null;
   firstRegistration?: string;
   doors?: number;
   fuel?: string;

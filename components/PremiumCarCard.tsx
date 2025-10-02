@@ -5,7 +5,8 @@ import styles from "./PremiumCarCard.module.css";
 type PremiumCarCardProps = {
   name: string;
   image: string;
-  price: number;
+  price: number | string;
+  priceDisplay?: string | null;
   id: string | number;
   slug?: string;
   year: string | number;
@@ -22,6 +23,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   name,
   image,
   price,
+  priceDisplay,
   id,
   slug,
   year,
@@ -43,13 +45,26 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   };
   const path = slug ? `/cars/${slug}` : `/cars/${id}`;
 
-  // Ensure we always have a numeric value to call toLocaleString on
-  const priceNumber =
-    typeof price === "number" && !Number.isNaN(price)
-      ? price
-      : typeof price === "string"
-      ? Number((price as string).replace(/[^0-9.-]/g, ""))
-      : 0;
+  // Prefer numeric price; if not available, use priceDisplay string
+  let priceNumber: number | null = null;
+  let priceDisplayStr: string | null = null;
+  if (typeof price === 'number' && Number.isFinite(price)) {
+    priceNumber = price;
+    priceDisplayStr = null;
+  } else if (typeof price === 'string' && price.trim().length > 0) {
+    // try to parse number from string
+    const parsed = Number(String(price).replace(/[^0-9.-]/g, ''));
+    if (!Number.isNaN(parsed) && Number.isFinite(parsed)) {
+      priceNumber = parsed;
+    } else {
+      priceNumber = null;
+      priceDisplayStr = price;
+    }
+  }
+  // Use explicit prop priceDisplay if provided
+  if (!priceDisplayStr && typeof priceDisplay === 'string' && priceDisplay.trim().length > 0) {
+    priceDisplayStr = priceDisplay;
+  }
 
   // Display only the year portion (handles '2019-12-10' and numeric years)
   const displayYear = (() => {
@@ -209,13 +224,14 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
               textAlign: "right",
             }}
           >
-            €
-            {(Number.isFinite(priceNumber))
-              ? priceNumber.toLocaleString(undefined, {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                })
-              : '-'}
+            {priceNumber !== null ? (
+              '€' + priceNumber.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })
+            ) : (
+              priceDisplayStr ? priceDisplayStr : '—'
+            )}
           </div>
         </div>
         <div className={styles["premium-car-title"]}>{name}</div>

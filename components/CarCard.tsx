@@ -7,6 +7,7 @@ type CarCardProps = {
   image: string;
   description: string;
   price: number | string;
+  priceDisplay?: string | null;
   id: string | number;
   slug?: string;
   country?: string;
@@ -19,6 +20,7 @@ const CarCard: React.FC<CarCardProps> = ({
   image,
   description,
   price,
+  priceDisplay,
   id,
   slug,
   country,
@@ -27,11 +29,22 @@ const CarCard: React.FC<CarCardProps> = ({
 }) => {
   const path = slug ? `/cars/${slug}` : `/cars/${id}`;
 
-  // defensive price parsing
-  const priceNumber =
-    typeof price === "number" && !Number.isNaN(price)
-      ? price
-      : Number(String(price || "").replace(/[^0-9.-]/g, "")) || 0;
+  // prefer numeric price; if not available, use display string
+  let numericPrice: number | null = null;
+  let displayPrice: string | null = null;
+  if (typeof price === 'number' && Number.isFinite(price)) numericPrice = price;
+  else if (typeof price === 'string' && price.trim().length > 0) {
+    const p = Number(String(price).replace(/[^0-9.-]/g, ''));
+    if (!Number.isNaN(p) && Number.isFinite(p)) numericPrice = p;
+    else displayPrice = price;
+  }
+
+  // If numericPrice not found but a display string exists that is numeric (e.g. "29400"), parse it
+  if (numericPrice === null && !displayPrice && typeof priceDisplay === 'string' && priceDisplay.trim().length > 0) {
+    const p2 = Number(String(priceDisplay).replace(/[^0-9.-]/g, ''));
+    if (!Number.isNaN(p2) && Number.isFinite(p2)) numericPrice = p2;
+    else displayPrice = priceDisplay;
+  }
 
   // simple SVG fallback so broken-image icon doesn't show
   const svgCarFallback =
@@ -109,7 +122,11 @@ const CarCard: React.FC<CarCardProps> = ({
     <h3 className="text-xl font-bold">{name}</h3>
     <p className="text-gray-600">{description}</p>
     <p className="text-blue-700 font-semibold mt-2">
-      €{priceNumber.toLocaleString(undefined, { minimumFractionDigits: 0 })}
+      {numericPrice !== null ? (
+        `€${numericPrice.toLocaleString(undefined, { minimumFractionDigits: 0 })}`
+      ) : (
+        displayPrice ? displayPrice : '—'
+      )}
     </p>
   </a>
   );

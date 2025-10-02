@@ -549,7 +549,30 @@ export default function Viaturas() {
                     {String((car as any).year ?? "")} · {String((car as any).mileage ?? "")} km
                   </div>
                   <div className="font-bold text-black text-lg mb-3 text-center px-2">
-                    €{(Number((car as any).price) || 0).toLocaleString()}
+                    {(() => {
+                      const rawPrice = (car as any).price;
+                      const priceDisplay = (car as any).priceDisplay;
+                      // determine numeric price only when it's a finite number > 0
+                      let numeric = null as number | null;
+                      if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) {
+                        numeric = rawPrice;
+                      } else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
+                        const parsed = Number(String(rawPrice).replace(/[^0-9.-]/g, ''));
+                        if (Number.isFinite(parsed) && parsed > 0) numeric = parsed;
+                      }
+
+                      if (numeric !== null && Number.isFinite(numeric) && numeric > 0) {
+                        return '€' + numeric.toLocaleString();
+                      }
+
+                      // fall back to explicit priceDisplay (e.g. "Sob consulta") when present
+                      if (priceDisplay && String(priceDisplay).trim().length > 0) {
+                        return String(priceDisplay);
+                      }
+
+                      // ultimate fallback
+                      return '—';
+                    })()}
                   </div>
   <div className="flex gap-2 w-full mt-auto justify-center">
   <Link
