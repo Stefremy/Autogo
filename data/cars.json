@@ -7720,5 +7720,361 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6388347",
+    "make": "Mercedes",
+    "model": "A 160",
+    "year": 2019,
+    "slug": "mercedes-a-160-2019-6388347",
+    "price": 17900,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_031.jpg",
+    "description": "Este Mercedes A 160 de 2019 apresenta-se com motor de 1332 CC e potência de 116 Hp (85 kW), equipado com caixa manual de 6 velocidades. Destaca-se pelo seu sistema de iluminação LED-Xenon, ecrã WideScreen e sistema de navegação integrado. O interior desportivo inclui bancos desportivos em pele e volante multifunções, enquanto o exterior conta com jantes de liga leve e pacote desportivo. O veículo possui ar condicionado automático de duas zonas, cruise control, sensores de chuva, sistema start-stop e Keyless Go para maior conforto. Em termos de segurança, dispõe de ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. A multimédia inclui Bluetooth, leitor de CD, interface MP3 e computador de bordo. O histórico de manutenção é completo, com serviços realizados em oficinas autorizadas, incluindo trocas de óleo, revisão MB Service A e B, substituição de baterias e pneus, e inspeções regulares. A cor azul realça o design elegante deste sedan. Um veículo confiável, com excelente histórico de manutenção e equipado com tecnologia moderna para conforto e segurança.",
+    "mileage": 85362,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Saloon6",
+    "engineSize": "1332 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "6388347",
+    "origin": "The Netherlands",
+    "firstRegistration": "2019-07-30",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "130",
+    "color": "Blue",
+    "vin": "WDD1770821J120778",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6388347/photo_017.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system",
+        "Sports interior",
+        "Sport seats",
+        "Sports exterior"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Sports interior",
+        "Sport seats"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Sports exterior",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Alarme classe 3",
+        "Apple CarPlay/Android Auto",
+        "Detecção de ângulo morto",
+        "Teto panorâmico elétrico",
+        "Cores: amarelo, vermelho, branco"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Banden",
+        "price": 201.58,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort Banden € 201,58"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "APK i.c.m. beurt",
+        "price": 14.98,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort APK i.c.m. beurt € 14,98"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Banden",
+        "price": 201.58,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort Banden € 201,58"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Ruitewiss.blad V",
+        "price": 67.12,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort Ruitewiss.blad V € 67,12"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "R.Schijf+blokk.V",
+        "price": 525.26,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort R.Schijf+blokk.V € 525,26"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Ruitenwissersproeiervloeistof",
+        "price": 7,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort Ruitenwissersproeiervloeistof € 7,00"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Banden",
+        "price": 201.58,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort Banden € 201,58"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Banden",
+        "price": 201.58,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort Banden € 201,58"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Sleutelbatterij",
+        "price": 11.49,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort Sleutelbatterij € 11,49"
+      },
+      {
+        "date": "19/06/2025",
+        "km": 81888,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "MB Service A",
+        "price": 306.16,
+        "raw": "19/06/2025 81888 km Hedin Mercedes-Benz Amersfoort MB Service A € 306,16"
+      },
+      {
+        "date": "22/08/2024",
+        "km": 65587,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "R.schijf+blokk.A",
+        "price": 508.67,
+        "raw": "22/08/2024 65587 km Hedin Mercedes-Benz Amersfoort R.schijf+blokk.A € 508,67"
+      },
+      {
+        "date": "24/06/2024",
+        "km": 60937,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Remvloeistof",
+        "price": 78.15,
+        "raw": "24/06/2024 60937 km Hedin Mercedes-Benz Amersfoort Remvloeistof € 78,15"
+      },
+      {
+        "date": "24/06/2024",
+        "km": 60937,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "MB Service B",
+        "price": 380.49,
+        "raw": "24/06/2024 60937 km Hedin Mercedes-Benz Amersfoort MB Service B € 380,49"
+      },
+      {
+        "date": "14/03/2024",
+        "km": 54911,
+        "shop": "HFS/BCS Garage G. Slootweg",
+        "description": "Accu",
+        "price": 282.9,
+        "raw": "14/03/2024 54911 km HFS/BCS Garage G. Slootweg Accu € 282,90"
+      },
+      {
+        "date": "14/03/2024",
+        "km": 54911,
+        "shop": "HFS/BCS Garage G. Slootweg",
+        "description": "Sleutelbatterij",
+        "price": 18.1,
+        "raw": "14/03/2024 54911 km HFS/BCS Garage G. Slootweg Sleutelbatterij € 18,10"
+      },
+      {
+        "date": "15/12/2023",
+        "km": 0,
+        "shop": "Eurocross International Holding B.V.",
+        "description": "Assist. verl.",
+        "price": 0,
+        "raw": "15/12/2023 0 km Eurocross International Holding B.V. Assist. verl. € 0,00"
+      },
+      {
+        "date": "15/12/2023",
+        "km": 0,
+        "shop": "Eurocross International Holding B.V.",
+        "description": "Stranding BI",
+        "price": 300,
+        "raw": "15/12/2023 0 km Eurocross International Holding B.V. Stranding BI € 300,00"
+      },
+      {
+        "date": "07/12/2023",
+        "km": 49286,
+        "shop": "Kwik-Fit Fleet",
+        "description": "Wiel",
+        "price": 17,
+        "raw": "07/12/2023 49286 km Kwik-Fit Fleet Wiel € 17,00"
+      },
+      {
+        "date": "07/12/2023",
+        "km": 49286,
+        "shop": "Kwik-Fit Fleet",
+        "description": "Band",
+        "price": 6,
+        "raw": "07/12/2023 49286 km Kwik-Fit Fleet Band € 6,00"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 43438,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "APK zonder beurt",
+        "price": 33.02,
+        "raw": "04/07/2023 43438 km Hedin Mercedes-Benz Amersfoort APK zonder beurt € 33,02"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 43438,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Banden",
+        "price": 186.95,
+        "raw": "04/07/2023 43438 km Hedin Mercedes-Benz Amersfoort Banden € 186,95"
+      },
+      {
+        "date": "04/07/2023",
+        "km": 43438,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Banden",
+        "price": 186.95,
+        "raw": "04/07/2023 43438 km Hedin Mercedes-Benz Amersfoort Banden € 186,95"
+      },
+      {
+        "date": "30/05/2023",
+        "km": 41708,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "MB Service A",
+        "price": 293.39,
+        "raw": "30/05/2023 41708 km Hedin Mercedes-Benz Amersfoort MB Service A € 293,39"
+      },
+      {
+        "date": "30/05/2023",
+        "km": 41708,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Bougie",
+        "price": 143.93,
+        "raw": "30/05/2023 41708 km Hedin Mercedes-Benz Amersfoort Bougie € 143,93"
+      },
+      {
+        "date": "30/05/2023",
+        "km": 41708,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Ruitewiss.blad V",
+        "price": 60.04,
+        "raw": "30/05/2023 41708 km Hedin Mercedes-Benz Amersfoort Ruitewiss.blad V € 60,04"
+      },
+      {
+        "date": "30/05/2023",
+        "km": 41708,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Luchtfilter",
+        "price": 59.75,
+        "raw": "30/05/2023 41708 km Hedin Mercedes-Benz Amersfoort Luchtfilter € 59,75"
+      },
+      {
+        "date": "28/04/2022",
+        "km": 20271,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "MB Service B",
+        "price": 321.49,
+        "raw": "28/04/2022 20271 km Hedin Mercedes-Benz Amersfoort MB Service B € 321,49"
+      },
+      {
+        "date": "28/04/2022",
+        "km": 20271,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Remvloeistof",
+        "price": 84.02,
+        "raw": "28/04/2022 20271 km Hedin Mercedes-Benz Amersfoort Remvloeistof € 84,02"
+      },
+      {
+        "date": "28/04/2022",
+        "km": 20271,
+        "shop": "Hedin Mercedes-Benz Amersfoort",
+        "description": "Remblokk.achter",
+        "price": 43,
+        "raw": "28/04/2022 20271 km Hedin Mercedes-Benz Amersfoort Remblokk.achter € 43,00"
+      },
+      {
+        "date": "11/03/2021",
+        "km": 5180,
+        "shop": "Gomes Haarlem",
+        "description": "MB Service A",
+        "price": 263.64,
+        "raw": "11/03/2021 5180 km Gomes Haarlem MB Service A € 263,64"
+      },
+      {
+        "date": "29/08/2020",
+        "km": 220,
+        "shop": "Eurocross International Holding B.V.",
+        "description": "Merkhulpdienst BI",
+        "price": 30,
+        "raw": "29/08/2020 220 km Eurocross International Holding B.V. Merkhulpdienst BI € 30,00"
+      }
+    ]
   }
 ]
