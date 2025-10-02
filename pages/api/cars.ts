@@ -360,17 +360,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       let existingSlim = [] as AnyObject[];
       try { existingSlim = (await safeReadJson(carsFile, carsFullFile)) || []; } catch (e) { existingSlim = []; }
       const existingIds = new Set(existingSlim.map(c => String(c.id)));
-
-      // If client supplied an explicit id, block the request when that id already exists.
-      // This prevents accidental overwrites or silent merges when a caller tries to create
-      // a new car with an id that is already present. Return HTTP 409 Conflict.
-      if (body.id) {
-        const requestedId = String(body.id);
-        if (existingIds.has(requestedId)) {
-          return res.status(409).json({ error: 'Duplicate id', message: `Car with id ${requestedId} already exists` });
-        }
-      }
-
       let newId = body.id ? String(body.id) : String(Date.now());
       while (existingIds.has(newId)) newId = String(Date.now() + Math.floor(Math.random() * 10000));
 
