@@ -15289,5 +15289,122 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6225001",
+    "make": "Mercedes",
+    "model": "CLA 250 Shooting Brake",
+    "year": 2020,
+    "slug": "mercedes-cla-250-shooting-brake-2020-6225001",
+    "price": 25450,
+    "image": "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_037.jpg",
+    "description": "Este Mercedes CLA 250 Shooting Brake de 2020 destaca-se pelo seu motor de 1991 cc com 224 cv (165 kW) e caixa automática, oferecendo uma condução potente e confortável. Equipado com faróis LED, sistema de navegação, interior desportivo com bancos desportivos em pele e Alcântara, e uma ampla gama de opções de conforto como ar condicionado automático de duas zonas, cruise control, bancos aquecidos e sistema Keyless Go. A segurança está garantida com ABS, ESP, múltiplos airbags, pontos de ancoragem Isofix e sistema de imobilizador. O veículo apresenta uma excelente condição, com histórico de manutenção completo e uma quilometragem de 118659 km. Ideal para quem procura um carro elegante, desportivo e bem equipado, com tecnologia moderna e conforto superior.",
+    "mileage": 118659,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Estate Car",
+    "engineSize": "1.991",
+    "power": "224cv",
+    "places": 5,
+    "unitNumber": "6225001",
+    "origin": "The Netherlands",
+    "firstRegistration": "17/07/2020",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "140",
+    "color": "Preto",
+    "vin": "W1K1186461N146417",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6220001-6230000/6225001/photo_059.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Porta da mala elétrica",
+        "Câmara de marcha-atrás",
+        "Apple CarPlay/Android Auto",
+        "Sistema de áudio",
+        "Fecho centralizado à distância"
+      ]
+    },
+    "maintenance": []
   }
 ]
