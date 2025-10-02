@@ -11488,5 +11488,80 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "5839654",
+    "make": "Nissan",
+    "model": "Leaf N-Connecta",
+    "year": 2023,
+    "slug": "nissan-leaf-n-connecta-2023-5839654",
+    "price": 17300,
+    "image": "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_032.jpg",
+    "description": "O Nissan Leaf N-Connecta de 2023 é um sedan elétrico com motor de 150 Hp (110 kW) e caixa automática. Equipado com Xenon-LED, navegação, KeylessGo, câmara 360 e sensores de estacionamento (PDC), oferece conforto e tecnologia avançada. Cumpre a norma Euro6 e apresenta uma quilometragem de 21.534 km. Este modelo destaca-se pela eficiência elétrica, condução silenciosa e equipamento completo, ideal para quem procura um veículo sustentável e moderno. Histórico de manutenção não disponível. Cor vermelha vibrante que realça o design contemporâneo.",
+    "mileage": 21534,
+    "country": "DE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon1",
+    "engineSize": null,
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "5839654",
+    "origin": "Germany",
+    "firstRegistration": "2023-04-20",
+    "doors": null,
+    "fuel": "Electric",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Red",
+    "vin": "SJNFAAZE1U0186671",
+    "images": [
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/5830001-5840000/5839654/photo_053.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Xenon-LED"
+      ],
+      "conforto": [
+        "KeylessGo",
+        "Climatização"
+      ],
+      "seguranca": [
+        "Câmara 360",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "multimedia": [
+        "Navegação"
+      ],
+      "interior": [],
+      "exterior": [
+        "Cor vermelha"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
