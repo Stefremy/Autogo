@@ -6602,5 +6602,115 @@
         "raw": "01/11/2023 37 km de accu € 0,00"
       }
     ]
+  },
+  {
+    "id": "6355473",
+    "make": "Mercedes",
+    "model": "CLA 200 Shooting Brake",
+    "year": 2020,
+    "slug": "mercedes-cla-200-shooting-brake-2020-6355473",
+    "price": 29400,
+    "image": "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_001.jpg",
+    "description": "Mercedes CLA 200d Shooting Brake AMG de 2020 com motor Diesel 1950 CC, potência de 150 Hp (110 kW) e caixa automática. Este elegante carrinha combina desempenho com conforto e tecnologia avançada, incluindo sistema de navegação, interior desportivo em pele e Alcantara, e faróis LED. Equipado com opções de alto valor como sistema AMG, bancos desportivos, e pacote desportivo exterior. Conforto garantido com ar condicionado automático a duas zonas, bancos aquecidos, cruise control, e sistema Keyless Go. Segurança reforçada com ABS, ESP, airbags frontais e laterais, e Isofix. Multimédia com Bluetooth, leitor CD, e sistema mãos-livres. Manutenção em dia, veículo em excelente estado, ideal para quem procura um carro desportivo e prático. País de origem Alemanha (DE).",
+    "mileage": 58599,
+    "country": "DE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Estate Car",
+    "engineSize": "1950 CC",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "6375847",
+    "origin": "Germany - MC Germany",
+    "firstRegistration": "2020-12-17",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "119",
+    "color": "Black",
+    "vin": "W1K1186121N193031",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6355473/photo_012.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes em liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Tipo de motor: 2",
+        "Sintonizador DAB (rádio digital)",
+        "Sistema de assistência à condução: agility select / dynamic select",
+        "Sistema de assistência à condução: assistente ativo de travagem",
+        "Sistema de assistência à condução: assistente ativo de manutenção de faixa"
+      ]
+    },
+    "maintenance": []
   }
 ]
