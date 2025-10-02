@@ -9290,5 +9290,107 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6361095",
+    "make": "Mercedes",
+    "model": "CLA 250e Hybrid AMG",
+    "year": 2023,
+    "slug": "mercedes-cla-250e-hybrid-amg-2023-6361095",
+    "price": 32400,
+    "image": "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_031.jpg",
+    "description": "Este Mercedes CLA 250e Hybrid AMG de 2023 destaca-se pelo seu motor híbrido de 1332 CC com 160 cv (118 kW), caixa automática e um design desportivo com acabamentos em pele e Alcantara. Equipado com teto panorâmico, faróis LED Multibeam, sistema de navegação widescreen e sistema de áudio Burmester de alta performance, oferece conforto e tecnologia de ponta. O interior desportivo inclui bancos desportivos com ajuste elétrico e memória, volante multifunções e ar condicionado automático de duas zonas. Em termos de segurança, conta com ABS, ESP, airbags frontais e laterais, pontos de ancoragem Isofix e luzes diurnas LED. O veículo apresenta 143275 km e histórico de manutenção não especificado, mantendo-se em excelente estado para uma condução confortável e segura. Uma escolha ideal para quem procura um sedan híbrido com performance e luxo.",
+    "mileage": 143275,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Saloon",
+    "engineSize": "1.3",
+    "power": "160cv",
+    "places": 5,
+    "unitNumber": "6361095",
+    "origin": "Belgium",
+    "firstRegistration": "27/02/2023",
+    "doors": 4,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro 6",
+    "co2": "24g/km",
+    "color": "Branco",
+    "vin": "W1K5J8GB0PN377472",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6361095/photo_053.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bancos com memória",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
