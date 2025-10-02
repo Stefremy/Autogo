@@ -4515,5 +4515,113 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6357538",
+    "make": "Audi",
+    "model": "A4 Avant 2.0 30 TDi Aut.",
+    "year": 2021,
+    "slug": "audi-a4-avant-2-0-30-tdi-aut-2021-6357538",
+    "price": 17200,
+    "image": "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_023.jpg",
+    "description": "Este Audi A4 Avant 2.0 30 TDi Automático de 2021 destaca-se pelo seu motor Diesel de 1968 CC com 136 cv (100 kW), caixa automática e um consumo eficiente com emissões Euro 6 e CO2 de 126 g/km. Equipado com faróis LED-Xenon, sistema de navegação Pro, KeylessGo, ar condicionado automático de duas zonas, sensores de chuva e luz, cruise control, e jantes de liga leve. A segurança é garantida com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. O interior oferece conforto com bancos aquecidos, volante multifunções e sistema start-stop. Inclui ainda tanque Adblue com capacidade aumentada e filtro de partículas. Veículo com histórico de manutenção completo e em excelente estado, ideal para quem procura conforto, segurança e tecnologia num carro familiar espaçoso.",
+    "mileage": 188922,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Estate Car",
+    "engineSize": "1968 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": "6357538",
+    "origin": "Belgium - GNK - Remarketing Genk",
+    "firstRegistration": "2021-01-06",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "126",
+    "color": "Black",
+    "vin": "WAUZZZF48MA040870",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6357538/photo_044.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Tanque Adblue com capacidade aumentada",
+        "Garantia adicional de 1 ano, até 120 000 km",
+        "Permissão de circulação, alteração",
+        "Sistema de informação ao condutor com ecrã a cores",
+        "Apoio de braço central de conforto, dianteiro",
+        "Tanque de combustível com capacidade aumentada",
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
