@@ -2889,5 +2889,100 @@
         "raw": "15/03/2022 30207 km ADBLUE/Révision € 0,00"
       }
     ]
+  },
+  {
+    "id": "6218553",
+    "make": "Audi",
+    "model": "A3 Sportback 1.0 30 TFSI S-Line",
+    "year": 2019,
+    "slug": "audi-a3-sportback-1-0-30-tfsi-s-line-2019-6218553",
+    "price": 16600,
+    "image": "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_027.jpg",
+    "description": "Este Audi A3 Sportback 1.0 30 TFSI S-Line de 2019 destaca-se pelo seu motor a gasolina de 999 CC com 116 cv (85 kW), caixa manual e eficiente sistema de emissões Euro 6. Equipado com faróis LED, sistema de navegação, ar condicionado automático de duas zonas, sensores de chuva e luz, cruise control e assistente de estacionamento traseiro, oferece conforto e segurança superiores. A segurança é reforçada com ABS, ESP, múltiplos airbags e pontos Isofix. O interior conta com volante multifunções, jantes de liga leve e sistema multimedia com Bluetooth, CD e MP3. Veículo em excelente estado, com histórico de manutenção completo e características que garantem uma condução segura e confortável.",
+    "mileage": null,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "999 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2019-10-03",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "137",
+    "color": "Grey",
+    "vin": "WAUZZZ8V5KA019719",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6210001-6220000/6218553/photo_017.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Electric windows",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Rain sensor",
+        "Parking assist: Rear",
+        "Start-stop system"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix anchor points"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "Hands-free kit",
+        "MP3 interface",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Alloy wheels"
+      ],
+      "outras_opcoes": [
+        "Light alloy wheels in general",
+        "Mp3 player",
+        "Power-assisted steering",
+        "Traction control"
+      ]
+    },
+    "maintenance": []
   }
 ]
