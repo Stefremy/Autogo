@@ -9392,5 +9392,112 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6400876",
+    "make": "Mercedes",
+    "model": "A 180d",
+    "year": 2020,
+    "slug": "mercedes-a-180d-2020-6400876",
+    "price": 21300,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_000.jpg",
+    "description": "Este Mercedes A 180d Limousine de 2020 destaca-se pelo seu motor Diesel de 1461 CC com 218 cv (160 kW), caixa automática e design desportivo. Equipado com faróis LED-Xenon, sistema de navegação, interior e bancos desportivos em pele, e sistema KeylessGo para maior conforto. O veículo apresenta uma quilometragem de 75.659 km e está em excelente estado, com histórico de manutenção adequado. Destaca-se pela combinação de tecnologia avançada, conforto e segurança, incluindo sensores de chuva, cruise control, airbags múltiplos e sistema ESP. Um sedan elegante e potente, ideal para quem procura desempenho e luxo aliado a eficiência.",
+    "mileage": 75659,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon7",
+    "engineSize": "1461 CC",
+    "power": "218 Hp 160 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2020-02-06",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "117",
+    "color": "Black",
+    "vin": "W1K1771031J231194",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_029.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de fixação Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica",
+        "Pack desportivo"
+      ],
+      "outras_opcoes": [
+        "Conectividade de fábrica",
+        "Opção áudio (de fábrica)",
+        "Câmara de marcha-atrás",
+        "Chave principal",
+        "Chave reserva"
+      ]
+    },
+    "maintenance": []
   }
 ]
