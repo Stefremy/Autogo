@@ -4970,5 +4970,103 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6392963",
+    "make": "BMW",
+    "model": "318d M-Sport",
+    "year": 2020,
+    "slug": "bmw-318d-m-sport-2020-6392963",
+    "price": 26400,
+    "image": "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_000.jpg",
+    "description": "Este BMW 318d M-Sport de 2020 apresenta um motor Diesel de 1995 cc com 150 cv (110 kW) e caixa manual. Equipado com faróis LED-Xenon, sistema de navegação, interior desportivo com bancos em pele e Alcantara, Keyless Go, ar condicionado automático de duas zonas, sensores de luz e chuva, cruise control, e sistema start-stop. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. O veículo tem um histórico de manutenção completo e encontra-se em excelente estado, com 106134 km registados. Destaca-se pelo conforto, desempenho e design desportivo, ideal para quem procura um sedan elegante e eficiente.",
+    "mileage": 106134,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "1995",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium - HM Tongeren",
+    "firstRegistration": "17/02/2020",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "126",
+    "color": "Blue",
+    "vin": "WBA5V31090FJ56765",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6392963/photo_011.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Filtro de partículas",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
