@@ -12153,5 +12153,84 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "5819717",
+    "make": "Nissan",
+    "model": "X-Trail e-POWER 1.5i Hybrid N-Connecta 4WD 7PL",
+    "year": 2023,
+    "slug": "nissan-x-trail-e-power-1-5i-hybrid-n-connecta-4wd-7pl-2023-5819717",
+    "price": 17400,
+    "image": "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_047.jpg",
+    "description": "O Nissan X-Trail e-POWER 1.5i Hybrid N-Connecta 4WD 7 lugares de 2023 é um SUV híbrido moderno que combina eficiência e potência com um motor de 156 cv (115 kW) e transmissão automática. Equipado com teto panorâmico, faróis LED, sistema de navegação Virtual Navi-Pro, KeylessGo, câmara traseira e sensores de estacionamento (PDC), oferece conforto e tecnologia avançada para toda a família. Com 71.143 km, está em bom estado e pronto para uso imediato. A sua classificação Euro 6 garante baixas emissões, sendo uma escolha ambientalmente responsável. Um veículo espaçoso e versátil, ideal para quem procura um SUV híbrido com excelente equipamento e fiabilidade Nissan.",
+    "mileage": 71143,
+    "country": "DE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon1",
+    "engineSize": "1.5",
+    "power": "156cv",
+    "places": 7,
+    "unitNumber": "6404247",
+    "origin": "Germany",
+    "firstRegistration": "2023-05-01",
+    "doors": null,
+    "fuel": "Electric",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Red",
+    "vin": "SJNFAAZE1U0187270",
+    "images": [
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/5810001-5820000/5819717/photo_069.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED"
+      ],
+      "conforto": [
+        "Climatização automática",
+        "KeylessGo",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Sistema de travagem de emergência"
+      ],
+      "multimedia": [
+        "Sistema de navegação Virtual Navi-Pro"
+      ],
+      "interior": [
+        "7 lugares"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
