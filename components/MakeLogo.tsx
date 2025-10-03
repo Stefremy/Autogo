@@ -10,6 +10,15 @@ type MakeLogoProps = {
 const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
   if (!make) return null;
 
+  // map common shorthand names to the canonical filename base present in /public/images/carmake
+  const ALIASES: Record<string, string> = {
+    mercedes: 'Mercedes-Benz',
+    'mercedes-benz': 'Mercedes-Benz',
+    mb: 'Mercedes-Benz',
+  };
+
+  const resolvedMake = (ALIASES[(make || '').trim().toLowerCase()] || make).toString();
+
   // generate a prioritized list of candidate filenames covering
   // spaces, hyphens, camelCase (insert hyphen between lowercase+Uppercase),
   // lowercase variants, and no-hyphen variants
@@ -41,7 +50,7 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
     return list;
   };
 
-  const candidates = genCandidates(make);
+  const candidates = genCandidates(resolvedMake);
 
   // lightweight SVG fallback (keeps space visible instead of broken icon)
   const svgFallback =
