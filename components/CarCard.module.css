@@ -4,3 +4,15 @@
   border-radius: 8px;
   max-width: 300px;
 }
+
+/* Desktop image nudge: move image block slightly up so it visually overlaps the card top */
+@media (min-width: 768px) {
+  .shiftImageUp {
+    margin-top: -1rem; /* adjust as needed */
+  }
+}
+@media (min-width: 1024px) {
+  .shiftImageUp {
+    margin-top: -1.25rem; /* slightly more on larger screens */
+  }
+}

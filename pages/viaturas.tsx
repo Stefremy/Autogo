@@ -231,7 +231,6 @@ export default function Viaturas() {
     var minW = 16 * 16; // 16rem
     var maxW = window.innerWidth; // allow edge-to-edge
     var newW = lerp(minW, maxW, progress);
-    el.style.width = newW + 'px';
     // Fade out as we approach the footer
     var fadeStart = 0.98;
     var fadeProgress = clamp((progress - fadeStart) / (1 - fadeStart), 0, 1);
@@ -482,8 +481,8 @@ export default function Viaturas() {
                       {statusLabels[car.status] || car.status}
                     </span>
                   )}
-                  {/* Galeria dinâmica de imagens com efeito */}
-                  <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent">
+                  {/* Mobile: existing horizontal thumbnail scroller (leave as-is) */}
+                  <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent md:hidden">
                     {(car.images || [car.image]).map((img, idx) => (
                       <button
                         key={idx}
@@ -504,84 +503,71 @@ export default function Viaturas() {
                         />
                       </button>
                     ))}
-                    {/* Modais para expandir imagens */}
-                    {(car.images || [car.image]).map((img, idx) => (
-                      <dialog
-                        key={idx}
-                        id={`modal-img-${car.id}-${idx}`}
-                        className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full"
-                      >
-                        <div className="flex flex-col items-center">
-                          <img
-                            src={img}
-                            alt="Foto expandida"
-                            className="max-h-[80vh] w-auto rounded-xl shadow-lg"
-                          />
-                          <button
-                            onClick={(e) =>
-                              (
-                                e.currentTarget.closest(
-                                  "dialog",
-                                ) as HTMLDialogElement
-                              )?.close()
-                            }
-                            className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition"
-                          >
-                            {t("Fechar")}
-                          </button>
-                        </div>
-                      </dialog>
-                    ))}
                   </div>
-                  {car.country && (
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        // toggle country filter
-                        setCountryFilter((prev) =>
-                          prev && prev.toLowerCase() === car.country.toLowerCase()
-                            ? ""
-                            : car.country
-                        );
-                      }}
-                      aria-pressed={
-                        (!!countryFilter &&
-                          countryFilter.toLowerCase() === car.country.toLowerCase()) ||
-                        false
-                      }
-                      title={car.country}
-                      className="absolute left-3 top-3 p-0 border-0 bg-transparent rounded"
-                      style={{ zIndex: 30 }}
+
+                  {/* Desktop: center the main picture with the car card (keep mobile unchanged)
+                      increase top padding and align to start so image sits slightly lower */}
+                  <div className="w-full mb-4 hidden md:flex items-start justify-center pt-4">
+                    {(() => {
+                      const mainImg = (car.images || [car.image])[0];
+                      return (
+                        <button
+                          type="button"
+                          className="focus:outline-none"
+                          onClick={() => {
+                            const modal = document.getElementById(
+                              `modal-img-${car.id}-0`,
+                            );
+                            if (modal) (modal as HTMLDialogElement).showModal();
+                          }}
+                        >
+                          <img
+                            src={mainImg}
+                            alt={`${car.make} ${car.model} foto principal`}
+                            className={styles["premium-car-image"]}
+                            style={{
+                              // slightly smaller so card borders are visible on the sides
+                              height: "13rem",
+                              width: "auto",
+                              maxWidth: "21rem",
+                              objectFit: "cover",
+                              borderRadius: "0.75rem",
+                              marginTop: "0.5rem",
+                            }}
+                          />
+                        </button>
+                      );
+                    })()}
+                  </div>
+
+                  {/* Modais para expandir imagens (render for all viewports) */}
+                  {(car.images || [car.image]).map((img, idx) => (
+                    <dialog
+                      key={idx}
+                      id={`modal-img-${car.id}-${idx}`}
+                      className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full"
                     >
-                      <img
-                        src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.png`}
-                        alt={String((car as any).country ?? "")}
-                        style={{
-                          width: 32,
-                          height: 22,
-                          borderRadius: "0.2rem",
-                          border:
-                            (countryFilter &&
-                            String(countryFilter).toLowerCase() === String((car as any).country ?? "").toLowerCase())
-                              ? "2.5px solid #b42121"
-                              : "1.5px solid #fff",
-                          boxShadow:
-                            (countryFilter &&
-                            String(countryFilter).toLowerCase() === String((car as any).country ?? "").toLowerCase())
-                              ? "0 6px 18px rgba(180,33,33,0.18)"
-                              : "0 2px 8px rgba(44,62,80,0.10)",
-                          background: "#fff",
-                          objectFit: "cover",
-                          transition: "box-shadow 160ms ease, transform 160ms ease, border 160ms ease",
-                          transform:
-                            (countryFilter &&
-                            String(countryFilter).toLowerCase() === String((car as any).country ?? "").toLowerCase())
-                              ? "translateY(-1px) scale(1.03)"
-                              : "none",
-                        }}
-                      />
-                    </button>
-                  )}
+                      <div className="flex flex-col items-center">
+                        <img
+                          src={img}
+                          alt="Foto expandida"
+                          className="max-h-[80vh] w-auto rounded-xl shadow-lg"
+                        />
+                        <button
+                          onClick={(e) =>
+                            (
+                              e.currentTarget.closest(
+                                "dialog",
+                              ) as HTMLDialogElement
+                            )?.close()
+                          }
+                          className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition"
+                        >
+                          {t("Fechar")}
+                        </button>
+                      </div>
+                    </dialog>
+                  ))}
                   <div className="relative flex flex-col items-center">
                     {/* Use shared MakeLogo to handle camelCase/hyphen variants and fallback cleanly */}
                     <div className="mb-2">

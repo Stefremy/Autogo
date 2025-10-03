@@ -73,14 +73,14 @@ const CarCard: React.FC<CarCardProps> = ({
           </span>
         )}
 
-        <div className="relative">
+        <div className="relative shiftImageUp">
           <img
             src={image || svgCarFallback}
             alt={name}
-            className="w-full h-40 object-cover rounded mb-4"
+            className="w-full h-40 md:h-[247px] lg:h-[282px] object-cover rounded mb-4"
             loading="lazy"
-            width={640}
-            height={160}
+            width={1024}
+            height={441}
             onError={(e) => {
               const img = e.currentTarget as HTMLImageElement;
               if (img.src && img.src.endsWith('.png')) {
@@ -149,14 +149,14 @@ const CarCard: React.FC<CarCardProps> = ({
         </span>
       )}
       {/* Bloco para imagem e bandeira */}
-      <div className="relative">
+      <div className="relative shiftImageUp">
         <img
           src={image || svgCarFallback}
           alt={name}
-          className="w-full h-40 object-cover rounded mb-4"
+          className="w-full h-40 md:h-[247px] lg:h-[282px] object-cover rounded mb-4"
           loading="lazy"
-          width={640}
-          height={160}
+          width={1024}
+          height={441}
           onError={(e) => {
             const img = e.currentTarget as HTMLImageElement;
             if (img.src && img.src.endsWith('.png')) {

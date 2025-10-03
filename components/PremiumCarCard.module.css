@@ -27,6 +27,12 @@
   border-radius: 1.1rem 1.1rem 0 0;
   box-shadow: none;
 }
+/* Larger image on desktop for more visual impact */
+@media (min-width: 768px) {
+  .premium-car-image {
+    height: 220px; /* increase from 170px to 220px on md+ */
+  }
+}
 .premium-car-price {
   position: absolute;
   bottom: 0;
