@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaCarSide,
   FaCalendarAlt,
@@ -25,10 +25,74 @@ export default function Viaturas() {
   const [km, setKm] = useState("");
   const [showSimulador, setShowSimulador] = useState(false);
   const [countryFilter, setCountryFilter] = useState("");
-  const [minPrice, setMinPrice] = useState("1000");
-  const [maxPrice, setMaxPrice] = useState("10000");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
   const [page, setPage] = useState(1);
   const PAGE_SIZE = 12;
+
+  // Normalize make strings for filtering (map common variants to canonical keys)
+  const normalizeMake = (m?: string) => {
+    if (!m) return "";
+    const s = String(m).toLowerCase().trim();
+    // create a compact key (remove non-alphanum) to match variants like "mercedes-benz", "mercedes benz", "mercedes"
+    const key = s.replace(/[^a-z0-9]/g, "");
+    const ALIASES: Record<string, string> = {
+      mercedes: "mercedes-benz",
+      mercedesbenz: "mercedes-benz",
+      // add more aliases here when needed
+    };
+    return ALIASES[key] || s;
+  };
+
+  // Persist and restore filter inputs so user values are remembered across visits
+  const STORAGE_KEY = "viaturas_filters_v1";
+
+  // Restore saved filters on first client render (only runs in browser)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const saved = JSON.parse(raw || "{}");
+      if (saved) {
+        if (saved.marca) setMarca(saved.marca);
+        if (saved.modelo) setModelo(saved.modelo);
+        if (saved.ano) setAno(saved.ano);
+        if (saved.mes) setMes(saved.mes);
+        if (saved.dia) setDia(saved.dia);
+        if (saved.km) setKm(saved.km);
+        if (saved.countryFilter) setCountryFilter(saved.countryFilter);
+        if (saved.minPrice) setMinPrice(String(saved.minPrice));
+        if (saved.maxPrice) setMaxPrice(String(saved.maxPrice));
+        if (saved.page) setPage(Number(saved.page) || 1);
+      }
+    } catch (e) {
+      // ignore parse errors
+    }
+  }, []);
+
+  // Save filters whenever they change so the user's inputs are remembered
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const toSave = {
+        marca,
+        modelo,
+        ano,
+        mes,
+        dia,
+        km,
+        countryFilter,
+        minPrice,
+        maxPrice,
+        page,
+        ts: Date.now(),
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
+    } catch (e) {
+      // ignore storage errors
+    }
+  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, page]);
 
   // Unique options for selects
   const marcas = Array.from(
@@ -113,7 +177,7 @@ export default function Viaturas() {
     })();
 
     return (
-      (!marca || car.make === marca) &&
+      (!marca || normalizeMake((car as any).make) === normalizeMake(marca)) &&
       (!modelo || car.model === modelo) &&
       (!countryFilter || carCountry === cf) &&
       (!ano || carYearStr === ano) &&
@@ -459,6 +523,12 @@ export default function Viaturas() {
                   setCountryFilter("");
                   setMinPrice("");
                   setMaxPrice("");
+                  // remove persisted filters
+                  try {
+                    localStorage.removeItem(STORAGE_KEY);
+                  } catch (e) {
+                    // ignore
+                  }
                 }}
                 className="flex items-center gap-2 bg-white border border-[#b42121]/30 text-[#b42121] rounded-xl px-6 py-2 font-bold shadow transition-all duration-200 hover:bg-[#b42121] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 focus:ring-offset-2"
               >

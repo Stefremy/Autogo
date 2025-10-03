@@ -32,14 +32,16 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
     const noHyphen = clean.replace(/-/g, ""); // MercedesBenz
     const lowerNoHyphen = noHyphen.toLowerCase();
 
+    // Prioritize the exact resolved string (preserves original capitalization)
+    // so filenames like `Mercedes-Benz-logo.jpg` are tried early.
     const bases = Array.from(new Set([
-      lowerKebab,
-      kebab,
-      lowerCamelHyphen,
-      camelHyphen,
-      lowerNoHyphen,
-      noHyphen,
       s,
+      kebab,
+      lowerKebab,
+      camelHyphen,
+      lowerCamelHyphen,
+      noHyphen,
+      lowerNoHyphen,
     ]));
 
     const list: string[] = [];
