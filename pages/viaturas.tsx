@@ -27,8 +27,9 @@ export default function Viaturas() {
   const [countryFilter, setCountryFilter] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  const [page, setPage] = useState(1);
-  const PAGE_SIZE = 12;
+  const LOAD_BATCH = 12;
+  const [itemsLoaded, setItemsLoaded] = useState(LOAD_BATCH);
+  const PAGE_SIZE = LOAD_BATCH;
 
   // Normalize make strings for filtering (map common variants to canonical keys)
   const normalizeMake = (m?: string) => {
@@ -64,7 +65,7 @@ export default function Viaturas() {
         if (saved.countryFilter) setCountryFilter(saved.countryFilter);
         if (saved.minPrice) setMinPrice(String(saved.minPrice));
         if (saved.maxPrice) setMaxPrice(String(saved.maxPrice));
-        if (saved.page) setPage(Number(saved.page) || 1);
+        if (saved.itemsLoaded) setItemsLoaded(Number(saved.itemsLoaded) || LOAD_BATCH);
       }
     } catch (e) {
       // ignore parse errors
@@ -85,14 +86,14 @@ export default function Viaturas() {
         countryFilter,
         minPrice,
         maxPrice,
-        page,
+        itemsLoaded,
         ts: Date.now(),
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
     } catch (e) {
       // ignore storage errors
     }
-  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, page]);
+  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded]);
 
   // Unique options for selects
   const marcas = Array.from(
@@ -126,14 +127,14 @@ export default function Viaturas() {
   const meses = Array.from({ length: 12 }, (_, i) => i + 1);
   const dias = Array.from({ length: 31 }, (_, i) => i + 1);
 
-  // Reset page when filters change
+  // Reset loaded items when filters change
   React.useEffect(() => {
-    setPage(1);
+    setItemsLoaded(LOAD_BATCH);
   }, [marca, modelo, ano, mes, km, minPrice, maxPrice]);
 
-  // Reset page when country filter changes
+  // Reset loaded items when country filter changes
   React.useEffect(() => {
-    setPage(1);
+    setItemsLoaded(LOAD_BATCH);
   }, [countryFilter]);
 
   // Filtering logic por dia, mês e ano (campos day, month, year)
@@ -188,14 +189,37 @@ export default function Viaturas() {
     );
   });
 
-  // Pagination calculations
-  const totalPages = Math.max(1, Math.ceil(filteredCars.length / PAGE_SIZE));
-  const clampedPage = Math.min(Math.max(1, page), totalPages);
-  const startIndex = (clampedPage - 1) * PAGE_SIZE;
-  const paginatedCars = filteredCars.slice(startIndex, startIndex + PAGE_SIZE);
-  // Pagination button state helpers to improve affordance
-  const prevDisabled = clampedPage <= 1;
-  const nextDisabled = clampedPage >= totalPages;
+  // Displayed cars for infinite scroll (slice the filtered list up to itemsLoaded)
+  const displayedCars = filteredCars.slice(0, itemsLoaded);
+
+  // Infinite scroll: load more when near bottom
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (itemsLoaded >= filteredCars.length) return; // nothing to load
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        try {
+          const threshold = 800; // px from bottom to trigger
+          if (window.innerHeight + window.scrollY >= document.body.offsetHeight - threshold) {
+            setItemsLoaded((prev) => Math.min(filteredCars.length, prev + LOAD_BATCH));
+          }
+        } finally {
+          ticking = false;
+        }
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    // try once in case content is short
+    onScroll();
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [itemsLoaded, filteredCars.length]);
 
   // Status translation map
   const statusLabels = {
@@ -536,7 +560,7 @@ export default function Viaturas() {
               </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10">
-              {paginatedCars.map((car) => (
+              {displayedCars.map((car) => (
                 <div key={car.id} className={styles["premium-car-card"]}>
                   {/* Status badge */}
                   {car.status && (
@@ -553,33 +577,38 @@ export default function Viaturas() {
                   )}
                   {/* Mobile: existing horizontal thumbnail scroller (leave as-is) */}
                   <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent md:hidden">
-                    {(car.images || [car.image]).map((img, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        className="focus:outline-none"
-                        onClick={() => {
-                          const modal = document.getElementById(
-                            `modal-img-${car.id}-${idx}`,
-                          );
-                          if (modal) (modal as HTMLDialogElement).showModal();
-                        }}
-                      >
-                        <img
-                          src={img}
-                          alt={`${car.make} ${car.model} foto ${idx + 1}`}
-                          className={styles["premium-car-image"]}
-                          style={{ minWidth: "11rem" }}
-                        />
-                      </button>
-                    ))}
+                    {(car.images || [car.image]).map((img, idx) => {
+                      const thumbSrc = Array.isArray(img) ? String(img[0]) : String(img || car.image || "");
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          className="focus:outline-none"
+                          onClick={() => {
+                            const modal = document.getElementById(
+                              `modal-img-${car.id}-${idx}`,
+                            );
+                            if (modal) (modal as HTMLDialogElement).showModal();
+                          }}
+                        >
+                          <img
+                            src={thumbSrc}
+                            loading="lazy"
+                            alt={`${car.make} ${car.model} foto ${idx + 1}`}
+                            className={styles["premium-car-image"]}
+                            style={{ minWidth: "11rem" }}
+                          />
+                        </button>
+                      );
+                    })}
                   </div>
 
                   {/* Desktop: center the main picture with the car card (keep mobile unchanged)
                       increase top padding and align to start so image sits slightly lower */}
                   <div className="w-full mb-4 hidden md:flex items-start justify-center pt-4">
                     {(() => {
-                      const mainImg = (car.images || [car.image])[0];
+                      // On desktop prefer the single `car.image` string to avoid loading the whole images array
+                      const mainImg = (car && (car.image || (car.images && car.images[0]))) || "";
                       return (
                         <button
                           type="button"
@@ -592,7 +621,8 @@ export default function Viaturas() {
                           }}
                         >
                           <img
-                            src={mainImg}
+                            src={String(mainImg)}
+                            loading="lazy"
                             alt={`${car.make} ${car.model} foto principal`}
                             className={styles["premium-car-image"]}
                             style={{
@@ -619,7 +649,8 @@ export default function Viaturas() {
                     >
                       <div className="flex flex-col items-center">
                         <img
-                          src={img}
+                          src={String(img)}
+                          loading="lazy"
                           alt="Foto expandida"
                           className="max-h-[80vh] w-auto rounded-xl shadow-lg"
                         />
@@ -717,31 +748,9 @@ export default function Viaturas() {
                 </div>
               ))}
             </div>
-            {/* Right-aligned pagination bar placed below the grid and above the footer */}
-            <div className="max-w-7xl mx-auto mt-8 px-4">
-              <div className="flex justify-end">
-                <nav className="inline-flex items-center gap-3 bg-white/90 shadow-md rounded-xl p-2 border border-[#e9e9e9] relative z-[60] pointer-events-auto">
-                  <button
-                    onClick={() => setPage((p) => Math.max(1, p - 1))}
-                    disabled={prevDisabled}
-                    aria-label="Anterior"
-                    className={`px-3 py-1 rounded-md text-sm font-semibold ${prevDisabled ? 'text-gray-400 bg-white/90 border border-gray-200 cursor-not-allowed opacity-90' : 'text-[#b42121] bg-white border border-[#b42121]/10 shadow-md hover:shadow-lg cursor-pointer'} transition-all duration-150`}
-                  >
-                    ← {t("Anterior")}
-                  </button>
-                  <div className="px-3 py-1 text-sm text-gray-700">
-                    {t("Página")} {clampedPage} / {totalPages}
-                  </div>
-                  <button
-                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                    disabled={nextDisabled}
-                    aria-label="Seguinte"
-                    className={`px-3 py-1 rounded-md text-sm font-semibold ${nextDisabled ? 'text-white bg-[#b42121]/60 cursor-not-allowed opacity-90' : 'text-white bg-[#b42121] hover:bg-[#a11a1a] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer'} transition-all duration-150`}
-                  >
-                    {t("Seguinte")} →
-                  </button>
-                </nav>
-              </div>
+            {/* infinite-scroll: no page selector — more items load as the user scrolls */}
+            <div className="max-w-7xl mx-auto mt-6 px-4 text-center text-gray-500">
+              {itemsLoaded < filteredCars.length ? t('A carregar mais viaturas...') : t('Todos os resultados carregados')}
             </div>
           </section>
         </MainLayout>
