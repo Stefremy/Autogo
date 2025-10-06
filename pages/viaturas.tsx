@@ -672,16 +672,15 @@ export default function Viaturas() {
                     })}
                   </div>
 
-                  {/* Desktop: center the main picture with the car card (keep mobile unchanged)
-                      increase top padding and align to start so image sits slightly lower */}
-                  <div className="w-full mb-4 hidden md:flex items-start justify-center pt-4">
+                  {/* Desktop: make the main picture fill the card top and span full width (flush left/right) */}
+                  <div className="w-full mb-4 hidden md:block">
                     {(() => {
                       // On desktop prefer the single `car.image` string to avoid loading the whole images array
                       const mainImg = (car && (car.image || (car.images && car.images[0]))) || "";
                       return (
                         <button
                           type="button"
-                          className="focus:outline-none"
+                          className="focus:outline-none w-full"
                           onClick={() => {
                             const modal = document.getElementById(
                               `modal-img-${car.id}-0`,
@@ -694,15 +693,7 @@ export default function Viaturas() {
                             loading="lazy"
                             alt={`${car.make} ${car.model} foto principal`}
                             className={styles["premium-car-image"]}
-                            style={{
-                              // slightly smaller so card borders are visible on the sides
-                              height: "13rem",
-                              width: "auto",
-                              maxWidth: "21rem",
-                              objectFit: "cover",
-                              borderRadius: "0.75rem",
-                              marginTop: "0.5rem",
-                            }}
+                            style={{ width: '100%', height: undefined }}
                           />
                         </button>
                       );
