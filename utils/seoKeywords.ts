@@ -9,7 +9,8 @@ export const SITE_WIDE_KEYWORDS = [
 ];
 
 export const HOME_KEYWORDS = [
-  "Simulador ISV",
+  "Simulador ISV",  
+  "carros em segunda mão",
   "simulador de carros",
   "simulador impostos carros",
   "carros em segunda mão",
@@ -113,3 +114,118 @@ export function joinKeywords(...lists: string[][]) {
   }
   return merged.join(", ");
 }
+
+export type SEOSet = {
+  primary: string[];
+  supporting?: string[];
+  faq?: string[];
+};
+
+export const SEO_KEYWORDS: Record<string, SEOSet> = {
+  siteWide: {
+    primary: ["AutoGo", "importação de viaturas"],
+    supporting: [
+      "importar carro para Portugal",
+      "legalização de carros",
+      "ISV (Imposto sobre Veículos)",
+      "atribuição de matrícula",
+      "IMT homologação",
+      "inspeção tipo B",
+    ],
+  },
+
+  home: {
+    primary: ["importar carro para Portugal", "importação de viaturas"],
+    supporting: [
+      "carros importados Portugal",
+      "legalização de carros",
+      "custos ISV",
+      "transporte e legalização",
+      "processo de importação de carros",
+      "carros europeus usados",
+    ],
+    faq: [
+      "Quanto custa importar um carro para Portugal?",
+      "Que documentos preciso para a atribuição de matrícula?",
+      "Como funciona o ISV para carros usados importados?",
+    ],
+  },
+
+  simulador_isv: {
+    primary: ["Simulador ISV", "calcular ISV"],
+    supporting: [
+      "tabela ISV 2025",
+      "simulador imposto sobre veículos",
+      "ISV WLTP emissões CO₂",
+      "ISV carros usados",
+      "ISV híbridos e elétricos",
+      "ISV importados UE",
+    ],
+    faq: [
+      "Como calcular o ISV passo a passo?",
+      "Que dados preciso (cilindrada, CO₂, combustível)?",
+      "Como pedir isenção de ISV por mudança de residência?",
+    ],
+  },
+
+  viaturas: {
+    primary: ["carros importados à venda", "usados importados Portugal"],
+    supporting: [
+      "carros europeus usados",
+      "seminovos importados",
+      "garantia e histórico",
+      "financiamento carros importados",
+      "BMW Série 1 usado importado",
+      "Audi A3 usado importado",
+      "Mercedes Classe A usado importado",
+      "Volkswagen Golf usado importado",
+      "Peugeot 308 usado importado",
+      "Renault Mégane usado importado",
+      "Citroën C3 usado importado",
+    ],
+  },
+
+  blog: {
+    primary: ["importar carro da Alemanha", "como legalizar carro importado"],
+    supporting: [
+      "documentos para legalizar carro",
+      "certificado de conformidade COC",
+      "homologação IMT",
+      "inspeção tipo B",
+      "atribuição de matrícula",
+      "ISV 2025 novidades",
+      "custos de transporte e seguro",
+      "checklist compra na Alemanha",
+    ],
+  },
+
+  como_funciona: {
+    primary: ["processo de importação de carros", "legalização de viaturas"],
+    supporting: [
+      "passo a passo importação",
+      "documentos IMT",
+      "inspeção tipo B",
+      "homologação e COC",
+      "atribuição de matrícula",
+      "prazos e taxas",
+    ],
+  },
+
+  about: {
+    primary: ["AutoGo", "sobre a AutoGo"],
+    supporting: [
+      "serviço de importação de viaturas",
+      "equipa AutoGo",
+      "porquê importar com a AutoGo",
+    ],
+  },
+};
+
+export const AVOID_AS_PRIMARY = [
+  "Audi",
+  "BMW",
+  "Mercedes",
+  "Peugeot",
+  "exclusivo",
+  "inovador",
+];

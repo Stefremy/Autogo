@@ -3,6 +3,8 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
 import Head from "next/head";
+import Seo from '../components/Seo';
+import { SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 // Tabelas ISV Diário da República
 const TABELA_CILINDRADA_A = [
@@ -332,17 +334,32 @@ export default function Simulador() {
     });
   }
 
+  const simuladorFaq = SEO_KEYWORDS?.simulador_isv?.faq;
+  const simuladorFaqJsonLd: any = simuladorFaq
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: simuladorFaq.map((q) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Use o simulador e consulte a nossa equipa para ajuda detalhada.',
+          },
+        })),
+      }
+    : undefined;
+
   return (
     <>
       <MainLayout>
-        <Head>
-          <title>Simulador ISV de importação automóvel | AutoGo.pt</title>
-          <meta name="description" content="Simule o ISV (Imposto Sobre Veículos) em Portugal com o Simulador ISV AutoGo.pt — cálculo rápido e preciso para carros novos, usados, híbridos e elétricos. Único simulador prático e adaptado às tabelas oficiais." />
-          <meta name="keywords" content="Simulador ISV, simulador ISV Portugal, calcular ISV, ISV Portugal, simulador impostos carros, simulador de carros, AutoGo.pt, cálculo ISV, importação de viaturas" />
-          <meta property="og:title" content="Simulador ISV de importação automóvel | AutoGo.pt" />
-          <meta property="og:description" content="Simule o ISV em Portugal com o simulador AutoGo.pt — rápido, preciso e baseado nas tabelas oficiais do Diário da República." />
-          <meta property="og:image" content="https://autogo.pt/images/auto-logo.png" />
-        </Head>
+        <Seo
+          title={`Simulador ISV de importação automóvel | AutoGo.pt`}
+          description={`Calcule o ISV em Portugal com o Simulador AutoGo.pt — estimativa rápida para carros novos, usados, híbridos e elétricos.`}
+          url={`https://autogo.pt/simulador`}
+          keywords={joinKeywords(SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS)}
+          jsonLd={simuladorFaqJsonLd}
+        />
         <div className="relative w-full flex-1 z-10">
           <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-6 px-2 sm:px-6 md:px-12 bg-transparent">
             {/* Info block */}

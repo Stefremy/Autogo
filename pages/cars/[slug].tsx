@@ -30,6 +30,7 @@ import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import jsPDF from "jspdf";
 import Head from "next/head";
+import Seo from '../../components/Seo';
 import carsData from "../../data/cars.json";
 import type { Car, MaintenanceItem } from '../../types/car.d';
 import MakeLogo from "../../components/MakeLogo";
@@ -1625,11 +1626,16 @@ export default function CarDetail() {
           name="description"
           content={
             car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumberForMeta(car.price)}. Carros usados e seminovos com garantia.`
+              ? `${car.make} ${car.model} — €${fmtNumberForMeta(car.price)} — ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Comprar carro importado europeu em AutoGo.pt.`
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />
         <meta name="keywords" content={detailKeywords} />
+        <link rel="canonical" href={`https://autogo.pt/cars/${car.slug || car.id}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${car.make} ${car.model} — AutoGo.pt`} />
+        <meta name="twitter:description" content={car ? `${car.make} ${car.model} — €${fmtNumberForMeta(car.price)} — ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km.` : ''} />
+        <meta name="twitter:image" content={car ? `https://autogo.pt${car.image}` : 'https://autogo.pt/images/auto-logo.png'} />
         <meta
           property="og:title"
           content={

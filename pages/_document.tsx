@@ -14,6 +14,12 @@ class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="theme-color" content="#b42121" />
 
+          {/* Global Open Graph / Social defaults */}
+          <meta property="og:site_name" content="AutoGo.pt" />
+          <meta property="og:locale" content="pt_PT" />
+          {/* Default Twitter card (can be overridden per-page) */}
+          <meta name="twitter:card" content="summary_large_image" />
+
           {/* Google tag (gtag.js) - Global site tag */}
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-0E4057P95K"></script>
           <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0E4057P95K');` }} />

@@ -15,6 +15,7 @@ import cars from "../data/cars.json";
 import MainLayout from "../components/MainLayout";
 import MakeLogo from "../components/MakeLogo";
 import { VIATURAS_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import Seo from '../components/Seo';
 
 export default function Viaturas() {
   const { t } = useTranslation("common");
@@ -359,31 +360,13 @@ export default function Viaturas() {
 
   return (
     <>
-      <Head>
-        <title>
-          Carros importados europeus, BMW, Audi, Mercedes, Peugeot à venda em
-          Portugal | AutoGo.pt
-        </title>
-        <meta
-          name="description"
-          content="Encontra carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal. Carros usados e seminovos com garantia e financiamento."
-        />
-        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS, VIATURAS_KEYWORDS)} />
-        <meta
-          property="og:title"
-          content="Carros importados europeus, BMW, Audi, Mercedes, Peugeot à venda em Portugal | AutoGo.pt"
-        />
-        <meta
-          property="og:description"
-          content="Encontra carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal. Carros usados e seminovos com garantia e financiamento."
-        />
-        <meta property="og:url" content="https://autogo.pt/viaturas" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://autogo.pt/images/auto-logo.png"
-        />
-      </Head>
+      <Seo
+        title={`Carros importados europeus, BMW, Audi, Mercedes, Peugeot à venda em Portugal | AutoGo.pt`}
+        description={`Encontre carros importados e seminovos europeus em Portugal — BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e muito mais. Pesquise, compare e contacte-nos.`}
+        url={`https://autogo.pt/viaturas`}
+        image={`https://autogo.pt/images/auto-logo.png`}
+        keywords={joinKeywords(SITE_WIDE_KEYWORDS, VIATURAS_KEYWORDS)}
+      />
       <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
         <img
           src="/images/viaturas-fundo.jpg"
