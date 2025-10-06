@@ -15,6 +15,11 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
     mercedes: 'Mercedes-Benz',
     'mercedes-benz': 'Mercedes-Benz',
     mb: 'Mercedes-Benz',
+    // common misspellings / lowercase variants to ensure the correct logo is resolved
+    mazda: 'Mazda',
+    mazd: 'Mazda',
+    // shorthand for Morris Garage / MG
+    mg: 'MG',
   };
 
   const resolvedMake = (ALIASES[(make || '').trim().toLowerCase()] || make).toString();
@@ -52,7 +57,29 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
     return list;
   };
 
-  const candidates = genCandidates(resolvedMake);
+  const candidates = (() => {
+    // special-case prioritized lists for known logos present in /public/images/carmake
+    const SPECIAL_CASES: Record<string, string[]> = {
+      // prefer the lowercase png path the user mentioned, but include other variants too
+      mazda: [
+        '/images/carmake/mazda-logo.png',
+        '/images/carmake/Mazda-logo.png',
+        '/images/carmake/mazda-logo.jpg',
+        '/images/carmake/Mazda-logo.jpg',
+      ],
+      // MG provided as JPG in the repo; try that first then other common variants
+      mg: [
+        '/images/carmake/MG-logo.jpg',
+        '/images/carmake/MG-logo.png',
+        '/images/carmake/mg-logo.jpg',
+        '/images/carmake/mg-logo.png',
+      ],
+    };
+
+    const key = (resolvedMake || '').toString().trim().toLowerCase();
+    if (SPECIAL_CASES[key]) return SPECIAL_CASES[key];
+    return genCandidates(resolvedMake);
+  })();
 
   // lightweight SVG fallback (keeps space visible instead of broken icon)
   const svgFallback =
