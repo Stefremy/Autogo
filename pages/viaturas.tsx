@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   FaCarSide,
   FaCalendarAlt,
@@ -27,6 +27,9 @@ export default function Viaturas() {
   const [countryFilter, setCountryFilter] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  // Sorting state: relevance, alphabetical, yearDesc, priceAsc, mileageAsc
+  const [sortBy, setSortBy] = useState<string>("relevance");
+  const [showSortMenu, setShowSortMenu] = useState(false);
   // Load strategy: load N rows at a time. Grid columns determine items per row.
   const ROWS_PER_BATCH = 2; // user request: load 2 rows per load
   const [columnsCount, setColumnsCount] = useState(4); // default to desktop columns
@@ -162,6 +165,11 @@ export default function Viaturas() {
     setItemsLoaded(itemsPerBatch);
   }, [countryFilter]);
 
+  // Reset itemsLoaded when sort changes so user sees top of sorted list
+  React.useEffect(() => {
+    setItemsLoaded(itemsPerBatch);
+  }, [sortBy]);
+
   // Filtering logic por dia, mês e ano (campos day, month, year)
   const filteredCars = cars.filter((car) => {
     const carCountry = String(car.country ?? "").toLowerCase();
@@ -214,8 +222,41 @@ export default function Viaturas() {
     );
   });
 
-  // Displayed cars for infinite scroll (slice the filtered list up to itemsLoaded)
-  const displayedCars = filteredCars.slice(0, itemsLoaded);
+  // Apply sorting to filtered results before slicing for infinite scroll
+  const sortedCars = useMemo(() => {
+    const copy = Array.from(filteredCars);
+    const num = (v: any) => {
+      if (v == null) return null;
+      if (typeof v === 'number') return v;
+      const n = Number(String(v).replace(/[^0-9.-]/g, ''));
+      return Number.isFinite(n) ? n : null;
+    };
+    copy.sort((a: any, b: any) => {
+      const priceA = num(a.price);
+      const priceB = num(b.price);
+      const yearA = (() => { const y = a.year; return typeof y === 'number' ? y : (typeof y === 'string' && /^\d{4}/.test(y) ? Number(String(y).match(/^(\d{4})/)[1]) : null); })();
+      const yearB = (() => { const y = b.year; return typeof y === 'number' ? y : (typeof y === 'string' && /^\d{4}/.test(y) ? Number(String(y).match(/^(\d{4})/)[1]) : null); })();
+      const milA = (() => { const v = a.mileage; if (v == null) return null; if (typeof v === 'number') return v; const n = Number(String(v).replace(/[^0-9]/g, '')); return Number.isFinite(n) ? n : null; })();
+      const milB = (() => { const v = b.mileage; if (v == null) return null; if (typeof v === 'number') return v; const n = Number(String(v).replace(/[^0-9]/g, '')); return Number.isFinite(n) ? n : null; })();
+      const aStr = ((a.make || '') + ' ' + (a.model || '')).toString().toLowerCase();
+      const bStr = ((b.make || '') + ' ' + (b.model || '')).toString().toLowerCase();
+
+      switch (sortBy) {
+        case 'priceAsc': return (priceA ?? Infinity) - (priceB ?? Infinity);
+        case 'priceDesc': return (priceB ?? -Infinity) - (priceA ?? -Infinity);
+        case 'yearAsc': return (yearA ?? Infinity) - (yearB ?? Infinity);
+        case 'yearDesc': return (yearB ?? -Infinity) - (yearA ?? -Infinity);
+        case 'mileageAsc': return (milA ?? Infinity) - (milB ?? Infinity);
+        case 'mileageDesc': return (milB ?? -Infinity) - (milA ?? -Infinity);
+        case 'alphabetical': return aStr.localeCompare(bStr);
+        default: return 0; // relevance: keep original filtered order
+      }
+    });
+    return copy;
+  }, [filteredCars, sortBy]);
+
+  // Displayed cars for infinite scroll (slice the sorted list up to itemsLoaded)
+  const displayedCars = sortedCars.slice(0, itemsLoaded);
 
   // Infinite scroll: load more when there is empty space using a sentinel
   React.useEffect(() => {
@@ -428,8 +469,48 @@ export default function Viaturas() {
               >
                 {t("Viaturas Disponíveis")}
               </h1>
-              <div className="flex gap-2 justify-center sm:justify-end">
-                <style jsx>{`
+              <div className="flex gap-2 justify-center sm:justify-end relative">
+                {/* Sort dropdown button */}
+                <div className="mr-2 relative inline-block text-left">
+                  <button
+                    type="button"
+                    onClick={() => setShowSortMenu((s) => !s)}
+                    className="sort-toggle inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white border border-[#e8e8e8] shadow-sm hover:shadow-md text-sm transition-transform duration-150"
+                    aria-expanded={showSortMenu}
+                    aria-haspopup="menu"
+                  >
+                    {t('Ordenar')}
+                    <svg className="w-4 h-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.584l3.71-3.354a.75.75 0 111.02 1.1l-4.25 3.842a.75.75 0 01-1.02 0L5.21 8.33a.75.75 0 01.02-1.12z" clipRule="evenodd" /></svg>
+                  </button>
+                  {showSortMenu && (
+                    <div className="absolute right-0 mt-2 w-44 bg-white border border-gray-100 rounded-md shadow-lg z-40 menu-pop">
+                      <ul className="py-1">
+                        <li>
+                          <button onClick={() => { setSortBy('mileageAsc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Kilometragem ↑')}</button>
+                        </li>
+                        <li>
+                          <button onClick={() => { setSortBy('mileageDesc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Kilometragem ↓')}</button>
+                        </li>
+                        <li>
+                          <button onClick={() => { setSortBy('yearDesc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Ano ↓')}</button>
+                        </li>
+                        <li>
+                          <button onClick={() => { setSortBy('yearAsc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Ano ↑')}</button>
+                        </li>
+                        <li>
+                          <button onClick={() => { setSortBy('alphabetical'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Alfabético')}</button>
+                        </li>
+                        <li>
+                          <button onClick={() => { setSortBy('priceAsc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Preço ↑')}</button>
+                        </li>
+                        <li>
+                          <button onClick={() => { setSortBy('priceDesc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Preço ↓')}</button>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+                <style>{` 
                   @keyframes pulse-sleek {
                     0%,
                     100% {
@@ -442,6 +523,69 @@ export default function Viaturas() {
                         0 4px 28px 0 rgba(213, 80, 80, 0.28),
                         0 0 0 8px rgba(213, 80, 80, 0.1);
                     }
+                  }
+
+                  /* dropdown open animation */
+                  @keyframes menu-pop { from { opacity: 0; transform: translateY(-6px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+                  .menu-pop { animation: menu-pop 220ms cubic-bezier(.2,.9,.2,1); transform-origin: top right; will-change: transform, opacity; }
+
+                  /* toggle tactile effect */
+                  .sort-toggle:active { transform: scale(0.98); }
+                  .sort-toggle:focus { outline: none; box-shadow: 0 8px 24px rgba(180,33,33,0.12); }
+
+                  @media (prefers-reduced-motion: reduce) {
+                    .menu-pop { animation: none !important; }
+                    .sort-toggle { transition: none !important; }
+                  }
+
+                  /* Clickable open effect for car info area */
+                  .clickable-open { transition: transform 160ms cubic-bezier(.2,.9,.2,1), box-shadow 160ms; will-change: transform; }
+                  .clickable-open:active { transform: scale(0.992); }
+                  .clickable-open:focus { outline: none; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-2px) scale(1.002); }
+                  .clickable-open img { transition: transform 260ms cubic-bezier(.2,.9,.2,1); }
+                  .clickable-open:active img { transform: scale(0.98); }
+                  .clickable-open:hover img { transform: translateY(-4px) scale(1.02); }
+
+                  @media (prefers-reduced-motion: reduce) {
+                    .clickable-open, .clickable-open img { transition: none !important; transform: none !important; box-shadow: none !important; }
+                  }
+
+                  /* Enhanced hover/focus for sort menu items */
+                  .sort-menu-item { 
+                    display: flex; 
+                    align-items: center; 
+                    gap: 8px; 
+                    position: relative; 
+                    padding-left: 14px; 
+                    transition: background 180ms cubic-bezier(.2,.9,.2,1), transform 140ms cubic-bezier(.2,.9,.2,1), color 160ms; 
+                    color: #111827; /* tailwind gray-900 */
+                  }
+                  .sort-menu-item::before {
+                    content: "";
+                    position: absolute;
+                    left: 8px;
+                    width: 4px;
+                    height: 16px;
+                    border-radius: 2px;
+                    background: transparent;
+                    transform-origin: center;
+                    transform: scaleY(0.6);
+                    opacity: 0;
+                    transition: background 180ms, transform 180ms, opacity 180ms;
+                  }
+                  .sort-menu-item:hover, .sort-menu-item:focus {
+                    background: linear-gradient(90deg, rgba(180,33,33,0.06), rgba(213,80,80,0.04));
+                    transform: translateX(6px);
+                    color: #b42121;
+                    outline: none;
+                  }
+                  .sort-menu-item:hover::before, .sort-menu-item:focus::before {
+                    background: linear-gradient(180deg, #b42121, #d50032);
+                    transform: scaleY(1);
+                    opacity: 1;
+                  }
+                  @media (prefers-reduced-motion: reduce) {
+                    .sort-menu-item, .sort-menu-item::before { transition: none !important; transform: none !important; }
                   }
                 `}</style>
                 <Link
@@ -733,7 +877,7 @@ export default function Viaturas() {
                       Clicking the image still opens the modal because image buttons are separate. */}
                   <Link
                     href={`/cars/${car.slug || car.id}`}
-                    className="relative flex flex-col items-center w-full mt-2 text-inherit no-underline"
+                    className="relative flex flex-col items-center w-full mt-2 text-inherit no-underline clickable-open"
                     onClick={() => {
                       // Persist a list of recently clicked car ids for this visitor (7d TTL)
                       try {
