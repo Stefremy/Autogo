@@ -183,7 +183,9 @@
 
 /* Small stagger helper using a CSS variable if provided */
 .card-anim { animation: none; }
-.card-anim[data-enter-delay] { transition-delay: var(--enter-delay, 100ms); }
+/* Apply the staggered entry delay only while the card has NOT yet entered view
+   so hover/focus interactions are not blocked by the entry delay */
+.card-anim[data-enter-delay]:not(:global(.in-view)) { transition-delay: var(--enter-delay, 100ms); }
 
 @media (prefers-reduced-motion: reduce) {
   .card-anim,
