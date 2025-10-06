@@ -729,8 +729,36 @@ export default function Viaturas() {
                       </div>
                     </dialog>
                   ))}
-                  <div className="relative flex flex-col items-center">
-                    {/* Use shared MakeLogo to handle camelCase/hyphen variants and fallback cleanly */}
+                  {/* Make the info area (below the image) a single clickable link to the car detail.
+                      Clicking the image still opens the modal because image buttons are separate. */}
+                  <Link
+                    href={`/cars/${car.slug || car.id}`}
+                    className="relative flex flex-col items-center w-full mt-2 text-inherit no-underline"
+                    onClick={() => {
+                      // Persist a list of recently clicked car ids for this visitor (7d TTL)
+                      try {
+                        const KEY = "autogo_clicked_v1";
+                        const TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
+                        const raw = localStorage.getItem(KEY);
+                        let arr: any[] = [];
+                        if (raw) {
+                          arr = JSON.parse(raw) || [];
+                          // filter out expired entries
+                          arr = arr.filter((it) => Date.now() - (it.ts || 0) < TTL);
+                        }
+                        // remove existing for this id
+                        arr = arr.filter((it) => it.id !== car.id);
+                        // add to front
+                        arr.unshift({ id: car.id, ts: Date.now() });
+                        // cap size
+                        if (arr.length > 50) arr = arr.slice(0, 50);
+                        localStorage.setItem(KEY, JSON.stringify(arr));
+                      } catch (e) {
+                        // ignore
+                      }
+                    }}
+                    aria-label={`Ver detalhes ${String((car as any).make ?? "")} ${String((car as any).model ?? "")}`}
+                  >
                     <div className="mb-2">
                       {/* @ts-ignore */}
                       <MakeLogo make={String((car as any).make ?? "")} size={36} className="h-12 w-auto mx-auto" />
@@ -741,70 +769,25 @@ export default function Viaturas() {
                     >
                       {String((car as any).make ?? "")} {String((car as any).model ?? "")}
                     </h2>
-                  </div>
-                  <div className="text-gray-500 mb-1 text-center px-2">
-                    {String((car as any).year ?? "")} · {String((car as any).mileage ?? "")} km
-                  </div>
-                  <div className="font-bold text-black text-lg mb-3 text-center px-2">
-                    {(() => {
-                      // use format helper to render price or textual fallback
-                      const rawPrice = (car as any).price;
-                      const priceDisplay = (car as any).priceDisplay;
-                      let numeric = null as number | null;
-                      if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) numeric = rawPrice;
-                      else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
-                        const parsed = Number(String(rawPrice).replace(/[^0-9.-]/g, ''));
-                        if (!Number.isNaN(parsed) && Number.isFinite(parsed)) numeric = parsed;
-                      }
-                      const { formatPriceDisplay } = require('../utils/formatPrice');
-                      return formatPriceDisplay(numeric, priceDisplay ?? (typeof rawPrice === 'string' ? rawPrice : undefined));
-                    })()}
-                  </div>
-  <div className="flex gap-2 w-full mt-auto justify-center">
-  <Link
-        href={`/cars/${car.slug || car.id}`}
-      className="rounded-full py-1.5 px-6 sm:px-4 font-bold text-sm shadow-lg transition-all duration-200 text-center w-full sm:w-auto transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
-          onClick={() => {
-            // Persist a list of recently clicked car ids for this visitor (7d TTL)
-            try {
-              const KEY = "autogo_clicked_v1";
-              const TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
-              const raw = localStorage.getItem(KEY);
-              let arr = [];
-              if (raw) {
-                arr = JSON.parse(raw) || [];
-                // filter out expired entries
-                arr = arr.filter((it) => Date.now() - (it.ts || 0) < TTL);
-              }
-              // remove existing for this id
-              arr = arr.filter((it) => it.id !== car.id);
-              // add to front
-              arr.unshift({ id: car.id, ts: Date.now() });
-              // cap size
-              if (arr.length > 50) arr = arr.slice(0, 50);
-              localStorage.setItem(KEY, JSON.stringify(arr));
-            } catch (e) {
-              // ignore
-            }
-          }}
-                      style={{
-                        background: "rgba(210, 56, 56, 0.85)",
-                        color: "#fff",
-                        letterSpacing: "0.5px",
-                        boxShadow: "0 4px 18px 0 rgba(213, 80, 80, 0.18)",
-                      }}
-                      onMouseOver={(e) =>
-                        (e.currentTarget.style.background =
-                          "rgba(213, 80, 80, 0.85)")
-                      }
-                      onMouseOut={(e) =>
-                        (e.currentTarget.style.background =
-                          "rgba(213, 80, 80, 0.85)")
-                      }
-                    >
-                      {t("Ver detalhes")}
-                    </Link>
-                  </div>
+                    <div className="text-gray-500 mb-1 text-center px-2">
+                      {String((car as any).year ?? "")} · {String((car as any).mileage ?? "")} km
+                    </div>
+                    <div className="font-bold text-black text-lg mb-3 text-center px-2">
+                      {(() => {
+                        // use format helper to render price or textual fallback
+                        const rawPrice = (car as any).price;
+                        const priceDisplay = (car as any).priceDisplay;
+                        let numeric = null as number | null;
+                        if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) numeric = rawPrice;
+                        else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
+                          const parsed = Number(String(rawPrice).replace(/[^0-9.-]/g, ''));
+                          if (!Number.isNaN(parsed) && Number.isFinite(parsed)) numeric = parsed;
+                        }
+                        const { formatPriceDisplay } = require('../utils/formatPrice');
+                        return formatPriceDisplay(numeric, priceDisplay ?? (typeof rawPrice === 'string' ? rawPrice : undefined));
+                      })()}
+                    </div>
+                  </Link>
                 </div>
               ))}
             </div>
