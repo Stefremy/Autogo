@@ -16,6 +16,8 @@ import {
 } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import Layout from "../components/MainLayout";
+import Head from "next/head";
+import { SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Pedido() {
   const { t } = useTranslation("common");
@@ -61,6 +63,11 @@ export default function Pedido() {
 
   return (
     <Layout>
+      <Head>
+        <title>Encomendar viatura importada | AutoGo.pt</title>
+        <meta name="description" content="Peça a importação da sua próxima viatura com a AutoGo.pt. Preencha o formulário de pedido e tratamos da pesquisa, compra e legalização por si." />
+        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS)} />
+      </Head>
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

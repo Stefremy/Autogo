@@ -8,6 +8,8 @@ import Link from "next/link";
 import Head from "next/head";
 
 import Layout from "../components/MainLayout";
+import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+
 export default function Blog({ posts }) {
   const { t } = useTranslation("common");
   return (
@@ -21,10 +23,7 @@ export default function Blog({ posts }) {
           name="description"
           content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal."
         />
-        <meta
-          name="keywords"
-          content="blog carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados, carros importados à venda, carros importados Portugal, carros usados europeus, carros seminovos europeus"
-        />
+        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS)} />
         <meta
           property="og:title"
           content="Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot"

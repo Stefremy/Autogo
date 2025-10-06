@@ -33,6 +33,7 @@ import Head from "next/head";
 import carsData from "../../data/cars.json";
 import type { Car, MaintenanceItem } from '../../types/car.d';
 import MakeLogo from "../../components/MakeLogo";
+import { SITE_WIDE_KEYWORDS, joinKeywords } from "../../utils/seoKeywords";
 
 // Static generation helpers: produce only valid paths and return 404 when car is missing.
 export async function getStaticPaths() {
@@ -378,26 +379,17 @@ export default function CarDetail() {
   const car = (carsData as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested))!;
 
   // Helper: coerce possibly-string values to numbers safely and provide formatted output
-  const numify = (v: any): number | null => {
-    if (v == null) return null;
-    if (typeof v === "number") return Number.isFinite(v) ? v : null;
-    const s = String(v).replace(/[^0-9.-]+/g, "");
-    const n = Number(s);
-    return Number.isFinite(n) ? n : null;
-  };
-  const fmtNumber = (v: any, p0: { minimumFractionDigits: number; }) => {
-    const n = numify(v);
-    return n !== null ? n.toLocaleString() : "-";
-  };
+  // Reuse module-level implementations declared at top of this module to avoid duplication.
+  // (module-level functions: numify, fmtNumber, fmtPriceOrText, fmtNumberForMeta)
 
   // Try to derive a full model label (prefer explicit fullModel, otherwise use the leading part of description)
-  const fullModelCandidate = (car as any).fullModel
+  const fullModelLabel = (car as any).fullModel
     || (car.description ? String(car.description).split(/[,.;]/)[0].trim() : null);
 
   // Fun facts dinâmicos (include full model + description when available, de-duplicated)
   const funFacts = [
-    fullModelCandidate ? `Modelo: ${fullModelCandidate}` : null,
-    car.description && car.description !== fullModelCandidate ? car.description : null,
+    fullModelLabel ? `Modelo: ${fullModelLabel}` : null,
+    car.description && car.description !== fullModelLabel ? car.description : null,
     car?.engineSize && car.engineSize.includes("1.2") && "Motor premiado pela eficiência na Europa.",
     car?.fuel && car.fuel === "Gasolina" && "ISV reduzido devido às baixas emissões.",
     car?.power && Number(String(car.power).replace(/\D/g, "")) > 100 && "Performance de referência para o segmento.",
@@ -416,6 +408,23 @@ export default function CarDetail() {
   // Find similar cars (show all except current)
   const similarCars = (carsData as Car[])
     .filter((c) => String(c.id) !== String(car.id));
+
+  // Build meta keywords for this car detail page (site-wide + make/model specific)
+  const detailKeywords = (() => {
+    if (!car) return joinKeywords(SITE_WIDE_KEYWORDS);
+    const make = String(car.make || "").trim();
+    const model = String(car.model || "").trim();
+    const specific = [
+      make ? `${make} importado` : null,
+      model ? `${model} importado` : null,
+      `${make} ${model}`.trim() ? `${make} ${model} importado` : null,
+      "carros importados",
+      "carros europeus",
+      "carros usados premium",
+      "AutoGo.pt",
+    ].filter(Boolean) as string[];
+    return joinKeywords(SITE_WIDE_KEYWORDS, specific);
+  })();
 
   // Download PDF handler
   async function handleDownloadPDF() {
@@ -1620,14 +1629,7 @@ export default function CarDetail() {
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />
-        <meta
-          name="keywords"
-          content={
-            car
-              ? `${car.make} importado, ${car.model} importado, carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados, carros importados à venda, carros importados Portugal, carros usados europeus, carros seminovos europeus`
-              : "carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados"
-          }
-        />
+        <meta name="keywords" content={detailKeywords} />
         <meta
           property="og:title"
           content={

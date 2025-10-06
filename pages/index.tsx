@@ -11,6 +11,7 @@ import cars from "../data/cars.json";
 import CarCard from "../components/CarCard";
 import PremiumCarCard from "../components/PremiumCarCard";
 import React, { useState, useRef, useEffect } from "react";
+import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export async function getServerSideProps({ locale }) {
   // Fetch blog articles from markdown files
@@ -157,6 +158,8 @@ export default function Home({ blogArticles }) {
     setFeaturedCars(others);
   };
 
+  const seoKeywords = joinKeywords(SITE_WIDE_KEYWORDS, HOME_KEYWORDS);
+
   return (
     <>
       <MainLayout>
@@ -168,10 +171,7 @@ export default function Home({ blogArticles }) {
             content="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal com apoio completo."
           />
           <meta name="google-site-verification" content="5jOHd8zXyRf-I074-a-Z9Xi7WCe9TuDVij7ygHUmaGA" />
-          <meta
-            name="keywords"
-            content="simulador ISV, simulador de carros, simulador impostos carros, carros importados, carros usados, carros BMW, Audi, Mercedes, Peugeot, carros europeus, AutoGo.pt, exclusivo, inovador"
-          />
+          <meta name="keywords" content={seoKeywords} />
           <meta property="og:title" content="Simulador ISV e viaturas importadas | AutoGo.pt" />
           <meta
             property="og:description"

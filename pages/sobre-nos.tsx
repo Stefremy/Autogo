@@ -1,10 +1,18 @@
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
+import Head from "next/head";
+import { COMO_FUNCIONA_KEYWORDS, ABOUT_KEYWORDS, joinKeywords, SITE_WIDE_KEYWORDS } from "../utils/seoKeywords";
 
 export default function SobreNos() {
   return (
     <MainLayout>
+      <Head>
+        <title>Sobre a AutoGo.pt | Importação de viaturas</title>
+        <meta name="description" content="Conheça a AutoGo.pt — especialistas na importação e legalização de viaturas europeias para Portugal. Serviço completo: pesquisa, compra, transporte e legalização." />
+        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS, ABOUT_KEYWORDS)} />
+        <meta property="og:title" content="Sobre a AutoGo.pt | Importação de viaturas" />
+      </Head>
       <div>
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
         <div

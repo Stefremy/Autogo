@@ -3,11 +3,18 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
 import ContactForm from "../components/ContactForm";
+import Head from "next/head";
+import { SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Contacto() {
   const { t } = useTranslation("common");
   return (
     <Layout>
+      <Head>
+        <title>Contacto AutoGo.pt | Fale connosco</title>
+        <meta name="description" content="Contacte a AutoGo.pt para importar o seu carro ou esclarecer dúvidas. Estamos disponíveis por email, telefone e WhatsApp." />
+        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS)} />
+      </Head>
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

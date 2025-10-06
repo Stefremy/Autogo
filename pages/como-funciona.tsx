@@ -2,6 +2,8 @@ import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
+import Head from "next/head";
+import { COMO_FUNCIONA_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function ComoFunciona() {
   const { t } = useTranslation("common");
@@ -19,6 +21,12 @@ export default function ComoFunciona() {
 
   return (
     <Layout>
+      <Head>
+        <title>Como funciona a AutoGo.pt | Importação e legalização de viaturas</title>
+        <meta name="description" content="Saiba como funciona o processo AutoGo.pt: pesquisa, inspeção, negociação, transporte e legalização de viaturas importadas para Portugal." />
+        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS, COMO_FUNCIONA_KEYWORDS)} />
+        <meta property="og:title" content="Como funciona a AutoGo.pt" />
+      </Head>
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

@@ -14,6 +14,7 @@ import styles from "../components/PremiumCarCard.module.css";
 import cars from "../data/cars.json";
 import MainLayout from "../components/MainLayout";
 import MakeLogo from "../components/MakeLogo";
+import { VIATURAS_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Viaturas() {
   const { t } = useTranslation("common");
@@ -256,7 +257,24 @@ export default function Viaturas() {
   }, [filteredCars, sortBy]);
 
   // Displayed cars for infinite scroll (slice the sorted list up to itemsLoaded)
-  const displayedCars = sortedCars.slice(0, itemsLoaded);
+  // Apply query matching: if a searchQuery is present, filter using matchesQuery helper
+  // (matchesQuery uses normalize/tokenize and supports aliases like "segunda mao"/"usados").
+  const [searchQuery, setSearchQuery] = React.useState("");
+  // lazy-import helper to avoid blocking initial render
+  const { matchesQuery } = (function tryImport() {
+    try {
+      // require ensures this runs only in Node/bundled environment; modern Next handles imports statically,
+      // but keeping this small inline shim avoids adding additional top-level imports in the file's header.
+      // We'll import from utils/search.ts
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      return require('../utils/search');
+    } catch (e) {
+      // fallback stub
+      return { matchesQuery: (c: any, q: string) => !q || String(q).trim() === '' };
+    }
+  })();
+
+  const displayedCars = sortedCars.filter((c) => matchesQuery(c, searchQuery)).slice(0, itemsLoaded);
 
   // Infinite scroll: load more when there is empty space using a sentinel
   React.useEffect(() => {
@@ -350,10 +368,7 @@ export default function Viaturas() {
           name="description"
           content="Encontra carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal. Carros usados e seminovos com garantia e financiamento."
         />
-        <meta
-          name="keywords"
-          content="carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados, carros importados à venda, carros importados Portugal, carros usados europeus, carros seminovos europeus"
-        />
+        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS, VIATURAS_KEYWORDS)} />
         <meta
           property="og:title"
           content="Carros importados europeus, BMW, Audi, Mercedes, Peugeot à venda em Portugal | AutoGo.pt"
@@ -678,6 +693,18 @@ export default function Viaturas() {
                     aria-label="Preço máximo"
                   />
                 </div>
+              </div>
+              {/* Global search input */}
+              <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
+                <FaSearch className="text-[#b42121] text-lg" />
+                <input
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Pesquisar: marca, modelo, 'segunda mao', 'usados', 'c300'..."
+                  className="bg-transparent outline-none border-none text-sm w-64"
+                  aria-label="Pesquisar viaturas"
+                />
               </div>
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
                 <FaCalendarAlt className="text-[#b42121] text-lg" />
