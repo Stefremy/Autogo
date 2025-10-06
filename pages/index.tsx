@@ -167,6 +167,7 @@ export default function Home({ blogArticles }) {
             name="description"
             content="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal com apoio completo."
           />
+          <meta name="google-site-verification" content="5jOHd8zXyRf-I074-a-Z9Xi7WCe9TuDVij7ygHUmaGA" />
           <meta
             name="keywords"
             content="simulador ISV, simulador de carros, simulador impostos carros, carros importados, carros usados, carros BMW, Audi, Mercedes, Peugeot, carros europeus, AutoGo.pt, exclusivo, inovador"
