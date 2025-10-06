@@ -8,12 +8,12 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
 import SimuladorTabela from "../components/SimuladorTabela";
 import styles from "../components/PremiumCarCard.module.css";
 import cars from "../data/cars.json";
 import MainLayout from "../components/MainLayout";
 import MakeLogo from "../components/MakeLogo";
+import Seo from "../components/Seo";
 
 export default function Viaturas() {
   const { t } = useTranslation("common");
@@ -339,36 +339,38 @@ export default function Viaturas() {
     };
   }, [displayedCars.length, styles]);
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Viaturas importadas disponíveis | AutoGo.pt",
+    url: `${siteUrl}/viaturas`,
+    mainEntity: cars.slice(0, 12).map((car) => ({
+      "@type": "Product",
+      name: `${(car as any).make ?? ""} ${(car as any).model ?? ""}`.trim(),
+      brand: {
+        "@type": "Brand",
+        name: String((car as any).make ?? ""),
+      },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "EUR",
+        price: String((car as any).price ?? ""),
+        availability: "https://schema.org/InStock",
+        url: `${siteUrl}/viaturas#${(car as any).id ?? ""}`,
+      },
+    })),
+  };
+
   return (
     <>
-      <Head>
-        <title>
-          Carros importados europeus, BMW, Audi, Mercedes, Peugeot à venda em
-          Portugal | AutoGo.pt
-        </title>
-        <meta
-          name="description"
-          content="Encontra carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal. Carros usados e seminovos com garantia e financiamento."
-        />
-        <meta
-          name="keywords"
-          content="carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados, carros importados à venda, carros importados Portugal, carros usados europeus, carros seminovos europeus"
-        />
-        <meta
-          property="og:title"
-          content="Carros importados europeus, BMW, Audi, Mercedes, Peugeot à venda em Portugal | AutoGo.pt"
-        />
-        <meta
-          property="og:description"
-          content="Encontra carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal. Carros usados e seminovos com garantia e financiamento."
-        />
-        <meta property="og:url" content="https://autogo.pt/viaturas" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://autogo.pt/images/auto-logo.png"
-        />
-      </Head>
+      <Seo
+        title="Carros importados europeus à venda em Portugal | AutoGo.pt"
+        description="Encontra carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal. Carros usados e seminovos com garantia e financiamento."
+        image="/images/auto-logo.png"
+        keywords="carros importados, carros europeus, carros usados premium, carros seminovos europeus, carros importados Portugal"
+        structuredData={structuredData}
+      />
       <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
         <img
           src="/images/viaturas-fundo.jpg"

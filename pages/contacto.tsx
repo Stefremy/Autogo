@@ -3,11 +3,37 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
 import ContactForm from "../components/ContactForm";
+import Seo from "../components/Seo";
 
 export default function Contacto() {
   const { t } = useTranslation("common");
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contacto AutoGo.pt",
+    url: `${siteUrl}/contacto`,
+    about: {
+      "@type": "Organization",
+      name: "AutoGo.pt",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "AutoGO.stand@gmail.com",
+      telephone: "+351935179591",
+      contactType: "customer service",
+      availableLanguage: ["pt-PT", "en"],
+    },
+  };
   return (
     <Layout>
+      <Seo
+        title="Contacto AutoGo.pt | Fale connosco"
+        description="Contacte a AutoGo.pt para importar o seu carro ou esclarecer dúvidas. Estamos disponíveis por email, telefone e WhatsApp."
+        image="/images/auto-logo.png"
+        keywords="contacto AutoGo, importação automóvel contactos, AutoGo.pt telefone"
+        structuredData={structuredData}
+      />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
+import Seo from "../components/Seo";
 
 // Tabelas ISV Diário da República
 const TABELA_CILINDRADA_A = [
@@ -163,6 +164,25 @@ export async function getStaticProps({ locale }) {
 
 export default function Simulador() {
   const { t } = useTranslation("common");
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Simulador ISV AutoGo.pt",
+    url: `${siteUrl}/simulador`,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "AutoGo.pt",
+      url: siteUrl,
+    },
+  };
   // State to toggle simulator card visibility
   const [simulatorOpen, setSimulatorOpen] = useState(true);
   const [logoAnim, setLogoAnim] = useState(false);
@@ -336,6 +356,13 @@ export default function Simulador() {
       {/* Decorative red lines removed as requested */}
 
       <MainLayout>
+        <Seo
+          title="Simulador ISV de importação automóvel | AutoGo.pt"
+          description="Simule o ISV de veículos importados em segundos com o simulador AutoGo.pt. Calcule impostos para carros gasolina, diesel e híbridos com base em cilindrada e emissões."
+          image="/images/auto-logo.png"
+          keywords="simulador ISV, cálculo ISV, importação automóvel, impostos carros Portugal"
+          structuredData={structuredData}
+        />
         <div className="relative w-full flex-1 z-10">
           <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-6 px-2 sm:px-6 md:px-12 bg-transparent">
             {/* Info block */}

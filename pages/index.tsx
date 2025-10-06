@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
@@ -11,6 +10,7 @@ import cars from "../data/cars.json";
 import CarCard from "../components/CarCard";
 import PremiumCarCard from "../components/PremiumCarCard";
 import React, { useState, useRef, useEffect } from "react";
+import Seo from "../components/Seo";
 
 export async function getServerSideProps({ locale }) {
   // Fetch blog articles from markdown files
@@ -157,32 +157,75 @@ export default function Home({ blogArticles }) {
     setFeaturedCars(others);
   };
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const seoKeywords = [
+    "simulador ISV",
+    "simulador de carros",
+    "simulador impostos carros",
+    "carros importados",
+    "carros usados",
+    "carros BMW",
+    "Audi",
+    "Mercedes",
+    "Peugeot",
+    "carros europeus",
+    "AutoGo.pt",
+  ];
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "AutoGo.pt",
+      url: siteUrl,
+      logo: `${siteUrl}/images/auto-logo.png`,
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          email: "AutoGO.stand@gmail.com",
+          telephone: "+351935179591",
+          contactType: "customer service",
+          areaServed: "PT",
+          availableLanguage: ["pt-PT", "en"],
+        },
+      ],
+      sameAs: [
+        "https://wa.me/351935179591",
+        "https://facebook.com/autogo.pt",
+        "https://www.instagram.com/autogo.pt/",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "R. Rómulo de Carvalho 388 SITIO",
+        addressLocality: "Guimarães",
+        postalCode: "4800-019",
+        addressCountry: "PT",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "AutoGo.pt",
+      url: siteUrl,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${siteUrl}/viaturas?search={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ];
+
   return (
     <>
       <MainLayout>
         {/* Add your content here */}
-        <Head>
-          <title>Viaturas importadas e Simulador ISV  | AutoGo.pt</title>
-          <meta
-            name="description"
-            content="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal com apoio completo."
-          />
-          <meta
-            name="keywords"
-            content="simulador ISV, simulador de carros, simulador impostos carros, carros importados, carros usados, carros BMW, Audi, Mercedes, Peugeot, carros europeus, AutoGo.pt, exclusivo, inovador"
-          />
-          <meta property="og:title" content="Simulador ISV e viaturas importadas | AutoGo.pt" />
-          <meta
-            property="og:description"
-            content="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal."
-          />
-          <meta property="og:url" content="https://autogo.pt/" />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:image"
-            content="https://autogo.pt/images/auto-logo.png"
-          />
-        </Head>
+        <Seo
+          title="Viaturas importadas e Simulador ISV | AutoGo.pt"
+          description="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal com apoio completo."
+          image="/images/auto-logo.png"
+          keywords={seoKeywords}
+          structuredData={structuredData}
+        />
 
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
         <div>

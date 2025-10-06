@@ -16,9 +16,24 @@ import {
 } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import Layout from "../components/MainLayout";
+import Seo from "../components/Seo";
 
 export default function Pedido() {
   const { t } = useTranslation("common");
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Pedido de viatura importada AutoGo.pt",
+    url: `${siteUrl}/pedido`,
+    provider: {
+      "@type": "Organization",
+      name: "AutoGo.pt",
+      url: siteUrl,
+    },
+    areaServed: "PT",
+    serviceType: "Importação e legalização de viaturas",
+  };
   const [form, setForm] = useState({
     nome: "",
     email: "",
@@ -61,6 +76,13 @@ export default function Pedido() {
 
   return (
     <Layout>
+      <Seo
+        title="Encomendar viatura importada | AutoGo.pt"
+        description="Peça a importação da sua próxima viatura com a AutoGo.pt. Preencha o formulário de pedido e tratamos da pesquisa, compra e legalização por si."
+        image="/images/auto-logo.png"
+        keywords="encomendar carro importado, pedido AutoGo, importação viaturas Portugal"
+        structuredData={structuredData}
+      />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

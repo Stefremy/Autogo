@@ -2,44 +2,34 @@ import fs from "fs";
 import path from "path";
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 import matter from "gray-matter";
 import Link from "next/link";
-import Head from "next/head";
-
 import Layout from "../components/MainLayout";
+import Seo from "../components/Seo";
 export default function Blog({ posts }) {
-  const { t } = useTranslation("common");
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Blog AutoGo.pt",
+    url: `${siteUrl}/blog`,
+    blogPost: posts.slice(0, 10).map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      datePublished: post.date,
+      url: `${siteUrl}/blog/${post.slug}`,
+    })),
+  };
   return (
     <Layout>
-      <Head>
-        <title>
-          Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus,
-          BMW, Audi, Mercedes, Peugeot
-        </title>
-        <meta
-          name="description"
-          content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal."
-        />
-        <meta
-          name="keywords"
-          content="blog carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados, carros importados à venda, carros importados Portugal, carros usados europeus, carros seminovos europeus"
-        />
-        <meta
-          property="og:title"
-          content="Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot"
-        />
-        <meta
-          property="og:description"
-          content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal."
-        />
-        <meta property="og:url" content="https://autogo.pt/blog" />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:image"
-          content="https://autogo.pt/images/auto-logo.png"
-        />
-      </Head>
+      <Seo
+        title="Blog AutoGo.pt | Notícias e reviews de carros importados"
+        description="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal."
+        image="/images/auto-logo.png"
+        keywords="blog carros importados, carros europeus, carros usados premium"
+        type="article"
+        structuredData={structuredData}
+      />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

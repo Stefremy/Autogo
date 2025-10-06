@@ -1,10 +1,43 @@
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
+import Seo from "../components/Seo";
 
 export default function SobreNos() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "Sobre a AutoGo.pt",
+    url: `${siteUrl}/sobre-nos`,
+    primaryImageOfPage: `${siteUrl}/images/autologonb.png`,
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Início",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Sobre nós",
+          item: `${siteUrl}/sobre-nos`,
+        },
+      ],
+    },
+  };
   return (
     <MainLayout>
+      <Seo
+        title="Sobre a AutoGo.pt | Importação premium de viaturas"
+        description="Conheça a equipa AutoGo.pt, especialistas na importação de carros europeus para Portugal com legalização completa e entrega pronta a rolar."
+        image="/images/autologonb.png"
+        keywords="sobre AutoGo, empresa importação carros, AutoGo.pt equipa"
+        structuredData={structuredData}
+      />
       <div>
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
         <div

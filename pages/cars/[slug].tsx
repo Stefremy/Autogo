@@ -29,10 +29,10 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import jsPDF from "jspdf";
-import Head from "next/head";
 import carsData from "../../data/cars.json";
 import type { Car, MaintenanceItem } from '../../types/car.d';
 import MakeLogo from "../../components/MakeLogo";
+import Seo from "../../components/Seo";
 
 // Static generation helpers: produce only valid paths and return 404 when car is missing.
 export async function getStaticPaths() {
@@ -389,6 +389,75 @@ export default function CarDetail() {
     const n = numify(v);
     return n !== null ? n.toLocaleString() : "-";
   };
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const canonicalUrl = `${siteUrl}/cars/${car.slug || car.id}`;
+  const primaryImage = Array.isArray((car as any).images) && (car as any).images.length
+    ? (car as any).images[0]
+    : (car as any).image;
+  const toAbsolute = (value?: string) => {
+    if (!value) return undefined;
+    if (/^https?:\/\//i.test(value)) return value;
+    const cleaned = value.startsWith("/") ? value : `/${value}`;
+    return `${siteUrl}${cleaned}`;
+  };
+  const metaTitle = `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt`;
+  const metaDescription = `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumberForMeta(car.price)}. Carros usados e seminovos com garantia.`;
+  const keywordList = [
+    `${car.make} importado`,
+    `${car.model} importado`,
+    "carros importados",
+    "carros europeus",
+    "carros usados premium",
+    "AutoGo.pt",
+  ];
+  const mileageValue = numify(car.mileage ?? null);
+  const priceValue = numify(car.price ?? null);
+  const vehicleStructuredData: Record<string, any> = {
+    "@context": "https://schema.org",
+    "@type": "Vehicle",
+    name: `${car.make} ${car.model}`,
+    brand: car.make,
+    model: car.model,
+    url: canonicalUrl,
+    image: toAbsolute(primaryImage) || `${siteUrl}/images/auto-logo.png`,
+    vehicleModelDate: car.year,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      url: canonicalUrl,
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/UsedCondition",
+    },
+  };
+  if (mileageValue != null) {
+    vehicleStructuredData.mileageFromOdometer = {
+      "@type": "QuantitativeValue",
+      value: mileageValue,
+      unitCode: "KMT",
+    };
+  }
+  if (priceValue != null) {
+    vehicleStructuredData.offers.price = priceValue;
+  }
+  if ((car as any).fuel) {
+    vehicleStructuredData.fuelType = (car as any).fuel;
+  }
+  if ((car as any).gearboxType) {
+    vehicleStructuredData.vehicleTransmission = (car as any).gearboxType;
+  }
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Viaturas", item: `${siteUrl}/viaturas` },
+        { "@type": "ListItem", position: 3, name: `${car.make} ${car.model}`, item: canonicalUrl },
+      ],
+    },
+    vehicleStructuredData,
+  ];
 
   // Try to derive a full model label (prefer explicit fullModel, otherwise use the leading part of description)
   const fullModelCandidate = (car as any).fullModel
@@ -814,6 +883,15 @@ export default function CarDetail() {
   // Sticky bar visually merges with navbar, seamless, premium animation
   return (
     <Layout>
+      <Seo
+        title={metaTitle}
+        description={metaDescription}
+        image={primaryImage || "/images/auto-logo.png"}
+        canonical={canonicalUrl}
+        type="product"
+        keywords={keywordList}
+        structuredData={structuredData}
+      />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"
@@ -1606,86 +1684,6 @@ export default function CarDetail() {
           &copy; 2025 Autogo. All rights reserved.
         </footer>
       </div>
-      <Head>
-        <title>
-          {car
-            ? `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt`
-            : "Carro importado europeu à venda | AutoGo.pt"}
-        </title>
-        <meta
-          name="description"
-          content={
-            car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumberForMeta(car.price)}. Carros usados e seminovos com garantia.`
-              : "Carro importado europeu à venda em AutoGo.pt"
-          }
-        />
-        <meta
-          name="keywords"
-          content={
-            car
-              ? `${car.make} importado, ${car.model} importado, carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados, carros importados à venda, carros importados Portugal, carros usados europeus, carros seminovos europeus`
-              : "carros importados, carros europeus, carros BMW usados, Audi usados, Mercedes usados, Peugeot usados, Volkswagen usados, Renault usados, Citroën usados"
-          }
-        />
-        <meta
-          property="og:title"
-          content={
-            car
-              ? `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt`
-              : "Carro importado europeu à venda | AutoGo.pt"
-          }
-        />
-        <meta
-          property="og:description"
-          content={
-            car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumberForMeta(car.price)}. Carros usados e seminovos com garantia.`
-              : "Carro importado europeu à venda em AutoGo.pt"
-          }
-        />
-        <meta
-          property="og:url"
-          content={
-            car ? `https://autogo.pt/cars/${car.slug || car.id}` : "https://autogo.pt/cars/"
-          }
-        />
-        <meta property="og:type" content="product" />
-        <meta
-          property="og:image"
-          content={
-            car
-              ? `https://autogo.pt${car.image}`
-              : "https://autogo.pt/images/auto-logo.png"
-          }
-        />
-      </Head>
-      {/* Dados estruturados JSON-LD para carros (Schema.org Vehicle) */}
-      {car && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Vehicle",
-              brand: car.make,
-              model: car.model,
-              vehicleModelDate: car.year,
-              mileageFromOdometer: numify(car.mileage),
-              offers: {
-                "@type": "Offer",
-                priceCurrency: "EUR",
-                price: numify(car.price),
-                availability: "https://schema.org/InStock",
-              },
-              image: car.images
-                ? car.images.map((img) => `https://autogo.pt${img}`)
-                : [`https://autogo.pt${car.image}`],
-              url: `https://autogo.pt/cars/${car.slug || car.id}`,
-            }),
-          }}
-        />
-      )}
     </Layout>
   );
 }

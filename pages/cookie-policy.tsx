@@ -1,13 +1,29 @@
-import Head from "next/head";
 import MainLayout from "../components/MainLayout";
+import Seo from "../components/Seo";
 
 export default function CookiePolicy() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Política de Cookies AutoGo.pt",
+    url: `${siteUrl}/cookie-policy`,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "AutoGo.pt",
+      url: siteUrl,
+    },
+  };
   return (
     <MainLayout>
-      <Head>
-        <title>Política de Cookies | Autogo</title>
-        <meta name="description" content="Política de Cookies da Autogo" />
-      </Head>
+      <Seo
+        title="Política de Cookies | AutoGo.pt"
+        description="Política de Cookies da AutoGo.pt: saiba como utilizamos cookies para melhorar a sua experiência e gerir preferências de privacidade."
+        image="/images/auto-logo.png"
+        canonical={`${siteUrl}/cookie-policy`}
+        type="article"
+        structuredData={structuredData}
+      />
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "2rem" }}>
         <h1
           style={{

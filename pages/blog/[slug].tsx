@@ -9,6 +9,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import Link from "next/link";
 import Layout from "../../components/MainLayout";
+import Seo from "../../components/Seo";
 
 export default function BlogPost({ post }) {
   const { t } = useTranslation("common");
@@ -26,10 +27,59 @@ export default function BlogPost({ post }) {
   };
   const backgroundImage = getBackgroundImage(post);
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
+  const toAbsolute = (url?: string) => {
+    if (!url) return undefined;
+    if (/^https?:\/\//i.test(url)) return url;
+    const cleaned = url.startsWith("/") ? url : `/${url}`;
+    return `${siteUrl}${cleaned}`;
+  };
+  const metaDescription = post.content
+    .replace(/<[^>]*>/g, " ")
+    .replace(/[\n\r]+/g, " ")
+    .replace(/[\s]{2,}/g, " ")
+    .replace(/[#*_>`]/g, "")
+    .trim()
+    .slice(0, 160) || "Artigo do blog AutoGo.pt sobre importação automóvel.";
+  const articleImage = toAbsolute(backgroundImage) || `${siteUrl}/images/auto-logo.png`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: metaDescription,
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: canonicalUrl,
+    author: {
+      "@type": "Organization",
+      name: "AutoGo.pt",
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "AutoGo.pt",
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/images/auto-logo.png`,
+      },
+    },
+    image: articleImage,
+  };
+
   // Blog post background image (if any) should not extend under the footer
   const footerHeight = 120; // px, adjust if needed
   return (
     <Layout>
+      <Seo
+        title={`${post.title} | Blog AutoGo.pt`}
+        description={metaDescription}
+        image={backgroundImage || "/images/auto-logo.png"}
+        canonical={canonicalUrl}
+        type="article"
+        keywords={post.tags?.length ? post.tags.join(", ") : undefined}
+        structuredData={structuredData}
+      />
       {backgroundImage && (
         <div
           className="fixed inset-0 w-full h-full z-0 pointer-events-none select-none"

@@ -2,6 +2,7 @@ import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
+import Seo from "../components/Seo";
 
 export default function ComoFunciona() {
   const { t } = useTranslation("common");
@@ -16,9 +17,31 @@ export default function ComoFunciona() {
   const prazos = t("ComoFunciona_PrazosLista", {
     returnObjects: true,
   }) as string[];
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://autogo.pt";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Como importar uma viatura com a AutoGo.pt",
+    description:
+      "Passo a passo do serviço AutoGo.pt para importar e legalizar viaturas em Portugal.",
+    url: `${siteUrl}/como-funciona`,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.content,
+    })),
+  };
 
   return (
     <Layout>
+      <Seo
+        title="Como funciona a AutoGo.pt | Importação de viaturas"
+        description="Descubra como funciona o processo AutoGo.pt: pesquisa, inspeção, negociação, transporte e legalização de viaturas importadas para Portugal."
+        image="/images/auto-logo.png"
+        keywords="como importar carro, processo AutoGo, importação viaturas passo a passo"
+        structuredData={structuredData}
+      />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"
