@@ -111,3 +111,52 @@
   font-size: 1.05rem;
   font-weight: 700;
 }
+
+/* Scroll-entry animation: cards slide up and in from the left with a subtle blur -> used by .card-anim */
+.card-anim {
+  opacity: 0;
+  transform: translateY(20px) translateX(-12px) scale(0.997);
+  filter: blur(6px) saturate(0.96);
+  transition:
+    opacity 420ms cubic-bezier(.16,.84,.24,1),
+    transform 420ms cubic-bezier(.16,.84,.24,1),
+    filter 360ms ease;
+  will-change: transform, opacity, filter;
+}
+
+/* Ensure .card-anim rules override any base .premium-car-card transitions */
+.premium-car-card.card-anim {
+  /* mirror .card-anim initial state but scoped to the premium card class for higher specificity */
+  opacity: 0;
+  transform: translateY(20px) translateX(-12px) scale(0.997);
+  filter: blur(6px) saturate(0.96);
+  transition:
+    opacity 420ms cubic-bezier(.16,.84,.24,1),
+    transform 420ms cubic-bezier(.16,.84,.24,1),
+    filter 360ms ease;
+  will-change: transform, opacity, filter;
+}
+.premium-car-card.card-anim:global(.in-view) {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+  filter: none;
+}
+.card-anim:global(.in-view) {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+  filter: none;
+}
+
+/* Small stagger helper using a CSS variable if provided */
+.card-anim { animation: none; }
+.card-anim[data-enter-delay] { transition-delay: var(--enter-delay, 100ms); }
+
+@media (prefers-reduced-motion: reduce) {
+  .card-anim,
+  .card-anim.in-view {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}

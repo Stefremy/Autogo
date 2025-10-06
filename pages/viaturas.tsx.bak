@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaCarSide,
   FaCalendarAlt,
@@ -15,7 +15,11 @@ import cars from "../data/cars.json";
 import MainLayout from "../components/MainLayout";
 import MakeLogo from "../components/MakeLogo";
 
+// react-window is dynamically imported on client to avoid SSR type/import issues
+
 export default function Viaturas() {
+  // dynamic react-window list component (loaded on client)
+  const [RWList, setRWList] = useState<any>(null);
   const { t } = useTranslation("common");
   const [marca, setMarca] = useState("");
   const [modelo, setModelo] = useState("");
@@ -27,34 +31,109 @@ export default function Viaturas() {
   const [countryFilter, setCountryFilter] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  // Load strategy: load N rows at a time. Grid columns determine items per row.
-  const ROWS_PER_BATCH = 2; // user request: load 2 rows per load
-  const [columnsCount, setColumnsCount] = useState(4); // default to desktop columns
-  const itemsPerBatch = columnsCount * ROWS_PER_BATCH; // computed items to load per action
-  const [itemsLoaded, setItemsLoaded] = useState(itemsPerBatch);
-  const PAGE_SIZE = itemsPerBatch;
+  const LOAD_BATCH = 12;
+  const [itemsLoaded, setItemsLoaded] = useState(LOAD_BATCH);
+  const PAGE_SIZE = LOAD_BATCH;
+  // virtualization / responsive columns
+  const [isClient, setIsClient] = useState(false);
+  const [columns, setColumns] = useState(4);
+  const [containerHeight, setContainerHeight] = useState(800);
+  const [listWidth, setListWidth] = useState(1200);
+  const listContainerRef = useRef<HTMLDivElement | null>(null);
+  const ROW_HEIGHT = 560; // adjust card row height as needed
 
-  // compute columns by listening to window width (matches Tailwind breakpoints used in grid)
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const calc = () => {
-      const w = window.innerWidth;
+    // client-only initialisation
+    setIsClient(true);
+    const compute = () => {
+      const w = typeof window !== 'undefined' ? window.innerWidth : 1400;
+      // Tailwind-like breakpoints used in the original grid: default 1, sm(640)=2, md(768)=3, xl(1280)=4
       let cols = 1;
-      if (w >= 1280) cols = 4; // xl
-      else if (w >= 768) cols = 3; // md
-      else if (w >= 640) cols = 2; // sm
+      if (w >= 1280) cols = 4;
+      else if (w >= 768) cols = 3;
+      else if (w >= 640) cols = 2;
       else cols = 1;
-      setColumnsCount(cols);
-    };
-    calc();
-    window.addEventListener('resize', calc);
-    return () => window.removeEventListener('resize', calc);
-  }, []);
+      setColumns(cols);
+      // compute a sensible container height: allow up to full viewport but cap to content height
+      const vh = typeof window !== 'undefined' ? window.innerHeight : 900;
+      setContainerHeight(Math.max(300, vh - 220));
 
-  // ensure we always have at least one batch loaded when columns change
-  useEffect(() => {
-    setItemsLoaded((prev) => Math.max(prev, itemsPerBatch));
-  }, [itemsPerBatch]);
+      // measure list container width if available
+      try {
+        const el = listContainerRef.current;
+        if (el && el.clientWidth) {
+          setListWidth(el.clientWidth);
+        } else if (typeof window !== 'undefined') {
+          // fallback to viewport width minus some padding
+          setListWidth(Math.max(800, Math.min(window.innerWidth - 80, 1600)));
+        }
+      } catch (e) {
+        // ignore
+      }
+    };
+    compute();
+
+    // dynamically import react-window FixedSizeList on client (use any casts to satisfy TS)
+    if (typeof window !== 'undefined') {
+      import('react-window')
+        .then((mod: any) => {
+          try {
+            // try several candidate locations for the FixedSizeList component
+            const candidates = [
+              mod && mod.FixedSizeList,
+              mod && mod.FixedSizeGrid,
+              mod && mod.default && mod.default.FixedSizeList,
+              mod && mod.default,
+              mod,
+            ];
+            let chosen: any = null;
+            for (const c of candidates) {
+              if (!c) continue;
+              if (typeof c === 'function') {
+                chosen = c;
+                break;
+              }
+              // sometimes the module object is returned as default with nested exports
+              if (typeof c === 'object') {
+                if (typeof c.FixedSizeList === 'function') {
+                  chosen = c.FixedSizeList;
+                  break;
+                }
+                if (typeof c.List === 'function') {
+                  chosen = c.List;
+                  break;
+                }
+              }
+            }
+            if (chosen) setRWList(chosen);
+          } catch (e) {
+            // ignore
+          }
+        })
+        .catch(() => {
+          // ignore - will fallback to grid
+        });
+    }
+
+    // try use ResizeObserver for the list container for better responsiveness
+    let ro: ResizeObserver | null = null;
+    if (typeof window !== 'undefined' && (window as any).ResizeObserver && listContainerRef.current) {
+      try {
+        ro = new (window as any).ResizeObserver(() => compute());
+        ro.observe(listContainerRef.current as Element);
+      } catch (e) {
+        ro = null;
+      }
+    }
+
+    window.addEventListener('resize', compute);
+    return () => {
+      window.removeEventListener('resize', compute);
+      if (ro && listContainerRef.current) {
+        try { ro.unobserve(listContainerRef.current); } catch (e) {}
+      }
+    };
+  }, []);
 
   // Normalize make strings for filtering (map common variants to canonical keys)
   const normalizeMake = (m?: string) => {
@@ -90,7 +169,7 @@ export default function Viaturas() {
         if (saved.countryFilter) setCountryFilter(saved.countryFilter);
         if (saved.minPrice) setMinPrice(String(saved.minPrice));
         if (saved.maxPrice) setMaxPrice(String(saved.maxPrice));
-        if (saved.itemsLoaded) setItemsLoaded(Number(saved.itemsLoaded) || itemsPerBatch);
+        if (saved.itemsLoaded) setItemsLoaded(Number(saved.itemsLoaded) || LOAD_BATCH);
       }
     } catch (e) {
       // ignore parse errors
@@ -154,12 +233,12 @@ export default function Viaturas() {
 
   // Reset loaded items when filters change
   React.useEffect(() => {
-    setItemsLoaded(itemsPerBatch);
+    setItemsLoaded(LOAD_BATCH);
   }, [marca, modelo, ano, mes, km, minPrice, maxPrice]);
 
   // Reset loaded items when country filter changes
   React.useEffect(() => {
-    setItemsLoaded(itemsPerBatch);
+    setItemsLoaded(LOAD_BATCH);
   }, [countryFilter]);
 
   // Filtering logic por dia, mês e ano (campos day, month, year)
@@ -217,43 +296,34 @@ export default function Viaturas() {
   // Displayed cars for infinite scroll (slice the filtered list up to itemsLoaded)
   const displayedCars = filteredCars.slice(0, itemsLoaded);
 
-  // Infinite scroll: load more when there is empty space using a sentinel
+  // Infinite scroll: load more when near bottom
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
-    const sentinel = document.getElementById('viaturas-sentinel');
-    if (!sentinel) return; // sentinel not in DOM yet
     if (itemsLoaded >= filteredCars.length) return; // nothing to load
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setItemsLoaded((prev) => Math.min(filteredCars.length, prev + itemsPerBatch));
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        try {
+          const threshold = 800; // px from bottom to trigger
+          if (window.innerHeight + window.scrollY >= document.body.offsetHeight - threshold) {
+            setItemsLoaded((prev) => Math.min(filteredCars.length, prev + LOAD_BATCH));
           }
-        });
-      },
-      {
-        root: null,
-        // Become visible a bit before the bottom so content loads early when there's empty space
-        rootMargin: '0px 0px 300px 0px',
-        threshold: 0.01,
-      },
-    );
-
-    io.observe(sentinel);
-
-    // If the page is already short (sentinel in viewport), trigger load once synchronously
-    try {
-      const rect = sentinel.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        setItemsLoaded((prev) => Math.min(filteredCars.length, prev + itemsPerBatch));
-      }
-    } catch (e) {
-      // ignore
-    }
-
-    return () => io.disconnect();
-  }, [itemsLoaded, filteredCars.length, itemsPerBatch]);
+        } finally {
+          ticking = false;
+        }
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    // try once in case content is short
+    onScroll();
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [itemsLoaded, filteredCars.length]);
 
   // Status translation map
   const statusLabels = {
@@ -269,34 +339,191 @@ export default function Viaturas() {
     novidade: "bg-blue-500", // Added novidade color
   };
 
-  React.useEffect(() => {
-    if (typeof window === 'undefined') return;
-    // Use the runtime-mapped class name from the CSS module so the selector matches the hashed class
-    const animClass = styles['card-anim'];
-    if (!animClass) return;
-    const selector = `.${animClass}`;
-    const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
-    if (!els.length) return;
-    let cancelled = false;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const el = entry.target as HTMLElement;
-          if (entry.isIntersecting) {
-            // Add in-view immediately; --enter-delay controls CSS stagger
-            if (!cancelled) el.classList.add('in-view');
-            io.unobserve(el);
-          }
-        });
-      },
-      { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+  // small helper to render a single card — reused by both virtualized rows and fallback grid
+  const renderCarCard = (car: any, globalIndex: number) => {
+    if (!car) return <div key={`empty-${globalIndex}`} />;
+    return (
+      <div key={car.id} className={styles["premium-car-card"]} style={{ ['--enter-index' as any]: globalIndex }}>
+        {/* Status badge */}
+        {car.status && (
+          <span
+            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${statusColors[car.status] || "bg-gray-400"}`}
+            style={{
+              letterSpacing: "0.5px",
+              minWidth: 90,
+              textAlign: "center",
+            }}
+          >
+            {statusLabels[car.status] || car.status}
+          </span>
+        )}
+        {/* Mobile thumbnails */}
+        <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent md:hidden">
+          {(car.images || [car.image]).map((img: any, idx: number) => {
+            const thumbSrc = Array.isArray(img) ? String(img[0]) : String(img || car.image || "");
+            return (
+              <button
+                key={idx}
+                type="button"
+                className="focus:outline-none"
+                onClick={() => {
+                  const modal = document.getElementById(
+                    `modal-img-${car.id}-${idx}`,
+                  );
+                  if (modal) (modal as HTMLDialogElement).showModal();
+                }}
+              >
+                <img
+                  src={thumbSrc}
+                  loading="lazy"
+                  alt={`${car.make} ${car.model} foto ${idx + 1}`}
+                  className={styles["premium-car-image"]}
+                  style={{ minWidth: "11rem" }}
+                />
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Desktop main image */}
+        <div className="w-full mb-4 hidden md:flex items-start justify-center pt-4">
+          {(() => {
+            const mainImg = (car && (car.image || (car.images && car.images[0]))) || "";
+            return (
+              <button
+                type="button"
+                className="focus:outline-none"
+                onClick={() => {
+                  const modal = document.getElementById(
+                    `modal-img-${car.id}-0`,
+                  );
+                  if (modal) (modal as HTMLDialogElement).showModal();
+                }}
+              >
+                <img
+                  src={String(mainImg)}
+                  loading="lazy"
+                  alt={`${car.make} ${car.model} foto principal`}
+                  className={styles["premium-car-image"]}
+                  style={{
+                    height: "13rem",
+                    width: "auto",
+                    maxWidth: "21rem",
+                    objectFit: "cover",
+                    borderRadius: "0.75rem",
+                    marginTop: "0.5rem",
+                  }}
+                />
+              </button>
+            );
+          })()}
+        </div>
+
+        {/* modals */}
+        {(car.images || [car.image]).map((img: any, idx: number) => (
+          <dialog
+            key={idx}
+            id={`modal-img-${car.id}-${idx}`}
+            className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full"
+          >
+            <div className="flex flex-col items-center">
+              <img
+                src={String(img)}
+                loading="lazy"
+                alt="Foto expandida"
+                className="max-h-[80vh] w-auto rounded-xl shadow-lg"
+              />
+              <button
+                onClick={(e) =>
+                  (
+                    e.currentTarget.closest(
+                      "dialog",
+                    ) as HTMLDialogElement
+                  )?.close()
+                }
+                className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition"
+              >
+                {t("Fechar")}
+              </button>
+            </div>
+          </dialog>
+        ))}
+
+        <div className="relative flex flex-col items-center">
+          <div className="mb-2">
+            {/* @ts-ignore */}
+            <MakeLogo make={String((car as any).make ?? "")} size={36} className="h-12 w-auto mx-auto" />
+          </div>
+          <h2
+            className="text-xl font-semibold mb-1 text-[#222] text-center px-2 w-full flex items-center justify-center gap-2"
+            style={{ minHeight: "2.5rem" }}
+          >
+            {String((car as any).make ?? "")} {String((car as any).model ?? "")}
+          </h2>
+        </div>
+        <div className="text-gray-500 mb-1 text-center px-2">
+          {String((car as any).year ?? "")} · {String((car as any).mileage ?? "")} km
+        </div>
+        <div className="font-bold text-black text-lg mb-3 text-center px-2">
+          {(() => {
+            const rawPrice = (car as any).price;
+            const priceDisplay = (car as any).priceDisplay;
+            let numeric = null as number | null;
+            if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) numeric = rawPrice;
+            else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
+              const parsed = Number(String(rawPrice).replace(/[^0-9.-]/g, ''));
+              if (!Number.isNaN(parsed) && Number.isFinite(parsed)) numeric = parsed;
+            }
+            const { formatPriceDisplay } = require('../utils/formatPrice');
+            return formatPriceDisplay(numeric, priceDisplay ?? (typeof rawPrice === 'string' ? rawPrice : undefined));
+          })()}
+        </div>
+        <div className="flex gap-2 w-full mt-auto justify-center">
+          <Link
+            href={`/cars/${car.slug || car.id}`}
+            className="rounded-full py-1.5 px-6 sm:px-4 font-bold text-sm shadow-lg transition-all duration-200 text-center w-full sm:w-auto transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
+            onClick={() => {
+              try {
+                const KEY = "autogo_clicked_v1";
+                const TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
+                const raw = localStorage.getItem(KEY);
+                let arr = [];
+                if (raw) {
+                  arr = JSON.parse(raw) || [];
+                  arr = arr.filter((it: any) => Date.now() - (it.ts || 0) < TTL);
+                }
+                arr = arr.filter((it: any) => it.id !== car.id);
+                arr.unshift({ id: car.id, ts: Date.now() });
+                if (arr.length > 50) arr = arr.slice(0, 50);
+                localStorage.setItem(KEY, JSON.stringify(arr));
+              } catch (e) {
+                // ignore
+              }
+            }}
+            style={{
+              background: "rgba(210, 56, 56, 0.85)",
+              color: "#fff",
+              letterSpacing: "0.5px",
+              boxShadow: "0 4px 18px 0 rgba(213, 80, 80, 0.18)",
+            }}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.background =
+                "rgba(213, 80, 80, 0.85)")
+            }
+            onMouseOut={(e) =>
+              (e.currentTarget.style.background =
+                "rgba(213, 80, 80, 0.85)")
+            }
+          >
+            {t("Ver detalhes")}
+          </Link>
+        </div>
+      </div>
     );
-    els.forEach((el) => io.observe(el));
-    return () => {
-      cancelled = true;
-      io.disconnect();
-    };
-  }, [displayedCars.length, styles]);
+  };
+
+  // compute row count for list virtualization
+  const rowCount = Math.max(1, Math.ceil(displayedCars.length / columns));
 
   return (
     <>
@@ -622,242 +849,43 @@ export default function Viaturas() {
                 {t("Limpar Filtros")}
               </button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10">
-              {displayedCars.map((car, idx) => (
-                <div
-                  key={car.id}
-                  className={`${styles["premium-car-card"]} ${styles["card-anim"]}`}
-                  data-card-index={idx}
-                  data-enter-delay="true"
-                  style={{ ['--enter-delay' as any]: `${idx * 45}ms` } as React.CSSProperties}
+            {/* Virtualized grid using react-window (rows of cards). Falls back to non-virtualized grid during SSR or when JS is disabled. */}
+            {isClient && RWList ? (
+              <div className="w-full" ref={listContainerRef}>
+                <RWList
+                  height={containerHeight}
+                  itemCount={rowCount}
+                  itemSize={ROW_HEIGHT}
+                  width={listWidth}
                 >
-                  {/* Status badge */}
-                  {car.status && (
-                    <span
-                      className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${statusColors[car.status] || "bg-gray-400"}`}
-                      style={{
-                        letterSpacing: "0.5px",
-                        minWidth: 90,
-                        textAlign: "center",
-                      }}
-                    >
-                      {statusLabels[car.status] || car.status}
-                    </span>
-                  )}
-                  {/* Mobile: existing horizontal thumbnail scroller (leave as-is) */}
-                  <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent md:hidden">
-                    {(car.images || [car.image]).map((img, idx) => {
-                      const thumbSrc = Array.isArray(img) ? String(img[0]) : String(img || car.image || "");
-                      return (
-                        <button
-                          key={idx}
-                          type="button"
-                          className="focus:outline-none"
-                          onClick={() => {
-                            const modal = document.getElementById(
-                              `modal-img-${car.id}-${idx}`,
-                            );
-                            if (modal) (modal as HTMLDialogElement).showModal();
-                          }}
-                        >
-                          <img
-                            src={thumbSrc}
-                            loading="lazy"
-                            alt={`${car.make} ${car.model} foto ${idx + 1}`}
-                            className={styles["premium-car-image"]}
-                            style={{ minWidth: "11rem" }}
-                          />
-                        </button>
+                  {({ index, style }: any) => {
+                    // render a row with `columns` cards
+                    const children = [];
+                    for (let col = 0; col < columns; col += 1) {
+                      const globalIndex = index * columns + col;
+                      const car = displayedCars[globalIndex];
+                      children.push(
+                        <div key={globalIndex} style={{ width: `${100 / columns}%`, padding: '0 0.5rem', boxSizing: 'border-box' }}>
+                          {car ? renderCarCard(car, globalIndex) : <div />}
+                        </div>
                       );
-                    })}
-                  </div>
-
-                  {/* Desktop: center the main picture with the car card (keep mobile unchanged)
-                      increase top padding and align to start so image sits slightly lower */}
-                  <div className="w-full mb-4 hidden md:flex items-start justify-center pt-4">
-                    {(() => {
-                      // On desktop prefer the single `car.image` string to avoid loading the whole images array
-                      const mainImg = (car && (car.image || (car.images && car.images[0]))) || "";
-                      return (
-                        <button
-                          type="button"
-                          className="focus:outline-none"
-                          onClick={() => {
-                            const modal = document.getElementById(
-                              `modal-img-${car.id}-0`,
-                            );
-                            if (modal) (modal as HTMLDialogElement).showModal();
-                          }}
-                        >
-                          <img
-                            src={String(mainImg)}
-                            loading="lazy"
-                            alt={`${car.make} ${car.model} foto principal`}
-                            className={styles["premium-car-image"]}
-                            style={{
-                              // slightly smaller so card borders are visible on the sides
-                              height: "13rem",
-                              width: "auto",
-                              maxWidth: "21rem",
-                              objectFit: "cover",
-                              borderRadius: "0.75rem",
-                              marginTop: "0.5rem",
-                            }}
-                          />
-                        </button>
-                      );
-                    })()}
-                  </div>
-
-                  {/* Modais para expandir imagens (render for all viewports) */}
-                  {(car.images || [car.image]).map((img, idx) => (
-                    <dialog
-                      key={idx}
-                      id={`modal-img-${car.id}-${idx}`}
-                      className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full"
-                    >
-                      <div className="flex flex-col items-center">
-                        <img
-                          src={String(img)}
-                          loading="lazy"
-                          alt="Foto expandida"
-                          className="max-h-[80vh] w-auto rounded-xl shadow-lg"
-                        />
-                        <button
-                          onClick={(e) =>
-                            (
-                              e.currentTarget.closest(
-                                "dialog",
-                              ) as HTMLDialogElement
-                            )?.close()
-                          }
-                          className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition"
-                        >
-                          {t("Fechar")}
-                        </button>
+                    }
+                    return (
+                      <div style={{ ...style, display: 'flex', gap: '1rem', padding: '0.5rem 0' }}>
+                        {children}
                       </div>
-                    </dialog>
-                  ))}
-                  <div className="relative flex flex-col items-center">
-                    {/* Use shared MakeLogo to handle camelCase/hyphen variants and fallback cleanly */}
-                    <div className="mb-2">
-                      {/* @ts-ignore */}
-                      <MakeLogo make={String((car as any).make ?? "")} size={36} className="h-12 w-auto mx-auto" />
-                    </div>
-                    <h2
-                      className="text-xl font-semibold mb-1 text-[#222] text-center px-2 w-full flex items-center justify-center gap-2"
-                      style={{ minHeight: "2.5rem" }}
-                    >
-                      {String((car as any).make ?? "")} {String((car as any).model ?? "")}
-                    </h2>
-                  </div>
-                  <div className="text-gray-500 mb-1 text-center px-2">
-                    {String((car as any).year ?? "")} · {String((car as any).mileage ?? "")} km
-                  </div>
-                  <div className="font-bold text-black text-lg mb-3 text-center px-2">
-                    {(() => {
-                      // use format helper to render price or textual fallback
-                      const rawPrice = (car as any).price;
-                      const priceDisplay = (car as any).priceDisplay;
-                      let numeric = null as number | null;
-                      if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) numeric = rawPrice;
-                      else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
-                        const parsed = Number(String(rawPrice).replace(/[^0-9.-]/g, ''));
-                        if (!Number.isNaN(parsed) && Number.isFinite(parsed)) numeric = parsed;
-                      }
-                      const { formatPriceDisplay } = require('../utils/formatPrice');
-                      return formatPriceDisplay(numeric, priceDisplay ?? (typeof rawPrice === 'string' ? rawPrice : undefined));
-                    })()}
-                  </div>
-  <div className="flex gap-2 w-full mt-auto justify-center">
-  <Link
-        href={`/cars/${car.slug || car.id}`}
-      className="rounded-full py-1.5 px-6 sm:px-4 font-bold text-sm shadow-lg transition-all duration-200 text-center w-full sm:w-auto transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
-          onClick={() => {
-            // Persist a list of recently clicked car ids for this visitor (7d TTL)
-            try {
-              const KEY = "autogo_clicked_v1";
-              const TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
-              const raw = localStorage.getItem(KEY);
-              let arr = [];
-              if (raw) {
-                arr = JSON.parse(raw) || [];
-                // filter out expired entries
-                arr = arr.filter((it) => Date.now() - (it.ts || 0) < TTL);
-              }
-              // remove existing for this id
-              arr = arr.filter((it) => it.id !== car.id);
-              // add to front
-              arr.unshift({ id: car.id, ts: Date.now() });
-              // cap size
-              if (arr.length > 50) arr = arr.slice(0, 50);
-              localStorage.setItem(KEY, JSON.stringify(arr));
-            } catch (e) {
-              // ignore
-            }
-          }}
-                      style={{
-                        background: "rgba(210, 56, 56, 0.85)",
-                        color: "#fff",
-                        letterSpacing: "0.5px",
-                        boxShadow: "0 4px 18px 0 rgba(213, 80, 80, 0.18)",
-                      }}
-                      onMouseOver={(e) =>
-                        (e.currentTarget.style.background =
-                          "rgba(213, 80, 80, 0.85)")
-                      }
-                      onMouseOut={(e) =>
-                        (e.currentTarget.style.background =
-                          "rgba(213, 80, 80, 0.85)")
-                      }
-                    >
-                      {t("Ver detalhes")}
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          {/* sentinel element observed by IntersectionObserver to auto-load more when there is empty space */}
-          <div id="viaturas-sentinel" style={{ height: 1 }} />
-          
-          {/* IntersectionObserver to reveal cards smoothly as they scroll into view */}
-          <script /* injected for client-only observer */ />
-          {
-            /* Client-only effect: observe .card-anim and add .in-view when intersecting */
-          }
-          {process.browser && null}
+                    );
+                  }}
+                </RWList>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10">
+                {displayedCars.map((car, idx) => renderCarCard(car, idx))}
+              </div>
+            )}
             {/* infinite-scroll: no page selector — more items load as the user scrolls */}
             <div className="max-w-7xl mx-auto mt-6 px-4 text-center text-gray-500">
-              {itemsLoaded < filteredCars.length ? (
-                <span className="loading-dots" role="status" aria-live="polite">
-                  {t('A carregar')}
-                  <span className="dots" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span />
-                  </span>
-                </span>
-              ) : (
-                t('Todos os resultados carregados')
-              )}
-              <style jsx>{`
-                .loading-dots { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
-                .dots { display: inline-flex; gap: 6px; margin-left: 6px; align-items: center; }
-                .dots span { display: inline-block; width: 7px; height: 7px; background: currentColor; border-radius: 50%; opacity: 0.25; transform: translateY(0); animation: dot-bounce 1s infinite ease-in-out; }
-                .dots span:nth-child(1) { animation-delay: 0s; }
-                .dots span:nth-child(2) { animation-delay: 0.12s; }
-                .dots span:nth-child(3) { animation-delay: 0.24s; }
-                @keyframes dot-bounce {
-                  0% { opacity: 0.25; transform: translateY(0); }
-                  30% { opacity: 1; transform: translateY(-6px); }
-                  60% { opacity: 0.25; transform: translateY(0); }
-                  100% { opacity: 0.25; transform: translateY(0); }
-                }
-                @media (prefers-reduced-motion: reduce) {
-                  .dots span { animation: none; opacity: 0.6; transform: none; }
-                }
-              `}</style>
+              {itemsLoaded < filteredCars.length ? t('A carregar mais viaturas...') : t('Todos os resultados carregados')}
             </div>
           </section>
         </MainLayout>
