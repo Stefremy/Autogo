@@ -182,7 +182,7 @@ export default function Home({ blogArticles }) {
       <MainLayout>
         {/* Add your content here */}
         <Seo
-          title="Importar Carro para Portugal | AutoGo — Legalização e ISV sem Stress"
+          title="Importar Carro para Portugal | Carros em segunda mão | AutoGo — Legalização e ISV sem Stress"
           description="Tratamos de tudo: compra, transporte, inspeção tipo B, homologação IMT e matrícula. Calcula o ISV e importa com segurança."
           url="https://autogo.pt/"
           image="https://autogo.pt/images/auto-logo.png"
@@ -224,6 +224,7 @@ export default function Home({ blogArticles }) {
     var minW = 16 * 16; // 16rem
     var maxW = window.innerWidth; // allow edge-to-edge
     var newW = lerp(minW, maxW, progress);
+    el.style.width = newW + 'px';
     // Fade out as we approach the footer
     var fadeStart = 0.98;
     var fadeProgress = clamp((progress - fadeStart) / (1 - fadeStart), 0, 1);
@@ -256,7 +257,7 @@ export default function Home({ blogArticles }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative w-screen h-[360px] sm:h-[420px] md:h-[56vh] lg:h-[60vh] flex items-center overflow-hidden"
+          className="relative w-screen h-[450px] sm:h-[500px] md:h-[70vh] lg:h-[76vh] flex items-center overflow-hidden"
         >
           {/* Background image covers full width, fades left */}
           <div
@@ -267,33 +268,17 @@ export default function Home({ blogArticles }) {
           >
             {/* Fade gradiente ultra acentuado e mais diluído: branco puro até 25%, escuro forte até 60%, transição mais suave para transparente */}
             <div
-              className="absolute inset-0 pointer-events-none hero-fade-overlay"
+              className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 12%, rgba(255,255,255,0.88) 30%, rgba(255,255,255,0.72) 50%, rgba(255,255,255,0.45) 68%, rgba(255,255,255,0.18) 82%, rgba(255,255,255,0.00) 90%)",
+                  // Gradiente: transparente à direita, branco puro à esquerda, stops suaves para efeito premium
+                  "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.92) 18%, rgba(255,255,255,0.80) 32%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0.22) 68%, rgba(255,255,255,0.08) 82%, rgba(255,255,255,0.00) 100%)",
               }}
             />
-
-            <style jsx>{`
-              @media (max-width: 640px) {
-                .hero-fade-overlay {
-                  /* More transparent toward the right on phones: fade to fully transparent earlier so the image shows through */
-                  background: linear-gradient(
-                    90deg,
-                    rgba(255,255,255,1) 0%,
-                    rgba(255,255,255,0.98) 30%,
-                    rgba(255,255,255,0.92) 50%,
-                    rgba(255,255,255,0.75) 65%,
-                    rgba(255,255,255,0.30) 82%,
-                    rgba(255,255,255,0.00) 90%
-                  ) !important;
-                }
-              }
-            `}</style>
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-4 pb-4 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
+          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-6 pb-6 px-4 sm:px-6 md:pl-20 md:pr-0 w-full max-w-full md:max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -315,10 +300,7 @@ export default function Home({ blogArticles }) {
               <span className="font-semibold">{t("Sem complicações")}</span>
               <br />
             </motion.p>
-
-        
-
-            <div className="flex flex-col sm:flex-row w-auto max-w-xl mx-auto rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30 overflow-hidden">
+            <div className="flex flex-col sm:flex-row w-full rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a className="beauty-fade-btn">{t("Viaturas")}</a>
               </Link>
@@ -358,7 +340,7 @@ export default function Home({ blogArticles }) {
                 z-index: 1;
                 white-space: nowrap;
                 cursor: pointer;
-                min-width: 140px;
+                min-width: 170px;
               }
               .beauty-fade-btn:before {
                 content: "";
@@ -426,9 +408,9 @@ export default function Home({ blogArticles }) {
               }
               @media (min-width: 640px) {
                 .beauty-fade-btn {
-                  width: auto;
-                  padding: 0.65rem 1.6rem;
-                  font-size: 1.05rem;
+3                  width: auto;
+                  padding: 0.75rem 2rem;
+                  font-size: 1.125rem;
                 }
               }
             `}</style>

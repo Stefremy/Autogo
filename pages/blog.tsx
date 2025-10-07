@@ -22,8 +22,8 @@ export default function Blog({ posts }) {
   return (
     <Layout>
       <Seo
-        title={`Importar Carro da Alemanha e Notícias | Blog AutoGo`}
-        description={`Dicas e guias para importar e legalizar carros na Europa. Notícias, reviews e checklists para importar viaturas da Alemanha, Holanda e outros mercados.`}
+        title={`Dicas e notícias sobre carros e importações de veículos, reviews de carros | Blog AutoGo`}
+        description={`Dicas e guias para importar e legalizar carros na Europa. Notícias, reviews e checklists para importar viaturas da Europa, França, Alemanha, Holanda e outros mercados.`}
         url={`https://autogo.pt/blog`}
         image={`https://autogo.pt/images/auto-logo.png`}
         jsonLd={blogFaqJsonLd}
