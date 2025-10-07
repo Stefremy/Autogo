@@ -14,8 +14,12 @@ import styles from "../components/PremiumCarCard.module.css";
 import cars from "../data/cars.json";
 import MainLayout from "../components/MainLayout";
 import MakeLogo from "../components/MakeLogo";
-import { VIATURAS_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
-import Seo from '../components/Seo';
+import {
+  VIATURAS_KEYWORDS,
+  SITE_WIDE_KEYWORDS,
+  joinKeywords,
+} from "../utils/seoKeywords";
+import Seo from "../components/Seo";
 
 export default function Viaturas() {
   const { t } = useTranslation("common");
@@ -41,19 +45,22 @@ export default function Viaturas() {
 
   // compute columns by listening to window width (matches Tailwind breakpoints used in grid)
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
     const calc = () => {
       const w = window.innerWidth;
       let cols = 1;
-      if (w >= 1280) cols = 4; // xl
-      else if (w >= 768) cols = 3; // md
-      else if (w >= 640) cols = 2; // sm
+      if (w >= 1280)
+        cols = 4; // xl
+      else if (w >= 768)
+        cols = 3; // md
+      else if (w >= 640)
+        cols = 2; // sm
       else cols = 1;
       setColumnsCount(cols);
     };
     calc();
-    window.addEventListener('resize', calc);
-    return () => window.removeEventListener('resize', calc);
+    window.addEventListener("resize", calc);
+    return () => window.removeEventListener("resize", calc);
   }, []);
 
   // ensure we always have at least one batch loaded when columns change
@@ -95,7 +102,8 @@ export default function Viaturas() {
         if (saved.countryFilter) setCountryFilter(saved.countryFilter);
         if (saved.minPrice) setMinPrice(String(saved.minPrice));
         if (saved.maxPrice) setMaxPrice(String(saved.maxPrice));
-        if (saved.itemsLoaded) setItemsLoaded(Number(saved.itemsLoaded) || itemsPerBatch);
+        if (saved.itemsLoaded)
+          setItemsLoaded(Number(saved.itemsLoaded) || itemsPerBatch);
       }
     } catch (e) {
       // ignore parse errors
@@ -123,7 +131,18 @@ export default function Viaturas() {
     } catch (e) {
       // ignore storage errors
     }
-  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded]);
+  }, [
+    marca,
+    modelo,
+    ano,
+    mes,
+    dia,
+    km,
+    countryFilter,
+    minPrice,
+    maxPrice,
+    itemsLoaded,
+  ]);
 
   // Unique options for selects
   const marcas = Array.from(
@@ -142,8 +161,8 @@ export default function Viaturas() {
       cars
         .map((car) => {
           const y = (car as any).year;
-          if (typeof y === 'number') return y;
-          if (typeof y === 'string') {
+          if (typeof y === "number") return y;
+          if (typeof y === "string") {
             const m = y.match(/^(\d{4})/);
             if (m) return Number(m[1]);
             const n = Number(y);
@@ -180,22 +199,22 @@ export default function Viaturas() {
     // normalize year for comparison
     const carYearStr = (() => {
       const y = (car as any).year;
-      if (typeof y === 'number') return String(y);
-      if (typeof y === 'string') {
+      if (typeof y === "number") return String(y);
+      if (typeof y === "string") {
         const m = y.match(/^(\d{4})/);
         if (m) return m[1];
         const n = Number(y);
         if (!Number.isNaN(n)) return String(n);
       }
-      return '';
+      return "";
     })();
 
     // safe mileage number
     const mileageNum = (() => {
       const v = (car as any).mileage;
       if (v == null) return null;
-      if (typeof v === 'number') return v;
-      const n = parseInt(String(v).replace(/[^0-9]/g, ''), 10);
+      if (typeof v === "number") return v;
+      const n = parseInt(String(v).replace(/[^0-9]/g, ""), 10);
       return Number.isFinite(n) ? n : null;
     })();
 
@@ -203,9 +222,9 @@ export default function Viaturas() {
     const priceNum = (() => {
       const v = (car as any).price;
       if (v == null) return null;
-      if (typeof v === 'number') return Number.isFinite(v) ? v : null;
-      if (typeof v === 'string') {
-        const digits = String(v).replace(/[^0-9.-]/g, '');
+      if (typeof v === "number") return Number.isFinite(v) ? v : null;
+      if (typeof v === "string") {
+        const digits = String(v).replace(/[^0-9.-]/g, "");
         const n = Number(digits);
         return Number.isFinite(n) ? n : null;
       }
@@ -217,10 +236,15 @@ export default function Viaturas() {
       (!modelo || car.model === modelo) &&
       (!countryFilter || carCountry === cf) &&
       (!ano || carYearStr === ano) &&
-      (!mes || (car.hasOwnProperty('month') && String((car as any).month).padStart(2, '0') === mes.padStart(2, '0'))) &&
+      (!mes ||
+        (car.hasOwnProperty("month") &&
+          String((car as any).month).padStart(2, "0") ===
+            mes.padStart(2, "0"))) &&
       (!km || (mileageNum !== null && mileageNum <= parseInt(km, 10))) &&
-      (!minPrice || (priceNum !== null && priceNum >= parseInt(minPrice || '0', 10))) &&
-      (!maxPrice || (priceNum !== null && priceNum <= parseInt(maxPrice || '0', 10)))
+      (!minPrice ||
+        (priceNum !== null && priceNum >= parseInt(minPrice || "0", 10))) &&
+      (!maxPrice ||
+        (priceNum !== null && priceNum <= parseInt(maxPrice || "0", 10)))
     );
   });
 
@@ -229,29 +253,67 @@ export default function Viaturas() {
     const copy = Array.from(filteredCars);
     const num = (v: any) => {
       if (v == null) return null;
-      if (typeof v === 'number') return v;
-      const n = Number(String(v).replace(/[^0-9.-]/g, ''));
+      if (typeof v === "number") return v;
+      const n = Number(String(v).replace(/[^0-9.-]/g, ""));
       return Number.isFinite(n) ? n : null;
     };
     copy.sort((a: any, b: any) => {
       const priceA = num(a.price);
       const priceB = num(b.price);
-      const yearA = (() => { const y = a.year; return typeof y === 'number' ? y : (typeof y === 'string' && /^\d{4}/.test(y) ? Number(String(y).match(/^(\d{4})/)[1]) : null); })();
-      const yearB = (() => { const y = b.year; return typeof y === 'number' ? y : (typeof y === 'string' && /^\d{4}/.test(y) ? Number(String(y).match(/^(\d{4})/)[1]) : null); })();
-      const milA = (() => { const v = a.mileage; if (v == null) return null; if (typeof v === 'number') return v; const n = Number(String(v).replace(/[^0-9]/g, '')); return Number.isFinite(n) ? n : null; })();
-      const milB = (() => { const v = b.mileage; if (v == null) return null; if (typeof v === 'number') return v; const n = Number(String(v).replace(/[^0-9]/g, '')); return Number.isFinite(n) ? n : null; })();
-      const aStr = ((a.make || '') + ' ' + (a.model || '')).toString().toLowerCase();
-      const bStr = ((b.make || '') + ' ' + (b.model || '')).toString().toLowerCase();
+      const yearA = (() => {
+        const y = a.year;
+        return typeof y === "number"
+          ? y
+          : typeof y === "string" && /^\d{4}/.test(y)
+            ? Number(String(y).match(/^(\d{4})/)[1])
+            : null;
+      })();
+      const yearB = (() => {
+        const y = b.year;
+        return typeof y === "number"
+          ? y
+          : typeof y === "string" && /^\d{4}/.test(y)
+            ? Number(String(y).match(/^(\d{4})/)[1])
+            : null;
+      })();
+      const milA = (() => {
+        const v = a.mileage;
+        if (v == null) return null;
+        if (typeof v === "number") return v;
+        const n = Number(String(v).replace(/[^0-9]/g, ""));
+        return Number.isFinite(n) ? n : null;
+      })();
+      const milB = (() => {
+        const v = b.mileage;
+        if (v == null) return null;
+        if (typeof v === "number") return v;
+        const n = Number(String(v).replace(/[^0-9]/g, ""));
+        return Number.isFinite(n) ? n : null;
+      })();
+      const aStr = ((a.make || "") + " " + (a.model || ""))
+        .toString()
+        .toLowerCase();
+      const bStr = ((b.make || "") + " " + (b.model || ""))
+        .toString()
+        .toLowerCase();
 
       switch (sortBy) {
-        case 'priceAsc': return (priceA ?? Infinity) - (priceB ?? Infinity);
-        case 'priceDesc': return (priceB ?? -Infinity) - (priceA ?? -Infinity);
-        case 'yearAsc': return (yearA ?? Infinity) - (yearB ?? Infinity);
-        case 'yearDesc': return (yearB ?? -Infinity) - (yearA ?? -Infinity);
-        case 'mileageAsc': return (milA ?? Infinity) - (milB ?? Infinity);
-        case 'mileageDesc': return (milB ?? -Infinity) - (milA ?? -Infinity);
-        case 'alphabetical': return aStr.localeCompare(bStr);
-        default: return 0; // relevance: keep original filtered order
+        case "priceAsc":
+          return (priceA ?? Infinity) - (priceB ?? Infinity);
+        case "priceDesc":
+          return (priceB ?? -Infinity) - (priceA ?? -Infinity);
+        case "yearAsc":
+          return (yearA ?? Infinity) - (yearB ?? Infinity);
+        case "yearDesc":
+          return (yearB ?? -Infinity) - (yearA ?? -Infinity);
+        case "mileageAsc":
+          return (milA ?? Infinity) - (milB ?? Infinity);
+        case "mileageDesc":
+          return (milB ?? -Infinity) - (milA ?? -Infinity);
+        case "alphabetical":
+          return aStr.localeCompare(bStr);
+        default:
+          return 0; // relevance: keep original filtered order
       }
     });
     return copy;
@@ -268,19 +330,23 @@ export default function Viaturas() {
       // but keeping this small inline shim avoids adding additional top-level imports in the file's header.
       // We'll import from utils/search.ts
       // eslint-disable-next-line @typescript-eslint/no-var-requires
-      return require('../utils/search');
+      return require("../utils/search");
     } catch (e) {
       // fallback stub
-      return { matchesQuery: (c: any, q: string) => !q || String(q).trim() === '' };
+      return {
+        matchesQuery: (c: any, q: string) => !q || String(q).trim() === "",
+      };
     }
   })();
 
-  const displayedCars = sortedCars.filter((c) => matchesQuery(c, searchQuery)).slice(0, itemsLoaded);
+  const displayedCars = sortedCars
+    .filter((c) => matchesQuery(c, searchQuery))
+    .slice(0, itemsLoaded);
 
   // Infinite scroll: load more when there is empty space using a sentinel
   React.useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const sentinel = document.getElementById('viaturas-sentinel');
+    if (typeof window === "undefined") return;
+    const sentinel = document.getElementById("viaturas-sentinel");
     if (!sentinel) return; // sentinel not in DOM yet
     if (itemsLoaded >= filteredCars.length) return; // nothing to load
 
@@ -288,14 +354,16 @@ export default function Viaturas() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setItemsLoaded((prev) => Math.min(filteredCars.length, prev + itemsPerBatch));
+            setItemsLoaded((prev) =>
+              Math.min(filteredCars.length, prev + itemsPerBatch),
+            );
           }
         });
       },
       {
         root: null,
         // Become visible a bit before the bottom so content loads early when there's empty space
-        rootMargin: '0px 0px 300px 0px',
+        rootMargin: "0px 0px 300px 0px",
         threshold: 0.01,
       },
     );
@@ -306,7 +374,9 @@ export default function Viaturas() {
     try {
       const rect = sentinel.getBoundingClientRect();
       if (rect.top < window.innerHeight) {
-        setItemsLoaded((prev) => Math.min(filteredCars.length, prev + itemsPerBatch));
+        setItemsLoaded((prev) =>
+          Math.min(filteredCars.length, prev + itemsPerBatch),
+        );
       }
     } catch (e) {
       // ignore
@@ -330,9 +400,9 @@ export default function Viaturas() {
   };
 
   React.useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
     // Use the runtime-mapped class name from the CSS module so the selector matches the hashed class
-    const animClass = styles['card-anim'];
+    const animClass = styles["card-anim"];
     if (!animClass) return;
     const selector = `.${animClass}`;
     const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
@@ -344,12 +414,12 @@ export default function Viaturas() {
           const el = entry.target as HTMLElement;
           if (entry.isIntersecting) {
             // Add in-view immediately; --enter-delay controls CSS stagger
-            if (!cancelled) el.classList.add('in-view');
+            if (!cancelled) el.classList.add("in-view");
             io.unobserve(el);
           }
         });
       },
-      { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+      { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
     );
     els.forEach((el) => io.observe(el));
     return () => {
@@ -477,32 +547,99 @@ export default function Viaturas() {
                     aria-expanded={showSortMenu}
                     aria-haspopup="menu"
                   >
-                    {t('Ordenar')}
-                    <svg className="w-4 h-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.584l3.71-3.354a.75.75 0 111.02 1.1l-4.25 3.842a.75.75 0 01-1.02 0L5.21 8.33a.75.75 0 01.02-1.12z" clipRule="evenodd" /></svg>
+                    {t("Ordenar")}
+                    <svg
+                      className="w-4 h-4 text-gray-500"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 10.584l3.71-3.354a.75.75 0 111.02 1.1l-4.25 3.842a.75.75 0 01-1.02 0L5.21 8.33a.75.75 0 01.02-1.12z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </button>
                   {showSortMenu && (
                     <div className="absolute right-0 mt-2 w-44 bg-white border border-gray-100 rounded-md shadow-lg z-40 menu-pop">
                       <ul className="py-1">
                         <li>
-                          <button onClick={() => { setSortBy('mileageAsc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Kilometragem ↑')}</button>
+                          <button
+                            onClick={() => {
+                              setSortBy("mileageAsc");
+                              setShowSortMenu(false);
+                            }}
+                            className="sort-menu-item w-full text-left px-3 py-2 text-sm"
+                          >
+                            {t("Kilometragem ↑")}
+                          </button>
                         </li>
                         <li>
-                          <button onClick={() => { setSortBy('mileageDesc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Kilometragem ↓')}</button>
+                          <button
+                            onClick={() => {
+                              setSortBy("mileageDesc");
+                              setShowSortMenu(false);
+                            }}
+                            className="sort-menu-item w-full text-left px-3 py-2 text-sm"
+                          >
+                            {t("Kilometragem ↓")}
+                          </button>
                         </li>
                         <li>
-                          <button onClick={() => { setSortBy('yearDesc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Ano ↓')}</button>
+                          <button
+                            onClick={() => {
+                              setSortBy("yearDesc");
+                              setShowSortMenu(false);
+                            }}
+                            className="sort-menu-item w-full text-left px-3 py-2 text-sm"
+                          >
+                            {t("Ano ↓")}
+                          </button>
                         </li>
                         <li>
-                          <button onClick={() => { setSortBy('yearAsc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Ano ↑')}</button>
+                          <button
+                            onClick={() => {
+                              setSortBy("yearAsc");
+                              setShowSortMenu(false);
+                            }}
+                            className="sort-menu-item w-full text-left px-3 py-2 text-sm"
+                          >
+                            {t("Ano ↑")}
+                          </button>
                         </li>
                         <li>
-                          <button onClick={() => { setSortBy('alphabetical'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Alfabético')}</button>
+                          <button
+                            onClick={() => {
+                              setSortBy("alphabetical");
+                              setShowSortMenu(false);
+                            }}
+                            className="sort-menu-item w-full text-left px-3 py-2 text-sm"
+                          >
+                            {t("Alfabético")}
+                          </button>
                         </li>
                         <li>
-                          <button onClick={() => { setSortBy('priceAsc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Preço ↑')}</button>
+                          <button
+                            onClick={() => {
+                              setSortBy("priceAsc");
+                              setShowSortMenu(false);
+                            }}
+                            className="sort-menu-item w-full text-left px-3 py-2 text-sm"
+                          >
+                            {t("Preço ↑")}
+                          </button>
                         </li>
                         <li>
-                          <button onClick={() => { setSortBy('priceDesc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Preço ↓')}</button>
+                          <button
+                            onClick={() => {
+                              setSortBy("priceDesc");
+                              setShowSortMenu(false);
+                            }}
+                            className="sort-menu-item w-full text-left px-3 py-2 text-sm"
+                          >
+                            {t("Preço ↓")}
+                          </button>
                         </li>
                       </ul>
                     </div>
@@ -642,15 +779,16 @@ export default function Viaturas() {
                   onChange={(e) => setModelo(e.target.value)}
                   disabled={!marca}
                   aria-disabled={!marca}
-                  title={!marca ? 'Selecione uma marca primeiro' : undefined}
-                  className={`bg-transparent outline-none border-none text-base w-32 ${!marca ? 'opacity-60 cursor-not-allowed' : ''}`}
+                  title={!marca ? "Selecione uma marca primeiro" : undefined}
+                  className={`bg-transparent outline-none border-none text-base w-32 ${!marca ? "opacity-60 cursor-not-allowed" : ""}`}
                 >
                   <option value="">{t("Modelo")}</option>
-                  {marca && modelos.map((m) => (
-                    <option key={m} value={m}>
-                      {m}
-                    </option>
-                  ))}
+                  {marca &&
+                    modelos.map((m) => (
+                      <option key={m} value={m}>
+                        {m}
+                      </option>
+                    ))}
                 </select>
                 {/* Price range inputs placed next to model select */}
                 <div className="flex items-center gap-2 ml-2">
@@ -783,7 +921,11 @@ export default function Viaturas() {
                   className={`${styles["premium-car-card"]} ${styles["card-anim"]}`}
                   data-card-index={idx}
                   data-enter-delay="true"
-                  style={{ ['--enter-delay' as any]: `${idx * 45}ms` } as React.CSSProperties}
+                  style={
+                    {
+                      ["--enter-delay" as any]: `${idx * 45}ms`,
+                    } as React.CSSProperties
+                  }
                 >
                   {/* Status badge */}
                   {car.status && (
@@ -801,7 +943,9 @@ export default function Viaturas() {
                   {/* Mobile: existing horizontal thumbnail scroller (leave as-is) */}
                   <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent md:hidden">
                     {(car.images || [car.image]).map((img, idx) => {
-                      const thumbSrc = Array.isArray(img) ? String(img[0]) : String(img || car.image || "");
+                      const thumbSrc = Array.isArray(img)
+                        ? String(img[0])
+                        : String(img || car.image || "");
                       return (
                         <button
                           key={idx}
@@ -830,7 +974,9 @@ export default function Viaturas() {
                   <div className="w-full mb-4 hidden md:block">
                     {(() => {
                       // On desktop prefer the single `car.image` string to avoid loading the whole images array
-                      const mainImg = (car && (car.image || (car.images && car.images[0]))) || "";
+                      const mainImg =
+                        (car && (car.image || (car.images && car.images[0]))) ||
+                        "";
                       return (
                         <button
                           type="button"
@@ -847,7 +993,7 @@ export default function Viaturas() {
                             loading="lazy"
                             alt={`${car.make} ${car.model} foto principal`}
                             className={styles["premium-car-image"]}
-                            style={{ width: '100%', height: undefined }}
+                            style={{ width: "100%", height: undefined }}
                           />
                         </button>
                       );
@@ -898,7 +1044,9 @@ export default function Viaturas() {
                         if (raw) {
                           arr = JSON.parse(raw) || [];
                           // filter out expired entries
-                          arr = arr.filter((it) => Date.now() - (it.ts || 0) < TTL);
+                          arr = arr.filter(
+                            (it) => Date.now() - (it.ts || 0) < TTL,
+                          );
                         }
                         // remove existing for this id
                         arr = arr.filter((it) => it.id !== car.id);
@@ -915,16 +1063,22 @@ export default function Viaturas() {
                   >
                     <div className="mb-2">
                       {/* @ts-ignore */}
-                      <MakeLogo make={String((car as any).make ?? "")} size={36} className="h-12 w-auto mx-auto" />
+                      <MakeLogo
+                        make={String((car as any).make ?? "")}
+                        size={36}
+                        className="h-12 w-auto mx-auto"
+                      />
                     </div>
                     <h2
                       className="text-xl font-semibold mb-1 text-[#222] text-center px-2 w-full flex items-center justify-center gap-2"
                       style={{ minHeight: "2.5rem" }}
                     >
-                      {String((car as any).make ?? "")} {String((car as any).model ?? "")}
+                      {String((car as any).make ?? "")}{" "}
+                      {String((car as any).model ?? "")}
                     </h2>
                     <div className="text-gray-500 mb-1 text-center px-2">
-                      {String((car as any).year ?? "")} · {String((car as any).mileage ?? "")} km
+                      {String((car as any).year ?? "")} ·{" "}
+                      {String((car as any).mileage ?? "")} km
                     </div>
                     <div className="font-bold text-black text-lg mb-3 text-center px-2">
                       {(() => {
@@ -932,13 +1086,31 @@ export default function Viaturas() {
                         const rawPrice = (car as any).price;
                         const priceDisplay = (car as any).priceDisplay;
                         let numeric = null as number | null;
-                        if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) numeric = rawPrice;
-                        else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
-                          const parsed = Number(String(rawPrice).replace(/[^0-9.-]/g, ''));
-                          if (!Number.isNaN(parsed) && Number.isFinite(parsed)) numeric = parsed;
+                        if (
+                          typeof rawPrice === "number" &&
+                          Number.isFinite(rawPrice)
+                        )
+                          numeric = rawPrice;
+                        else if (
+                          typeof rawPrice === "string" &&
+                          rawPrice.trim().length > 0
+                        ) {
+                          const parsed = Number(
+                            String(rawPrice).replace(/[^0-9.-]/g, ""),
+                          );
+                          if (!Number.isNaN(parsed) && Number.isFinite(parsed))
+                            numeric = parsed;
                         }
-                        const { formatPriceDisplay } = require('../utils/formatPrice');
-                        return formatPriceDisplay(numeric, priceDisplay ?? (typeof rawPrice === 'string' ? rawPrice : undefined));
+                        const {
+                          formatPriceDisplay,
+                        } = require("../utils/formatPrice");
+                        return formatPriceDisplay(
+                          numeric,
+                          priceDisplay ??
+                            (typeof rawPrice === "string"
+                              ? rawPrice
+                              : undefined),
+                        );
                       })()}
                     </div>
                   </Link>
@@ -946,20 +1118,18 @@ export default function Viaturas() {
               ))}
             </div>
 
-          {/* sentinel element observed by IntersectionObserver to auto-load more when there is empty space */}
-          <div id="viaturas-sentinel" style={{ height: 1 }} />
-          
-          {/* IntersectionObserver to reveal cards smoothly as they scroll into view */}
-          <script /* injected for client-only observer */ />
-          {
-            /* Client-only effect: observe .card-anim and add .in-view when intersecting */
-          }
-          {process.browser && null}
+            {/* sentinel element observed by IntersectionObserver to auto-load more when there is empty space */}
+            <div id="viaturas-sentinel" style={{ height: 1 }} />
+
+            {/* IntersectionObserver to reveal cards smoothly as they scroll into view */}
+            <script /* injected for client-only observer */ />
+            {/* Client-only effect: observe .card-anim and add .in-view when intersecting */}
+            {process.browser && null}
             {/* infinite-scroll: no page selector — more items load as the user scrolls */}
             <div className="max-w-7xl mx-auto mt-6 px-4 text-center text-gray-500">
               {itemsLoaded < filteredCars.length ? (
                 <span className="loading-dots" role="status" aria-live="polite">
-                  {t('A carregar')}
+                  {t("A carregar")}
                   <span className="dots" aria-hidden="true">
                     <span />
                     <span />
@@ -967,23 +1137,64 @@ export default function Viaturas() {
                   </span>
                 </span>
               ) : (
-                t('Todos os resultados carregados')
+                t("Todos os resultados carregados")
               )}
               <style jsx>{`
-                .loading-dots { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; }
-                .dots { display: inline-flex; gap: 6px; margin-left: 6px; align-items: center; }
-                .dots span { display: inline-block; width: 7px; height: 7px; background: currentColor; border-radius: 50%; opacity: 0.25; transform: translateY(0); animation: dot-bounce 1s infinite ease-in-out; }
-                .dots span:nth-child(1) { animation-delay: 0s; }
-                .dots span:nth-child(2) { animation-delay: 0.12s; }
-                .dots span:nth-child(3) { animation-delay: 0.24s; }
+                .loading-dots {
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 8px;
+                  font-weight: 500;
+                }
+                .dots {
+                  display: inline-flex;
+                  gap: 6px;
+                  margin-left: 6px;
+                  align-items: center;
+                }
+                .dots span {
+                  display: inline-block;
+                  width: 7px;
+                  height: 7px;
+                  background: currentColor;
+                  border-radius: 50%;
+                  opacity: 0.25;
+                  transform: translateY(0);
+                  animation: dot-bounce 1s infinite ease-in-out;
+                }
+                .dots span:nth-child(1) {
+                  animation-delay: 0s;
+                }
+                .dots span:nth-child(2) {
+                  animation-delay: 0.12s;
+                }
+                .dots span:nth-child(3) {
+                  animation-delay: 0.24s;
+                }
                 @keyframes dot-bounce {
-                  0% { opacity: 0.25; transform: translateY(0); }
-                  30% { opacity: 1; transform: translateY(-6px); }
-                  60% { opacity: 0.25; transform: translateY(0); }
-                  100% { opacity: 0.25; transform: translateY(0); }
+                  0% {
+                    opacity: 0.25;
+                    transform: translateY(0);
+                  }
+                  30% {
+                    opacity: 1;
+                    transform: translateY(-6px);
+                  }
+                  60% {
+                    opacity: 0.25;
+                    transform: translateY(0);
+                  }
+                  100% {
+                    opacity: 0.25;
+                    transform: translateY(0);
+                  }
                 }
                 @media (prefers-reduced-motion: reduce) {
-                  .dots span { animation: none; opacity: 0.6; transform: none; }
+                  .dots span {
+                    animation: none;
+                    opacity: 0.6;
+                    transform: none;
+                  }
                 }
               `}</style>
             </div>

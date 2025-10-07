@@ -2,8 +2,8 @@ import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
-import Head from "next/head";
-import { COMO_FUNCIONA_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import Seo from "../components/Seo";
+import { COMO_FUNCIONA_KEYWORDS, SITE_WIDE_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function ComoFunciona() {
   const { t } = useTranslation("common");
@@ -19,14 +19,29 @@ export default function ComoFunciona() {
     returnObjects: true,
   }) as string[];
 
+  const comoSeoKeywords = joinKeywords(SITE_WIDE_KEYWORDS, COMO_FUNCIONA_KEYWORDS);
+  const comoFaq = SEO_KEYWORDS?.como_funciona?.faq;
+  const comoFaqJsonLd = comoFaq
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: comoFaq.map((q) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: 'Consulte o nosso guia ou contacte a AutoGo para uma explicação detalhada.' },
+        })),
+      }
+    : undefined;
+
   return (
     <Layout>
-      <Head>
-        <title>Como funciona a AutoGo.pt | Importação e legalização de viaturas</title>
-        <meta name="description" content="Saiba como funciona o processo AutoGo.pt: pesquisa, inspeção, negociação, transporte e legalização de viaturas importadas para Portugal." />
-        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS, COMO_FUNCIONA_KEYWORDS)} />
-        <meta property="og:title" content="Como funciona a AutoGo.pt" />
-      </Head>
+      <Seo
+        title={`Processo de Importação de Carros | Passo a Passo AutoGo`}
+        description={`Documentos, prazos, inspeção tipo B, homologação/COC e matrícula. Guia completo para legalizar o teu carro importado.`}
+        url={`https://autogo.pt/como-funciona`}
+        keywords={comoSeoKeywords}
+        jsonLd={comoFaqJsonLd}
+      />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

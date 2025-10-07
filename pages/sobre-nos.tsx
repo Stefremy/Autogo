@@ -9,7 +9,7 @@ export default function SobreNos() {
   return (
     <MainLayout>
       <Seo
-        title={`Sobre a AutoGo.pt | Importação de viaturas`}
+        title={`Sobre a AutoGo | Especialistas em Importação de Viaturas`}
         description={`Conheça a AutoGo.pt — especialistas na importação e legalização de viaturas europeias para Portugal. Serviço completo: pesquisa, compra, transporte e legalização.`}
         url={`https://autogo.pt/sobre-nos`}
         keywords={joinKeywords(SITE_WIDE_KEYWORDS, ABOUT_KEYWORDS)}

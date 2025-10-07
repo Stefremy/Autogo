@@ -5,40 +5,30 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import matter from "gray-matter";
 import Link from "next/link";
-import Head from "next/head";
-
 import Layout from "../components/MainLayout";
-import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import Seo from '../components/Seo';
+import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords, SEO_KEYWORDS } from "../utils/seoKeywords";
 
 export default function Blog({ posts }) {
   const { t } = useTranslation("common");
+  const blogSeoKeywords = joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS);
+  const blogFaq = SEO_KEYWORDS?.blog?.faq;
+  const blogFaqJsonLd = blogFaq ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: blogFaq.map((q: string) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: 'Leia os nossos artigos ou contacte a AutoGo para mais detalhes.' } })),
+  } : undefined;
+
   return (
     <Layout>
-      <Head>
-        <title>
-          Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus,
-          BMW, Audi, Mercedes, Peugeot
-        </title>
-        <meta
-          name="description"
-          content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal."
-        />
-        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS)} />
-        <meta
-          property="og:title"
-          content="Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot"
-        />
-        <meta
-          property="og:description"
-          content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal."
-        />
-        <meta property="og:url" content="https://autogo.pt/blog" />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:image"
-          content="https://autogo.pt/images/auto-logo.png"
-        />
-      </Head>
+      <Seo
+        title={`Importar Carro da Alemanha e Notícias | Blog AutoGo`}
+        description={`Dicas e guias para importar e legalizar carros na Europa. Notícias, reviews e checklists para importar viaturas da Alemanha, Holanda e outros mercados.`}
+        url={`https://autogo.pt/blog`}
+        image={`https://autogo.pt/images/auto-logo.png`}
+        jsonLd={blogFaqJsonLd}
+      />
+      {/* Seo component provides title, description, robots, social tags and JSON-LD. */}
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

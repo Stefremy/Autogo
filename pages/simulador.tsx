@@ -354,8 +354,8 @@ export default function Simulador() {
     <>
       <MainLayout>
         <Seo
-          title={`Simulador ISV de importação automóvel | AutoGo.pt`}
-          description={`Calcule o ISV em Portugal com o Simulador AutoGo.pt — estimativa rápida para carros novos, usados, híbridos e elétricos.`}
+          title={`Simulador ISV 2025 | Calcular Imposto Sobre Veículos Online`}
+          description={`Introduz cilindrada, combustível e CO₂ (WLTP) e obtém o cálculo do ISV. Vê tabelas 2025 e isenções aplicáveis.`}
           url={`https://autogo.pt/simulador`}
           keywords={joinKeywords(SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS)}
           jsonLd={simuladorFaqJsonLd}

@@ -66,7 +66,9 @@ export default function Pedido() {
       <Head>
         <title>Encomendar viatura importada | AutoGo.pt</title>
         <meta name="description" content="Peça a importação da sua próxima viatura com a AutoGo.pt. Preencha o formulário de pedido e tratamos da pesquisa, compra e legalização por si." />
-        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS)} />
+        {/* Robots directives for indexing and rich previews */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       </Head>
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div

@@ -7,6 +7,8 @@ export default function CookiePolicy() {
       <Head>
         <title>Política de Cookies | Autogo</title>
         <meta name="description" content="Política de Cookies da Autogo" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       </Head>
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "2rem" }}>
         <h1

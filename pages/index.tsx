@@ -182,12 +182,13 @@ export default function Home({ blogArticles }) {
       <MainLayout>
         {/* Add your content here */}
         <Seo
-          title="Viaturas importadas e Simulador ISV | AutoGo.pt"
-          description="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal com apoio completo."
+          title="Importar Carro para Portugal | AutoGo — Legalização e ISV sem Stress"
+          description="Tratamos de tudo: compra, transporte, inspeção tipo B, homologação IMT e matrícula. Calcula o ISV e importa com segurança."
           url="https://autogo.pt/"
           image="https://autogo.pt/images/auto-logo.png"
           keywords={seoKeywords}
           jsonLd={homeFaqJsonLd}
+          robots="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
 
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}

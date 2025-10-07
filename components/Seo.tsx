@@ -10,18 +10,24 @@ type SeoProps = {
   keywords?: string;
   twitterCard?: string;
   jsonLd?: any; // optional structured data object or array
+  robots?: string; // optional override for robots/googlebot meta
 };
 
-export default function Seo({ title, description, url, image, keywords, twitterCard = 'summary_large_image', jsonLd }: SeoProps) {
+export default function Seo({ title, description, url, image, keywords, twitterCard = 'summary_large_image', jsonLd, robots }: SeoProps) {
   const finalKeywords = keywords || joinKeywords(SITE_WIDE_KEYWORDS);
   const finalImage = image || 'https://autogo.pt/images/auto-logo.png';
   const finalUrl = url || 'https://autogo.pt/';
+  const defaultRobots = 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+  const robotsContent = robots || defaultRobots;
 
   return (
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={finalKeywords} />
+      {/* Robots directives: encourage indexing, allow large image previews and unlimited snippets/video previews */}
+      <meta name="robots" content={robotsContent} />
+      <meta name="googlebot" content={robotsContent} />
 
       {/* Canonical */}
       <link rel="canonical" href={finalUrl} />
