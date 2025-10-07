@@ -21759,5 +21759,124 @@
         "raw": "01/11/2021 18 km Olie € 0,00"
       }
     ]
+  },
+  {
+    "id": "6405230",
+    "make": "Volvo",
+    "model": "XC60 2.0 T6 PHEV Hybrid",
+    "year": 2021,
+    "slug": "volvo-xc60-2-0-t6-phev-hybrid-2021-6405230",
+    "price": 34700,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_000.jpg",
+    "description": "Volvo XC60 2.0 T6 PHEV Hybrid de 2021, com motor híbrido a gasolina/eléctrico de 1969 cc e 252 cv (185 kW). Equipado com caixa automática e tração integral 4WD, este SUV destaca-se pelo seu conforto e tecnologia avançada, incluindo teto panorâmico, faróis LED, sistema de navegação virtual, bancos em pele, KeylessGo, ar condicionado automático de duas zonas e sensores de chuva e luz. Segurança reforçada com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. Equipamento multimédia com Bluetooth, leitor de CD, interface MP3 e computador de bordo. Exterior com jantes de liga leve e pacote desportivo. Histórico de manutenção não disponível. Um veículo versátil, confortável e seguro, ideal para quem procura tecnologia e eficiência num SUV híbrido moderno.",
+    "mileage": 125830,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2.0",
+    "power": "252Hp",
+    "places": 5,
+    "unitNumber": "6405230",
+    "origin": "Belgium - HM Tongeren",
+    "firstRegistration": "22/06/2021",
+    "doors": null,
+    "fuel": "Hybrid (petrol / electric)",
+    "emissionClass": "Euro6",
+    "co2": "55",
+    "color": "Brown",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_093.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405230/photo_079.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruzeiro",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Rack de tejadilho",
+        "Sistema start-stop",
+        "Teto de abrir"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Bancos em pele"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Tração às quatro rodas",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
