@@ -20463,5 +20463,124 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6372941",
+    "make": "Renault",
+    "model": "Captur II 1.6i E-Tech Plug-in Hybrid",
+    "year": 2022,
+    "slug": "renault-captur-ii-2022-6372941",
+    "price": 17300,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_023.jpg",
+    "description": "O Renault Captur II 1.6i E-Tech Plug-in Hybrid de 2022 é um SUV compacto híbrido plug-in que combina eficiência e desempenho com um motor de 1333 CC e 140 cv (103 kW). Equipado com caixa manual, este modelo destaca-se pela sua tecnologia avançada, incluindo faróis LED, sistema de navegação, interior desportivo com bancos desportivos e acabamentos em pele, e um pacote de conforto que inclui ar condicionado automático a duas zonas, cruise control, sensores de luz e chuva, e sistema start-stop. A segurança é garantida com ABS, ESP, múltiplos airbags, pontos Isofix e imobilizador. O sistema multimédia inclui Bluetooth, leitor de CD, interface MP3 e computador de bordo. O exterior desportivo é complementado por jantes de liga leve e um pacote desportivo. O veículo apresenta uma cor preta elegante e um histórico de manutenção completo, garantindo uma condução segura e confortável. Um SUV versátil e moderno, ideal para quem procura tecnologia, conforto e estilo num só veículo.",
+    "mileage": 130430,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.3",
+    "power": "140cv",
+    "places": 5,
+    "unitNumber": "6232992",
+    "origin": "France - 2ndMove Marseille",
+    "firstRegistration": "2022-01-01",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "114",
+    "color": "Black",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6372941/photo_018.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Espelhos laterais elétricos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Volante em pele",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Descanso de braços dianteiro",
+        "Cadeira de criança Isofix",
+        "Apoios de cabeça traseiros",
+        "Banco traseiro rebatível"
+      ]
+    },
+    "maintenance": []
   }
 ]
