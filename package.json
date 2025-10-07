@@ -9,6 +9,7 @@
     "start": "next start",
     "generate-favicons": "node scripts/generate-favicons.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
+    "postbuild": "node scripts/generate-sitemap.js",
     "check:slugs": "node scripts/check-slugs.js",
     "predeploy": "node scripts/predeploy-check.js"
   },
