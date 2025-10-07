@@ -24132,5 +24132,233 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6299928",
+    "make": "Volkswagen",
+    "model": "Tiguan 2.0 TDI Carat Aut.",
+    "year": 2018,
+    "slug": "volkswagen-tiguan-2-0-tdi-carat-aut-2018-6299928",
+    "price": 22350,
+    "image": "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_045.jpg",
+    "description": "Volkswagen Tiguan 2.0 TDI Carat Automático de 2018, equipado com motor 2.0L Diesel, 150cv e caixa automática. Destaca-se pelo teto panorâmico, faróis LED Matrix, sistema de navegação Virtual Navi-Pro 9.2, bancos em pele com regulação elétrica e Keyless Go. Conforto assegurado com ar condicionado automático a duas zonas, bancos aquecidos, cruise control, sensores de luz e chuva, e volante multifunções. Segurança reforçada com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. Equipado com sistema multimédia Bluetooth, leitor CD, interface MP3 e computador de bordo. Exterior com jantes de liga leve e barras de tejadilho. Manutenção rigorosa com histórico detalhado, incluindo revisões e trocas de filtros recentes. Um SUV robusto e versátil, ideal para quem procura conforto, tecnologia e segurança num veículo usado em excelente estado.",
+    "mileage": 80635,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 7,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1968 CC",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "France - WAVRIN",
+    "firstRegistration": "2018-06-27",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "156 CO2",
+    "color": "Black",
+    "vin": "",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6299928/photo_074.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Bancos com memória",
+        "Sistema Start-stop",
+        "Teto de abrir"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "2 apoios de cabeça dianteiros com regulação em altura, 3 apoios",
+        "4 travões de disco, dos quais 2 ventilados",
+        "8 altifalantes",
+        "Apoio de braço central traseiro",
+        "Apoio de braço central dianteiro",
+        "Alerta cintos de segurança (5)",
+        "Alerta de pressão dos pneus",
+        "Antena",
+        "Antipatinagem",
+        "Assistência à travagem de emergência"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Vidange caixa de velocidades",
+        "price": 0,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Vidange boite de vitesse € 0,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Vidange caixa de velocidades",
+        "price": 1,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Vidange boite de vitesse € 1,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Revisão",
+        "price": 3,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Révision € 3,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Filtres € 1,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Vidange caixa de velocidades",
+        "price": 6,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Vidange boite de vitesse € 6,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Vidange caixa de velocidades",
+        "price": 3,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Vidange boite de vitesse € 3,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Vidange líquido de travões",
+        "price": 1,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Filtres € 1,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Diversos trabalhos de carroçaria",
+        "price": 0.5,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Divers Carrosserie € 0,50"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Balai de limpa para-brisas",
+        "price": 0.2,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Balai essuie-glace € 0,20"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 71136,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Recarga de ar condicionado",
+        "price": 0.7,
+        "raw": "09/07/2024 71136 km CHARDON AUTOMOBILES Recharge climatisation € 0,70"
+      },
+      {
+        "date": "29/12/2023",
+        "km": 66419,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Nível AdBlue",
+        "price": 10,
+        "raw": "29/12/2023 66419 km CHARDON AUTOMOBILES NIVEAU AD BLUE € 10,00"
+      },
+      {
+        "date": "20/07/2023",
+        "km": 61564,
+        "shop": "CHARDON AUTOMOBILES",
+        "description": "Kit distribuição / Correia / galets",
+        "price": 1,
+        "raw": "20/07/2023 61564 km CHARDON AUTOMOBILES Kit distribution / Courroie /galets € 1,00"
+      }
+    ]
   }
 ]
