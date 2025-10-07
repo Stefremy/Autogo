@@ -5,40 +5,21 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import matter from "gray-matter";
 import Link from "next/link";
-import Head from "next/head";
-
 import Layout from "../components/MainLayout";
+import Seo from "../components/Seo";
 import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Blog({ posts }) {
   const { t } = useTranslation("common");
+  const keywords = joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS);
   return (
     <Layout>
-      <Head>
-        <title>
-          Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus,
-          BMW, Audi, Mercedes, Peugeot
-        </title>
-        <meta
-          name="description"
-          content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal."
-        />
-        <meta name="keywords" content={joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS)} />
-        <meta
-          property="og:title"
-          content="Blog AutoGo.pt - Dicas e notícias sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot"
-        />
-        <meta
-          property="og:description"
-          content="Dicas, notícias e reviews sobre carros importados europeus, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën e outros modelos populares à venda em Portugal."
-        />
-        <meta property="og:url" content="https://autogo.pt/blog" />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:image"
-          content="https://autogo.pt/images/auto-logo.png"
-        />
-      </Head>
+      <Seo
+        title="Blog AutoGo.pt — Notícias e reviews sobre carros importados"
+        description="Blog AutoGo.pt com notícias, reviews e guias sobre carros importados europeus. Saiba como escolher, legalizar e negociar a sua próxima viatura em Portugal."
+        url="https://autogo.pt/blog"
+        keywords={keywords}
+      />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"

@@ -12,7 +12,7 @@ import CarCard from "../components/CarCard";
 import PremiumCarCard from "../components/PremiumCarCard";
 import React, { useState, useRef, useEffect } from "react";
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
-import Seo from '../components/Seo';
+import Seo from "../components/Seo";
 
 export async function getServerSideProps({ locale }) {
   // Fetch blog articles from markdown files
@@ -183,7 +183,7 @@ export default function Home({ blogArticles }) {
         {/* Add your content here */}
         <Seo
           title="Viaturas importadas e Simulador ISV | AutoGo.pt"
-          description="AutoGo.pt — Simulador ISV e viaturas importadas: calcule impostos, compare preços e encontre carros usados e importados em Portugal com apoio completo."
+          description="AutoGo.pt — simulador ISV e importação de viaturas. Calcule impostos, compare preços e encontre carros europeus com apoio completo em Portugal."
           url="https://autogo.pt/"
           image="https://autogo.pt/images/auto-logo.png"
           keywords={seoKeywords}

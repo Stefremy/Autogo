@@ -3,8 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
 import ContactForm from "../components/ContactForm";
-import Head from "next/head";
-import Seo from '../components/Seo';
+import Seo from "../components/Seo";
 import { SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Contacto() {

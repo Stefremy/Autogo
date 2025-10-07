@@ -9,10 +9,20 @@ type SeoProps = {
   image?: string;
   keywords?: string;
   twitterCard?: string;
+  ogType?: string;
   jsonLd?: any; // optional structured data object or array
 };
 
-export default function Seo({ title, description, url, image, keywords, twitterCard = 'summary_large_image', jsonLd }: SeoProps) {
+export default function Seo({
+  title,
+  description,
+  url,
+  image,
+  keywords,
+  twitterCard = 'summary_large_image',
+  ogType = 'website',
+  jsonLd,
+}: SeoProps) {
   const finalKeywords = keywords || joinKeywords(SITE_WIDE_KEYWORDS);
   const finalImage = image || 'https://autogo.pt/images/auto-logo.png';
   const finalUrl = url || 'https://autogo.pt/';
@@ -21,6 +31,7 @@ export default function Seo({ title, description, url, image, keywords, twitterC
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="robots" content="index,follow" />
       <meta name="keywords" content={finalKeywords} />
 
       {/* Canonical */}
@@ -31,7 +42,7 @@ export default function Seo({ title, description, url, image, keywords, twitterC
       <meta property="og:description" content={description} />
       <meta property="og:url" content={finalUrl} />
       <meta property="og:image" content={finalImage} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
 
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
