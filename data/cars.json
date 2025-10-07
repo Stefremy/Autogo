@@ -16706,5 +16706,781 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6411402",
+    "make": "Peugeot",
+    "model": "3008",
+    "year": 2019,
+    "slug": "peugeot-3008-2019-6411402",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_033.jpg",
+    "description": "O Peugeot 3008 1.5 BlueHDi GT-Line Automático de 2019 é um SUV compacto que combina design moderno com tecnologia avançada. Equipado com motor 1.5 BlueHDi de 1199 cc, oferece uma potência eficiente e baixo consumo, aliado a uma caixa manual de 6 velocidades. Destaca-se pelo teto panorâmico, faróis LED-Xenon, sistema I-Cockpit, som Focal, navegação integrada, interior em pele desportiva e funcionalidades como KeylessGo, câmara traseira e sensores de estacionamento (PDC). O veículo encontra-se em excelente estado, com histórico de manutenção detalhado realizado em oficinas autorizadas Peugeot, incluindo revisões, substituição de filtros, velas, balaios de limpa-vidros e controlo técnico. Ideal para quem procura conforto, segurança e performance num carro versátil e elegante.",
+    "mileage": 125405,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Small Car",
+    "engineSize": "1.5",
+    "power": null,
+    "places": 5,
+    "unitNumber": "",
+    "origin": "France - CERTINES",
+    "firstRegistration": "29/04/2019",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": null,
+    "vin": "VR3UPHNKKLT108328",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340848/photo_048.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED-Xenon",
+        "Som Focal"
+      ],
+      "conforto": [
+        "KeylessGo",
+        "Climatização automática",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Airbags",
+        "ABS"
+      ],
+      "multimedia": [
+        "Navegação integrada",
+        "I-Cockpit"
+      ],
+      "interior": [
+        "Bancos em pele desportiva",
+        "Ambiente de iluminação interior"
+      ],
+      "exterior": [
+        "Jantes desportivas",
+        "Espelhos retrovisores elétricos"
+      ],
+      "outras_opcoes": [
+        "Sistema Start-Stop"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 0.1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Bougies",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Bougies € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 0.1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Divers Moteur",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND divers Moteur € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Niveaux",
+        "price": 0.05,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Niveaux € 0,05"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Bougies",
+        "price": 3,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Bougies € 3,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 0.3,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Révision € 0,30"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Divers Moteur",
+        "price": 0.5,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND divers Moteur € 0,50"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Divers Moteur",
+        "price": 0,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND divers Moteur € 0,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Bougies",
+        "price": 0.2,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Bougies € 0,20"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Divers Moteur",
+        "price": 0.8,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND divers Moteur € 0,80"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Divers Moteur",
+        "price": 0.25,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND divers Moteur € 0,25"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 3.5,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Révision € 3,50"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 0.1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Filtres € 0,10"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 0.1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Filtres € 0,10"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "15/01/2025",
+        "km": 116258,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Niveaux",
+        "price": 1,
+        "raw": "15/01/2025 116258 km PEUGEOT CLERMONT FERRAND Niveaux € 1,00"
+      },
+      {
+        "date": "19/12/2024",
+        "km": 113945,
+        "shop": "CTA63 LE BREZET",
+        "description": "Controles Técnicos",
+        "price": 1,
+        "raw": "19/12/2024 113945 km CTA63 LE BREZET ContRôles Techniques € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Courroie accessoire",
+        "price": 0.2,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Courroie accessoire € 0,20"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 3.5,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Révision € 3,50"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Disques AV",
+        "price": 2,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Disques AV € 2,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Vidange liquide frein",
+        "price": 0.4,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Vidange liquide frein € 0,40"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Diagnostic",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Diagnostic € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Kit distribution / Courroie /galets",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Kit distribution / Courroie /galets € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Vidange liquide frein",
+        "price": 2,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Vidange liquide frein € 2,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Disques AV",
+        "price": 0.5,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Disques AV € 0,50"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 0.3,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Révision € 0,30"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Disques AV",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Disques AV € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Niveaux",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Niveaux € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Disques AV",
+        "price": 4,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Disques AV € 4,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Courroie accessoire",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Courroie accessoire € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Diagnostic",
+        "price": 0.1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Diagnostic € 0,10"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Disques AV",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Disques AV € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Courroie accessoire",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Courroie accessoire € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Kit distribution / Courroie /galets",
+        "price": 1.9,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Kit distribution / Courroie /galets € 1,90"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Vidange liquide frein",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 0.1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Filtres € 0,10"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Kit distribution / Courroie /galets",
+        "price": 1,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Kit distribution / Courroie /galets € 1,00"
+      },
+      {
+        "date": "06/06/2024",
+        "km": 100289,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Niveaux",
+        "price": 0.05,
+        "raw": "06/06/2024 100289 km PEUGEOT CLERMONT FERRAND Niveaux € 0,05"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Bougies",
+        "price": 0.2,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Bougies € 0,20"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 3.5,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Révision € 3,50"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 0.1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Filtres € 0,10"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Bougies",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Bougies € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Bougies",
+        "price": 3,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Bougies € 3,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 0.3,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Révision € 0,30"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 0.1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 0.1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 0.1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Filtres € 0,10"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 83418,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "08/12/2023 83418 km PEUGEOT CLERMONT FERRAND Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "13/03/2023",
+        "km": 61979,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Vidange liquide frein",
+        "price": 2,
+        "raw": "13/03/2023 61979 km PEUGEOT CLERMONT FERRAND Vidange liquide frein € 2,00"
+      },
+      {
+        "date": "13/03/2023",
+        "km": 61979,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "13/03/2023 61979 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "13/03/2023",
+        "km": 61979,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Filtres",
+        "price": 1,
+        "raw": "13/03/2023 61979 km PEUGEOT CLERMONT FERRAND Filtres € 1,00"
+      },
+      {
+        "date": "13/03/2023",
+        "km": 61979,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Vidange liquide frein",
+        "price": 1,
+        "raw": "13/03/2023 61979 km PEUGEOT CLERMONT FERRAND Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "13/03/2023",
+        "km": 61979,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Révision",
+        "price": 1,
+        "raw": "13/03/2023 61979 km PEUGEOT CLERMONT FERRAND Révision € 1,00"
+      },
+      {
+        "date": "13/03/2023",
+        "km": 61979,
+        "shop": "PEUGEOT CLERMONT FERRAND",
+        "description": "Vidange liquide frein",
+        "price": 0.4,
+        "raw": "13/03/2023 61979 km PEUGEOT CLERMONT FERRAND Vidange liquide frein € 0,40"
+      }
+    ]
   }
 ]
