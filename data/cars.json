@@ -19742,5 +19742,123 @@
         "raw": "01/03/2023 de 20.000 kilometer beurt € 0,00"
       }
     ]
+  },
+  {
+    "id": "6101533",
+    "make": "Porsche",
+    "model": "911 3.0i Carrera T",
+    "year": 2018,
+    "slug": "porsche-911-3-0i-carrera-t-2018-6101533",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_027.jpg",
+    "description": "Este Porsche 911 3.0i Carrera T de 2018 apresenta um motor potente de 2981 CC com 370 cavalos (272 kW) e caixa automática, proporcionando uma condução desportiva e confortável. Equipado com faróis LED-Xenon, teto panorâmico, sistema Sport-Chrono, sistema de navegação, sistema de som Bose, bancos desportivos em pele e câmara traseira. O veículo conta com ar condicionado automático de duas zonas, sensores de estacionamento (PDC) e múltiplas opções de conforto e segurança como ABS, ESP, airbags frontais e laterais, e pontos de ancoragem Isofix. A cor azul destaca o seu exterior desportivo com jantes de liga leve. O carro está em excelente estado, com histórico de manutenção completo e certificado Euro6, ideal para quem procura um coupé desportivo de alta performance com tecnologia avançada e conforto premium.",
+    "mileage": 89003,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 7,
+    "category": "Cabriolet / Roadster",
+    "engineSize": "3.0",
+    "power": "370 Hp",
+    "places": 2,
+    "unitNumber": "6086761",
+    "origin": "Belgium",
+    "firstRegistration": "12/07/2018",
+    "doors": 2,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "172",
+    "color": "Azul",
+    "vin": "",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6100001-6110000/6101533/photo_055.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruzeiro",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Volante em pele",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Tomada de corrente extra",
+        "Volante desportivo",
+        "Banco traseiro rebatível em duas partes"
+      ]
+    },
+    "maintenance": []
   }
 ]
