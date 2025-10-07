@@ -19121,5 +19121,114 @@
         "raw": "08/01/2024 29638 km DISTRIBUTION SERVICES AUTOMOBILES - DS Révision € 1,20"
       }
     ]
+  },
+  {
+    "id": "6086761",
+    "make": "Porsche",
+    "model": "Cayenne Coupe 3.0 E-Hybrid",
+    "year": 2022,
+    "slug": "porsche-cayenne-coupe-3-0-e-hybrid-2022-6086761",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_032.jpg",
+    "description": "O Porsche Cayenne Coupe 3.0 E-Hybrid de 2022 combina potência e tecnologia avançada com um motor híbrido de 3.0 litros e 460 cavalos, transmissão automática e um design desportivo. Equipado com faróis LED, sistema de navegação profissional, sistema de áudio de alta performance, interior desportivo com bancos desportivos em pele e teto panorâmico. Conforto garantido com ar condicionado automático de duas zonas, bancos aquecidos, controlo de velocidade de cruzeiro, sensores de luz e chuva, volante multifunções e sistema start-stop. Segurança reforçada com ABS, ESP, airbags frontais e laterais, sistema Isofix e imobilizador. Manutenção e inspeções regulares asseguram o excelente estado do veículo. Um SUV coupé de alta performance, ideal para quem procura luxo, tecnologia e desempenho num só automóvel.",
+    "mileage": 52000,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Sports Car / Coupe",
+    "engineSize": "2981 CC",
+    "power": "370 Hp 272 kW",
+    "places": 5,
+    "unitNumber": "106006",
+    "origin": "Belgium",
+    "firstRegistration": "2022-01-05",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "193 CO2",
+    "color": "Grey",
+    "vin": "6280333",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6080001-6090000/6086761/photo_027.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Sistema de áudio de alta performance",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
