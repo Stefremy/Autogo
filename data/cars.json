@@ -20920,5 +20920,107 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6323764",
+    "make": "Renault",
+    "model": "Grand Scenic 1.5 DCI Bose",
+    "year": 2018,
+    "slug": "renault-grand-scenic-2018-6323764",
+    "price": 16900,
+    "image": "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_001.jpg",
+    "description": "Renault Grand Scenic 1.5 DCI Bose de 2018, equipado com motor híbrido (gasolina/eléctrico) de 1598 CC e 140 cv (103 kW). Transmissão automática com 7 lugares, ideal para famílias que procuram conforto e tecnologia. Destaca-se pelos faróis LED-Xenon, sistema de navegação Navi-Pro, sistema de som Bose, KeylessGo, câmara traseira e sensores de estacionamento (PDC). Equipado com ar condicionado automático, cruise control, sensores de luz e chuva, volante multifunções, sistema start-stop e conectividade Bluetooth. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. Manutenção em dia, com histórico e livro de revisões presentes. Veículo proveniente de leasing, com garantia do odómetro e inspeção válida até 14/02/2026. Cor branca, interior em tecido, 5 portas e 5 lugares. Excelente estado geral, ideal para quem procura um carro versátil, seguro e confortável.",
+    "mileage": 125419,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 7,
+    "category": "Small Car",
+    "engineSize": "1.6",
+    "power": "140cv",
+    "places": 5,
+    "unitNumber": "6323764",
+    "origin": "France - CHILLY-MAZARIN 2, 91380 CHILLY-MAZARIN 2 (France)",
+    "firstRegistration": "30/01/2018",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / eléctrico)",
+    "emissionClass": "Euro6",
+    "co2": "99",
+    "color": "Branco",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6320001-6330000/6323764/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Assistência ao estacionamento traseiro",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Revestimento em tecido"
+      ],
+      "exterior": [],
+      "outras_opcoes": [
+        "Livro de revisões presente",
+        "Histórico de manutenção presente",
+        "Veículo proveniente de leasing",
+        "Garantia do odómetro",
+        "Data da inspeção válida até 14/02/2026",
+        "2 chaves disponíveis",
+        "Lado do condutor: Esquerdo"
+      ]
+    },
+    "maintenance": []
   }
 ]
