@@ -20102,5 +20102,120 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6360915",
+    "make": "Skoda",
+    "model": "Superb Combi 1.4 TSI SportLine Aut.",
+    "year": 2023,
+    "slug": "skoda-superb-combi-1-4-tsi-sportline-aut-2023-6360915",
+    "price": 20200,
+    "image": "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_039.jpg",
+    "description": "O Skoda Superb Combi 1.4 TSI SportLine Aut. de 2023 é um veículo familiar elegante e potente, equipado com motor 1.4 TSI de 1598 CC que produz 120 cv (88 kW), com transmissão automática e 5 lugares. Destaca-se pelo seu interior desportivo em couro e Alcantara, sistema de navegação avançado Navi-Pro, iluminação LED-Xenon e ambiente virtual. Entre os seus principais equipamentos estão os faróis LED, sistema de assistência ao estacionamento (PDC), câmara traseira, KeylessGo, ar condicionado automático de duas zonas, bancos desportivos com ajuste elétrico e memória, sensores de luz e chuva, e sistema start-stop. O carro apresenta uma cor azul metálica e está em excelente estado, com histórico de manutenção completo e inspeções regulares. Ideal para quem procura conforto, segurança e tecnologia num veículo versátil e espaçoso.",
+    "mileage": 5000,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 7,
+    "category": "Estate Car",
+    "engineSize": "1.6",
+    "power": "120cv",
+    "places": 5,
+    "unitNumber": "131028",
+    "origin": "Belgium",
+    "firstRegistration": "02/01/2023",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "157g/km",
+    "color": "Azul",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6360915/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Janelas elétricas",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Bancos com memória",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica"
+      ],
+      "outras_opcoes": [
+        "Porta-malas elétrico",
+        "Conectividade de fábrica",
+        "Opção áudio diferente (de fábrica)",
+        "Bancos ajustáveis eletricamente",
+        "Câmara de marcha-atrás",
+        "Chave principal",
+        "Chave reserva"
+      ]
+    },
+    "maintenance": []
   }
 ]
