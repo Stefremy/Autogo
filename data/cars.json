@@ -22645,5 +22645,497 @@
         "raw": "01/05/2021 24 km Balai d'essuie-glace AR/Balais d'essuie-glace AV/Révision"
       }
     ]
+  },
+  {
+    "id": "6249313",
+    "make": "Volkswagen",
+    "model": "Tiguan Allspace 2.0 TDI R-Line 7PL",
+    "year": 2021,
+    "slug": "volkswagen-tiguan-allspace-2021-6249313",
+    "price": 32250,
+    "image": "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_096.jpg",
+    "description": "Volkswagen Tiguan Allspace 2.0 TDI R-Line 7 lugares, ano 2021, com motor 1968 CC a Diesel, 150 cv (110 kW), caixa manual com 6 velocidades. Equipado com teto panorâmico, faróis LED Matrix, sistema de áudio de alta performance Dynaudio, navegação, interior e bancos desportivos, jantes de liga leve e sistema Keyless Go. Conforto garantido com ar condicionado automático de duas zonas, bancos aquecidos, sensores de estacionamento, sensores de luz e chuva, sistema start-stop, e volante multifunções. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. Manutenção rigorosa com histórico detalhado, incluindo inspeções periódicas, trocas de pneus e revisões em centros certificados. Um SUV espaçoso, confortável e seguro, ideal para famílias que procuram versatilidade e tecnologia num veículo moderno e elegante.",
+    "mileage": 87256,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1968 CC",
+    "power": "150 Hp 110 kW",
+    "places": 7,
+    "unitNumber": "",
+    "origin": "Belgium - Machelen",
+    "firstRegistration": "20/01/2021",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "127",
+    "color": "Silver",
+    "vin": "",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_096.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_094.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_093.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_098.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_107.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_108.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_099.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_103.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_104.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_105.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_106.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_101.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_102.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_109.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_112.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_110.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_111.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_100.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_097.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_126.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_125.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_119.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_124.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_123.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_122.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_120.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_121.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_117.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_118.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_113.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_114.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_115.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_116.jpg",
+      "https://ecarstrade.com/carsphotos/6240001-6250000/6249313/photo_091.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Bancos com memória",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Sistema de áudio de alta performance",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "18/03/2025",
+        "km": 94022,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 74,
+        "raw": "18/03/2025 94022 km FSC Fleet Service Center tire change summer/winter € 74,00"
+      },
+      {
+        "date": "18/03/2025",
+        "km": 94022,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 20,
+        "raw": "18/03/2025 94022 km FSC Fleet Service Center tire storage (LUX) € 20,00"
+      },
+      {
+        "date": "04/12/2024",
+        "km": 93182,
+        "shop": "FSC Fleet Service Center",
+        "description": "Verificação para inspeção técnica",
+        "price": 61.07,
+        "raw": "04/12/2024 93182 km FSC Fleet Service Center check up technical inspection € 61,07"
+      },
+      {
+        "date": "04/12/2024",
+        "km": 93182,
+        "shop": "FSC Fleet Service Center",
+        "description": "Bateria do carro",
+        "price": 238.53,
+        "raw": "04/12/2024 93182 km FSC Fleet Service Center car battery € 238,53"
+      },
+      {
+        "date": "04/12/2024",
+        "km": 93182,
+        "shop": "FSC Fleet Service Center",
+        "description": "Balanceamento das rodas (centro de pneus)",
+        "price": 0,
+        "raw": "04/12/2024 93182 km FSC Fleet Service Center wheel balancing (tire center) € 0,00"
+      },
+      {
+        "date": "04/12/2024",
+        "km": 93182,
+        "shop": "FSC Fleet Service Center",
+        "description": "Pneus de inverno",
+        "price": 445.71,
+        "raw": "04/12/2024 93182 km FSC Fleet Service Center winter tires € 445,71"
+      },
+      {
+        "date": "04/12/2024",
+        "km": 93182,
+        "shop": "FSC Fleet Service Center",
+        "description": "Inspeção 0103 com troca de óleo",
+        "price": 239.37,
+        "raw": "04/12/2024 93182 km FSC Fleet Service Center 0103 Inspection with oil change € 239,37"
+      },
+      {
+        "date": "15/10/2024",
+        "km": 89852,
+        "shop": "FSC Fleet Service Center",
+        "description": "Pneus de inverno",
+        "price": 733,
+        "raw": "15/10/2024 89852 km FSC Fleet Service Center winter tires € 733,00"
+      },
+      {
+        "date": "15/10/2024",
+        "km": 89852,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 20,
+        "raw": "15/10/2024 89852 km FSC Fleet Service Center tire storage (LUX) € 20,00"
+      },
+      {
+        "date": "15/10/2024",
+        "km": 89852,
+        "shop": "FSC Fleet Service Center",
+        "description": "Balanceamento das rodas (centro de pneus)",
+        "price": 32.52,
+        "raw": "15/10/2024 89852 km FSC Fleet Service Center wheel balancing (tire center) € 32,52"
+      },
+      {
+        "date": "15/10/2024",
+        "km": 89852,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 35,
+        "raw": "15/10/2024 89852 km FSC Fleet Service Center tire change summer/winter € 35,00"
+      },
+      {
+        "date": "25/03/2024",
+        "km": 76951,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 70,
+        "raw": "25/03/2024 76951 km FSC Fleet Service Center tire change summer/winter € 70,00"
+      },
+      {
+        "date": "25/03/2024",
+        "km": 76951,
+        "shop": "FSC Fleet Service Center",
+        "description": "Discos e pastilhas de travão dianteiros",
+        "price": 542,
+        "raw": "25/03/2024 76951 km FSC Fleet Service Center brake discs and shoes front € 542,00"
+      },
+      {
+        "date": "25/03/2024",
+        "km": 76951,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 20,
+        "raw": "25/03/2024 76951 km FSC Fleet Service Center tire storage (LUX) € 20,00"
+      },
+      {
+        "date": "25/03/2024",
+        "km": 76951,
+        "shop": "FSC Fleet Service Center",
+        "description": "Discos e pastilhas de travão traseiros",
+        "price": 503.75,
+        "raw": "25/03/2024 76951 km FSC Fleet Service Center brake discs and shoes rear € 503,75"
+      },
+      {
+        "date": "05/01/2024",
+        "km": 60150,
+        "shop": "DMC Zaventem",
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 49.2,
+        "raw": "05/01/2024 60150 km DMC Zaventem wiper blade front € 49,20"
+      },
+      {
+        "date": "05/01/2024",
+        "km": 60150,
+        "shop": "DMC Zaventem",
+        "description": "Peças pequenas e eco",
+        "price": 17.61,
+        "raw": "05/01/2024 60150 km DMC Zaventem Small parts and eco € 17,61"
+      },
+      {
+        "date": "05/01/2024",
+        "km": 60150,
+        "shop": "DMC Zaventem",
+        "description": "Palheta limpa para-brisas traseira",
+        "price": 20.15,
+        "raw": "05/01/2024 60150 km DMC Zaventem wiper blade rear € 20,15"
+      },
+      {
+        "date": "05/01/2024",
+        "km": 60150,
+        "shop": "DMC Zaventem",
+        "description": "Líquido lava-vidros",
+        "price": 3.57,
+        "raw": "05/01/2024 60150 km DMC Zaventem windscreen washer fluid € 3,57"
+      },
+      {
+        "date": "05/01/2024",
+        "km": 60150,
+        "shop": "DMC Zaventem",
+        "description": "Tubo/mangueira de drenagem do teto solar",
+        "price": 10.28,
+        "raw": "05/01/2024 60150 km DMC Zaventem sunroof draining tube/hose € 10,28"
+      },
+      {
+        "date": "05/01/2024",
+        "km": 60150,
+        "shop": "DMC Zaventem",
+        "description": "Manutenção 0109 com troca de óleo",
+        "price": 291.51,
+        "raw": "05/01/2024 60150 km DMC Zaventem 0109 - Maintenance with oil change € 291,51"
+      },
+      {
+        "date": "05/01/2024",
+        "km": 60150,
+        "shop": "DMC Zaventem",
+        "description": "Fluido de travões",
+        "price": 92.26,
+        "raw": "05/01/2024 60150 km DMC Zaventem brake fluid € 92,26"
+      },
+      {
+        "date": "30/11/2023",
+        "km": 56518,
+        "shop": "VAB",
+        "description": "Reparação de pneu (centro de pneus)",
+        "price": 8.27,
+        "raw": "30/11/2023 56518 km VAB tyre repair (tire center) € 8,27"
+      },
+      {
+        "date": "10/11/2023",
+        "km": 56518,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 70,
+        "raw": "10/11/2023 56518 km FSC Fleet Service Center tire change summer/winter € 70,00"
+      },
+      {
+        "date": "10/11/2023",
+        "km": 56518,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 10,
+        "raw": "10/11/2023 56518 km FSC Fleet Service Center tire storage (LUX) € 10,00"
+      },
+      {
+        "date": "24/03/2023",
+        "km": 43979,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 20,
+        "raw": "24/03/2023 43979 km FSC Fleet Service Center tire storage (LUX) € 20,00"
+      },
+      {
+        "date": "24/03/2023",
+        "km": 43979,
+        "shop": "FSC Fleet Service Center",
+        "description": "Verificação de níveis",
+        "price": 41.32,
+        "raw": "24/03/2023 43979 km FSC Fleet Service Center check up levels € 41,32"
+      },
+      {
+        "date": "24/03/2023",
+        "km": 43979,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 70,
+        "raw": "24/03/2023 43979 km FSC Fleet Service Center tire change summer/winter € 70,00"
+      },
+      {
+        "date": "12/12/2022",
+        "km": 33056,
+        "shop": "DMC Zaventem",
+        "description": "Peças pequenas e eco",
+        "price": 16.04,
+        "raw": "12/12/2022 33056 km DMC Zaventem Small parts and eco € 16,04"
+      },
+      {
+        "date": "12/12/2022",
+        "km": 33056,
+        "shop": "DMC Zaventem",
+        "description": "Filtro de ar da cabine",
+        "price": 44.93,
+        "raw": "12/12/2022 33056 km DMC Zaventem cabin air filter € 44,93"
+      },
+      {
+        "date": "12/12/2022",
+        "km": 33056,
+        "shop": "DMC Zaventem",
+        "description": "Líquido lava-vidros",
+        "price": 3.2,
+        "raw": "12/12/2022 33056 km DMC Zaventem windscreen washer fluid € 3,20"
+      },
+      {
+        "date": "12/12/2022",
+        "km": 33056,
+        "shop": "DMC Zaventem",
+        "description": "Tubo/mangueira de drenagem do teto solar",
+        "price": 9.79,
+        "raw": "12/12/2022 33056 km DMC Zaventem sunroof draining tube/hose € 9,79"
+      },
+      {
+        "date": "12/12/2022",
+        "km": 33056,
+        "shop": "DMC Zaventem",
+        "description": "Líquido de refrigeração",
+        "price": 1.72,
+        "raw": "12/12/2022 33056 km DMC Zaventem cooling water liquid € 1,72"
+      },
+      {
+        "date": "12/12/2022",
+        "km": 33056,
+        "shop": "DMC Zaventem",
+        "description": "Inspeção 0103 com troca de óleo",
+        "price": 296.15,
+        "raw": "12/12/2022 33056 km DMC Zaventem 0103 Inspection with oil change € 296,15"
+      },
+      {
+        "date": "04/10/2022",
+        "km": 30687,
+        "shop": "FSC Fleet Service Center",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 20,
+        "raw": "04/10/2022 30687 km FSC Fleet Service Center tire storage (LUX) € 20,00"
+      },
+      {
+        "date": "04/10/2022",
+        "km": 30687,
+        "shop": "FSC Fleet Service Center",
+        "description": "Troca de pneus verão/inverno",
+        "price": 70,
+        "raw": "04/10/2022 30687 km FSC Fleet Service Center tire change summer/winter € 70,00"
+      },
+      {
+        "date": "04/10/2022",
+        "km": 30687,
+        "shop": "FSC Fleet Service Center",
+        "description": "Reabastecimento de AdBlue (exceto Elolys)",
+        "price": 13.14,
+        "raw": "04/10/2022 30687 km FSC Fleet Service Center AdBlue refilling (except Elolys) € 13,14"
+      },
+      {
+        "date": "09/03/2022",
+        "km": 21954,
+        "shop": "FCS Fleet Service Center Mobie",
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 41.23,
+        "raw": "09/03/2022 21954 km FCS Fleet Service Center Mobie wiper blade front € 41,23"
+      },
+      {
+        "date": "09/03/2022",
+        "km": 21954,
+        "shop": "FCS Fleet Service Center Mobie",
+        "description": "Troca de pneus verão/inverno",
+        "price": 64,
+        "raw": "09/03/2022 21954 km FCS Fleet Service Center Mobie tire change summer/winter € 64,00"
+      },
+      {
+        "date": "09/03/2022",
+        "km": 21954,
+        "shop": "FCS Fleet Service Center Mobie",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 14,
+        "raw": "09/03/2022 21954 km FCS Fleet Service Center Mobie tire storage (LUX) € 14,00"
+      },
+      {
+        "date": "31/12/2021",
+        "km": 12564,
+        "shop": "VAB",
+        "description": "Reparação de pneu (centro de pneus)",
+        "price": 4.13,
+        "raw": "31/12/2021 12564 km VAB tyre repair (tire center) € 4,13"
+      },
+      {
+        "date": "14/10/2021",
+        "km": 12564,
+        "shop": "FCS Fleet Service Center Mobie",
+        "description": "Armazenamento de pneus (LUX)",
+        "price": 14,
+        "raw": "14/10/2021 12564 km FCS Fleet Service Center Mobie tire storage (LUX) € 14,00"
+      },
+      {
+        "date": "14/10/2021",
+        "km": 12564,
+        "shop": "FCS Fleet Service Center Mobie",
+        "description": "Pneus de inverno",
+        "price": 885,
+        "raw": "14/10/2021 12564 km FCS Fleet Service Center Mobie winter tires € 885,00"
+      },
+      {
+        "date": "14/10/2021",
+        "km": 12564,
+        "shop": "FCS Fleet Service Center Mobie",
+        "description": "Reabastecimento de AdBlue (exceto Elolys)",
+        "price": 6.58,
+        "raw": "14/10/2021 12564 km FCS Fleet Service Center Mobie AdBlue refilling (except Elolys) € 6,58"
+      },
+      {
+        "date": "14/10/2021",
+        "km": 12564,
+        "shop": "FCS Fleet Service Center Mobie",
+        "description": "Troca de pneus verão/inverno",
+        "price": 0.02,
+        "raw": "14/10/2021 12564 km FCS Fleet Service Center Mobie tire change summer/winter € 0,02"
+      },
+      {
+        "date": "14/10/2021",
+        "km": 12564,
+        "shop": "FCS Fleet Service Center Mobie",
+        "description": "Balanceamento das rodas (centro de pneus)",
+        "price": 26.72,
+        "raw": "14/10/2021 12564 km FCS Fleet Service Center Mobie wheel balancing (tire center) € 26,72"
+      }
+    ]
   }
 ]
