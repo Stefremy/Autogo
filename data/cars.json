@@ -16626,5 +16626,85 @@
         "raw": "10/05/2022 30017 km AUTO SONAKA SAINT DOULCHARD Révision € 1,00"
       }
     ]
+  },
+  {
+    "id": "6397603",
+    "make": "Peugeot",
+    "model": "3008",
+    "year": 2020,
+    "slug": "peugeot-3008-2020-6397603",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_002.jpg",
+    "description": "O Peugeot 3008 1.5 BlueHDi GT-Line de 2020 é um SUV robusto e elegante, equipado com motor diesel de 1499 CC que oferece uma potência eficiente e um consumo económico. Destaca-se pelo seu design moderno com faróis LED-Xenon, teto panorâmico e interior desportivo em pele, incluindo o inovador I-Cockpit com iluminação ambiente e sistema de navegação. A transmissão manual de 6 velocidades proporciona uma condução dinâmica e controlada. Este modelo conta com funcionalidades avançadas como KeylessGo, câmara traseira, sensores de estacionamento (PDC) e ar condicionado (Klima), garantindo conforto e segurança. Com uma quilometragem de 101444 km, apresenta uma manutenção adequada e está em excelente estado geral. O Peugeot 3008 é uma escolha ideal para quem procura versatilidade, tecnologia e estilo num SUV compacto.",
+    "mileage": 101444,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.5",
+    "power": null,
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium - ASSE III",
+    "firstRegistration": "12/08/2020",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "138",
+    "color": null,
+    "vin": "VF3MCYHZJLS097381",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_033.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED-Xenon"
+      ],
+      "conforto": [
+        "Ar condicionado",
+        "KeylessGo",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Airbags"
+      ],
+      "multimedia": [
+        "Sistema de navegação",
+        "I-Cockpit"
+      ],
+      "interior": [
+        "Bancos em pele desportivos",
+        "Iluminação ambiente"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
