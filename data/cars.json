@@ -23137,5 +23137,114 @@
         "raw": "14/10/2021 12564 km FCS Fleet Service Center Mobie wheel balancing (tire center) € 26,72"
       }
     ]
+  },
+  {
+    "id": "6407734",
+    "make": "Volkswagen",
+    "model": "Golf",
+    "year": 2020,
+    "slug": "volkswagen-golf-2020-6407734",
+    "price": 11850,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_016.jpg",
+    "description": "Volkswagen Golf 1.6 TDi Comfortline de 2020, equipado com motor de 999 CC a gasolina, potência de 110 Hp (81 kW), e caixa manual de 6 velocidades. Este modelo destaca-se pelo seu design desportivo e conforto superior, incluindo ar condicionado automático, sistema de navegação, câmara traseira, sensores de estacionamento (PDC), e sistema start-stop para eficiência energética. Equipado com faróis LED, sistema de reconhecimento de sinais de trânsito, e múltiplos airbags para segurança reforçada. Interior com volante em pele e sistema multimédia com Bluetooth, leitor de CD e interface MP3. Manutenção em dia, com histórico completo disponível. Um veículo ideal para quem procura conforto, segurança e tecnologia num sedan compacto e elegante.",
+    "mileage": 208169,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "saloon",
+    "engineSize": "999 CC",
+    "power": "110 Hp 81 kW",
+    "places": 5,
+    "unitNumber": "6407734",
+    "origin": "Belgium",
+    "firstRegistration": "21/08/2020",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Grey",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6407734/photo_026.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system",
+        "Sports exterior"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Electric side mirror",
+        "Electric windows",
+        "Keyless go",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Rain sensor",
+        "Start-stop system",
+        "Comfort driver seat"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix anchor points",
+        "LED headlights"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "Hands-free kit",
+        "MP3 interface",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [
+        "Leather steering wheel"
+      ],
+      "exterior": [
+        "Alloy wheels",
+        "Sports exterior",
+        "Sports package"
+      ],
+      "outras_opcoes": [
+        "3-point seatbelt rear, middle",
+        "Windows: other",
+        "1-layer paint",
+        "Interior decoration: other",
+        "Exterior lighting: other",
+        "Additional gauges",
+        "Automatic headlight elevation",
+        "Traffic sign recognition",
+        "Board entertainment: other acce",
+        "Floor mat",
+        "Interior: other",
+        "Tele aid"
+      ]
+    },
+    "maintenance": []
   }
 ]
