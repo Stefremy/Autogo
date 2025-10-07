@@ -105,5 +105,109 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6400526",
+    "make": "Skoda",
+    "model": "Kamiq",
+    "year": 2024,
+    "slug": "skoda-kamiq-2024-6400526",
+    "price": 20100,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_000.jpg",
+    "description": "O Skoda Kamiq 1.0 TSI de 2024 é um SUV compacto que combina eficiência e tecnologia avançada. Equipado com motor 999 CC a gasolina, produz 116 cavalos (85 kW) e apresenta uma caixa manual. Destaca-se pelo seu sistema LED de faróis, display virtual, ar condicionado automático de duas zonas, sensores de estacionamento e sistema de navegação integrado. O veículo oferece conforto com bancos aquecidos, volante multifunções e sistema start-stop para economia de combustível. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, sistema Isofix e imobilizador. A manutenção está atualizada e o carro encontra-se em excelente estado, ideal para quem procura um SUV moderno, prático e com baixo consumo. País de origem: Bélgica.",
+    "mileage": 2481,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "999 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2024-11-15",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "124",
+    "color": "Black",
+    "vin": "",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400526/photo_027.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Heated seats",
+        "Electric windows",
+        "Keyless go",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Rain sensor",
+        "Roof rack",
+        "Start-stop system"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix anchor points",
+        "LED headlights"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "Hands-free kit",
+        "MP3 interface",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Alloy wheels",
+        "Metallic color"
+      ],
+      "outras_opcoes": [
+        "Connectiviteit",
+        "Audio optie_anders",
+        "Achteruitrijcamera",
+        "Hoofdsleutel",
+        "Reservesleutel",
+        "Krik",
+        "Reservewiel",
+        "Instructieboekje",
+        "Onderhoudsboekje (digitaal)",
+        "Hoedenplank/rolhoes",
+        "Traction control"
+      ]
+    },
+    "maintenance": []
   }
 ]
