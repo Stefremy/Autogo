@@ -1630,6 +1630,7 @@ export default function CarDetail() {
               : "Carro importado europeu à venda em AutoGo.pt"
           }
         />
+        <meta name="robots" content="index,follow" />
         <meta name="keywords" content={detailKeywords} />
         <link rel="canonical" href={`https://autogo.pt/cars/${car.slug || car.id}`} />
         <meta name="twitter:card" content="summary_large_image" />

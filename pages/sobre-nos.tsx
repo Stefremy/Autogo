@@ -1,16 +1,15 @@
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
-import Head from "next/head";
-import { COMO_FUNCIONA_KEYWORDS, ABOUT_KEYWORDS, joinKeywords, SITE_WIDE_KEYWORDS } from "../utils/seoKeywords";
-import Seo from '../components/Seo';
+import { ABOUT_KEYWORDS, joinKeywords, SITE_WIDE_KEYWORDS } from "../utils/seoKeywords";
+import Seo from "../components/Seo";
 
 export default function SobreNos() {
   return (
     <MainLayout>
       <Seo
         title={`Sobre a AutoGo.pt | Importação de viaturas`}
-        description={`Conheça a AutoGo.pt — especialistas na importação e legalização de viaturas europeias para Portugal. Serviço completo: pesquisa, compra, transporte e legalização.`}
+        description={`AutoGo.pt importa e legaliza viaturas europeias para Portugal. Conheça a equipa e o serviço completo: pesquisa, compra, transporte e matrícula.`}
         url={`https://autogo.pt/sobre-nos`}
         keywords={joinKeywords(SITE_WIDE_KEYWORDS, ABOUT_KEYWORDS)}
       />

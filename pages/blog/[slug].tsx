@@ -9,6 +9,33 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import Link from "next/link";
 import Layout from "../../components/MainLayout";
+import Seo from "../../components/Seo";
+import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../../utils/seoKeywords";
+
+const MAX_DESCRIPTION_LENGTH = 155;
+
+function stripMarkdown(source: string): string {
+  return source
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/`[^`]*`/g, " ")
+    .replace(/!\[[^\]]*]\([^)]*\)/g, " ")
+    .replace(/\[[^\]]*]\(([^)]*)\)/g, "$1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/[#>*_~\-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function buildMetaDescription(content: string, fallback: string): string {
+  const clean = stripMarkdown(content);
+  if (!clean && fallback) return fallback;
+  if (!clean) return "Artigo do blog AutoGo.pt sobre importação de carros.";
+  if (clean.length <= MAX_DESCRIPTION_LENGTH) return clean;
+  const truncated = clean
+    .slice(0, MAX_DESCRIPTION_LENGTH - 1)
+    .replace(/[\s,.;:-]+$/g, "");
+  return `${truncated}…`;
+}
 
 export default function BlogPost({ post }) {
   const { t } = useTranslation("common");
@@ -25,11 +52,32 @@ export default function BlogPost({ post }) {
     return match ? match[1] : null;
   };
   const backgroundImage = getBackgroundImage(post);
+  const primaryImage = post.ogImage || backgroundImage;
+  const metaImage = primaryImage
+    ? primaryImage.startsWith("http")
+      ? primaryImage
+      : `https://autogo.pt${primaryImage}`
+    : "https://autogo.pt/images/auto-logo.png";
+  const metaDescription =
+    post.metaDescription ||
+    buildMetaDescription(
+      `${post.title ? `${post.title}. ` : ""}${post.content || ""}`,
+      post.title ? `${post.title} — Blog AutoGo.pt` : "Artigo do blog AutoGo.pt",
+    );
+  const keywords = joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS, post.tags || []);
+  const canonicalUrl = `https://autogo.pt/blog/${post.slug}`;
 
   // Blog post background image (if any) should not extend under the footer
-  const footerHeight = 120; // px, adjust if needed
   return (
     <Layout>
+      <Seo
+        title={`${post.title} | Blog AutoGo.pt`}
+        description={metaDescription}
+        url={canonicalUrl}
+        image={metaImage}
+        keywords={keywords}
+        ogType="article"
+      />
       {backgroundImage && (
         <div
           className="fixed inset-0 w-full h-full z-0 pointer-events-none select-none"
@@ -111,17 +159,25 @@ export async function getStaticProps({ params, locale }) {
   }
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContent);
+  const fallbackTitle = data.title || params.slug;
+  const metaDescription = buildMetaDescription(
+    `${data.description ? `${data.description}. ` : ""}${content}`,
+    fallbackTitle ? `${fallbackTitle} — Blog AutoGo.pt` : "Artigo do blog AutoGo.pt",
+  );
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
       post: {
         slug: params.slug,
-        title: data.title || params.slug,
+        title: fallbackTitle,
         date: data.date || "",
         type: data.type || "news",
         tags: data.tags || [],
         lang: data.lang || "pt-PT",
         content,
+        metaDescription,
+        backgroundImage: data.backgroundImage || data.image || null,
+        ogImage: data.ogImage || data.image || null,
       },
     },
   };
