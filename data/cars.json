@@ -18558,5 +18558,113 @@
         "raw": "30/06/2022 0 km Garage Nordstad carrosserie Carrosserie € 1,00"
       }
     ]
+  },
+  {
+    "id": "6400657",
+    "make": "Peugeot",
+    "model": "5008 1.5 BlueHDi Allure 7PL",
+    "year": 2018,
+    "slug": "peugeot-5008-2018-6400657",
+    "price": 11700,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_035.jpg",
+    "description": "O Peugeot 5008 1.5 BlueHDi Allure 7PL de 2018 é um SUV robusto e espaçoso, ideal para famílias que procuram conforto e tecnologia. Equipado com motor Diesel 1.5 de 131 cv, caixa manual de 6 velocidades, e sistema de navegação integrado, este modelo destaca-se pelo seu painel i-Cockpit e ambiente interior sofisticado com bancos em pele esportivos. O veículo inclui faróis LED, ar condicionado automático de duas zonas, cruise control, sensores de luz e chuva, sistema start-stop e múltiplos airbags para segurança reforçada. A manutenção está em dia, garantindo fiabilidade e desempenho. Com um histórico de revisões cuidadosas e equipamento completo, este Peugeot 5008 oferece uma condução confortável e segura, com tecnologia moderna e design elegante.",
+    "mileage": 196536,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.5",
+    "power": "131cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2018-06-06",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "134",
+    "color": "Black",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400657/photo_039.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Bancos em pele esportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica",
+        "Engate de reboque"
+      ],
+      "outras_opcoes": [
+        "Engate de reboque removível",
+        "Opção áudio diferente (de fábrica)",
+        "Câmara de marcha-atrás",
+        "Chave principal",
+        "Chave reserva",
+        "Kit de reparação de pneus",
+        "Manual de instruções",
+        "Livro de manutenção",
+        "Prateleira/rolo de bagageira",
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
