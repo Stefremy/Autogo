@@ -20798,5 +20798,127 @@
         "raw": "01/12/2022 32 km Recyclage/Révision € 0,00"
       }
     ]
+  },
+  {
+    "id": "6340414",
+    "make": "Skoda",
+    "model": "Kodiaq 2.0 TDi SCR Laurin&Klement 7PL Aut.",
+    "year": 2022,
+    "slug": "skoda-kodiaq-2-0-tdi-scr-laurin-klement-7pl-aut-6340414",
+    "price": 36950,
+    "image": "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_048.jpg",
+    "description": "O Skoda Kodiaq 2.0 TDi SCR Laurin&Klement de 2022 é um SUV robusto e elegante, equipado com um motor diesel de 1968 cc que produz 150 cv (110 kW). Este modelo destaca-se pelo seu interior desportivo em pele, sistema de navegação avançado, faróis LED Matrix e um conjunto completo de tecnologias de conforto e segurança, incluindo câmara 360, controlo automático de clima, sensores de chuva e luz, e sistema Keyless Go. Com uma caixa automática e sete lugares, é ideal para famílias que procuram espaço e versatilidade. O veículo apresenta um histórico de manutenção completo e está em excelente estado, pronto para proporcionar uma condução confortável e segura. O seu design exterior inclui jantes de liga leve e um pacote desportivo que realça a sua presença na estrada.",
+    "mileage": 79429,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 7,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1968 CC",
+    "power": "150 Hp 110 kW",
+    "places": 7,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2022-10-22",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "144",
+    "color": "Black",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340414/photo_064.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system",
+        "Sports interior",
+        "Sport seats",
+        "Sports exterior"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Heated seats",
+        "Electric seat adjustment",
+        "Electric windows",
+        "Keyless go",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Rain sensor",
+        "Roof rack",
+        "Memory seats",
+        "Start-stop system"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix anchor points",
+        "LED headlights"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "Hands-free kit",
+        "MP3 interface",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [
+        "Sports interior",
+        "Sport seats"
+      ],
+      "exterior": [
+        "Alloy wheels",
+        "Metallic color",
+        "Sports exterior",
+        "Sports package"
+      ],
+      "outras_opcoes": [
+        "Elektr. bed. achterklep",
+        "Climate Control / ECC"
+      ]
+    },
+    "maintenance": []
   }
 ]
