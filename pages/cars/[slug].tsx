@@ -63,34 +63,69 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
     return { notFound: true };
   }
 
-  // Build SEO-friendly keywords and a Vehicle JSON-LD server-side so it appears in static HTML
-  const detailKeywords = (car && Array.isArray(car.keywords) && car.keywords.length > 0)
-    ? String(car.keywords).split(',').map((k: any) => String(k).trim()).join(', ')
-    : joinKeywords(SITE_WIDE_KEYWORDS);
+  // Local numeric coercion (avoid depending on module-level helpers here to keep getStaticProps self-contained)
+  const numifyLocal = (v: any): number | null => {
+    if (v == null) return null;
+    if (typeof v === 'number') return v;
+    const cleaned = String(v).replace(/[^0-9.,-]/g, '').replace(/,/g, '.');
+    const n = parseFloat(cleaned);
+    return Number.isFinite(n) ? n : null;
+  };
+
+  // Build SEO-friendly keywords (site-wide + specific)
+  const detailKeywords = (() => {
+    try {
+      if (car && Array.isArray(car.keywords) && car.keywords.length > 0) {
+        return String(car.keywords).split(',').map((k: string) => String(k).trim()).join(', ');
+      }
+    } catch (e) {}
+    return joinKeywords(SITE_WIDE_KEYWORDS);
+  })();
+
+  // Safely build Vehicle/Product JSON-LD, ensuring no `undefined` values are present
+  const priceNum = numifyLocal(car.price);
+  const mileageNum = numifyLocal(car.mileage ?? car.odometer);
+
+  const make = String(car.make || '');
+  const model = String(car.model || '');
+
+  const images: string[] = [];
+  try {
+    if (Array.isArray(car.images) && car.images.length) {
+      for (const img of car.images) {
+        if (!img) continue;
+        images.push(img.startsWith('http') ? img : `https://autogo.pt${img}`);
+      }
+    }
+    if (car.image && images.indexOf(car.image) === -1) {
+      images.unshift(car.image.startsWith('http') ? car.image : `https://autogo.pt${car.image}`);
+    }
+  } catch (e) {}
 
   const vehicleJson: any = {
     '@context': 'https://schema.org',
-    '@type': 'Product', // Product is safer for rich results; also include Vehicle-specific details
-    name: `${car.make} ${car.model}`,
+    '@type': 'Vehicle',
+    name: `${make} ${model}`.trim(),
     description: String(car.description ?? '').slice(0, 300),
-    brand: { '@type': 'Brand', name: car.make },
-    image: Array.isArray(car.images) && car.images.length > 0 ? car.images : [car.image || ''],
+    brand: { '@type': 'Brand', name: make || undefined },
+    image: images.length ? images : undefined,
     url: `https://autogo.pt/cars/${car.slug || car.id}`,
-    sku: String(car.id),
-    // include offers when price is available
-    offers: (car.price != null && car.price !== '') ? {
+    sku: car.id != null ? String(car.id) : undefined,
+    mileageFromOdometer: mileageNum != null ? mileageNum : undefined,
+    offers: {
       '@type': 'Offer',
-      price: Number(String(car.price).replace(/[^0-9.-]/g, '')) || undefined,
       priceCurrency: 'EUR',
-      availability: car.status === 'disponivel' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+      // ensure price is either a number or null (no undefined)
+      price: priceNum != null ? priceNum : null,
+      availability: car.sold ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
       url: `https://autogo.pt/cars/${car.slug || car.id}`,
-    } : undefined,
+    },
   };
 
   return {
     props: {
       ...(await serverSideTranslations(locale || "pt-PT", ["common"])),
-      // minimal props: id for client use, plus SEO metadata already computed server-side
+      // minimal props: id for client use, plus SEO metadata and vehicle JSON-LD computed server-side
       carId: car.id,
       detailKeywords,
       vehicleJson,
@@ -131,7 +166,7 @@ function fmtNumberForMeta(v: any) {
   return n.toLocaleString(undefined, { minimumFractionDigits: 0 });
 }
 
-export default function CarDetail({ detailKeywords, vehicleJson }: { detailKeywords: string; vehicleJson: any }) {
+export default function CarDetail() {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -436,6 +471,23 @@ export default function CarDetail({ detailKeywords, vehicleJson }: { detailKeywo
   // Find similar cars (show all except current)
   const similarCars = (carsData as Car[])
     .filter((c) => String(c.id) !== String(car.id));
+
+  // Build meta keywords for this car detail page (site-wide + make/model specific)
+  const detailKeywords = (() => {
+    if (!car) return joinKeywords(SITE_WIDE_KEYWORDS);
+    const make = String(car.make || "").trim();
+    const model = String(car.model || "").trim();
+    const specific = [
+      make ? `${make} importado` : null,
+      model ? `${model} importado` : null,
+      `${make} ${model}`.trim() ? `${make} ${model} importado` : null,
+      "carros importados",
+      "carros europeus",
+      "carros usados premium",
+      "AutoGo.pt",
+    ].filter(Boolean) as string[];
+    return joinKeywords(SITE_WIDE_KEYWORDS, specific);
+  })();
 
   // Download PDF handler
   async function handleDownloadPDF() {
@@ -1684,7 +1736,24 @@ export default function CarDetail({ detailKeywords, vehicleJson }: { detailKeywo
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(vehicleJson),
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Vehicle",
+              brand: car.make,
+              model: car.model,
+              vehicleModelDate: car.year,
+              mileageFromOdometer: numify(car.mileage),
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "EUR",
+                price: numify(car.price),
+                availability: "https://schema.org/InStock",
+              },
+              image: car.images
+                ? car.images.map((img) => `https://autogo.pt${img}`)
+                : [`https://autogo.pt${car.image}`],
+              url: `https://autogo.pt/cars/${car.slug || car.id}`,
+            }),
           }}
         />
       )}
