@@ -105,17 +105,16 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
   const vehicleJson: any = {
     '@context': 'https://schema.org',
     '@type': 'Vehicle',
-    name: `${make} ${model}`.trim(),
-    description: String(car.description ?? '').slice(0, 300),
-    brand: { '@type': 'Brand', name: make || undefined },
-    image: images.length ? images : undefined,
+    name: `${make} ${model}`.trim() || null,
+    description: car.description ? String(car.description).slice(0, 300) : null,
+    brand: make ? { '@type': 'Brand', name: make } : null,
+    image: images.length ? images : null,
     url: `https://autogo.pt/cars/${car.slug || car.id}`,
-    sku: car.id != null ? String(car.id) : undefined,
-    mileageFromOdometer: mileageNum != null ? mileageNum : undefined,
+    sku: car.id != null ? String(car.id) : null,
+    mileageFromOdometer: mileageNum != null ? mileageNum : null,
     offers: {
       '@type': 'Offer',
       priceCurrency: 'EUR',
-      // ensure price is either a number or null (no undefined)
       price: priceNum != null ? priceNum : null,
       availability: car.sold ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
       url: `https://autogo.pt/cars/${car.slug || car.id}`,
