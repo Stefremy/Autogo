@@ -17547,5 +17547,56 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6375512",
+    "make": "Peugeot",
+    "model": "3008",
+    "year": 2020,
+    "slug": "peugeot-3008-2020-6375512",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_001.jpg",
+    "description": "Este Peugeot 3008 1.5 BlueHDi Allure de 2020 é um SUV/Veículo todo-o-terreno com motor 1.5 BlueHDi, potência adequada e caixa manual de 6 velocidades. Equipado com LED-Xenon, I-Cockpit Ambient, Navegação, bancos em pele desportivos, KeylessGo, ar condicionado e sensores de estacionamento (PDC). O veículo apresenta um histórico de manutenção adequado e encontra-se em excelente estado. Destaca-se pelo seu design moderno, tecnologia avançada e conforto superior, ideal para condução urbana e viagens longas.",
+    "mileage": 112091,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.5",
+    "power": null,
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium - ASSE III",
+    "firstRegistration": "20/01/2020",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "138",
+    "color": null,
+    "vin": "VF3MCYHZJLS097381",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397603/photo_003.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED-Xenon",
+        "I-Cockpit Ambient",
+        "Navegação",
+        "Bancos em pele desportivos",
+        "KeylessGo"
+      ],
+      "conforto": [
+        "Ar condicionado",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
