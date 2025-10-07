@@ -17800,5 +17800,118 @@
         "raw": "11/05/2022 15687 km PEUGEOT VILLEPARISIS Révision € 1,00"
       }
     ]
+  },
+  {
+    "id": "6405689",
+    "make": "Peugeot",
+    "model": "308 SW 1.2 PureTech Allure",
+    "year": 2018,
+    "slug": "peugeot-308-sw-1-2-puretech-allure-2018-6405689",
+    "price": 9300,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_001.jpg",
+    "description": "Peugeot 308 SW 1.2 PureTech Allure de 2018, equipado com motor 1.2L PureTech a gasolina, 131cv (96 kW), caixa automática, e emissões Euro6 com 123g/km CO2. Este modelo destaca-se pelo seu interior desportivo com bancos em pele, sistema de navegação, teto panorâmico, e uma vasta gama de opções de conforto como ar condicionado automático de duas zonas, cruise control, sensores de estacionamento e sistema keyless go. Equipado com faróis LED, sistema de segurança com ABS, ESP, airbags frontais e laterais, e pontos de ancoragem Isofix. O veículo tem um histórico de manutenção completo, encontra-se em excelente estado e apresenta 47.260 km. Um carro versátil, confortável e seguro, ideal para quem procura desempenho aliado a tecnologia e conforto.",
+    "mileage": 47260,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "saloon",
+    "engineSize": "1.2",
+    "power": "131cv",
+    "places": 5,
+    "unitNumber": "6381823",
+    "origin": "France - \"CHILLY-MAZARIN 2, 91380 CHILLY-MAZARIN 2 (France)\"",
+    "firstRegistration": "2018-10-07",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "123g/km",
+    "color": "Cinza",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6405689/photo_061.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Livro de revisões presente"
+      ]
+    },
+    "maintenance": []
   }
 ]
