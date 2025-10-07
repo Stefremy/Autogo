@@ -17598,5 +17598,207 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6340868",
+    "make": "Peugeot",
+    "model": "308",
+    "year": 2022,
+    "slug": "peugeot-308-2022-6340868",
+    "price": 17600,
+    "image": "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_071.jpg",
+    "description": "O Peugeot 308 1.2 PureTech de 2022 é um SUV/Off-road elegante e moderno, equipado com motor 1199 CC a gasolina que desenvolve 129 cv (95 kW). Destaca-se pelo seu sistema LED de faróis, sistema de navegação integrado, interior desportivo com bancos desportivos e conforto superior com ar condicionado automático, cruise control e sensores de chuva e luz. Equipado com caixa manual de 6 velocidades, este veículo oferece uma condução dinâmica e eficiente. A segurança é garantida com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix para crianças. O equipamento multimédia inclui Bluetooth, leitor de CD, interface MP3 e computador de bordo. O exterior apresenta jantes de liga leve e faróis de nevoeiro. O carro tem um histórico de manutenção detalhado, com revisões regulares na PEUGEOT VILLEPARISIS, incluindo troca de filtros, pastilhas de travão e discos, além de manutenção do líquido de travões e balaios de limpa-vidros. O Peugeot 308 destaca-se pela sua fiabilidade, conforto e tecnologia avançada, sendo uma excelente escolha para quem procura um SUV compacto com estilo e desempenho. O veículo encontra-se em bom estado, com 15948 km registados e certificado Euro 6 para emissões.",
+    "mileage": 15948,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.2",
+    "power": "129cv",
+    "places": 5,
+    "unitNumber": "6402080",
+    "origin": "France - Fleury Mérogis",
+    "firstRegistration": "2022-10-07",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "146",
+    "color": "Black",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_090.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6340001-6350000/6340868/photo_087.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "2 apoios de cabeça dianteiros com regulação em altura, 3 apoios",
+        "4 travões de disco, dos quais 2 ventilados",
+        "6 altifalantes",
+        "Descanso de braço central dianteiro",
+        "Alerta de cintos de segurança (4)",
+        "Alerta de pressão dos pneus",
+        "Antipatinagem",
+        "Assistência à travagem de emergência",
+        "Capacidade da bagageira (l): com bancos colocados, sob a tampa",
+        "Sensores de distância ao estacionamento"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "07/07/2025",
+        "km": 63470,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "07/07/2025 63470 km PEUGEOT VILLEPARISIS Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "07/07/2025",
+        "km": 63470,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Vidange liquide frein",
+        "price": 2,
+        "raw": "07/07/2025 63470 km PEUGEOT VILLEPARISIS Vidange liquide frein € 2,00"
+      },
+      {
+        "date": "07/07/2025",
+        "km": 63470,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Plaquettes AR",
+        "price": 1,
+        "raw": "07/07/2025 63470 km PEUGEOT VILLEPARISIS Plaquettes AR € 1,00"
+      },
+      {
+        "date": "07/07/2025",
+        "km": 63470,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Disques AV",
+        "price": 1,
+        "raw": "07/07/2025 63470 km PEUGEOT VILLEPARISIS Disques AV € 1,00"
+      },
+      {
+        "date": "07/07/2025",
+        "km": 63470,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Niveaux",
+        "price": 0.05,
+        "raw": "07/07/2025 63470 km PEUGEOT VILLEPARISIS Niveaux € 0,05"
+      },
+      {
+        "date": "07/07/2025",
+        "km": 63470,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Révision",
+        "price": 3.5,
+        "raw": "07/07/2025 63470 km PEUGEOT VILLEPARISIS Révision € 3,50"
+      },
+      {
+        "date": "04/04/2025",
+        "km": 0,
+        "shop": "FRS ABSENT",
+        "description": "CAT B - CASTELAO MICHEL - DU 21/03/2025 AU 17/04/2025",
+        "price": 27,
+        "raw": "04/04/2025 0 km FRS ABSENT CAT B - CASTELAO MICHEL - DU 21/03/2025 AU 17/04/2025 € 27,00"
+      },
+      {
+        "date": "09/07/2024",
+        "km": 47092,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Révision",
+        "price": 1,
+        "raw": "09/07/2024 47092 km PEUGEOT VILLEPARISIS Révision € 1,00"
+      },
+      {
+        "date": "27/03/2024",
+        "km": 40208,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Plaquettes AV",
+        "price": 1,
+        "raw": "27/03/2024 40208 km PEUGEOT VILLEPARISIS Plaquettes AV € 1,00"
+      },
+      {
+        "date": "23/05/2023",
+        "km": 29347,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Révision",
+        "price": 1,
+        "raw": "23/05/2023 29347 km PEUGEOT VILLEPARISIS Révision € 1,00"
+      },
+      {
+        "date": "11/05/2022",
+        "km": 15687,
+        "shop": "PEUGEOT VILLEPARISIS",
+        "description": "Révision",
+        "price": 1,
+        "raw": "11/05/2022 15687 km PEUGEOT VILLEPARISIS Révision € 1,00"
+      }
+    ]
   }
 ]
