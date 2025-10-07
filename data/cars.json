@@ -17482,5 +17482,593 @@
         "raw": "13/03/2023 61979 km PEUGEOT CLERMONT FERRAND Vidange liquide frein € 0,40"
       }
     ]
+  },
+  {
+    "id": "6402032",
+    "make": "Peugeot",
+    "model": "3008",
+    "year": 2021,
+    "slug": "peugeot-3008-2021-6402032",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6402032/photo_003.jpg",
+    "description": "O Peugeot 3008 1.2 PureTech de 2021 é um SUV versátil e moderno, equipado com motor 1.2L, potência adequada e caixa manual de 6 velocidades. Destaca-se pelo seu sistema LED, I-Cockpit, navegação, KeylessGo, câmara traseira e ar condicionado. O veículo apresenta um histórico de manutenção detalhado, com várias revisões e substituições de componentes essenciais, garantindo fiabilidade e bom estado. Ideal para quem procura conforto, segurança e tecnologia num SUV compacto.",
+    "mileage": 80345,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.2",
+    "power": null,
+    "places": 5,
+    "unitNumber": "5",
+    "origin": "France - Fleury Mérogis",
+    "firstRegistration": "09/05/2021",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": null,
+    "vin": "VF3MRHNSMMS127371",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402032/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402032/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402032/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402032/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402032/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402032/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402032/photo_012.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED",
+        "I-Cockpit",
+        "KeylessGo"
+      ],
+      "conforto": [
+        "Climatização",
+        "Navegação"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "PDC"
+      ],
+      "multimedia": [
+        "Sistema de navegação"
+      ],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de bougies",
+        "price": 3,
+        "raw": "04/03/2025 79693 km FRS ABSENT Bougies € 3,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de bougies",
+        "price": 0.3,
+        "raw": "04/03/2025 79693 km FRS ABSENT Bougies € 0,30"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 0.2,
+        "raw": "04/03/2025 79693 km FRS ABSENT Filtres € 0,20"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 0.1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de bougies",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Bougies € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Troca de líquido de travão",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Troca de líquido de travão",
+        "price": 0.5,
+        "raw": "04/03/2025 79693 km FRS ABSENT Vidange liquide frein € 0,50"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 0.2,
+        "raw": "04/03/2025 79693 km FRS ABSENT Filtres € 0,20"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Níveis",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Niveaux € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "04/03/2025 79693 km FRS ABSENT Révision € 0,30"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Níveis",
+        "price": 0.05,
+        "raw": "04/03/2025 79693 km FRS ABSENT Niveaux € 0,05"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Troca de líquido de travão",
+        "price": 2,
+        "raw": "04/03/2025 79693 km FRS ABSENT Vidange liquide frein € 2,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 2,
+        "raw": "04/03/2025 79693 km FRS ABSENT Révision € 2,00"
+      },
+      {
+        "date": "04/03/2025",
+        "km": 79693,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "04/03/2025 79693 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de plaquettes AV",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Plaquettes AV € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "06/05/2024 58976 km FRS ABSENT Révision € 0,30"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 3.5,
+        "raw": "06/05/2024 58976 km FRS ABSENT Révision € 3,50"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 0.1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de plaquettes AV",
+        "price": 0.4,
+        "raw": "06/05/2024 58976 km FRS ABSENT Plaquettes AV € 0,40"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de plaquettes AV",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Plaquettes AV € 1,00"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 0.2,
+        "raw": "06/05/2024 58976 km FRS ABSENT Balai essuie-glace € 0,20"
+      },
+      {
+        "date": "06/05/2024",
+        "km": 58976,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "06/05/2024 58976 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 0.2,
+        "raw": "22/05/2023 38048 km FRS ABSENT Balai essuie-glace € 0,20"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "22/05/2023 38048 km FRS ABSENT Révision € 0,30"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Troca de líquido de travão",
+        "price": 0.5,
+        "raw": "22/05/2023 38048 km FRS ABSENT Vidange liquide frein € 0,50"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 3.5,
+        "raw": "22/05/2023 38048 km FRS ABSENT Révision € 3,50"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Troca de líquido de travão",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 0.2,
+        "raw": "22/05/2023 38048 km FRS ABSENT Balai essuie-glace € 0,20"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 0.2,
+        "raw": "22/05/2023 38048 km FRS ABSENT Filtres € 0,20"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Troca de líquido de travão",
+        "price": 2,
+        "raw": "22/05/2023 38048 km FRS ABSENT Vidange liquide frein € 2,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de filtros",
+        "price": 0.2,
+        "raw": "22/05/2023 38048 km FRS ABSENT Filtres € 0,20"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de bougies",
+        "price": 1,
+        "raw": "22/05/2023 38048 km FRS ABSENT Bougies € 1,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de bougies",
+        "price": 3,
+        "raw": "22/05/2023 38048 km FRS ABSENT Bougies € 3,00"
+      },
+      {
+        "date": "22/05/2023",
+        "km": 38048,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de bougies",
+        "price": 0.3,
+        "raw": "22/05/2023 38048 km FRS ABSENT Bougies € 0,30"
+      },
+      {
+        "date": "24/06/2022",
+        "km": 20510,
+        "shop": "TRUJAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "24/06/2022 20510 km TRUJAS Révision € 1,00"
+      }
+    ]
   }
 ]
