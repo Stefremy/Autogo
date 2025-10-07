@@ -34,15 +34,25 @@ try {
   locales = [];
 }
 
+function escapeXml(str) {
+  if (!str && str !== 0) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 function entry(loc, lastmod, changefreq, priority, alternates) {
   let s = '  <url>\n';
-  s += `    <loc>${loc}</loc>\n`;
-  if (lastmod) s += `    <lastmod>${lastmod}</lastmod>\n`;
-  if (changefreq) s += `    <changefreq>${changefreq}</changefreq>\n`;
-  if (priority) s += `    <priority>${priority}</priority>\n`;
+  s += `    <loc>${escapeXml(loc)}</loc>\n`;
+  if (lastmod) s += `    <lastmod>${escapeXml(lastmod)}</lastmod>\n`;
+  if (changefreq) s += `    <changefreq>${escapeXml(changefreq)}</changefreq>\n`;
+  if (priority) s += `    <priority>${escapeXml(priority)}</priority>\n`;
   if (alternates && alternates.length) {
     alternates.forEach(a => {
-      s += `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${a.href}" />\n`;
+      s += `    <xhtml:link rel="alternate" hreflang="${escapeXml(a.hreflang)}" href="${escapeXml(a.href)}" />\n`;
     });
   }
   s += '  </url>\n';
@@ -66,6 +76,9 @@ const alternates = locales.map((loc) => {
 xml += entry(`${baseUrl}/`, today, 'daily', '1.0', alternates);
 xml += entry(`${baseUrl}/viaturas`, today, 'daily', '0.9', alternates);
 xml += entry(`${baseUrl}/blog`, today, 'weekly', '0.8', alternates);
+// Add simulador and sobre-nos pages to sitemap
+xml += entry(`${baseUrl}/simulador`, today, 'monthly', '0.8', alternates);
+xml += entry(`${baseUrl}/sobre-nos`, today, 'monthly', '0.8', alternates);
 
 // Cars
 cars.forEach((car) => {

@@ -62,11 +62,38 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
   if (!car) {
     return { notFound: true };
   }
+
+  // Build SEO-friendly keywords and a Vehicle JSON-LD server-side so it appears in static HTML
+  const detailKeywords = (car && Array.isArray(car.keywords) && car.keywords.length > 0)
+    ? String(car.keywords).split(',').map((k: any) => String(k).trim()).join(', ')
+    : joinKeywords(SITE_WIDE_KEYWORDS);
+
+  const vehicleJson: any = {
+    '@context': 'https://schema.org',
+    '@type': 'Product', // Product is safer for rich results; also include Vehicle-specific details
+    name: `${car.make} ${car.model}`,
+    description: String(car.description ?? '').slice(0, 300),
+    brand: { '@type': 'Brand', name: car.make },
+    image: Array.isArray(car.images) && car.images.length > 0 ? car.images : [car.image || ''],
+    url: `https://autogo.pt/cars/${car.slug || car.id}`,
+    sku: String(car.id),
+    // include offers when price is available
+    offers: (car.price != null && car.price !== '') ? {
+      '@type': 'Offer',
+      price: Number(String(car.price).replace(/[^0-9.-]/g, '')) || undefined,
+      priceCurrency: 'EUR',
+      availability: car.status === 'disponivel' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+      url: `https://autogo.pt/cars/${car.slug || car.id}`,
+    } : undefined,
+  };
+
   return {
     props: {
       ...(await serverSideTranslations(locale || "pt-PT", ["common"])),
-      // we pass minimal props; the client reads the data file as well
+      // minimal props: id for client use, plus SEO metadata already computed server-side
       carId: car.id,
+      detailKeywords,
+      vehicleJson,
     },
   };
 }
@@ -104,7 +131,7 @@ function fmtNumberForMeta(v: any) {
   return n.toLocaleString(undefined, { minimumFractionDigits: 0 });
 }
 
-export default function CarDetail() {
+export default function CarDetail({ detailKeywords, vehicleJson }: { detailKeywords: string; vehicleJson: any }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -409,23 +436,6 @@ export default function CarDetail() {
   // Find similar cars (show all except current)
   const similarCars = (carsData as Car[])
     .filter((c) => String(c.id) !== String(car.id));
-
-  // Build meta keywords for this car detail page (site-wide + make/model specific)
-  const detailKeywords = (() => {
-    if (!car) return joinKeywords(SITE_WIDE_KEYWORDS);
-    const make = String(car.make || "").trim();
-    const model = String(car.model || "").trim();
-    const specific = [
-      make ? `${make} importado` : null,
-      model ? `${model} importado` : null,
-      `${make} ${model}`.trim() ? `${make} ${model} importado` : null,
-      "carros importados",
-      "carros europeus",
-      "carros usados premium",
-      "AutoGo.pt",
-    ].filter(Boolean) as string[];
-    return joinKeywords(SITE_WIDE_KEYWORDS, specific);
-  })();
 
   // Download PDF handler
   async function handleDownloadPDF() {
@@ -1674,24 +1684,7 @@ export default function CarDetail() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Vehicle",
-              brand: car.make,
-              model: car.model,
-              vehicleModelDate: car.year,
-              mileageFromOdometer: numify(car.mileage),
-              offers: {
-                "@type": "Offer",
-                priceCurrency: "EUR",
-                price: numify(car.price),
-                availability: "https://schema.org/InStock",
-              },
-              image: car.images
-                ? car.images.map((img) => `https://autogo.pt${img}`)
-                : [`https://autogo.pt${car.image}`],
-              url: `https://autogo.pt/cars/${car.slug || car.id}`,
-            }),
+            __html: JSON.stringify(vehicleJson),
           }}
         />
       )}
