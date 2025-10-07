@@ -18179,5 +18179,119 @@
         "raw": "06/08/2024 12599 km FRS ABSENT Balai essuie-glace € 1,00"
       }
     ]
+  },
+  {
+    "id": "6400851",
+    "make": "Peugeot",
+    "model": "308",
+    "year": 2019,
+    "slug": "peugeot-308-2019-6400851",
+    "price": 11800,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_040.jpg",
+    "description": "Peugeot 308 1.2 PureTech GT-Line Automático de 2019, com motor híbrido (gasolina / elétrico) de 1598 CC e 150 cv (110 kW). Equipado com transmissão automática, teto panorâmico, faróis LED-Xenon, sistema de navegação, bancos desportivos em pele, Keyless Go, ar condicionado automático de duas zonas, sensores de estacionamento e muito mais. Este veículo destaca-se pelo seu design desportivo, conforto e tecnologia avançada, incluindo sistema de segurança com ABS, ESP, airbags frontais e laterais, e pontos de ancoragem Isofix. Histórico de manutenção completo e estado geral muito bom. Uma excelente escolha para quem procura um carro familiar com performance e eficiência.",
+    "mileage": 62870,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Estate Car",
+    "engineSize": "1.6",
+    "power": "150cv",
+    "places": 5,
+    "unitNumber": "6400851",
+    "origin": "Belgium",
+    "firstRegistration": "2019-10-12",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "31",
+    "color": "Azul",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400851/photo_037.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Exterior desportivo",
+        "Pacote desportivo",
+        "Reboque destacável"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruzeiro",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica",
+        "Exterior desportivo",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Reboque destacável",
+        "Conectividade de fábrica",
+        "Opção áudio diferente (de fábrica)",
+        "Câmara de marcha-atrás",
+        "Chave principal",
+        "Chave reserva",
+        "Kit de reparação de pneus",
+        "Conjunto de cabos",
+        "Manual de instruções",
+        "Livro de manutenção (digital)",
+        "Prateleira/rolo de cobertura"
+      ]
+    },
+    "maintenance": []
   }
 ]
