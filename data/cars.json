@@ -18293,5 +18293,139 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6363162",
+    "make": "Peugeot",
+    "model": "308 SW",
+    "year": 2020,
+    "slug": "peugeot-308-sw-2020-6363162",
+    "price": 12300,
+    "image": "https://ecarstrade.com/carsphotos/6360001-6370000/6363162/photo_132.jpg",
+    "description": "Este Peugeot 308 SW 2.0 BlueHDi GT-Line de 2020 destaca-se pelo seu motor diesel de 1499 CC com 131 Hp (96 kW), caixa manual e uma excelente eficiência com emissões Euro6 e CO2 de 125g/km. Equipado com sistema de navegação, teto panorâmico, faróis LED-Xenon, interior em couro desportivo, KeylessGo, câmara traseira e sensores de estacionamento (PDC). O veículo inclui um histórico completo de manutenção com revisões regulares e substituições de componentes essenciais, garantindo um estado impecável. Entre as opções de conforto estão ar condicionado automático, cruise control, vidros elétricos, sensores de luz e chuva, e sistema start-stop. Em segurança, conta com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. Para multimédia, dispõe de Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. Exteriormente, possui jantes de liga leve e outras opções como filtro de partículas, controlo de tração e sistema de radar dianteiro e traseiro para deteção de obstáculos. Um carro versátil, confortável e seguro, ideal para quem procura desempenho e tecnologia num familiar espaçoso.",
+    "mileage": 9300,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "saloon",
+    "engineSize": "1.5",
+    "power": "131 Hp",
+    "places": 5,
+    "unitNumber": "153104",
+    "origin": "France - FLEURY TEA",
+    "firstRegistration": "07/08/2020",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "125",
+    "color": "White",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6363162/photo_132.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6363162/photo_128.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6363162/photo_127.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Navigation system"
+      ],
+      "conforto": [
+        "Ar condicionado: Automático",
+        "Cruise control",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Pontos Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Navigation system",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Refrigeração automática",
+        "Detetor de obstáculos radar dianteiro + traseiro",
+        "Filtro de partículas",
+        "Saco para esquis",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/06/2025",
+        "km": 150,
+        "description": "ADBLUE/Plaquetas de travão traseiras/Recolha/Revisão",
+        "price": 0,
+        "raw": "01/06/2025 150 km ADBLUE/Plaquettes frein AR/Recyclage/Révision € 0,00"
+      },
+      {
+        "date": "01/01/2025",
+        "km": 139,
+        "description": "Pneus 4 estações",
+        "price": 0,
+        "raw": "01/01/2025 139 km Pneu 4 saisons € 0,00"
+      },
+      {
+        "date": "01/03/2024",
+        "km": 119,
+        "description": "ADBLUE/Limpadores dianteiros/Inspeção técnica autorizada/Corrente de acessórios/Filtro habitáculo/Filtro ar/Filtro combustível/Recolha/Revisão",
+        "price": 0,
+        "raw": "01/03/2024 119 km ADBLUE/Balais d'essuie-glace AV/Controle technique autorise/Courroie d'accessoires/Filtre d'habitacle/Filtre à air/Filtre à carburant/Recyclage/Révision € 0,00"
+      },
+      {
+        "date": "01/02/2023",
+        "km": 88,
+        "description": "ADBLUE/Lâmpada/Limpadores traseiros e dianteiros/Discos de travão dianteiros/Plaquetas de travão traseiras/Recolha/Revisão",
+        "price": 0,
+        "raw": "01/02/2023 88 km ADBLUE/Ampoule/Balai d'essuie-glace AR/Balais d'essuie-glace AV/Disques de freins AV/Plaquettes frein AR/Recyclage/Révision € 0,00"
+      },
+      {
+        "date": "01/11/2022",
+        "km": 81,
+        "description": "Armazenamento pneus verão/Pneus inverno",
+        "price": 0,
+        "raw": "01/11/2022 81 km Gardiennage pneu été/Pneu hiver/hiver € 0,00"
+      },
+      {
+        "date": "01/03/2022",
+        "km": 61,
+        "description": "ADBLUE/Limpadores dianteiros/Filtro habitáculo/Filtro ar/Filtro combustível/Líquido de travão/Recolha/Revisão",
+        "price": 0,
+        "raw": "01/03/2022 61 km ADBLUE/Balais d'essuie-glace AV/Filtre d'habitacle/Filtre à air/Filtre à carburant/Liquide de frein/Recyclage/Révision € 0,00"
+      },
+      {
+        "date": "01/12/2021",
+        "km": 56,
+        "description": "Pneus verão",
+        "price": 0,
+        "raw": "01/12/2021 56 km Pneu été € 0,00"
+      },
+      {
+        "date": "01/01/2021",
+        "km": 28,
+        "description": "ADBLUE/Revisão",
+        "price": 0,
+        "raw": "01/01/2021 28 km ADBLUE/Révision € 0,00"
+      }
+    ]
   }
 ]
