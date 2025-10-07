@@ -19230,5 +19230,103 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6397616",
+    "make": "Renault",
+    "model": "Captur",
+    "year": 2022,
+    "slug": "renault-captur-2022-6397616",
+    "price": 16950,
+    "image": "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_003.jpg",
+    "description": "Renault Captur 1.3i Mild-Hybrid R.S.-Line de 2022, equipado com motor 999 CC a gasolina, potência de 91 cv (67 kW) e caixa manual. Destaca-se pelo sistema híbrido leve, faróis LED, navegação virtual Pro, bancos em pele parcial, sistema KeylessGo, ar condicionado manual e sensores de estacionamento (PDC). Equipado com múltiplas opções de conforto e segurança, incluindo ABS, ESP, airbags frontais e laterais, Isofix, e sistema de controlo de tração. Manutenção em dia, proveniente da Bélgica, com histórico de inspeções regulares. Um SUV compacto que combina eficiência, tecnologia e estilo com um excelente nível de equipamento e segurança.",
+    "mileage": 104404,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.0",
+    "power": "91cv",
+    "places": 5,
+    "unitNumber": "6397616",
+    "origin": "Belgium - HM Tongeren",
+    "firstRegistration": "15/06/2022",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro 6",
+    "co2": "133",
+    "color": "Cinza",
+    "vin": null,
+    "images": [
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6397616/photo_001.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado manual",
+        "Luzes adaptativas",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
