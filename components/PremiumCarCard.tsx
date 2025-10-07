@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "next-i18next";
 import styles from "./PremiumCarCard.module.css";
 import { formatPriceDisplay } from "../utils/formatPrice";
+import MakeLogo from "./MakeLogo";
 
 type PremiumCarCardProps = {
   name: string;
@@ -127,64 +128,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             {/* Car make logo with robust fallback for different filename patterns (hyphens, case, png/jpg) */}
             {make && (
-              (() => {
-                // build a prioritized list of possible filenames to try
-                const sanitize = (s: string) =>
-                  s.replace(/\s+/g, "-").replace(/[^A-Za-z0-9-]/g, "");
-                const originalSan = sanitize(make); // keeps case and hyphens
-                const lowerSan = originalSan.toLowerCase(); // lowercase with hyphens
-                const noHyphen = originalSan.replace(/-/g, "");
-                const candidates = [
-                  `/images/carmake/${lowerSan}-logo.png`,
-                  `/images/carmake/${lowerSan}-logo.jpg`,
-                  `/images/carmake/${originalSan}-logo.png`,
-                  `/images/carmake/${originalSan}-logo.jpg`,
-                  `/images/carmake/${noHyphen}-logo.png`,
-                  `/images/carmake/${noHyphen}-logo.jpg`,
-                  `/images/carmake/${make}-logo.png`,
-                  `/images/carmake/${make}-logo.jpg`,
-                ];
-
-                // start with first candidate
-                const first = candidates[0];
-
-                return (
-                  <img
-                    src={first}
-                    data-candidates={JSON.stringify(candidates)}
-                    data-attempt={"0"}
-                    alt={make}
-                    style={{
-                      height: 30,
-                      width: "auto",
-                      maxWidth: 80,
-                      objectFit: "contain",
-                      display: "inline-block",
-                      verticalAlign: "middle",
-                      filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.10))",
-                    }}
-                    loading="lazy"
-                    onError={(e) => {
-                      const img = e.currentTarget as HTMLImageElement & { dataset: any };
-                      try {
-                        const list: string[] = JSON.parse(img.dataset.candidates || "[]");
-                        let idx = parseInt(img.dataset.attempt || "0", 10);
-                        idx = Number.isNaN(idx) ? 0 : idx;
-                        const next = idx + 1;
-                        if (list && next < list.length) {
-                          img.dataset.attempt = String(next);
-                          img.src = list[next];
-                        } else {
-                          // none matched — hide the element so layout stays clean
-                          img.style.display = "none";
-                        }
-                      } catch (err) {
-                        img.style.display = "none";
-                      }
-                    }}
-                  />
-                );
-              })()
+              <MakeLogo make={make} size={30} className="drop-shadow(0 1px 2px rgba(0,0,0,0.10))" />
             )}
               {/* Mileage next to the logo (thin Montserrat) */}
               {mileage !== undefined && (
