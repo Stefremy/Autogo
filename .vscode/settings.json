@@ -1,0 +1,30 @@
+{
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.chat.enabled": false,
+  "workbench.startupEditor": "none",
+
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+
+  "editor.quickSuggestions": {
+    "comments": false,
+    "strings": false,
+    "other": true
+  },
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.next/**": true,
+    "**/.turbo/**": true,
+    "**/target/**": true
+  },
+  "search.useIgnoreFiles": true,
+  "terminal.integrated.gpuAcceleration": "off"
+}
