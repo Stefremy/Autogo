@@ -526,99 +526,78 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
   // Download PDF handler
   async function handleDownloadPDF() {
     const doc = new jsPDF({ unit: "pt", format: "a4" });
-    // Load logo and car image as base64
-    const loadImageAsBase64 = async (url: string): Promise<string | null> => {
+
+    // Utility: fetch with timeout
+    const fetchWithTimeout = async (input: RequestInfo, ms = 10000): Promise<Response | null> => {
+      const controller = new AbortController();
+      const id = setTimeout(() => controller.abort(), ms);
       try {
-        if (!url) return null;
-        // If already a data URL, return as-is
-        if (typeof url === 'string' && url.startsWith('data:')) return url;
+        const resp = await fetch(input, { signal: controller.signal as any });
+        return resp;
+      } catch (e) {
+        return null;
+      } finally {
+        clearTimeout(id);
+      }
+    };
 
-        // Try fetch -> blob -> dataURL first
-        try {
-          const response = await fetch(url);
-          if (!response.ok) throw new Error(`Failed to fetch image: ${response.status}`);
-          const blob = await response.blob();
+    // Load image and convert to data URL with fallbacks. Fast-paths return quickly.
+    const loadImageAsBase64 = async (url: string): Promise<string | null> => {
+      if (!url) return null;
+      if (typeof url === 'string' && url.startsWith('data:')) return url;
 
-          // SVG: convert to PNG via canvas
-          if (blob.type === 'image/svg+xml') {
-            const svgText = await blob.text();
-            return await new Promise<string>((resolve, reject) => {
-              const img = new Image();
-              img.onload = () => {
-                try {
-                  const canvas = document.createElement('canvas');
-                  canvas.width = img.naturalWidth || 1200;
-                  canvas.height = img.naturalHeight || 800;
-                  const ctx = canvas.getContext('2d');
-                  if (!ctx) return reject(new Error('Canvas not supported'));
-                  ctx.fillStyle = '#ffffff';
-                  ctx.fillRect(0, 0, canvas.width, canvas.height);
-                  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                  resolve(canvas.toDataURL('image/png'));
-                } catch (err) {
-                  reject(err);
-                }
-              };
-              img.onerror = () => reject(new Error('Failed to load SVG image'));
-              img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgText);
-            });
-          }
+      try {
+        const resp = await fetchWithTimeout(url, 10000);
+        if (!resp || !resp.ok) throw new Error('fetch-failed');
+        const blob = await resp.blob();
 
-          // If blob is not PNG/JPEG (e.g., WebP), convert to PNG via canvas for jsPDF compatibility
-          if (!['image/png', 'image/jpeg'].includes(blob.type)) {
-            try {
-              const objectUrl = URL.createObjectURL(blob);
-              const converted = await new Promise<string>((resolve, reject) => {
-                const img = new Image();
-                img.crossOrigin = 'anonymous';
-                img.onload = () => {
-                  try {
-                    const canvas = document.createElement('canvas');
-                    canvas.width = img.naturalWidth || img.width || 800;
-                    canvas.height = img.naturalHeight || img.height || 600;
-                    const ctx = canvas.getContext('2d');
-                    if (!ctx) return reject(new Error('Canvas not supported'));
-                    ctx.fillStyle = '#ffffff';
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                    const dataUrl = canvas.toDataURL('image/png');
-                    resolve(dataUrl);
-                  } catch (err) {
-                    reject(err);
-                  } finally {
-                    URL.revokeObjectURL(objectUrl);
-                  }
-                };
-                img.onerror = () => {
-                  URL.revokeObjectURL(objectUrl);
-                  reject(new Error('Failed to load image for conversion'));
-                };
-                img.src = objectUrl;
-              });
-              return converted;
-            } catch (convErr) {
-              // fallthrough to try to read original blob as data URL
-              console.warn('Conversion to PNG failed, falling back to original blob', convErr);
-            }
-          }
+        // SVG: convert to PNG via canvas (kept simple)
+        if (blob.type === 'image/svg+xml') {
+          const svgText = await blob.text();
+          return await new Promise<string | null>((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+              try {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth || 1200;
+                canvas.height = img.naturalHeight || 800;
+                const ctx = canvas.getContext('2d');
+                if (!ctx) return resolve(null);
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                resolve(canvas.toDataURL('image/png'));
+              } catch (err) {
+                resolve(null);
+              }
+            };
+            img.onerror = () => resolve(null);
+            img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgText);
+          });
+        }
 
-          // Other images: read blob as data URL
-          const base64 = await new Promise<string>((resolve, reject) => {
+        // If common formats, read directly
+        if (['image/png', 'image/jpeg'].includes(blob.type)) {
+          const base64 = await new Promise<string | null>((resolve) => {
             const reader = new FileReader();
             reader.onloadend = () => resolve(reader.result as string);
-            reader.onerror = () => reject(new Error('Failed to read image blob'));
+            reader.onerror = () => resolve(null);
             reader.readAsDataURL(blob);
           });
-          return base64;
-        } catch (fetchErr) {
-          // Fallback: try loading via Image element and canvas (may fail due to CORS)
-          const tryViaImage = await new Promise<string | null>((resolve) => {
+          if (base64) return base64;
+        }
+
+        // For other types (webp, etc) convert via an Image + canvas
+        try {
+          const objectUrl = URL.createObjectURL(blob);
+          const converted = await new Promise<string | null>((resolve) => {
             const img = new Image();
             img.crossOrigin = 'anonymous';
             let settled = false;
             const cleanup = () => {
               img.onload = null;
               img.onerror = null as any;
+              try { URL.revokeObjectURL(objectUrl); } catch (e) {}
             };
             img.onload = () => {
               try {
@@ -626,17 +605,13 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                 canvas.width = img.naturalWidth || img.width || 800;
                 canvas.height = img.naturalHeight || img.height || 600;
                 const ctx = canvas.getContext('2d');
-                if (!ctx) {
-                  cleanup();
-                  return resolve(null);
-                }
+                if (!ctx) return resolve(null);
                 ctx.fillStyle = '#ffffff';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                const dataUrl = canvas.toDataURL('image/png');
                 settled = true;
                 cleanup();
-                resolve(dataUrl);
+                resolve(canvas.toDataURL('image/png'));
               } catch (err) {
                 cleanup();
                 resolve(null);
@@ -644,68 +619,95 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
             };
             img.onerror = () => {
               cleanup();
-              // Instead of rejecting, resolve null so PDF generation can continue
               if (!settled) resolve(null);
             };
-            // Set src last to avoid race
+            img.src = objectUrl;
+          });
+          if (converted) return converted;
+        } catch (err) {
+          // fallthrough
+        }
+
+        // final fallback: read as data URL
+        const finalBase64 = await new Promise<string | null>((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result as string);
+          reader.onerror = () => resolve(null);
+          reader.readAsDataURL(blob);
+        });
+        return finalBase64;
+      } catch (err) {
+        // Last ditch: try loading via Image element (may fail due to CORS)
+        return await new Promise<string | null>((resolve) => {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          let settled = false;
+          const to = setTimeout(() => {
+            img.onload = null;
+            img.onerror = null;
+            if (!settled) resolve(null);
+          }, 9000);
+          img.onload = () => {
             try {
-              img.src = url;
-              // in some browsers, if cached, onload may fire synchronously
-            } catch (e) {
-              cleanup();
+              const canvas = document.createElement('canvas');
+              canvas.width = img.naturalWidth || img.width || 800;
+              canvas.height = img.naturalHeight || img.height || 600;
+              const ctx = canvas.getContext('2d');
+              if (!ctx) {
+                clearTimeout(to);
+                return resolve(null);
+              }
+              ctx.fillStyle = '#ffffff';
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+              const dataUrl = canvas.toDataURL('image/png');
+              settled = true;
+              clearTimeout(to);
+              resolve(dataUrl);
+            } catch (err) {
+              clearTimeout(to);
               resolve(null);
             }
-          });
-
-          if (tryViaImage) return tryViaImage;
-
-          // As last resort, call our server-side image proxy to bypass CORS for remote hosts.
+          };
+          img.onerror = () => {
+            clearTimeout(to);
+            if (!settled) resolve(null);
+          };
           try {
-            // Avoid proxying local public images (they are same-origin)
-            if (url.startsWith('/') || url.startsWith(window.location.origin)) return null;
-            const proxyUrl = `/api/image-proxy?url=${encodeURIComponent(url)}`;
-            const pResp = await fetch(proxyUrl);
-            if (!pResp.ok) return null;
-            const pBlob = await pResp.blob();
-            const pBase64 = await new Promise<string>((resolve, reject) => {
-              const reader = new FileReader();
-              reader.onloadend = () => resolve(reader.result as string);
-              reader.onerror = () => reject(new Error('Failed to read proxied blob'));
-              reader.readAsDataURL(pBlob);
-            });
-            return pBase64;
-          } catch (proxyErr) {
-            console.warn('Proxy image fetch failed', proxyErr);
-            return null;
+            img.src = url;
+          } catch (e) {
+            clearTimeout(to);
+            resolve(null);
           }
-        }
-      } catch (err) {
-        console.warn('loadImageAsBase64 failed for', url, err);
-        return null;
+        });
       }
     };
-    // Try to embed Montserrat font (fallbacks handled if network fails)
-    try {
-      const fontUrl = 'https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat-Regular.ttf';
-      const fontResp = await fetch(fontUrl);
-      if (fontResp.ok) {
-        const fontBuf = await fontResp.arrayBuffer();
-        // convert to base64
-        const bytes = new Uint8Array(fontBuf);
-        let binary = '';
-        const chunkSize = 0x8000;
-        for (let i = 0; i < bytes.length; i += chunkSize) {
-          binary += String.fromCharCode.apply(null, Array.from(bytes.subarray(i, i + chunkSize)));
+
+    // Non-blocking font load (do not delay PDF creation)
+    (async () => {
+      try {
+        const fontUrl = 'https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat-Regular.ttf';
+        const resp = await fetchWithTimeout(fontUrl, 5000);
+        if (resp && resp.ok) {
+          const fontBuf = await resp.arrayBuffer();
+          const bytes = new Uint8Array(fontBuf);
+          let binary = '';
+          const chunkSize = 0x8000;
+          for (let i = 0; i < bytes.length; i += chunkSize) {
+            binary += String.fromCharCode.apply(null, Array.from(bytes.subarray(i, i + chunkSize)) as any);
+          }
+          const fontBase64 = btoa(binary);
+          try {
+            doc.addFileToVFS('Montserrat-Regular.ttf', fontBase64);
+            doc.addFont('Montserrat-Regular.ttf', 'Montserrat', 'normal');
+          } catch (e) {
+            // ignore font errors
+          }
         }
-        const fontBase64 = btoa(binary);
-        doc.addFileToVFS('Montserrat-Regular.ttf', fontBase64);
-        doc.addFont('Montserrat-Regular.ttf', 'Montserrat', 'normal');
-        doc.setFont('Montserrat');
+      } catch (e) {
+        // ignore
       }
-    } catch (err) {
-      // if font load fails, continue with default fonts
-      console.warn('Could not load Montserrat for PDF, using fallback font', err);
-    }
+    })();
 
     // Place site logo top-right (use autologonb.png from public)
     const logoUrl = '/images/autologonb.png';
@@ -721,7 +723,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       try {
         doc.addImage(logoBase64, logoFormat as any, logoX, logoY, logoW, logoH);
       } catch (err) {
-        console.warn('Failed to add logo to PDF:', err);
+        // ignore
       }
     } else {
       doc.setFontSize(18);
@@ -735,72 +737,67 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
     if (car.images && Array.isArray(car.images)) {
       for (const s of car.images) if (s) gallerySrcs.push(s);
     }
-    // dedupe
-    const uniqueGallery = Array.from(new Set(gallerySrcs));
+    // dedupe and limit to 4 images for speed
+    const uniqueGallery = Array.from(new Set(gallerySrcs)).slice(0, 4);
 
-    // helper to add images stacked vertically, centered (3 images per page vertically)
-    const addGalleryPages = async (imgs: string[]) => {
-      if (!imgs || imgs.length === 0) return;
+    // Prefetch base64s in parallel (small number, safe to run concurrently)
+    const galleryBase64s = await Promise.all(uniqueGallery.map((s) => loadImageAsBase64(s).catch(() => null)));
+
+    // helper to add images stacked vertically, centered (3 images per page originally)
+    const addGalleryPages = async (base64s: (string | null)[]) => {
+      if (!base64s || base64s.length === 0) return;
       const perPage = 3;
       const gap = 18;
       const usableW = pageW - margin * 2;
       const pageH = doc.internal.pageSize.getHeight();
       const maxImgH = (pageH - margin * 2 - gap * (perPage - 1)) / perPage;
 
-      for (let i = 0; i < imgs.length; i += perPage) {
+      for (let i = 0; i < base64s.length; i += perPage) {
         doc.addPage();
         let yPos = margin;
         for (let k = 0; k < perPage; k++) {
           const idx = i + k;
-          if (idx >= imgs.length) break;
-          const src = imgs[idx];
+          if (idx >= base64s.length) break;
+          const base64 = base64s[idx];
+          if (!base64) {
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text('(Imagem indisponível)', pageW / 2 - 40, yPos + maxImgH / 2);
+            yPos += maxImgH + gap;
+            continue;
+          }
+
+          // Measure actual image size by creating an Image element
+          const dims = await new Promise<{ w: number; h: number }>((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+              resolve({ w: img.naturalWidth || img.width, h: img.naturalHeight || img.height });
+            };
+            img.onerror = () => resolve({ w: usableW, h: maxImgH });
+            img.src = base64;
+          });
+
+          const ratio = Math.min(usableW / dims.w, maxImgH / dims.h, 1);
+          const drawW = dims.w * ratio;
+          const drawH = dims.h * ratio;
+          const x = (pageW - drawW) / 2;
+          const yCenter = yPos + (maxImgH - drawH) / 2;
+
           try {
-            const base64 = await loadImageAsBase64(src);
-            if (!base64) {
-              doc.setFontSize(10);
-              doc.setTextColor(100, 100, 100);
-              doc.text('(Imagem indisponível)', pageW / 2 - 40, yPos + maxImgH / 2);
-              yPos += maxImgH + gap;
-              continue;
-            }
-
-            // Measure actual image size by creating an Image element
-            const dims = await new Promise<{ w: number; h: number }>((resolve) => {
-              const img = new Image();
-              img.onload = () => {
-                resolve({ w: img.naturalWidth || img.width, h: img.naturalHeight || img.height });
-              };
-              img.onerror = () => resolve({ w: usableW, h: maxImgH });
-              img.src = base64;
-            });
-
-            // scale to fit usableW and maxImgH preserving aspect ratio
-            const ratio = Math.min(usableW / dims.w, maxImgH / dims.h, 1);
-            const drawW = dims.w * ratio;
-            const drawH = dims.h * ratio;
-            const x = (pageW - drawW) / 2;
-            const yCenter = yPos + (maxImgH - drawH) / 2;
-
-            try {
-              const format = base64.startsWith('data:image/png') ? 'PNG' : base64.startsWith('data:image/jpeg') ? 'JPEG' : 'JPEG';
-              doc.addImage(base64, format as any, x, yCenter, drawW, drawH);
-            } catch (err) {
-              console.warn('Failed to add gallery image to PDF:', err);
-              doc.setFontSize(10);
-              doc.setTextColor(100, 100, 100);
-              doc.text('(Imagem indisponível)', pageW / 2 - 40, yPos + maxImgH / 2);
-            }
+            const format = base64.startsWith('data:image/png') ? 'PNG' : base64.startsWith('data:image/jpeg') ? 'JPEG' : 'JPEG';
+            doc.addImage(base64, format as any, x, yCenter, drawW, drawH);
           } catch (err) {
-            console.warn('Error loading gallery image', src, err);
             doc.setFontSize(10);
             doc.setTextColor(100, 100, 100);
             doc.text('(Imagem indisponível)', pageW / 2 - 40, yPos + maxImgH / 2);
           }
+
           yPos += maxImgH + gap;
         }
       }
     };
-    // Title and info
+
+    // Title and info (same as before)
     doc.setFont("helvetica", "bold");
     doc.setFontSize(22);
     doc.setTextColor(180, 33, 33);
@@ -808,25 +805,13 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
     doc.setFont("helvetica", "normal");
     doc.setFontSize(14);
     doc.setTextColor(30, 41, 59);
-  doc.text(`Preço: ${fmtPriceOrText(car.price)}`, 40, 125);
+    doc.text(`Preço: ${fmtPriceOrText(car.price)}`, 40, 125);
     doc.text(`Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km`, 40, 145);
     let y = 165;
-    if (car.fuel) {
-      doc.text(`Combustível: ${car.fuel}`, 40, y);
-      y += 20;
-    }
-    if (car.power) {
-      doc.text(`Potência: ${car.power}`, 40, y);
-      y += 20;
-    }
-    if (car.engineSize) {
-      doc.text(`Cilindrada: ${car.engineSize}`, 40, y);
-      y += 20;
-    }
-    if (car.firstRegistration) {
-      doc.text(`Primeira Matrícula: ${car.firstRegistration}`, 40, y);
-      y += 20;
-    }
+    if (car.fuel) { doc.text(`Combustível: ${car.fuel}`, 40, y); y += 20; }
+    if (car.power) { doc.text(`Potência: ${car.power}`, 40, y); y += 20; }
+    if (car.engineSize) { doc.text(`Cilindrada: ${car.engineSize}`, 40, y); y += 20; }
+    if (car.firstRegistration) { doc.text(`Primeira Matrícula: ${car.firstRegistration}`, 40, y); y += 20; }
     y += 10;
     // Descrição
     doc.setFont("helvetica", "bold");
@@ -840,7 +825,8 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
     const descLines = doc.splitTextToSize(car.description, 480);
     doc.text(descLines, 40, y);
     y += descLines.length * 16 + 10;
-    // Equipamento & Opções
+
+    // Equipamento & Opções (unchanged)
     if (car.equipamento_opcoes) {
       doc.setFont("helvetica", "bold");
       doc.setFontSize(16);
@@ -851,10 +837,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       doc.setFontSize(12);
       doc.setTextColor(55, 65, 81);
       for (const [categoria, lista] of Object.entries(car.equipamento_opcoes)) {
-        if (y > 700) {
-          doc.addPage();
-          y = 60;
-        }
+        if (y > 700) { doc.addPage(); y = 60; }
         doc.setFont("helvetica", "bold");
         doc.setFontSize(13);
         doc.setTextColor(30, 41, 59);
@@ -871,10 +854,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
         doc.setFontSize(12);
         doc.setTextColor(55, 65, 81);
         for (const item of lista) {
-          if (y > 780) {
-            doc.addPage();
-            y = 60;
-          }
+          if (y > 780) { doc.addPage(); y = 60; }
           doc.circle(56, y - 3, 2, "F");
           doc.text(item, 65, y);
           y += 15;
@@ -882,38 +862,31 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
         y += 8;
       }
     }
-    // Contactos section (placeholder)
-    if (y > 700) {
-      doc.addPage();
-      y = 60;
-    }
+
+    // Contactos section (unchanged)
+    if (y > 700) { doc.addPage(); y = 60; }
     doc.setFont("helvetica", "bold");
     doc.setFontSize(16);
     doc.setTextColor(180, 33, 33);
-  doc.text("Contactos", 40, y);
-  y += 18;
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(12);
-  doc.setTextColor(55, 65, 81);
-  // Insert real contact information
-  doc.text("Contacto: Gilberto Freitas", 40, y);
-  y += 16;
-  doc.text("Email: autogo.stand@gmail.com", 40, y);
-  y += 16;
-  doc.text("Tel: +351 935 179 591", 40, y);
-  y += 16;
-  doc.text("WhatsApp: +351 935 179 591", 40, y);
-  y += 18;
-    // Insert gallery images after all textual sections (stacked vertically, 3 per page)
-    if (uniqueGallery.length > 0) {
+    doc.text("Contactos", 40, y);
+    y += 18;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+    doc.setTextColor(55, 65, 81);
+    doc.text("Contacto: Gilberto Freitas", 40, y); y += 16;
+    doc.text("Email: autogo.stand@gmail.com", 40, y); y += 16;
+    doc.text("Tel: +351 935 179 591", 40, y); y += 16;
+    doc.text("WhatsApp: +351 935 179 591", 40, y); y += 18;
+
+    // Insert gallery images (limited set)
+    if (galleryBase64s.length > 0) {
       try {
-        await addGalleryPages(uniqueGallery);
+        await addGalleryPages(galleryBase64s);
       } catch (err) {
         console.warn('Failed adding gallery pages', err);
       }
     }
 
-    // Save
     doc.save(`${car.make}_${car.model}_${car.year}.pdf`);
   }
 
