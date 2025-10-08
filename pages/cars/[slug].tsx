@@ -462,15 +462,42 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
   // in the JSX and event handlers.
   const car = (carsData as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested))!;
 
-  // Helper: coerce possibly-string values to numbers safely and provide formatted output
-  // Reuse module-level implementations declared at top of this module to avoid duplication.
-  // (module-level functions: numify, fmtNumber, fmtPriceOrText, fmtNumberForMeta)
+  // Client-side image normalization (mirror server-side logic but safe for client runtime)
+  const siteOriginClient = process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt';
+  const normalizeImageClient = (img: any): string | null => {
+    if (!img) return null;
+    if (typeof img !== 'string') return null;
+    if (img.startsWith('data:')) return img;
+    if (/^https?:\/\//i.test(img)) return img;
+    if (img.startsWith('//')) return `https:${img}`;
+    if (img.startsWith('/')) return `${siteOriginClient}${img}`;
+    return `${siteOriginClient}/${img.replace(/^\/+/, '')}`;
+  };
 
-  // Try to derive a full model label (prefer explicit fullModel, otherwise use the leading part of description)
-  const fullModelLabel = (car as any).fullModel
-    || (car.description ? String(car.description).split(/[,.;]/)[0].trim() : null);
+  // Derive displayed images from server-side vehicleJson when available to avoid missing resources
+  const displayedImages: string[] = React.useMemo(() => {
+    try {
+      if (Array.isArray(vehicleJson?.image) && vehicleJson.image.length) {
+        return vehicleJson.image.map((s: any) => normalizeImageClient(s)).filter(Boolean) as string[];
+      }
+      if (vehicleJson?.image) {
+        const v = normalizeImageClient(vehicleJson.image);
+        return v ? [v] : [];
+      }
+      // fallback to raw car fields when vehicleJson not present
+      const rawImgs: string[] = [];
+      if (car.image) rawImgs.push(car.image);
+      if (car.images && Array.isArray(car.images)) rawImgs.push(...car.images);
+      return rawImgs.map(normalizeImageClient).filter(Boolean) as string[];
+    } catch (e) {
+      return [];
+    }
+  }, [vehicleJson, car.image, car.images]);
+
+  const primaryImage = displayedImages.length ? displayedImages[0] : null;
 
   // Fun facts dinâmicos (include full model + description when available, de-duplicated)
+  const fullModelLabel = [car.make, car.model, car.version].filter(Boolean).join(' ');
   const funFacts = [
     fullModelLabel ? `Modelo: ${fullModelLabel}` : null,
     car.description && car.description !== fullModelLabel ? car.description : null,
@@ -893,6 +920,9 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
   // Sticky bar visually merges with navbar, seamless, premium animation
   return (
     <Layout>
+      <Head>
+        {primaryImage && <link rel="preload" as="image" href={primaryImage} />}
+      </Head>
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div
         id="hero-redline"
@@ -983,8 +1013,10 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       `}
         >
           <img
-            src={(car.images && car.images[0]) || car.image}
+            src={displayedImages[0] || '/images/auto-logo.png'}
             alt={car.make + " " + car.model}
+            width={160}
+            height={96}
             className={`object-cover rounded-xl shadow border-2 border-white bg-gray-100 ring-2 ring-[#b42121]/30 transition-all duration-500
             ${showStickyBar ? "h-24 w-40 scale-[1.03]" : "h-10 w-20 scale-100"}`}
             style={{ objectPosition: 'center top' }}
@@ -1072,8 +1104,10 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
               </div>
               {/* Main image (first image) */}
               <img
-                src={(car.images && car.images[0]) || car.image}
+                src={displayedImages[0] || '/images/giulia-2024.jpg'}
                 alt={car.make + " " + car.model}
+                width={1200}
+                height={720}
                 className="rounded-3xl shadow-2xl w-full object-cover ring-4 ring-white hover:ring-[#b42121] transition-all duration-300 cursor-zoom-in max-h-[180px] sm:max-h-[220px] md:max-h-[420px] lg:max-h-[480px] photo-hoverable main-photo"
                 onClick={() => {
                   setLightboxIndex(0);
@@ -1108,10 +1142,10 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
               )}
 
               {/* Gallery thumbnails: render a larger first row (approx half the main image) then the rest */}
-              {(car.images && car.images.length > 1) && (
+              {(displayedImages && displayedImages.length > 1) && (
                 <>
                   <div className="w-full mt-3 grid grid-cols-4 gap-2">
-                    {(car.images || []).slice(1, 5).map((img, i) => (
+                    {(displayedImages || []).slice(1, 5).map((img, i) => (
                       <button
                         key={`big-${i}`}
                         type="button"
@@ -1125,6 +1159,8 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                           src={img}
                           alt={`${car.make} ${car.model} ${i + 2}`}
                           loading="lazy"
+                          width={320}
+                          height={200}
                           className="w-full h-24 sm:h-28 md:h-52 lg:h-60 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
                         />
                       </button>
@@ -1132,12 +1168,12 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                   </div>
 
                   {/* If there are many remaining images, show a vertical scroll area to avoid huge page length */}
-                  {(car.images || []).length > 5 && (
+                  {(displayedImages || []).length > 5 && (
                     <div
                       className="w-full mt-2 max-h-[320px] md:max-h-[420px] overflow-y-auto space-y-2 pr-2"
                       style={{ WebkitOverflowScrolling: 'touch' }}
                     >
-                      {(car.images || []).slice(5).map((img, j) => (
+                      {(displayedImages || []).slice(5).map((img, j) => (
                         <button
                           key={`small-${j}`}
                           type="button"
@@ -1152,6 +1188,8 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                             src={img}
                             alt={`${car.make} ${car.model} ${j + 6}`}
                             loading="lazy"
+                            width={240}
+                            height={140}
                             className="w-full h-20 sm:h-24 md:h-28 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
                           />
                         </button>
@@ -1164,7 +1202,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
               <Lightbox
                 open={lightboxOpen}
                 close={() => setLightboxOpen(false)}
-                slides={(car.images || [car.image]).map((img) => ({
+                slides={(displayedImages.length ? displayedImages : ["/images/giulia-2024.jpg"]).map((img) => ({
                   src: img,
                 }))}
                 index={lightboxIndex}
@@ -1586,9 +1624,11 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                           <a href={`/cars/${simCar.slug || simCar.id}`} className="block h-full">
                             <div className="similar-swiper-item relative">
                               <img
-                                width="100%"
-                                src={simCar.image}
+                                src={normalizeImageClient(simCar.image) || '/images/auto-logo.png'}
                                 alt={`${simCar.make} ${simCar.model}`}
+                                loading="lazy"
+                                width={560}
+                                height={240}
                                 className="w-full h-40 object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-105"
                               />
                               <div className="slide-overlay absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
@@ -1644,9 +1684,11 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                           <a href={`/cars/${simCar.slug || simCar.id}`} className="block h-full">
                             <div className="similar-swiper-item relative">
                               <img
-                                width="100%"
-                                src={simCar.image}
+                                src={normalizeImageClient(simCar.image) || '/images/auto-logo.png'}
                                 alt={`${simCar.make} ${simCar.model}`}
+                                loading="lazy"
+                                width={280}
+                                height={160}
                                 className="w-full h-40 object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-105"
                               />
                               <div className="slide-overlay absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
