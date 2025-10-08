@@ -2,6 +2,17 @@ import Head from 'next/head';
 import React from 'react';
 import { SITE_WIDE_KEYWORDS, joinKeywords } from '../utils/seoKeywords';
 
+// Import i18n config to get locales (safely)
+let configuredLocales: string[] = [];
+try {
+  // require returns CommonJS; handle both shapes
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const ni = require('../next-i18next.config');
+  configuredLocales = (ni && ni.i18n && Array.isArray(ni.i18n.locales)) ? ni.i18n.locales : [];
+} catch (e) {
+  configuredLocales = [];
+}
+
 type SeoProps = {
   title: string;
   description: string;
@@ -25,7 +36,18 @@ export default function Seo({
 }: SeoProps) {
   const finalKeywords = keywords || joinKeywords(SITE_WIDE_KEYWORDS);
   const finalImage = image || 'https://autogo.pt/images/auto-logo.png';
-  const finalUrl = url || 'https://autogo.pt/';
+  const siteOrigin = process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt';
+  const finalUrl = url || siteOrigin || 'https://autogo.pt/';
+
+  // Build hreflang alternates from configured locales
+  const alternates = configuredLocales.length
+    ? configuredLocales.map((loc) => {
+        // Normalize locale folder to hreflang value
+        const hreflang = loc === 'pt-PT' ? 'pt-PT' : loc;
+        const href = loc === 'pt-PT' ? `${siteOrigin}/` : `${siteOrigin}/${loc.replace('_', '-')}/`;
+        return { hreflang, href };
+      })
+    : [];
 
   return (
     <Head>
@@ -36,6 +58,11 @@ export default function Seo({
 
       {/* Canonical */}
       <link rel="canonical" href={finalUrl} />
+
+      {/* hreflang alternates */}
+      {alternates.map((a) => (
+        <link key={a.hreflang} rel="alternate" hrefLang={a.hreflang} href={a.href} />
+      ))}
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />

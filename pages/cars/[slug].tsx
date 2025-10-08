@@ -89,16 +89,32 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
   const make = String(car.make || '');
   const model = String(car.model || '');
 
+  // Derive canonical site origin from env or fallback to production origin
+  const siteOrigin = process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt';
+
+  // Normalize image URLs: leave absolute URLs untouched, prefix only when path is root-relative.
+  const normalizeImage = (img: any): string | null => {
+    if (!img) return null;
+    if (typeof img !== 'string') return null;
+    if (img.startsWith('data:')) return img;
+    if (/^https?:\/\//i.test(img)) return img;
+    if (img.startsWith('//')) return `https:${img}`; // protocol-relative -> prefer https
+    if (img.startsWith('/')) return `${siteOrigin}${img}`;
+    // fallback: treat as relative path under origin
+    return `${siteOrigin}/${img.replace(/^\/+/, '')}`;
+  };
+
   const images: string[] = [];
   try {
     if (Array.isArray(car.images) && car.images.length) {
       for (const img of car.images) {
-        if (!img) continue;
-        images.push(img.startsWith('http') ? img : `https://autogo.pt${img}`);
+        const n = normalizeImage(img);
+        if (n) images.push(n);
       }
     }
-    if (car.image && images.indexOf(car.image) === -1) {
-      images.unshift(car.image.startsWith('http') ? car.image : `https://autogo.pt${car.image}`);
+    if (car.image) {
+      const primary = normalizeImage(car.image);
+      if (primary && images.indexOf(primary) === -1) images.unshift(primary);
     }
   } catch (e) {}
 
@@ -109,7 +125,7 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
     description: car.description ? String(car.description).slice(0, 300) : null,
     brand: make ? { '@type': 'Brand', name: make } : null,
     image: images.length ? images : null,
-    url: `https://autogo.pt/cars/${car.slug || car.id}`,
+    url: `${siteOrigin}/cars/${car.slug || car.id}`,
     sku: car.id != null ? String(car.id) : null,
     mileageFromOdometer: mileageNum != null ? mileageNum : null,
     offers: {
@@ -117,7 +133,7 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
       priceCurrency: 'EUR',
       price: priceNum != null ? priceNum : null,
       availability: car.sold ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
-      url: `https://autogo.pt/cars/${car.slug || car.id}`,
+      url: `${siteOrigin}/cars/${car.slug || car.id}`,
     },
   };
 
@@ -165,7 +181,13 @@ function fmtNumberForMeta(v: any) {
   return n.toLocaleString(undefined, { minimumFractionDigits: 0 });
 }
 
-export default function CarDetail() {
+type Props = {
+  carId: string | number;
+  detailKeywords: string;
+  vehicleJson: any;
+};
+
+export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -471,22 +493,8 @@ export default function CarDetail() {
   const similarCars = (carsData as Car[])
     .filter((c) => String(c.id) !== String(car.id));
 
-  // Build meta keywords for this car detail page (site-wide + make/model specific)
-  const detailKeywords = (() => {
-    if (!car) return joinKeywords(SITE_WIDE_KEYWORDS);
-    const make = String(car.make || "").trim();
-    const model = String(car.model || "").trim();
-    const specific = [
-      make ? `${make} importado` : null,
-      model ? `${model} importado` : null,
-      `${make} ${model}`.trim() ? `${make} ${model} importado` : null,
-      "carros importados",
-      "carros europeus",
-      "carros usados premium",
-      "AutoGo.pt",
-    ].filter(Boolean) as string[];
-    return joinKeywords(SITE_WIDE_KEYWORDS, specific);
-  })();
+  // meta keywords are computed server-side and passed via props (detailKeywords)
+  // (previous client-side computation removed to avoid duplication)
 
   // Download PDF handler
   async function handleDownloadPDF() {
@@ -979,10 +987,7 @@ export default function CarDetail() {
             alt={car.make + " " + car.model}
             className={`object-cover rounded-xl shadow border-2 border-white bg-gray-100 ring-2 ring-[#b42121]/30 transition-all duration-500
             ${showStickyBar ? "h-24 w-40 scale-[1.03]" : "h-10 w-20 scale-100"}`}
-            style={{
-              maxHeight: showStickyBar ? 96 : 40,
-              maxWidth: showStickyBar ? 160 : 80,
-            }}
+            style={{ objectPosition: 'center top' }}
           />
         </div>
         <div
@@ -1677,85 +1682,20 @@ export default function CarDetail() {
           &copy; 2025 Autogo. All rights reserved.
         </footer>
       </div>
-      <Head>
-        <title>
-          {car
-            ? `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt`
-            : "Carro importado europeu à venda | AutoGo.pt"}
-        </title>
-        <meta
-          name="description"
-          content={
-            car
-              ? `${car.make} ${car.model} — €${fmtNumberForMeta(car.price)} — ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Comprar carro importado europeu em AutoGo.pt.`
-              : "Carro importado europeu à venda em AutoGo.pt"
-          }
-        />
-        <meta name="robots" content="index,follow" />
-        <meta name="keywords" content={detailKeywords} />
-        <link rel="canonical" href={`https://autogo.pt/cars/${car.slug || car.id}`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${car.make} ${car.model} — AutoGo.pt`} />
-        <meta name="twitter:description" content={car ? `${car.make} ${car.model} — €${fmtNumberForMeta(car.price)} — ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km.` : ''} />
-        <meta name="twitter:image" content={car ? `https://autogo.pt${car.image}` : 'https://autogo.pt/images/auto-logo.png'} />
-        <meta
-          property="og:title"
-          content={
-            car
-              ? `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt`
-              : "Carro importado europeu à venda | AutoGo.pt"
-          }
-        />
-        <meta
-          property="og:description"
-          content={
-            car
-              ? `Comprar ${car.make} ${car.model} importado europeu, BMW, Audi, Mercedes, Peugeot, Volkswagen, Renault, Citroën ou outro modelo popular à venda em Portugal. Quilometragem: ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Preço: €${fmtNumberForMeta(car.price)}. Carros usados e seminovos com garantia.`
-              : "Carro importado europeu à venda em AutoGo.pt"
-          }
-        />
-        <meta
-          property="og:url"
-          content={
-            car ? `https://autogo.pt/cars/${car.slug || car.id}` : "https://autogo.pt/cars/"
-          }
-        />
-        <meta property="og:type" content="product" />
-        <meta
-          property="og:image"
-          content={
-            car
-              ? `https://autogo.pt${car.image}`
-              : "https://autogo.pt/images/auto-logo.png"
-          }
-        />
-      </Head>
-      {/* Dados estruturados JSON-LD para carros (Schema.org Vehicle) */}
-      {car && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Vehicle",
-              brand: car.make,
-              model: car.model,
-              vehicleModelDate: car.year,
-              mileageFromOdometer: numify(car.mileage),
-              offers: {
-                "@type": "Offer",
-                priceCurrency: "EUR",
-                price: numify(car.price),
-                availability: "https://schema.org/InStock",
-              },
-              image: car.images
-                ? car.images.map((img) => `https://autogo.pt${img}`)
-                : [`https://autogo.pt${car.image}`],
-              url: `https://autogo.pt/cars/${car.slug || car.id}`,
-            }),
-          }}
-        />
-      )}
+      <Seo
+        title={car ? `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt` : 'Carro importado europeu à venda | AutoGo.pt'}
+        description={
+          car
+            ? `${car.make} ${car.model} — €${fmtNumberForMeta(car.price)} — ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Comprar carro importado europeu em AutoGo.pt.`
+            : 'Carro importado europeu à venda em AutoGo.pt'
+        }
+        url={vehicleJson?.url ?? `${process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt'}/cars/${car.slug || car.id}`}
+        image={Array.isArray(vehicleJson?.image) ? vehicleJson.image[0] : vehicleJson?.image}
+        keywords={detailKeywords}
+        ogType="product"
+        jsonLd={vehicleJson}
+      />
+      {/* vehicleJson already injected via <Seo> above */}
     </Layout>
   );
 }

@@ -20,9 +20,7 @@ class MyDocument extends Document {
           {/* Default Twitter card (can be overridden per-page) */}
           <meta name="twitter:card" content="summary_large_image" />
 
-          {/* Google tag (gtag.js) - Global site tag */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-0E4057P95K"></script>
-          <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0E4057P95K');` }} />
+          {/* NOTE: analytics initialization has been moved to MainLayout (consent-aware). */}
         </Head>
         <body>
           {/*
