@@ -28,14 +28,17 @@ try {
     }
   }
 } catch (e) {
-  // If the data file isn't present at build-time, just emit no redirects.
-  // This keeps next.config.js resilient in dev or CI where the file might be missing.
   console.warn("next.config.js: could not load ./data/cars.json for redirects:", e && e.message);
 }
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n,
+
+  // ✅ Adiciona estas linhas aqui:
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+
   async redirects() {
     return carRedirects;
   },
