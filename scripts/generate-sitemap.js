@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-const baseUrl = 'https://autogo.pt';
+// ✅ domínio canónico
+const baseUrl = 'https://www.autogo.pt';
 const outPath = path.join(process.cwd(), 'public', 'sitemap.xml');
 
 function isoDate(d) {
@@ -19,7 +20,11 @@ const carsPath = path.join(process.cwd(), 'data', 'cars.json');
 let carsFileMtime = null;
 try {
   cars = require(carsPath);
-  try { carsFileMtime = fs.statSync(carsPath).mtime; } catch (e) { carsFileMtime = null; }
+  try {
+    carsFileMtime = fs.statSync(carsPath).mtime;
+  } catch (e) {
+    carsFileMtime = null;
+  }
 } catch (e) {
   cars = [];
 }
@@ -33,10 +38,13 @@ try {
   blogFiles = [];
 }
 
+// Discover locales (folder names under /locales)
 const localesDir = path.join(process.cwd(), 'locales');
 let locales = [];
 try {
-  locales = fs.readdirSync(localesDir).filter((d) => fs.lstatSync(path.join(localesDir, d)).isDirectory());
+  locales = fs
+    .readdirSync(localesDir)
+    .filter((d) => fs.lstatSync(path.join(localesDir, d)).isDirectory());
 } catch (e) {
   locales = [];
 }
@@ -58,8 +66,10 @@ function entry(loc, lastmod, changefreq, priority, alternates) {
   if (changefreq) s += `    <changefreq>${escapeXml(changefreq)}</changefreq>\n`;
   if (priority) s += `    <priority>${escapeXml(priority)}</priority>\n`;
   if (alternates && alternates.length) {
-    alternates.forEach(a => {
-      s += `    <xhtml:link rel="alternate" hreflang="${escapeXml(a.hreflang)}" href="${escapeXml(a.href)}" />\n`;
+    alternates.forEach((a) => {
+      s += `    <xhtml:link rel="alternate" hreflang="${escapeXml(
+        a.hreflang
+      )}" href="${escapeXml(a.href)}" />\n`;
     });
   }
   s += '  </url>\n';
@@ -68,23 +78,64 @@ function entry(loc, lastmod, changefreq, priority, alternates) {
 
 let xml = '';
 xml += '<?xml version="1.0" encoding="UTF-8"?>\n';
-xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
+xml +=
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
 
 const buildDate = isoDate(new Date());
 
-// Homepage with hreflang alternates for discovered locales
-const alternates = locales.length ? locales.map((loc) => {
-  const href = loc === 'pt-PT' ? `${baseUrl}/` : `${baseUrl}/${loc.replace('_','-')}/`;
-  const hreflang = loc === 'pt-PT' ? 'pt-PT' : loc;
-  return { hreflang, href };
-}) : [];
+// Helper: build alternates array (adds x-default)
+function buildAlternatesFor(pathSuffix = '') {
+  const arr = locales.length
+    ? locales.map((loc) => {
+        const lang = loc.replace('_', '-');
+        const isPt = lang === 'pt-PT';
+        const href =
+          isPt
+            ? `${baseUrl}${pathSuffix}`
+            : `${baseUrl}/${lang}${pathSuffix}`;
+        const hreflang = isPt ? 'pt-PT' : lang;
+        return { hreflang, href };
+      })
+    : [];
+  // x-default -> versão “genérica”
+  if (arr.length) {
+    const href =
+      pathSuffix === '/' ? `${baseUrl}/` : `${baseUrl}${pathSuffix}`;
+    arr.push({ hreflang: 'x-default', href });
+  }
+  return arr;
+}
 
-xml += entry(`${baseUrl}/`, buildDate, 'daily', '1.0', alternates);
-xml += entry(`${baseUrl}/viaturas`, buildDate, 'daily', '0.9', alternates);
-xml += entry(`${baseUrl}/blog`, buildDate, 'weekly', '0.8', alternates);
-// Add simulador and sobre-nos pages to sitemap
-xml += entry(`${baseUrl}/simulador`, buildDate, 'monthly', '0.8', alternates);
-xml += entry(`${baseUrl}/sobre-nos`, buildDate, 'monthly', '0.8', alternates);
+// Static pages (ajuste os paths conforme o site real)
+xml += entry(`${baseUrl}/`, buildDate, 'daily', '1.0', buildAlternatesFor('/'));
+xml += entry(
+  `${baseUrl}/viaturas`,
+  buildDate,
+  'daily',
+  '0.9',
+  buildAlternatesFor('/viaturas')
+);
+xml += entry(
+  `${baseUrl}/blog`,
+  buildDate,
+  'weekly',
+  '0.8',
+  buildAlternatesFor('/blog')
+);
+xml += entry(
+  `${baseUrl}/simulador`,
+  buildDate,
+  'monthly',
+  '0.8',
+  buildAlternatesFor('/simulador')
+);
+xml += entry(
+  `${baseUrl}/sobre-nos`,
+  buildDate,
+  'monthly',
+  '0.8',
+  buildAlternatesFor('/sobre-nos')
+);
 
 // Cars
 cars.forEach((car) => {
@@ -93,8 +144,9 @@ cars.forEach((car) => {
   const urlId = slug || id;
   if (!urlId) return;
 
-  // Prefer explicit timestamps, else fallback to cars.json mtime, else build date
-  const rawLast = car.updatedAt || car.updated || car.date || car.lastModified || null;
+  // Prefer explicit timestamps, else file mtime, else build date
+  const rawLast =
+    car.updatedAt || car.updated || car.date || car.lastModified || null;
   let last = null;
   if (rawLast) {
     try {
@@ -105,18 +157,18 @@ cars.forEach((car) => {
     }
   }
   if (!last && carsFileMtime) {
-    try { last = isoDate(carsFileMtime); } catch (e) { last = buildDate; }
+    try {
+      last = isoDate(carsFileMtime);
+    } catch (e) {
+      last = buildDate;
+    }
   }
   if (!last) last = buildDate;
 
-  // hreflang alternates per locale for each car (pointing to localized paths)
-  const carAlternates = locales.length ? locales.map((loc) => {
-    const href = loc === 'pt-PT' ? `${baseUrl}/cars/${urlId}` : `${baseUrl}/${loc.replace('_','-')}/cars/${urlId}`;
-    const hreflang = loc === 'pt-PT' ? 'pt-PT' : loc;
-    return { hreflang, href };
-  }) : [];
+  const carPath = `/cars/${urlId}`;
+  const carAlternates = buildAlternatesFor(carPath);
 
-  xml += entry(`${baseUrl}/cars/${urlId}`, last, 'monthly', '0.7', carAlternates);
+  xml += entry(`${baseUrl}${carPath}`, last, 'monthly', '0.7', carAlternates);
 });
 
 // Blog posts
@@ -124,13 +176,25 @@ blogFiles.forEach((file) => {
   try {
     const content = fs.readFileSync(path.join(blogDir, file), 'utf8');
     const parsed = matter(content);
-    const dateVal = (parsed.data && (parsed.data.updated || parsed.data.date)) || buildDate;
+    const dateVal =
+      (parsed.data && (parsed.data.updated || parsed.data.date)) || buildDate;
     let last = buildDate;
-    try { const p = new Date(dateVal); if (!isNaN(p.getTime())) last = isoDate(p); } catch (e) { last = buildDate; }
+    try {
+      const p = new Date(dateVal);
+      if (!isNaN(p.getTime())) last = isoDate(p);
+    } catch (e) {
+      last = buildDate;
+    }
     const slug = file.replace(/\.md$/, '');
-    xml += entry(`${baseUrl}/blog/${slug}`, last, 'monthly', '0.6');
+    xml += entry(
+      `${baseUrl}/blog/${slug}`,
+      last,
+      'monthly',
+      '0.6',
+      buildAlternatesFor(`/blog/${slug}`)
+    );
   } catch (e) {
-    // ignore
+    // ignore file read errors
   }
 });
 
