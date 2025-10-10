@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://autogo.pt/</loc>
-    <lastmod>2025-10-08</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://autogo.pt/viaturas</loc>
-    <lastmod>2025-10-08</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://autogo.pt/blog</loc>
-    <lastmod>2025-10-08</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://autogo.pt/simulador</loc>
-    <lastmod>2025-10-08</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://autogo.pt/sobre-nos</loc>
-    <lastmod>2025-10-08</lastmod>
+    <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -793,18 +793,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://autogo.pt/cars/tesla-model-3-performance-dual-motor-awd-2019-6128543</loc>
-    <lastmod>2025-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://autogo.pt/cars/skoda-superb-combi-1-4-tsi-sportline-aut-2023-6360915</loc>
-    <lastmod>2025-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://autogo.pt/cars/skoda-karoq-1-5-tsi-sport-line-2020-5612450</loc>
     <lastmod>2025-10-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -848,12 +836,6 @@
   </url>
   <url>
     <loc>https://autogo.pt/cars/skoda-superb-combi-1-6-tdi-style-2019-6299900</loc>
-    <lastmod>2025-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://autogo.pt/cars/volkswagen-passat-variant-2021-4354806</loc>
     <lastmod>2025-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
