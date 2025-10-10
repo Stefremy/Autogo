@@ -23,8 +23,24 @@
     "**/build/**": true,
     "**/.next/**": true,
     "**/.turbo/**": true,
-    "**/target/**": true
+    "**/target/**": true,
+    "**/.git/**": true,
+    "**/public/images/**": true,
+    "**/data/**": true,
+    "**/cars.full.json": true
   },
   "search.useIgnoreFiles": true,
-  "terminal.integrated.gpuAcceleration": "off"
+  "terminal.integrated.gpuAcceleration": "off",
+
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/data/**": true,
+    "**/public/images/**": true
+  },
+  "files.exclude": {
+    "**/data/**": true
+  },
+  "typescript.tsserver.maxTsServerMemory": 4096,
+  "eslint.run": "onSave",
+  "git.autofetch": false
 }
