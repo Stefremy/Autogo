@@ -12,6 +12,18 @@ import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKey
 export default function Blog({ posts }) {
   const { t } = useTranslation("common");
   const keywords = joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS);
+  const categoryLinks = [
+    {
+      href: "/blog/categoria/noticias",
+      label: "Notícias",
+      description: "Atualizações do mercado automóvel importado e fiscalidade ISV.",
+    },
+    {
+      href: "/blog/categoria/reviews",
+      label: "Reviews",
+      description: "Testes e análises detalhadas dos modelos europeus disponíveis na AutoGo.pt.",
+    },
+  ];
   return (
     <Layout>
       <Seo
@@ -90,6 +102,26 @@ export default function Blog({ posts }) {
           }}
         >
           {/* Removido título e subtítulo do blog conforme solicitado */}
+          <section className="mt-4 mb-10">
+            <h2 className="text-sm uppercase tracking-[0.3em] text-[#b42121] font-semibold">
+              Categorias em destaque
+            </h2>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {categoryLinks.map((category) => (
+                <Link key={category.href} href={category.href} legacyBehavior>
+                  <a className="group block rounded-xl border border-white/60 bg-white/70 backdrop-blur-md p-5 shadow-md transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#d50032]">
+                    <span className="text-lg font-semibold text-[#1a237e] group-hover:underline">
+                      {category.label}
+                    </span>
+                    <p className="mt-1 text-sm text-gray-600">{category.description}</p>
+                    <span className="mt-3 inline-flex items-center text-xs font-semibold uppercase tracking-wide text-[#d50032]">
+                      Ver artigos →
+                    </span>
+                  </a>
+                </Link>
+              ))}
+            </div>
+          </section>
           <div className="mt-8 space-y-8">
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} legacyBehavior>
