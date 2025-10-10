@@ -12,17 +12,17 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
 
   // map common shorthand names to the canonical filename base present in /public/images/carmake
   const ALIASES: Record<string, string> = {
-    mercedes: 'Mercedes-Benz',
-    'mercedes-benz': 'Mercedes-Benz',
-    mb: 'Mercedes-Benz',
+    mercedes: "Mercedes-Benz",
+    "mercedes-benz": "Mercedes-Benz",
+    mb: "Mercedes-Benz",
     // common misspellings / lowercase variants to ensure the correct logo is resolved
-    mazda: 'Mazda',
-    mazd: 'Mazda',
+    mazda: "Mazda",
+    mazd: "Mazda",
     // shorthand for Morris Garage / MG
-    mg: 'MG',
+    mg: "MG",
   };
 
-  const resolvedMake = (ALIASES[(make || '').trim().toLowerCase()] || make).toString();
+  const resolvedMake = (ALIASES[(make || "").trim().toLowerCase()] || make).toString();
 
   // generate a prioritized list of candidate filenames covering
   // spaces, hyphens, camelCase (insert hyphen between lowercase+Uppercase),
@@ -39,15 +39,9 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
 
     // Prioritize the exact resolved string (preserves original capitalization)
     // so filenames like `Mercedes-Benz-logo.jpg` are tried early.
-    const bases = Array.from(new Set([
-      s,
-      kebab,
-      lowerKebab,
-      camelHyphen,
-      lowerCamelHyphen,
-      noHyphen,
-      lowerNoHyphen,
-    ]));
+    const bases = Array.from(
+      new Set([s, kebab, lowerKebab, camelHyphen, lowerCamelHyphen, noHyphen, lowerNoHyphen])
+    );
 
     const list: string[] = [];
     for (const b of bases) {
@@ -62,21 +56,21 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
     const SPECIAL_CASES: Record<string, string[]> = {
       // prefer the lowercase png path the user mentioned, but include other variants too
       mazda: [
-        '/images/carmake/mazda-logo.png',
-        '/images/carmake/Mazda-logo.png',
-        '/images/carmake/mazda-logo.jpg',
-        '/images/carmake/Mazda-logo.jpg',
+        "/images/carmake/mazda-logo.png",
+        "/images/carmake/Mazda-logo.png",
+        "/images/carmake/mazda-logo.jpg",
+        "/images/carmake/Mazda-logo.jpg",
       ],
       // MG provided as JPG in the repo; try that first then other common variants
       mg: [
-        '/images/carmake/MG-logo.jpg',
-        '/images/carmake/MG-logo.png',
-        '/images/carmake/mg-logo.jpg',
-        '/images/carmake/mg-logo.png',
+        "/images/carmake/MG-logo.jpg",
+        "/images/carmake/MG-logo.png",
+        "/images/carmake/mg-logo.jpg",
+        "/images/carmake/mg-logo.png",
       ],
     };
 
-    const key = (resolvedMake || '').toString().trim().toLowerCase();
+    const key = (resolvedMake || "").toString().trim().toLowerCase();
     if (SPECIAL_CASES[key]) return SPECIAL_CASES[key];
     return genCandidates(resolvedMake);
   })();
@@ -102,7 +96,7 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
         // start hidden and fade in when the real image has loaded to avoid flash
         opacity: 0,
         transition: "opacity 180ms ease-in-out, filter 180ms ease-in-out",
-        background: 'transparent',
+        background: "transparent",
       }}
       loading={"lazy"}
       onLoad={(e) => {
@@ -111,38 +105,9 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
           // reveal smoothly when loaded
           img.style.opacity = "1";
           img.style.filter = "none";
-        } catch (err) {
+        } catch (_err) {
           // ignore
         }
       }}
       onError={(e) => {
         const img = e.currentTarget as HTMLImageElement & { dataset: any };
-        try {
-          const list: string[] = JSON.parse(img.dataset.candidates || "[]");
-          let idx = parseInt(img.dataset.attempt || "0", 10);
-          idx = Number.isNaN(idx) ? 0 : idx;
-          const next = idx + 1;
-          if (list && next < list.length) {
-            // fade out slightly before swapping to reduce perceived flash
-            img.dataset.attempt = String(next);
-            img.style.opacity = "0";
-            setTimeout(() => {
-              try { img.src = list[next]; } catch (err) { img.src = list[next]; }
-            }, 80);
-          } else {
-            // final fallback: keep visible but show neutral placeholder (no hide)
-            img.src = svgFallback;
-            img.style.objectFit = "contain";
-            img.style.background = "transparent";
-            img.style.opacity = "1";
-          }
-        } catch (err) {
-          img.src = svgFallback;
-          img.style.opacity = "1";
-        }
-      }}
-    />
-  );
-};
-
-export default MakeLogo;
