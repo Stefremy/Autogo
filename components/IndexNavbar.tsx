@@ -147,11 +147,8 @@ export function IndexNavbar() {
           </span>
         </div>
 
-        {/* Mobile/Tablet Menu Button */}
-        <div
-          className="lg:hidden flex items-center gap-1 sm:gap-2"
-          style={{ display: "flex" }}
-        >
+        {/* Mobile/Tablet Menu Button (hidden on lg+) */}
+        <div className="lg:hidden flex items-center gap-1 sm:gap-2">
           <div className="relative ml-1 sm:ml-2">
             <select
               value={currentLocale}
@@ -175,7 +172,6 @@ export function IndexNavbar() {
                 : "bg-white hover:bg-[#f5f6fa] shadow-md hover:shadow-lg"
             }`}
             aria-label="Toggle mobile menu"
-            style={{ display: "block", visibility: "visible" }}
           >
             <div className="w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center relative">
               <span
