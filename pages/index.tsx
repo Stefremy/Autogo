@@ -418,11 +418,8 @@ export default function Home({ blogArticles }) {
                     <path d="M18 6L6 18" strokeLinecap="round" strokeLinejoin="round"></path>
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5 text-[#b42121]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M3 6h18" strokeLinecap="round" strokeLinejoin="round"></path>
-                    <path d="M3 12h18" strokeLinecap="round" strokeLinejoin="round"></path>
-                    <path d="M3 18h18" strokeLinecap="round" strokeLinejoin="round"></path>
-                  </svg>
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src="/images/icons/pngwing.com.png" alt="Filtro" className="w-5 h-5 object-contain" />
                 )}
               </button>
             </div>
