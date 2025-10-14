@@ -381,26 +381,26 @@ export default function Home({ blogArticles }) {
 
         
 
-            <div className="flex flex-row w-auto max-w-xl mx-auto rounded-full bg-white/30 backdrop-blur-md shadow-2xl py-3 px-3 items-center gap-3 mb-4 sm:mb-5 border border-white/30 overflow-visible">
+            <div className="flex flex-row w-full max-w-xl rounded-full bg-white/30 backdrop-blur-md shadow-2xl py-3 px-3 items-center gap-3 mb-4 sm:mb-5 border border-white/30 overflow-visible">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a
-                  className="inline-block bg-white text-[#b42121] font-semibold px-3 py-1 rounded-full text-sm text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md w-auto"
+                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold text-white bg-[#b42121] shadow-sm transition hover:shadow-lg hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121]"
                 >
-                  {t("Viaturas")}
+                  Ver Viaturas Disponíveis
                 </a>
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
                 <a
-                  className="inline-block bg-white text-[#b42121] font-semibold px-3 py-1 rounded-full text-sm text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md w-auto"
+                  className="inline-flex items-center justify-center rounded-full px-2 py-1 text-base font-medium text-black/90 underline-offset-4 hover:underline hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black"
                 >
-                  {t("Simulador")}
+                  Simular ISV
                 </a>
               </Link>
               <Link href="/pedido" legacyBehavior passHref>
                 <a
-                  className="inline-block bg-white text-[#b42121] font-semibold px-3 py-1 rounded-full text-sm text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md w-auto"
+                  className="inline-flex items-center justify-center rounded-full px-2 py-1 text-base font-medium text-black/90 underline-offset-4 hover:underline hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black"
                 >
-                  {t("Encomendar")}
+                  Encomendar
                 </a>
               </Link>
 
