@@ -419,8 +419,9 @@ export default function Home({ blogArticles }) {
                     <path d="M18 6L6 18" strokeLinecap="round" strokeLinejoin="round"></path>
                   </svg>
                 ) : (
+                  // prefer the PNG asset but fall back to inline SVG if it fails
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src="/images/icons/pngwing.com.png" alt="Filtro" className="w-5 h-5 object-contain" />
+                  <img src="/images/icons/filter.svg" alt="Filtro" className="w-5 h-5 object-contain" />
                 )}
               </button>
             </div>
