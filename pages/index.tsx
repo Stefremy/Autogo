@@ -223,6 +223,15 @@ export default function Home({ blogArticles }) {
     var minW = 16 * 16; // 16rem
     var maxW = window.innerWidth; // allow edge-to-edge
     var newW = lerp(minW, maxW, progress);
+    // Apply computed width and center the span horizontally
+    try {
+      el.style.width = Math.max(0, Math.round(newW)) + 'px';
+      var sideMargin = Math.max(0, Math.round((window.innerWidth - newW) / 2));
+      el.style.marginLeft = sideMargin + 'px';
+      el.style.marginRight = sideMargin + 'px';
+    } catch (e) {
+      // ignore style errors
+    }
     // Fade out as we approach the footer
     var fadeStart = 0.98;
     var fadeProgress = clamp((progress - fadeStart) / (1 - fadeStart), 0, 1);
@@ -319,118 +328,27 @@ export default function Home({ blogArticles }) {
 
             <div className="flex flex-col sm:flex-row w-auto max-w-xl mx-auto rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30 overflow-hidden">
               <Link href="/viaturas" legacyBehavior passHref>
-                <a className="beauty-fade-btn">{t("Viaturas")}</a>
+                <a
+                  className="inline-block bg-white text-[#b42121] font-semibold px-5 py-2 rounded-full w-full text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md sm:w-auto"
+                >
+                  {t("Viaturas")}
+                </a>
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
-                <a className="beauty-fade-btn">{t("Simulador")}</a>
+                <a
+                  className="inline-block bg-white text-[#b42121] font-semibold px-5 py-2 rounded-full w-full text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md sm:w-auto"
+                >
+                  {t("Simulador")}
+                </a>
               </Link>
               <Link href="/pedido" legacyBehavior passHref>
-                <a className="beauty-fade-btn" style={{ marginLeft: "0.5rem" }}>
+                <a
+                  className="inline-block bg-white text-[#b42121] font-semibold px-5 py-2 rounded-full w-full text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md sm:w-auto sm:ml-2"
+                >
                   {t("Encomendar")}
                 </a>
               </Link>
             </div>
-            <style jsx>{`
-              .beauty-fade-btn {
-                display: inline-block;
-                background: linear-gradient(90deg, #b42121 0%, #e05252 100%);
-                color: #fff;
-                font-weight: bold;
-                padding: 0.75rem 1.5rem;
-                font-size: 1rem;
-                border-radius: 0.75rem;
-                width: 100%;
-                text-align: center;
-                box-shadow:
-                  0 4px 24px 0 rgba(180, 33, 33, 0.18),
-                  0 1.5px 8px 0 rgba(44, 62, 80, 0.1);
-                transition:
-                  background 0.3s,
-                  box-shadow 0.3s,
-                  transform 0.18s,
-                  filter 0.3s;
-                position: relative;
-                overflow: hidden;
-                outline: none;
-                border: none;
-                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                z-index: 1;
-                white-space: nowrap;
-                cursor: pointer;
-                min-width: 140px;
-              }
-              .beauty-fade-btn:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(
-                  120deg,
-                  rgba(255, 255, 255, 0.18) 0%,
-                  rgba(255, 255, 255, 0.08) 100%
-                );
-                opacity: 0.7;
-                z-index: 2;
-                pointer-events: none;
-                transition: opacity 0.3s;
-              }
-              .beauty-fade-btn:after {
-                content: "";
-                position: absolute;
-                left: -60%;
-                top: -50%;
-                width: 220%;
-                height: 200%;
-                background: radial-gradient(
-                  circle,
-                  rgba(255, 255, 255, 0.18) 0%,
-                  rgba(255, 255, 255, 0) 80%
-                );
-                opacity: 0.5;
-                z-index: 3;
-                pointer-events: none;
-                animation: beauty-fade-glow 2.8s linear infinite;
-              }
-              @keyframes beauty-fade-glow {
-                0% {
-                  left: -60%;
-                  top: -50%;
-                  opacity: 0.5;
-                }
-                50% {
-                  left: 0%;
-                  top: 0%;
-                  opacity: 0.8;
-                }
-                100% {
-                  left: -60%;
-                  top: -50%;
-                  opacity: 0.5;
-                }
-              }
-              .beauty-fade-btn:hover,
-              .beauty-fade-btn:focus {
-                background: linear-gradient(90deg, #d55050 0%, #b42121 100%);
-                box-shadow:
-                  0 8px 32px 0 rgba(180, 33, 33, 0.28),
-                  0 2px 12px 0 rgba(44, 62, 80, 0.13);
-                filter: brightness(1.08) saturate(1.15);
-                transform: translateY(-2px) scale(1.035);
-              }
-              .beauty-fade-btn:active {
-                filter: brightness(0.98);
-                transform: scale(0.98);
-              }
-              @media (min-width: 640px) {
-                .beauty-fade-btn {
-                  width: auto;
-                  padding: 0.65rem 1.6rem;
-                  font-size: 1.05rem;
-                }
-              }
-            `}</style>
           
           </div>
         </motion.section>
