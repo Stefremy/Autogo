@@ -11,6 +11,7 @@ import cars from "../data/cars.json";
 import CarCard from "../components/CarCard";
 import PremiumCarCard from "../components/PremiumCarCard";
 import React, { useState, useRef, useEffect } from "react";
+import { useRouter } from 'next/router';
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
 
@@ -159,6 +160,51 @@ export default function Home({ blogArticles }) {
     setFeaturedCars(others);
   };
 
+  // --- Hero filter state (minimal: Marca, Modelo, Ano, KM, Preço) ---
+  const router = useRouter();
+  const [heroFilter, setHeroFilter] = useState({
+    make: "",
+    model: "",
+    year: "",
+    km: "",
+    price: "",
+  });
+  const [heroFilterOpen, setHeroFilterOpen] = useState(false);
+
+  const heroMakes = Array.from(new Set(cars.map((c) => c.make))).filter(Boolean).sort();
+  const heroModels = heroFilter.make
+    ? Array.from(new Set(cars.filter((c) => c.make === heroFilter.make).map((c) => c.model))).sort()
+    : [];
+
+  const onHeroSearch = (e) => {
+    e && e.preventDefault && e.preventDefault();
+    const q: any = {};
+    if (heroFilter.make) q.marca = heroFilter.make;
+    if (heroFilter.model) q.modelo = heroFilter.model;
+    if (heroFilter.year) q.ano = heroFilter.year;
+    if (heroFilter.km) q.km = heroFilter.km;
+    if (heroFilter.price) q.maxPrice = heroFilter.price;
+
+    // Persist to viaturas storage key so /viaturas picks it up on mount
+    try {
+      if (typeof window !== 'undefined') {
+        const toSave = {
+          marca: heroFilter.make || undefined,
+          modelo: heroFilter.model || undefined,
+          ano: heroFilter.year || undefined,
+          minPrice: undefined,
+          maxPrice: heroFilter.price || undefined,
+          km: heroFilter.km || undefined,
+          ts: Date.now(),
+        };
+        window.localStorage.setItem('viaturas_filters_v1', JSON.stringify(toSave));
+      }
+    } catch (e) {}
+    // close mobile panel (if open) and navigate
+    try { setHeroFilterOpen(false); } catch (e) {}
+    router.push({ pathname: '/viaturas', query: q });
+  };
+
   const seoKeywords = joinKeywords(SITE_WIDE_KEYWORDS, HOME_KEYWORDS);
   // Build FAQ JSON-LD from SEO_KEYWORDS.home.faq when available
   const homeFaq = SEO_KEYWORDS?.home?.faq;
@@ -302,54 +348,213 @@ export default function Home({ blogArticles }) {
 
           {/* Main Content */}
           <div className="relative z-10 flex flex-col items-start justify-center h-full pt-4 pb-4 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className="text-black text-2xl sm:text-3xl md:text-6xl font-semibold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-xl"
+            {/* Heading + intro wrapper: collapses on mobile when filter opens */}
+            <div
+              className={`w-full transform-gpu transition-all duration-300 ease-in-out overflow-hidden ${
+                heroFilterOpen
+                  ? 'max-h-0 opacity-0 -translate-y-4 pointer-events-none sm:max-h-none sm:opacity-100 sm:translate-y-0 sm:pointer-events-auto'
+                  : 'max-h-[420px] opacity-100'
+              }`}
             >
-              {t("Rápido. Seguro. Teu.")}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.7 }}
-              className="text-black text-sm sm:text-base md:text-2xl mb-4 sm:mb-6 md:mb-10 max-w-xl drop-shadow-lg"
-            >
-              {t("O teu carro europeu,")}
-              <br />
-              {t("Legalizado e pronto a rolar em Portugal")}
-              <br />
-              <span className="font-semibold">{t("Sem complicações")}</span>
-              <br />
-            </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.7 }}
+                className="text-black text-2xl sm:text-3xl md:text-6xl font-semibold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-xl"
+              >
+                {t("Rápido. Seguro. Teu.")}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.7 }}
+                className="text-black text-sm sm:text-base md:text-2xl mb-4 sm:mb-6 md:mb-10 max-w-xl drop-shadow-lg"
+              >
+                {t("O teu carro europeu,")}
+                <br />
+                {t("Legalizado e pronto a rolar em Portugal")}
+                <br />
+                <span className="font-semibold">{t("Sem complicações")}</span>
+                <br />
+              </motion.p>
+            </div>
 
         
 
-            <div className="flex flex-col sm:flex-row w-auto max-w-xl mx-auto rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-3 sm:p-2 items-center gap-2 sm:gap-3 mb-4 sm:mb-5 border border-white/30 overflow-hidden">
+            <div className="flex flex-row w-auto max-w-xl mx-auto rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-2 items-center gap-2 mb-4 sm:mb-5 border border-white/30 overflow-visible">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a
-                  className="inline-block bg-white text-[#b42121] font-semibold px-5 py-2 rounded-full w-full text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md sm:w-auto"
+                  className="inline-block bg-white text-[#b42121] font-semibold px-3 py-1 rounded-full text-sm text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md w-auto"
                 >
                   {t("Viaturas")}
                 </a>
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
                 <a
-                  className="inline-block bg-white text-[#b42121] font-semibold px-5 py-2 rounded-full w-full text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md sm:w-auto"
+                  className="inline-block bg-white text-[#b42121] font-semibold px-3 py-1 rounded-full text-sm text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md w-auto"
                 >
                   {t("Simulador")}
                 </a>
               </Link>
               <Link href="/pedido" legacyBehavior passHref>
                 <a
-                  className="inline-block bg-white text-[#b42121] font-semibold px-5 py-2 rounded-full w-full text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md sm:w-auto sm:ml-2"
+                  className="inline-block bg-white text-[#b42121] font-semibold px-3 py-1 rounded-full text-sm text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md w-auto"
                 >
                   {t("Encomendar")}
                 </a>
               </Link>
+
+              {/* Mobile toggle: placed inline so the panel opens immediately below the buttons */}
+              <button
+                type="button"
+                onClick={() => setHeroFilterOpen((s) => !s)}
+                className="ml-2 sm:hidden inline-flex items-center justify-center p-2 rounded-md bg-white/90 border border-gray-200 shadow-sm"
+                aria-expanded={heroFilterOpen}
+                aria-label={heroFilterOpen ? 'Fechar filtro' : 'Abrir filtro'}
+              >
+                {heroFilterOpen ? (
+                  <svg className="w-5 h-5 text-[#b42121]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M6 6l12 12" strokeLinecap="round" strokeLinejoin="round"></path>
+                    <path d="M18 6L6 18" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5 text-[#b42121]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 6h18" strokeLinecap="round" strokeLinejoin="round"></path>
+                    <path d="M3 12h18" strokeLinecap="round" strokeLinejoin="round"></path>
+                    <path d="M3 18h18" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                )}
+              </button>
             </div>
-          
+
+            {/* Minimal hero filter bar (one-line) - desktop/tablet only */}
+            <form onSubmit={onHeroSearch} className="hidden sm:block w-full max-w-xl mx-auto mt-3">
+              <div className="flex items-center gap-2 bg-white/95 border border-gray-100 rounded-lg px-3 py-2 shadow-sm overflow-x-auto">
+                <select
+                  value={heroFilter.make}
+                  onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
+                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md min-w-[120px]"
+                >
+                  <option value="">Marca</option>
+                  {heroMakes.map((m) => (
+                    <option key={m} value={m}>{m}</option>
+                  ))}
+                </select>
+
+                <select
+                  value={heroFilter.model}
+                  onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
+                  disabled={!heroModels.length}
+                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md min-w-[120px]"
+                >
+                  <option value="">Modelo</option>
+                  {heroModels.map((m) => (
+                    <option key={m} value={m}>{m}</option>
+                  ))}
+                </select>
+
+                <input
+                  type="number"
+                  value={heroFilter.price}
+                  onChange={(e) => setHeroFilter({ ...heroFilter, price: e.target.value })}
+                  placeholder="Preço até"
+                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md w-28"
+                />
+
+                <input
+                  type="number"
+                  value={heroFilter.year}
+                  onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
+                  placeholder="Ano"
+                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md w-24"
+                />
+
+                <input
+                  type="number"
+                  value={heroFilter.km}
+                  onChange={(e) => setHeroFilter({ ...heroFilter, km: e.target.value })}
+                  placeholder="KM"
+                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md w-24"
+                />
+
+                <button type="submit" className="ml-auto flex-shrink-0 min-w-[92px] bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-4 py-2 rounded-md shadow">Procurar</button>
+              </div>
+            </form>
+
+            {/* Mobile collapsible filter panel (animated slide + fade) */}
+            <div className={`sm:hidden max-w-xl mx-auto mt-2`}>
+              {/* outer wrapper handles clipping and max-height to animate smoothly */}
+              <div
+                className={`transform-gpu transition-all duration-300 ease-in-out origin-top rounded-lg border border-gray-100 shadow-sm ${
+                  heroFilterOpen
+                    ? 'max-h-[54vh] opacity-100 translate-y-0'
+                    : 'max-h-0 opacity-0 -translate-y-2'
+                }`}
+                style={{ overflow: 'hidden' }}
+              >
+                <div className={`bg-white/95 px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
+                  <div className="flex flex-col gap-2">
+                  <select
+                    value={heroFilter.make}
+                    onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
+                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                  >
+                    <option value="">Marca</option>
+                    {heroMakes.map((m) => (
+                      <option key={m} value={m}>{m}</option>
+                    ))}
+                  </select>
+
+                  <select
+                    value={heroFilter.model}
+                    onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
+                    disabled={!heroModels.length}
+                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                  >
+                    <option value="">Modelo</option>
+                    {heroModels.map((m) => (
+                      <option key={m} value={m}>{m}</option>
+                    ))}
+                  </select>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <input
+                      type="number"
+                      value={heroFilter.price}
+                      onChange={(e) => setHeroFilter({ ...heroFilter, price: e.target.value })}
+                      placeholder="Preço até"
+                      className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                    />
+                    <input
+                      type="number"
+                      value={heroFilter.year}
+                      onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
+                      placeholder="Ano"
+                      className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                    />
+                  </div>
+
+                  <input
+                    type="number"
+                    value={heroFilter.km}
+                    onChange={(e) => setHeroFilter({ ...heroFilter, km: e.target.value })}
+                    placeholder="KM"
+                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                  />
+
+                  <div className="pt-1">
+                    <button
+                      onClick={onHeroSearch}
+                      type="button"
+                      className="w-full bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-4 py-2 rounded-md shadow">
+                      Procurar
+                    </button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </motion.section>
         {/* HERO SECTION END */}
