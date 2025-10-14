@@ -381,7 +381,7 @@ export default function Home({ blogArticles }) {
 
         
 
-            <div className="flex flex-row w-auto max-w-xl mx-auto rounded-2xl bg-white/30 backdrop-blur-md shadow-2xl p-2 items-center gap-2 mb-4 sm:mb-5 border border-white/30 overflow-visible">
+            <div className="flex flex-row w-auto max-w-xl mx-auto rounded-full bg-white/30 backdrop-blur-md shadow-2xl py-3 px-3 items-center gap-3 mb-4 sm:mb-5 border border-white/30 overflow-visible">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a
                   className="inline-block bg-white text-[#b42121] font-semibold px-3 py-1 rounded-full text-sm text-center shadow-sm border-2 border-[#b42121]/20 transition-colors duration-150 transform hover:bg-[#b42121] hover:text-white hover:shadow-md w-auto"
@@ -425,73 +425,61 @@ export default function Home({ blogArticles }) {
               </button>
             </div>
 
-            {/* Minimal hero filter bar (one-line) - desktop/tablet only */}
-              <form onSubmit={onHeroSearch} className="hidden sm:block w-full max-w-5xl mx-auto mt-3">
-              <div className="grid gap-2 bg-white/95 border border-gray-100 rounded-lg px-3 py-3 shadow-sm grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 items-center">
-                <div>
+            {/* Minimal hero filter bar (desktop pill) - desktop/tablet only */}
+            <form onSubmit={onHeroSearch} className="hidden sm:flex w-full mx-auto mt-3">
+              <div className="flex items-center w-full bg-white/95 border border-gray-100 rounded-full shadow-2xl overflow-hidden divide-x divide-gray-200">
+                {/* Marca */}
+                <div className="relative flex items-center flex-1 min-w-0 px-6 py-4">
                   <label className="sr-only">Marca</label>
                   <select
                     value={heroFilter.make}
                     onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
-                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                    className="w-full bg-transparent text-sm text-gray-800 border-0 px-0 py-0 outline-none appearance-none focus:outline-none pr-10 truncate"
                   >
                     <option value="">Marca</option>
                     {heroMakes.map((m) => (
                       <option key={m} value={m}>{m}</option>
                     ))}
                   </select>
+                  <svg className="pointer-events-none absolute right-4 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
+                    <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </div>
 
-                <div>
+                {/* Modelo */}
+                <div className="relative flex items-center flex-1 min-w-0 px-6 py-4">
                   <label className="sr-only">Modelo</label>
                   <select
                     value={heroFilter.model}
                     onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
                     disabled={!heroModels.length}
-                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                    className="w-full bg-transparent text-sm text-gray-800 border-0 px-0 py-0 outline-none appearance-none focus:outline-none pr-10 truncate"
                   >
                     <option value="">Modelo</option>
                     {heroModels.map((m) => (
                       <option key={m} value={m}>{m}</option>
                     ))}
                   </select>
+                  <svg className="pointer-events-none absolute right-4 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
+                    <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </div>
 
-                <div>
-                  <label className="sr-only">Preço até</label>
-                  <input
-                    type="number"
-                    value={heroFilter.price}
-                    onChange={(e) => setHeroFilter({ ...heroFilter, price: e.target.value })}
-                    placeholder="Preço até"
-                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                  />
-                </div>
-
-                <div>
+                {/* Ano (Registration from) */}
+                <div className="flex items-center flex-1 min-w-0 px-6 py-4">
                   <label className="sr-only">Ano</label>
                   <input
                     type="number"
                     value={heroFilter.year}
                     onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
-                    placeholder="Ano"
-                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                    placeholder="Registo"
+                    className="w-full bg-transparent text-sm text-gray-800 border-0 px-0 py-0 outline-none focus:outline-none"
                   />
                 </div>
 
-                <div>
-                  <label className="sr-only">KM</label>
-                  <input
-                    type="number"
-                    value={heroFilter.km}
-                    onChange={(e) => setHeroFilter({ ...heroFilter, km: e.target.value })}
-                    placeholder="KM"
-                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                  />
-                </div>
-
-                <div className="flex items-center">
-                  <button type="submit" className="w-full bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1.5 rounded-md shadow text-sm">Procurar</button>
+                {/* Search button */}
+                <div className="flex items-center pl-4 pr-4">
+                  <button type="submit" className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-6 py-2 rounded-full shadow-lg text-sm ring-1 ring-white/30">Procurar</button>
                 </div>
               </div>
             </form>
