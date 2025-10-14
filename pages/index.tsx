@@ -419,9 +419,11 @@ export default function Home({ blogArticles }) {
                     <path d="M18 6L6 18" strokeLinecap="round" strokeLinejoin="round"></path>
                   </svg>
                 ) : (
-                  // prefer the PNG asset but fall back to inline SVG if it fails
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src="/images/icons/filter.svg" alt="Filtro" className="w-5 h-5 object-contain" />
+                  <svg className="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3 5h18" />
+                    <path d="M6 12h12" />
+                    <path d="M10 19h4" />
+                  </svg>
                 )}
               </button>
             </div>
@@ -480,7 +482,12 @@ export default function Home({ blogArticles }) {
 
                 {/* Search button */}
                 <div className="flex items-center pl-4 pr-4">
-                  <button type="submit" className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-6 py-2 rounded-full shadow-lg text-sm ring-1 ring-white/30">Procurar</button>
+                  <button
+                    type="submit"
+                    className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-4 py-1.5 rounded-full shadow-sm text-sm ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03]"
+                  >
+                    Procurar
+                  </button>
                 </div>
               </div>
             </form>
@@ -500,61 +507,62 @@ export default function Home({ blogArticles }) {
               >
                 <div className={`bg-white/95 px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
                   <div className="flex flex-col gap-2">
-                  <select
-                    value={heroFilter.make}
-                    onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
-                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                  >
-                    <option value="">Marca</option>
-                    {heroMakes.map((m) => (
-                      <option key={m} value={m}>{m}</option>
-                    ))}
-                  </select>
-
-                  <select
-                    value={heroFilter.model}
-                    onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
-                    disabled={!heroModels.length}
-                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                  >
-                    <option value="">Modelo</option>
-                    {heroModels.map((m) => (
-                      <option key={m} value={m}>{m}</option>
-                    ))}
-                  </select>
-
-                  <div className="grid grid-cols-2 gap-2">
-                    <input
-                      type="number"
-                      value={heroFilter.price}
-                      onChange={(e) => setHeroFilter({ ...heroFilter, price: e.target.value })}
-                      placeholder="Preço até"
-                      className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                    />
-                    <input
-                      type="number"
-                      value={heroFilter.year}
-                      onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
-                      placeholder="Ano"
-                      className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                    />
+                  <div className="relative w-full">
+                    <label className="sr-only">Marca</label>
+                    <select
+                      value={heroFilter.make}
+                      onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
+                      className="w-full text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full appearance-none pr-10 truncate transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                    >
+                      <option value="">Marca</option>
+                      {heroMakes.map((m) => (
+                        <option key={m} value={m}>{m}</option>
+                      ))}
+                    </select>
+                    <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
+                      <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </div>
 
-                  <input
-                    type="number"
-                    value={heroFilter.km}
-                    onChange={(e) => setHeroFilter({ ...heroFilter, km: e.target.value })}
-                    placeholder="KM"
-                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                  />
+                  <div className="relative w-full">
+                    <label className="sr-only">Modelo</label>
+                    <select
+                      value={heroFilter.model}
+                      onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
+                      disabled={!heroModels.length}
+                      className="w-full text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full appearance-none pr-10 truncate transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                    >
+                      <option value="">Modelo</option>
+                      {heroModels.map((m) => (
+                        <option key={m} value={m}>{m}</option>
+                      ))}
+                    </select>
+                    <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
+                      <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
 
-                  <div className="pt-1">
-                    <button
-                      onClick={onHeroSearch}
-                      type="button"
-                      className="w-full bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-4 py-2 rounded-md shadow">
-                      Procurar
-                    </button>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="number"
+                        value={heroFilter.year}
+                        onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
+                        placeholder="Registo"
+                        className="text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                      />
+                    </div>
+
+                    <div className="pt-1 flex justify-center">
+                      <button
+                        onClick={onHeroSearch}
+                        type="button"
+                        className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1 rounded-full shadow text-xs ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03]"
+                        style={{ minWidth: 120 }}
+                      >
+                        Procurar
+                      </button>
+                    </div>
                   </div>
                   </div>
                 </div>
