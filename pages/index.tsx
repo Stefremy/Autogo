@@ -410,6 +410,7 @@ export default function Home({ blogArticles }) {
                 onClick={() => setHeroFilterOpen((s) => !s)}
                 className="ml-2 sm:hidden inline-flex items-center justify-center p-2 rounded-md bg-white/90 border border-gray-200 shadow-sm"
                 aria-expanded={heroFilterOpen}
+                aria-controls="hero-filter-panel"
                 aria-label={heroFilterOpen ? 'Fechar filtro' : 'Abrir filtro'}
               >
                 {heroFilterOpen ? (
@@ -425,56 +426,73 @@ export default function Home({ blogArticles }) {
             </div>
 
             {/* Minimal hero filter bar (one-line) - desktop/tablet only */}
-            <form onSubmit={onHeroSearch} className="hidden sm:block w-full max-w-xl mx-auto mt-3">
-              <div className="flex items-center gap-2 bg-white/95 border border-gray-100 rounded-lg px-3 py-2 shadow-sm overflow-x-auto">
-                <select
-                  value={heroFilter.make}
-                  onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
-                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md min-w-[120px]"
-                >
-                  <option value="">Marca</option>
-                  {heroMakes.map((m) => (
-                    <option key={m} value={m}>{m}</option>
-                  ))}
-                </select>
+              <form onSubmit={onHeroSearch} className="hidden sm:block w-full max-w-5xl mx-auto mt-3">
+              <div className="grid gap-2 bg-white/95 border border-gray-100 rounded-lg px-3 py-3 shadow-sm grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 items-center">
+                <div>
+                  <label className="sr-only">Marca</label>
+                  <select
+                    value={heroFilter.make}
+                    onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
+                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                  >
+                    <option value="">Marca</option>
+                    {heroMakes.map((m) => (
+                      <option key={m} value={m}>{m}</option>
+                    ))}
+                  </select>
+                </div>
 
-                <select
-                  value={heroFilter.model}
-                  onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
-                  disabled={!heroModels.length}
-                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md min-w-[120px]"
-                >
-                  <option value="">Modelo</option>
-                  {heroModels.map((m) => (
-                    <option key={m} value={m}>{m}</option>
-                  ))}
-                </select>
+                <div>
+                  <label className="sr-only">Modelo</label>
+                  <select
+                    value={heroFilter.model}
+                    onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
+                    disabled={!heroModels.length}
+                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                  >
+                    <option value="">Modelo</option>
+                    {heroModels.map((m) => (
+                      <option key={m} value={m}>{m}</option>
+                    ))}
+                  </select>
+                </div>
 
-                <input
-                  type="number"
-                  value={heroFilter.price}
-                  onChange={(e) => setHeroFilter({ ...heroFilter, price: e.target.value })}
-                  placeholder="Preço até"
-                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md w-28"
-                />
+                <div>
+                  <label className="sr-only">Preço até</label>
+                  <input
+                    type="number"
+                    value={heroFilter.price}
+                    onChange={(e) => setHeroFilter({ ...heroFilter, price: e.target.value })}
+                    placeholder="Preço até"
+                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                  />
+                </div>
 
-                <input
-                  type="number"
-                  value={heroFilter.year}
-                  onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
-                  placeholder="Ano"
-                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md w-24"
-                />
+                <div>
+                  <label className="sr-only">Ano</label>
+                  <input
+                    type="number"
+                    value={heroFilter.year}
+                    onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
+                    placeholder="Ano"
+                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                  />
+                </div>
 
-                <input
-                  type="number"
-                  value={heroFilter.km}
-                  onChange={(e) => setHeroFilter({ ...heroFilter, km: e.target.value })}
-                  placeholder="KM"
-                  className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-1 rounded-md w-24"
-                />
+                <div>
+                  <label className="sr-only">KM</label>
+                  <input
+                    type="number"
+                    value={heroFilter.km}
+                    onChange={(e) => setHeroFilter({ ...heroFilter, km: e.target.value })}
+                    placeholder="KM"
+                    className="w-full text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                  />
+                </div>
 
-                <button type="submit" className="ml-auto flex-shrink-0 min-w-[92px] bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-4 py-2 rounded-md shadow">Procurar</button>
+                <div className="flex items-center">
+                  <button type="submit" className="w-full bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1.5 rounded-md shadow text-sm">Procurar</button>
+                </div>
               </div>
             </form>
 
@@ -487,6 +505,8 @@ export default function Home({ blogArticles }) {
                     ? 'max-h-[54vh] opacity-100 translate-y-0'
                     : 'max-h-0 opacity-0 -translate-y-2'
                 }`}
+                id="hero-filter-panel"
+                aria-hidden={!heroFilterOpen}
                 style={{ overflow: 'hidden' }}
               >
                 <div className={`bg-white/95 px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
@@ -494,7 +514,7 @@ export default function Home({ blogArticles }) {
                   <select
                     value={heroFilter.make}
                     onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
-                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
                   >
                     <option value="">Marca</option>
                     {heroMakes.map((m) => (
@@ -506,7 +526,7 @@ export default function Home({ blogArticles }) {
                     value={heroFilter.model}
                     onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
                     disabled={!heroModels.length}
-                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
                   >
                     <option value="">Modelo</option>
                     {heroModels.map((m) => (
@@ -520,14 +540,14 @@ export default function Home({ blogArticles }) {
                       value={heroFilter.price}
                       onChange={(e) => setHeroFilter({ ...heroFilter, price: e.target.value })}
                       placeholder="Preço até"
-                      className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                      className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
                     />
                     <input
                       type="number"
                       value={heroFilter.year}
                       onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
                       placeholder="Ano"
-                      className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                      className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
                     />
                   </div>
 
@@ -536,7 +556,7 @@ export default function Home({ blogArticles }) {
                     value={heroFilter.km}
                     onChange={(e) => setHeroFilter({ ...heroFilter, km: e.target.value })}
                     placeholder="KM"
-                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full"
+                    className="text-sm text-gray-800 bg-white border border-gray-200 px-3 py-2 rounded-md w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
                   />
 
                   <div className="pt-1">
