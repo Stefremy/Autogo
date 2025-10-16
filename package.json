@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
+  "dev:host": "HOST=0.0.0.0 PORT=3000 next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
     "start": "next start",
     "generate-favicons": "node scripts/generate-favicons.js",
