@@ -24005,7 +24005,7 @@
   "firstRegistration": "09/2023",
   "doors": 5,
   "fuel": "Elétrico",
-  "emissionClass": "Nenhuma indicação",
+  "emissionClass": "zero",
   "co2": null,
   "color": "Branco",
   "vin": "LGXCE4CB5P2063969",
