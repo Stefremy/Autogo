@@ -1,8 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect, useMemo } from "react";
 import {
-  FaCarSide,
-  FaCalendarAlt,
   FaTachometerAlt,
   FaSearch,
 } from "react-icons/fa";
@@ -615,17 +613,23 @@ export default function Viaturas() {
             <div
               id="filtros-viaturas"
               className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center mb-10 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-[#b42121]/10 transition-all duration-300 hover:shadow-2xl"
-              style={{ color: "rgba(210, 56, 56, 0.85)" }}
+              style={{ color: "#000" }}
             >
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <FaCarSide className="text-[#b42121] text-lg" />
+                {/* use SVG from public folder; size matches text-lg (1.125rem) */}
+                <img
+                  src="/images/icons/reshot-icon-car-.svg"
+                  alt="Car"
+                  className="inline-block"
+                  style={{ width: "1.125rem", height: "1.125rem" }}
+                />
                 <select
                   value={marca}
                   onChange={(e) => {
                     setMarca(e.target.value);
                     setModelo("");
                   }}
-                  className="bg-transparent outline-none border-none text-base"
+                  className="bg-transparent outline-none border-none text-base text-black"
                 >
                   <option value="">{t("Marca")}</option>
                   {marcas.map((m) => (
@@ -636,107 +640,116 @@ export default function Viaturas() {
                 </select>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <FaSearch className="text-[#b42121] text-lg" />
-                <select
-                  value={modelo}
-                  onChange={(e) => setModelo(e.target.value)}
-                  disabled={!marca}
-                  aria-disabled={!marca}
-                  title={!marca ? 'Selecione uma marca primeiro' : undefined}
-                  className={`bg-transparent outline-none border-none text-base w-32 ${!marca ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                  <option value="">{t("Modelo")}</option>
-                  {marca && modelos.map((m) => (
-                    <option key={m} value={m}>
-                      {m}
-                    </option>
-                  ))}
-                </select>
-                {/* Price range inputs placed next to model select */}
-                <div className="flex items-center gap-2 ml-2">
-                  <input
-                    type="number"
-                    min="0"
-                    step="100"
-                    value={minPrice}
-                    onChange={(e) => setMinPrice(e.target.value)}
-                    placeholder="Min €"
-                    className="bg-transparent outline-none border-none text-sm w-20 px-2 py-1 rounded text-right"
-                    aria-label="Preço mínimo"
-                  />
-                  <span className="text-gray-400">—</span>
-                  <input
-                    type="number"
-                    min="0"
-                    step="100"
-                    value={maxPrice}
-                    onChange={(e) => setMaxPrice(e.target.value)}
-                    placeholder="Max €"
-                    className="bg-transparent outline-none border-none text-sm w-20 px-2 py-1 rounded text-right"
-                    aria-label="Preço máximo"
-                  />
-                </div>
-              </div>
+                 <select
+                   value={modelo}
+                   onChange={(e) => setModelo(e.target.value)}
+                   disabled={!marca}
+                   aria-disabled={!marca}
+                   title={!marca ? 'Selecione uma marca primeiro' : undefined}
+                   className={`bg-transparent outline-none border-none text-base text-black w-32 ${!marca ? 'opacity-60 cursor-not-allowed' : ''}`}
+                 >
+                   <option value="">{t("Modelo")}</option>
+                   {marca && modelos.map((m) => (
+                     <option key={m} value={m}>
+                       {m}
+                     </option>
+                   ))}
+                 </select>
+                 {/* Price range inputs placed next to model select */}
+                 <div className="flex items-center gap-2 ml-2">
+                   <input
+                     type="number"
+                     min="0"
+                     step="100"
+                     value={minPrice}
+                     onChange={(e) => setMinPrice(e.target.value)}
+                     placeholder="Min €"
+                     className="bg-transparent outline-none border-none text-sm text-black w-20 px-2 py-1 rounded text-right"
+                     aria-label="Preço mínimo"
+                   />
+                   <span className="text-gray-400">—</span>
+                   <input
+                     type="number"
+                     min="0"
+                     step="100"
+                     value={maxPrice}
+                     onChange={(e) => setMaxPrice(e.target.value)}
+                     placeholder="Max €"
+                     className="bg-transparent outline-none border-none text-sm text-black w-20 px-2 py-1 rounded text-right"
+                     aria-label="Preço máximo"
+                   />
+                 </div>
+               </div>
               {/* Global search input */}
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <FaSearch className="text-[#b42121] text-lg" />
+                <img
+                  src="/images/icons/reshot-icon.svg"
+                  alt="Pesquisar"
+                  className="inline-block"
+                  style={{ width: "1.125rem", height: "1.125rem" }}
+                />
                 <input
                   type="search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Pesquisar: marca, modelo..."
-                  className="bg-transparent outline-none border-none text-sm w-64"
+                  className="bg-transparent outline-none border-none text-sm text-black w-64"
                   aria-label="Pesquisar viaturas"
                 />
               </div>
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <FaCalendarAlt className="text-[#b42121] text-lg" />
-                <select
-                  value={dia}
-                  onChange={(e) => setDia(e.target.value)}
-                  className="bg-transparent outline-none border-none text-base w-16"
-                >
-                  <option value="">{t("Dia")}</option>
-                  {dias.map((d) => (
-                    <option key={d} value={d}>
-                      {d}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={mes}
-                  onChange={(e) => setMes(e.target.value)}
-                  className="bg-transparent outline-none border-none text-base w-20"
-                >
-                  <option value="">{t("Mês")}</option>
-                  {meses.map((m) => (
-                    <option key={m} value={m.toString().padStart(2, "0")}>
-                      {m.toString().padStart(2, "0")}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={ano}
-                  onChange={(e) => setAno(e.target.value)}
-                  className="bg-transparent outline-none border-none text-base w-24"
-                >
-                  <option value="">{t("Ano")}</option>
-                  {anos.map((a) => (
-                    <option key={a} value={a}>
-                      {a}
-                    </option>
-                  ))}
-                </select>
-              </div>
+                <img
+                  src="/images/icons/reshot-icon-calendar-ZEQ49LUW6B.svg"
+                  alt="Calendário"
+                  className="inline-block"
+                  style={{ width: "1.125rem", height: "1.125rem" }}
+                />
+                 <select
+                   value={dia}
+                   onChange={(e) => setDia(e.target.value)}
+                   className="bg-transparent outline-none border-none text-base text-black w-16"
+                 >
+                   <option value="">{t("Dia")}</option>
+                   {dias.map((d) => (
+                     <option key={d} value={d}>
+                       {d}
+                     </option>
+                   ))}
+                 </select>
+                 <select
+                   value={mes}
+                   onChange={(e) => setMes(e.target.value)}
+                   className="bg-transparent outline-none border-none text-base text-black w-20"
+                 >
+                   <option value="">{t("Mês")}</option>
+                   {meses.map((m) => (
+                     <option key={m} value={m.toString().padStart(2, "0")}>
+                       {m.toString().padStart(2, "0")}
+                     </option>
+                   ))}
+                 </select>
+                 <select
+                   value={ano}
+                   onChange={(e) => setAno(e.target.value)}
+                   className="bg-transparent outline-none border-none text-base text-black w-24"
+                 >
+                   <option value="">{t("Ano")}</option>
+                   {anos.map((a) => (
+                     <option key={a} value={a}>
+                       {a}
+                     </option>
+                   ))}
+                 </select>
+               </div>
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <FaTachometerAlt className="text-[#b42121] text-lg" />
+                <FaTachometerAlt className="text-black text-lg" />
                 <input
                   type="number"
                   min="0"
                   value={km}
                   onChange={(e) => setKm(e.target.value)}
                   placeholder={t("Máx. KM")}
-                  className="bg-transparent outline-none border-none text-base w-24"
+                  className="bg-transparent outline-none border-none text-base text-black w-24"
                 />
               </div>
               <button
