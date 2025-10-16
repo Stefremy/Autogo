@@ -130,10 +130,10 @@ export function IndexNavbar() {
               <Link
                 key={href}
                 href={href}
-                className={`relative text-base font-medium transition-all duration-200 px-2 py-1 rounded-lg
-                ${isActive ? "text-[#b42121] bg-[#f5f6fa] shadow-sm" : "text-[#22272a] hover:text-[#b42121] hover:bg-[#f5f6fa]"}
+                className={`relative text-base font-medium transition-all duration-200 px-2 py-1 rounded-lg transform-gpu no-underline
+                ${isActive ? "text-[#b42121] bg-[#f5f6fa] shadow-sm scale-105 tracking-wide" : "text-[#22272a] hover:text-[#b42121] hover:bg-[#f5f6fa] hover:scale-105 hover:tracking-wide"}
                 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30`}
-                style={{ letterSpacing: 0.2, fontWeight: 500 }}
+                style={{ letterSpacing: '0.2px', fontWeight: 500, transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
               >
                 {t(label)}
               </Link>

@@ -384,7 +384,8 @@ export default function Home({ blogArticles }) {
             <div className="flex flex-row w-full max-w-xl rounded-full bg-white/30 backdrop-blur-md shadow-2xl py-2 px-2 sm:py-3 sm:px-3 items-center gap-2 mb-4 sm:mb-5 border border-white/30 overflow-visible">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a
-                  className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#b42121] shadow-sm transition hover:shadow-lg hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121] sm:px-6 sm:py-3 sm:text-base"
+                  className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#b42121] shadow-sm transform-gpu no-underline transition hover:shadow-lg hover:brightness-110 hover:scale-105 hover:tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121] sm:px-6 sm:py-3 sm:text-base"
+                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
                   <span className="sm:hidden">Ver Viaturas</span>
                   <span className="hidden sm:inline">Ver Viaturas Disponíveis</span>
@@ -392,14 +393,16 @@ export default function Home({ blogArticles }) {
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
                 <a
-                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 underline-offset-4 hover:underline hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
+                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
+                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
                   Simular ISV
                 </a>
               </Link>
               <Link href="/pedido" legacyBehavior passHref>
                 <a
-                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 underline-offset-4 hover:underline hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
+                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
+                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
                   Encomendar
                 </a>
