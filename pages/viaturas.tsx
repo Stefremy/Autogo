@@ -684,7 +684,7 @@ export default function Viaturas() {
                   type="search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Pesquisar: marca, modelo, 'segunda mao', 'usados', 'c300'..."
+                  placeholder="Pesquisar: marca, modelo..."
                   className="bg-transparent outline-none border-none text-sm w-64"
                   aria-label="Pesquisar viaturas"
                 />
