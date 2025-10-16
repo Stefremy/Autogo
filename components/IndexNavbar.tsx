@@ -149,7 +149,8 @@ export function IndexNavbar() {
 
         {/* Mobile/Tablet Menu Button (hidden on lg+) */}
         <div className="lg:hidden flex items-center gap-1 sm:gap-2">
-          <div className="relative ml-1 sm:ml-2">
+          {/* hide language selector on small phones; show at sm+ */}
+          <div className="hidden sm:relative ml-1 sm:ml-2">
             <select
               value={currentLocale}
               onChange={(e) => handleLocaleChange(e.target.value)}
@@ -167,31 +168,40 @@ export function IndexNavbar() {
           <button
             onClick={toggleMobileMenu}
             className={`group relative p-2 sm:p-3 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-3 focus:ring-[#b42121]/30 ${
-              mobileMenuOpen 
-                ? "bg-[#b42121] shadow-lg scale-105" 
+              mobileMenuOpen
+                ? "bg-[#b42121] shadow-lg scale-105"
                 : "bg-white hover:bg-[#f5f6fa] shadow-md hover:shadow-lg"
             }`}
             aria-label="Toggle mobile menu"
           >
-            <div className="w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center relative">
+            {/* animated circular background */}
+            <span
+              aria-hidden
+              className={`absolute inset-0 m-auto w-8 h-8 sm:w-10 sm:h-10 rounded-full transition-transform duration-450 ease-[cubic-bezier(.22,1,.36,1)] transform ${
+                mobileMenuOpen ? "scale-110 bg-[#b42121]/20" : "scale-75 bg-black/4"
+              }`}
+              style={{ zIndex: 0 }}
+            />
+
+            <div className="w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center relative z-10">
               <span
-                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-300 ease-in-out transform origin-center ${
-                  mobileMenuOpen 
-                    ? "bg-white rotate-45 translate-y-[2px] scale-110" 
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] transform ${
+                  mobileMenuOpen
+                    ? "bg-white rotate-45 translate-y-[2px]"
                     : "bg-[#22272a] group-hover:bg-[#b42121] -translate-y-[3px]"
                 }`}
               ></span>
               <span
-                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-300 ease-in-out ${
-                  mobileMenuOpen 
-                    ? "bg-white opacity-0 scale-0" 
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-200 ease-linear ${
+                  mobileMenuOpen
+                    ? "bg-white opacity-0 scale-90"
                     : "bg-[#22272a] group-hover:bg-[#b42121] opacity-100 scale-100"
                 }`}
               ></span>
               <span
-                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-300 ease-in-out transform origin-center ${
-                  mobileMenuOpen 
-                    ? "bg-white -rotate-45 -translate-y-[2px] scale-110" 
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] transform ${
+                  mobileMenuOpen
+                    ? "bg-white -rotate-45 -translate-y-[2px]"
                     : "bg-[#22272a] group-hover:bg-[#b42121] translate-y-[3px]"
                 }`}
               ></span>

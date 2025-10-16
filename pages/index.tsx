@@ -381,24 +381,25 @@ export default function Home({ blogArticles }) {
 
         
 
-            <div className="flex flex-row w-full max-w-xl rounded-full bg-white/30 backdrop-blur-md shadow-2xl py-3 px-3 items-center gap-3 mb-4 sm:mb-5 border border-white/30 overflow-visible">
+            <div className="flex flex-row w-full max-w-xl rounded-full bg-white/30 backdrop-blur-md shadow-2xl py-2 px-2 sm:py-3 sm:px-3 items-center gap-2 mb-4 sm:mb-5 border border-white/30 overflow-visible">
               <Link href="/viaturas" legacyBehavior passHref>
                 <a
-                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold text-white bg-[#b42121] shadow-sm transition hover:shadow-lg hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121]"
+                  className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#b42121] shadow-sm transition hover:shadow-lg hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121] sm:px-6 sm:py-3 sm:text-base"
                 >
-                  Ver Viaturas Disponíveis
+                  <span className="sm:hidden">Ver Viaturas</span>
+                  <span className="hidden sm:inline">Ver Viaturas Disponíveis</span>
                 </a>
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
                 <a
-                  className="inline-flex items-center justify-center rounded-full px-2 py-1 text-base font-medium text-black/90 underline-offset-4 hover:underline hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black"
+                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 underline-offset-4 hover:underline hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
                 >
                   Simular ISV
                 </a>
               </Link>
               <Link href="/pedido" legacyBehavior passHref>
                 <a
-                  className="inline-flex items-center justify-center rounded-full px-2 py-1 text-base font-medium text-black/90 underline-offset-4 hover:underline hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black"
+                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 underline-offset-4 hover:underline hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
                 >
                   Encomendar
                 </a>
@@ -557,8 +558,7 @@ export default function Home({ blogArticles }) {
                       <button
                         onClick={onHeroSearch}
                         type="button"
-                        className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1 rounded-full shadow text-xs ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03]"
-                        style={{ minWidth: 120 }}
+                        className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1 rounded-full shadow text-xs ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03] w-auto max-w-[140px]"
                       >
                         Procurar
                       </button>
@@ -861,7 +861,7 @@ export default function Home({ blogArticles }) {
             <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-8"></div>
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-800 mb-12 sm:mb-16 font-medium drop-shadow">
               {t(
-                "Importa o teu carro europeu sem stress — só precisas de escolher, simular e pedir.",
+                "Importa o teu carro europeu sem stress. Só precisas de escolher, simular e pedir.",
               )}
               <br />
               <span className="font-bold">{t("Nós tratamos do resto!")}</span>
