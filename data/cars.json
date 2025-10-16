@@ -10,7 +10,7 @@
     "description": "Citroen C3 em excelente estado, importado de França.",
     "mileage": 32000,
     "country": "FR",
-    "status": "",
+    "status": "Vendido",
     "gearboxType": "Manual",
     "gearbox": 5,
     "category": "Citadino",
@@ -23981,5 +23981,139 @@
         "raw": "20/07/2023 61564 km CHARDON AUTOMOBILES Kit distribution / Courroie /galets € 1,00"
       }
     ]
-  }
+  },
+  {
+  "id": "TK87167",
+  "make": "BYD",
+  "model": "Atto 3 electric drive 150kW Comfort",
+  "year": 2023,
+  "slug": "byd-atto-3-electric-drive-150kw-comfort-2023-tk87167",
+  "price": 21459,
+  "image": "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_02952f5a0c4a257d9d21ec9dc1aadf43.jpg",
+  "description": "O BYD Atto 3 electric drive 150kW Comfort de 2023 é um SUV elétrico moderno com 150 kW (204 CV) de potência e transmissão automática. Equipado com bateria própria (sem aluguer) e cabo de carregamento disponível, oferece uma condução eficiente e confortável para 5 passageiros. Destaca-se pelo seu interior em couro original, cor branca metálica e 5 portas. O veículo tem uma quilometragem de 14.540 km e apresenta um histórico de manutenção detalhado, incluindo inspeções recentes e pequenas reparações necessárias, como substituição de pneus e reparação da mala traseira. Entre os equipamentos de conforto e segurança, inclui controlo adaptativo de cruzeiro, múltiplos airbags, sistema de travagem eletrónica, assistentes de faixa, câmara 360°, sistema de infotainment com ecrã tátil de 15,6\", carregamento sem fios, e muito mais. O estado geral é suficiente, com algumas marcas de uso e pequenas avarias a corrigir, conforme relatório de inspeção. Um veículo ideal para quem procura um SUV elétrico com tecnologia avançada e bom nível de equipamento.",
+  "mileage": 14540,
+  "country": "DE",
+  "status": null,
+  "gearboxType": "Automática",
+  "gearbox": null,
+  "category": "SUV",
+  "engineSize": null,
+  "power": "150 kW / 204 CV",
+  "places": 5,
+  "unitNumber": null,
+  "origin": "Germany",
+  "firstRegistration": "09/2023",
+  "doors": 5,
+  "fuel": "Elétrico",
+  "emissionClass": "Nenhuma indicação",
+  "co2": null,
+  "color": "Branco",
+  "vin": "LGXCE4CB5P2063969",
+  "images": [
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_121473b902e7a56a49d2128f9829b51e.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_603258b9f4e24d0c9b86866ad4e1dfeb.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_6f5831ee6503ae46f483b78fc7d69ed3.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_3f537b6e6560eb5b9d964db7991e04e7.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_43ac49e55da447818b17a806f510cd85.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_5508713d33b02ee8cafc5da4d58264a0.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_6434384d5958b57810c4314bc3f1a18d.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_e26fdd673f98b6c08ab8669361747ccb.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_0f50d530bdf92960059f096482dd421b.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_3f6eee45e73a0362775432e5b1d28613.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_f161f424948fa5374a88ab97906bc19b.jpg",
+    "https://img-pa.auto1.com/imgf4/ba/f4ba34e655f4f45ef7804d8e8770aef9/pa/max-TK87167_2c40c2dd7614525f38c0778999e8e8ac.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "Teto panorâmico"
+    ],
+    "conforto": [
+      "Cruzeiro adaptativo (ACC) & Controle inteligente de cruzeiro (ICC)",
+      "Climatização automática",
+      "Bancos em couro",
+      "Bancos dianteiros aquecidos",
+      "Bancos traseiros ventilados",
+      "Apoio de braço central com porta-copos",
+      "Volante multifunções em couro",
+      "Carregamento por indução para smartphones",
+      "Sistema de limpeza de ar PM2.5",
+      "Assistente de mudança de faixa (LCA)",
+      "Assistente de manutenção de faixa (LKA) e Emergency Lane Keep (ELK)",
+      "Assistente de ângulo morto (BSD)",
+      "Sistema de aviso de fadiga",
+      "Reconhecimento de sinais de trânsito (TSR)",
+      "Alerta de tráfego cruzado traseiro (RCTA e RCTB)",
+      "Cobertura da bagageira",
+      "Fecho centralizado",
+      "Chave eletrónica e NFC",
+      "Tomada 12V"
+    ],
+    "seguranca": [
+      "Airbags frontais, laterais, de cortina e central",
+      "ABS",
+      "ESP",
+      "EBD",
+      "Assistente de travagem de emergência (AEB)",
+      "Assistente de descida (Hill Descent Control)",
+      "Câmara 360°",
+      "Imobilizador",
+      "Sistema de controlo de pressão dos pneus",
+      "Travão de estacionamento elétrico (EPB)",
+      "Controle inteligente de velocidade (ISLI/ISLC)",
+      "Cintos de segurança com pré-tensor e limitador de força",
+      "Alerta de abertura de portas (DOW)",
+      "Controle de tração (TCS)",
+      "Alerta de saída involuntária da faixa"
+    ],
+    "multimedia": [
+      "Sistema BYD DiLink",
+      "Ecrã tátil 15,6\"",
+      "Instrumentação TFT LCD 5\"",
+      "Rádio DAB e FM",
+      "8 altifalantes",
+      "Conectividade 4G e serviços Cloud",
+      "Bluetooth",
+      "Carregamento sem fios para smartphones",
+      "USB Tipo A e Tipo C (2x frente, 2x trás)"
+    ],
+    "interior": [
+      "Estofos em couro e tecido preto e branco",
+      "Bancos dianteiros elétricos (4 e 6 vias)",
+      "Bancos traseiros rebatíveis 40:60 com ventilação",
+      "Iluminação ambiente nos pés",
+      "Espelhos de maquilhagem iluminados",
+      "Volante em couro multifunções",
+      "Luzes de leitura LED dianteiras e traseiras",
+      "Controlo automático de luzes"
+    ],
+    "exterior": [
+      "Cor Branco metálico",
+      "Jantes de liga leve 18\"",
+      "Faróis LED automáticos com luzes diurnas LED",
+      "Espelhos exteriores aquecidos e rebatíveis eletricamente",
+      "Faróis com função Follow-me-Home",
+      "Teto panorâmico",
+      "Relingas de tejadilho em alumínio",
+      "Limpa-vidros traseiro e aquecido"
+    ],
+    "outras_opcoes": [
+      "Cabo de carregamento 11kW",
+      "Bateria própria (sem aluguer)",
+      "Número de chaves: 2 eletrónicas + 1 NFC",
+      "Sistema de estacionamento assistido dianteiro e traseiro",
+      "Assistente de controlo de velocidade inteligente",
+      "Assistente de controlo de velocidade adaptativo"
+    ]
+  },
+  "maintenance": [
+    {
+      "date": "18/09/2025",
+      "km": 14540,
+      "shop": "TÜV SÜD Auto Partner GmbH",
+      "description": "Inspeção e avaliação geral do veículo com relatório detalhado",
+      "raw": "Zustandsbericht Protokollnummer: 41803585Auftrags-Nr / Referenz: 48096885Besichtigungsdatum: 18.09.2025 Angaben zum Fahrzeug..."
+    }
+  ]
+}
+  
 ]
