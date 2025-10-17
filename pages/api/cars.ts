@@ -1,8 +1,10 @@
 import fs from "fs";
 import path from "path";
-import type { NextApiRequest, NextApiResponse } from "next";
 import { spawn } from 'child_process';
+import type { NextApiRequest, NextApiResponse } from "next";
+import blob from '../../lib/blob';
 
+const BLOB_BUCKET = process.env.AUTOGO_BLOB_BUCKET || 'cars';
 const carsFile = path.join(process.cwd(), "data/cars.json");
 const carsFullFile = path.join(process.cwd(), "data/cars.full.json");
 const schemaFile = path.join(process.cwd(), "data/schema/car.schema.json");
@@ -77,8 +79,9 @@ async function validateAgainstSchema(data: any) {
   // Try to use AJV if available for strict JSON Schema validation
   try {
     // dynamic import so project won't fail if ajv isn't installed
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const Ajv = require('ajv');
+    const AjvModule = await import('ajv').catch(() => null);
+    const Ajv = AjvModule ? (AjvModule.default || AjvModule) : null;
+    if (!Ajv) throw new Error('ajv not available');
     const ajv = new Ajv({ allErrors: true, strict: false });
     const schemaRaw = await fs.promises.readFile(schemaFile, 'utf-8');
     const schema = JSON.parse(schemaRaw);
@@ -110,44 +113,6 @@ function normalizeMaintenance(items: any[]): any[] {
     const desc = s.replace(date || '', '').trim();
     return { date, desc: desc || s };
   }).filter(Boolean);
-}
-
-async function commitToGitHub(repo: string, filePathInRepo: string, contentBuffer: Buffer, message = 'Update data') {
-  const apiBase = `https://api.github.com/repos/${repo}/contents/${filePathInRepo}`;
-  const b64 = contentBuffer.toString('base64');
-  // Try GET to obtain existing sha
-  const headers = {
-    'Authorization': `token ${GITHUB_TOKEN}`,
-    'User-Agent': 'autogo-api',
-    'Accept': 'application/vnd.github.v3+json',
-  };
-  let sha: string | undefined = undefined;
-  try {
-    const getResp = await fetch(apiBase + `?ref=${encodeURIComponent(GITHUB_BRANCH)}`, { headers });
-    if (getResp.status === 200) {
-      const existing = await getResp.json();
-      sha = existing.sha;
-    }
-  } catch (err) {
-    // ignore and attempt create
-  }
-
-  const body = {
-    message,
-    content: b64,
-    branch: GITHUB_BRANCH,
-    ...(sha ? { sha } : {}),
-  } as any;
-
-  const putResp = await fetch(apiBase, {
-    method: 'PUT',
-    headers: { ...headers, 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-
-  const result = await putResp.json();
-  if (!putResp.ok) throw new Error(JSON.stringify(result));
-  return result;
 }
 
 // Helper: spawn normalization/sync scripts in background (non-blocking)
@@ -195,7 +160,7 @@ async function commitSlimWithRetry(repo: string, filePathInRepo: string, newCar:
           const raw = Buffer.from(existing.content || '', existing.encoding || 'base64').toString('utf-8');
           const parsed = JSON.parse(raw);
           remoteArr = Array.isArray(parsed) ? parsed : [];
-        } catch (e) {
+        } catch {
           // if parse fails, treat as empty array
           remoteArr = [];
         }
@@ -267,7 +232,7 @@ async function commitArrayWithRetry(repo: string, filePathInRepo: string, items:
           const raw = Buffer.from(existing.content || '', existing.encoding || 'base64').toString('utf-8');
           const parsed = JSON.parse(raw);
           remoteArr = Array.isArray(parsed) ? parsed : [];
-        } catch (e) {
+        } catch {
           remoteArr = [];
         }
       } else if (getResp.status === 404) {
@@ -324,8 +289,59 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           return res.status(401).json({ error: 'Unauthorized' });
         }
       }
+
+      const idQuery = typeof req.query.id === 'string' ? req.query.id : undefined;
       const fileParam = typeof req.query.file === 'string' ? req.query.file : 'cars';
       const format = typeof req.query.format === 'string' ? req.query.format : 'json';
+
+      // If client requested a single id and blob token present try to fetch per-car object
+      if (idQuery && process.env.AUTOGO_BLOB_READ_WRITE_TOKEN) {
+        try {
+          const buf = await blob.getObject(BLOB_BUCKET, `${idQuery}.json`);
+          const json = JSON.parse(buf.toString('utf8'));
+          if (format === 'csv') {
+            const csv = toCSV([json]);
+            res.setHeader('Content-Type', 'text/csv');
+            return res.status(200).send(csv);
+          }
+          return res.status(200).json(json);
+        } catch (err: any) {
+          if (String(err).toLowerCase().includes('notfound') || (err && err.message && err.message.includes('NotFound'))) {
+            return res.status(404).json({ error: 'Not found' });
+          }
+          console.warn('Blob GET per-car failed, falling back to filesystem', err);
+          // fall through to filesystem behavior
+        }
+      }
+
+      // If blob token present and no id specified, attempt to list per-car objects and return array
+      if (!idQuery && process.env.AUTOGO_BLOB_READ_WRITE_TOKEN) {
+        try {
+          const keys = await blob.listObjects(BLOB_BUCKET, '');
+          const jsons: AnyObject[] = [];
+          for (const k of keys) {
+            if (!k.endsWith('.json')) continue;
+            try {
+              const b = await blob.getObject(BLOB_BUCKET, k);
+              const parsed = JSON.parse(b.toString('utf8'));
+              if (parsed) jsons.push(parsed);
+            } catch {
+              // ignore individual object failures
+            }
+          }
+          if (format === 'csv') {
+            const csv = toCSV(jsons);
+            res.setHeader('Content-Type', 'text/csv');
+            return res.status(200).send(csv);
+          }
+          return res.status(200).json(jsons);
+        } catch (err) {
+          console.warn('Blob list/get failed, falling back to filesystem', err);
+          // fallthrough
+        }
+      }
+
+      // Fallback to original file-based behavior
       const target = fileParam === 'full' ? carsFullFile : carsFile;
       const data = await safeReadJson(target, target === carsFile ? carsFullFile : undefined);
       if (format === 'csv') {
@@ -358,7 +374,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Read existing slim cars file to compute a new id and to include in commit/write
       let existingSlim = [] as AnyObject[];
-      try { existingSlim = (await safeReadJson(carsFile, carsFullFile)) || []; } catch (e) { existingSlim = []; }
+      try { existingSlim = (await safeReadJson(carsFile, carsFullFile)) || []; } catch { existingSlim = []; }
       const existingIds = new Set(existingSlim.map(c => String(c.id)));
 
       // If client supplied an explicit id, block the request when that id already exists.
@@ -384,7 +400,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // Build envelope
       const schemaRaw = await fs.promises.readFile(schemaFile, 'utf-8').catch(() => '{}');
       let schemaVersion = '1';
-      try { const s = JSON.parse(schemaRaw); schemaVersion = s.$id || s.version || schemaVersion; } catch (e) {}
+      try { const s = JSON.parse(schemaRaw); schemaVersion = s.$id || s.version || schemaVersion; } catch { }
       const envelope: any = { schemaVersion, valid: Boolean(valid), errors: errors || [], car: newCar, summary: '' };
 
       // Prepare slim payload to use for local write and optional GitHub commit
@@ -401,11 +417,30 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         console.warn('Initial local write to data/cars.json failed', e);
       }
 
+      // If blob token present, write per-car object and update slim index in blob
+      if (process.env.AUTOGO_BLOB_READ_WRITE_TOKEN) {
+        try {
+          // write per-car object
+          await blob.putObject(BLOB_BUCKET, `${newId}.json`, JSON.stringify(newCar, null, 2), { contentType: 'application/json' });
+          // update slim index in blob (mirror of data/cars.json)
+          try {
+            await blob.putObject(BLOB_BUCKET, 'cars.json', payloadSlimLocal, { contentType: 'application/json' });
+          } catch {
+            // non-fatal index update failure
+            console.warn('Failed to update slim index in blob');
+          }
+          envelope.summary = `Persisted car ${newId} to blob storage (${BLOB_BUCKET}/${newId}.json)`;
+          localWritten = true; // ensure we respond with created even if later GitHub commit fails
+        } catch (e) {
+          console.warn('Blob putObject failed on POST', e);
+        }
+      }
+
       // If GitHub token + repo configured, attempt to commit only the slim file to repo using a merge-and-retry approach
       if (GITHUB_TOKEN && GITHUB_REPO) {
         try {
           const commitMsg = `Add car ${newId} via API`;
-          const resultSlim = await commitSlimWithRetry(GITHUB_REPO, 'data/cars.json', newCar, commitMsg, 5);
+          await commitSlimWithRetry(GITHUB_REPO, 'data/cars.json', newCar, commitMsg, 5);
           envelope.summary = `Committed merged car to GitHub repo ${GITHUB_REPO} (data/cars.json)`;
 
           // Ensure runtime local file exists (in case commit path was used earlier)
@@ -414,9 +449,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               await fs.promises.writeFile(carsFile, payloadSlimLocal, 'utf-8');
               localWritten = true;
             }
-          } catch (e) {
-            console.warn('Local write after GitHub commit failed', e);
-          }
+          } catch { }
 
           // Run normalization/sync in background only if explicitly enabled via env
           if (process.env.RUN_NORMALIZE_ON_WRITE === 'true') runBackgroundScripts();
@@ -429,15 +462,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 await (res as any).revalidate(`/cars/${newCar.slug || newCar.id}`);
                 await (res as any).revalidate('/viaturas');
                 envelope.revalidated = true;
-              } catch (e) {
-                envelope.revalidateError = String(e);
-              }
+              } catch { }
             } else {
               envelope.revalidated = false;
             }
-          } catch (e) {
-            envelope.revalidateError = String(e);
-          }
+          } catch { }
 
           return res.status(201).json(envelope);
         } catch (err) {
@@ -460,9 +489,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               await (res as any).revalidate(`/cars/${newCar.slug || newCar.id}`);
               await (res as any).revalidate('/viaturas');
               envelope.revalidated = true;
-            } catch (e) {
-              envelope.revalidateError = String(e);
-            }
+            } catch { }
           } else {
             envelope.revalidated = false;
           }
@@ -480,6 +507,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         await fs.promises.writeFile(carsFile, JSON.stringify(newSlim, null, 2), 'utf-8');
         envelope.summary = 'Wrote to local slim data file (no GitHub commit)';
 
+        // If blob available try again to persist per-car and slim index
+        if (process.env.AUTOGO_BLOB_READ_WRITE_TOKEN) {
+          try {
+            await blob.putObject(BLOB_BUCKET, `${newId}.json`, JSON.stringify(newCar, null, 2), { contentType: 'application/json' });
+            await blob.putObject(BLOB_BUCKET, 'cars.json', JSON.stringify(newSlim, null, 2), { contentType: 'application/json' }).catch(() => {});
+            envelope.summary += ' + blob persisted';
+          } catch {
+            console.warn('Fallback blob put failed');
+          }
+        }
+
         // Run background scripts and attempt revalidation as above (conditional)
         if (process.env.RUN_NORMALIZE_ON_WRITE === 'true') runBackgroundScripts();
         try {
@@ -489,9 +527,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               await (res as any).revalidate(`/cars/${newCar.slug || newCar.id}`);
               await (res as any).revalidate('/viaturas');
               envelope.revalidated = true;
-            } catch (e) {
-              envelope.revalidateError = String(e);
-            }
+            } catch { }
           } else {
             envelope.revalidated = false;
           }
@@ -512,7 +548,118 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const id = idFromQuery || idFromBody;
       if (!id) return res.status(400).json({ error: 'Missing car id.' });
 
-      // Remove from slim runtime file
+      // If blob configured, prefer per-car delete in blob and update slim/full indexes in blob
+      if (process.env.AUTOGO_BLOB_READ_WRITE_TOKEN) {
+        try {
+          // delete per-car object
+          await blob.deleteObject(BLOB_BUCKET, `${id}.json`);
+
+          // update slim index in blob (and local runtime file if present)
+          let existingSlim = [] as AnyObject[];
+          try { existingSlim = (await safeReadJson(carsFile, carsFullFile)) || []; } catch { existingSlim = []; }
+          const filtered = existingSlim.filter(c => String(c.id) !== String(id));
+          try {
+            await blob.putObject(BLOB_BUCKET, 'cars.json', JSON.stringify(filtered, null, 2), { contentType: 'application/json' });
+          } catch {
+            console.warn('Failed to update slim index in blob after delete');
+          }
+          // update local slim file to keep runtime consistent
+          try {
+            await fs.promises.writeFile(carsFile, JSON.stringify(filtered, null, 2), 'utf-8');
+          } catch {
+            // non-fatal
+          }
+
+          // Soft-delete in full dataset (mirror to blob)
+          try {
+            const full = (await safeReadJson(carsFullFile)) as AnyObject[];
+            const idx = (full || []).findIndex((c: AnyObject) => String(c.id) === String(id));
+            let fullUpdated = full || [];
+            const removedByHeader = (req.headers['x-removed-by'] as string) || (req.headers['x-deleted-by'] as string) || 'api';
+            const removedAt = new Date().toISOString();
+            if (idx >= 0) {
+              const updated = { ...(fullUpdated[idx] || {}), status: 'removed', removedAt, removedBy: removedByHeader } as AnyObject;
+              fullUpdated = [...fullUpdated];
+              fullUpdated[idx] = updated;
+            } else {
+              fullUpdated = [...fullUpdated, { id, status: 'removed', removedAt, removedBy: removedByHeader }];
+            }
+            // persist full dataset to blob
+            try {
+              await blob.putObject(BLOB_BUCKET, 'cars.full.json', JSON.stringify(fullUpdated, null, 2), { contentType: 'application/json' });
+            } catch {
+              console.warn('Failed to update full dataset in blob after delete');
+            }
+
+            const responseEnvelope: any = { success: true, deletedId: id, summary: 'Removed per-car object and soft-marked in full dataset' };
+
+            // Also attempt GitHub commits if configured (keep existing behavior)
+            if (GITHUB_TOKEN && GITHUB_REPO) {
+              try {
+                let fullCommitInfo: any = null;
+                try {
+                  fullCommitInfo = await commitArrayWithRetry(GITHUB_REPO, 'data/cars.full.json', fullUpdated, `Soft-remove car ${id} in full dataset via API`, 5);
+                } catch (e) {
+                  responseEnvelope.fullCommitError = String(e);
+                }
+
+                let slimCommitInfo: any = null;
+                try {
+                  slimCommitInfo = await commitArrayWithRetry(GITHUB_REPO, 'data/cars.json', filtered, `Remove car ${id} from slim dataset via API`, 5);
+                } catch (e) {
+                  responseEnvelope.slimCommitError = String(e);
+                }
+
+                if (fullCommitInfo || slimCommitInfo) {
+                  responseEnvelope.summary = `Committed updates to ${GITHUB_REPO}`;
+                  responseEnvelope.committed = true;
+                  if (fullCommitInfo) responseEnvelope.fullCommitAttempts = fullCommitInfo.attempts || 1;
+                  if (slimCommitInfo) responseEnvelope.slimCommitAttempts = slimCommitInfo.attempts || 1;
+                } else {
+                  responseEnvelope.committed = false;
+                }
+              } catch (e) {
+                console.error('GitHub commit during delete failed', e);
+                responseEnvelope.commitError = String(e);
+                responseEnvelope.committed = false;
+              }
+            }
+
+            // Run background scripts
+            runBackgroundScripts();
+
+            // Attempt secure revalidation
+            try {
+              const revalidateHeader = (req.headers['x-admin-revalidate'] as string) || '';
+              if (ADMIN_REVALIDATE_TOKEN && revalidateHeader === ADMIN_REVALIDATE_TOKEN) {
+                try {
+                  await (res as any).revalidate('/viaturas');
+                  responseEnvelope.revalidated = true;
+                } catch (e) {
+                  responseEnvelope.revalidateError = String(e);
+                }
+              } else {
+                responseEnvelope.revalidated = false;
+              }
+            } catch (e) {
+              responseEnvelope.revalidateError = String(e);
+            }
+
+            return res.status(200).json(responseEnvelope);
+          } catch (err) {
+            console.error('Failed to update full dataset on delete', err);
+            return res.status(500).json({ error: 'Failed to update full dataset', details: String(err) });
+          }
+        } catch (err: any) {
+          if (String(err).toLowerCase().includes('notfound') || (err && err.message && err.message.includes('NotFound'))) {
+            return res.status(404).json({ error: 'Car not found' });
+          }
+          console.warn('Blob delete failed, falling back to filesystem delete', err);
+          // fallthrough to filesystem path below
+        }
+      }
+
+      // Remove from slim runtime file (filesystem fallback)
       const cars = (await safeReadJson(carsFile, carsFullFile)) as AnyObject[];
       const filtered = cars.filter(c => String(c.id) !== String(id));
       if (filtered.length === cars.length) return res.status(404).json({ error: 'Car not found.' });
