@@ -23994,5 +23994,14 @@
         "raw": "Zustandsbericht Protokollnummer: 41803585Auftrags-Nr / Referenz: 48096885Besichtigungsdatum: 18.09.2025 Angaben zum Fahrzeug..."
       }
     ]
+  },
+  {
+    "make": "TestMake",
+    "model": "TestModel",
+    "price": 12345,
+    "slug": "test-m-1",
+    "id": "1760697324129",
+    "maintenance": [],
+    "unitNumber": null
   }
 ]
