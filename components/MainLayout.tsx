@@ -1,35 +1,18 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import CookieConsent from "react-cookie-consent";
+import Head from "next/head";
 import Footer from "./Footer";
 import { IndexNavbar } from "./IndexNavbar";
-import Head from "next/head";
 
-const NAV_LINKS = [
-  { href: "/", label: "Início" },
-  { href: "/viaturas", label: "Viaturas" },
-  { href: "/simulador", label: "Simulador ISV" },
-  { href: "/como-funciona", label: "Como Funciona" },
-  { href: "/pedido", label: "Encomendar" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contacto", label: "Contacto" },
-];
-
-export default function MainLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const router = useRouter();
-  const [scrolled, setScrolled] = useState(false);
+export default function MainLayout({ children }: { children: React.ReactNode }) {
+  const scrolledRef = React.useRef(false);
   const [prefsOpen, setPrefsOpen] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
   const [adsEnabled, setAdsEnabled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 10);
+      scrolledRef.current = window.scrollY > 10;
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -109,7 +92,7 @@ export default function MainLayout({
             });
             // send a page_view now that analytics is allowed
             (window as any).gtag('event', 'page_view', { send_to: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID });
-          } catch (e) {
+          } catch {
             // ignore if gtag is unavailable
           }
         }}
@@ -120,7 +103,7 @@ export default function MainLayout({
               ad_storage: 'denied',
               analytics_storage: 'denied',
             });
-          } catch (e) {
+          } catch {
             // ignore
           }
         }}
@@ -150,7 +133,7 @@ export default function MainLayout({
                     const parsed = JSON.parse(val);
                     setAnalyticsEnabled(Boolean(parsed.analytics));
                     setAdsEnabled(Boolean(parsed.ads));
-                  } catch (e) {
+                  } catch {
                     // if cookie not JSON, default both to false
                     setAnalyticsEnabled(false);
                     setAdsEnabled(false);
@@ -159,7 +142,7 @@ export default function MainLayout({
                   setAnalyticsEnabled(false);
                   setAdsEnabled(false);
                 }
-              } catch (e) {
+              } catch {
                 setAnalyticsEnabled(false);
                 setAdsEnabled(false);
               }
@@ -215,7 +198,7 @@ export default function MainLayout({
                   try {
                     const cookieVal = JSON.stringify({ analytics: analyticsEnabled, ads: adsEnabled });
                     document.cookie = `autogoCookieConsent=${encodeURIComponent(cookieVal)}; path=/; max-age=${60 * 60 * 24 * 365}`;
-                  } catch (e) {
+                  } catch {
                     // ignore
                   }
                   if (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && typeof (window as any) !== 'undefined') {
@@ -227,7 +210,7 @@ export default function MainLayout({
                       if (analyticsEnabled) {
                         (window as any).gtag('event', 'page_view', { send_to: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID });
                       }
-                    } catch (e) {
+                    } catch {
                       // ignore
                     }
                   }

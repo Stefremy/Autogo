@@ -6,10 +6,10 @@ import { SITE_WIDE_KEYWORDS, joinKeywords } from '../utils/seoKeywords';
 let configuredLocales: string[] = [];
 try {
   // require returns CommonJS; handle both shapes
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+   
   const ni = require('../next-i18next.config');
   configuredLocales = (ni && ni.i18n && Array.isArray(ni.i18n.locales)) ? ni.i18n.locales : [];
-} catch (e) {
+} catch {
   configuredLocales = [];
 }
 

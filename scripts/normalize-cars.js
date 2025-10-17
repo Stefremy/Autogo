@@ -10,8 +10,8 @@ function readJSON(p) {
   const raw = fs.readFileSync(p, 'utf8');
   try {
     return JSON.parse(raw);
-  } catch (e) {
-    console.error('Failed to parse', p, e.message);
+  } catch {
+    console.error('Failed to parse', p);
     return null;
   }
 }

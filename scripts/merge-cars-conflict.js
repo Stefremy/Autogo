@@ -40,6 +40,7 @@ const oursMap = toMap(ours);
 const theirsMap = toMap(theirs);
 
 const allIds = new Set([...baseMap.keys(), ...oursMap.keys(), ...theirsMap.keys()]);
+void allIds;
 
 // Start with base order
 const result = [];

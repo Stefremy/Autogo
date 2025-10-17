@@ -16,7 +16,7 @@ async function readJson(file) {
   try {
     const t = await fs.readFile(file, 'utf8');
     return JSON.parse(t);
-  } catch (err) {
+  } catch {
     return null;
   }
 }
@@ -83,7 +83,7 @@ async function sync() {
   }
 }
 
-sync().catch((e) => {
-  console.error(e);
+sync().catch(() => {
+  console.error('sync-car-data: failed');
   process.exit(1);
 });

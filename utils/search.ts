@@ -7,7 +7,7 @@ export function normalizeText(s?: any): string {
     // Normalize diacritics, replace punctuation with spaces and collapse multiple spaces
     const noDiacritics = str.normalize ? str.normalize("NFD").replace(/\p{Diacritic}/gu, "") : str;
     return noDiacritics.replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
-  } catch (e) {
+  } catch {
     return String(s).toLowerCase();
   }
 }

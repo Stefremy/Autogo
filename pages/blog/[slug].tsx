@@ -107,7 +107,7 @@ export default function BlogPost({ post }) {
         }}
       >
         <Link href="/blog" legacyBehavior>
-          <a className="text-[#d50032] underline underline-offset-4 hover:text-[#b42121]">
+          <a href="/blog" className="text-[#d50032] underline underline-offset-4 hover:text-[#b42121]">
             ← {t("Voltar ao Blog")}
           </a>
         </Link>

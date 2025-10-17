@@ -52,7 +52,7 @@ function entry(loc, lastmod, changefreq, priority) {
 function fileStatDate(...segments) {
   try {
     return fs.statSync(path.join(process.cwd(), ...segments)).mtime;
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -63,7 +63,7 @@ const carsPath = path.join(process.cwd(), 'data', 'cars.json');
 let carsFileMtime = fileStatDate('data', 'cars.json');
 try {
   cars = require(carsPath);
-} catch (e) {
+} catch {
   cars = [];
   carsFileMtime = null;
 }
@@ -73,7 +73,7 @@ const blogDir = path.join(process.cwd(), 'data', 'blog');
 let blogFiles = [];
 try {
   blogFiles = fs.readdirSync(blogDir).filter((f) => f.endsWith('.md'));
-} catch (e) {
+} catch {
   blogFiles = [];
 }
 
@@ -144,8 +144,8 @@ blogFiles.forEach((file) => {
     }
 
     xml += entry(loc, lastmod, changefreq, priority);
-  } catch (e) {
-    console.warn(`Failed to process blog file ${file}:`, e.message);
+  } catch {
+    console.warn(`Failed to process blog file ${file}:`);
   }
 });
 

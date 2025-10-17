@@ -6,15 +6,15 @@ const dataPath = path.join(__dirname, '..', 'data', 'cars.json');
 let raw;
 try {
   raw = fs.readFileSync(dataPath, 'utf8');
-} catch (e) {
-  console.error('predeploy-check: cannot read data/cars.json', e.message);
+} catch {
+  console.error('predeploy-check: cannot read data/cars.json');
   process.exit(2);
 }
 let cars;
 try {
   cars = JSON.parse(raw);
-} catch (e) {
-  console.error('predeploy-check: data/cars.json is not valid JSON', e.message);
+} catch {
+  console.error('predeploy-check: data/cars.json is not valid JSON');
   process.exit(2);
 }
 if (!Array.isArray(cars)) {

@@ -1,6 +1,6 @@
-const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
+const sharp = require('sharp');
 
 // allow passing a source image path as first arg, default to public/images/favicon.png
 const srcArg = process.argv[2] || path.join('public', 'images', 'favicon.png');
@@ -24,8 +24,8 @@ async function run() {
     await sharp(src).resize(48, 48).png().toFile(path.join(out, 'favicon.ico'));
 
     console.log('Favicons generated in', out);
-  } catch (err) {
-    console.error('Error generating favicons:', err);
+  } catch {
+    console.error('Error generating favicons:');
     process.exit(1);
   }
 }

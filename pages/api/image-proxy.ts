@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   let parsed: URL;
   try {
     parsed = new URL(url);
-  } catch (err) {
+  } catch {
     res.status(400).json({ error: 'Invalid URL' });
     return;
   }

@@ -41,8 +41,8 @@ function main() {
   let cars;
   try {
     cars = JSON.parse(raw);
-  } catch (err) {
-    console.error('Failed to parse data/cars.json:', err.message);
+  } catch {
+    console.error('Failed to parse data/cars.json:');
     process.exit(2);
   }
 

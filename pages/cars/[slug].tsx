@@ -1,35 +1,31 @@
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Layout from "../../components/MainLayout";
 import {
-  FaCalendarAlt,
   FaTachometerAlt,
-  FaMoneyBillWave,
   FaGasPump,
   FaCogs,
   FaCarSide,
   FaDoorOpen,
   FaRoad,
-  FaFlag,
-  FaPalette,
   FaBolt,
-  FaUsers,
-  FaHashtag,
-  FaGlobeEurope,
   FaRegCalendarCheck,
   FaLayerGroup,
-  FaCloud,
   FaChevronDown,
   FaChevronUp,
-  FaStar,
   FaBarcode,
+  FaPalette,
+  FaGlobeEurope,
+  FaCloud,
+  FaStar,
+  FaUsers,
 } from "react-icons/fa";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import jsPDF from "jspdf";
 import Head from "next/head";
+import Layout from "../../components/MainLayout";
 import Seo from '../../components/Seo';
 import carsData from "../../data/cars.json";
 import type { Car, MaintenanceItem } from '../../types/car.d';
@@ -78,7 +74,9 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
       if (car && Array.isArray(car.keywords) && car.keywords.length > 0) {
         return String(car.keywords).split(',').map((k: string) => String(k).trim()).join(', ');
       }
-    } catch (e) {}
+    } catch {
+      /* ignore */
+    }
     return joinKeywords(SITE_WIDE_KEYWORDS);
   })();
 
@@ -116,7 +114,9 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
       const primary = normalizeImage(car.image);
       if (primary && images.indexOf(primary) === -1) images.unshift(primary);
     }
-  } catch (e) {}
+  } catch {
+    /* ignore */
+  }
 
   const vehicleJson: any = {
     '@context': 'https://schema.org',
@@ -182,12 +182,11 @@ function fmtNumberForMeta(v: any) {
 }
 
 type Props = {
-  carId: string | number;
   detailKeywords: string;
   vehicleJson: any;
 };
 
-export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props) {
+export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -200,8 +199,8 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
   const heroRef = useRef<HTMLDivElement>(null);
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [isMobileView, setIsMobileView] = useState(false);
-  // Watermark positioning state for lightbox overlay
-  const [watermarkStyle, setWatermarkStyle] = useState<React.CSSProperties | null>(null);
+  // watermark portal positioning is handled directly via DOM; no React state required
+  // (removed unused watermarkStyle to satisfy lint)
 
   // Robust watermark: append into the lightbox/dialog container when present so the watermark
   // shares the same stacking context and can sit above the image. Fallback to body (fixed) if
@@ -226,7 +225,9 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       try {
         const style = getComputedStyle(el as Element);
         if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) return false;
-      } catch (e) {}
+      } catch {
+        /* ignore */
+      }
       const rect = (el as HTMLElement).getBoundingClientRect();
       if (rect.width <= 8 || rect.height <= 8) return false;
       if (rect.bottom <= 0 || rect.top >= window.innerHeight) return false;
@@ -314,7 +315,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       if (watermarkEl && watermarkEl.parentNode) watermarkEl.parentNode.removeChild(watermarkEl);
       watermarkEl = null;
       if (containerPositionPatched && appendedToContainer) {
-        try { appendedToContainer.style.position = ''; } catch (e) {}
+        try { appendedToContainer.style.position = ''; } catch { /* ignore */ }
         containerPositionPatched = false;
       }
       appendedToContainer = null;
@@ -331,7 +332,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
         // If container is not positioned, patch it temporarily to allow absolute placement.
         const computed = getComputedStyle(container).position;
         if (computed === 'static') {
-          try { container.style.position = 'relative'; containerPositionPatched = true; } catch (e) {}
+          try { container.style.position = 'relative'; containerPositionPatched = true; } catch { /* ignore */ }
         }
         appendedToContainer = container;
         if (el.parentNode !== container) container.appendChild(el);
@@ -360,9 +361,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       }
 
       const imgRect = targetImg.getBoundingClientRect();
-      const wmRect = el.getBoundingClientRect();
-      const wmW = wmRect.width || (el.naturalWidth || 0);
-      const wmH = wmRect.height || (el.naturalHeight || 0);
+      // intentionally not reading watermark rect (kept for future use)
 
       if (appendedToContainer) {
         const containerRect = appendedToContainer.getBoundingClientRect();
@@ -387,7 +386,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
     const rafTick = () => {
       if (rafId != null) cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
-        try { positionWatermark(); } catch (e) { /* swallow */ }
+        try { positionWatermark(); } catch { /* swallow */ }
         rafId = null;
       });
     };
@@ -446,13 +445,9 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // If slug (or id) is not available yet, show loading
-  if (!slug)
-    return (
-      <Layout>
-        <div className="p-8">Loading...</div>
-      </Layout>
-    );
+  // If slug (or id) is not available yet, do not return early here (we rely on the carId prop
+  // provided by getStaticProps as a stable fallback) so React hooks remain in the same order
+  // across renders; this prevents conditional hook invocation during client-side navigation.
 
   // Allow accessing car by numeric id or by human-friendly slug (case-insensitive)
   const requested = String(slug).toLowerCase();
@@ -464,7 +459,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
 
   // Client-side image normalization (mirror server-side logic but safe for client runtime)
   const siteOriginClient = process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt';
-  const normalizeImageClient = (img: any): string | null => {
+  const normalizeImageClient = useCallback((img: any): string | null => {
     if (!img) return null;
     if (typeof img !== 'string') return null;
     if (img.startsWith('data:')) return img;
@@ -472,7 +467,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
     if (img.startsWith('//')) return `https:${img}`;
     if (img.startsWith('/')) return `${siteOriginClient}${img}`;
     return `${siteOriginClient}/${img.replace(/^\/+/, '')}`;
-  };
+  }, [siteOriginClient]);
 
   // Derive displayed images from server-side vehicleJson when available to avoid missing resources
   const displayedImages: string[] = React.useMemo(() => {
@@ -486,13 +481,13 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       }
       // fallback to raw car fields when vehicleJson not present
       const rawImgs: string[] = [];
-      if (car.image) rawImgs.push(car.image);
-      if (car.images && Array.isArray(car.images)) rawImgs.push(...car.images);
+      if (car?.image) rawImgs.push(car.image);
+      if (car?.images && Array.isArray(car.images)) rawImgs.push(...car.images);
       return rawImgs.map(normalizeImageClient).filter(Boolean) as string[];
-    } catch (e) {
+    } catch {
       return [];
     }
-  }, [vehicleJson, car.image, car.images]);
+  }, [vehicleJson, car?.image, car?.images, normalizeImageClient]);
 
   const primaryImage = displayedImages.length ? displayedImages[0] : null;
 
@@ -534,7 +529,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       try {
         const resp = await fetch(input, { signal: controller.signal as any });
         return resp;
-      } catch (e) {
+      } catch {
         return null;
       } finally {
         clearTimeout(id);
@@ -567,7 +562,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                 resolve(canvas.toDataURL('image/png'));
-              } catch (err) {
+              } catch {
                 resolve(null);
               }
             };
@@ -597,7 +592,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
             const cleanup = () => {
               img.onload = null;
               img.onerror = null as any;
-              try { URL.revokeObjectURL(objectUrl); } catch (e) {}
+              try { URL.revokeObjectURL(objectUrl); } catch { /* ignore */ }
             };
             img.onload = () => {
               try {
@@ -612,7 +607,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                 settled = true;
                 cleanup();
                 resolve(canvas.toDataURL('image/png'));
-              } catch (err) {
+              } catch {
                 cleanup();
                 resolve(null);
               }
@@ -624,7 +619,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
             img.src = objectUrl;
           });
           if (converted) return converted;
-        } catch (err) {
+        } catch {
           // fallthrough
         }
 
@@ -636,7 +631,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
           reader.readAsDataURL(blob);
         });
         return finalBase64;
-      } catch (err) {
+      } catch {
         // Last ditch: try loading via Image element (may fail due to CORS)
         return await new Promise<string | null>((resolve) => {
           const img = new Image();
@@ -664,7 +659,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
               settled = true;
               clearTimeout(to);
               resolve(dataUrl);
-            } catch (err) {
+            } catch {
               clearTimeout(to);
               resolve(null);
             }
@@ -675,7 +670,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
           };
           try {
             img.src = url;
-          } catch (e) {
+          } catch {
             clearTimeout(to);
             resolve(null);
           }
@@ -700,12 +695,12 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
           try {
             doc.addFileToVFS('Montserrat-Regular.ttf', fontBase64);
             doc.addFont('Montserrat-Regular.ttf', 'Montserrat', 'normal');
-          } catch (e) {
-            // ignore font errors
+          } catch {
+            /* ignore font errors */
           }
         }
-      } catch (e) {
-        // ignore
+      } catch {
+        /* ignore */
       }
     })();
 
@@ -722,7 +717,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
       const logoFormat = logoBase64.startsWith('data:image/png') ? 'PNG' : logoBase64.startsWith('data:image/jpeg') ? 'JPEG' : 'PNG';
       try {
         doc.addImage(logoBase64, logoFormat as any, logoX, logoY, logoW, logoH);
-      } catch (err) {
+      } catch {
         // ignore
       }
     } else {
@@ -786,7 +781,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
           try {
             const format = base64.startsWith('data:image/png') ? 'PNG' : base64.startsWith('data:image/jpeg') ? 'JPEG' : 'JPEG';
             doc.addImage(base64, format as any, x, yCenter, drawW, drawH);
-          } catch (err) {
+          } catch {
             doc.setFontSize(10);
             doc.setTextColor(100, 100, 100);
             doc.text('(Imagem indisponível)', pageW / 2 - 40, yPos + maxImgH / 2);
@@ -1351,7 +1346,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                         );
                         alert("Link copiado para a área de transferência!");
                       }
-                    } catch (e) {
+                    } catch {
                       // Optionally handle error
                     }
                     setIsSharing(false);
@@ -1648,7 +1643,7 @@ export default function CarDetail({ carId, detailKeywords, vehicleJson }: Props)
                       className={`swiper-wrapper flex transition-transform duration-500 gap-4`}
                       style={{ transform: `translateX(-${swiperIndex * (100 / slidesToShow)}%)` }}
                     >
-                      {similarCars.map((simCar, idx) => (
+                      {similarCars.map((simCar) => (
                         <div
                           key={simCar.id}
                           className={`swiper-slide bg-white rounded-2xl shadow-lg flex-shrink-0 cursor-pointer group relative overflow-hidden transition-all duration-300 hover:shadow-2xl mx-2 ${'w-56 sm:w-60 md:w-72'}`}

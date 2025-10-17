@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const nextI18Next = require("./next-i18next.config");
 const i18n = nextI18Next.i18n || (nextI18Next.default && nextI18Next.default.i18n) || {};
 
@@ -29,8 +28,8 @@ try {
       }
     }
   }
-} catch (e) {
-  console.warn("next.config.js: could not load ./data/cars.json for redirects:", e && e.message);
+} catch {
+  console.warn("next.config.js: could not load ./data/cars.json for redirects:");
 }
 
 /** @type {import('next').NextConfig} */

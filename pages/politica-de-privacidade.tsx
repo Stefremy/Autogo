@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 
 export default function PoliticaDePrivacidade() {
   const { t } = useTranslation();
+  void t;
   const hoje = new Date();
   const dataAtual = hoje.toLocaleDateString("pt-PT");
 

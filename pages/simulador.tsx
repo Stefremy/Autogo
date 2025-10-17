@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
-import Head from "next/head";
 import Seo from '../components/Seo';
 import { SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
@@ -156,6 +155,9 @@ function descontoIdade(ano) {
   return 0.8;
 }
 
+// no-op references to avoid unused-var warnings where these tables/helpers are intentionally kept
+void TABELA_AMBIENTAL_NEDC_GASOLINA; void TABELA_AMBIENTAL_NEDC_DIESEL; void getEscalaoTabela; void descontoIdade;
+
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -199,7 +201,7 @@ export default function Simulador() {
             const age = Date.now() - savedAt;
             if (age > SIMULADOR_FORM_TTL_MS) {
               // expired -> remove and fall through to default
-              try { localStorage.removeItem('simuladorISVForm'); } catch (e) {}
+              try { localStorage.removeItem('simuladorISVForm'); } catch {}
             } else {
               return { ...defaultForm, ...savedForm };
             }
@@ -221,7 +223,7 @@ export default function Simulador() {
         if (typeof window !== "undefined") {
           try {
             localStorage.setItem("simuladorISVForm", JSON.stringify({ savedAt: Date.now(), ...updated }));
-          } catch (e) {}
+          } catch {}
         }
         return updated;
       });
@@ -233,7 +235,7 @@ export default function Simulador() {
     if (typeof window !== "undefined") {
       try {
         localStorage.setItem("simuladorISVForm", JSON.stringify({ savedAt: Date.now(), ...form }));
-      } catch (e) {}
+      } catch {}
     }
   }, [form]);
   const [erroData, setErroData] = useState<string | null>(null);

@@ -6,8 +6,8 @@ const raw = fs.readFileSync(file, 'utf8');
 let cars;
 try {
   cars = JSON.parse(raw);
-} catch (e) {
-  console.error('Failed to parse data/cars.json:', e && e.message);
+} catch {
+  console.error('Failed to parse data/cars.json:');
   process.exit(1);
 }
 

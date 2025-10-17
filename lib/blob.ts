@@ -80,7 +80,7 @@ export async function putObject(bucket: string, key: string, data: Buffer | stri
         Authorization: `Bearer ${TOKEN}`,
         'Content-Type': meta?.contentType || 'application/octet-stream',
       },
-      body: data,
+      body: data as any,
     });
     if (!resp.ok) {
       const txt = await resp.text().catch(() => '');
@@ -94,7 +94,7 @@ export async function putObject(bucket: string, key: string, data: Buffer | stri
     const resp = await fetch(url, {
       method: 'PUT',
       headers: { Authorization: `Bearer ${TOKEN}`, 'Content-Type': meta?.contentType || 'application/octet-stream' },
-      body: data,
+      body: data as any,
     });
     if (!resp.ok) throw new Error(`Failed to put object: ${resp.status}`);
     return { key };

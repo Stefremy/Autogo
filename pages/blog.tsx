@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 import matter from "gray-matter";
 import Link from "next/link";
 import Layout from "../components/MainLayout";
@@ -10,7 +9,6 @@ import Seo from "../components/Seo";
 import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Blog({ posts }) {
-  const { t } = useTranslation("common");
   const keywords = joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS);
   const categoryLinks = [
     {
@@ -109,7 +107,7 @@ export default function Blog({ posts }) {
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {categoryLinks.map((category) => (
                 <Link key={category.href} href={category.href} legacyBehavior>
-                  <a className="group block rounded-xl border border-white/60 bg-white/70 backdrop-blur-md p-5 shadow-md transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#d50032]">
+                  <a href={category.href} className="group block rounded-xl border border-white/60 bg-white/70 backdrop-blur-md p-5 shadow-md transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#d50032]">
                     <span className="text-lg font-semibold text-[#1a237e] group-hover:underline">
                       {category.label}
                     </span>
@@ -125,7 +123,7 @@ export default function Blog({ posts }) {
           <div className="mt-8 space-y-8">
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} legacyBehavior>
-                <a className="block rounded-xl bg-white/70 backdrop-blur-md shadow-lg border border-gray-200 hover:shadow-xl transition p-6 group focus:outline-none focus:ring-2 focus:ring-[#d50032]">
+                <a href={`/blog/${post.slug}`} className="block rounded-xl bg-white/70 backdrop-blur-md shadow-lg border border-gray-200 hover:shadow-xl transition p-6 group focus:outline-none focus:ring-2 focus:ring-[#d50032]">
                   <div className="flex items-center gap-3 mb-2">
                     <span
                       className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase tracking-wide shadow-sm ${post.type === "review" ? "bg-blue-100 text-blue-800" : "bg-red-100 text-red-800"}`}

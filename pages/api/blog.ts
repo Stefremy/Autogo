@@ -41,7 +41,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       const posts = getAllPosts();
       res.status(200).json(posts);
-    } catch (err) {
+    } catch {
       res.status(500).json({ error: "Failed to read blog posts." });
     }
   } else if (req.method === "POST") {
@@ -54,7 +54,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const filePath = path.join(blogDir, filename);
       fs.writeFileSync(filePath, content);
       res.status(201).json({ filename });
-    } catch (err) {
+    } catch {
       res.status(500).json({ error: "Failed to add blog post." });
     }
   } else if (req.method === "DELETE") {
@@ -70,7 +70,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       }
       fs.unlinkSync(filePath);
       res.status(200).json({ success: true });
-    } catch (err) {
+    } catch {
       res.status(500).json({ error: "Failed to delete blog post." });
     }
   } else {

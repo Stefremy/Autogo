@@ -31,7 +31,7 @@
         // blur to trigger change handlers
         await el.evaluate((e) => e.blur());
         return true;
-      } catch (e) {
+      } catch {
         return false;
       }
     };
@@ -63,7 +63,9 @@
         try {
           const txt = (b.textContent || '').trim();
           for (const t of texts) if (txt.includes(t)) { if (typeof b.click === 'function') b.click(); return true; }
-        } catch (e) {}
+        } catch {
+          // ignore DOM errors
+        }
       }
       return false;
     }).catch(() => false);
@@ -86,7 +88,9 @@
             if (typeof b.click === 'function') b.click();
             return true;
           }
-        } catch (e) {}
+        } catch {
+          // ignore
+        }
       }
       return false;
     }).catch(() => false);
@@ -116,7 +120,9 @@
         }).catch(() => null);
         // small delay to allow UI to reset
         await delay(600);
-      } catch (e) {}
+      } catch {
+        // ignore
+      }
 
       // try to find a car again
       carExists = await page.$('a[href^="/cars/"]');
@@ -130,7 +136,7 @@
         const cars = require('../../data/cars.json');
         const c = (Array.isArray(cars) && cars.find(x => x && (x.slug || x.id))) || null;
         if (c) fallbackSlug = c.slug || c.id;
-      } catch (e) {
+      } catch {
         // ignore
       }
       if (!fallbackSlug) {
@@ -163,7 +169,7 @@
     // Wait for pagination label to appear and read it
     try {
       await page.waitForSelector('nav .px-3.py-1', { timeout: 2000 });
-    } catch (e) {
+    } catch {
       // fallback: try read nav text later
     }
 
@@ -172,14 +178,14 @@
     await delay(200);
     const currentUrl = await page.evaluate(() => window.location.href).catch(() => page.url());
     const query = (() => {
-      try { return new URL(currentUrl).searchParams.toString(); } catch (e) { return '' }
+      try { return new URL(currentUrl).searchParams.toString(); } catch { return '' }
     })();
     console.log('Query after back (from window.location):', query, 'full:', currentUrl);
 
     const stored = await page.evaluate(() => {
       try {
         return localStorage.getItem('autogo_filters_v1');
-      } catch (e) {
+      } catch {
         return null;
       }
     }).catch(() => null);
@@ -195,7 +201,7 @@
     let storageObj = null;
     try {
       storageObj = stored ? JSON.parse(stored) : null;
-    } catch (e) { storageObj = null; }
+    } catch { storageObj = null; }
     console.log('storageObj:', storageObj);
 
     const storageOk = storageObj && storageObj.minPrice === minPriceVal && storageObj.maxPrice === maxPriceVal;

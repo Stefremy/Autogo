@@ -31,7 +31,7 @@ export default function ContactForm() {
       );
       setSuccess(true);
       setForm({ nome: "", email: "", telefone: "", mensagem: "" });
-    } catch (err) {
+    } catch {
       setError("Erro ao enviar. Tente novamente.");
     } finally {
       setLoading(false);

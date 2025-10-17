@@ -146,7 +146,7 @@ export default function BlogCategoryPage({ posts, categoryKey }: BlogCategoryPag
           }}
         >
           <Link href="/blog" legacyBehavior>
-            <a className="text-[#d50032] underline underline-offset-4 hover:text-[#b42121]">
+            <a href="/blog" className="text-[#d50032] underline underline-offset-4 hover:text-[#b42121]">
               ← {t("Voltar ao Blog")}
             </a>
           </Link>
@@ -161,7 +161,7 @@ export default function BlogCategoryPage({ posts, categoryKey }: BlogCategoryPag
             <div className="mt-10 space-y-8">
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} legacyBehavior>
-                  <a className="block rounded-xl bg-white/70 backdrop-blur-md shadow-lg border border-gray-200 hover:shadow-xl transition p-6 group focus:outline-none focus:ring-2 focus:ring-[#d50032]">
+                  <a href={`/blog/${post.slug}`} className="block rounded-xl bg-white/70 backdrop-blur-md shadow-lg border border-gray-200 hover:shadow-xl transition p-6 group focus:outline-none focus:ring-2 focus:ring-[#d50032]">
                     <div className="flex items-center gap-3 mb-2">
                       <span
                         className={`inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase tracking-wide shadow-sm ${

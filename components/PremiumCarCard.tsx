@@ -15,7 +15,7 @@ type PremiumCarCardProps = {
   make: string;
   mileage?: number | string;
   transmission?: string;
-  type?: string;
+  type?: string; // accept legacy `type` prop from callers
   country?: string;
   bgColor?: string; // nova prop opcional
   status?: string;
@@ -31,7 +31,6 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   year,
   make,
   transmission,
-  type = "SEDAN",
   country,
   bgColor,
   status,
@@ -66,6 +65,8 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
     }
     return '';
   })();
+
+  // Note: accept `type` prop in the props type for compatibility, but we don't need to use it here.
 
   return (
     <a href={path} className={styles["premium-car-card"]} style={bgColor ? { background: bgColor } : undefined}>

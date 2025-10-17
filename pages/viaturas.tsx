@@ -6,7 +6,6 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
 import SimuladorTabela from "../components/SimuladorTabela";
 import styles from "../components/PremiumCarCard.module.css";
 import cars from "../data/cars.json";
@@ -36,6 +35,7 @@ export default function Viaturas() {
   const itemsPerBatch = columnsCount * ROWS_PER_BATCH; // computed items to load per action
   const [itemsLoaded, setItemsLoaded] = useState(itemsPerBatch);
   const PAGE_SIZE = itemsPerBatch;
+  void PAGE_SIZE; // intentionally unused derived constant
 
   // compute columns by listening to window width (matches Tailwind breakpoints used in grid)
   useEffect(() => {
@@ -78,7 +78,7 @@ export default function Viaturas() {
 
   // Restore saved filters on first client render (only runs in browser)
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === 'undefined') return;
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
@@ -95,10 +95,10 @@ export default function Viaturas() {
         if (saved.maxPrice) setMaxPrice(String(saved.maxPrice));
         if (saved.itemsLoaded) setItemsLoaded(Number(saved.itemsLoaded) || itemsPerBatch);
       }
-    } catch (e) {
+    } catch {
       // ignore parse errors
     }
-  }, []);
+  }, [itemsPerBatch]);
 
   // Save filters whenever they change so the user's inputs are remembered
   useEffect(() => {
@@ -118,7 +118,7 @@ export default function Viaturas() {
         ts: Date.now(),
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
-    } catch (e) {
+    } catch {
       // ignore storage errors
     }
   }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded]);
@@ -158,17 +158,17 @@ export default function Viaturas() {
   // Reset loaded items when filters change
   React.useEffect(() => {
     setItemsLoaded(itemsPerBatch);
-  }, [marca, modelo, ano, mes, km, minPrice, maxPrice]);
+  }, [marca, modelo, ano, mes, km, minPrice, maxPrice, itemsPerBatch]);
 
   // Reset loaded items when country filter changes
   React.useEffect(() => {
     setItemsLoaded(itemsPerBatch);
-  }, [countryFilter]);
+  }, [countryFilter, itemsPerBatch]);
 
   // Reset itemsLoaded when sort changes so user sees top of sorted list
   React.useEffect(() => {
     setItemsLoaded(itemsPerBatch);
-  }, [sortBy]);
+  }, [sortBy, itemsPerBatch]);
 
   // Filtering logic por dia, mês e ano (campos day, month, year)
   const filteredCars = cars.filter((car) => {
@@ -262,12 +262,8 @@ export default function Viaturas() {
   // lazy-import helper to avoid blocking initial render
   const { matchesQuery } = (function tryImport() {
     try {
-      // require ensures this runs only in Node/bundled environment; modern Next handles imports statically,
-      // but keeping this small inline shim avoids adding additional top-level imports in the file's header.
-      // We'll import from utils/search.ts
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
       return require('../utils/search');
-    } catch (e) {
+    } catch {
       // fallback stub
       return { matchesQuery: (c: any, q: string) => !q || String(q).trim() === '' };
     }
@@ -306,7 +302,7 @@ export default function Viaturas() {
       if (rect.top < window.innerHeight) {
         setItemsLoaded((prev) => Math.min(filteredCars.length, prev + itemsPerBatch));
       }
-    } catch (e) {
+    } catch {
       // ignore
     }
 
@@ -327,10 +323,14 @@ export default function Viaturas() {
     novidade: "bg-blue-500", // Added novidade color
   };
 
+  // Keep a stable reference to the runtime-mapped CSS class name so effects
+  // don't need to list the `styles` module in dependency arrays.
+  const animClassRef = React.useRef<string | null>(styles['card-anim'] || null);
+
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
-    // Use the runtime-mapped class name from the CSS module so the selector matches the hashed class
-    const animClass = styles['card-anim'];
+    // Use the cached class name from the ref so the effect does not read `styles` directly
+    const animClass = animClassRef.current;
     if (!animClass) return;
     const selector = `.${animClass}`;
     const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
@@ -354,7 +354,7 @@ export default function Viaturas() {
       cancelled = true;
       io.disconnect();
     };
-  }, [displayedCars.length, styles]);
+  }, [displayedCars.length, animClassRef]);
 
   return (
     <>
@@ -780,7 +780,7 @@ export default function Viaturas() {
                   // remove persisted filters
                   try {
                     localStorage.removeItem(STORAGE_KEY);
-                  } catch (e) {
+                  } catch {
                     // ignore
                   }
                 }}
@@ -920,7 +920,7 @@ export default function Viaturas() {
                         // cap size
                         if (arr.length > 50) arr = arr.slice(0, 50);
                         localStorage.setItem(KEY, JSON.stringify(arr));
-                      } catch (e) {
+                      } catch {
                         // ignore
                       }
                     }}

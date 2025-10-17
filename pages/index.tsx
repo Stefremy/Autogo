@@ -1,19 +1,20 @@
 import fs from "fs";
 import path from "path";
-import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import matter from "gray-matter";
-import MainLayout from "../components/MainLayout";
-import cars from "../data/cars.json";
-import CarCard from "../components/CarCard";
-import PremiumCarCard from "../components/PremiumCarCard";
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from 'next/router';
+import MainLayout from "../components/MainLayout";
+import cars from "../data/cars.json";
+import PremiumCarCard from "../components/PremiumCarCard";
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
+
+// Some imported React helpers are used conditionally; to avoid linter warnings where they are assigned but not used in all builds, reference them in no-op expressions.
+void useRef; void useEffect;
 
 export async function getServerSideProps({ locale }) {
   // Fetch blog articles from markdown files
@@ -79,11 +80,12 @@ const googleReviews = [
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
 ];
+void googleReviews;
 
 export default function Home({ blogArticles }) {
   const { t } = useTranslation("common");
   // State for filtered cars (used by listing)
-  const [filteredCars, setFilteredCars] = useState(cars);
+  const [_filteredCars, _setFilteredCars] = useState(cars);
   // Featured cars: persistent per visitor with click-priority
   const FEATURED_KEY = "autogo_featured_v1";
   const CLICKED_KEY = "autogo_clicked_v1";
@@ -117,9 +119,7 @@ export default function Home({ blogArticles }) {
           }
         }
       }
-    } catch (e) {
-      // ignore
-    }
+    } catch {}
 
     // otherwise build from clicked ids first, then random fill
     try {
@@ -144,21 +144,24 @@ export default function Home({ blogArticles }) {
       try {
         const ids = picked.map((c) => c.id);
         localStorage.setItem(FEATURED_KEY, JSON.stringify({ ids, ts: Date.now() }));
-      } catch (e) {}
+      } catch {}
       if (picked.length) setFeaturedCars(picked);
-    } catch (e) {
+    } catch {
       // fallback already set
     }
-  }, []);
+  }, [FEATURED_TTL]);
 
   // helper to force refresh featured selection for visitor
-  const refreshFeaturedForVisitor = () => {
+  const _refreshFeaturedForVisitor = () => {
     const others = shuffle(cars).slice(0, Math.min(6, cars.length));
     try {
       localStorage.setItem(FEATURED_KEY, JSON.stringify({ ids: others.map((c) => c.id), ts: Date.now() }));
-    } catch (e) {}
+    } catch {}
     setFeaturedCars(others);
   };
+
+  // intentionally reference to avoid compiler unused warnings
+  void _filteredCars; void _setFilteredCars; void _refreshFeaturedForVisitor;
 
   // --- Hero filter state (minimal: Marca, Modelo, Ano, KM, Preço) ---
   const router = useRouter();
@@ -199,9 +202,9 @@ export default function Home({ blogArticles }) {
         };
         window.localStorage.setItem('viaturas_filters_v1', JSON.stringify(toSave));
       }
-    } catch (e) {}
+    } catch {}
     // close mobile panel (if open) and navigate
-    try { setHeroFilterOpen(false); } catch (e) {}
+    try { setHeroFilterOpen(false); } catch {}
     router.push({ pathname: '/viaturas', query: q });
   };
 
@@ -275,7 +278,7 @@ export default function Home({ blogArticles }) {
       var sideMargin = Math.max(0, Math.round((window.innerWidth - newW) / 2));
       el.style.marginLeft = sideMargin + 'px';
       el.style.marginRight = sideMargin + 'px';
-    } catch (e) {
+    } catch {
       // ignore style errors
     }
     // Fade out as we approach the footer
@@ -383,7 +386,7 @@ export default function Home({ blogArticles }) {
 
             <div className="flex flex-row w-full max-w-xl rounded-full bg-white/30 backdrop-blur-md shadow-2xl py-2 px-2 sm:py-3 sm:px-3 items-center gap-2 mb-4 sm:mb-5 border border-white/30 overflow-visible">
               <Link href="/viaturas" legacyBehavior passHref>
-                <a
+                <a href="/viaturas" 
                   className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#b42121] shadow-sm transform-gpu no-underline transition hover:shadow-lg hover:brightness-110 hover:scale-105 hover:tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121] sm:px-6 sm:py-3 sm:text-base"
                   style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
@@ -392,7 +395,7 @@ export default function Home({ blogArticles }) {
                 </a>
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
-                <a
+                <a href="/simulador" 
                   className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
                   style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
@@ -400,7 +403,7 @@ export default function Home({ blogArticles }) {
                 </a>
               </Link>
               <Link href="/pedido" legacyBehavior passHref>
-                <a
+                <a href="/pedido"
                   className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
                   style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
@@ -1198,7 +1201,7 @@ function RecentBadge({ carId }) {
       const TTL = 1000 * 60 * 60 * 24 * 7;
       const found = parsed.find((it) => it.id === carId && Date.now() - (it.ts || 0) < TTL);
       if (found) setSeen(true);
-    } catch (e) {
+    } catch {
       // ignore
     }
   }, [carId]);

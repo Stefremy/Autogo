@@ -8,8 +8,8 @@
     console.log('open pages', pages.length);
     await browser.close();
     console.log('closed');
-  } catch (e) {
-    console.error('ERR', e && e.message ? e.message : e);
+  } catch {
+    console.error('ERR', 'puppeteer-check failed');
     process.exit(1);
   }
 })();
