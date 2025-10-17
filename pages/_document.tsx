@@ -5,6 +5,14 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-PT">
         <Head>
+          {/* Google Tag Manager (renders only when NEXT_PUBLIC_GTM_ID is set) */}
+          {process.env.NEXT_PUBLIC_GTM_ID ? (
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`,
+              }}
+            />
+          ) : null}
           {/* Favicon and touch icons - place files in /public: */}
           <link rel="icon" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="icon" href="/favicon.ico" />
@@ -23,6 +31,18 @@ class MyDocument extends Document {
           {/* NOTE: analytics initialization has been moved to MainLayout (consent-aware). */}
         </Head>
         <body>
+          {/* Google Tag Manager (noscript) - rendered only when NEXT_PUBLIC_GTM_ID is set */}
+          {process.env.NEXT_PUBLIC_GTM_ID ? (
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+                height="0"
+                width="0"
+                style={{ display: 'none', visibility: 'hidden' }}
+              />
+            </noscript>
+          ) : null}
+          {/* End Google Tag Manager (noscript) */}
           {/*
             Defensive inline script: remove any client-inserted favicon link that
             points to the legacy `/images/favicon.png`. This runs early so that

@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "../styles/globals.scss";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { useEffect } from "react";
 import { appWithTranslation } from "next-i18next";
 import type { UserConfig } from "next-i18next";
 import type { AppProps } from "next/app";
@@ -13,6 +14,25 @@ function MyApp({ Component, pageProps }: AppProps) {
   // Hide IndexNavbar on /viaturas and /cars/[id]
   const hideNavbar =
     router.pathname === "/viaturas" || router.pathname.startsWith("/cars");
+
+  useEffect(() => {
+    if (!process.env.NEXT_PUBLIC_GTM_ID) return;
+
+    const onRouteChange = (url: string) => {
+      try {
+        // Push a page_view event to dataLayer for GTM to consume
+        // dataLayer is created by the GTM snippet in _document when configured
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({ event: 'page_view', page_path: url });
+      } catch {}
+    };
+
+    router.events.on('routeChangeComplete', onRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', onRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <Head>
