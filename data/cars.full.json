@@ -10,5 +10,11 @@
     "status": "removed",
     "removedAt": "2025-10-20T14:45:59.615Z",
     "removedBy": "api"
+  },
+  {
+    "id": "6354469",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:11:28.889Z",
+    "removedBy": "api"
   }
 ]
