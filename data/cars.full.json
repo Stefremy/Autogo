@@ -261,6 +261,15 @@
     "id": "6399636",
     "status": "removed",
     "removedAt": "2025-10-20T15:58:55.285Z",
+    "removedBy": "api",
+    "unitNumber": "",
+    "vin": "SJNFAAF16U1268721",
+    "maintenance": []
+  },
+  {
+    "id": "6387393",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:04.597Z",
     "removedBy": "api"
   }
 ]
