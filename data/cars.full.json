@@ -295,5 +295,11 @@
     "status": "removed",
     "removedAt": "2025-10-20T15:59:41.222Z",
     "removedBy": "api"
+  },
+  {
+    "id": "6401839",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:50.247Z",
+    "removedBy": "api"
   }
 ]
