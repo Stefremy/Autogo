@@ -9,12 +9,309 @@
     "id": "6357538",
     "status": "removed",
     "removedAt": "2025-10-20T14:45:59.615Z",
-    "removedBy": "api"
+    "removedBy": "api",
+    "unitNumber": "6357538",
+    "vin": "WAUZZZF48MA040870",
+    "maintenance": []
   },
   {
     "id": "6354469",
     "status": "removed",
-    "removedAt": "2025-10-20T15:11:28.889Z",
+    "removedAt": "2025-10-20T15:52:49.618Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6321063",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:52:59.188Z",
+    "removedBy": "api",
+    "unitNumber": "",
+    "vin": "WAUZZZF33M1045479",
+    "maintenance": []
+  },
+  {
+    "id": "6406515",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:53:08.002Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6380266",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:53:16.984Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6239362",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:53:25.967Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6011735",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:53:35.798Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6400838",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:53:44.432Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6340390",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:53:53.772Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6358783",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:54:02.822Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6403918",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:54:11.667Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6395076",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:54:20.585Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6388495",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:54:29.337Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6377379",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:54:38.204Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6403921",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:54:47.528Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6372999",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:54:56.279Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6288923",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:55:05.972Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6298664",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:55:15.181Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6340773",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:55:24.421Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6401728",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:55:33.735Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6340793",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:55:42.334Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6149494",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:55:51.403Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6192796",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:56:00.749Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6414308",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:56:09.955Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6388347",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:56:19.055Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6375443",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:56:28.292Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6198431",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:56:36.850Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6410667",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:56:46.179Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6403531",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:56:55.143Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6387510",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:57:04.115Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6355473",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:57:13.254Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6328077",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:57:22.665Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6361095",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:57:32.298Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6170560",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:57:41.688Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6397973",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:57:51.138Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6310696",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:58:00.661Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6361228",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:58:09.802Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6410960",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:58:18.946Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6407551",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:58:28.234Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6407558",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:58:37.112Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6399642",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:58:46.032Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6399636",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:58:55.285Z",
+    "removedBy": "api",
+    "unitNumber": "",
+    "vin": "SJNFAAF16U1268721",
+    "maintenance": []
+  },
+  {
+    "id": "6387393",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:04.597Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6377762",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:13.957Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "5819717",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:23.110Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "5839654",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:31.641Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6339661",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:41.222Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6401839",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:50.247Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6381591",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:59.372Z",
+    "removedBy": "api"
+  },
+  {
+    "id": "6361812",
+    "status": "removed",
+    "removedAt": "2025-10-20T16:00:08.954Z",
     "removedBy": "api"
   }
 ]
