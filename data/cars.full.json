@@ -64,5 +64,11 @@
     "status": "removed",
     "removedAt": "2025-10-20T15:53:53.772Z",
     "removedBy": "api"
+  },
+  {
+    "id": "6358783",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:54:02.822Z",
+    "removedBy": "api"
   }
 ]
