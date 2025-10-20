@@ -301,5 +301,11 @@
     "status": "removed",
     "removedAt": "2025-10-20T15:59:50.247Z",
     "removedBy": "api"
+  },
+  {
+    "id": "6381591",
+    "status": "removed",
+    "removedAt": "2025-10-20T15:59:59.372Z",
+    "removedBy": "api"
   }
 ]
