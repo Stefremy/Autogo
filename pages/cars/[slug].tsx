@@ -503,6 +503,44 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
     car?.country === "FR" && "Tecnologia inspirada pelo legado Citroën no WRC.",
   ].filter(Boolean);
 
+  // Compute similar cars deterministically without using React hooks.
+  // Placed before the early return so hook call order remains stable.
+  function computeSimilarCars(target: Car | null, pool: Car[], maxResults = 8): Car[] {
+    if (!target) return [];
+    const parseNum = (v?: any) => {
+      if (v == null) return NaN;
+      // remove common non-digit characters then parse
+      const s = String(v).replace(/[,\.\s]/g, '').replace(/[^\d]/g, '');
+      const n = Number(s);
+      return Number.isFinite(n) ? n : NaN;
+    };
+
+    const tPower = parseNum(target.power);
+    const tEngine = parseNum(target.engineSize);
+
+    return pool
+      .filter((c) => String(c.id) !== String(target.id))
+      .map((c) => {
+        let score = 0;
+        if (c.make && target.make && c.make === target.make) score += 100;
+        if (c.fuel && target.fuel && c.fuel === target.fuel) score += 40;
+        const p = parseNum(c.power);
+        if (!Number.isNaN(p) && !Number.isNaN(tPower)) {
+          const diff = Math.abs(p - tPower);
+          score += Math.max(0, 30 - Math.min(diff, 30));
+        }
+        const e = parseNum(c.engineSize);
+        if (!Number.isNaN(e) && !Number.isNaN(tEngine)) {
+          const diff = Math.abs(e - tEngine);
+          score += Math.max(0, 20 - Math.min(diff, 20));
+        }
+        return { c, score };
+      })
+      .sort((a, b) => b.score - a.score)
+      .slice(0, maxResults)
+      .map((s) => s.c);
+  }
+
   if (!car) {
     return (
       <Layout>
@@ -512,8 +550,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
   }
 
   // Find similar cars (show all except current)
-  const similarCars = (carsData as Car[])
-    .filter((c) => String(c.id) !== String(car.id));
+  const similarCars = computeSimilarCars(car, carsData as Car[]);
 
   // meta keywords are computed server-side and passed via props (detailKeywords)
   // (previous client-side computation removed to avoid duplication)
