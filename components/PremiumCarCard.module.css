@@ -206,3 +206,17 @@
     box-shadow: none !important;
   }
 }
+
+/* Mobile fix: remove thin border gap between image and card content caused by subpixel rounding
+   Push the image down slightly to cover the top border and reduce top padding of the info area
+   so the visual spacing remains the same. Scoped to small viewports only. */
+@media (max-width: 640px) {
+  .premium-car-image {
+    display: block;
+    margin-bottom: -1.5px; /* overlap the card border to hide the hairline */
+    border-radius: 1.1rem 1.1rem 0 0; /* ensure corners stay rounded */
+  }
+  .premium-car-info {
+    padding-top: calc(1.5rem - 1.5px); /* keep visible padding while compensating for overlap */
+  }
+}

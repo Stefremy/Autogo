@@ -207,7 +207,7 @@ export default function SimuladorTabela() {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <form onSubmit={calcularISV} className="flex flex-col gap-4 w-full">
+      <form onSubmit={calcularISV} className="flex flex-col gap-3 sm:gap-4 w-full">
         <div className="flex flex-col gap-1">
           <label className="font-semibold text-[#b42121]">
             Tipo de veículo
@@ -216,7 +216,7 @@ export default function SimuladorTabela() {
             name="tipo"
             value={form.tipo}
             onChange={handleChange}
-            className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+            className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
           >
             <option value="passageiro">Passageiro / Misto</option>
             <option value="comercial">
@@ -234,7 +234,7 @@ export default function SimuladorTabela() {
             value={form.cilindrada}
             onChange={handleChange}
             required
-            className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+            className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
           />
         </div>
         {form.tipo === "passageiro" && (
@@ -247,7 +247,7 @@ export default function SimuladorTabela() {
                 name="combustivel"
                 value={form.combustivel}
                 onChange={handleChange}
-                className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
               >
                 <option value="gasolina">Gasolina</option>
                 <option value="gpl">GPL</option>
@@ -263,7 +263,7 @@ export default function SimuladorTabela() {
                 name="norma"
                 value={form.norma}
                 onChange={handleChange}
-                className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
               >
                 <option value="wltp">WLTP</option>
                 <option value="nedc">NEDC</option>
@@ -279,7 +279,7 @@ export default function SimuladorTabela() {
                 value={form.co2}
                 onChange={handleChange}
                 required
-                className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
               />
             </div>
           </>
@@ -293,7 +293,7 @@ export default function SimuladorTabela() {
               name="particulas"
               value={form.particulas}
               onChange={handleChange}
-              className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+              className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
             >
               <option value="nao">Não</option>
               <option value="sim">Sim</option>
@@ -355,7 +355,7 @@ export default function SimuladorTabela() {
             name="usado"
             value={form.usado}
             onChange={handleChange}
-            className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+            className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
           >
             <option value="nao">Não</option>
             <option value="sim">Sim</option>
@@ -369,7 +369,7 @@ export default function SimuladorTabela() {
             name="taxaIntermedia"
             value={form.taxaIntermedia}
             onChange={handleChange}
-            className="rounded-xl border border-[#b42121]/20 px-4 py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm mb-2"
+            className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm mb-2"
           >
             <option value="">Nenhuma (normal)</option>
             {TAXAS_INTERMEDIAS.map((t) => (
@@ -381,7 +381,7 @@ export default function SimuladorTabela() {
         </div>
         <button
           type="submit"
-          className="bg-[#b42121] text-white rounded-full py-3 px-8 font-bold text-lg shadow-lg hover:bg-[#a11a1a] hover:scale-105 transition-all duration-200 mt-2"
+          className="bg-[#b42121] text-white rounded-full py-2 px-6 sm:py-3 sm:px-8 font-bold text-base sm:text-lg shadow-lg hover:bg-[#a11a1a] hover:scale-105 transition-all duration-200 mt-2"
         >
           Calcular ISV
         </button>

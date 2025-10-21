@@ -813,30 +813,34 @@ export default function Viaturas() {
                   )}
                   {/* Mobile: existing horizontal thumbnail scroller (leave as-is) */}
                   <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent md:hidden">
-                    {(car.images || [car.image]).map((img, idx) => {
-                      const thumbSrc = Array.isArray(img) ? String(img[0]) : String(img || car.image || "");
-                      return (
-                        <button
-                          key={idx}
-                          type="button"
-                          className="focus:outline-none"
-                          onClick={() => {
-                            const modal = document.getElementById(
-                              `modal-img-${car.id}-${idx}`,
-                            );
-                            if (modal) (modal as HTMLDialogElement).showModal();
-                          }}
-                        >
-                          <img
-                            src={thumbSrc}
-                            loading="lazy"
-                            alt={`${car.make} ${car.model} foto ${idx + 1}`}
-                            className={styles["premium-car-image"]}
-                            style={{ minWidth: "11rem" }}
-                          />
-                        </button>
-                      );
-                    })}
+                    {(() => {
+                      // Limit mobile thumbnails to first 5 images (main + up to 4 extras)
+                      const imgs = (car.images || [car.image]).slice(0, 5);
+                      return imgs.map((img, idx) => {
+                        const thumbSrc = Array.isArray(img) ? String(img[0]) : String(img || car.image || "");
+                        return (
+                          <button
+                            key={idx}
+                            type="button"
+                            className="focus:outline-none"
+                            onClick={() => {
+                              const modal = document.getElementById(
+                                `modal-img-${car.id}-${idx}`,
+                              );
+                              if (modal) (modal as HTMLDialogElement).showModal();
+                            }}
+                          >
+                            <img
+                              src={thumbSrc}
+                              loading="lazy"
+                              alt={`${car.make} ${car.model} foto ${idx + 1}`}
+                              className={styles["premium-car-image"]}
+                              style={{ minWidth: "11rem" }}
+                            />
+                          </button>
+                        );
+                      });
+                    })()}
                   </div>
 
                   {/* Desktop: make the main picture fill the card top and span full width (flush left/right) */}
@@ -867,35 +871,38 @@ export default function Viaturas() {
                     })()}
                   </div>
 
-                  {/* Modais para expandir imagens (render for all viewports) */}
-                  {(car.images || [car.image]).map((img, idx) => (
-                    <dialog
-                      key={idx}
-                      id={`modal-img-${car.id}-${idx}`}
-                      className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full"
-                    >
-                      <div className="flex flex-col items-center">
-                        <img
-                          src={String(img)}
-                          loading="lazy"
-                          alt="Foto expandida"
-                          className="max-h-[80vh] w-auto rounded-xl shadow-lg"
-                        />
-                        <button
-                          onClick={(e) =>
-                            (
-                              e.currentTarget.closest(
-                                "dialog",
-                              ) as HTMLDialogElement
-                            )?.close()
-                          }
-                          className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition"
-                        >
-                          {t("Fechar")}
-                        </button>
-                      </div>
-                    </dialog>
-                  ))}
+                  {/* Modais para expandir imagens (limit to first 5 to avoid loading many images on mobile) */}
+                  {(() => {
+                    const imgs = (car.images || [car.image]).slice(0, 5);
+                    return imgs.map((img, idx) => (
+                      <dialog
+                        key={idx}
+                        id={`modal-img-${car.id}-${idx}`}
+                        className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full"
+                      >
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={String(img)}
+                            loading="lazy"
+                            alt="Foto expandida"
+                            className="max-h-[80vh] w-auto rounded-xl shadow-lg"
+                          />
+                          <button
+                            onClick={(e) =>
+                              (
+                                e.currentTarget.closest(
+                                  "dialog",
+                                ) as HTMLDialogElement
+                              )?.close()
+                            }
+                            className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition"
+                          >
+                            {t("Fechar")}
+                          </button>
+                        </div>
+                      </dialog>
+                    ));
+                  })()}
                   {/* Make the info area (below the image) a single clickable link to the car detail.
                       Clicking the image still opens the modal because image buttons are separate. */}
                   <Link
