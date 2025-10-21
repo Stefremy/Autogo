@@ -20,6 +20,8 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
     mazd: 'Mazda',
     // shorthand for Morris Garage / MG
     mg: 'MG',
+    // Cupra brand (added because repo contains cupra-logo.svg)
+    cupra: 'Cupra',
   };
 
   const resolvedMake = (ALIASES[(make || '').trim().toLowerCase()] || make).toString();
@@ -77,6 +79,14 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
         '/images/carmake/MG-logo.jpg',
         '/images/carmake/mg-logo.jpg',
         '/images/carmake/mg-logo.png',
+      ],
+      // Cupra: repo has lowercase svg — prefer that first
+      cupra: [
+        '/images/carmake/cupra-logo.svg',
+        '/images/carmake/Cupra-logo.svg',
+        '/images/carmake/cupra-logo.png',
+        '/images/carmake/Cupra-logo.png',
+        '/images/carmake/cupra-logo.jpg',
       ],
     };
 
