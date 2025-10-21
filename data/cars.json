@@ -16498,5 +16498,94 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6507257",
+    "make": "Cupra",
+    "model": "CUPRA BORN Born 77 kWh eBoost Business Edition+ 170 kw.",
+    "year": 2024,
+    "slug": "cupra-cupra-born-born-77-kwh-eboost-business-edition-170-kw-6507257",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_000.jpg",
+    "description": "O Cupra Born 77 kWh eBoost Business Edition+ de 2024 é um veículo elétrico moderno com uma potência de 231 Hp (170 kW) e caixa automática de 4 velocidades. Destaca-se pelo seu sistema de navegação integrado, conforto com fecho centralizado keyless, e segurança reforçada com airbags frontais, laterais e adicionais. Equipado com funcionalidades multimédia avançadas e outras opções de valor elevado como jantes em liga leve de 19 polegadas, bancos dianteiros aquecidos, pneus para todas as estações, assistentes de estacionamento inteligentes, telefone com LTE e carregamento sem fios, bomba de calor, e sistema de trajetória de estacionamento memorizada. Veículo proveniente da Bélgica, com origem na GNK - Remarketing Genk, apresenta um estado excelente com apenas 8.328 km percorridos. Ideal para quem procura um carro elétrico com tecnologia avançada, conforto e segurança, aliado a um design desportivo e funcionalidade premium.",
+    "mileage": 8328,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 4,
+    "category": null,
+    "engineSize": "n/a",
+    "power": "231 Hp 170 kW",
+    "places": null,
+    "unitNumber": null,
+    "origin": "Belgium - \"GNK - Remarketing Genk\"",
+    "firstRegistration": "18/09/2024",
+    "doors": 5,
+    "fuel": "Elétrico",
+    "emissionClass": "n/a",
+    "co2": "n/a",
+    "color": "Grey",
+    "vin": "VSSZZZK14SP006125",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6507257/photo_026.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação",
+        "Jantes em liga leve 19\"",
+        "Pneus para todas as estações 215/50",
+        "Pompe a chaleur",
+        "Refrigerante r744",
+        "TPPA avançado"
+      ],
+      "conforto": [
+        "Fecho centralizado keyless",
+        "Bancos dianteiros aquecidos",
+        "Telefone com LTE e carregamento sem fios",
+        "Trajetória de estacionamento memorizada",
+        "Antenna amplificadora"
+      ],
+      "seguranca": [
+        "Airbags: frontais, laterais e mais",
+        "Assistentes de estacionamento automáticos - IPA",
+        "Intelligent park assist + RPA"
+      ],
+      "multimedia": [
+        "Sistema de navegação"
+      ],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": [
+        "Ferramentas de bordo para roda de reserva",
+        "Carro conectado com outros carros e infraestruturas",
+        "Preço especial"
+      ]
+    },
+    "maintenance": []
   }
 ]
