@@ -16178,5 +16178,98 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6272036",
+    "make": "BMW",
+    "model": "420d Gran Coupe Sport Aut.",
+    "year": 2015,
+    "slug": "bmw-420d-gran-coupe-sport-aut-2015-6272036",
+    "price": 15500,
+    "image": "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_004.jpg",
+    "description": "Este BMW 420d Gran Coupe Sport Aut. de 2015 apresenta um motor de 1995 CC com 184 Hp (135 kW) e caixa automática de 8 velocidades. Equipado com faróis Xenon, head-up display, sistema de navegação e interior desportivo com bancos desportivos, oferece conforto e performance. Inclui ar condicionado automático a duas zonas, cruise control, bancos aquecidos, vidros elétricos, keyless go, sensores de luz e chuva, volante multifunções e sistema start-stop. Em termos de segurança, dispõe de ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Sistema multimédia com Bluetooth, leitor de CD, kit mãos livres, interface MP3, computador de bordo e rádio. Exterior com jantes de liga leve e pacote desportivo. Outras opções incluem sistema de proteção contra incêndios e para-brisas de vidro claro. Com 259.959 km, origem Bélgica, primeira matrícula a 27/05/2015 e classe de emissão Euro6, este BMW é uma escolha sólida para quem procura um sedan desportivo e confortável com histórico de manutenção não especificado.",
+    "mileage": 259959,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Saloon",
+    "engineSize": "1995 CC",
+    "power": "184 Hp 135 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "27/05/2015",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "121 CO2",
+    "color": "Black",
+    "vin": "WBA4B51000G174596",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_000.jpg",
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6270001-6280000/6272036/photo_009.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis Xenon",
+        "Head-up display",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Sistema de proteção contra incêndios",
+        "Para-brisas de vidro claro"
+      ]
+    },
+    "maintenance": []
   }
 ]
