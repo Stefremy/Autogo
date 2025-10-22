@@ -492,15 +492,14 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
   const primaryImage = displayedImages.length ? displayedImages[0] : null;
 
   // Fun facts dinâmicos (include full model + description when available, de-duplicated)
-  const fullModelLabel = [car.make, car.model, car.version].filter(Boolean).join(' ');
-  const funFacts = [
-    fullModelLabel ? `Modelo: ${fullModelLabel}` : null,
-    car.description && car.description !== fullModelLabel ? car.description : null,
-    car?.engineSize && car.engineSize.includes("1.2") && "Motor premiado pela eficiência na Europa.",
-    car?.fuel && car.fuel === "Gasolina" && "ISV reduzido devido às baixas emissões.",
-  ].filter(Boolean);
-
-  // Compute similar cars deterministically without using React hooks.
+    const fullModelLabel = [car.make, car.model, car.version].filter(Boolean).join(' ');
+    const funFacts = [
+      fullModelLabel ? `Modelo: ${fullModelLabel}` : null,
+      car.description && car.description !== fullModelLabel ? car.description : null,
+      car?.engineSize && car.engineSize.includes("1.2") && "Motor premiado pela eficiência na Europa.",
+      car?.fuel && car.fuel === "Gasolina" && "ISV reduzido devido às baixas emissões.",
+    ].filter(Boolean);
+    // Compute similar cars deterministically without using React hooks.
   // Placed before the early return so hook call order remains stable.
   function computeSimilarCars(target: Car | null, pool: Car[], maxResults = 8): Car[] {
     if (!target) return [];

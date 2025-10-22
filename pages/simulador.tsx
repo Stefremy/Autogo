@@ -352,23 +352,46 @@ export default function Simulador() {
       }
     : undefined;
 
+  // HowTo JSON-LD to help Google understand usage steps
+  const howToJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Como usar o Simulador ISV',
+    description: 'Passos rápidos para calcular o ISV de um veículo importado',
+    step: [
+      { '@type': 'HowToStep', name: 'Introduzir cilindrada', text: 'Insira a cilindrada em cm³' },
+      { '@type': 'HowToStep', name: 'Introduzir CO₂', text: 'Insira as emissões em g/km' },
+      { '@type': 'HowToStep', name: 'Inserir data 1ª matrícula', text: 'Escolha dia/mês/ano' },
+      { '@type': 'HowToStep', name: 'Clique em Calcular', text: 'Veja a estimativa do ISV' }
+    ]
+  };
+
+  const combinedJsonLd = simuladorFaqJsonLd
+    ? { '@context': 'https://schema.org', '@graph': [simuladorFaqJsonLd, howToJsonLd] }
+    : howToJsonLd;
+
   return (
     <>
       <MainLayout>
         <Seo
-          title={`Simulador ISV de importação automóvel | AutoGo.pt`}
+          title={`Simulador ISV Portugal - Calcule o ISV de Importação em Segundos | AutoGo.pt`}
           description={`Calcule o ISV em Portugal com o Simulador AutoGo.pt — estimativa rápida para carros novos, usados, híbridos e elétricos.`}
           url={`https://autogo.pt/simulador`}
           keywords={joinKeywords(SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS)}
-          jsonLd={simuladorFaqJsonLd}
+          jsonLd={combinedJsonLd}
         />
         <div className="relative w-full flex-1 z-10">
           <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-6 px-2 sm:px-6 md:px-12 bg-transparent">
             {/* Info block */}
             <div className="w-full max-w-3xl mb-10 lg:mb-0 pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left z-10">
-              <h3 className="text-3xl font-bold text-[#b42121] mb-6 leading-tight">
+              <h1 className="text-3xl font-bold text-[#b42121] mb-3 leading-tight">
                 {t("Simule o ISV da sua viatura em segundos!")}
-              </h3>
+              </h1>
+              <p className="mb-4 text-lg">
+                {t(
+                  "Introduza cilindrada, emissões (CO₂) e data da 1ª matrícula — o simulador estima o ISV (cilindrada + ambiental) imediatamente.",
+                )}
+              </p>
               <p className="mb-4 text-lg font-bold">
                 {t(
                   "Poupe tempo e evite surpresas, recorrendo à nossa experiência técnica.",
@@ -378,11 +401,19 @@ export default function Simulador() {
                 {t(
                   "O nosso simulador de ISV (Imposto Sobre Veículos) é a ferramenta mais prática e fiável para calcular o custo de legalização de um veículo importado.",
                 )}
-                <br />
-                {t(
-                  "Basta introduzir os dados essenciais da viatura e rapidamente obtém uma estimativa precisa do imposto a pagar.",
-                )}
-              </p>
+                 <br />
+               </p>
+              {/* Visible FAQ block to match JSON-LD */}
+              <div className="w-full mt-4">
+                <details className="mb-2 p-3 bg-white rounded-lg border">
+                  <summary className="font-semibold cursor-pointer">{t('O que é o Simulador ISV?')}</summary>
+                  <div className="mt-2 text-sm">{t('Introduza dados do veículo (cilindrada, CO₂, data) e obtenha uma estimativa do ISV e custos de legalização.')}</div>
+                </details>
+                <details className="mb-2 p-3 bg-white rounded-lg border">
+                  <summary className="font-semibold cursor-pointer">{t('O resultado é oficial?')}</summary>
+                  <div className="mt-2 text-sm">{t('É uma estimativa baseada nas tabelas oficiais; para cálculo definitivo consulte a Autoridade Tributária.')}</div>
+                </details>
+              </div>
               <p className="mb-4 text-lg">
                 {t(
                   "Para um cálculo exato, vai precisar de alguns elementos da viatura — caso tenha dúvidas, pode contactar-nos por email e esclarecemos como usar o simulador.",
