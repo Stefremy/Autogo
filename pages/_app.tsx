@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { appWithTranslation } from "next-i18next";
 import type { UserConfig } from "next-i18next";
 import type { AppProps } from "next/app";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import nextI18NextConfig from "../next-i18next.config.js";
 import { IndexNavbar } from "../components/IndexNavbar";
 
@@ -42,6 +43,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       {!hideNavbar && <IndexNavbar />}
       <Component {...pageProps} />
+      {/* Speed Insights component (self-closing) - renders instrumentation for performance reporting */}
+      <SpeedInsights />
     </>
   );
 }
