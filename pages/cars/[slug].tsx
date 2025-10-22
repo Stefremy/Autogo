@@ -498,9 +498,6 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
     car.description && car.description !== fullModelLabel ? car.description : null,
     car?.engineSize && car.engineSize.includes("1.2") && "Motor premiado pela eficiência na Europa.",
     car?.fuel && car.fuel === "Gasolina" && "ISV reduzido devido às baixas emissões.",
-    car?.power && Number(String(car.power).replace(/\D/g, "")) > 100 && "Performance de referência para o segmento.",
-    "Disponível com Apple CarPlay / Android Auto.",
-    car?.country === "FR" && "Tecnologia inspirada pelo legado Citroën no WRC.",
   ].filter(Boolean);
 
   // Compute similar cars deterministically without using React hooks.
