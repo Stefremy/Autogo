@@ -119,9 +119,9 @@ const CarCard: React.FC<CarCardProps> = ({
           )}
         </div>
 
-        <h3 className="text-xl font-medium">{name}</h3>
-        <p className="text-gray-600">{description}</p>
-        <p className="text-blue-700 font-medium mt-2">Sob Consulta</p>
+        <h3 className="text-xl font-normal">{name}</h3>
+        <p className="text-gray-400 font-normal">{description}</p>
+        <p className="text-blue-500 font-medium mt-2">Sob Consulta</p>
       </div>
     );
   }
@@ -193,9 +193,9 @@ const CarCard: React.FC<CarCardProps> = ({
           />
         )}
       </div>
-      <h3 className="text-xl font-medium">{name}</h3>
-      <p className="text-gray-600">{description}</p>
-      <p className="text-blue-700 font-medium mt-2">{display}</p>
+      <h3 className="text-xl font-normal">{name}</h3>
+      <p className="text-gray-400 font-normal">{description}</p>
+      <p className="text-blue-500 font-medium mt-2">{display}</p>
     </a>
   );
 };

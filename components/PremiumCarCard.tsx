@@ -151,7 +151,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           </div>
           <div
             style={{
-              fontWeight: 500,
+              fontWeight: 600,
               color: "#1a1a1a",
               fontSize: "1.15rem",
               letterSpacing: "0.5px",
@@ -162,7 +162,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             {display}
           </div>
         </div>
-        <div className={styles["premium-car-title"]} style={{ fontWeight: 500 }}>{name}</div>
+        <div className={styles["premium-car-title"]} style={{ fontWeight: 600 }}>{name}</div>
         <div className={styles["premium-car-meta-row"]}>
           <div>
             <div className={styles["premium-car-meta-label"]}>{t("Ano")}</div>

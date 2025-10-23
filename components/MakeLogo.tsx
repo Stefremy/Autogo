@@ -22,6 +22,10 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
     mg: 'MG',
     // Cupra brand (added because repo contains cupra-logo.svg)
     cupra: 'Cupra',
+    // DS brand variants
+    ds: 'DS',
+    'ds automobiles': 'DS',
+    'ds-automobiles': 'DS',
   };
 
   const resolvedMake = (ALIASES[(make || '').trim().toLowerCase()] || make).toString();
@@ -87,6 +91,14 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
         '/images/carmake/cupra-logo.png',
         '/images/carmake/Cupra-logo.png',
         '/images/carmake/cupra-logo.jpg',
+      ],
+      // DS: prefer the provided JPG first (user requested DS-logo.jpg)
+      ds: [
+        '/images/carmake/DS-logo.jpg',
+        '/images/carmake/DS-logo.png',
+        '/images/carmake/ds-logo.jpg',
+        '/images/carmake/DS-logo.svg',
+        '/images/carmake/ds-logo.png',
       ],
     };
 

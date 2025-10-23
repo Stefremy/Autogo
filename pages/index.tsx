@@ -384,7 +384,7 @@ export default function Home({ blogArticles }) {
 
         
 
-            <div className="flex flex-row w-full max-w-xl rounded-full bg-white/30 backdrop-blur-md shadow-2xl py-2 px-2 sm:py-3 sm:px-3 items-center gap-2 mb-4 sm:mb-5 border border-white/30 overflow-visible">
+            <div className="flex flex-row w-full max-w-xl rounded-full bg-white/60 backdrop-blur-md shadow-2xl py-2 px-3 sm:py-3 sm:px-4 items-center gap-2 mb-4 sm:mb-5 border border-gray-200 overflow-visible" style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.06)' }}>
               <Link href="/viaturas" legacyBehavior passHref>
                 <a href="/viaturas" 
                   className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#b42121] shadow-sm transform-gpu no-underline transition hover:shadow-lg hover:brightness-110 hover:scale-105 hover:tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121] sm:px-6 sm:py-3 sm:text-base"
@@ -399,7 +399,7 @@ export default function Home({ blogArticles }) {
                   className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
                   style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
-                  Simular ISV
+                  Simulador ISV
                 </a>
               </Link>
               <Link href="/pedido" legacyBehavior passHref>
@@ -437,7 +437,7 @@ export default function Home({ blogArticles }) {
 
             {/* Minimal hero filter bar (desktop pill) - desktop/tablet only */}
             <form onSubmit={onHeroSearch} className="hidden sm:flex w-full mx-auto mt-3">
-              <div className="flex items-center w-full bg-white/95 border border-gray-100 rounded-full shadow-2xl overflow-hidden divide-x divide-gray-200">
+              <div className="flex items-center w-full bg-white/60 border border-gray-100 rounded-full shadow-2xl overflow-hidden divide-x divide-gray-200">
                 {/* Marca */}
                 <div className="relative flex items-center flex-1 min-w-0 px-6 py-4">
                   <label className="sr-only">Marca</label>
@@ -512,7 +512,7 @@ export default function Home({ blogArticles }) {
                 aria-hidden={!heroFilterOpen}
                 style={{ overflow: 'hidden' }}
               >
-                <div className={`bg-white/95 px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
+                <div className={`bg-white/60 px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
                   <div className="flex flex-col gap-2">
                   <div className="relative w-full">
                     <label className="sr-only">Marca</label>
@@ -597,7 +597,7 @@ export default function Home({ blogArticles }) {
             >
               <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6 lg:gap-4 xl:flex xl:flex-row xl:items-center xl:justify-center xl:gap-12 w-full px-2 sm:px-4 lg:px-6 xl:px-8">
                 {/* Feature: Importação Premium */}
-                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] xl:min-w-[120px] xl:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[70px] sm:max-w-[80px] lg:max-w-[110px] xl:min-w-[76px] xl:max-w-[100px]">
                   <span
                     className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
@@ -636,7 +636,7 @@ export default function Home({ blogArticles }) {
                   </div>
                 </div>
                 {/* Feature: Garantia Incluída */}
-                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] xl:min-w-[120px] xl:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
                   <span
                     className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
@@ -675,7 +675,7 @@ export default function Home({ blogArticles }) {
                   </div>
                 </div>
                 {/* Feature: Entrega em Todo o País */}
-                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] xl:min-w-[120px] xl:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
                   <span
                     className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
@@ -716,7 +716,7 @@ export default function Home({ blogArticles }) {
                   </div>
                 </div>
                 {/* Feature: Apoio ao Cliente */}
-                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] xl:min-w-[120px] xl:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
                   <span
                     className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
@@ -755,7 +755,7 @@ export default function Home({ blogArticles }) {
                   </div>
                 </div>
                 {/* Feature: Sem Complicações */}
-                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] xl:min-w-[120px] xl:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
                   <span
                     className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
@@ -796,7 +796,7 @@ export default function Home({ blogArticles }) {
                   </div>
                 </div>
                 {/* Feature: Melhor Preço */}
-                <div className="flex flex-col items-center text-center w-full max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] xl:min-w-[120px] xl:max-w-[150px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
                   <span
                     className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
