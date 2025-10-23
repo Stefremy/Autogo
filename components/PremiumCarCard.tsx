@@ -74,7 +74,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
         {/* Status badge */}
         {status && (
           <span
-            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${
+            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold shadow z-20 text-white ${
               status === "disponivel"
                 ? "bg-green-500"
                 : status === "vendido"
@@ -151,7 +151,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           </div>
           <div
             style={{
-              fontWeight: 700,
+              fontWeight: 500,
               color: "#1a1a1a",
               fontSize: "1.15rem",
               letterSpacing: "0.5px",
@@ -162,7 +162,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             {display}
           </div>
         </div>
-        <div className={styles["premium-car-title"]}>{name}</div>
+        <div className={styles["premium-car-title"]} style={{ fontWeight: 500 }}>{name}</div>
         <div className={styles["premium-car-meta-row"]}>
           <div>
             <div className={styles["premium-car-meta-label"]}>{t("Ano")}</div>

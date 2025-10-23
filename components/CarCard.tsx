@@ -55,7 +55,7 @@ const CarCard: React.FC<CarCardProps> = ({
         {/* Status badge */}
         {status && (
           <span
-            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${
+            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium shadow z-20 text-white ${
               status === "disponivel"
                 ? "bg-green-500"
                 : status === "vendido"
@@ -119,9 +119,9 @@ const CarCard: React.FC<CarCardProps> = ({
           )}
         </div>
 
-        <h3 className="text-xl font-bold">{name}</h3>
+        <h3 className="text-xl font-medium">{name}</h3>
         <p className="text-gray-600">{description}</p>
-        <p className="text-blue-700 font-semibold mt-2">Sob Consulta</p>
+        <p className="text-blue-700 font-medium mt-2">Sob Consulta</p>
       </div>
     );
   }
@@ -131,7 +131,7 @@ const CarCard: React.FC<CarCardProps> = ({
       {/* Status badge */}
       {status && (
         <span
-          className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${
+          className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium shadow z-20 text-white ${
             status === "disponivel"
               ? "bg-green-500"
               : status === "vendido"
@@ -193,9 +193,9 @@ const CarCard: React.FC<CarCardProps> = ({
           />
         )}
       </div>
-      <h3 className="text-xl font-bold">{name}</h3>
+      <h3 className="text-xl font-medium">{name}</h3>
       <p className="text-gray-600">{description}</p>
-      <p className="text-blue-700 font-semibold mt-2">{display}</p>
+      <p className="text-blue-700 font-medium mt-2">{display}</p>
     </a>
   );
 };

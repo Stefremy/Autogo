@@ -65,7 +65,7 @@
   /* allow parent sections to override --accent; fallback keeps previous appearance */
   background: var(--accent, #d32f2f);
   color: #fff;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.1rem;
   padding: 0.6rem 1.3rem 0.5rem 1.3rem;
   border-radius: 0.2rem 0 0 0;
@@ -109,14 +109,14 @@
 .premium-car-type {
   color: var(--accent, #d32f2f);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.2rem;
 }
 .premium-car-title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #222;
   margin-bottom: 0.2rem;
   line-height: 1.2;
@@ -134,7 +134,7 @@
 .premium-car-meta-value {
   color: #222;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* Scroll-entry animation: cards slide up and in from the left with a subtle blur -> used by .card-anim */
