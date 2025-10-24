@@ -94,6 +94,8 @@ export default function Home({ blogArticles }) {
   // initial deterministic fallback (prevents SSR/client mismatch)
   const initialFeatured = cars.slice(0, Math.min(6, cars.length));
   const [featuredCars, setFeaturedCars] = useState(initialFeatured);
+  // prefer bundled PNG icon for hand-over feature (from public/images/icons)
+  const handIconPath = '/images/icons/hand-over.png';
 
   // shuffle helper
   const shuffle = (arr) => {
@@ -313,7 +315,7 @@ export default function Home({ blogArticles }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative w-screen h-[360px] sm:h-[420px] md:h-[56vh] lg:h-[60vh] flex items-center overflow-hidden"
+          className="relative w-screen h-[320px] sm:h-[380px] md:h-[52vh] lg:h-[56vh] flex items-center overflow-hidden"
         >
           {/* Background image covers full width, fades left */}
           <div
@@ -350,7 +352,7 @@ export default function Home({ blogArticles }) {
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-4 pb-4 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
+          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-2 pb-4 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
             {/* Heading + intro wrapper: collapses on mobile when filter opens */}
             <div
               className={`w-full transform-gpu transition-all duration-300 ease-in-out overflow-hidden ${
@@ -377,7 +379,7 @@ export default function Home({ blogArticles }) {
                 <br />
                 {t("Legalizado e pronto a rolar em Portugal")}
                 <br />
-                <span className="font-semibold">{t("Sem complicações")}</span>
+                <span className="font-semibold hidden sm:inline">{t("Sem complicações")}</span>
                 <br />
               </motion.p>
             </div>
@@ -582,7 +584,7 @@ export default function Home({ blogArticles }) {
         {/* Como Funciona section */}
         <section
           data-fullwidth
-          className="relative w-screen py-16 sm:py-24 overflow-hidden mt-10 sm:mt-14 md:mt-16 lg:mt-0"
+          className="relative w-screen py-12 sm:py-16 overflow-hidden mt-0 sm:mt-2 md:mt-4"
           style={{ 
             backgroundColor: "#f5f6fa",
             marginLeft: "calc(-50vw + 50%)",
@@ -590,12 +592,12 @@ export default function Home({ blogArticles }) {
           }}
         >
           {/* Features bar floating above video */}
-          <div className="absolute top-0 left-0 w-full flex justify-center z-30 pointer-events-auto">
+          <div className="absolute top-0 left-0 right-0 flex justify-center z-30 pointer-events-auto">
             <section
               className="relative w-full max-w-7xl mx-auto py-2 flex justify-center"
               style={{ boxShadow: "none", background: "none" }}
             >
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6 lg:gap-4 xl:flex xl:flex-row xl:items-center xl:justify-center xl:gap-12 w-full px-2 sm:px-4 lg:px-6 xl:px-8">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6 lg:gap-4 xl:flex xl:flex-row xl:items-center xl:justify-center xl:gap-12 w-full px-1 sm:px-4 md:px-6 lg:px-0 justify-center mx-auto transform translate-x-6 sm:translate-x-7 md:translate-x-8 lg:translate-x-10">
                 {/* Feature: Importação Premium */}
                 <div className="flex flex-col items-center text-center w-full max-w-[70px] sm:max-w-[80px] lg:max-w-[110px] xl:min-w-[76px] xl:max-w-[100px]">
                   <span
@@ -657,7 +659,7 @@ export default function Home({ blogArticles }) {
                         strokeWidth="1.5"
                       />
                       <path
-                        d="M9.5 13l2 2 3-3"
+                        d="M9.5 13l2 2 4-4"
                         stroke="#22272a"
                         strokeWidth="1.5"
                         strokeLinecap="round"
@@ -715,6 +717,21 @@ export default function Home({ blogArticles }) {
                     {t("Todo Portugal")}
                   </div>
                 </div>
+
+                {/* NEW FEATURE: Preço Fechado / Chave na mão */}
+                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
+                  <span className="mb-1 sm:mb-2 md:mb-3 text-gray-800" tabIndex={0} aria-label={t("Todos os nossos carros a preço fechado, chave na mão.")}>
+                    {/* Use bundled SVG icon from public/ if available; otherwise fallback to inline shapes */}
+                    <img src={handIconPath} alt={t("Preço fechado")} className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 object-contain" />
+                  </span>
+                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs lg:text-xs xl:text-sm mb-1 sm:mb-2 lg:mb-2 xl:mb-3">
+                    {t("Preço fechado")}
+                  </div>
+                  <div className="text-gray-700 text-[9px] sm:text-xs lg:text-xs leading-tight max-w-[90px] sm:max-w-[110px] lg:max-w-[120px] xl:max-w-[130px] mb-1 sm:mb-2">
+                    {t("Todos os nossos carros a preço fechado, chave na mão.")}
+                  </div>
+                </div>
+
                 {/* Feature: Apoio ao Cliente */}
                 <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
                   <span
@@ -755,7 +772,7 @@ export default function Home({ blogArticles }) {
                   </div>
                 </div>
                 {/* Feature: Sem Complicações */}
-                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
+                <div className="hidden sm:flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
                   <span
                     className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
@@ -842,7 +859,7 @@ export default function Home({ blogArticles }) {
           />
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
-          <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-40 sm:pt-48 md:pt-56 lg:pt-32">
+          <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-56 sm:pt-64 md:pt-80 lg:pt-56">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
