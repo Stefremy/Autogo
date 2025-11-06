@@ -1128,6 +1128,123 @@
     "priceDisplay": "7900"
   },
   {
+    "id": "1759335674016",
+    "make": "Audi",
+    "model": "A3 Sportback 2.0 30 TDi Platinum",
+    "year": 2021,
+    "slug": "audi-a3-sportback-2-0-30-tdi-platinum-6370869",
+    "price": 19500,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_000.jpg",
+    "description": "Este Audi A3 Sportback 2.0 30 TDi Platinum apresenta um motor Diesel de 1968 cc com 116 cv (85 kW), caixa manual e um design elegante na cor cinza. Equipado com faróis LED Matrix, sistema de navegação Virtual Navi-Pro, interior desportivo em pele, bancos desportivos, ar condicionado automático de duas zonas, controlo de velocidade de cruzeiro, sensores de estacionamento, sistema Start-Stop e múltiplas funcionalidades de conforto e segurança como ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. O veículo conta com histórico de manutenção, incluindo última revisão aos 100000 km, filtro de partículas e controlo de tração. Um automóvel versátil e confortável, ideal para quem procura desempenho e tecnologia num veículo compacto e elegante.",
+    "mileage": 50000,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Saloon6",
+    "engineSize": "1.968",
+    "power": "116cv",
+    "places": 5,
+    "unitNumber": "6370869",
+    "origin": "Belgium",
+    "firstRegistration": "2021",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "116",
+    "color": "Cinza",
+    "vin": "WAUZZZGY8MA073241",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6370869/photo_039.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED Matrix",
+        "Sistema de navegação Virtual Navi-Pro",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Sistema Start-Stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Ancoragens Isofix",
+        "Controlo de tração"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pack desportivo"
+      ],
+      "outras_opcoes": [
+        "Cobertura da bagageira",
+        "HD",
+        "Sem reboque",
+        "Automóvel de passageiros",
+        "Última revisão aos 100000 km",
+        "Filtro de partículas"
+      ]
+    },
+    "maintenance": [],
+    "priceDisplay": "19500"
+  },
+  {
     "id": "6390148",
     "make": "Audi",
     "model": "A3 Sportback 1.6 30 TDi Aut.",
@@ -1478,6 +1595,299 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6417386",
+    "make": "BMW",
+    "model": "X2 2.0 xDrive20d",
+    "year": 2019,
+    "slug": "bmw-x2-2-0-xdrive20d-2019-6417386",
+    "price": 27000,
+    "image": "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_070.jpg",
+    "description": "Este BMW X2 2.0 xDrive20d de 2019 apresenta um motor diesel de 1995 cc com 190 cv de potência e caixa automática de 8 velocidades. Equipado com teto panorâmico, faróis LED-Xenon, sistema de áudio Harman/Kardon de alta performance, navegação profissional, interior desportivo em pele e sistema KeylessGo. O veículo conta com ar condicionado automático de duas zonas, sensores de estacionamento, cruise control, bancos aquecidos e sistema start-stop. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Inclui também conectividade Bluetooth, leitor de CD, interface MP3 e computador de bordo. Histórico de manutenção completo com serviços regulares em concessionárias autorizadas, incluindo trocas de óleo, filtros, fluido de travões e inspeções técnicas. Um SUV desportivo e confortável, ideal para quem procura performance e estilo com tecnologia avançada e segurança. Em excelente estado, pronto para entrega imediata.",
+    "mileage": 38760,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2.0",
+    "power": "190cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium - Machelen",
+    "firstRegistration": "16/07/2019",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "148",
+    "color": "Preto",
+    "vin": "WBAYL110805N91063",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417386/photo_052.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pack desportivo"
+      ],
+      "outras_opcoes": [
+        "Jantes de liga leve",
+        "Tração integral"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "30/09/2024",
+        "km": 34530,
+        "shop": "Auto Securité SA",
+        "description": "Pagamento check técnico",
+        "price": 0,
+        "raw": "30/09/2024 34530 km Auto Securité SA payment technical check"
+      },
+      {
+        "date": "30/09/2024",
+        "km": 34530,
+        "shop": "Auto Securité SA",
+        "description": "Taxa de administração BTT",
+        "price": 0,
+        "raw": "30/09/2024 34530 km Auto Securité SA Administration fee BTT"
+      },
+      {
+        "date": "08/09/2023",
+        "km": 29191,
+        "shop": "Pautric Woluwe",
+        "description": "Serviço BMW/MINI óleo motor",
+        "price": 216.13,
+        "raw": "08/09/2023 29191 km Pautric Woluwe BMW/MINI service engine oil"
+      },
+      {
+        "date": "08/09/2023",
+        "km": 29191,
+        "shop": "Pautric Woluwe",
+        "description": "Verificação veículo BMW/MINI",
+        "price": 50,
+        "raw": "08/09/2023 29191 km Pautric Woluwe BMW/MINI vehicle check"
+      },
+      {
+        "date": "08/09/2023",
+        "km": 29191,
+        "shop": "Pautric Woluwe",
+        "description": "Fluido de travões",
+        "price": 51.81,
+        "raw": "08/09/2023 29191 km Pautric Woluwe brake fluid"
+      },
+      {
+        "date": "08/09/2023",
+        "km": 29191,
+        "shop": "Pautric Woluwe",
+        "description": "Serviço BMW/MINI microfiltro",
+        "price": 87.19,
+        "raw": "08/09/2023 29191 km Pautric Woluwe BMW/MINI service microfilter"
+      },
+      {
+        "date": "08/09/2023",
+        "km": 29191,
+        "shop": "Pautric Woluwe",
+        "description": "Serviço BMW/MINI filtro de ar",
+        "price": 50.43,
+        "raw": "08/09/2023 29191 km Pautric Woluwe BMW/MINI service air filter"
+      },
+      {
+        "date": "05/07/2021",
+        "km": 19918,
+        "shop": "Jorssen Zuid",
+        "description": "Serviço BMW/MINI óleo motor",
+        "price": 191.26,
+        "raw": "05/07/2021 19918 km Jorssen Zuid BMW/MINI service engine oil"
+      },
+      {
+        "date": "05/07/2021",
+        "km": 19918,
+        "shop": "Jorssen Zuid",
+        "description": "Serviço BMW/MINI microfiltro",
+        "price": 79.62,
+        "raw": "05/07/2021 19918 km Jorssen Zuid BMW/MINI service microfilter"
+      },
+      {
+        "date": "05/07/2021",
+        "km": 19918,
+        "shop": "Jorssen Zuid",
+        "description": "Bateria comando remoto wireless",
+        "price": 5.53,
+        "raw": "05/07/2021 19918 km Jorssen Zuid battery remote wireless"
+      },
+      {
+        "date": "26/04/2021",
+        "km": 19391,
+        "shop": "Qteam Berchem",
+        "description": "Armazenamento pneus (LUX)",
+        "price": 14,
+        "raw": "26/04/2021 19391 km Qteam Berchem tire storage (LUX)"
+      },
+      {
+        "date": "26/04/2021",
+        "km": 19391,
+        "shop": "Qteam Berchem",
+        "description": "Mudança pneus verão/inverno",
+        "price": 64,
+        "raw": "26/04/2021 19391 km Qteam Berchem tire change summer/winter"
+      },
+      {
+        "date": "13/11/2020",
+        "km": 17881,
+        "shop": "Qteam Berchem",
+        "description": "Mudança pneus verão/inverno",
+        "price": 64,
+        "raw": "13/11/2020 17881 km Qteam Berchem tire change summer/winter"
+      },
+      {
+        "date": "13/11/2020",
+        "km": 17881,
+        "shop": "Qteam Berchem",
+        "description": "Armazenamento pneus (LUX)",
+        "price": 14,
+        "raw": "13/11/2020 17881 km Qteam Berchem tire storage (LUX)"
+      },
+      {
+        "date": "02/06/2020",
+        "km": 14202,
+        "shop": "Qteam Berchem",
+        "description": "Mudança pneus verão/inverno",
+        "price": 64,
+        "raw": "02/06/2020 14202 km Qteam Berchem tire change summer/winter"
+      },
+      {
+        "date": "02/06/2020",
+        "km": 14202,
+        "shop": "Qteam Berchem",
+        "description": "Armazenamento pneus (LUX)",
+        "price": 14,
+        "raw": "02/06/2020 14202 km Qteam Berchem tire storage (LUX)"
+      },
+      {
+        "date": "21/10/2019",
+        "km": 4617,
+        "shop": "Qteam Berchem",
+        "description": "Balanceamento de rodas (centro de pneus)",
+        "price": 26.72,
+        "raw": "21/10/2019 4617 km Qteam Berchem wheel balancing (tire center)"
+      },
+      {
+        "date": "21/10/2019",
+        "km": 4617,
+        "shop": "Qteam Berchem",
+        "description": "Pneus de inverno",
+        "price": 265.2,
+        "raw": "21/10/2019 4617 km Qteam Berchem winter tires"
+      },
+      {
+        "date": "21/10/2019",
+        "km": 4617,
+        "shop": "Qteam Berchem",
+        "description": "Armazenamento pneus (LUX)",
+        "price": 14,
+        "raw": "21/10/2019 4617 km Qteam Berchem tire storage (LUX)"
+      },
+      {
+        "date": "21/10/2019",
+        "km": 4617,
+        "shop": "Qteam Berchem",
+        "description": "Mudança pneus verão/inverno",
+        "price": 0,
+        "raw": "21/10/2019 4617 km Qteam Berchem tire change summer/winter"
+      }
+    ]
   },
   {
     "id": "6321063",
@@ -3366,6 +3776,676 @@
     ]
   },
   {
+    "id": "6367733",
+    "make": "BMW",
+    "model": "116d M-Sport",
+    "year": 2020,
+    "slug": "bmw-116d-m-sport-2020-6367733",
+    "price": 18950,
+    "image": "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_000.jpg",
+    "description": "Este BMW 116d M-Sport de 2020 apresenta um motor de 1496 CC com 116 cv (85 kW), caixa manual e é um sedan com 5 portas. Equipado com faróis LED, sistema de navegação, interior e bancos desportivos, e pacote desportivo exterior. O conforto é assegurado por ar condicionado automático a duas zonas, cruise control, vidros elétricos, keyless go, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop. Segurança reforçada com ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Multimedia inclui Bluetooth, leitor de CD, kit mãos livres, interface MP3, computador de bordo e rádio. Rodas de liga leve e suspensão desportiva completam o exterior. O veículo tem um histórico de manutenção completo e encontra-se em excelente estado, ideal para quem procura um carro desportivo, confortável e seguro com baixo consumo e emissões Euro 6.",
+    "mileage": 121157,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "1496 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "20/08/2020",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "120",
+    "color": "Black",
+    "vin": "WBA7M710107F39017",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6360001-6370000/6367733/photo_048.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6375854",
+    "make": "Mercedes",
+    "model": "C 300e Plug-In Hybrid AMG",
+    "year": 2020,
+    "slug": "mercedes-c-300e-plug-in-hybrid-amg-2020-6375854",
+    "price": 24800,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_000.jpg",
+    "description": "Este Mercedes C 300e Plug-In Hybrid AMG de 2020 combina potência e eficiência com um motor híbrido de 1991 cc e 320 cv (235 kW). Equipado com caixa automática e tecnologia LED-Multibeam, oferece uma condução confortável e segura. Destaca-se pelo sistema de navegação, áudio Burmester de alta performance, interior desportivo em pele e Alcantara, e uma vasta gama de opções de conforto como bancos aquecidos, ar condicionado automático de duas zonas, e sistema keyless go. A segurança é reforçada com ABS, ESP, múltiplos airbags e Isofix. O veículo apresenta um histórico de manutenção completo e encontra-se em excelente estado, ideal para quem procura um carro familiar com tecnologia avançada e design desportivo.",
+    "mileage": 141060,
+    "country": "DE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Estate Car",
+    "engineSize": "1991 cc",
+    "power": "320cv",
+    "places": 5,
+    "unitNumber": "6375854",
+    "origin": "Germany - MC Germany",
+    "firstRegistration": "2020-01-05",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "41",
+    "color": "Preto",
+    "vin": "W1K2052531G023537",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6375854/photo_021.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6260999",
+    "make": "Jeep",
+    "model": "Renegade 1.3i T4 Black Star Aut.",
+    "year": 2020,
+    "slug": "jeep-renegade-1-3i-t4-black-star-aut-2020-6260999",
+    "price": 18300,
+    "image": "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_076.jpg",
+    "description": "Este Jeep Renegade 1.3i T4 Black Star Automático de 2020 destaca-se pelo seu motor de 1332 CC com 150 Hp (110 kW), caixa automática e um consumo eficiente com emissões Euro 6 e 160 CO2. Equipado com teto panorâmico, sistema de navegação, Keyless Go, ar condicionado automático, cruise control, sensores de luz e chuva, assistente de estacionamento traseiro, e jantes de liga leve. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. O interior inclui vidros elétricos, volante multifunções e sistema multimédia com Bluetooth, leitor de CD e interface MP3. O veículo tem um histórico de manutenção recente, incluindo revisões e inspeções em 2023 e 2024, garantindo um estado excelente. Ideal para quem procura um SUV compacto, confortável e seguro, com tecnologia moderna e bom desempenho.",
+    "mileage": 49025,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.3",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": "6260999",
+    "origin": "Belgium",
+    "firstRegistration": "2020-09-01",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "160",
+    "color": "Black",
+    "vin": "1C4BU0000LPL80816",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6260001-6270000/6260999/photo_070.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Assistente de estacionamento traseiro",
+        "Bagageira de tejadilho",
+        "Sistema Start-stop",
+        "Teto de abrir"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Sintonizador DAB (rádio digital)",
+        "Travão de estacionamento eletromecânico",
+        "Google Android Auto",
+        "Climatização de 2 zonas",
+        "Sistema de ajuda ao estacionamento traseiro",
+        "Assistente de manutenção de faixa",
+        "Caixa de velocidades automática de 6 velocidades",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/04/2024",
+        "km": 38,
+        "description": "Revisão dos 40.000 km",
+        "price": 0,
+        "raw": "01/04/2024 38 km de 40.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 37,
+        "description": "Reparação do pedal do acelerador",
+        "price": 0,
+        "raw": "01/11/2023 37 km het gaspedaal € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 37,
+        "description": "Substituição da bateria",
+        "price": 0,
+        "raw": "01/11/2023 37 km de accu € 0,00"
+      }
+    ]
+  },
+  {
+    "id": "6402011",
+    "make": "Peugeot",
+    "model": "208",
+    "year": 2020,
+    "slug": "peugeot-208-2020-6402011",
+    "price": 10900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_001.jpg",
+    "description": "Este Peugeot 208 1.2 PureTech de 2020 destaca-se pelo seu motor eficiente de 1199 CC com 129 cv (95 kW) e caixa manual, ideal para condução urbana e conforto. Equipado com LED, navegação, ar condicionado e sensores de estacionamento (PDC), oferece uma experiência moderna e prática. Com histórico de manutenção detalhado, incluindo revisões e substituições de discos e filtros, assegura fiabilidade e bom estado. A cor vermelha confere-lhe um visual atraente e dinâmico. Um carro compacto, económico e bem equipado, perfeito para quem procura qualidade e segurança no segmento dos pequenos veículos.",
+    "mileage": 54991,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Small Car6",
+    "engineSize": "1.2",
+    "power": "129cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "ST AIGNAN DE GRAND LIEU, France",
+    "firstRegistration": "21/07/2020",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Red",
+    "vin": "VR3UPHNKKLT055889",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402011/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_000.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_057.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "Ar condicionado",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [],
+      "multimedia": [
+        "Navegação",
+        "LED"
+      ],
+      "interior": [],
+      "exterior": [
+        "Cor vermelha"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Discos dianteiros",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Disques AV € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Balai essuie-glace",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Discos dianteiros",
+        "price": 2,
+        "raw": "16/09/2024 48853 km SIAO REZE Disques AV € 2,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Vidange liquide frein",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Révision",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Révision € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Diagnostic",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Diagnostic € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Niveaux",
+        "price": 1,
+        "raw": "16/09/2024 48853 km SIAO REZE Niveaux € 1,00"
+      },
+      {
+        "date": "16/09/2024",
+        "km": 48853,
+        "shop": "SIAO REZE",
+        "description": "Révision",
+        "price": 3.5,
+        "raw": "16/09/2024 48853 km SIAO REZE Révision € 3,50"
+      },
+      {
+        "date": "03/07/2024",
+        "km": 47848,
+        "shop": "CTAR",
+        "description": "Controles Técnicos",
+        "price": 1,
+        "raw": "03/07/2024 47848 km CTAR ContRôles Techniques € 1,00"
+      },
+      {
+        "date": "17/10/2022",
+        "km": 26366,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "17/10/2022 26366 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "17/10/2022",
+        "km": 26366,
+        "shop": "FRS ABSENT",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "17/10/2022 26366 km FRS ABSENT Filtres € 1,00"
+      },
+      {
+        "date": "17/10/2022",
+        "km": 26366,
+        "shop": "FRS ABSENT",
+        "description": "Vidange liquide frein",
+        "price": 0.4,
+        "raw": "17/10/2022 26366 km FRS ABSENT Vidange liquide frein € 0,40"
+      },
+      {
+        "date": "16/07/2021",
+        "km": 13426,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "16/07/2021 13426 km FRS ABSENT Révision € 1,00"
+      }
+    ]
+  },
+  {
+    "id": "6373440",
+    "make": "BMW",
+    "model": "X2 2.0 sDrive18d Aut.",
+    "year": 2021,
+    "slug": "bmw-x2-2-0-sdrive18d-aut-2021-6373440",
+    "price": 26850,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_065.jpg",
+    "description": "Este BMW X2 2.0 sDrive18d automático de 2021 destaca-se pelo seu motor Diesel de 1995 cc com 190 cv (140 kW), equipado com caixa automática e tração dianteira (sDrive). O veículo pertence à categoria SUV/Off-road, com uma excelente combinação de conforto, segurança e tecnologia. Equipado com faróis LED-Xenon, sistema de navegação profissional, ambiente interior em pele, KeylessGo, ar condicionado automático de duas zonas, sensores de chuva e luz, bancos aquecidos, cruise control e jantes de liga leve. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. O sistema multimédia oferece Bluetooth, leitor de CD, interface MP3 e computador de bordo. O carro apresenta uma cor azul elegante, 5 portas e 5 lugares, com uma quilometragem de 44.085 km e classe de emissão Euro 6, com CO2 de 141 g/km. Veículo importado da Bélgica, com origem em HM Tongeren. Estado geral muito bom, ideal para quem procura um SUV premium com tecnologia avançada e conforto superior.",
+    "mileage": 44085,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2.0",
+    "power": "190cv",
+    "places": 5,
+    "unitNumber": "6373440",
+    "origin": "Belgium - HM Tongeren",
+    "firstRegistration": "2021-02-23",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "141",
+    "color": "Azul",
+    "vin": "WBAYK510205T26438",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6373440/photo_055.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação profissional"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Bancos em pele"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
+  },
+  {
     "id": "6288801",
     "make": "BMW",
     "model": "M4 Coupe Competition",
@@ -3559,6 +4639,320 @@
     ]
   },
   {
+    "id": "6417485",
+    "make": "MG",
+    "model": "EHS 1.5 PHEV Hybrid Luxury Aut.",
+    "year": 2022,
+    "slug": "mg-ehs-1-5-phev-hybrid-luxury-aut-2022-6417485",
+    "price": 17500,
+    "image": "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_004.jpg",
+    "description": "O MG EHS 1.5 PHEV Hybrid Luxury Automático de 2022 é um SUV híbrido plug-in que combina um motor de 1490 CC com 189 cv (139 kW) de potência, oferecendo uma condução eficiente e potente. Equipado com caixa automática e sistema híbrido (gasolina/eléctrico), este veículo destaca-se pelo seu teto panorâmico, sistema de navegação virtual, interior desportivo em pele e funcionalidades chave KeylessGo. O conforto é garantido com ar condicionado automático de duas zonas, vidros eléctricos, sensor de luz, sensor de chuva, cruise control e volante multifunções. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, imobilizador e sistema Isofix. A componente multimédia é completa com Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. O exterior é valorizado com jantes de liga leve e pacote desportivo, além de faróis LED e controlo de tracção. Com uma quilometragem de 125410 km e certificação Euro 6, este MG EHS apresenta um histórico de manutenção não especificado, sendo uma excelente opção para quem procura um SUV moderno, confortável e tecnologicamente avançado.",
+    "mileage": 125410,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.5",
+    "power": "189 Hp 139 kW",
+    "places": 5,
+    "unitNumber": "6397973",
+    "origin": "France - WALON Mitry-Mory",
+    "firstRegistration": "2022-04-01",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / eléctrico)",
+    "emissionClass": "Euro6",
+    "co2": "43",
+    "color": "Red",
+    "vin": "LSJA24396NN053424",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6417485/photo_024.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros eléctricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Faróis LED",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6402013",
+    "make": "Peugeot",
+    "model": "208",
+    "year": 2021,
+    "slug": "peugeot-208-2021-6402013",
+    "price": 12900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_054.jpg",
+    "description": "O Peugeot 208 1.2 PureTech GT-Line de 2021 é um carro compacto e moderno, equipado com motor 1.2 PureTech de 99 cv, caixa manual e tecnologia LED-Xenon. Destaca-se pelo seu design desportivo com interior em pele, sistema I-Cockpit, navegação integrada, KeylessGo, câmara traseira e sensores de estacionamento (PDC). O veículo apresenta um histórico de manutenção completo, com revisões regulares e substituições de componentes essenciais, garantindo fiabilidade e bom estado geral. Ideal para quem procura um carro urbano eficiente, confortável e bem equipado, com baixo consumo e emissões Euro 6. Um modelo que combina estilo, tecnologia e segurança para uma condução agradável e segura.",
+    "mileage": 49369,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Small Car6",
+    "engineSize": "1.2",
+    "power": "99cv",
+    "places": 5,
+    "unitNumber": "6402013",
+    "origin": "France - Fleury Mérogis",
+    "firstRegistration": "13/06/2021",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Grey",
+    "vin": "VR3UPHNEKMT056535",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402013/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6402014/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED-Xenon",
+        "I-Cockpit",
+        "KeylessGo"
+      ],
+      "conforto": [
+        "Climatização (Klima)",
+        "Bancos em pele",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Airbags"
+      ],
+      "multimedia": [
+        "Navegação (Navi)",
+        "Sistema áudio"
+      ],
+      "interior": [
+        "Bancos desportivos 1/2 em pele"
+      ],
+      "exterior": [
+        "Jantes liga leve",
+        "Cor cinzenta (Grey)"
+      ],
+      "outras_opcoes": [
+        "Sport"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "03/09/2024",
+        "km": 44859,
+        "shop": "FRS ABSENT",
+        "description": "Vidange liquide frein",
+        "price": 1,
+        "raw": "03/09/2024 44859 km FRS ABSENT Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "03/09/2024",
+        "km": 44859,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "03/09/2024 44859 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "03/09/2024",
+        "km": 44859,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "03/09/2024 44859 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "10/03/2023",
+        "km": 39906,
+        "shop": "FRS ABSENT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "10/03/2023 39906 km FRS ABSENT Révision € 1,00"
+      },
+      {
+        "date": "10/03/2023",
+        "km": 39906,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de velas (Bougies)",
+        "price": 1,
+        "raw": "10/03/2023 39906 km FRS ABSENT Bougies € 1,00"
+      },
+      {
+        "date": "10/03/2023",
+        "km": 39906,
+        "shop": "FRS ABSENT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "10/03/2023 39906 km FRS ABSENT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Diversos outros serviços",
+        "price": 0,
+        "raw": "27/04/2022 20339 km BERNIER Divers autres € 0,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 3.5,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 3,50"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Filtros",
+        "price": 0.1,
+        "raw": "27/04/2022 20339 km BERNIER Filtres € 0,10"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Filtres € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Filtros",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Filtres € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Diversos outros serviços",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Divers autres € 1,00"
+      },
+      {
+        "date": "27/04/2022",
+        "km": 20339,
+        "shop": "BERNIER",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "27/04/2022 20339 km BERNIER Révision € 1,00"
+      }
+    ]
+  },
+  {
     "id": "6342026",
     "make": "BMW",
     "model": "118i Advantage Aut.",
@@ -3640,6 +5034,349 @@
         "Jantes de liga leve"
       ],
       "outras_opcoes": []
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6381117",
+    "make": "Mercedes",
+    "model": "C 180d AMG",
+    "year": 2019,
+    "slug": "mercedes-c-180d-amg-2019-6381117",
+    "price": 25000,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_001.jpg",
+    "description": "Mercedes C 180d AMG de 2019 com motor diesel 1597 CC, potência de 122cv (90 kW) e caixa automática. Equipado com LED-Xenon, navegação, bancos em couro e Alcantara, KeylessGo, câmara traseira, ar condicionado e sensores de estacionamento (PDC). Veículo sedan com histórico completo de serviços realizados na MASA LA VALENTINE, incluindo revisões, troca de óleo de caixa, bateria, níveis de AdBlue, pastilhas e discos de travão, e inspeções técnicas. Cor preta, 5 lugares, 4 portas, classe de emissões Euro 6 e CO2 de 110g/km. Excelente condição, ideal para quem procura conforto, segurança e tecnologia num veículo premium.",
+    "mileage": 140552,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 9,
+    "category": "Saloon",
+    "engineSize": "1.6",
+    "power": "122cv",
+    "places": 5,
+    "unitNumber": "6381117",
+    "origin": "France - Quincieux",
+    "firstRegistration": "2019-10-08",
+    "doors": 4,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "110",
+    "color": "Preto",
+    "vin": "WDD2050001R544205",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381117/photo_020.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED-Xenon",
+        "KeylessGo"
+      ],
+      "conforto": [
+        "Climatização",
+        "Bancos em couro e Alcantara",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Airbags"
+      ],
+      "multimedia": [
+        "Navegação"
+      ],
+      "interior": [
+        "Bancos em couro e Alcantara"
+      ],
+      "exterior": [
+        "Jantes AMG"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "20/06/2025",
+        "km": 137128,
+        "shop": "MASA LA VALENTINE",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "20/06/2025 137128 km MASA LA VALENTINE Révision € 1,00"
+      },
+      {
+        "date": "20/06/2025",
+        "km": 137128,
+        "shop": "MASA LA VALENTINE",
+        "description": "Vidange boite de vitesse",
+        "price": 1,
+        "raw": "20/06/2025 137128 km MASA LA VALENTINE Vidange boite de vitesse € 1,00"
+      },
+      {
+        "date": "20/06/2025",
+        "km": 137128,
+        "shop": "MASA LA VALENTINE",
+        "description": "Bateria",
+        "price": 1,
+        "raw": "20/06/2025 137128 km MASA LA VALENTINE Batterie € 1,00"
+      },
+      {
+        "date": "12/02/2024",
+        "km": 102996,
+        "shop": "MASA LA VALENTINE",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "12/02/2024 102996 km MASA LA VALENTINE Révision € 1,00"
+      },
+      {
+        "date": "12/02/2024",
+        "km": 102996,
+        "shop": "MASA LA VALENTINE",
+        "description": "Nível Ad Blue",
+        "price": 1,
+        "raw": "12/02/2024 102996 km MASA LA VALENTINE NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "12/02/2024",
+        "km": 102996,
+        "shop": "MASA LA VALENTINE",
+        "description": "Pastilhas dianteiras",
+        "price": 1,
+        "raw": "12/02/2024 102996 km MASA LA VALENTINE Plaquettes AV € 1,00"
+      },
+      {
+        "date": "12/02/2024",
+        "km": 102996,
+        "shop": "MASA LA VALENTINE",
+        "description": "Discos dianteiros",
+        "price": 1,
+        "raw": "12/02/2024 102996 km MASA LA VALENTINE Disques AV € 1,00"
+      },
+      {
+        "date": "12/02/2024",
+        "km": 102996,
+        "shop": "MASA LA VALENTINE",
+        "description": "Troca do líquido dos travões",
+        "price": 1,
+        "raw": "12/02/2024 102996 km MASA LA VALENTINE Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "12/02/2024",
+        "km": 102996,
+        "shop": "MASA LA VALENTINE",
+        "description": "Pastilhas traseiras",
+        "price": 1,
+        "raw": "12/02/2024 102996 km MASA LA VALENTINE Plaquettes AR € 1,00"
+      },
+      {
+        "date": "09/10/2023",
+        "km": 93393,
+        "shop": "FRS ABSENT",
+        "description": "Controlo Técnico",
+        "price": 1,
+        "raw": "09/10/2023 93393 km FRS ABSENT ContRôles Techniques € 1,00"
+      },
+      {
+        "date": "08/11/2022",
+        "km": 69420,
+        "shop": "MASA LA VALENTINE",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "08/11/2022 69420 km MASA LA VALENTINE Révision € 1,00"
+      },
+      {
+        "date": "08/11/2022",
+        "km": 69420,
+        "shop": "MASA LA VALENTINE",
+        "description": "Troca do líquido dos travões",
+        "price": 1,
+        "raw": "08/11/2022 69420 km MASA LA VALENTINE Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "02/12/2021",
+        "km": 42739,
+        "shop": "MASA LA VALENTINE",
+        "description": "Troca do líquido dos travões",
+        "price": 1,
+        "raw": "02/12/2021 42739 km MASA LA VALENTINE Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "02/12/2021",
+        "km": 42739,
+        "shop": "MASA LA VALENTINE",
+        "description": "Pastilhas traseiras",
+        "price": 1,
+        "raw": "02/12/2021 42739 km MASA LA VALENTINE Plaquettes AR € 1,00"
+      },
+      {
+        "date": "02/12/2021",
+        "km": 42739,
+        "shop": "MASA LA VALENTINE",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "02/12/2021 42739 km MASA LA VALENTINE Révision € 1,00"
+      },
+      {
+        "date": "02/12/2021",
+        "km": 42739,
+        "shop": "MASA LA VALENTINE",
+        "description": "Substituição de palhetas do limpa-vidros",
+        "price": 1,
+        "raw": "02/12/2021 42739 km MASA LA VALENTINE Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "02/12/2021",
+        "km": 42739,
+        "shop": "MASA LA VALENTINE",
+        "description": "Bateria",
+        "price": 1,
+        "raw": "02/12/2021 42739 km MASA LA VALENTINE Batterie € 1,00"
+      },
+      {
+        "date": "02/12/2021",
+        "km": 42739,
+        "shop": "MASA LA VALENTINE",
+        "description": "Nível Ad Blue",
+        "price": 1,
+        "raw": "02/12/2021 42739 km MASA LA VALENTINE NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "12/10/2020",
+        "km": 21566,
+        "shop": "MASA LA VALENTINE",
+        "description": "Nível Ad Blue",
+        "price": 1,
+        "raw": "12/10/2020 21566 km MASA LA VALENTINE NIVEAU AD BLUE € 1,00"
+      },
+      {
+        "date": "12/10/2020",
+        "km": 21566,
+        "shop": "MASA LA VALENTINE",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "12/10/2020 21566 km MASA LA VALENTINE Révision € 1,00"
+      }
+    ]
+  },
+  {
+    "id": "6400876",
+    "make": "Mercedes",
+    "model": "A 180d",
+    "year": 2020,
+    "slug": "mercedes-a-180d-2020-6400876",
+    "price": 21300,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_000.jpg",
+    "description": "Este Mercedes A 180d Limousine de 2020 destaca-se pelo seu motor Diesel de 1461 CC com 218 cv (160 kW), caixa automática e design desportivo. Equipado com faróis LED-Xenon, sistema de navegação, interior e bancos desportivos em pele, e sistema KeylessGo para maior conforto. O veículo apresenta uma quilometragem de 75.659 km e está em excelente estado, com histórico de manutenção adequado. Destaca-se pela combinação de tecnologia avançada, conforto e segurança, incluindo sensores de chuva, cruise control, airbags múltiplos e sistema ESP. Um sedan elegante e potente, ideal para quem procura desempenho e luxo aliado a eficiência.",
+    "mileage": 75659,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Saloon7",
+    "engineSize": "1461 CC",
+    "power": "218 Hp 160 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "2020-02-06",
+    "doors": null,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "117",
+    "color": "Black",
+    "vin": "W1K1771031J231194",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6400876/photo_029.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de fixação Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica",
+        "Pack desportivo"
+      ],
+      "outras_opcoes": [
+        "Conectividade de fábrica",
+        "Opção áudio (de fábrica)",
+        "Câmara de marcha-atrás",
+        "Chave principal",
+        "Chave reserva"
+      ]
     },
     "maintenance": []
   },
@@ -3753,6 +5490,122 @@
     "maintenance": []
   },
   {
+    "id": "6410674",
+    "make": "Mercedes",
+    "model": "C 300e Plug-In Hybrid AMG",
+    "year": 2020,
+    "slug": "mercedes-c-300e-plug-in-hybrid-amg-2020-6410674",
+    "price": 26700,
+    "image": "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_000.jpg",
+    "description": "Este Mercedes C 300e Plug-In Hybrid AMG de 2020 é um elegante carro híbrido plug-in com motor de 1991 cc e potência de 333 cv (245 kW). Equipado com caixa automática, faróis LED Multibeam, sistema de navegação, sistema de som Burmester, interior desportivo em pele e Alcantara, KeylessGo, câmara traseira, ar condicionado automático de duas zonas, sensores de estacionamento e muito mais. O veículo apresenta uma emissão de CO2 de apenas 39 g/km, cumprindo a norma Euro 6, e tem uma quilometragem de 125795 km. O carro oferece conforto, segurança e tecnologia de ponta, ideal para quem procura desempenho e eficiência. Histórico de manutenção não disponível. Um veículo com pacote desportivo completo, suspensão desportiva e jantes de liga leve, perfeito para quem valoriza estilo e performance.",
+    "mileage": 125795,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "Estate Car",
+    "engineSize": "1991 CC",
+    "power": "333 Hp 245 kW",
+    "places": 5,
+    "unitNumber": "6375854",
+    "origin": "Belgium",
+    "firstRegistration": "2020-09-07",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "39",
+    "color": "Cinza",
+    "vin": "W1K2052531F985746",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6410674/photo_034.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Fixações Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Cobertura da bagageira",
+        "Sem reboque",
+        "Automóvel de passageiros"
+      ]
+    },
+    "maintenance": []
+  },
+  {
     "id": "6319034",
     "make": "Opel",
     "model": "Corsa 1.2i Display Klima",
@@ -3860,6 +5713,367 @@
         "Alerta de deteção de sonolência do condutor",
         "Eco led",
         "Câmara de ajuda ao estacionamento com vista panorâmica a 180°",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6295741",
+    "make": "Audi",
+    "model": "A6 2.0 TDi",
+    "year": 2013,
+    "slug": "audi-a6-2-0-tdi-2013-6295741",
+    "price": 11650,
+    "image": "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_045.jpg",
+    "description": "Este Audi A6 2.0 TDi de 2013 apresenta-se com motor diesel de 1968 CC e potência de 177 cv (130 kW). Equipado com caixa manual de 5 velocidades, este sedan oferece um equilíbrio perfeito entre desempenho e conforto. Destaca-se pelo sistema de iluminação Xenon, navegação integrada, interior desportivo em pele e bancos desportivos que garantem uma condução confortável e dinâmica. O veículo conta com ar condicionado automático de duas zonas, cruise control, sensores de chuva e luz, sistema start-stop e jantes de liga leve. Em termos de segurança, dispõe de ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. O sistema multimédia inclui Bluetooth, leitor de CD, interface MP3 e computador de bordo. O carro tem uma quilometragem de 178476 km e está em excelente estado de conservação, com manutenção regular. Ideal para quem procura um veículo premium com tecnologia avançada e conforto superior.",
+    "mileage": 178476,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Saloon6",
+    "engineSize": "1968 CC",
+    "power": "177 Hp 130 kW",
+    "places": 5,
+    "unitNumber": "6295741",
+    "origin": "Belgium",
+    "firstRegistration": "28/02/2013",
+    "doors": 4,
+    "fuel": "Diesel",
+    "emissionClass": "Euro5",
+    "co2": "129",
+    "color": "Silver",
+    "vin": "WAUZZZ4G0CN029382",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_097.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_096.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_093.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_094.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_090.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6290001-6300000/6295741/photo_068.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis Xenon",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Vidros: outros",
+        "Terceira luz de travagem",
+        "Iluminação exterior: outros",
+        "Sistema de pneus móveis",
+        "Elevação automática dos faróis",
+        "Apoios de cabeça traseiros",
+        "Fecho centralizado com comando",
+        "Características selecionáveis da transmissão",
+        "Regulação da altura do banco do condutor",
+        "Assentos: outros",
+        "Apoio de cabeça traseiro central"
+      ]
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6390830",
+    "make": "Mercedes",
+    "model": "A 160",
+    "year": 2021,
+    "slug": "mercedes-a-160-2021-6390830",
+    "price": 17900,
+    "image": "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_000.jpg",
+    "description": "Este Mercedes A 160 de 2021 apresenta-se com motor de 1332 CC e potência de 116 Hp (85 kW), equipado com caixa manual e sistema de navegação WideScreen. Destaca-se pelo conforto proporcionado pelo ar condicionado automático a duas zonas, cruise control, vidros elétricos, keyless go, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop. Em termos de segurança, conta com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. Para entretenimento, inclui Bluetooth, leitor de CD, kit mãos livres, interface MP3, computador de bordo e rádio DAB. Outras opções incluem câmara de marcha atrás, assistente ativo de faixa, assistente de travagem ativo, pacote Advantage, ativação automática dos faróis, sistema de controlo da pressão dos pneus, estofos em tecido preto, extintor, apoio de braço central dianteiro, módulo de comunicação LTE/4G para me connect, entre outros. O veículo tem 87.982 km e está em conformidade com a norma Euro 6. A origem é Bélgica (BE).",
+    "mileage": 87982,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": null,
+    "category": "Saloon6",
+    "engineSize": "1332 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": "6390830",
+    "origin": "Belgium - ASSE II",
+    "firstRegistration": "2021-07-23",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "133",
+    "color": "White",
+    "vin": "W1K1770821V109236",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6390001-6400000/6390830/photo_052.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação WideScreen"
+      ],
+      "conforto": [
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio DAB"
+      ],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": [
+        "Afstandsregeling",
+        "Apoio de braço central",
+        "Regensensor",
+        "Direção assistida",
+        "Telefone",
+        "Câmara de marcha atrás",
+        "Assistente ativo de faixa",
+        "Assistente de travagem ativo",
+        "Pacote Advantage",
+        "Ativação automática dos faróis",
+        "Sistema de controlo da pressão dos pneus",
+        "Estofos em tecido preto",
+        "Extintor",
+        "Apoio de braço central dianteiro",
+        "Módulo de comunicação LTE/4G para me connect",
+        "DAB - sintonizador de rádio digital",
+        "Luzes diurnas dianteiras",
+        "Soleiras alargadas em preto texturizado",
+        "Duplo porta-copos na consola central",
+        "Duplo porta-copos dianteiro",
+        "Dynamic select",
+        "Faróis halogéneos",
+        "Keyless start",
+        "Saídas de ar em preto"
+      ]
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6404807",
+    "make": "Jaguar",
+    "model": "E-Pace 2.0 P300e Plug-In Hybrid R-Dynamic",
+    "year": 2022,
+    "slug": "jaguar-e-pace-2-0-p300e-plug-in-hybrid-r-dynamic-2022-6404807",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_000.jpg",
+    "description": "Este Jaguar E-Pace 2.0 P300e Plug-In Hybrid R-Dynamic de 2022 é um SUV híbrido com 309 cavalos de potência e tração integral (AWD). Equipado com caixa automática, motor de 1997 cc e emissões CO2 de 44 g/km, oferece uma condução potente e eficiente. Destaca-se pelos faróis LED, sistema de navegação avançado, pacote desportivo exterior, e interior em couro com Keyless Go. O conforto é garantido com ar condicionado automático a duas zonas, controlo de velocidade de cruzeiro, sensores de luz e chuva, e volante multifunções. Em termos de segurança, inclui ABS, ESP, airbags frontais e laterais, imobilizador e pontos de ancoragem Isofix. A conectividade é assegurada com Bluetooth, leitor de CD, interface MP3 e computador de bordo. O veículo apresenta um histórico de manutenção completo e encontra-se em excelente estado, ideal para quem procura um SUV híbrido premium com tecnologia e conforto de topo.",
+    "mileage": 97440,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2.0",
+    "power": "309 Hp 227 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "France - TEA MILLON",
+    "firstRegistration": "2022-04-12",
+    "doors": 5,
+    "fuel": "Hybrid (petrol / electric)",
+    "emissionClass": "Euro6",
+    "co2": "44",
+    "color": "Black",
+    "vin": "SADFA2BTCN1032933",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6404807/photo_032.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior em pele"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Tração integral",
         "Controlo de tração"
       ]
     },
@@ -4091,6 +6305,109 @@
       "outras_opcoes": [
         "Filtro de partículas",
         "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6359320",
+    "make": "Peugeot",
+    "model": "2008 1.2 PureTech GT",
+    "year": 2020,
+    "slug": "peugeot-2008-1-2-puretech-gt-2020-6359320",
+    "price": 18200,
+    "image": "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_001.jpg",
+    "description": "Este Peugeot 2008 1.2 PureTech GT de 2020 destaca-se pelo seu motor 1.2 PureTech com 99 cv, caixa manual e um design desportivo com interior em pele e acabamentos esportivos. Equipado com teto panorâmico, faróis LED-Xenon, sistema de navegação, Keyless Go, câmara traseira e sensores de estacionamento (PDC), oferece conforto com ar condicionado automático a duas zonas, cruise control e volante multifunções. Em termos de segurança, conta com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. O veículo apresenta uma quilometragem de 25.608 km e uma emissão de CO2 de 132 g/km, cumprindo a norma Euro 6. Histórico de manutenção não disponível. Um SUV compacto que combina estilo, tecnologia e segurança para uma condução agradável e segura.",
+    "mileage": 25608,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.2",
+    "power": "99cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Belgium",
+    "firstRegistration": "01/07/2020",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "132g/km",
+    "color": "Orange",
+    "vin": "VR3USHNSKLJ696745",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6350001-6360000/6359320/photo_024.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Decoração interior: outra"
       ]
     },
     "maintenance": []
@@ -4363,6 +6680,205 @@
     "maintenance": []
   },
   {
+    "id": "6318325",
+    "make": "MG",
+    "model": "ZS EV Luxury",
+    "year": 2020,
+    "slug": "mg-zs-ev-luxury-2020-6318325",
+    "price": 15300,
+    "image": "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_073.jpg",
+    "description": "O MG ZS EV Luxury de 2020 é um SUV elétrico que combina potência e conforto. Equipado com motor elétrico de 150 Hp (110 kW) e caixa automática, oferece uma condução suave e eficiente. Destaca-se pelo teto panorâmico, sistema de navegação, interior desportivo com bancos desportivos em pele, e tecnologia Keyless Go para maior conveniência. O veículo possui histórico completo de manutenção, incluindo revisões regulares e inspeções técnicas, garantindo fiabilidade e segurança. Equipado com ar condicionado automático, cruise control, sensores de luz e chuva, sistema start-stop, e múltiplos airbags, assegura conforto e proteção. Este modelo é ideal para quem procura um SUV moderno, ecológico e bem equipado.",
+    "mileage": 98244,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle1",
+    "engineSize": null,
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "The Netherlands",
+    "firstRegistration": "17/04/2020",
+    "doors": null,
+    "fuel": "Electric",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Black",
+    "vin": "LSJW74095LZ023252",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_090.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_093.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_100.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_101.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_099.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_105.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_106.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_103.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_104.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_102.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_094.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_098.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_097.jpg",
+      "https://ecarstrade.com/carsphotos/6310001-6320000/6318325/photo_096.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless Go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop",
+        "Teto de abrir"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Estofos de luxo (tr002)",
+        "Pneus originais incluídos",
+        "Cabo de carregamento 230v",
+        "Cabo de carregamento Mennekes",
+        "Jantes de liga leve com pneus largos",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/06/2025",
+        "km": 98,
+        "shop": "CAN bus midden",
+        "description": "Manutenção",
+        "price": 0,
+        "raw": "01/06/2025 98 km CAN bus midden € 0,00"
+      },
+      {
+        "date": "01/04/2025",
+        "km": 96000,
+        "description": "Revisão aos 96.000 km",
+        "price": 0,
+        "raw": "01/04/2025 96 km 96.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "01/03/2024",
+        "km": 77000,
+        "description": "Inspeção técnica (APK)",
+        "price": 0,
+        "raw": "01/03/2024 77 km APK € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 70000,
+        "description": "Revisão aos 72.000 km",
+        "price": 0,
+        "raw": "01/11/2023 70 km 72.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 70000,
+        "description": "Substituição de naafdop dianteira e traseira",
+        "price": 0,
+        "raw": "01/11/2023 70 km Naafdop voor en achter € 0,00"
+      },
+      {
+        "date": "01/11/2023",
+        "km": 70000,
+        "description": "Troca de líquido de refrigeração",
+        "price": 0,
+        "raw": "01/11/2023 70 km Koelvloeistof € 0,00"
+      },
+      {
+        "date": "01/07/2022",
+        "km": 44000,
+        "description": "Revisão aos 48.000 km",
+        "price": 0,
+        "raw": "01/07/2022 44 km 48.000 kilometer beurt € 0,00"
+      },
+      {
+        "date": "01/07/2022",
+        "km": 44000,
+        "description": "Troca de fluido de travões",
+        "price": 0,
+        "raw": "01/07/2022 44 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "01/07/2022",
+        "km": 44000,
+        "description": "Substituição do motor do limpa para-brisas dianteiro e traseiro",
+        "price": 0,
+        "raw": "01/07/2022 44 km Ruitensproeiermotor voor en achter € 0,00"
+      },
+      {
+        "date": "01/07/2022",
+        "km": 44000,
+        "description": "Substituição do filtro de ar interior",
+        "price": 0,
+        "raw": "01/07/2022 44 km interieurluchtfilter € 0,00"
+      },
+      {
+        "date": "01/03/2021",
+        "km": 19000,
+        "description": "Revisão aos 24.000 km",
+        "price": 0,
+        "raw": "01/03/2021 19 km 24.000 kilometer beurt € 0,00"
+      }
+    ]
+  },
+  {
     "id": "6342397",
     "make": "BMW",
     "model": "118i Aut.",
@@ -4561,6 +7077,198 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6401815",
+    "make": "Peugeot",
+    "model": "2008",
+    "year": 2020,
+    "slug": "peugeot-2008-2020-6401815",
+    "price": 15900,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_000.jpg",
+    "description": "O Peugeot 2008 1.5 BlueHDI GT-Line de 2020 é um SUV compacto que combina design moderno com tecnologia avançada. Equipado com motor 1.5 BlueHDI de 131cv, caixa manual e uma eficiente classificação Euro6, este modelo destaca-se pelo teto panorâmico, faróis LED-Xenon, sistema I-Cockpit com ambiente interior personalizado, navegação integrada, bancos em pele, KeylessGo, câmara traseira e ar condicionado automático. O veículo apresenta um histórico de manutenção detalhado e rigoroso, com revisões e substituições de componentes essenciais realizadas na PSA Peugeot, garantindo fiabilidade e segurança. A cor cinza e o baixo consumo de combustível tornam-no ideal para uso urbano e viagens. Um SUV versátil, confortável e seguro, pronto para oferecer uma excelente experiência de condução.",
+    "mileage": 54019,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1.2",
+    "power": "131cv",
+    "places": 5,
+    "unitNumber": "6400619",
+    "origin": "France - Quincieux",
+    "firstRegistration": "2020-05-08",
+    "doors": null,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123",
+    "color": "Grey",
+    "vin": "VR3USHNKKMJ861684",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6401815/photo_024.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED-Xenon"
+      ],
+      "conforto": [
+        "Ar condicionado",
+        "KeylessGo",
+        "Bancos em pele"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "PDC (sensores de estacionamento)"
+      ],
+      "multimedia": [
+        "Navegação integrada",
+        "I-Cockpit",
+        "Sistema de som ambiente"
+      ],
+      "interior": [
+        "Ambiente interior personalizado",
+        "Bancos em pele"
+      ],
+      "exterior": [
+        "Jantes específicas GT-Line",
+        "Cor cinza"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Révision € 1,00"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Révision € 0,30"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de velas (Bougies)",
+        "price": 3,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Bougies € 3,00"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de balai essuie-glace (limpadores de para-brisas)",
+        "price": 0.1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Balai essuie-glace € 0,10"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de kit distribuição / courroie / galets",
+        "price": 1.9,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Kit distribution / Courroie /galets € 1,90"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de plaquettes AV (pastilhas de travão dianteiras)",
+        "price": 1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Plaquettes AV € 1,00"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de filtros",
+        "price": 1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Filtres € 1,00"
+      },
+      {
+        "date": "06/06/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de joints motor",
+        "price": 1,
+        "raw": "06/06/2025 47857 km PSA PEUGEOT Joints Moteur € 1,00"
+      },
+      {
+        "date": "21/05/2025",
+        "km": 47857,
+        "shop": "PSA PEUGEOT",
+        "description": "Grande reparação e manutenção",
+        "price": 1,
+        "raw": "21/05/2025 47857 km PSA PEUGEOT GROSSE REPARATION MAINTENANCE € 1,00"
+      },
+      {
+        "date": "25/01/2024",
+        "km": 25609,
+        "shop": "PSA PEUGEOT",
+        "description": "Substituição de balai essuie-glace",
+        "price": 1,
+        "raw": "25/01/2024 25609 km PSA PEUGEOT Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "25/01/2024",
+        "km": 25609,
+        "shop": "PSA PEUGEOT",
+        "description": "Vidange do líquido de travão",
+        "price": 2,
+        "raw": "25/01/2024 25609 km PSA PEUGEOT Vidange liquide frein € 2,00"
+      },
+      {
+        "date": "18/12/2023",
+        "km": 0,
+        "shop": "HERTZ",
+        "description": "CAT C - Período de aluguer Perreve Camille de 19/12/2023 a 03/01/2024",
+        "price": 15,
+        "raw": "18/12/2023 0 km HERTZ CAT C - PERREVE CAMILLE - DU 19/12/2023 AU 03/01/2024 € 15,00"
+      },
+      {
+        "date": "18/12/2023",
+        "km": 0,
+        "shop": "HERTZ",
+        "description": "CAT C - Período de aluguer Perreve Camille de 19/12/2023 a 29/12/2023",
+        "price": 10,
+        "raw": "18/12/2023 0 km HERTZ CAT C - PERREVE CAMILLE - DU 19/12/2023 AU 29/12/2023 € 10,00"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 0,
+        "shop": "HERTZ",
+        "description": "CAT C - Período de aluguer Perreve Camille de 18/12/2023 a 02/01/2024",
+        "price": 15,
+        "raw": "08/12/2023 0 km HERTZ CAT C - PERREVE CAMILLE - DU 18/12/2023 AU 02/01/2024 € 15,00"
+      }
+    ]
   },
   {
     "id": "6373523",
@@ -4858,6 +7566,387 @@
         "description": "Troca de filtro de ar interior",
         "price": 0,
         "raw": "01/01/2022 41 km interieurluchtfilter € 0,00"
+      }
+    ]
+  },
+  {
+    "id": "6408771",
+    "make": "BMW",
+    "model": "i3",
+    "year": 2020,
+    "slug": "bmw-i3-2020-6408771",
+    "price": 17700,
+    "image": "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_001.jpg",
+    "description": "Este BMW i3 de 2020 é um veículo elétrico com 170 Hp (125 kW) e transmissão automática. Equipado com faróis LED, sistema de navegação, keyless go, câmara, ar condicionado automático, sensores de luz e chuva, controlo de velocidade de cruzeiro, bancos aquecidos e volante multifunções. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. Inclui sistema multimedia com Bluetooth, leitor de CD, interface MP3 e computador de bordo. Exterior com jantes de liga leve e pacote desportivo. Interior com design BMW i Atelier, tapetes de veludo e pacote de conforto avançado. Histórico de manutenção completo com várias inspeções e revisões realizadas pela BMW, incluindo verificações ao sistema de gestão do motor, fluídos e filtros. Um carro elétrico moderno, confortável e seguro, ideal para mobilidade urbana e viagens curtas, com excelente estado de conservação e manutenção rigorosa.",
+    "mileage": 105534,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 1,
+    "category": "Saloon1",
+    "engineSize": null,
+    "power": "170 Hp 125 kW",
+    "places": 5,
+    "unitNumber": "6408771",
+    "origin": "The Netherlands",
+    "firstRegistration": "24/08/2020",
+    "doors": 4,
+    "fuel": "Electric",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "White",
+    "vin": "WBY8P210307F91832",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6400001-6410000/6408771/photo_055.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system",
+        "Sports exterior"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado automático",
+        "Cruise control",
+        "Heated seats",
+        "Electric windows",
+        "Keyless go",
+        "Light sensor",
+        "Multifunction steering wheel",
+        "Rain sensor",
+        "Start-stop system"
+      ],
+      "seguranca": [
+        "ABS",
+        "Daytime running lights",
+        "ESP",
+        "Fog lights",
+        "Airbags: Front, side and more",
+        "Immobilizer",
+        "Isofix anchor points"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "CD player",
+        "Hands-free kit",
+        "MP3 interface",
+        "Navigation system",
+        "On-board computer",
+        "Radio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Alloy wheels",
+        "Sports exterior",
+        "Sports package"
+      ],
+      "outras_opcoes": [
+        "BMW i interieur design Atelier",
+        "Capparisweiss met BMW i Blau accent",
+        "Comfort pack advanced",
+        "Driving Assistant Plus",
+        "Elektrisch verwarmde voorstoelen",
+        "Inbouwen inverse box",
+        "MIA",
+        "Parkeerpakket",
+        "Velours matten",
+        "Warmtepomp",
+        "Bmw i interieur design atelier",
+        "Capparisweiss met bmw i blau accent",
+        "Driving assistant plus"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/02/2025",
+        "km": 97,
+        "description": "BMW 12 P. Check",
+        "price": 0,
+        "raw": "01/02/2025 97 km BMW 12 P. Check € 0,00"
+      },
+      {
+        "date": "01/02/2025",
+        "km": 97,
+        "description": "Motormanagementcomputer",
+        "price": 0,
+        "raw": "01/02/2025 97 km Motormanagementcomputer € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "BMW Voert. Check",
+        "price": 0,
+        "raw": "01/08/2024 92 km BMW Voert. Check € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "APK icm beurt",
+        "price": 0,
+        "raw": "01/08/2024 92 km APK icm beurt € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "Remvloeistof",
+        "price": 0,
+        "raw": "01/08/2024 92 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "Koelvloeistof",
+        "price": 0,
+        "raw": "01/08/2024 92 km Koelvloeistof € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "Ruitenwisserblad voorzijde links en rechts",
+        "price": 0,
+        "raw": "01/08/2024 92 km Ruitenwisserblad voorzijde links en rechts € 0,00"
+      },
+      {
+        "date": "01/08/2024",
+        "km": 92,
+        "description": "Interieurluchtfilter",
+        "price": 0,
+        "raw": "01/08/2024 92 km interieurluchtfilter € 0,00"
+      },
+      {
+        "date": "01/05/2022",
+        "km": 23,
+        "description": "BMW Voert. Check",
+        "price": 0,
+        "raw": "01/05/2022 23 km BMW Voert. Check € 0,00"
+      },
+      {
+        "date": "01/05/2022",
+        "km": 23,
+        "description": "Remvloeistof",
+        "price": 0,
+        "raw": "01/05/2022 23 km Remvloeistof € 0,00"
+      },
+      {
+        "date": "01/05/2022",
+        "km": 23,
+        "description": "Interieurluchtfilter",
+        "price": 0,
+        "raw": "01/05/2022 23 km interieurluchtfilter € 0,00"
+      }
+    ]
+  },
+  {
+    "id": "6288798",
+    "make": "BMW",
+    "model": "430 Coupe 3.0d xDrive M-Sport",
+    "year": 2023,
+    "slug": "bmw-430-coupe-3-0d-xdrive-m-sport-2023-6288798",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_031.jpg",
+    "description": "Este BMW 430 Coupe 3.0d xDrive M-Sport de 2023 apresenta um motor potente de 2993 CC com 286 cavalos de potência e transmissão automática. Equipado com tecnologia avançada como Laser-Light, sistema de navegação LC-Pro, interior desportivo em pele, KeylessGo, câmara traseira e ar condicionado automático de duas zonas. O veículo inclui ainda sensores de luz, sensor de chuva, sistema start-stop, e um pacote de segurança completo com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. Com um histórico de manutenção detalhado e completo, incluindo troca de óleo, filtros e revisão dos travões aos 27.060 km. Um coupé desportivo elegante e confortável, ideal para quem procura desempenho e estilo com tecnologia de ponta.",
+    "mileage": 44878,
+    "country": "IT",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Sports Car / Coupe",
+    "engineSize": "3.0",
+    "power": "286Hp 210 kW",
+    "places": 4,
+    "unitNumber": "6288798",
+    "origin": "Italy - CAPUA",
+    "firstRegistration": "2023-05-11",
+    "doors": 2,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "137",
+    "color": "Blue",
+    "vin": "WBA41AS090CN40430",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6280001-6290000/6288798/photo_051.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Navigation system",
+        "Sports interior",
+        "Sport seats",
+        "Sports exterior"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes em liga leve",
+        "Pacote desportivo exterior",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "2 apoios de cabeça nos bancos dianteiros com regulação em altura",
+        "4 travões de disco ventilados com pinças vermelhas",
+        "Configuração 2+2 lugares",
+        "6 altifalantes"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Oleo motor",
+        "price": 0,
+        "raw": "16/07/2024 27060 km Olio motore € 0,00"
+      },
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Filtro óleo",
+        "price": 0,
+        "raw": "16/07/2024 27060 km Filtro Olio € 0,00"
+      },
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "16/07/2024 27060 km Meccanica altro € 0,00"
+      },
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Filtro antipolline",
+        "price": 0,
+        "raw": "16/07/2024 27060 km Filtro Antipolline € 0,00"
+      },
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Filtro ar",
+        "price": 0,
+        "raw": "16/07/2024 27060 km Filtro Aria € 0,00"
+      },
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "16/07/2024 27060 km Meccanica altro € 0,00"
+      },
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "16/07/2024 27060 km Meccanica altro € 0,00"
+      },
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Revisão dos travões (frontais e traseiros)",
+        "price": 0,
+        "raw": "16/07/2024 27060 km FRENI (Anteriori e Posteriori) € 0,00"
+      },
+      {
+        "date": "16/07/2024",
+        "km": 27060,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "16/07/2024 27060 km Meccanica altro € 0,00"
       }
     ]
   },
@@ -5637,6 +8726,271 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6414302",
+    "make": "BMW",
+    "model": "330e xDrive Plug-In Hybrid M-Sport",
+    "year": 2021,
+    "slug": "bmw-330e-xdrive-plug-in-hybrid-m-sport-2021-6414302",
+    "price": 33900,
+    "image": "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_000.jpg",
+    "description": "Este BMW 330e xDrive Plug-In Hybrid M-Sport de 2021 oferece uma combinação perfeita de desempenho e eficiência com um motor híbrido de 292 Hp (215 kW) e transmissão automática. Equipado com faróis LED-Xenon, sistema de navegação profissional, interior e bancos desportivos em pele, e um pacote desportivo exterior que realça a sua presença. Conforto garantido com ar condicionado automático de duas zonas, bancos aquecidos, cruise control, e sistema start-stop. Segurança reforçada com ABS, ESP, airbags frontais e laterais, Isofix, e imobilizador. Inclui ainda tecnologia Bluetooth, leitor de CD, interface MP3, e câmara de marcha-atrás. Veículo com histórico de manutenção regular, em excelente estado geral, ideal para quem procura um sedan híbrido com performance e estilo desportivo.",
+    "mileage": 104097,
+    "country": "LU",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "saloon",
+    "engineSize": "1998 CC",
+    "power": "292 Hp 215 kW",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "Luxembourg - Windhof",
+    "firstRegistration": "15/08/2021",
+    "doors": 4,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "41",
+    "color": "Cinza",
+    "vin": "WBA5P91050FL65093",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6410001-6420000/6414302/photo_057.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes em liga leve",
+        "Exterior desportivo",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Tração integral",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
+  },
+  {
+    "id": "6381543",
+    "make": "Nissan",
+    "model": "Juke 1.0 DIG-T Aut.",
+    "year": 2021,
+    "slug": "nissan-juke-2021-6381543",
+    "price": 16900,
+    "image": "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_001.jpg",
+    "description": "O Nissan Juke 1.0 DIG-T Automático de 2021 é um SUV compacto com motor 999 CC a gasolina, oferecendo 113 cavalos de potência (83 kW). Equipado com navegação, KeylessGo, câmara traseira, ar condicionado e sensores de estacionamento (PDC), este veículo combina conforto e tecnologia. A caixa automática proporciona uma condução suave e prática. O histórico de manutenção é completo, com revisões regulares e substituição de componentes essenciais como discos, pastilhas e balaios de limpa-vidros, garantindo a fiabilidade do automóvel. A cor cinzenta confere-lhe um aspeto moderno e elegante, enquanto a classificação Euro 6 assegura baixas emissões de CO2 (114 g/km). Um SUV versátil e bem equipado, ideal para quem procura um carro urbano com estilo e desempenho.",
+    "mileage": 102233,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": null,
+    "category": "SUV/Off-road Vehicle1",
+    "engineSize": "999 CC",
+    "power": "113cv",
+    "places": 5,
+    "unitNumber": "",
+    "origin": "France - Fleury Mérogis",
+    "firstRegistration": "21/02/2021",
+    "doors": null,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "114",
+    "color": "Cinza",
+    "vin": "SJNFAAF16U1097567",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6380001-6390000/6381543/photo_018.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "Navegação",
+        "KeylessGo",
+        "Ar condicionado"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": [
+      {
+        "date": "31/01/2025",
+        "km": 92971,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Substituição discos dianteiros",
+        "price": 1,
+        "raw": "31/01/2025 92971 km AUTO SONAKA SAINT DOULCHARD Disques AV € 1,00"
+      },
+      {
+        "date": "31/01/2025",
+        "km": 92971,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "31/01/2025 92971 km AUTO SONAKA SAINT DOULCHARD Révision € 1,00"
+      },
+      {
+        "date": "31/01/2025",
+        "km": 92971,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Substituição balaios limpa-vidros",
+        "price": 1,
+        "raw": "31/01/2025 92971 km AUTO SONAKA SAINT DOULCHARD Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "31/01/2025",
+        "km": 92971,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Substituição pastilhas dianteiras",
+        "price": 1,
+        "raw": "31/01/2025 92971 km AUTO SONAKA SAINT DOULCHARD Plaquettes AV € 1,00"
+      },
+      {
+        "date": "15/12/2023",
+        "km": 61767,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Substituição balaios limpa-vidros",
+        "price": 1,
+        "raw": "15/12/2023 61767 km AUTO SONAKA SAINT DOULCHARD Balai essuie-glace € 1,00"
+      },
+      {
+        "date": "15/12/2023",
+        "km": 61767,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Substituição velas de ignição",
+        "price": 1,
+        "raw": "15/12/2023 61767 km AUTO SONAKA SAINT DOULCHARD Bougies € 1,00"
+      },
+      {
+        "date": "15/12/2023",
+        "km": 61767,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "15/12/2023 61767 km AUTO SONAKA SAINT DOULCHARD Révision € 1,00"
+      },
+      {
+        "date": "15/12/2023",
+        "km": 61767,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Troca de líquido dos travões",
+        "price": 1,
+        "raw": "15/12/2023 61767 km AUTO SONAKA SAINT DOULCHARD Vidange liquide frein € 1,00"
+      },
+      {
+        "date": "10/05/2022",
+        "km": 30017,
+        "shop": "AUTO SONAKA SAINT DOULCHARD",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "10/05/2022 30017 km AUTO SONAKA SAINT DOULCHARD Révision € 1,00"
+      }
+    ]
   },
   {
     "id": "6397603",
