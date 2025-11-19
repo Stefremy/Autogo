@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
-/* Adobe Fonts kit (Typekit) - bc-novatica-cyr from kit ura2asp */
-/* The kit stylesheet is loaded in pages/_app.tsx: https://use.typekit.net/ura2asp.css */
+/* Adobe Fonts kit (Typekit) - bc-novatica-cyr from kit mdg1mhk */
+/* The kit stylesheet is loaded in pages/_app.tsx: https://use.typekit.net/mdg1mhk.css */
 
 html,
 body,
 #__next {
-  font-family: "bc-novatica-cyr", "Montserrat", "Inter", "Helvetica Neue", Arial, "sans-serif";
+  font-family: "Montserrat", "bc-novatica-cyr", "Inter", "Helvetica Neue", Arial, "sans-serif";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,4 +30,11 @@ body {
 
 main, p {
   line-height: 1.9;
+}
+
+/* Headings: prefer ITC Avant Garde from Typekit; fall back to bc-novatica-cyr then Montserrat */
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: "itc-avant-garde-gothic-pro", "bc-novatica-cyr", "Montserrat", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
