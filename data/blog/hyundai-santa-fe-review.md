@@ -1,6 +1,7 @@
 ---
 title: "Análise Hyundai Santa Fe"
 date: "2025-11-19"
+type: "review"
 slug: "hyundai-santa-fe-review-2024"
 author: "Top Gear (resumo)"
 excerpt: "Design apelativo, extremamente prático e muito versátil. Não há muito que o Hyundai Santa Fe não consiga fazer."
