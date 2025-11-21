@@ -582,7 +582,7 @@ export default function Home({ blogArticles }) {
         </motion.section>
         {/* HERO SECTION END */}
 
-        {/* Black Friday Promo (cute slide-in) */}
+        {/* Black Friday Promo (large image + Contactar) */}
         <BlackFridayPromo />
 
         {/* Como Funciona section */}
