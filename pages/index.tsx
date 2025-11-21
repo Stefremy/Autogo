@@ -12,6 +12,7 @@ import cars from "../data/cars.json";
 import PremiumCarCard from "../components/PremiumCarCard";
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
+import BlackFridayPromo from "../components/BlackFridayPromo";
 
 // Some imported React helpers are used conditionally; to avoid linter warnings where they are assigned but not used in all builds, reference them in no-op expressions.
 void useRef; void useEffect;
@@ -580,6 +581,9 @@ export default function Home({ blogArticles }) {
           </div>
         </motion.section>
         {/* HERO SECTION END */}
+
+        {/* Black Friday Promo (cute slide-in) */}
+        <BlackFridayPromo />
 
         {/* Como Funciona section */}
         <section
