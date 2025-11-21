@@ -120,7 +120,20 @@ export default function SimuladorTabela() {
   }, [form.usado, form.dia, form.mes, form.ano]);
 
   function handleChange(e) {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    // If the user switches to elétrico, clear fields that don't apply
+    if (name === 'combustivel' && value === 'eletrico') {
+      setForm((f) => ({
+        ...f,
+        combustivel: value,
+        cilindrada: '',
+        co2: '',
+        norma: 'wltp',
+        particulas: 'nao',
+      }));
+      return;
+    }
+    setForm((f) => ({ ...f, [name]: value }));
   }
 
   function calcularISV(e) {
@@ -130,6 +143,20 @@ export default function SimuladorTabela() {
       setErroData("Preencha o dia, mês e ano da 1ª matrícula.");
       return;
     }
+    // Special-case: elétrico -> isento de ISV
+    if (form.combustivel === 'eletrico') {
+      const legalizacao = 195;
+      setResultado({
+        isvCilindrada: 0,
+        isvAmbiental: 0,
+        isvBruto: 0,
+        isvFinal: 0,
+        legalizacao,
+        info: ['ISV: Isento para veículos elétricos.'],
+      });
+      return;
+    }
+
     let isvCilindrada = 0;
     let isvAmbiental = 0;
     let isvBruto = 0;
@@ -224,64 +251,74 @@ export default function SimuladorTabela() {
             </option>
           </select>
         </div>
+
+        {/* Combustível: mostrar sempre (antes estava apenas para 'passageiro') */}
         <div className="flex flex-col gap-1">
           <label className="font-semibold text-[#b42121]">
-            Cilindrada (cm³)
+            Combustível
           </label>
-          <input
-            name="cilindrada"
-            type="number"
-            value={form.cilindrada}
+          <select
+            name="combustivel"
+            value={form.combustivel}
             onChange={handleChange}
-            required
             className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
-          />
+          >
+            <option value="gasolina">Gasolina</option>
+            <option value="gpl">GPL</option>
+            <option value="gn">Gás Natural</option>
+            <option value="diesel">Diesel</option>
+            <option value="eletrico">Elétrico</option>
+          </select>
         </div>
+
+        {form.combustivel !== 'eletrico' && (
+          <div className="flex flex-col gap-1">
+            <label className="font-semibold text-[#b42121]">
+              Cilindrada (cm³)
+            </label>
+            <input
+              name="cilindrada"
+              type="number"
+              value={form.cilindrada}
+              onChange={handleChange}
+              required={form.combustivel !== 'eletrico'}
+              className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+            />
+          </div>
+        )}
         {form.tipo === "passageiro" && (
           <>
-            <div className="flex flex-col gap-1">
-              <label className="font-semibold text-[#b42121]">
-                Combustível
-              </label>
-              <select
-                name="combustivel"
-                value={form.combustivel}
-                onChange={handleChange}
-                className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
-              >
-                <option value="gasolina">Gasolina</option>
-                <option value="gpl">GPL</option>
-                <option value="gn">Gás Natural</option>
-                <option value="diesel">Diesel</option>
-              </select>
-            </div>
-            <div className="flex flex-col gap-1">
-              <label className="font-semibold text-[#b42121]">
-                Norma de homologação
-              </label>
-              <select
-                name="norma"
-                value={form.norma}
-                onChange={handleChange}
-                className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
-              >
-                <option value="wltp">WLTP</option>
-                <option value="nedc">NEDC</option>
-              </select>
-            </div>
-            <div className="flex flex-col gap-1">
-              <label className="font-semibold text-[#b42121]">
-                Emissões CO₂ (g/km)
-              </label>
-              <input
-                name="co2"
-                type="number"
-                value={form.co2}
-                onChange={handleChange}
-                required
-                className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
-              />
-            </div>
+            {form.combustivel !== 'eletrico' && (
+              <>
+                <div className="flex flex-col gap-1">
+                  <label className="font-semibold text-[#b42121]">
+                    Norma de homologação
+                  </label>
+                  <select
+                    name="norma"
+                    value={form.norma}
+                    onChange={handleChange}
+                    className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                  >
+                    <option value="wltp">WLTP</option>
+                    <option value="nedc">NEDC</option>
+                  </select>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label className="font-semibold text-[#b42121]">
+                    Emissões CO₂ (g/km)
+                  </label>
+                  <input
+                    name="co2"
+                    type="number"
+                    value={form.co2}
+                    onChange={handleChange}
+                    required={form.combustivel !== 'eletrico'}
+                    className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                  />
+                </div>
+              </>
+            )}
           </>
         )}
         {form.combustivel === "diesel" && form.tipo === "passageiro" && (
