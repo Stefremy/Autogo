@@ -16313,5 +16313,136 @@
         "raw": "18/02/2021 19443 km FRS ABSENT Révision 1,00"
       }
     ]
+  },
+  {
+    "id": "5554151",
+    "make": "Citroen",
+    "model": "Citroën Jumpy EV 50kWh Confort 6PL Aut. Navi Klima PDC ...",
+    "year": 2021,
+    "slug": "citroen-jumpy-ev-50kwh-confort-6pl-aut-navi-klima-pdc-5554151",
+    "price": 24000,
+    "image": "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_029.jpg",
+    "description": "O Citroën Jumpy EV 50kWh Confort 6PL Aut. é um veículo elétrico versátil e espaçoso, ideal para transporte de passageiros com 6 lugares. Equipado com motor de 136 Hp (100 kW) e caixa automática de 1 velocidade, oferece uma condução suave e eficiente. Destaca-se pelo sistema de navegação, ar condicionado manual, controlo de velocidade de cruzeiro, vidros elétricos, fecho centralizado sem chave, sensores de luz e chuva, assistência de estacionamento traseira e sistema start-stop. Em termos de segurança, inclui ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e Isofix para cadeiras infantis. No multimédia, dispõe de Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. Outras opções incluem cabo de carregamento com conector tipo 2, alerta de pausa para vigilância do condutor, porta lateral deslizante, espelhos exteriores elétricos e aquecidos, vidros escurecidos, kit mãos livres, caixa de velocidades para veículo elétrico e monitorização da pressão dos pneus. Com uma quilometragem de 35.200 km e primeira matrícula em 04/12/2021, este veículo apresenta histórico de manutenção detalhado com revisões e intervenções no motor. Proveniente de França, na região de NEUVY SATAS, é uma excelente escolha para quem procura um veículo elétrico prático e bem equipado.",
+    "mileage": 35200,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 1,
+    "category": "Van / Minibus",
+    "engineSize": "n/a",
+    "power": "136 Hp 100 kW",
+    "places": 6,
+    "unitNumber": null,
+    "origin": "France - \"NEUVY SATAS\"",
+    "firstRegistration": "04/12/2021",
+    "doors": 4,
+    "fuel": "Elétrico",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "White",
+    "vin": "VF7VZZKXZMZ042509",
+    "images": [
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/5550001-5560000/5554151/photo_020.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado manual",
+        "Controlo de velocidade de cruzeiro",
+        "Vidros elétricos",
+        "Fecho centralizado sem chave",
+        "Sensor de luz",
+        "Sensor de chuva",
+        "Assistência de estacionamento traseira",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": [
+        "Cabo de carregamento com conector tipo 2 (Mode)",
+        "Alerta de pausa para vigilância do condutor",
+        "Porta lateral deslizante",
+        "Espelhos exteriores com regulação elétrica e aquecimento",
+        "Vidros escurecidos",
+        "Vidro elétrico dianteiro",
+        "Kit mãos livres para telefone",
+        "Caixa de velocidades para veículo elétrico",
+        "Monitorização da pressão dos pneus"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "22/10/2024",
+        "km": 35170,
+        "description": "Intervenção no motor",
+        "price": 0,
+        "raw": "22/10/2024 35170 km Moteur 0,00"
+      },
+      {
+        "date": "18/10/2024",
+        "km": 35165,
+        "description": "Leitura de memória/reinicialização",
+        "price": 0,
+        "raw": "18/10/2024 35165 km Lecture mémoire/réinitialisation 0,00"
+      },
+      {
+        "date": "05/03/2024",
+        "km": 35165,
+        "description": "Intervenção no motor",
+        "price": 0,
+        "raw": "05/03/2024 35165 km Moteur 0,00"
+      },
+      {
+        "date": "23/09/2022",
+        "km": 15086,
+        "description": "Revisão",
+        "price": 0,
+        "raw": "23/09/2022 15086 km Révision 0,00"
+      }
+    ]
   }
 ]
