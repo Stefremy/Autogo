@@ -19154,5 +19154,314 @@
         "raw": "01/09/2019 23�km de sleutelbatterij ��0,00"
       }
     ]
+  },
+  {
+    "id": "6468861",
+    "make": "BMW",
+    "model": "BMW 520d Aut. Pano LED-Xenon LC-Pro Navi Leather Ambient KeylessGo Camera Klima PDC ...",
+    "year": 2020,
+    "slug": "bmw-520d-aut-pano-led-xenon-lc-pro-navi-leather-ambient-keylessgo-camera-klima-pdc-6468861",
+    "price": 23900,
+    "image": "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_067.jpg",
+    "description": "Este BMW 520d de 2020 apresenta um motor de 1995 CC com 163 Hp (120 kW) e caixa automática de 8 velocidades, oferecendo uma condução suave e eficiente. Equipado com teto panorâmico, sistema de navegação, luzes adaptativas, ar condicionado automático a duas zonas, controlo de velocidade, bancos aquecidos, ajuste elétrico dos bancos, vidros elétricos, sistema Keyless Go, sensor de luz, volante multifunções, sensores de estacionamento, sensor de chuva, sistema start-stop e teto solar. Em termos de segurança, conta com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e Isofix. Para entretenimento, possui Bluetooth, leitor de CD, sistema de navegação, computador de bordo e rádio. Exteriormente, destaca-se pelas jantes de liga leve e engate para reboque. Outras opções incluem interface Mp3, faróis LED, filtro de partículas e controlo de tração. O veículo tem um histórico de manutenção completo, com revisões regulares realizadas em oficinas autorizadas, garantindo a sua excelente condição. Com 181.326 km, este BMW é uma escolha sólida para quem procura conforto, segurança e tecnologia avançada num sedan elegante.",
+    "mileage": 181326,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automatic",
+    "gearbox": 8,
+    "category": "Saloon",
+    "engineSize": "1995 CC",
+    "power": "163 Hp 120 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium - \"Machelen\"",
+    "firstRegistration": "20/02/2020",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "108 CO2",
+    "color": "Grey",
+    "vin": "WBA11DW000WW75924",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6468861/photo_061.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensores de estacionamento",
+        "Sensor de chuva",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Engate para reboque"
+      ],
+      "outras_opcoes": [
+        "Jantes de liga leve",
+        "Interface Mp3",
+        "Faróis LED",
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "11/03/2020",
+        "km": 608,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Pneus de inverno",
+        "price": 363,
+        "raw": "11/03/2020 608 km EC Roelants Banden Wolvertem winter tires €363,00"
+      },
+      {
+        "date": "08/05/2020",
+        "km": 3982,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Armazenamento e troca de pneus verão/inverno",
+        "price": 78,
+        "raw": "08/05/2020 3982 km EC Roelants Banden Wolvertem tire storage (LUX) €14,00 e tire change summer/winter €64,00"
+      },
+      {
+        "date": "10/11/2020",
+        "km": 21674,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Armazenamento e troca de pneus verão/inverno",
+        "price": 78,
+        "raw": "10/11/2020 21674 km EC Roelants Banden Wolvertem tire storage (LUX) €14,00 e tire change summer/winter €64,00"
+      },
+      {
+        "date": "13/01/2021",
+        "km": 26222,
+        "shop": "Pautric Dilbeek",
+        "description": "Revisão: óleo motor e microfiltro",
+        "price": 347.6,
+        "raw": "13/01/2021 26222 km Pautric Dilbeek BMW/MINI service engine oil €210,54 e microfilter €137,06"
+      },
+      {
+        "date": "21/04/2021",
+        "km": 32682,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Troca e armazenamento de pneus verão/inverno",
+        "price": 78,
+        "raw": "21/04/2021 32682 km EC Roelants Banden Wolvertem tire change summer/winter €64,00 e tire storage (LUX) €14,00"
+      },
+      {
+        "date": "19/10/2021",
+        "km": 51001,
+        "shop": "Pautric Dilbeek",
+        "description": "Revisão: microfiltro, óleo motor, filtro ar, AdBlue, palhetas limpa para-brisas e verificação do veículo",
+        "price": 509.04,
+        "raw": "19/10/2021 51001 km Pautric Dilbeek BMW/MINI service microfilter €137,67, engine oil €199,79, air filter €49,65, AdBlue €18,00, wiper blade front €63,08, vehicle check €43,80"
+      },
+      {
+        "date": "15/11/2021",
+        "km": 53738,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Armazenamento e troca de pneus verão/inverno",
+        "price": 78,
+        "raw": "15/11/2021 53738 km EC Roelants Banden Wolvertem tire storage (LUX) €14,00 e tire change summer/winter €64,00"
+      },
+      {
+        "date": "15/04/2022",
+        "km": 66342,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Troca e armazenamento de pneus verão/inverno",
+        "price": 78,
+        "raw": "15/04/2022 66342 km EC Roelants Banden Wolvertem tire change summer/winter €64,00 e tire storage (LUX) €14,00"
+      },
+      {
+        "date": "08/07/2022",
+        "km": 76305,
+        "shop": "BMW Louyet Charleroi",
+        "description": "Revisão: óleo motor, filtro combustível, microfiltro e peças pequenas",
+        "price": 503.76,
+        "raw": "08/07/2022 76305 km BMW Louyet Charleroi BMW/MINI service engine oil €263,94, fuel filter €88,72, microfilter €136,26, small parts and eco €14,84"
+      },
+      {
+        "date": "30/11/2022",
+        "km": 93581,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Armazenamento e troca de pneus verão/inverno",
+        "price": 88,
+        "raw": "30/11/2022 93581 km EC Roelants Banden Wolvertem tire storage (LUX) €20,00 e tire change summer/winter €68,00"
+      },
+      {
+        "date": "02/02/2023",
+        "km": 99252,
+        "shop": "Pautric Dilbeek",
+        "description": "Troca de fluido de travões",
+        "price": 64.33,
+        "raw": "02/02/2023 99252 km Pautric Dilbeek brake fluid €64,33"
+      },
+      {
+        "date": "06/03/2023",
+        "km": 101565,
+        "shop": "Pautric Dilbeek",
+        "description": "Revisão: filtro ar, óleo motor, microfiltro, palhetas limpa para-brisas, verificação do veículo e reabastecimento AdBlue",
+        "price": 608.62,
+        "raw": "06/03/2023 101565 km Pautric Dilbeek BMW/MINI service air filter €54,16, engine oil €243,55, microfilter €147,68, wiper blade front €63,03, vehicle check €49,98, AdBlue refilling €50,22"
+      },
+      {
+        "date": "26/04/2023",
+        "km": 104297,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Armazenamento e troca de pneus verão/inverno",
+        "price": 88,
+        "raw": "26/04/2023 104297 km EC Roelants Banden Wolvertem tire storage (LUX) €16,00 e tire change summer/winter €72,00"
+      },
+      {
+        "date": "04/12/2023",
+        "km": 122575,
+        "shop": "BMW Gregoir Puurs",
+        "description": "Sensor de temperatura do filtro de partículas e peças pequenas",
+        "price": 302.59,
+        "raw": "04/12/2023 122575 km BMW Gregoir Puurs temperature sensor partic. filter €294,90 e small parts and eco €7,69"
+      },
+      {
+        "date": "08/12/2023",
+        "km": 124854,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Troca de pneus verão/inverno",
+        "price": 72,
+        "raw": "08/12/2023 124854 km EC Roelants Banden Wolvertem tire change summer/winter €72,00"
+      },
+      {
+        "date": "09/01/2024",
+        "km": 127400,
+        "shop": "BMW Gregoir Puurs",
+        "description": "Revisão técnica, microfiltro, óleo motor, palhetas limpa para-brisas, bateria remota, reabastecimento AdBlue e peças pequenas",
+        "price": 621.97,
+        "raw": "09/01/2024 127400 km BMW Gregoir Puurs check up technical inspection €75,00, BMW/MINI service microfilter €149,88, engine oil €200,74, wiper blade front €65,34, battery remote wireless €2,86, AdBlue refilling €29,25, small parts and eco €10,00"
+      },
+      {
+        "date": "31/01/2024",
+        "km": 127400,
+        "shop": "AIBV Autokeuring",
+        "description": "Taxas administrativas e inspeção técnica",
+        "price": 22,
+        "raw": "31/01/2024 127400 km AIBV Autokeuring Administration fee BTT €0,00, payment technical check €0,00, €11,00, €11,00"
+      },
+      {
+        "date": "28/03/2024",
+        "km": 134711,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Armazenamento, balanceamento e troca de pneus verão",
+        "price": 638.04,
+        "raw": "28/03/2024 134711 km EC Roelants Banden Wolvertem tire storage (LUX) €16,00, wheel balancing €32,52, summer tires €295,00, summer tires €295,00, wheel balancing €32,52, tire change summer/winter €0,00"
+      },
+      {
+        "date": "07/10/2024",
+        "km": 151152,
+        "shop": "Pautric Dilbeek",
+        "description": "Revisão: óleo motor, filtro ar, microfiltro, filtro combustível, bateria remota, inspeção do veículo e peças pequenas",
+        "price": 607.37,
+        "raw": "07/10/2024 151152 km Pautric Dilbeek BMW/MINI service engine oil €234,01, air filter €56,00, microfilter €153,14, service fuel filter €95,65, battery remote wireless €2,92, veh.inspection service €51,00, service standard scope €17,00, small parts and eco €11,75"
+      },
+      {
+        "date": "20/11/2024",
+        "km": 153733,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Troca e armazenamento de pneus verão/inverno",
+        "price": 84,
+        "raw": "20/11/2024 153733 km EC Roelants Banden Wolvertem tire change summer/winter €72,00 e tire storage (LUX) €12,00"
+      },
+      {
+        "date": "31/01/2025",
+        "km": 161421,
+        "shop": "AIBV Autokeuring",
+        "description": "Taxas administrativas e inspeção técnica",
+        "price": 22,
+        "raw": "31/01/2025 161421 km AIBV Autokeuring Administration fee BTT €0,00, payment technical check €0,00, €11,00, €11,00"
+      },
+      {
+        "date": "31/03/2025",
+        "km": 166099,
+        "shop": "Pautric Dilbeek",
+        "description": "Revisão padrão e troca de fluido de travões",
+        "price": 68.95,
+        "raw": "31/03/2025 166099 km Pautric Dilbeek BMW/MINI service standard scope €17,67 e brake fluid €51,28"
+      },
+      {
+        "date": "29/04/2025",
+        "km": 168305,
+        "shop": "EC Roelants Banden Wolvertem",
+        "description": "Pneus de verão, troca de pneus verão/inverno, armazenamento e balanceamento",
+        "price": 130.22,
+        "raw": "29/04/2025 168305 km EC Roelants Banden Wolvertem summer tires €43,22, tire change summer/winter €67,00, tire storage (LUX) €20,00, wheel balancing €0,00"
+      },
+      {
+        "date": "16/07/2025",
+        "km": 172399,
+        "shop": "Pautric Dilbeek",
+        "description": "Revisão: microfiltro, óleo motor, fluido limpa para-brisas, bateria remota, verificação do veículo, peças pequenas e serviço padrão",
+        "price": 511.01,
+        "raw": "16/07/2025 172399 km Pautric Dilbeek BMW/MINI service microfilter €128,10, battery remote wireless €2,96, service engine oil €177,43, windscreen washer fluid €5,09, service standard scope €17,67, small parts and eco €11,75, vehicle check €17,67"
+      },
+      {
+        "date": "06/08/2025",
+        "km": 174878,
+        "shop": "Pautric Dilbeek",
+        "description": "Revisão padrão, pastilhas de travão dianteiras, palhetas limpa para-brisas e peças pequenas",
+        "price": 353.45,
+        "raw": "06/08/2025 174878 km Pautric Dilbeek BMW/MINI service standard scope €15,02, small parts and eco €12,31, brake pad front €259,31, wiper blade front €66,81"
+      }
+    ]
   }
 ]
