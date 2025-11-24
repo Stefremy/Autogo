@@ -17922,5 +17922,112 @@
         "raw": "30/03/2023 3181�km TSE Banden Delveau tyre repair (tire center) ��23,00"
       }
     ]
+  },
+  {
+    "id": "6374008",
+    "make": "BMW",
+    "model": "M8 Competition 4.4i xDrive 600Hp Aut.",
+    "year": 2024,
+    "slug": "bmw-m8-competition-4-4i-xdrive-600hp-aut-6374008",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_024.jpg",
+    "description": "O BMW M8 Competition 4.4i xDrive de 2024 combina potência impressionante de 600 Hp (441 kW) com tecnologia avançada, incluindo faróis LED, Head-up display, sistema de áudio de alta performance Bowers&Wilkins, navegação, interior e bancos desportivos em pele, e sistema de câmaras 360. Equipado com ar condicionado automático de 4 zonas, cruise control, sensores de chuva e luz, sistema start-stop e Keyless Go para conforto máximo. Segurança reforçada com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. Este coupé desportivo de 5 portas tem um histórico de manutenção não especificado, apresenta 38 177 km e está disponível na Bélgica. Um veículo de alta performance com design desportivo e tecnologia de ponta, ideal para quem procura exclusividade e desempenho.",
+    "mileage": 38177,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automatic",
+    "gearbox": 8,
+    "category": "Sports Car / Coupe",
+    "engineSize": "4395 CC",
+    "power": "600 Hp 441 kW",
+    "places": 4,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "03/01/2024",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "261 CO2",
+    "color": "Grey",
+    "vin": "WBSGV01030CR33719",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6370001-6380000/6374008/photo_019.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Head-up display",
+        "Sistema de áudio de alta performance"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (4 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Head-up display",
+        "Sistema de áudio de alta performance",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
