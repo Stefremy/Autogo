@@ -62,12 +62,14 @@ export default function BlackFridayPromo() {
             </div>
 
             <div className="mt-6 flex items-center gap-3">
-              <button
-                onClick={() => dismiss()}
+              <a
+                href="https://wa.me/351935179591"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-[#b42121] text-white font-semibold px-4 py-2 rounded-full text-sm shadow-md hover:scale-[1.03] transition-transform"
               >
                 Contactar
-              </button>
+              </a>
 
               <a
                 href="/viaturas"
