@@ -13200,5 +13200,106 @@
         "raw": "30/06/2022 0�km Garage Nordstad carrosserie Carrosserie ��1,00"
       }
     ]
+  },
+  {
+    "id": "6526052",
+    "make": "Fiat",
+    "model": "500C Cabrio 42KWH Icon Aut. Virtual Navi KeylessGo Camera Klima PDC",
+    "year": 2021,
+    "slug": "fiat-500c-cabrio-2021-6526052",
+    "price": 16650,
+    "image": "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_058.jpg",
+    "description": "Fiat 500C Cabrio 42KWH Icon Aut. Virtual Navi KeylessGo Camera Klima PDC apresenta-se como um elegante cabriolet elétrico de 2021, com motor de 118 Hp (87 kW) e transmissão automática de 1 velocidade. Equipado com um vasto conjunto de opções de conforto, segurança e multimedia, incluindo teto panorâmico, faróis LED, sistema de navegação, ar condicionado automático, cruise control, janelas elétricas, keyless go, sensores de luz e chuva, volante multifunções, sistema start-stop, ABS, ESP, airbags frontais e laterais, imobilizador, pontos de ancoragem Isofix, Bluetooth, leitor de CD, kit mãos livres, interface MP3, computador de bordo e rádio. O veículo conta com 74.740 km e está em excelente estado, ideal para quem procura um carro urbano sofisticado e eficiente. Origem Luxemburgo, categoria Cabriolet / Roadster, com classificação Euro6 e emissão de CO2 muito baixa (1 CO2). Um automóvel com manutenção em dia e características que garantem segurança e conforto para até 4 ocupantes.",
+    "mileage": 74740,
+    "country": "LU",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 1,
+    "category": "Cabriolet / Roadster",
+    "engineSize": "n/a",
+    "power": "118 Hp 87 kW",
+    "places": 4,
+    "unitNumber": null,
+    "origin": "Luxembourg",
+    "firstRegistration": "13/08/2021",
+    "doors": 3,
+    "fuel": "Elétrico",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Branco",
+    "vin": "ZFAEFAJ42MX039205",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526052/photo_082.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Janelas elétricas",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
