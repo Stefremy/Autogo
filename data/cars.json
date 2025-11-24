@@ -14389,5 +14389,806 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6570017",
+    "make": "Citroen",
+    "model": "Citroen C3 1.5 BlueHDi 100Hp Feel LED Navi Klima PDC ...",
+    "year": 2021,
+    "slug": "citroen-c3-2021-6570017",
+    "price": 10350,
+    "image": "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_000.jpg",
+    "description": "Este Citroen C3 1.5 BlueHDi de 2021 apresenta um motor diesel de 1499 CC com 102 Hp (75 kW), caixa manual de 6 velocidades, e um consumo eficiente com emissão Euro6 e CO2 de 96 g/km. Equipado com faróis LED, sistema de navegação, ar condicionado automático, cruise control, vidros elétricos, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop para maior conforto e economia. Segurança reforçada com ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador e pontos Isofix. Multimédia inclui Bluetooth, leitor de CD, kit mãos-livres, interface MP3, computador de bordo e rádio. Outras opções incluem apoio de braços, alerta de cintos de segurança, alerta de pressão dos pneus, antipatinagem e assistência à travagem de emergência. Histórico de manutenção detalhado com revisões regulares e substituição de peças em concessionário PSA Retail France SAS. Um carro compacto, confortável e seguro, ideal para condução urbana e viagens curtas, com um excelente histórico de manutenção e estado geral muito bom.",
+    "mileage": 91442,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Small Car",
+    "engineSize": "1499 CC",
+    "power": "102 Hp 75 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "France - \"Quincieux\"",
+    "firstRegistration": "21/09/2021",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "96 CO2",
+    "color": "Grey",
+    "vin": "VF7SXYHTUMT628196",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6570017/photo_031.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": [
+        "2 apoios de cabeça dianteiros com regulação em altura, 3 apoios",
+        "4 travões de disco, dos quais 2 ventilados",
+        "6 altifalantes",
+        "Apoio de braços",
+        "Alerta cintos de segurança (5)",
+        "Alerta de pressão dos pneus",
+        "Antipatinagem",
+        "Assistência à travagem de emergência",
+        "Assistência por 24 meses, quilometragem ilimitada",
+        "Caixa de velocidades manual, 6 velocidades, alavanca manual",
+        "Capacidade da bagageira (l): com bancos colocados, sob o tablier",
+        "Cintos de segurança traseiros: lado condutor, cinto",
+        "Cintos de segurança dianteiros: condutor, passageiro",
+        "Citroën Connect Nav em tablet tátil 7\"",
+        "Comandos rádio no volante",
+        "Conta-rotações",
+        "Fecho centralizado à distância",
+        "Console de chão",
+        "Regulação manual da altura dos faróis",
+        "Custos: IVA (20%), bónus/malus (€): 0,00, 0,00, 0",
+        "Dimensões exteriores (mm): comprimento 3996, largura",
+        "Dimensões interiores (mm): largura nas ancas"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "18/09/2025",
+        "km": 91028,
+        "shop": "NORISKO",
+        "description": "Controles Técnicos",
+        "price": 1,
+        "raw": "18/09/2025 91028 km NORISKO ContRôles Techniques €1,00"
+      },
+      {
+        "date": "29/07/2025",
+        "km": 85482,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Ampoules",
+        "price": 0.3,
+        "raw": "29/07/2025 85482 km PSA RETAIL FRANCE SAS Ampoules €0,30"
+      },
+      {
+        "date": "29/07/2025",
+        "km": 85482,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Ampoules",
+        "price": 1,
+        "raw": "29/07/2025 85482 km PSA RETAIL FRANCE SAS Ampoules €1,00"
+      },
+      {
+        "date": "29/07/2025",
+        "km": 85482,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Ampoules",
+        "price": 0,
+        "raw": "29/07/2025 85482 km PSA RETAIL FRANCE SAS Ampoules €0,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 0.1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €0,10"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Disques AV €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Révision €0,30"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Níveis",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Niveaux €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Níveis",
+        "price": 0.05,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Niveaux €0,05"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Disques AV €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 0.1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Balai essuie-glace €0,10"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 0.7,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Disques AV €0,70"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 0.3,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €0,30"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 0.1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Balai essuie-glace €0,10"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 3.95,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Révision €3,95"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 0.1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €0,10"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Disques AV €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 4,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Disques AV €4,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "23/06/2025",
+        "km": 83127,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "23/06/2025 83127 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      },
+      {
+        "date": "12/07/2024",
+        "km": 0,
+        "shop": "FRS ABSENT",
+        "description": "CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024",
+        "price": 13,
+        "raw": "12/07/2024 0 km FRS ABSENT CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024 €13,00"
+      },
+      {
+        "date": "12/07/2024",
+        "km": 0,
+        "shop": "FRS ABSENT",
+        "description": "CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024",
+        "price": 13,
+        "raw": "12/07/2024 0 km FRS ABSENT CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024 €13,00"
+      },
+      {
+        "date": "12/07/2024",
+        "km": 0,
+        "shop": "HERTZ",
+        "description": "CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 19/07/2024",
+        "price": 3,
+        "raw": "12/07/2024 0 km HERTZ CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 19/07/2024 €3,00"
+      },
+      {
+        "date": "12/07/2024",
+        "km": 0,
+        "shop": "FRS ABSENT",
+        "description": "CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024",
+        "price": 13,
+        "raw": "12/07/2024 0 km FRS ABSENT CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024 €13,00"
+      },
+      {
+        "date": "12/07/2024",
+        "km": 0,
+        "shop": "FRS ABSENT",
+        "description": "CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024",
+        "price": 13,
+        "raw": "12/07/2024 0 km FRS ABSENT CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024 €13,00"
+      },
+      {
+        "date": "12/07/2024",
+        "km": 0,
+        "shop": "HERTZ",
+        "description": "CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 30/07/2024",
+        "price": 14,
+        "raw": "12/07/2024 0 km HERTZ CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 30/07/2024 €14,00"
+      },
+      {
+        "date": "12/07/2024",
+        "km": 0,
+        "shop": "FRS ABSENT",
+        "description": "CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024",
+        "price": 13,
+        "raw": "12/07/2024 0 km FRS ABSENT CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024 €13,00"
+      },
+      {
+        "date": "12/07/2024",
+        "km": 0,
+        "shop": "FRS ABSENT",
+        "description": "CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024",
+        "price": 13,
+        "raw": "12/07/2024 0 km FRS ABSENT CAT B - IZARD CHRISTOPHE - DU 16/07/2024 AU 29/07/2024 €13,00"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 0.4,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Révision €0,40"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Ampoules",
+        "price": 0,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Ampoules €0,00"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 3.95,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Révision €3,95"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 0.1,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Révision €0,10"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Ampoules",
+        "price": 1,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Ampoules €1,00"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Ampoules",
+        "price": 0.3,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Ampoules €0,30"
+      },
+      {
+        "date": "17/06/2024",
+        "km": 58205,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "17/06/2024 58205 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 4,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Disques AV €4,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Disques AV €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 0.1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Filtres €0,10"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Disques AV €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Pastilhas traseiras",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Plaquettes AR €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Pastilhas traseiras",
+        "price": 0.4,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Plaquettes AR €0,40"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 0.1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Balai essuie-glace €0,10"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Troca de líquido de travão",
+        "price": 2,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Vidange liquide frein €2,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 0.7,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Disques AV €0,70"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Discos dianteiros",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Disques AV €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 0.1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Balai essuie-glace €0,10"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 0.3,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Révision €0,30"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Pastilhas traseiras",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Plaquettes AR €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Troca de líquido de travão",
+        "price": 0.5,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Vidange liquide frein €0,50"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      },
+      {
+        "date": "11/12/2023",
+        "km": 46160,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Troca de líquido de travão",
+        "price": 1,
+        "raw": "11/12/2023 46160 km PSA RETAIL FRANCE SAS Vidange liquide frein €1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Nível AD BLUE",
+        "price": 17,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS NIVEAU AD BLUE €17,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Filtres €1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 0.1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Balai essuie-glace €0,10"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Revisão",
+        "price": 1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Révision €1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 0.1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Balai essuie-glace €0,10"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Filtros",
+        "price": 0.1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Filtres €0,10"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Diversos outros",
+        "price": 1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Divers autres €1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Nível AD BLUE",
+        "price": 1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS NIVEAU AD BLUE €1,00"
+      },
+      {
+        "date": "28/11/2022",
+        "km": 25249,
+        "shop": "PSA RETAIL FRANCE SAS",
+        "description": "Substituição de Balai essuie-glace",
+        "price": 1,
+        "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
+      }
+    ]
   }
 ]
