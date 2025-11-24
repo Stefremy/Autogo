@@ -15373,5 +15373,116 @@
         "raw": "06/10/2023 17482�km Meccanica altro ��0,00"
       }
     ]
+  },
+  {
+    "id": "6582483",
+    "make": "Cupra",
+    "model": "Leon 1.4i Plug-In Hybrid Aut. LED-Xenon Virtual Navi-Pro 1/2 Sport-Leather KeylessGo Camera Klima PDC",
+    "year": 2023,
+    "slug": "cupra-leon-2023-6582483",
+    "price": 24100,
+    "image": "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_000.jpg",
+    "description": "O Cupra Leon 1.4i Plug-In Hybrid Automático de 2023 destaca-se pela sua combinação eficiente de motor híbrido plug-in de 1395 CC e 150 cavalos de potência, oferecendo uma condução dinâmica e ecológica. Equipado com faróis LED, sistema de navegação avançado, interior desportivo com bancos desportivos em pele e funcionalidades de conforto como ar condicionado automático de duas zonas, cruise control e sistema start-stop. A segurança é garantida com ABS, ESP, airbags múltiplos e pontos Isofix. O veículo apresenta um histórico de manutenção limpo e encontra-se em excelente estado, com 124742 km percorridos. Ideal para quem procura um sedan moderno, confortável e tecnologicamente avançado, com um design exterior desportivo e opções multimédia completas. Um automóvel que combina performance, segurança e conforto para uma experiência de condução superior.",
+    "mileage": 124742,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 5,
+    "category": "Saloon",
+    "engineSize": "1395 CC",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium - \"GNK - Remarketing Genk LANGERLO 001-082-003\"",
+    "firstRegistration": "05/12/2023",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "26 CO2",
+    "color": "White",
+    "vin": "VSSZZZKL7PR047944",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6582483/photo_044.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix",
+        "Faróis LED"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Assistente de manutenção de faixa (lane assist)",
+        "Alerta de tráfego traseiro, assistente de mudança de faixa",
+        "Assistente de manobras de estacionamento (park assist)",
+        "Ativação/desativação automática dos faróis",
+        "Telefonia conforto com LTE e carregamento sem fios",
+        "Tomada 230V"
+      ]
+    },
+    "maintenance": []
   }
 ]
