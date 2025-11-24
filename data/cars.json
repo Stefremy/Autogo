@@ -15484,5 +15484,279 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6494268",
+    "make": "BMW",
+    "model": "BMW X6 3.0d xDrive M-Sport Aut. LED-Xenon LC-Pro Navi-Pro Sport-Leather KeylessGo Camera Klima PDC ...",
+    "year": 2023,
+    "slug": "bmw-bmw-x6-3-0d-xdrive-m-sport-aut-led-xenon-lc-pro-navi-pro-sport-leather-keylessgo-camera-klima-pdc-6494268",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6490001-6500000/6494268/photo_021.jpg",
+    "description": "Este BMW X6 3.0d xDrive M-Sport de 2023 é um SUV de alta performance com motor de 2993 CC e potência de 286 Hp (210 kW). Equipado com caixa automática de 8 velocidades, este veículo oferece conforto e tecnologia avançada, incluindo sistema de navegação, interior desportivo, bancos desportivos em pele, ar condicionado automático de duas zonas, cruise control, sensores de luz e chuva, sistema start-stop, e muito mais. A segurança está garantida com ABS, ESP, airbags frontais e laterais, Isofix e assistências como aviso de superação de faixa e assistência à travagem de emergência. O carro tem um histórico de manutenção detalhado, com revisões regulares incluindo troca de filtros e manutenção mecânica, assegurando um estado impecável. A cor preta e as jantes de liga leve complementam o design desportivo e elegante. Um veículo ideal para quem procura desempenho, conforto e segurança num SUV premium.",
+    "mileage": 61717,
+    "country": "IT",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2993 CC",
+    "power": "286 Hp 210 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Italy - \"FIRENZE\"",
+    "firstRegistration": "05/01/2023",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "181 CO2",
+    "color": "Black",
+    "vin": "WBAGT810309R89598",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6494268/photo_001.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Navigation system",
+        "Sports interior",
+        "Sport seats"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Navigation system",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Sports interior",
+        "Sport seats"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "2 apoios de cabeça nos bancos dianteiros, com regulação em altura",
+        "4 travões a disco com 4 discos ventilados",
+        "5 lugares, configuração: 2+3",
+        "6 altifalantes subwoofer",
+        "Vidros elétricos dianteiros e traseiros",
+        "Assistência ao estacionamento traseiro, estacionamento completo assistido",
+        "Assistência à travagem de emergência",
+        "Avisador cintos de segurança 5",
+        "Aviso de ultrapassagem de faixa com ativação do volante",
+        "Equipamento BMW car care (obrigatório para NLT desde 0)",
+        "Descanso de braços dianteiro",
+        "Descanso de braços traseiro",
+        "Fecho centralizado via telemóvel, incl. comando"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Olio motore",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Olio motore ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Filtro Aria",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Filtro Aria ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Filtro combustibile",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Filtro combustibile ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "FRENI (Anteriori e Posteriori)",
+        "price": 0,
+        "raw": "18/07/2025 58185�km FRENI (Anteriori e Posteriori) ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Filtro Olio",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Filtro Olio ��0,00"
+      },
+      {
+        "date": "18/07/2025",
+        "km": 58185,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "18/07/2025 58185�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "16/01/2025",
+        "km": 46000,
+        "description": "FRENI (Anteriori e Posteriori)",
+        "price": 0,
+        "raw": "16/01/2025 46000�km FRENI (Anteriori e Posteriori) ��0,00"
+      },
+      {
+        "date": "16/01/2025",
+        "km": 46000,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "16/01/2025 46000�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "16/01/2025",
+        "km": 46000,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "16/01/2025 46000�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "16/01/2025",
+        "km": 46000,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "16/01/2025 46000�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "16/01/2025",
+        "km": 46000,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "16/01/2025 46000�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "14/05/2024",
+        "km": 27364,
+        "description": "Filtro Olio",
+        "price": 0,
+        "raw": "14/05/2024 27364�km Filtro Olio ��0,00"
+      },
+      {
+        "date": "14/05/2024",
+        "km": 27364,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "14/05/2024 27364�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "14/05/2024",
+        "km": 27364,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "14/05/2024 27364�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "14/05/2024",
+        "km": 27364,
+        "description": "Filtro Aria",
+        "price": 0,
+        "raw": "14/05/2024 27364�km Filtro Aria ��0,00"
+      },
+      {
+        "date": "14/05/2024",
+        "km": 27364,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "14/05/2024 27364�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "14/05/2024",
+        "km": 27364,
+        "description": "Olio motore",
+        "price": 0,
+        "raw": "14/05/2024 27364�km Olio motore ��0,00"
+      },
+      {
+        "date": "14/05/2024",
+        "km": 27364,
+        "description": "Filtro Antipolline",
+        "price": 0,
+        "raw": "14/05/2024 27364�km Filtro Antipolline ��0,00"
+      },
+      {
+        "date": "14/05/2024",
+        "km": 27364,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "14/05/2024 27364�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "15/04/2024",
+        "km": 24869,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "15/04/2024 24869�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "15/04/2024",
+        "km": 24869,
+        "description": "Meccanica altro",
+        "price": 0,
+        "raw": "15/04/2024 24869�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "15/04/2024",
+        "km": 24869,
+        "description": "Olio motore",
+        "price": 0,
+        "raw": "15/04/2024 24869�km Olio motore ��0,00"
+      }
+    ]
   }
 ]
