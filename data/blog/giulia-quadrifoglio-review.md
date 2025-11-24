@@ -101,6 +101,9 @@ O interior combina pele e camurça sintética, detalhes em fibra de carbono e ba
 - [Galeria completa na Car and Driver](https://www.caranddriver.com/photos/g43601268/2024-alfa-romeo-giulia-quadrifoglio-revealed-gallery/)
 - ![Vista lateral](https://hips.hearstapps.com/hmg-prod/images/2024-alfa-romeo-giulia-quadrifoglio-100th-anniversario-115-643961f4c3c57.jpg?crop=1xw:1xh;center,top&resize=980:*)
 
+<!-- embed video -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5gEdJmIVqLY?si=p3AKxpHwW2PwGcUI&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## Veredito Final

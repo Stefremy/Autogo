@@ -132,7 +132,7 @@ export default function BlogPost({ post }) {
             </span>
           ))}
         </div>
-        <article className="prose prose-lg max-w-none bg-white/80 rounded-xl p-6 shadow-md backdrop-blur-md">
+        <article className="prose prose-lg max-w-none bg-white/80 rounded-xl p-6 shadow-md backdrop-blur-md text-black prose-headings:text-black [&_h1]:text-black [&_h2]:text-black [&_h3]:text-black [&_h4]:text-black [&_h5]:text-black [&_h6]:text-black [&_li]:text-[#1a237e] [&_li]:marker:text-[#1a237e] [&_blockquote]:text-[#1a237e] [&_strong]:text-[#0b2545] [&_b]:text-[#0b2545]">
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {post.content}
           </ReactMarkdown>
