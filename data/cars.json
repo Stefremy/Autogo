@@ -18109,5 +18109,218 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6465612",
+    "make": "BMW",
+    "model": "IX3 sDrive35 Aut.",
+    "year": 2021,
+    "slug": "bmw-ix3-sdrive35-aut-2021-6465612",
+    "price": 26100,
+    "image": "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_086.jpg",
+    "description": "Este BMW IX3 sDrive35 Aut. de 2021 é um SUV elétrico moderno com 286 Hp (210 kW) e transmissão automática de 1 velocidade. Equipado com teto panorâmico, sistema de navegação, luzes adaptativas, ar condicionado automático de 2 zonas, controlo de cruzeiro, bancos aquecidos com ajuste elétrico, janelas elétricas, keyless go, sensor de luz, volante multifunções, sensor de chuva, bagageira de tejadilho, bancos com memória, sistema start-stop e teto solar. Segurança reforçada com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e Isofix. Multimedia inclui Bluetooth, leitor de CD, computador de bordo, rádio e sistema de navegação. Exterior com jantes de liga leve. Outras opções incluem assistência à condução, faróis LED avançados, interface MP3 e controlo de tração. Histórico de manutenção completo com serviços BMW regulares até 160671 km, incluindo inspeções, troca de filtros e manutenção da bateria da chave. Um veículo em excelente estado, ideal para quem procura tecnologia, conforto e segurança num SUV elétrico premium.",
+    "mileage": 160671,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 1,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "n/a",
+    "power": "286 Hp 210 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium - \"BE-21-ATWERP-BELCAR_OOST\"",
+    "firstRegistration": "06/10/2021",
+    "doors": 5,
+    "fuel": "Electric",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Black",
+    "vin": "WBY7X41030S011254",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_090.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_093.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_100.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_101.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_094.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_098.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_097.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_096.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_099.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_102.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_105.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_103.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_104.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6460001-6470000/6465612/photo_081.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Janelas elétricas",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Bancos com memória",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Sistema de assistência à condução",
+        "Faróis LED avançados",
+        "Interface MP3",
+        "Faróis LED",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/06/2025",
+        "km": 153,
+        "description": "BMW service padrão",
+        "price": 0,
+        "raw": "01/06/2025 153 km BMW service standaard omvang 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 153,
+        "description": "BMW service veículo-check",
+        "price": 0,
+        "raw": "01/06/2025 153 km BMW service voertuig-check 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 153,
+        "description": "Pequeno material e ambiente",
+        "price": 0,
+        "raw": "01/06/2025 153 km Klein materiaal & milieu 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 153,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/06/2025 153 km de sleutelbatterij 0,00"
+      },
+      {
+        "date": "01/01/2025",
+        "km": 141,
+        "description": "Pequeno material e ambiente",
+        "price": 0,
+        "raw": "01/01/2025 141 km Klein materiaal & milieu 0,00"
+      },
+      {
+        "date": "01/01/2025",
+        "km": 141,
+        "description": "Palheta limpa para-brisas dianteira",
+        "price": 0,
+        "raw": "01/01/2025 141 km ruitenwisserblad voor 0,00"
+      },
+      {
+        "date": "01/01/2025",
+        "km": 141,
+        "description": "Palheta limpa para-brisas traseira",
+        "price": 0,
+        "raw": "01/01/2025 141 km ruitenwisserblad achter 0,00"
+      },
+      {
+        "date": "01/01/2025",
+        "km": 141,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/01/2025 141 km de sleutelbatterij 0,00"
+      },
+      {
+        "date": "01/06/2023",
+        "km": 73,
+        "description": "BMW service padrão",
+        "price": 0,
+        "raw": "01/06/2023 73 km BMW service standaard omvang 0,00"
+      },
+      {
+        "date": "01/06/2023",
+        "km": 73,
+        "description": "BMW service veículo-check",
+        "price": 0,
+        "raw": "01/06/2023 73 km BMW service voertuig-check 0,00"
+      },
+      {
+        "date": "01/06/2023",
+        "km": 73,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/06/2023 73 km serv microfilter 0,00"
+      },
+      {
+        "date": "01/06/2023",
+        "km": 73,
+        "description": "Pequeno material e ambiente",
+        "price": 0,
+        "raw": "01/06/2023 73 km Klein materiaal & milieu 0,00"
+      },
+      {
+        "date": "01/06/2023",
+        "km": 73,
+        "description": "Fluido de travões",
+        "price": 0,
+        "raw": "01/06/2023 73 km de remvloeistof 0,00"
+      },
+      {
+        "date": "01/06/2023",
+        "km": 73,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/06/2023 73 km de sleutelbatterij 0,00"
+      },
+      {
+        "date": "01/01/2023",
+        "km": 55,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/01/2023 55 km de sleutelbatterij 0,00"
+      }
+    ]
   }
 ]
