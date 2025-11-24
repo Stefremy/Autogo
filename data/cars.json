@@ -14198,5 +14198,89 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6483107",
+    "make": "BMW",
+    "model": "X6 3.0d xDrive M-Sport Aut.",
+    "year": 2020,
+    "slug": "bmw-x6-3-0d-xdrive-m-sport-aut-2020-6483107",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6480001-6490000/6483107/photo_022.jpg",
+    "description": "BMW X6 3.0d xDrive M-Sport Automático de 2020 com motor 2993 CC e potência de 265 Hp (195 kW). Equipado com caixa automática de 8 velocidades, este SUV/Off-road oferece conforto e performance excepcionais. Destacam-se o teto panorâmico, faróis LED, sistema de navegação, interior desportivo com bancos desportivos em pele, suspensão a ar, controlo de clima automático a duas zonas, sensores de luz e chuva, sistema start-stop, e sistema de som com Bluetooth e leitor de CD. Segurança reforçada com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. O veículo tem 73 188 KM e foi registado pela primeira vez em 15/05/2020 na Bélgica. Estado geral muito bom, ideal para quem procura um SUV premium com equipamento completo e histórico de manutenção cuidado.",
+    "mileage": 73188,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2993 CC",
+    "power": "265 Hp 195 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "15/05/2020",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "158 CO2",
+    "color": "White",
+    "vin": "WBAGT210409C55326",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6480001-6490000/6483107/photo_027.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruzeiro",
+        "Bancos aquecidos",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bancos com memória",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
