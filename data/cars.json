@@ -18322,5 +18322,124 @@
         "raw": "01/01/2023 55 km de sleutelbatterij 0,00"
       }
     ]
+  },
+  {
+    "id": "6452836",
+    "make": "BMW",
+    "model": "X1 2.0 sDrive18d SportLine Aut.",
+    "year": 2018,
+    "slug": "bmw-x1-2018-6452836",
+    "price": 17200,
+    "image": "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_061.jpg",
+    "description": "BMW X1 2.0 sDrive18d SportLine Aut. de 2018, equipado com motor Diesel de 1995 CC e 136 Hp (100 kW). Caixa automática de 7 velocidades, categoria SUV/Off-road. Destaca-se pelo teto panorâmico, sistema head-up display, sistema de navegação avançado e interiores desportivos com bancos desportivos. Conforto garantido com luzes adaptativas, ar condicionado automático a duas zonas, cruise control, vidros elétricos, keyless go, sensor de luz, volante multifunções, sensor de chuva, barras de tejadilho, sistema start-stop e teto solar. Segurança reforçada com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e sistema Isofix. Multimédia com Bluetooth, leitor de CD, computador de bordo e rádio. Exterior com jantes em liga leve, pacote desportivo e engate para reboque. Outras opções incluem sistema de proteção contra incêndios, garantia de 3 anos, pintura de uma camada e decoração interior especial. Quilometragem atual de 205358 km. Veículo proveniente da Bélgica, com primeira matrícula em 20/03/2018. Estado geral muito bom, ideal para quem procura um SUV versátil e bem equipado.",
+    "mileage": 205358,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 7,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1995 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "20/03/2018",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "121 CO2",
+    "color": "Black",
+    "vin": "WBAJH510903F52314",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6450001-6460000/6452836/photo_049.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Head-up display",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Head-up display",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes em liga leve",
+        "Pacote desportivo",
+        "Engate para reboque"
+      ],
+      "outras_opcoes": [
+        "Sistema de proteção contra incêndios",
+        "Garantia: 3 anos",
+        "Traseira: outra",
+        "Pintura de uma camada",
+        "Decoração interior: outra"
+      ]
+    },
+    "maintenance": []
   }
 ]
