@@ -19463,5 +19463,106 @@
         "raw": "06/08/2025 174878 km Pautric Dilbeek BMW/MINI service standard scope €15,02, small parts and eco €12,31, brake pad front €259,31, wiper blade front €66,81"
       }
     ]
+  },
+  {
+    "id": "6544657",
+    "make": "BMW",
+    "model": "420d Gran Coupe M-Sport xDrive Aut.",
+    "year": 2022,
+    "slug": "bmw-420d-gran-coupe-m-sport-xdrive-aut-2022-6544657",
+    "price": 38900,
+    "image": "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_020.jpg",
+    "description": "Este BMW 420d Gran Coupe M-Sport xDrive Aut. de 2022 destaca-se pelo seu motor de 1995 CC com 190 Hp (140 kW), caixa automática de 8 velocidades e design elegante de sedan. Equipado com teto panorâmico, sistema de áudio de alta performance, sistema de navegação, interior desportivo com bancos desportivos em pele, e funcionalidades de conforto como ar condicionado automático a 3 zonas, luzes adaptativas, bancos aquecidos e ajustáveis eletricamente, janelas elétricas, sistema keyless go, sensor de luz, volante multifunções, sensores de chuva, memória para bancos, sistema start-stop e teto solar. Em termos de segurança, conta com ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador e sistema Isofix. Para multimedia dispõe de Bluetooth, leitor de CD, computador de bordo e rádio. O veículo apresenta uma condição excelente, com uma quilometragem de 81.868 km, proveniente da Bélgica, com histórico de manutenção não especificado. Um carro que combina performance, conforto e segurança num pacote desportivo e sofisticado.",
+    "mileage": 81868,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Saloon",
+    "engineSize": "1995 CC",
+    "power": "190 Hp 140 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "28/02/2022",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "140 CO2",
+    "color": "Black",
+    "vin": "WBA31AX090FM53551",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6544657/photo_013.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (3 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Janelas elétricas",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Memória para bancos",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Interface Mp3",
+        "Design exterior desportivo",
+        "Faróis LED"
+      ]
+    },
+    "maintenance": []
   }
 ]
