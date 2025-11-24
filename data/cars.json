@@ -15190,5 +15190,188 @@
         "raw": "28/11/2022 25249 km PSA RETAIL FRANCE SAS Balai essuie-glace €1,00"
       }
     ]
+  },
+  {
+    "id": "6515171",
+    "make": "BMW",
+    "model": "BMW X6 3.0d xDrive M-Sport Aut. LED-Xenon LC-Pro ACC Ambient Navi-Pro Sport-Leather KeylessGo Camera Klima PDC ...",
+    "year": 2023,
+    "slug": null,
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6510001-6520000/6515171/photo_000.jpg",
+    "description": "O BMW X6 3.0d xDrive M-Sport de 2023 apresenta um motor de 2993 CC com 286 Hp (210 kW), equipado com caixa automática de 8 velocidades. Este SUV destaca-se pelo seu interior desportivo e assentos desportivos, sistema de navegação, ar condicionado automático a duas zonas, luzes adaptativas, cruise control, sensores de chuva e luz, volante multifunções, sistema start-stop, e keyless go. Em termos de segurança, inclui ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador e sistema Isofix. O sistema multimédia conta com Bluetooth, leitor de CD, computador de bordo e rádio. Exteriormente, possui jantes de liga leve, pacote desportivo e suspensão desportiva. Outras opções incluem assistência ao estacionamento traseiro, assistência à travagem de emergência, aviso de cintos de segurança, aviso de mudança de faixa com ativação do volante, e fecho centralizado via telemóvel. O veículo tem um histórico de manutenção detalhado, com várias revisões e substituições de filtros e óleo, garantindo um estado mecânico excelente. Proveniente de Itália (Casoria), com 76.053 km registados, cor azul e classificação Euro6. Um SUV robusto e elegante, ideal para quem procura desempenho e conforto num só veículo.",
+    "mileage": 76053,
+    "country": "IT",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "2993 CC",
+    "power": "286 Hp 210 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Italy - \"CASORIA\"",
+    "firstRegistration": "30/03/2023",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "181 CO2",
+    "color": "Blue",
+    "vin": "WBAGT810609R54411",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6510001-6520000/6515171/photo_001.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Navigation system",
+        "Sports interior",
+        "Sport seats"
+      ],
+      "conforto": [
+        "Adaptive lights",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Navigation system",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Sports interior",
+        "Sport seats"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "2 apoios de cabeça nos bancos dianteiros, com regulação em altura",
+        "4 travões a disco com 4 discos ventilados",
+        "Configuração 5 lugares: 2+3",
+        "6 altifalantes com subwoofer",
+        "Vidros elétricos dianteiros e traseiros",
+        "Assistência ao estacionamento traseiro, estacionamento completo assistido",
+        "Assistência à travagem de emergência",
+        "Avisador cintos de segurança para 5 lugares",
+        "Aviso de mudança de faixa com ativação do volante",
+        "Equipamento BMW car care (obrigatório para NLT desde 0)",
+        "Descanso de braço dianteiro",
+        "Descanso de braço traseiro",
+        "Fecho centralizado via telemóvel, incluindo..."
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "06/06/2025",
+        "km": 76047,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "06/06/2025 76047�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "02/12/2024",
+        "km": 54345,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "02/12/2024 54345�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "04/11/2024",
+        "km": 49596,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "04/11/2024 49596�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "05/09/2024",
+        "km": 47253,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "05/09/2024 47253�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "05/09/2024",
+        "km": 47253,
+        "description": "Troca de óleo do motor",
+        "price": 0,
+        "raw": "05/09/2024 47253�km Olio motore ��0,00"
+      },
+      {
+        "date": "05/09/2024",
+        "km": 47253,
+        "description": "Troca do filtro de óleo",
+        "price": 0,
+        "raw": "05/09/2024 47253�km Filtro Olio ��0,00"
+      },
+      {
+        "date": "04/03/2024",
+        "km": 32356,
+        "description": "Troca do filtro antipólen",
+        "price": 0,
+        "raw": "04/03/2024 32356�km Filtro Antipolline ��0,00"
+      },
+      {
+        "date": "04/03/2024",
+        "km": 32356,
+        "description": "Troca do filtro de ar",
+        "price": 0,
+        "raw": "04/03/2024 32356�km Filtro Aria ��0,00"
+      },
+      {
+        "date": "04/03/2024",
+        "km": 32356,
+        "description": "Troca de óleo do motor",
+        "price": 0,
+        "raw": "04/03/2024 32356�km Olio motore ��0,00"
+      },
+      {
+        "date": "04/03/2024",
+        "km": 32356,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "04/03/2024 32356�km Meccanica altro ��0,00"
+      },
+      {
+        "date": "04/03/2024",
+        "km": 32356,
+        "description": "Troca do filtro de óleo",
+        "price": 0,
+        "raw": "04/03/2024 32356�km Filtro Olio ��0,00"
+      },
+      {
+        "date": "30/11/2023",
+        "km": 23309,
+        "description": "Substituição dos travões (dianteiros e traseiros)",
+        "price": 0,
+        "raw": "30/11/2023 23309�km FRENI (Anteriori e Posteriori) ��0,00"
+      },
+      {
+        "date": "06/10/2023",
+        "km": 17482,
+        "description": "Manutenção mecânica",
+        "price": 0,
+        "raw": "06/10/2023 17482�km Meccanica altro ��0,00"
+      }
+    ]
   }
 ]
