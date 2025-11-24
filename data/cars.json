@@ -17274,5 +17274,106 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6493922",
+    "make": "BMW",
+    "model": "840d Gran Coupe M-sport xDrive Aut.",
+    "year": 2020,
+    "slug": "bmw-840d-gran-coupe-m-sport-xdrive-aut-2020-6493922",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_000.jpg",
+    "description": "BMW 840d Gran Coupe M-sport xDrive Automático de 2020 com motor Diesel de 2993 CC e potência de 320 Hp (235 kW). Equipado com caixa automática de 8 velocidades, este coupé desportivo oferece conforto e tecnologia avançada, incluindo teto panorâmico, head-up display, sistema de áudio de alta performance, navegação, interior desportivo com bancos desportivos em pele, ar condicionado automático de duas zonas, cruise control, bancos aquecidos, ajuste elétrico dos bancos, janelas elétricas, sistema keyless go, sensor de luz, volante multifunções, sensor de chuva, sistema start-stop, ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador, Isofix, Bluetooth, leitor de CD, computador de bordo e rádio. O veículo apresenta um histórico de manutenção não especificado e encontra-se em excelente estado geral. Origem Bélgica, com 163128 km percorridos. Um automóvel que combina desempenho, segurança e luxo para uma experiência de condução superior.",
+    "mileage": 163128,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Sports Car / Coupe",
+    "engineSize": "2993 CC",
+    "power": "320 Hp 235 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "24/03/2020",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "189 CO2",
+    "color": "Grey",
+    "vin": "WBAGW41070CE55574",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6490001-6500000/6493922/photo_009.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Head-up display",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Janelas elétricas",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Head-up display",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes em liga leve",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Interface Mp3",
+        "Design exterior desportivo"
+      ]
+    },
+    "maintenance": []
   }
 ]
