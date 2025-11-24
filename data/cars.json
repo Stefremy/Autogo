@@ -13751,5 +13751,95 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6562593",
+    "make": "Ford",
+    "model": "Fiesta 1.1i Titanium Display Klima PDC",
+    "year": 2021,
+    "slug": "ford-fiesta-1-1i-titanium-display-klima-pdc-2021-6562593",
+    "price": 10100,
+    "image": "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_020.jpg",
+    "description": "Ford Fiesta 1.1i Titanium Display Klima PDC de 2021, equipado com motor 1084 CC a gasolina que desenvolve 75 Hp (55 kW). Caixa manual de 5 velocidades, com 5 portas e 5 lugares. Equipado com ar condicionado automático, cruise control, vidros elétricos, sensor de luz, volante multifunções, sensor de chuva, assistência de estacionamento traseira e sistema start-stop. Segurança reforçada com ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador e Isofix. Multimédia com Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. Exterior com jantes de liga leve. Outras opções incluem controlo automático de temperatura, bancos dianteiros desportivos, sistema de aviso de mudança de faixa, jantes de liga leve 6,0 x 15\" e controlo de tracção. Veículo proveniente de França (Walon BOUCHAIN, Região NORD), com 72 538 km. Classe de emissão Euro6 e CO2 de 115 g/km. Veículo em excelente estado, ideal para quem procura um carro compacto, eficiente e bem equipado.",
+    "mileage": 72538,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Small Car",
+    "engineSize": "1084 CC",
+    "power": "75 Hp 55 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "France - \"Walon BOUCHAIN (Région NORD)\"",
+    "firstRegistration": "07/01/2021",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "115 CO2",
+    "color": "Grey",
+    "vin": "WF0JXXGAHJMP57488",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6562593/photo_009.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Assistência de estacionamento traseira",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo automático de temperatura",
+        "Banco dianteiro desportivo",
+        "Sistema de aviso de mudança de faixa",
+        "Jantes de liga leve 6,0 x 15\"",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
