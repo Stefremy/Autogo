@@ -19801,5 +19801,111 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6526676",
+    "make": "BMW",
+    "model": "BMW 218d Gran Coupe LED-Xenon LC-Pro Navi KeylessGo Camera Klima PDC ...",
+    "year": 2021,
+    "slug": "bmw-218d-gran-coupe-2021-6526676",
+    "price": 19800,
+    "image": "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_056.jpg",
+    "description": "Este BMW 218d Gran Coupe de 2021 destaca-se pelo seu motor Diesel de 1995 CC com 150 Hp (110 kW), caixa manual de 6 velocidades e um design elegante de sedan. Equipado com faróis LED, sistema de navegação, Keyless Go, câmara traseira e ar condicionado automático, oferece conforto e tecnologia avançada. A segurança é garantida com ABS, ESP, airbags frontais e laterais, Isofix e imobilizador. O veículo apresenta 122 023 KM e está em excelente estado, ideal para quem procura um carro fiável e bem equipado. Origem Bélgica, primeira matrícula em 22/09/2021, classe de emissão Euro6 com 118 CO2. Um automóvel que combina performance, conforto e segurança, perfeito para uso diário e viagens.",
+    "mileage": 122023,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Saloon",
+    "engineSize": "1995 CC",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "22/09/2021",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "118 CO2",
+    "color": "Black",
+    "vin": "WBA31AM0707J97960",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6526676/photo_048.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático",
+        "Cruzeiro automático",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica"
+      ],
+      "outras_opcoes": [
+        "Conectividade de fábrica",
+        "Opção áudio diferente (de fábrica)",
+        "Câmara de marcha-atrás",
+        "Chave principal",
+        "Chave reserva",
+        "Manual de instruções",
+        "Livro de manutenção (digital)",
+        "Filtro de partículas",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
