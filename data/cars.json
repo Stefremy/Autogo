@@ -20353,5 +20353,110 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6442479",
+    "make": "BMW",
+    "model": "216d Gran Coupe Aut.",
+    "year": 2020,
+    "slug": "bmw-216d-gran-coupe-aut-2020-6442479",
+    "price": 24900,
+    "image": "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_046.jpg",
+    "description": "Este BMW 216d Gran Coupe Automático de 2020 destaca-se pelo seu motor Diesel de 1496 CC com 116 Hp (85 kW), caixa automática de 7 velocidades, e um design elegante de sedan. Equipado com sistema de navegação, luzes adaptativas, ar condicionado automático de duas zonas, cruise control, vidros elétricos, keyless go, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop. Segurança reforçada com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e Isofix. Multimedia inclui Bluetooth, leitor de CD, computador de bordo e rádio. Exterior com jantes de liga leve e pintura metálica. Outras opções incluem conectividade de fábrica, chave principal e reserva, kit de reparação de pneus, manual digital de manutenção, interface Mp3, faróis LED, filtro de partículas e controlo de tração. Com 19.660 km, proveniente da Bélgica, este veículo apresenta-se em ótimo estado, ideal para quem procura conforto, segurança e tecnologia num sedan compacto e eficiente.",
+    "mileage": 19660,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 7,
+    "category": "Saloon",
+    "engineSize": "1496 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "09/11/2020",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "121 CO2",
+    "color": "Black",
+    "vin": "WBA11AM0607G67843",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6440001-6450000/6442479/photo_038.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado: Automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Cor metálica"
+      ],
+      "outras_opcoes": [
+        "Conectividade de fábrica",
+        "Opção áudio diferente (de fábrica)",
+        "Chave principal",
+        "Chave reserva",
+        "Kit de reparação de pneus",
+        "Manual de instruções",
+        "Livro de manutenção (digital)",
+        "Interface Mp3",
+        "Faróis LED",
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
