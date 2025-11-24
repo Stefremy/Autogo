@@ -17375,5 +17375,107 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6472747",
+    "make": "BMW",
+    "model": "530e Plug-In Hybrid M-Sport Aut.",
+    "year": 2018,
+    "slug": "bmw-530e-plug-in-hybrid-m-sport-aut-2018-6472747",
+    "price": 29400,
+    "image": "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_001.jpg",
+    "description": "Este BMW 530e Plug-In Hybrid M-Sport Aut. de 2018 combina desempenho híbrido eficiente com um design desportivo e elegante. Equipado com motor de 1998 CC e potência de 184 Hp (135 kW), oferece uma condução suave com caixa automática de 8 velocidades. Destaca-se pelo sistema de navegação, interior desportivo com bancos desportivos em pele, e um vasto conjunto de opções de conforto como ar condicionado automático de duas zonas, cruise control, sensores de luz e chuva, e sistema start-stop. A segurança é garantida com ABS, ESP, múltiplos airbags, Isofix e imobilizador. Inclui ainda multimedia com Bluetooth, leitor de CD, rádio e computador de bordo. O veículo apresenta uma quilometragem de 130399 km e está em excelente estado, com histórico de manutenção não especificado. Um automóvel ideal para quem procura tecnologia, conforto e segurança num sedan híbrido de alta qualidade.",
+    "mileage": 130399,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Saloon",
+    "engineSize": "1998 CC",
+    "power": "184 Hp 135 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "14/05/2018",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "44 CO2",
+    "color": "Preto",
+    "vin": "WBAJA91070B306604",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_014.jpg",
+      "https://ecarstrade.com/carsphotos/6470001-6480000/6472747/photo_010.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Regulação elétrica dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Descanso de braço traseiro com compartimento de arrumação, rebatível",
+        "Descanso de braço dianteiro com compartimento de arrumação",
+        "Bancos dianteiros standard com regulação elétrica",
+        "Banco traseiro rebatível assimétrico",
+        "Check control",
+        "Driving experience control com eco pro e adaptação",
+        "Indicação de pneu furado (RPA)",
+        "Visualização da pressão dos pneus",
+        "Display de controlo, alta resolução, 8,8'' (1280x480 p)",
+        "Perfil pessoal",
+        "Comando no descanso de braço central com seleção direta",
+        "Travão de estacionamento com função autohold",
+        "Attention assist"
+      ]
+    },
+    "maintenance": []
   }
 ]
