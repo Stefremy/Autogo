@@ -15928,5 +15928,107 @@
         "raw": "01/07/2022 13867�km GRAND EST AUTOMOBILES R�vision ��1,00"
       }
     ]
+  },
+  {
+    "id": "6503682",
+    "make": "Citroen",
+    "model": "Citroen C3 1.2 PureTech Feel LED Navi Klima ...",
+    "year": 2021,
+    "slug": "citroen-c3-2021-6503682",
+    "price": 9700,
+    "image": "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_049.jpg",
+    "description": "Este Citroen C3 1.2 PureTech Feel de 2021 destaca-se pelo seu motor de 1199 CC com 83 Hp (61 kW), caixa manual de 5 velocidades e uma excelente eficiência com emissão Euro6 e 123 CO2. Equipado com faróis LED, sistema de navegação, ar condicionado automático, cruise control, vidros elétricos, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop, oferece conforto e tecnologia. A segurança é garantida com ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador e Isofix. Para entretenimento, conta com Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. Exterior em cor metálica cinza. O veículo tem 65.023 km e está em excelente estado, ideal para quem procura um carro citadino eficiente e bem equipado. Histórico de manutenção não disponível. Um carro versátil, seguro e confortável, perfeito para uso diário.",
+    "mileage": 65023,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Small Car",
+    "engineSize": "1199 CC",
+    "power": "83 Hp 61 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "08/10/2021",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "123 CO2",
+    "color": "Grey",
+    "vin": "VF7SXHMRVMT605412",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_053.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6500001-6510000/6503682/photo_041.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Cor metálica"
+      ],
+      "outras_opcoes": [
+        "Audio optie_anders (af fabriek)",
+        "Hoofdsleutel",
+        "Reservesleutel",
+        "Bandenreparatieset",
+        "Instructieboekje",
+        "Onderhoudsboekje (boekje)",
+        "Hoedenplank/rolhoes",
+        "Traction control"
+      ]
+    },
+    "maintenance": []
   }
 ]
