@@ -16942,5 +16942,107 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6572512",
+    "make": "BMW",
+    "model": "i4 Gran Coupe eDrive40 M-Sport Aut.",
+    "year": 2022,
+    "slug": "bmw-i4-gran-coupe-edrive40-m-sport-aut-2022-6572512",
+    "price": 39900,
+    "image": "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_001.jpg",
+    "description": "BMW i4 Gran Coupe eDrive40 M-Sport automático com Laser Head-Up, ACC, Ambiente, Navegação, Interior desportivo em pele, KeylessGo, Câmara, Climatização, PDC. Motor elétrico com 143 Hp (105 kW), caixa automática, 5 portas e 5 lugares. Equipado com opções de alto valor como Head-up display, sistema de navegação, interior desportivo e bancos desportivos. Conforto garantido com luzes adaptativas, ar condicionado automático a duas zonas, cruise control, bancos aquecidos, vidros elétricos, keyless go, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop. Segurança reforçada com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e Isofix. Multimédia com Bluetooth, leitor de CD, computador de bordo e rádio. Exterior com jantes de liga leve, pacote desportivo e suspensão desportiva. Outras opções incluem interface Mp3, design exterior desportivo, faróis LED e controlo de tracção. Veículo com 60.187 km, origem Bélgica, primeira matrícula em 26/08/2022, classe de emissão Euro6 e combustível elétrico. Estado geral excelente, ideal para quem procura inovação e performance num sedan premium.",
+    "mileage": 60187,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 1,
+    "category": "Saloon",
+    "engineSize": "n/a",
+    "power": "143 Hp 105 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "26/08/2022",
+    "doors": 5,
+    "fuel": "Elétrico",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Red",
+    "vin": "WBY71AW040FN39287",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_012.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6570001-6580000/6572512/photo_002.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Head-up display",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Interface Mp3",
+        "Design exterior desportivo",
+        "Faróis LED",
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
