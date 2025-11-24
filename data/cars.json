@@ -18684,5 +18684,475 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6436119",
+    "make": "BMW",
+    "model": "520d Touring SportLine Aut.",
+    "year": 2018,
+    "slug": "bmw-520d-touring-sportline-aut-2018-6436119",
+    "price": 18900,
+    "image": "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_075.jpg",
+    "description": "BMW 520d Touring SportLine Aut. Pano LED-Xenon Navi Sport-Leather Ambient KeylessGo Camera Klima PDC apresenta um motor de 1995 CC com 163 Hp (120 kW), caixa automática de 8 velocidades, e é um veículo do segmento Estate Car. Equipado com teto panorâmico, sistema de navegação, interior desportivo, bancos desportivos, luzes adaptativas, ar condicionado automático, cruise control, bancos aquecidos, ajuste elétrico dos bancos, vidros elétricos, sistema keyless go, sensor de luz, volante multifunções, sensor de chuva, bagageira de tejadilho, sistema start-stop, e teto solar. Segurança reforçada com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador e Isofix. Multimedia inclui Bluetooth, leitor de CD, computador de bordo, rádio e sistema de navegação. Interior e exterior com design desportivo e jantes de liga leve. Condição excelente com histórico completo de manutenção BMW, incluindo revisões periódicas, trocas de óleo, filtros e verificações gerais. Um veículo ideal para quem procura conforto, segurança e desempenho num carro familiar elegante e funcional.",
+    "mileage": 166897,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Estate Car",
+    "engineSize": "1995 CC",
+    "power": "163 Hp 120 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium - \"BE-26-ANTWERP-BELCAR_ZUID\"",
+    "firstRegistration": "15/11/2018",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "164 CO2",
+    "color": "Grey",
+    "vin": "WBAJP310X0BT72656",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_090.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_091.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_089.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_092.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_093.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_096.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_094.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_095.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_071.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/6430001-6440000/6436119/photo_067.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Assentos com ajuste elétrico parcial",
+        "Comando de persiana traseira automática",
+        "Sistema de assistência à condução: sistema de deteção",
+        "Faróis LED",
+        "Câmara de marcha-atrás",
+        "Sistema de assistência à condução: comutador de sistema",
+        "Interface MP3",
+        "Design exterior desportivo"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/04/2025",
+        "km": 159000,
+        "description": "BMW service veículo-check",
+        "price": 0,
+        "raw": "01/04/2025 159�km BMW service voertuig-check ��0,00"
+      },
+      {
+        "date": "01/04/2025",
+        "km": 159000,
+        "description": "Serviço de óleo motor",
+        "price": 0,
+        "raw": "01/04/2025 159�km serv motorolie ��0,00"
+      },
+      {
+        "date": "01/04/2025",
+        "km": 159000,
+        "description": "Material pequeno & ambiente",
+        "price": 0,
+        "raw": "01/04/2025 159�km Klein materiaal & milieu ��0,00"
+      },
+      {
+        "date": "01/04/2025",
+        "km": 159000,
+        "description": "BMW service padrão",
+        "price": 0,
+        "raw": "01/04/2025 159�km BMW service standaard omvang ��0,00"
+      },
+      {
+        "date": "01/02/2025",
+        "km": 157000,
+        "description": "BMW service padrão",
+        "price": 0,
+        "raw": "01/02/2025 157�km BMW service standaard omvang ��0,00"
+      },
+      {
+        "date": "01/02/2025",
+        "km": 157000,
+        "description": "Material pequeno & ambiente",
+        "price": 0,
+        "raw": "01/02/2025 157�km Klein materiaal & milieu ��0,00"
+      },
+      {
+        "date": "01/02/2025",
+        "km": 157000,
+        "description": "Controlo de níveis",
+        "price": 0,
+        "raw": "01/02/2025 157�km controle niveaus ��0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 146000,
+        "description": "BMW service padrão",
+        "price": 0,
+        "raw": "01/09/2024 146�km BMW service standaard omvang ��0,00"
+      },
+      {
+        "date": "01/09/2024",
+        "km": 146000,
+        "description": "Material pequeno & ambiente",
+        "price": 0,
+        "raw": "01/09/2024 146�km Klein materiaal & milieu ��0,00"
+      },
+      {
+        "date": "01/07/2024",
+        "km": 142000,
+        "description": "Serviço de óleo motor",
+        "price": 0,
+        "raw": "01/07/2024 142�km serv motorolie ��0,00"
+      },
+      {
+        "date": "01/07/2024",
+        "km": 142000,
+        "description": "Material pequeno & ambiente",
+        "price": 0,
+        "raw": "01/07/2024 142�km Klein materiaal & milieu ��0,00"
+      },
+      {
+        "date": "01/07/2024",
+        "km": 142000,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/07/2024 142�km serv microfilter ��0,00"
+      },
+      {
+        "date": "01/07/2024",
+        "km": 142000,
+        "description": "Verificação do veículo",
+        "price": 0,
+        "raw": "01/07/2024 142�km voertuigcheck ��0,00"
+      },
+      {
+        "date": "01/07/2024",
+        "km": 142000,
+        "description": "BMW service padrão",
+        "price": 0,
+        "raw": "01/07/2024 142�km BMW service standaard omvang ��0,00"
+      },
+      {
+        "date": "01/04/2024",
+        "km": 138000,
+        "description": "Material pequeno & ambiente",
+        "price": 0,
+        "raw": "01/04/2024 138�km Klein materiaal & milieu ��0,00"
+      },
+      {
+        "date": "01/04/2024",
+        "km": 138000,
+        "description": "Sensor de temperatura de fuligem",
+        "price": 0,
+        "raw": "01/04/2024 138�km Temp.sens.roetf ��0,00"
+      },
+      {
+        "date": "01/02/2024",
+        "km": 132000,
+        "description": "Diagnóstico",
+        "price": 0,
+        "raw": "01/02/2024 132�km diagnose ��0,00"
+      },
+      {
+        "date": "01/02/2024",
+        "km": 132000,
+        "description": "Controlo de níveis",
+        "price": 0,
+        "raw": "01/02/2024 132�km controle niveaus ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "Fluido de travões",
+        "price": 0,
+        "raw": "01/10/2023 122�km de remvloeistof ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "Molas da tampa de carga dianteira",
+        "price": 0,
+        "raw": "01/10/2023 122�km de laadklepveren voor ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "Bomba de água",
+        "price": 0,
+        "raw": "01/10/2023 122�km de waterpomp ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "Material pequeno & ambiente",
+        "price": 0,
+        "raw": "01/10/2023 122�km Klein materiaal & milieu ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "Filtro de combustível",
+        "price": 0,
+        "raw": "01/10/2023 122�km serv brst. filt ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/10/2023 122�km serv microfilter ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "Serviço de óleo motor",
+        "price": 0,
+        "raw": "01/10/2023 122�km serv motorolie ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "BMW service veículo-check",
+        "price": 0,
+        "raw": "01/10/2023 122�km BMW service voertuig-check ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "BMW service padrão",
+        "price": 0,
+        "raw": "01/10/2023 122�km BMW service standaard omvang ��0,00"
+      },
+      {
+        "date": "01/10/2023",
+        "km": 122000,
+        "description": "Serviço de filtro de ar",
+        "price": 0,
+        "raw": "01/10/2023 122�km serv luchtfilter ��0,00"
+      },
+      {
+        "date": "01/12/2022",
+        "km": 103000,
+        "description": "Serviço de óleo motor",
+        "price": 0,
+        "raw": "01/12/2022 103�km serv motorolie ��0,00"
+      },
+      {
+        "date": "01/12/2022",
+        "km": 103000,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/12/2022 103�km serv microfilter ��0,00"
+      },
+      {
+        "date": "01/12/2022",
+        "km": 103000,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/12/2022 103�km de sleutelbatterij ��0,00"
+      },
+      {
+        "date": "01/06/2022",
+        "km": 90000,
+        "description": "Intercooler de admissão",
+        "price": 0,
+        "raw": "01/06/2022 90�km de inlaat intercooler ��0,00"
+      },
+      {
+        "date": "01/02/2022",
+        "km": 80000,
+        "description": "Verificação do veículo",
+        "price": 0,
+        "raw": "01/02/2022 80�km voertuigcheck ��0,00"
+      },
+      {
+        "date": "01/02/2022",
+        "km": 80000,
+        "description": "Serviço de óleo motor",
+        "price": 0,
+        "raw": "01/02/2022 80�km serv motorolie ��0,00"
+      },
+      {
+        "date": "01/02/2022",
+        "km": 80000,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/02/2022 80�km serv microfilter ��0,00"
+      },
+      {
+        "date": "01/02/2022",
+        "km": 80000,
+        "description": "Serviço de filtro de ar",
+        "price": 0,
+        "raw": "01/02/2022 80�km serv luchtfilter ��0,00"
+      },
+      {
+        "date": "01/11/2021",
+        "km": 75000,
+        "description": "Controlo de níveis",
+        "price": 0,
+        "raw": "01/11/2021 75�km controle niveaus ��0,00"
+      },
+      {
+        "date": "01/10/2021",
+        "km": 70000,
+        "description": "Controlo de níveis",
+        "price": 0,
+        "raw": "01/10/2021 70�km controle niveaus ��0,00"
+      },
+      {
+        "date": "01/10/2021",
+        "km": 70000,
+        "description": "Fluido de travões",
+        "price": 0,
+        "raw": "01/10/2021 70�km de remvloeistof ��0,00"
+      },
+      {
+        "date": "01/10/2021",
+        "km": 70000,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/10/2021 70�km de sleutelbatterij ��0,00"
+      },
+      {
+        "date": "01/04/2021",
+        "km": 61000,
+        "description": "Serviço de óleo motor",
+        "price": 0,
+        "raw": "01/04/2021 61�km serv motorolie ��0,00"
+      },
+      {
+        "date": "01/04/2021",
+        "km": 61000,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/04/2021 61�km serv microfilter ��0,00"
+      },
+      {
+        "date": "01/04/2021",
+        "km": 61000,
+        "description": "Serviço de filtro de combustível",
+        "price": 0,
+        "raw": "01/04/2021 61�km serv brst. filt ��0,00"
+      },
+      {
+        "date": "01/06/2020",
+        "km": 43000,
+        "description": "Verificação do veículo",
+        "price": 0,
+        "raw": "01/06/2020 43�km voertuigcheck ��0,00"
+      },
+      {
+        "date": "01/06/2020",
+        "km": 43000,
+        "description": "Serviço de óleo motor",
+        "price": 0,
+        "raw": "01/06/2020 43�km serv motorolie ��0,00"
+      },
+      {
+        "date": "01/06/2020",
+        "km": 43000,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/06/2020 43�km serv microfilter ��0,00"
+      },
+      {
+        "date": "01/06/2020",
+        "km": 43000,
+        "description": "Serviço de filtro de ar",
+        "price": 0,
+        "raw": "01/06/2020 43�km serv luchtfilter ��0,00"
+      },
+      {
+        "date": "01/09/2019",
+        "km": 23000,
+        "description": "Serviço de óleo motor",
+        "price": 0,
+        "raw": "01/09/2019 23�km serv motorolie ��0,00"
+      },
+      {
+        "date": "01/09/2019",
+        "km": 23000,
+        "description": "Serviço de microfiltro",
+        "price": 0,
+        "raw": "01/09/2019 23�km serv microfilter ��0,00"
+      },
+      {
+        "date": "01/09/2019",
+        "km": 23000,
+        "description": "Bateria da chave",
+        "price": 0,
+        "raw": "01/09/2019 23�km de sleutelbatterij ��0,00"
+      }
+    ]
   }
 ]
