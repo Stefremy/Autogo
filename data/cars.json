@@ -18029,5 +18029,85 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6555470",
+    "make": "BMW",
+    "model": "730d Aut. LED-Xenon Ambient HI-FI Navi-Pro Sport-Leather KeylessGo Camera 360 Klima PDC ...",
+    "year": 2017,
+    "slug": "bmw-730d-aut-led-xenon-ambient-hi-fi-navi-pro-sport-leather-keylessgo-camera-360-klima-pdc-6555470",
+    "price": 35200,
+    "image": "https://ecarstrade.com/carsphotos/6550001-6560000/6555470/photo_011.jpg",
+    "description": "Este BMW 730d de 2017 apresenta-se com um motor potente de 2993 CC e 265 Hp (195 kW), equipado com caixa automática de 8 velocidades. Destaca-se pelo seu interior desportivo e confortável, com bancos desportivos e sistema de navegação avançado. Entre os seus equipamentos de conforto incluem-se ar condicionado automático de duas zonas, controlo de velocidade, bancos aquecidos, ajuste elétrico dos bancos, vidros elétricos, sistema Keyless Go, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop. Em termos de segurança, conta com ABS, ESP, luzes diurnas, faróis de nevoeiro, airbags frontais e laterais, imobilizador e sistema Isofix. No multimédia, oferece Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. Exteriormente, possui jantes de liga leve e pacote desportivo, além de faróis LED adaptativos. O veículo tem uma quilometragem de 60083 km e está em excelente estado, com histórico de manutenção regular. Um automóvel elegante e potente, ideal para quem procura conforto e desempenho.",
+    "mileage": 60083,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "Saloon",
+    "engineSize": "2993 CC",
+    "power": "265 Hp 195 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "01/06/2017",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "119 CO2",
+    "color": "Black",
+    "vin": "WBA7C21080G808598",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6555470/photo_012.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Filtro de partículas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
