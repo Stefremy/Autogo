@@ -6771,7 +6771,6 @@
     },
     "maintenance": []
   },
-  
   {
     "id": "6086761",
     "make": "Porsche",
@@ -13068,6 +13067,137 @@
         "description": "Filtro Aria/Filtro Carburante/Filtro Clima/Filtro Olio/Olio Motore",
         "price": 0,
         "raw": "01/01/2025 51�km Filtro Aria/Filtro Carburante/Filtro Clima/Filtro Olio/Olio Motore ��0,00"
+      }
+    ]
+  },
+  {
+    "id": "5711442",
+    "make": "Porsche",
+    "model": "Macan 2.0i Turbo Aut.",
+    "year": 2019,
+    "slug": "porsche-macan-2-0i-turbo-aut-2019-5711442",
+    "price": 39300,
+    "image": "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_053.jpg",
+    "description": "Este Porsche Macan 2.0i Turbo Automático de 2019 destaca-se pelo seu motor de 1984 CC com 245 Hp (180 kW) e caixa automática de 8 velocidades. Equipado com faróis LED, sistema de áudio de alta performance, sistema de navegação, interior desportivo com bancos desportivos, ar condicionado automático de duas zonas, controlo de cruzeiro, bancos aquecidos, ajuste elétrico dos bancos, vidros elétricos, sensor de luz, volante multifunções, sensor de chuva e sistema start-stop. Em termos de segurança, inclui ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador, Isofix e pontos de ancoragem Isofix. Para multimedia, possui Bluetooth, leitor de CD, kit mãos-livres, interface MP3, computador de bordo e rádio. O exterior conta com jantes de liga leve e pacote desportivo. Outras opções incluem alerta de mudança de faixa, assistência dinâmica de estabilidade, banco traseiro rebatível, BLIS, comando da caixa de velocidades no volante e controlo de tração. O veículo tem uma quilometragem de 131474 km e origem em Luxemburgo, através da \"Hödlmayr Logistics Belgium N.V.\". Classe de emissão Euro6 e CO2 de 232 g/km. Histórico de manutenção inclui serviço de carroçaria em 30/06/2022 no Garage Nordstad carrosserie. Um SUV premium que combina desempenho, conforto e segurança com um design desportivo e tecnologia avançada.",
+    "mileage": 131474,
+    "country": "LU",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1984 CC",
+    "power": "245 Hp 180 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Luxembourg - \"Hödlmayr Logistics Belgium N.V.\"",
+    "firstRegistration": "27/11/2019",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "232 CO2",
+    "color": "Cinza",
+    "vin": "WP1ZZZ95ZLLB06144",
+    "images": [
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_052.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_054.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_055.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_056.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_060.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_064.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_065.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_058.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_062.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_061.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_063.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_066.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_067.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_068.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_069.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_059.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_057.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_079.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_080.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_076.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_077.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_078.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_074.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_075.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_086.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_087.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_088.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_084.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_085.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_083.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_081.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_082.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_070.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_073.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_072.jpg",
+      "https://ecarstrade.com/carsphotos/5710001-5720000/5711442/photo_071.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de áudio de alta performance",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Controlo de cruzeiro",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Vidros elétricos",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Alerta de mudança de faixa",
+        "Assistência dinâmica de estabilidade",
+        "Banco traseiro rebatível",
+        "BLIS",
+        "Comando da caixa de velocidades no volante",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "30/06/2022",
+        "km": 0,
+        "shop": "Garage Nordstad carrosserie",
+        "description": "Carroçaria",
+        "price": 1,
+        "raw": "30/06/2022 0�km Garage Nordstad carrosserie Carrosserie ��1,00"
       }
     ]
   }
