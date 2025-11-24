@@ -171,7 +171,7 @@ export default function Viaturas() {
   }, [sortBy, itemsPerBatch]);
 
   // Filtering logic por dia, mês e ano (campos day, month, year)
-  const filteredCars = cars.filter((car) => {
+  const filteredCars = cars.map((car, index) => ({ ...car, originalIndex: index })).filter((car) => {
     const carCountry = String(car.country ?? "").toLowerCase();
     const cf = String(countryFilter ?? "").toLowerCase();
 
@@ -249,6 +249,7 @@ export default function Viaturas() {
         case 'mileageAsc': return (milA ?? Infinity) - (milB ?? Infinity);
         case 'mileageDesc': return (milB ?? -Infinity) - (milA ?? -Infinity);
         case 'alphabetical': return aStr.localeCompare(bStr);
+        case 'newToOld': return b.originalIndex - a.originalIndex;
         default: return 0; // relevance: keep original filtered order
       }
     });
@@ -489,6 +490,9 @@ export default function Viaturas() {
                         </li>
                         <li>
                           <button onClick={() => { setSortBy('yearDesc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Ano ↓')}</button>
+                        </li>
+                        <li>
+                          <button onClick={() => { setSortBy('newToOld'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Mais Recente Online')}</button>
                         </li>
                         <li>
                           <button onClick={() => { setSortBy('yearAsc'); setShowSortMenu(false); }} className="sort-menu-item w-full text-left px-3 py-2 text-sm">{t('Ano ↑')}</button>
