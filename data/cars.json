@@ -13301,5 +13301,114 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6547413",
+    "make": "Ford",
+    "model": "Focus 1.0 EcoBoost Mild-Hybrid ST-Line",
+    "year": 2023,
+    "slug": "ford-focus-1-0-ecoboost-mild-hybrid-st-line-2023-6547413",
+    "price": 16100,
+    "image": "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_036.jpg",
+    "description": "Ford Focus 1.0 EcoBoost Mild-Hybrid ST-Line de 2023, equipado com motor 999 CC, potência de 125 Hp (92 kW) e caixa manual de 6 velocidades. Este modelo destaca-se pelo seu design desportivo com interiores e exteriores ST-Line, faróis LED e sistema de navegação avançado. Equipado com conforto premium como ar condicionado automático, cruise control, janelas elétricas, keyless go, sensor de luz e chuva, e sistema start-stop para eficiência. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e pontos Isofix. Sistema multimédia completo com Bluetooth, leitor de CD, interface MP3, computador de bordo e rádio. O veículo apresenta um histórico de manutenção não especificado, mas encontra-se em excelente estado com 83 481 km percorridos. Um carro espaçoso e versátil, ideal para famílias, com 5 portas e 5 lugares. Origem Espanha, classe de emissão Euro6 e CO2 de 128g/km. Um automóvel que combina performance, segurança e tecnologia para uma condução confortável e segura.",
+    "mileage": 83481,
+    "country": "ES",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Estate Car",
+    "engineSize": "999 CC",
+    "power": "125 Hp 92 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Spain",
+    "firstRegistration": "06/02/2023",
+    "doors": 5,
+    "fuel": "Petrol",
+    "emissionClass": "Euro6",
+    "co2": "128 CO2",
+    "color": "Blue",
+    "vin": "WF0PXXGCHPPL84308",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_011.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_017.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_016.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547413/photo_046.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos",
+        "Exterior desportivo"
+      ],
+      "conforto": [
+        "Ar condicionado automático",
+        "Cruise control",
+        "Janelas elétricas",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Bagageira de tejadilho",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e outros",
+        "Imobilizador",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos-livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Controlo de tracção"
+      ]
+    },
+    "maintenance": []
   }
 ]
