@@ -20245,5 +20245,113 @@
         "raw": "01/02/2022 17036 km Klein materiaal & milieu 0,00"
       }
     ]
+  },
+  {
+    "id": "6550035",
+    "make": "BMW",
+    "model": "218i Active Tourer M-Sport Aut.",
+    "year": 2023,
+    "slug": "bmw-218i-active-tourer-m-sport-aut-2023-6550035",
+    "price": 28100,
+    "image": "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_000.jpg",
+    "description": "BMW 218i Active Tourer M-Sport Aut. equipado com faróis LED-Xenon, sistema de navegação, interior e bancos desportivos em pele e Alcantara, KeylessGo, câmara traseira, ar condicionado automático de duas zonas, sensores de chuva e luz, cruise control e sistema start-stop. Motor 1499 CC com 136 Hp (100 kW), caixa automática de 7 velocidades, categoria Van / Minibus, com 5 portas e 5 lugares. Classe de emissões Euro6 com CO2 de 147 g/km. Veículo proveniente de França, \"2ndMove Marseille\", com 75 950 km. Equipamento inclui opções de elevado valor, conforto, segurança, multimédia, interior, exterior e outras opções. Estado geral excelente, ideal para quem procura um veículo versátil e com performance desportiva.",
+    "mileage": 75950,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 7,
+    "category": "Van / Minibus",
+    "engineSize": "1499 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "France - \"2ndMove Marseille\"",
+    "firstRegistration": "13/06/2023",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "147 CO2",
+    "color": "Cinza",
+    "vin": "WBA21BX0507M73601",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_005.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_007.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_013.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_002.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_008.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_009.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_010.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_021.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_028.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_029.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_015.jpg",
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550035/photo_017.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Faróis LED"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema start-stop"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags: Frente, laterais e mais",
+        "Imobilizador",
+        "Ancoragens Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Volante em pele",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Exterior desportivo",
+        "Pack desportivo",
+        "Suspensão desportiva"
+      ],
+      "outras_opcoes": [
+        "Descanso de braços dianteiro",
+        "Descanso de braços traseiro",
+        "Cadeira criança Isofix",
+        "Bancos desportivos dianteiros",
+        "Apoios de cabeça dianteiros"
+      ]
+    },
+    "maintenance": []
   }
 ]
