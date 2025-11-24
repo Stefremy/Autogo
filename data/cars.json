@@ -16934,5 +16934,124 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6540335",
+    "make": "BMW",
+    "model": "X5 2.0 xDrive25d Aut.",
+    "year": 2014,
+    "slug": "bmw-x5-2-0-xdrive25d-aut-2014-6540335",
+    "price": 24100,
+    "image": "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_029.jpg",
+    "description": "BMW X5 2.0 xDrive25d Aut. de 2014, equipado com motor de 1995 CC e potência de 218 Hp (160 kW). Transmissão automática de 8 velocidades, categoria SUV/Off-road. Equipado com teto panorâmico, faróis LED, sistema de navegação, interior desportivo, bancos desportivos, luzes adaptativas, ar condicionado automático de 2 zonas, cruise control, bancos aquecidos, ajuste elétrico dos bancos, vidros elétricos, keyless go, sensor de luz, volante multifunções, sensor de chuva, barras de tejadilho, bancos com memória, sistema start-stop e teto solar. Segurança reforçada com ABS, luzes diurnas, ESP, faróis de nevoeiro, airbags frontais e laterais, imobilizador, Isofix e pontos de ancoragem Isofix. Multimédia com Bluetooth, leitor de CD, kit mãos livres, interface MP3, computador de bordo e rádio. Exterior com jantes de liga leve e pacote desportivo. Outras opções incluem apoios de cabeça ativos dianteiros e banco traseiro rebatível assimétrico (60/40). Veículo com 134 021 KM, cor cinzenta, origem Bélgica, combustível Diesel, classe de emissão Euro6, 5 portas e 5 lugares. Estado geral muito bom, ideal para quem procura um SUV robusto e confortável com tecnologia avançada e excelente histórico de manutenção.",
+    "mileage": 134021,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automática",
+    "gearbox": 8,
+    "category": "SUV/Off-road Vehicle",
+    "engineSize": "1995 CC",
+    "power": "218 Hp 160 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Belgium",
+    "firstRegistration": "18/11/2014",
+    "doors": 5,
+    "fuel": "Diesel",
+    "emissionClass": "Euro6",
+    "co2": "156 CO2",
+    "color": "Grey",
+    "vin": "WBAKS210300K86257",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_034.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_030.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_032.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_031.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_033.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_036.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_047.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_043.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_044.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_037.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_045.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_041.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_046.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_040.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_039.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_042.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_048.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_051.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_049.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_050.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_035.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_038.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_026.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_027.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_022.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_023.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_025.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_024.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_018.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_019.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_020.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6540335/photo_021.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "Faróis LED",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Luzes adaptativas",
+        "Ar condicionado automático (2 zonas)",
+        "Cruise control",
+        "Bancos aquecidos",
+        "Ajuste elétrico dos bancos",
+        "Vidros elétricos",
+        "Keyless go",
+        "Sensor de luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Bancos com memória",
+        "Sistema start-stop",
+        "Teto solar"
+      ],
+      "seguranca": [
+        "ABS",
+        "Luzes diurnas",
+        "ESP",
+        "Faróis de nevoeiro",
+        "Airbags frontais, laterais e mais",
+        "Imobilizador",
+        "Isofix",
+        "Pontos de ancoragem Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit mãos livres",
+        "Interface MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Apoios de cabeça ativos dianteiros",
+        "Banco traseiro rebatível assimétrico (60/40)"
+      ]
+    },
+    "maintenance": []
   }
 ]
