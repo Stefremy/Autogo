@@ -38,3 +38,51 @@ h1, h2, h3, h4, h5, h6, .heading {
   font-weight: 700;
   font-style: normal;
 }
+
+/* Snowfall styles */
+.snowflake {
+  position: fixed;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #f0f8ff);
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow: 
+    0 0 8px rgba(255,255,255,0.9),
+    0 0 16px rgba(255,255,255,0.6),
+    inset -2px -2px 4px rgba(0,0,0,0.05);
+  pointer-events: none;
+  animation-name: fall, sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  will-change: transform;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-20px); opacity: 0; }
+  10% { opacity: 0.95; }
+  90% { opacity: 0.95; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes sway {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(12px); }
+  50% { transform: translateX(-12px); }
+  75% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
+}
+
+/* reduce visual density on small screens */
+@media (max-width: 640px) {
+  .snowflake { 
+    opacity: 0.85;
+    box-shadow: 
+      0 0 6px rgba(255,255,255,0.8),
+      0 0 12px rgba(255,255,255,0.5),
+      inset -1px -1px 3px rgba(0,0,0,0.05);
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .snowflake { animation: none !important; display: none !important; }
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const STORAGE_KEY = "autogo_black_friday_dismiss_v1";
 const HIDE_TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
+const PROMO_END = new Date('2025-11-30T23:59:59Z');
 
 export default function BlackFridayPromo() {
   const [visible, setVisible] = useState(false);
@@ -24,6 +25,9 @@ export default function BlackFridayPromo() {
   }, []);
 
   if (!mounted) return null; // avoid SSR/client mismatch
+
+  // if promo period is over, don't render the component
+  if (new Date() > PROMO_END) return null;
 
   function dismiss() {
     try {

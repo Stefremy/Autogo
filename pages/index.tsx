@@ -13,6 +13,7 @@ import PremiumCarCard from "../components/PremiumCarCard";
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
 import BlackFridayPromo from "../components/BlackFridayPromo";
+import Snowfall from "../components/Snowfall";
 
 // Some imported React helpers are used conditionally; to avoid linter warnings where they are assigned but not used in all builds, reference them in no-op expressions.
 void useRef; void useEffect;
@@ -323,6 +324,7 @@ export default function Home({ blogArticles }) {
             className="absolute inset-0 bg-cover bg-right"
             style={{
               backgroundImage: "url('/images/cars/bmw-black.png')",
+              zIndex: 1,
             }}
           >
             {/* Fade gradiente ultra acentuado e mais diluído: branco puro até 25%, escuro forte até 60%, transição mais suave para transparente */}
@@ -331,6 +333,7 @@ export default function Home({ blogArticles }) {
               style={{
                 background:
                   "linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 12%, rgba(255,255,255,0.88) 30%, rgba(255,255,255,0.72) 50%, rgba(255,255,255,0.45) 68%, rgba(255,255,255,0.18) 82%, rgba(255,255,255,0.00) 90%)",
+                zIndex: 2,
               }}
             />
 
@@ -581,6 +584,9 @@ export default function Home({ blogArticles }) {
           </div>
         </motion.section>
         {/* HERO SECTION END */}
+
+        {/* SNOW EFFECT - Runs until 2026-01-06, dismissible via localStorage */}
+        <Snowfall />
 
         {/* Black Friday Promo (large image + Contactar) */}
         <BlackFridayPromo />
