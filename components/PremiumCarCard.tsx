@@ -159,7 +159,28 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
               textAlign: "right",
             }}
           >
-            {display}
+            {/* Price drop display for Kia XCeed 6547363 and Hyundai IONIQ FS44936 */}
+            {id === "6547363" ? (
+              <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", lineHeight: 1.1 }}>
+                <span style={{ textDecoration: "line-through", color: "#888", fontWeight: 400, fontSize: "0.98em", marginBottom: 2 }}>
+                  Antes: 23.200€
+                </span>
+                <span style={{ color: "#b42121", fontWeight: 700, fontSize: "1.13em" }}>
+                  Agora: {display}
+                </span>
+              </span>
+            ) : id === "FS44936" ? (
+              <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", lineHeight: 1.1 }}>
+                <span style={{ textDecoration: "line-through", color: "#888", fontWeight: 400, fontSize: "0.98em", marginBottom: 2 }}>
+                  Antes: 21.600€
+                </span>
+                <span style={{ color: "#b42121", fontWeight: 700, fontSize: "1.13em" }}>
+                  Agora: {display}
+                </span>
+              </span>
+            ) : (
+              display
+            )}
           </div>
         </div>
         <div className={styles["premium-car-title"]} style={{ fontWeight: 600 }}>{name}</div>

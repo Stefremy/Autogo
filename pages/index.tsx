@@ -109,7 +109,7 @@ export default function Home({ blogArticles }) {
     return a;
   };
 
-  // on mount, try to load persisted featured or build one prioritizing clicked cars
+  // on mount, try to load persisted featured or build one prioritizing clicked cars and pinned cars
   useEffect(() => {
     try {
       const raw = localStorage.getItem(FEATURED_KEY);
@@ -125,10 +125,23 @@ export default function Home({ blogArticles }) {
       }
     } catch {}
 
-    // otherwise build from clicked ids first, then random fill
+    // otherwise build from pinned cars first, then clicked ids, then random fill
     try {
-      const rawClicks = localStorage.getItem(CLICKED_KEY);
+      // Pinned car IDs that should always be featured
+      const PINNED_CAR_IDS = ["6547363", "FS44936"]; // Kia XCeed, Hyundai IONIQ
+      
       let picked = [];
+      
+      // 1. Always add pinned cars first
+      for (const pinnedId of PINNED_CAR_IDS) {
+        const pinnedCar = cars.find((c) => c.id === pinnedId);
+        if (pinnedCar && !picked.includes(pinnedCar)) {
+          picked.push(pinnedCar);
+        }
+      }
+      
+      // 2. Then add recently clicked cars
+      const rawClicks = localStorage.getItem(CLICKED_KEY);
       if (rawClicks) {
         const parsed = JSON.parse(rawClicks) || [];
         // keep only recent clicks (7d inside viaturas logic) and map to car objects
@@ -139,6 +152,8 @@ export default function Home({ blogArticles }) {
           if (picked.length >= 6) break;
         }
       }
+      
+      // 3. Fill remaining slots with random cars
       if (picked.length < Math.min(6, cars.length)) {
         const others = cars.filter((c) => !picked.some((p) => p.id === c.id));
         const shuffled = shuffle(others).slice(0, Math.min(6 - picked.length, others.length));
