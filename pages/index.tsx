@@ -61,7 +61,6 @@ const googleReviews = [
     date: "há 2 semanas",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   },
-  // ... (other reviews kept in memory)
 ];
 void googleReviews;
 
@@ -298,11 +297,11 @@ export default function Home({ blogArticles }) {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative w-screen h-[340px] sm:h-[400px] md:h-[54vh] lg:h-[58vh] flex items-center overflow-hidden"
+          className="relative w-full h-[auto] min-h-[380px] sm:h-[400px] md:h-[54vh] lg:h-[58vh] flex items-center overflow-hidden"
         >
           {/* Background image */}
           <div
-            className="absolute inset-0 bg-cover bg-right"
+            className="absolute inset-0 bg-cover bg-center sm:bg-right"
             style={{
               backgroundImage: "url('/images/cars/bmw-black.png')",
               zIndex: 1,
@@ -322,11 +321,10 @@ export default function Home({ blogArticles }) {
                   background: linear-gradient(
                     90deg,
                     rgba(255,255,255,1) 0%,
-                    rgba(255,255,255,0.98) 30%,
-                    rgba(255,255,255,0.92) 50%,
-                    rgba(255,255,255,0.75) 65%,
-                    rgba(255,255,255,0.30) 82%,
-                    rgba(255,255,255,0.00) 90%
+                    rgba(255,255,255,0.98) 40%,
+                    rgba(255,255,255,0.90) 60%,
+                    rgba(255,255,255,0.60) 80%,
+                    rgba(255,255,255,0.20) 100%
                   ) !important;
                 }
               }
@@ -334,7 +332,7 @@ export default function Home({ blogArticles }) {
           </div>
 
           {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-2 pb-4 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
+          <div className="relative z-10 flex flex-col items-start justify-center h-full py-10 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
             <div
               className={`w-full transform-gpu transition-all duration-300 ease-in-out overflow-hidden ${
                 heroFilterOpen
@@ -346,7 +344,7 @@ export default function Home({ blogArticles }) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.7 }}
-                className="text-black text-2xl sm:text-3xl md:text-6xl font-semibold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-xl"
+                className="text-black text-3xl sm:text-3xl md:text-6xl font-semibold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-xl"
               >
                 {t("Rápido. Seguro. Teu.")}
               </motion.h1>
@@ -354,40 +352,40 @@ export default function Home({ blogArticles }) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.7 }}
-                className="text-black text-sm sm:text-base md:text-2xl mb-4 sm:mb-6 md:mb-10 max-w-xl drop-shadow-lg"
+                className="text-black text-base sm:text-base md:text-2xl mb-4 sm:mb-6 md:mb-10 max-w-xl drop-shadow-lg"
               >
                 {t("O teu carro europeu,")}
                 <br />
                 {t("Legalizado e pronto a rolar em Portugal")}
                 <br />
-                <span className="font-semibold hidden sm:inline">{t("Sem complicações")}</span>
+                <span className="font-semibold">{t("Sem complicações")}</span>
                 <br />
               </motion.p>
             </div>
 
-            {/* Buttons Group - Margin bottom reduced to lift them up */}
-            <div className="flex flex-row w-full max-w-xl rounded-full bg-white/60 backdrop-blur-md shadow-2xl py-2 px-3 sm:py-3 sm:px-4 items-center gap-2 mb-2 sm:mb-3 border border-gray-200 overflow-visible" style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.06)' }}>
+           {/* Buttons Group - Adjusted for Single Line on Mobile */}
+            <div className="flex flex-row flex-nowrap w-full max-w-xl rounded-2xl sm:rounded-full bg-white/60 backdrop-blur-md shadow-2xl py-2 px-1.5 sm:py-3 sm:px-4 items-center justify-between sm:justify-start gap-1 sm:gap-2 mb-2 sm:mb-3 border border-gray-200" style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.06)' }}>
               <Link href="/viaturas" legacyBehavior passHref>
                 <a href="/viaturas" 
-                  className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#b42121] shadow-sm transform-gpu no-underline transition hover:shadow-lg hover:brightness-110 hover:scale-105 hover:tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121] sm:px-6 sm:py-3 sm:text-base"
-                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
+                  className="inline-flex items-center justify-center rounded-full px-3 py-2 text-xs sm:text-sm font-semibold text-white bg-[#b42121] shadow-sm whitespace-nowrap transition hover:shadow-lg focus:outline-none sm:px-6 sm:py-3 sm:text-base"
                 >
-                  <span className="sm:hidden">Ver Viaturas</span>
+                  <span className="sm:hidden">Ver Carros</span>
                   <span className="hidden sm:inline">Ver Viaturas Disponíveis</span>
                 </a>
               </Link>
+              
               <Link href="/simulador" legacyBehavior passHref>
                 <a href="/simulador" 
-                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
-                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
+                  className="inline-flex items-center justify-center rounded-full px-1.5 py-1 text-xs sm:text-sm font-medium text-black/90 whitespace-nowrap hover:text-black focus:outline-none sm:px-2 sm:py-1 sm:text-base"
                 >
-                  Simulador ISV
+                  <span className="sm:hidden">Simulador</span>
+                  <span className="hidden sm:inline">Simulador ISV</span>
                 </a>
               </Link>
+              
               <Link href="/pedido" legacyBehavior passHref>
                 <a href="/pedido"
-                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
-                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
+                  className="inline-flex items-center justify-center rounded-full px-1.5 py-1 text-xs sm:text-sm font-medium text-black/90 whitespace-nowrap hover:text-black focus:outline-none sm:px-2 sm:py-1 sm:text-base"
                 >
                   Encomendar
                 </a>
@@ -397,7 +395,7 @@ export default function Home({ blogArticles }) {
               <button
                 type="button"
                 onClick={() => setHeroFilterOpen((s) => !s)}
-                className="ml-2 sm:hidden inline-flex items-center justify-center p-2 rounded-md bg-white/90 border border-gray-200 shadow-sm"
+                className="sm:hidden inline-flex items-center justify-center p-2 rounded-full bg-white/80 border border-gray-200 shadow-sm shrink-0 ml-1"
                 aria-expanded={heroFilterOpen}
                 aria-controls="hero-filter-panel"
                 aria-label={heroFilterOpen ? 'Fechar filtro' : 'Abrir filtro'}
@@ -418,7 +416,7 @@ export default function Home({ blogArticles }) {
             </div>
 
             {/* NEW HERO MARQUEE - RED TEXT BETWEEN BUTTONS AND FILTER */}
-            <div className="w-full max-w-xl mb-3 overflow-hidden relative hidden sm:block">
+            <div className="w-full max-w-xl mb-3 overflow-hidden relative block">
               <style jsx>{`
                 @keyframes hero-scroll {
                   0% { transform: translateX(0); }
@@ -434,7 +432,7 @@ export default function Home({ blogArticles }) {
                 {/* Repeat content twice for seamless looping */}
                 {[0, 1].map((i) => (
                   <div key={i} className="flex items-center shrink-0">
-                    <span className="text-sm sm:text-base font-bold text-[#b42121] mx-4 whitespace-nowrap uppercase tracking-wider">
+                    <span className="text-xs sm:text-base font-bold text-[#b42121] mx-4 whitespace-nowrap uppercase tracking-wider">
                       Preço Chave na mão • Entrega rápida • Pronto a rolar • Sem burocracias • Confiança garantida
                     </span>
                   </div>
@@ -508,7 +506,7 @@ export default function Home({ blogArticles }) {
             </form>
 
             {/* Mobile Collapsible Panel */}
-            <div className={`sm:hidden max-w-xl mx-auto mt-2`}>
+            <div className={`sm:hidden w-full max-w-xl mx-auto mt-2`}>
               <div
                 className={`transform-gpu transition-all duration-300 ease-in-out origin-top rounded-lg border border-gray-100 shadow-sm ${
                   heroFilterOpen
@@ -519,7 +517,7 @@ export default function Home({ blogArticles }) {
                 aria-hidden={!heroFilterOpen}
                 style={{ overflow: 'hidden' }}
               >
-                <div className={`bg-white/60 px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
+                <div className={`bg-white/95 backdrop-blur-md px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
                   <div className="flex flex-col gap-2">
                     <div className="relative w-full">
                       <label className="sr-only">Marca</label>
@@ -562,17 +560,17 @@ export default function Home({ blogArticles }) {
                           type="number"
                           value={heroFilter.year}
                           onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
-                          placeholder="Registo"
+                          placeholder="Ano de Registo"
                           className="text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
                         />
                       </div>
-                      <div className="pt-1 flex justify-center">
+                      <div className="pt-3 flex justify-center">
                         <button
                           onClick={onHeroSearch}
                           type="button"
-                          className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1 rounded-full shadow text-xs ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03] w-auto max-w-[140px]"
+                          className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-6 py-2 rounded-full shadow text-sm ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03] w-full"
                         >
-                          Procurar
+                          Ver Resultados
                         </button>
                       </div>
                     </div>
@@ -593,22 +591,20 @@ export default function Home({ blogArticles }) {
         {/* Como Funciona section */}
         <section
           data-fullwidth
-          className="relative w-screen py-12 sm:py-16 overflow-hidden mt-0 sm:mt-2 md:mt-4"
-          style={{ 
-            backgroundColor: "#f5f6fa",
-            marginLeft: "calc(-50vw + 50%)",
-            marginRight: "calc(-50vw + 50%)"
-          }}
+          className="relative w-full py-12 sm:py-16 overflow-hidden mt-0 sm:mt-2 md:mt-4 bg-[#f5f6fa]"
         >
-          {/* Features bar floating above video */}
-          <div className="absolute top-0 left-0 right-0 flex justify-center z-30 pointer-events-auto">
-            {/* CONTAINER PRINCIPAL: Lado a lado em Desktop */}
-            <div className="relative w-full max-w-[1400px] mx-auto py-4 flex flex-col xl:flex-row items-center justify-center gap-6 xl:gap-16 px-4">
+          {/* Features bar logic: 
+              - Mobile: Relative (part of flow, pushes content down)
+              - Desktop (xl): Absolute (floats over content)
+          */}
+          <div className="relative xl:absolute xl:top-0 left-0 right-0 flex justify-center z-30 pointer-events-auto px-4 mb-8 xl:mb-0">
+            {/* CONTAINER PRINCIPAL */}
+            <div className="relative w-full max-w-[1400px] mx-auto py-4 flex flex-col xl:flex-row items-center justify-center gap-6 xl:gap-16">
               
               {/* BOTÕES LADO ESQUERDO  */}
-              <div className="flex flex-col gap-2 shrink-0 w-full max-w-xs xl:w-auto items-center xl:items-start">
+              <div className="flex flex-col gap-2 shrink-0 w-full max-w-sm xl:w-auto items-center xl:items-start">
                 
-                {/* BOTÃO EMAIL - Link direto para o Gmail Web */}
+                {/* BOTÃO EMAIL */}
                 <a 
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=autogo.stand@gmail.com"
                   target="_blank"
@@ -629,137 +625,101 @@ export default function Home({ blogArticles }) {
               </div>
 
               {/* ICONS GRID (LADO DIREITO) */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6 lg:gap-4 xl:flex xl:flex-row xl:items-center xl:justify-center xl:gap-8 w-full justify-center mx-auto">
+              <div className="grid grid-cols-3 gap-y-4 gap-x-2 sm:gap-3 lg:grid-cols-6 lg:gap-4 xl:flex xl:flex-row xl:items-center xl:justify-center xl:gap-8 w-full justify-center mx-auto">
                 {/* Feature: Importação Premium */}
-                <div className="flex flex-col items-center text-center w-full max-w-[70px] sm:max-w-[80px] lg:max-w-[110px] xl:min-w-[76px] xl:max-w-[100px]">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] xl:max-w-[100px]">
                   <span
                     className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
                     tabIndex={0}
-                    aria-label={t("Importação Premium") + ": " + t("Serviço seguro") + ". " + t("Acompanhamento total") + "."}
+                    aria-label={t("Importação Premium")}
                   >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
                       <circle cx="12" cy="12" r="10" stroke="#22272a" strokeWidth="1.5" />
                       <path d="M2 12h20M12 2c2.5 2.5 2.5 17.5 0 20M12 2c-2.5 2.5-2.5 17.5 0 20" stroke="#22272a" strokeWidth="1" />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs lg:text-xs xl:text-sm mb-1 sm:mb-2 lg:mb-2 xl:mb-3">
+                  <div className="font-semibold text-gray-900 text-xs xl:text-sm mb-1">
                     {t("Importação Premium")}
                   </div>
-                  <div className="text-gray-700 text-[9px] sm:text-xs lg:text-xs leading-tight max-w-[90px] sm:max-w-[110px] lg:max-w-[120px] xl:max-w-[130px] mb-1 sm:mb-2">
-                    {t("Serviço seguro")}<br />{t("Acompanhamento total")}
+                  <div className="text-gray-700 text-[10px] sm:text-xs leading-tight">
+                    {t("Serviço seguro")}
                   </div>
                 </div>
 
                 {/* Feature: Garantia Incluída */}
-                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
-                  <span
-                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
-                    tabIndex={0}
-                    aria-label={t("Garantia de Excelência") + ": " + t("Garantia total") + ". " + t("Transparência garantida") + "."}
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] xl:max-w-[120px]">
+                  <span className="mb-1 sm:mb-2 md:mb-3 text-gray-800">
+                    <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
                       <path d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z" stroke="#22272a" strokeWidth="1.5" />
                       <path d="M9.5 13l2 2 4-4" stroke="#22272a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs lg:text-xs xl:text-sm mb-1 sm:mb-2 lg:mb-2 xl:mb-3">
-                    {t("Garantia de Excelência")}
+                  <div className="font-semibold text-gray-900 text-xs xl:text-sm mb-1">
+                    {t("Garantia")}
                   </div>
-                  <div className="text-gray-700 text-[9px] sm:text-xs lg:text-xs leading-tight max-w-[90px] sm:max-w-[110px] lg:max-w-[120px] xl:max-w-[130px] mb-1 sm:mb-2">
-                    {t("O melhor atendimento")}<br />{t("Transparência garantida")}
+                  <div className="text-gray-700 text-[10px] sm:text-xs leading-tight">
+                    {t("Transparência")}
                   </div>
                 </div>
 
                 {/* Feature: Entrega em Todo o País */}
-                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
-                  <span
-                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
-                    tabIndex={0}
-                    aria-label={t("Entrega em Todo o País") + ": " + t("Entrega flexível") + ". " + t("Todo Portugal") + "."}
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] xl:max-w-[120px]">
+                  <span className="mb-1 sm:mb-2 md:mb-3 text-gray-800">
+                    <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
                       <rect x="3" y="7" width="13" height="10" rx="2" stroke="#22272a" strokeWidth="1.5" />
                       <path d="M16 13h2.28a2 2 0 0 1 1.79 1.11l1.43 2.86A1 1 0 0 1 20.66 18H19a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3" stroke="#22272a" strokeWidth="1.5" />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs lg:text-xs xl:text-sm mb-1 sm:mb-2 lg:mb-2 xl:mb-3">
-                    {t("Entrega em Todo o País")}
+                  <div className="font-semibold text-gray-900 text-xs xl:text-sm mb-1">
+                    {t("Entrega Global")}
                   </div>
-                  <div className="text-gray-700 text-[9px] sm:text-xs lg:text-xs leading-tight max-w-[90px] sm:max-w-[110px] lg:max-w-[120px] xl:max-w-[130px] mb-1 sm:mb-2">
-                    {t("Entrega flexível")}<br />{t("Todo Portugal")}
+                  <div className="text-gray-700 text-[10px] sm:text-xs leading-tight">
+                    {t("Todo Portugal")}
                   </div>
                 </div>
 
                 {/* NEW FEATURE: Preço Fechado / Chave na mão */}
-                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
-                  <span className="mb-1 sm:mb-2 md:mb-3 text-gray-800" tabIndex={0} aria-label={t("Todos os nossos carros a preço fechado, chave na mão.")}>
-                    <img src={handIconPath} alt={t("Preço fechado")} className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 object-contain" />
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] xl:max-w-[120px]">
+                  <span className="mb-1 sm:mb-2 md:mb-3 text-gray-800">
+                    <img src={handIconPath} alt={t("Preço fechado")} className="w-5 h-5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 object-contain" />
                   </span>
-                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs lg:text-xs xl:text-sm mb-1 sm:mb-2 lg:mb-2 xl:mb-3">
-                    {t("Preço fechado")}
+                  <div className="font-semibold text-gray-900 text-xs xl:text-sm mb-1">
+                    {t("Chave na mão")}
                   </div>
-                  <div className="text-gray-700 text-[9px] sm:text-xs lg:text-xs leading-tight max-w-[90px] sm:max-w-[110px] lg:max-w-[120px] xl:max-w-[130px] mb-1 sm:mb-2">
-                    {t("Todos os nossos carros a preço fechado, chave na mão.")}
+                  <div className="text-gray-700 text-[10px] sm:text-xs leading-tight">
+                    {t("Preço fechado")}
                   </div>
                 </div>
 
                 {/* Feature: Apoio ao Cliente */}
-                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
-                  <span
-                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
-                    tabIndex={0}
-                    aria-label={t("Apoio ao Cliente") + ": " + t("Equipa dedicada para ajudar") + ". " + t("Resolvemos tudo por ti") + "."}
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] xl:max-w-[120px]">
+                  <span className="mb-1 sm:mb-2 md:mb-3 text-gray-800">
+                    <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
                       <path d="M12 3a9 9 0 0 0-9 9v3a3 3 0 0 0 3 3h1v-4H6a1 1 0 0 1-1-1v-1a7 7 0 0 1 14 0v1a1 1 0 0 1-1 1h-1v4h1a3 3 0 0 0 3-3v-3a9 9 0 0 0-9-9Z" stroke="#22272a" strokeWidth="1.5" />
                       <circle cx="12" cy="17" r="2" stroke="#22272a" strokeWidth="1.5" />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs lg:text-xs xl:text-sm mb-1 sm:mb-2 lg:mb-2 xl:mb-3">
-                    {t("Apoio ao Cliente")}
+                  <div className="font-semibold text-gray-900 text-xs xl:text-sm mb-1">
+                    {t("Apoio Total")}
                   </div>
-                  <div className="text-gray-700 text-[9px] sm:text-xs lg:text-xs leading-tight max-w-[90px] sm:max-w-[110px] lg:max-w-[120px] xl:max-w-[130px] mb-1 sm:mb-2">
-                    {t("Equipa dedicada para ajudar")}<br />{t("Resolvemos tudo por ti")}
-                  </div>
-                </div>
-
-                {/* Feature: Sem Complicações */}
-                <div className="hidden sm:flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
-                  <span
-                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
-                    tabIndex={0}
-                    aria-label={t("Sem Complicações") + ": " + t("Processo simples e rápido") + ". " + t("Tu escolhes, nós tratamos") + "."}
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" stroke="#22272a" strokeWidth="1.5" />
-                      <path d="M8 12l2 2 4-4" stroke="#22272a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs lg:text-xs xl:text-sm mb-1 sm:mb-2 lg:mb-2 xl:mb-3">
-                    {t("Sem Complicações")}
-                  </div>
-                  <div className="text-gray-700 text-[9px] sm:text-xs lg:text-xs leading-tight max-w-[90px] sm:max-w-[110px] lg:max-w-[120px] xl:max-w-[130px] mb-1 sm:mb-2">
-                    {t("Processo simples e rápido")}<br />{t("Tu escolhes, nós tratamos")}
+                  <div className="text-gray-700 text-[10px] sm:text-xs leading-tight">
+                    {t("Equipa dedicada")}
                   </div>
                 </div>
 
                 {/* Feature: Melhor Preço */}
-                <div className="flex flex-col items-center text-center w-full max-w-[88px] sm:max-w-[100px] lg:max-w-[110px] xl:min-w-[96px] xl:max-w-[120px]">
-                  <span
-                    className="mb-1 sm:mb-2 md:mb-3 text-gray-800"
-                    tabIndex={0}
-                    aria-label={t("Melhor Preço") + ": " + t("Garantimos o melhor valor") + ". " + t("Sem custos escondidos") + "."}
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
+                <div className="flex flex-col items-center text-center w-full max-w-[100px] xl:max-w-[120px]">
+                  <span className="mb-1 sm:mb-2 md:mb-3 text-gray-800">
+                    <svg className="w-5 h-5 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" fill="none" viewBox="0 0 24 24">
                       <path d="M3 12V7a2 2 0 0 1 2-2h5l9 9-7 7-9-9Z" stroke="#22272a" strokeWidth="1.5" />
                       <circle cx="7.5" cy="7.5" r="1.5" fill="#22272a" />
                     </svg>
                   </span>
-                  <div className="font-semibold text-gray-900 text-[10px] sm:text-xs lg:text-xs xl:text-sm mb-1 sm:mb-2 lg:mb-2 xl:mb-3">
-                    {t("Melhor Preço")}
+                  <div className="font-semibold text-gray-900 text-xs xl:text-sm mb-1">
+                    {t("Melhor Valor")}
                   </div>
-                  <div className="text-gray-700 text-[9px] sm:text-xs lg:text-xs leading-tight max-w-[90px] sm:max-w-[110px] lg:max-w-[120px] xl:max-w-[130px] mb-1 sm:mb-2">
-                    {t("Garantimos o melhor valor")}<br />{t("Sem custos escondidos")}
+                  <div className="text-gray-700 text-[10px] sm:text-xs leading-tight">
+                    {t("Sem surpresas")}
                   </div>
                 </div>
               </div>
@@ -778,7 +738,8 @@ export default function Home({ blogArticles }) {
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
           
-          <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-56 sm:pt-64 md:pt-80 lg:pt-56">
+          {/* Content Container - Reduced padding top on mobile since features bar is relative there */}
+          <div className="relative z-20 max-w-5xl mx-auto text-center px-4 sm:px-4 pt-10 sm:pt-64 md:pt-80 lg:pt-56 xl:pt-56">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -860,13 +821,9 @@ export default function Home({ blogArticles }) {
         {/* LISTAGEM DE VIATURAS */}
         <section
           data-fullwidth
-          className="relative w-screen py-16 sm:py-20"
-          style={{
-            marginLeft: "calc(-50vw + 50%)",
-            marginRight: "calc(-50vw + 50%)",
-          }}
+          className="relative w-full py-16 sm:py-20 bg-white"
         >
-          <div className="max-w-7xl mx-auto px-2 sm:px-7 lg:px-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-7 lg:px-4">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -917,16 +874,16 @@ export default function Home({ blogArticles }) {
         </section>
 
         {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
-        <section data-fullwidth className="w-full py-10 sm:py-14 bg-[#f5f6fa]">
-          <div className="flex flex-col items-center">
+        <section data-fullwidth className="w-full py-10 sm:py-14 bg-[#f5f6fa] overflow-hidden">
+          <div className="flex flex-col items-center w-full">
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">
               Novos Artigos
             </h2>
-            <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl">
+            <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl px-4">
               Fica a par das últimas novidades, dicas e notícias do mundo
               automóvel e da importação premium.
             </p>
-            <div className="w-full relative">
+            <div className="w-full relative max-w-7xl mx-auto px-2 md:px-4">
               <button
                 type="button"
                 aria-label="Scroll left"
@@ -942,13 +899,13 @@ export default function Home({ blogArticles }) {
               </button>
               <div
                 id="articles-carousel"
-                className="flex gap-6 min-w-[700px] md:min-w-0 px-2 sm:px-4 overflow-x-auto scroll-smooth pb-2"
+                className="flex gap-4 sm:gap-6 w-full overflow-x-auto scroll-smooth pb-4 px-2"
               >
                 {blogArticles.map((article, idx) => (
                   <a
                     key={idx}
                     href={article.link}
-                    className="block rounded-2xl shadow-xl bg-[#f5f6fa] min-w-[320px] max-w-xs hover:shadow-2xl transition-all duration-200 overflow-hidden group"
+                    className="block rounded-2xl shadow-xl bg-[#f5f6fa] min-w-[280px] sm:min-w-[320px] max-w-xs hover:shadow-2xl transition-all duration-200 overflow-hidden group shrink-0"
                   >
                     <div className="h-44 w-full overflow-hidden flex items-center justify-center bg-gray-200">
                       <img
