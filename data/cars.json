@@ -5066,15 +5066,6 @@
     ]
   },
   {
-    "make": "TestMake",
-    "model": "TestModel",
-    "price": 12345,
-    "slug": "test-m-1",
-    "id": "1760697324129",
-    "maintenance": [],
-    "unitNumber": null
-  },
-  {
     "id": "5729674",
     "make": "Renault",
     "model": "Captur 1.3 TCe RS-Line",
@@ -10141,7 +10132,7 @@
     "year": 2022,
     "slug": "kia-xceed-2022-6547363",
     "price": 0,
-    "image": "/images/cars/kia_xceed_hybrid/kia_xceed_hybrid.jpg",
+    "image": "/images/kia vinho copy.png",
     "description": "Kia XCeed Hybrid PHEV Black & White Edition (140 Hp), DCT6 Automático, Navegação, Cruise Control, Sensores de Chuva. VIN: U5YH5F1AGNL024581. Origem França (Castelnau-dEstrétefonds).",
     "mileage": 77915,
     "country": "FR",
