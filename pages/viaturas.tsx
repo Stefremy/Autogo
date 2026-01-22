@@ -13,6 +13,7 @@ import MainLayout from "../components/MainLayout";
 import MakeLogo from "../components/MakeLogo";
 import { VIATURAS_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
+import { generateGEOFAQSchema } from "../utils/geoOptimization";
 
 export default function Viaturas() {
   const { t } = useTranslation("common");
@@ -357,14 +358,105 @@ export default function Viaturas() {
     };
   }, [displayedCars.length, animClassRef]);
 
+  // GEO-optimized structured data for "carros importados" and "carros usados"
+  const viaturasGEOSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ItemList',
+        '@id': 'https://autogo.pt/viaturas#carlist',
+        name: 'Carros Importados e Usados em Portugal',
+        description: 'Catálogo de carros importados da Europa e viaturas usadas à venda em Portugal pela AutoGo.pt',
+        numberOfItems: filteredCars.length,
+        itemListElement: displayedCars.slice(0, 10).map((car, idx) => ({
+          '@type': 'ListItem',
+          position: idx + 1,
+          item: {
+            '@type': 'Car',
+            '@id': `https://autogo.pt/cars/${car.slug}`,
+            name: `${car.make} ${car.model}`,
+            brand: {
+              '@type': 'Brand',
+              name: car.make,
+            },
+            model: car.model,
+            vehicleModelDate: car.year,
+            mileageFromOdometer: {
+              '@type': 'QuantitativeValue',
+              value: car.mileage,
+              unitCode: 'KMT',
+            },
+            offers: {
+              '@type': 'Offer',
+              price: car.price,
+              priceCurrency: 'EUR',
+              availability: 'https://schema.org/InStock',
+              seller: {
+                '@id': 'https://autogo.pt/#organization',
+              },
+            },
+            image: car.image?.startsWith('http') ? car.image : `https://autogo.pt${car.image}`,
+            url: `https://autogo.pt/cars/${car.slug}`,
+          },
+        })),
+      },
+      generateGEOFAQSchema([
+        {
+          question: 'Onde comprar carros importados em Portugal?',
+          answer: 'A AutoGo.pt especializa-se em carros importados da Europa para Portugal. Oferecemos BMW, Mercedes-Benz, Audi, Peugeot e outras marcas com preços competitivos. Todos os veículos incluem transporte, legalização completa e matrícula portuguesa.',
+          keywords: ['carros importados', 'comprar carros', 'Portugal', 'Europa'],
+        },
+        {
+          question: 'Carros importados são confiáveis?',
+          answer: 'Sim. Carros importados da União Europeia passam por inspeção técnica rigorosa antes da compra e após chegarem a Portugal (inspeção IMT tipo B). A AutoGo.pt verifica o histórico, estado mecânico e documentação antes de importar.',
+          keywords: ['confiáveis', 'qualidade', 'inspeção', 'garantia'],
+        },
+        {
+          question: 'Qual a diferença entre carros importados e nacionais?',
+          answer: 'Carros importados geralmente têm preços mais competitivos devido ao mercado europeu. A diferença está na origem e processo de legalização (ISV, IMT), mas a qualidade e garantias são equivalentes. Todos ficam com matrícula portuguesa.',
+          keywords: ['diferença', 'nacional', 'importado', 'preço'],
+        },
+        {
+          question: 'Carros usados importados valem a pena?',
+          answer: 'Sim. Carros usados importados oferecem excelente relação qualidade-preço. O ISV tem descontos progressivos (10%-80% conforme idade), tornando viaturas semi-novas muito mais acessíveis que modelos equivalentes nacionais.',
+          keywords: ['carros usados', 'vale a pena', 'vantagens', 'ISV desconto'],
+        },
+        {
+          question: 'Quanto custa um BMW importado em Portugal?',
+          answer: 'O preço varia conforme modelo e ano. Na AutoGo.pt encontra BMW Série 3 desde €15.000, BMW X5 desde €25.000, sempre com preço final incluindo ISV, transporte e legalização. Use os nossos filtros para comparar opções.',
+          keywords: ['BMW', 'preço', 'custo', 'valores'],
+        },
+      ]),
+      {
+        '@type': 'BreadcrumbList',
+        '@id': 'https://autogo.pt/viaturas#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Início',
+            item: 'https://autogo.pt',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Carros Importados',
+            item: 'https://autogo.pt/viaturas',
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
       <Seo
-        title={`Carros importados europeus, BMW, Audi, Mercedes, Peugeot à venda em Portugal | AutoGo.pt`}
-        description={`Descubra carros importados e seminovos europeus em Portugal — BMW, Audi e Mercedes. Compare opções e compre com a AutoGo.pt com total confiança.`}
+        title={`Carros Importados e Carros Usados - BMW, Audi, Mercedes à venda em Portugal | AutoGo.pt`}
+        description={`Carros importados e carros usados europeus em Portugal. BMW, Mercedes, Audi, Peugeot com os melhores preços. Importação completa com ISV, transporte e legalização pela AutoGo.pt.`}
         url={`https://autogo.pt/viaturas`}
         image={`https://autogo.pt/images/auto-logo.png`}
         keywords={joinKeywords(SITE_WIDE_KEYWORDS, VIATURAS_KEYWORDS)}
+        jsonLd={viaturasGEOSchema}
       />
       <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
         <img

@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
 import Seo from "../components/Seo";
 import { COMO_FUNCIONA_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import { generateGEOHowToSchema, CAR_IMPORT_GEO_DATA } from "../utils/geoOptimization";
 
 export default function ComoFunciona() {
   const { t } = useTranslation("common");
@@ -19,6 +20,42 @@ export default function ComoFunciona() {
     returnObjects: true,
   }) as string[];
 
+  // GEO-optimized structured data
+  const geoHowTo = generateGEOHowToSchema(
+    'Como importar um carro para Portugal com AutoGo.pt',
+    'Guia completo passo a passo para importação de viaturas da Europa para Portugal com acompanhamento profissional',
+    CAR_IMPORT_GEO_DATA.processSteps
+  );
+
+  const geoServiceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Importação e Legalização de Viaturas',
+    description: 'Serviço completo de importação de veículos da Europa para Portugal, incluindo pesquisa, inspeção, transporte, cálculo de ISV e legalização',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'AutoGo.pt',
+      url: 'https://autogo.pt',
+    },
+    serviceType: 'Importação Automóvel',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Portugal',
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'EUR',
+      lowPrice: '500',
+      highPrice: '5000',
+      description: 'Preço varia conforme o veículo e ISV aplicável',
+    },
+  };
+
+  const combinedJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [geoHowTo, geoServiceSchema],
+  };
+
   return (
     <Layout>
       <Seo
@@ -26,6 +63,7 @@ export default function ComoFunciona() {
         description="Guia AutoGo.pt: veja como funciona a importação de carros, com pesquisa, inspeção, transporte e legalização tratados pela nossa equipa especializada."
         url="https://autogo.pt/como-funciona"
         keywords={joinKeywords(SITE_WIDE_KEYWORDS, COMO_FUNCIONA_KEYWORDS)}
+        jsonLd={combinedJsonLd}
       />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div

@@ -14,6 +14,7 @@ import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from ".
 import Seo from "../components/Seo";
 import BlackFridayPromo from "../components/BlackFridayPromo";
 import Snowfall from "../components/Snowfall";
+import { CAR_IMPORT_GEO_DATA, generateGEOFAQSchema, generateGEOHowToSchema } from "../utils/geoOptimization";
 
 // Some imported React helpers are used conditionally; to avoid linter warnings where they are assigned but not used in all builds, reference them in no-op expressions.
 void useRef; void useEffect;
@@ -245,17 +246,35 @@ export default function Home({ blogArticles }) {
       }
     : undefined;
 
+  // GEO (Generative Engine Optimization) structured data
+  const geoEnhancedFAQ = generateGEOFAQSchema(CAR_IMPORT_GEO_DATA.commonQuestions);
+  const geoHowTo = generateGEOHowToSchema(
+    'Como importar um carro para Portugal',
+    'Processo completo de importação de viaturas da Europa para Portugal com a AutoGo.pt',
+    CAR_IMPORT_GEO_DATA.processSteps
+  );
+
+  // Combine all JSON-LD for comprehensive GEO optimization
+  const combinedJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      geoEnhancedFAQ,
+      geoHowTo,
+      ...(homeFaqJsonLd ? [homeFaqJsonLd] : []),
+    ],
+  };
+
   return (
     <>
       <MainLayout>
         {/* Add your content here */}
         <Seo
-          title="Viaturas importadas e Simulador ISV | AutoGo.pt"
-          description="AutoGo.pt — simulador ISV e importação de viaturas. Calcule impostos, compare preços e encontre carros europeus com apoio completo em Portugal."
+          title="Carros Importados e Carros Usados - Simulador ISV | AutoGo.pt"
+          description="Carros importados e carros usados com os melhores preços. AutoGo.pt — simulador ISV gratuito, importação completa de viaturas da Europa. BMW, Mercedes, Audi com ISV, transporte e legalização incluídos."
           url="https://autogo.pt/"
           image="https://autogo.pt/images/auto-logo.png"
           keywords={seoKeywords}
-          jsonLd={homeFaqJsonLd}
+          jsonLd={combinedJsonLd}
         />
 
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}

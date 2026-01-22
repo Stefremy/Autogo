@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
 import Seo from '../components/Seo';
 import { SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import { generateGEOFAQSchema } from "../utils/geoOptimization";
 
 // Tabelas ISV Diário da República
 const TABELA_CILINDRADA_A = [
@@ -386,9 +387,50 @@ export default function Simulador() {
     ]
   };
 
-  const combinedJsonLd = simuladorFaqJsonLd
-    ? { '@context': 'https://schema.org', '@graph': [simuladorFaqJsonLd, howToJsonLd] }
-    : howToJsonLd;
+  // GEO-optimized FAQ with detailed answers
+  const geoISVFAQ = generateGEOFAQSchema([
+    {
+      question: 'Como é calculado o ISV em Portugal?',
+      answer: 'O ISV (Imposto Sobre Veículos) é calculado através de duas componentes: componente cilindrada (baseada na capacidade do motor em cm³) e componente ambiental (baseada nas emissões de CO2 em g/km). Cada componente tem taxas progressivas definidas por lei. Veículos elétricos estão isentos de ISV.',
+      keywords: ['ISV', 'cálculo', 'imposto', 'Portugal', 'cilindrada', 'CO2'],
+    },
+    {
+      question: 'Quanto custa legalizar um carro importado?',
+      answer: 'O custo de legalização inclui: ISV (variável conforme o veículo, calculado pelo simulador), taxas IMT (cerca de €195), inspeção técnica (€50-€100), e despesas administrativas. O valor total depende muito do ISV, que pode ir de €0 (elétricos) a milhares de euros.',
+      keywords: ['custo', 'legalização', 'IMT', 'taxas'],
+    },
+    {
+      question: 'Carros elétricos pagam ISV?',
+      answer: 'Não. Veículos 100% elétricos estão completamente isentos de ISV em Portugal. Esta isenção faz parte dos incentivos do governo português para promover a mobilidade elétrica.',
+      keywords: ['elétrico', 'ISV', 'isenção', 'incentivo'],
+    },
+    {
+      question: 'Como usar o simulador de ISV?',
+      answer: 'Introduza a cilindrada do motor em cm³, as emissões de CO2 em g/km (segundo norma WLTP ou NEDC), o tipo de combustível, e a data da primeira matrícula. O simulador calcula automaticamente o ISV total, incluindo descontos para viaturas usadas.',
+      keywords: ['simulador', 'usar', 'tutorial'],
+    },
+  ]);
+
+  const combinedJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      geoISVFAQ,
+      howToJsonLd,
+      ...(simuladorFaqJsonLd ? [simuladorFaqJsonLd] : []),
+      {
+        '@type': 'SoftwareApplication',
+        name: 'Simulador ISV AutoGo.pt',
+        applicationCategory: 'FinanceApplication',
+        operatingSystem: 'Web',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'EUR',
+        },
+        description: 'Calculadora online gratuita para simular o ISV de veículos importados para Portugal',
+      },
+    ],
+  };
 
   return (
     <>
