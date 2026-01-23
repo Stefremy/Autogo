@@ -18341,5 +18341,46 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6539353",
+    "make": "BMW",
+    "model": "740e Plug-In Hybrid IPerformance Aut.",
+    "year": 2017,
+    "slug": "",
+    "price": 32100,
+    "image": "https://ecarstrade.com/carsphotos/6530001-6540000/6539353/photo_037.jpg",
+    "description": "Este BMW 740e Plug-In Hybrid IPerformance de 2017 é um veículo sedan híbrido (gasolina / elétrico) com motor de 1998 CC e potência de 258 Hp (190 kW). Equipado com caixa automática de 8 velocidades, oferece um desempenho eficiente e confortável. Destaca-se pelo teto panorâmico, sistema LED, Head-Up Display, sistema de som Harman/Kardon, navegação, câmara 360°, KeylessGo, controlo climático e sensores de estacionamento (PDC). O carro apresenta 98 195 KM e está em excelente estado, com histórico de manutenção não especificado. Um modelo premium que combina tecnologia avançada, conforto e segurança, ideal para quem procura inovação e estilo.",
+    "mileage": 98195,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 8,
+    "category": "Veículo sedan",
+    "engineSize": "1998 CC",
+    "power": "258 Hp 190 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "19/10/2017",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "45 CO2",
+    "color": "Preto",
+    "vin": "WBA7D01060GJ45713",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6530001-6540000/6539353/photo_037.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
