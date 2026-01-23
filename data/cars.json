@@ -17584,5 +17584,134 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6707957",
+    "make": "Audi",
+    "model": "E-Tron Sportback 50 Quattro Aut. LED-Matrix Virtual Navi KeylessGo Klima PDC ...",
+    "year": 2020,
+    "slug": "audi-e-tron-sportback-50-quattro-aut-led-matrix-virtual-navi-keylessgo-klima-pdc-6707957",
+    "price": 23400,
+    "image": null,
+    "description": "Este Audi E-Tron Sportback 50 Quattro de 2020 destaca-se pelo seu potente motor elétrico de 313 Hp (230 kW) e transmissão automática com 1 velocidade, proporcionando uma condução suave e eficiente. Equipado com faróis LED, sistema de navegação, design exterior desportivo e um conjunto completo de opções de conforto como ar condicionado automático de 2 zonas, vidros elétricos, keyless go, sensores de luz e chuva, volante multifunções e sistema Start/Stop. A segurança é garantida com ABS, ESP, airbags frontais e laterais, imobilizador e sistema ISOFIX. No multimédia, inclui Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. Exteriormente, conta com jantes de liga leve e pacote desportivo. Outras opções incluem controlo de velocidade, assistência à condução, tração nas quatro rodas e sistema de estacionamento avançado. O veículo tem uma quilometragem de 154887 km e um histórico de manutenção detalhado com inspeções regulares e substituições de componentes essenciais, garantindo a sua fiabilidade e bom estado. Proveniente dos Países Baixos, este sedan elétrico é uma excelente escolha para quem procura tecnologia avançada, conforto e segurança num veículo moderno e desportivo.",
+    "mileage": 154887,
+    "country": "NL",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 1,
+    "category": "Veículo sedan",
+    "engineSize": "n/a",
+    "power": "313 Hp 230 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Países Baixos - \"NL-50-Amsterdam-Koopman_Maltaweg\"",
+    "firstRegistration": "12/01/2020",
+    "doors": 5,
+    "fuel": "Elétrico",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Preto",
+    "vin": "WAUZZZGE9MB019169",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6700001-6710000/6707957/photo_001.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Sistema de navegação",
+        "Design exterior desportivo"
+      ],
+      "conforto": [
+        "Sistema de iluminação adaptável",
+        "Ar condicionado: Automático (2 zonas)",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start/Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Sistema ISOFIX"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit de mãos-livres",
+        "MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Design exterior desportivo",
+        "Pacote desportivo"
+      ],
+      "outras_opcoes": [
+        "Cruisecontrolsysteem (cruisecontrol)",
+        "Laadkabel met beveiligingscontactstekker",
+        "Combi-instrument digitaal (virtual cockpit plus)",
+        "Vierwielaandrijving",
+        "Servosluiting achterklep",
+        "Rijassistent-systeem lane departure warning",
+        "Matrix-led-koplamp",
+        "Parkeerhulp plus voor, aan de zijkant en achter, a",
+        "Controlo de Velocidade (Cruise Control)",
+        "Quatro rodas",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": [
+      {
+        "date": "01/06/2025",
+        "km": 136987,
+        "description": "Longl 30 z.olie (inspectie)",
+        "price": 0,
+        "raw": "01/06/2025 136987 km Longl 30 z.olie (inspectie) € 0,00"
+      },
+      {
+        "date": "01/06/2025",
+        "km": 136987,
+        "description": "Substituição de palhetas do limpa-vidros dianteiro esquerdo e direito",
+        "price": 0,
+        "raw": "01/06/2025 136987 km Ruitenwisserblad voorzijde links en rechts € 0,00"
+      },
+      {
+        "date": "01/12/2024",
+        "km": 117805,
+        "description": "APK (Inspeção periódica)",
+        "price": 0,
+        "raw": "01/12/2024 117805 km APK € 0,00"
+      },
+      {
+        "date": "01/12/2023",
+        "km": 86048,
+        "description": "Manutenção do motor híbrido/eléctrico",
+        "price": 0,
+        "raw": "01/12/2023 86048 km Hybride/Electro-Elektromotor € 0,00"
+      },
+      {
+        "date": "01/12/2023",
+        "km": 86048,
+        "description": "Manutenção da centralina de gestão do motor",
+        "price": 0,
+        "raw": "01/12/2023 86048 km Motormanagementcomputer € 0,00"
+      },
+      {
+        "date": "01/03/2023",
+        "km": 61903,
+        "description": "Manutenção da centralina de gestão do motor",
+        "price": 0,
+        "raw": "01/03/2023 61903 km Motormanagementcomputer € 0,00"
+      }
+    ]
   }
 ]
