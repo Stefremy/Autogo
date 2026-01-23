@@ -17240,5 +17240,55 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6667609",
+    "make": "Ford",
+    "model": "Focus 1.0 EcoBoost ST-Line Virtual Navi Sport-Seats KeylessGo Camera Klima PDC",
+    "year": 2020,
+    "slug": "ford-focus-1-0-ecoboost-st-line-2020-6667609",
+    "price": 10700,
+    "image": "https://ecarstrade.com/carsphotos/6660001-6670000/6667609/photo_061.jpg",
+    "description": "Este Ford Focus 1.0 EcoBoost ST-Line de 2020 destaca-se pelo seu motor eficiente de 999 CC com 125 Hp (92 kW), caixa manual de 6 velocidades e design prático de carrinha (Station Wagon). Equipado com tecnologia avançada como navegação virtual, bancos desportivos, sistema KeylessGo, câmara traseira e ar condicionado (Klima), oferece conforto e segurança para 5 ocupantes. A sua classificação Euro6 e emissão de CO2 de 95 g/km garantem um desempenho ambiental responsável. Com 101 285 km registados, este veículo apresenta um histórico de manutenção não detalhado, mas encontra-se em bom estado geral, ideal para quem procura um carro versátil e económico. Origem Bélgica, com VIN WF0PXXGCHPLY61960.",
+    "mileage": 101285,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Station Wagon / Carrinha",
+    "engineSize": "999 CC",
+    "power": "125 Hp 92 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "30/10/2020",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "95 CO2",
+    "color": "Cinzento",
+    "vin": "WF0PXXGCHPLY61960",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6660001-6670000/6667609/photo_061.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "Bancos desportivos",
+        "Ar condicionado (Klima)",
+        "KeylessGo"
+      ],
+      "seguranca": [
+        "Câmara traseira",
+        "Euro6"
+      ],
+      "multimedia": [
+        "Navegação virtual"
+      ],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
