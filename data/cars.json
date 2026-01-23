@@ -18259,5 +18259,46 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6513994",
+    "make": "Citroen",
+    "model": "C4 1.2 PureTech Shine Aut.",
+    "year": 2022,
+    "slug": "citroen-c4-2022-6513994",
+    "price": 17900,
+    "image": "https://ecarstrade.com/carsphotos/6510001-6520000/6513994/photo_035.jpg",
+    "description": "Este Citroen C4 1.2 PureTech Shine Aut. de 2022 destaca-se pelo seu motor de 1199 CC com 131 Hp (96 kW), caixa automática de 8 velocidades e uma condução confortável em SUV/Veículo todo-o-terreno. Equipado com tecnologia LED Head-Up, sistema de navegação, ACC, bancos em pele parcial, KeylessGo, câmara traseira e ar condicionado. O veículo apresenta uma excelente condição com 57 368 KM registados e histórico de manutenção não iniciado. Origem Bélgica, com emissão Euro6 e consumo de CO2 de 108 g/km. Um automóvel versátil e moderno, ideal para quem procura conforto, segurança e tecnologia num só pacote.",
+    "mileage": 57368,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 8,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "1199 CC",
+    "power": "131 Hp 96 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "24/03/2022",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "108 CO2",
+    "color": "Laranja",
+    "vin": "VR7BAHNSBME073786",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6510001-6520000/6513994/photo_035.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
