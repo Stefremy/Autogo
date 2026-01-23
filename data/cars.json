@@ -17799,5 +17799,56 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6652862",
+    "make": "Audi",
+    "model": "E-tron 50 Quattro S-Line Ext. Aut. LED-Matrix Virtual Navi-Pro Leather KeylessGo Camera Klima PDC",
+    "year": 2020,
+    "slug": "",
+    "price": 25450,
+    "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6652862/photo_133.jpg",
+    "description": "Este Audi E-tron 50 Quattro S-Line de 2020 é um SUV elétrico topo de gama que combina potência e tecnologia avançada. Equipado com motor elétrico de 313 Hp (230 kW) e caixa automática, oferece uma condução suave e eficiente. Destaca-se pelo sistema LED-Matrix, navegação virtual, interior em pele, KeylessGo, câmara traseira e ar condicionado automático. Com 5 portas e 5 lugares, é ideal para famílias que procuram conforto e inovação. O veículo tem 108177 km e origem na Bélgica, especificamente do concessionário \"HM Tongeren\". Classe de emissão Euro6 e baixo impacto ambiental com CO2 1. Manutenção não registada, mas o estado geral é excelente, perfeito para quem procura um SUV elétrico moderno e bem equipado.",
+    "mileage": 108177,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 1,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "n/a",
+    "power": "313 Hp 230 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica - \"HM Tongeren\"",
+    "firstRegistration": "27/11/2020",
+    "doors": 5,
+    "fuel": "Elétrico",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Cinzento",
+    "vin": "WAUZZZGEXMB041021",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6650001-6660000/6652862/photo_133.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "KeylessGo",
+        "Ar condicionado automático"
+      ],
+      "seguranca": [],
+      "multimedia": [
+        "Navegação virtual",
+        "Câmara traseira"
+      ],
+      "interior": [
+        "Interior em pele"
+      ],
+      "exterior": [
+        "LED-Matrix"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
