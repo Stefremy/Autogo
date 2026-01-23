@@ -18382,5 +18382,83 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6560821",
+    "make": "Audi",
+    "model": "Q5 2.0 35 TDI Aut. LED-Matrix Virtual Leather KeylessGo Camera Klima PDC ...",
+    "year": 2020,
+    "slug": "audi-q5-2020-6560821",
+    "price": 25700,
+    "image": null,
+    "description": "Este Audi Q5 2.0 35 TDI de 2020 destaca-se pelo seu motor Diesel de 1968 CC com 163 Hp (120 kW), caixa automática de 7 velocidades e tração em SUV/Veículo todo-o-terreno. Equipado com faróis LED, sistema de navegação, ar condicionado automático a duas zonas, bancos aquecidos e ajustáveis eletricamente, vidros elétricos, sistema Keyless Go, sensores de luz e chuva, volante multifunções, barras de tejadilho e sistema Start/Stop. Em termos de segurança, inclui ABS, ESP, luzes diurnas e de nevoeiro, airbags frontais e laterais, imobilizador e sistema ISOFIX. No multimédia, dispõe de Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. Exterior com jantes de liga leve e outras opções como controlo de velocidade, filtro de partículas diesel e controlo de tração. O veículo tem uma quilometragem de 107794 KM e origem na Bélgica (ASSE II). Está em excelente estado com histórico de manutenção não especificado, ideal para quem procura conforto, segurança e tecnologia num SUV moderno.",
+    "mileage": 107794,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 7,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "1968 CC",
+    "power": "163 Hp 120 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica - \"ASSE II\"",
+    "firstRegistration": "24/09/2020",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "132 CO2",
+    "color": "Preto",
+    "vin": "WAUZZZFY3L2100372",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6560001-6570000/6560821/photo_052.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Sistema de iluminação adaptável",
+        "Ar condicionado: Automático (2 zonas)",
+        "Bancos aquecidos",
+        "Assentos ajustáveis eletricamente",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema Start/Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Sistema ISOFIX"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit de mãos-livres",
+        "MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo de Velocidade (Cruise Control)",
+        "Filtro de partículas diesel",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
