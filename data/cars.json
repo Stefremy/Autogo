@@ -17850,5 +17850,54 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6614964",
+    "make": "BMW",
+    "model": "BMW 318",
+    "year": 2020,
+    "slug": "bmw-318-2020-6614964",
+    "price": 11400,
+    "image": "https://ecarstrade.com/carsphotos/6610001-6620000/6614964/photo_000.jpg",
+    "description": "Este BMW 318d de 2020 apresenta-se como um sedan elegante e potente, equipado com motor de 1995 CC e potência de 136 Hp (100 kW). Com caixa manual de 6 velocidades, oferece uma condução dinâmica e eficiente a Diesel/Gasóleo. Destaca-se pelo seu sistema de navegação Pro, interior em pele, KeylessGo, ar condicionado e sensores de estacionamento (PDC). O veículo conta com 158 696 KM e está em excelente estado, com histórico de manutenção não iniciado. Classe de emissão Euro6 e CO2 de 118 g/km garantem uma condução mais amiga do ambiente. Ideal para quem procura conforto, segurança e tecnologia num sedan moderno.",
+    "mileage": 158696,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Veículo sedan",
+    "engineSize": "1995 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "10/07/2020",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "118 CO2",
+    "color": "Preto",
+    "vin": "WBA3D11040J624302",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6610001-6620000/6614964/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "KeylessGo",
+        "Ar condicionado",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "seguranca": [],
+      "multimedia": [
+        "Navegação Pro"
+      ],
+      "interior": [
+        "Interior em pele"
+      ],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
