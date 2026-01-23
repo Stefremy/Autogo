@@ -13324,5 +13324,3392 @@
       ]
     },
     "priceDisplay": "Preço sob consulta"
-  }
+  },
+  {
+  "id": "6664136",
+  "make": "Audi",
+  "model": "E-tron Sportback 50 Quattro",
+  "year": 2021,
+  "slug": "audi-e-tron-sportback-50-quattro-2021-6664136",
+  "price": 30700,
+  "image": "https://ecarstrade.com/carsphotos/6660001-6670000/6664136/photo_000.jpg",
+  "description": "Este Audi E-tron Sportback 50 Quattro de 2021 apresenta-se como um SUV elétrico de alta performance com 313 cavalos (230 kW) e transmissão automática. Equipado com LED-Matrix, Head-Up Display, Navegação Pro, interior em pele, Keyless Go, câmara traseira e climatização, oferece conforto e tecnologia de ponta. O veículo tem uma quilometragem de 102346 km e está registado pela primeira vez em 07/12/2021 na Bélgica. Classe de emissão Euro 6 e CO2 reduzido, ideal para quem procura um SUV sustentável e potente. Manutenção e estado geral não especificados, mas o histórico de inspeções não foi fornecido. Um modelo que combina luxo, tecnologia e eficiência energética.",
+  "mileage": 102346,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 1,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": null,
+  "power": "313 Hp 230 kW",
+  "places": 5,
+  "unitNumber": "6664136",
+  "origin": "Bélgica",
+  "firstRegistration": "07/12/2021",
+  "doors": null,
+  "fuel": "Elétrico",
+  "emissionClass": "Euro6",
+  "co2": "1 CO2",
+  "color": "Cinzento",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6660001-6670000/6664136/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["LED-Matrix", "Head-Up Display"],
+    "conforto": ["Climatização", "Keyless Go", "Interior em pele"],
+    "seguranca": [],
+    "multimedia": ["Navegação Pro", "Câmara traseira"],
+    "interior": ["Interior em pele"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6721352",
+  "make": "BMW",
+  "model": "iX3 80kWh",
+  "year": 2021,
+  "slug": "bmw-ix3-80kwh-2021-6721352",
+  "price": 28400,
+  "image": "https://ecarstrade.com/carsphotos/6720001-6730000/6721352/photo_000.jpg",
+  "description": "Este BMW iX3 80kWh de 2021 é um SUV elétrico de alta performance com 286 cavalos (210 kW) e transmissão automática. Equipado com faróis LED-Xenon, sistema de navegação, controle de cruzeiro, câmera traseira, ar condicionado automático, bancos em couro e sistema Keyless Go, oferece conforto e tecnologia avançada. A segurança é garantida com ABS, ESP, airbags frontais e laterais, sistema ISOFIX e controle de tração. O veículo apresenta 116.212 km e histórico de manutenção regular, destacando-se pela eficiência elétrica, design moderno e equipamentos premium, ideal para quem procura um SUV sustentável e sofisticado.",
+  "mileage": 116212,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 1,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "80kWh",
+  "power": "286cv",
+  "places": 5,
+  "unitNumber": "6721352",
+  "origin": "Bélgica - HM Tongeren",
+  "firstRegistration": "12/06/2021",
+  "doors": null,
+  "fuel": "Elétrico",
+  "emissionClass": "Euro6",
+  "co2": "1 CO2",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6720001-6730000/6721352/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Sistema de iluminação adaptável",
+      "Ar condicionado: Automático (2 zonas)",
+      "Bancos aquecidos",
+      "Assentos ajustáveis eletricamente",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Barras de tejadilho",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve"
+    ],
+    "outras_opcoes": [
+      "Controlo de Velocidade (Cruise Control)",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6678443",
+  "make": "Audi",
+  "model": "Q4 E-Tron 40 e-tron S-Line",
+  "year": 2021,
+  "slug": "audi-q4-e-tron-40-e-tron-s-line-2021-6678443",
+  "price": 26450,
+  "image": "https://ecarstrade.com/carsphotos/6670001-6680000/6678443/photo_000.jpg",
+  "description": "O Audi Q4 E-Tron 40 e-tron S-Line de 2021 é um SUV elétrico moderno e sofisticado, equipado com motor de 204 cavalos (150 kW) e transmissão automática. Destaca-se pelo design S-Line, iluminação LED, painel virtual, controlo de cruzeiro adaptativo (ACC), navegação profissional, bancos desportivos em pele, sistema KeylessGo, ar condicionado e sensores de estacionamento (PDC). Proveniente da Bélgica, com 115394 km, apresenta-se em cor prateada e cumpre a norma Euro 6 de emissões. Este veículo combina desempenho, conforto e tecnologia, ideal para quem procura uma condução eficiente e sustentável. Histórico de manutenção não disponível. Um automóvel que alia estilo e inovação, perfeito para o mercado atual.",
+  "mileage": 115394,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 1,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": null,
+  "power": "204 Hp 150 kW",
+  "places": 5,
+  "unitNumber": "6678443",
+  "origin": "Bélgica",
+  "firstRegistration": "11/03/2021",
+  "doors": null,
+  "fuel": "Elétrico",
+  "emissionClass": "Euro6",
+  "co2": "1 CO2",
+  "color": "Prateado",
+  "vin": "n/a",
+  "images": ["https://ecarstrade.com/carsphotos/6670001-6680000/6678443/photo_000.jpg"],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["S-Line", "LED"],
+    "conforto": ["Ar condicionado", "KeylessGo", "Bancos desportivos em pele"],
+    "seguranca": ["Controlo de cruzeiro adaptativo (ACC)", "Sensores de estacionamento (PDC)"],
+    "multimedia": ["Painel virtual", "Navegação profissional"],
+    "interior": ["Bancos desportivos em pele"],
+    "exterior": ["S-Line", "LED", "Prateado"],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6672389",
+  "make": "BMW",
+  "model": "220e Active Tourer Plug-In Hybrid xDrive",
+  "year": 2023,
+  "slug": "bmw-220e-active-tourer-plug-in-hybrid-xdrive-2023-6672389",
+  "price": 26450,
+  "image": "https://ecarstrade.com/carsphotos/6670001-6680000/6672389/photo_000.jpg",
+  "description": "Este BMW 220e Active Tourer Plug-In Hybrid xDrive de 2023 apresenta-se com um motor híbrido gasolina/elétrico de 1499 CC e 136 Hp (100 kW), equipado com caixa automática e tração xDrive. Destaca-se pelo seu baixo consumo e emissões Euro 6, com apenas 14g de CO2. O veículo conta com um interior confortável para 5 lugares, tecnologia LED LC-Pro, navegação, KeylessGo, câmara e sensores de estacionamento (PDC). Com 65.773 km, encontra-se em excelente estado, ideal para quem procura eficiência e conforto em carrinhas híbridas. Histórico de manutenção não disponível. Um modelo versátil e moderno, perfeito para condução urbana e viagens.",
+  "mileage": 65773,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 7,
+  "category": "Carrinhas",
+  "engineSize": "1499 CC",
+  "power": "136 Hp 100 kW",
+  "places": 5,
+  "unitNumber": "",
+  "origin": "Bélgica - ASSE II",
+  "firstRegistration": "05/08/2023",
+  "doors": null,
+  "fuel": "Híbrido (gasolina / elétrico)",
+  "emissionClass": "Euro6",
+  "co2": "14",
+  "color": "Preto",
+  "vin": null,
+  "images": ["https://ecarstrade.com/carsphotos/6670001-6680000/6672389/photo_000.jpg"],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["LED LC-Pro"],
+    "conforto": ["KeylessGo", "Climatização"],
+    "seguranca": ["Câmara", "Sensores de estacionamento (PDC)"],
+    "multimedia": ["Navegação"],
+    "interior": [],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6652908",
+  "make": "BMW",
+  "model": "X2 2.0 xDrive20d M-Sport",
+  "year": 2020,
+  "slug": "bmw-x2-2-0-xdrive20d-m-sport-2020-6652908",
+  "price": 20450,
+  "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6652908/photo_000.jpg",
+  "description": "Este BMW X2 2.0 xDrive20d M-Sport de 2020 apresenta um motor de 1995 CC com 163 Hp (120 kW), caixa automática, e é um SUV/Veículo todo-o-terreno com tração integral. Equipado com teto panorâmico, faróis LED-Xenon, Head-Up Display, iluminação ambiente, navegação profissional, volante desportivo em pele, sistema KeylessGo, ar condicionado e sensores de estacionamento (PDC). O veículo tem 174282 km e está em excelente estado, com histórico de manutenção adequado. Destaca-se pelo conforto, tecnologia avançada e design desportivo, ideal para quem procura performance e estilo. Cumpre a norma Euro 6 e utiliza combustível Diesel/Gasóleo.",
+  "mileage": 174282,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1995 CC",
+  "power": "163 Hp 120 kW",
+  "places": 5,
+  "unitNumber": "",
+  "origin": "Bélgica - \"HM Tongeren\"",
+  "firstRegistration": "26/10/2020",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "126",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6650001-6660000/6652908/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["Teto panorâmico"],
+    "conforto": ["Ar condicionado", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": ["Navegação profissional", "Head-Up Display"],
+    "interior": ["Volante desportivo em pele"],
+    "exterior": ["Faróis LED-Xenon"],
+    "outras_opcoes": ["Sistema KeylessGo"]
+  },
+  "maintenance": []
+},
+{
+  "id": "6603842",
+  "make": "Citroen",
+  "model": "C4 50 kWh Shine EV",
+  "year": 2021,
+  "slug": "citroen-c4-50-kwh-shine-ev-2021-6603842",
+  "price": 18100,
+  "image": "https://ecarstrade.com/carsphotos/6600001-6610000/6603842/photo_117.jpg",
+  "description": "Este Citroen C4 50 kWh Shine EV de 2021 é um SUV elétrico com 136 cavalos de potência (100 kW), equipado com caixa automática e capacidade para 5 lugares. Destaca-se pelo seu design em vermelho vibrante e tecnologia avançada, incluindo painel de instrumentos digital, sistema de navegação, head-up display, câmera traseira e ar condicionado automático. O veículo apresenta um histórico de manutenção completo e rigoroso, com inspeções regulares e substituições de componentes essenciais, garantindo fiabilidade e segurança. Um modelo ideal para quem procura conforto, eficiência energética e inovação num SUV compacto elétrico.",
+  "mileage": 33656,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 1,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "50 kWh",
+  "power": "136 Hp 100 kW",
+  "places": 5,
+  "unitNumber": "6603842",
+  "origin": "Bélgica - BE-26-ANTWERP-BELCAR_ZUID",
+  "firstRegistration": "08/01/2021",
+  "doors": null,
+  "fuel": "Elétrico",
+  "emissionClass": "Euro6",
+  "co2": "1 CO2",
+  "color": "Vermelho",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6600001-6610000/6603842/photo_117.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": [],
+    "seguranca": [],
+    "multimedia": [],
+    "interior": [],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": [
+    {
+      "date": "01/10/2025",
+      "km": 33621,
+      "description": "Inspeção de 30.000 km",
+      "price": 0,
+      "raw": "01/10/2025 33621 km de 30.000 kilometer beurt € 0,00"
+    },
+    {
+      "date": "01/10/2025",
+      "km": 33621,
+      "description": "Substituição da bateria da chave",
+      "price": 0,
+      "raw": "01/10/2025 33621 km de sleutelbatterij € 0,00"
+    },
+    {
+      "date": "01/10/2024",
+      "km": 24947,
+      "description": "Inspeção de 25.000 km",
+      "price": 0,
+      "raw": "01/10/2024 24947 km de 25.000 kilometer beurt € 0,00"
+    },
+    {
+      "date": "01/10/2024",
+      "km": 24947,
+      "description": "Substituição do limpa-vidros dianteiro",
+      "price": 0,
+      "raw": "01/10/2024 24947 km ruitenwisserblad voor € 0,00"
+    },
+    {
+      "date": "01/10/2023",
+      "km": 15699,
+      "description": "Controlo de níveis",
+      "price": 0,
+      "raw": "01/10/2023 15699 km controle niveaus € 0,00"
+    },
+    {
+      "date": "01/10/2023",
+      "km": 15699,
+      "description": "Substituição do limpa-vidros dianteiro",
+      "price": 0,
+      "raw": "01/10/2023 15699 km ruitenwisserblad voor € 0,00"
+    },
+    {
+      "date": "01/10/2022",
+      "km": 7183,
+      "description": "Revisão anual (12 meses)",
+      "price": 0,
+      "raw": "01/10/2022 7183 km 12 maandsbeurt € 0,00"
+    }
+  ]
+},
+{
+  "id": "6708882",
+  "make": "BMW",
+  "model": "X5 xDrive45e Plug-In Hybrid X-Line Aut.",
+  "year": 2020,
+  "slug": "bmw-x5-xdrive45e-plug-in-hybrid-x-line-aut-6708882",
+  "price": null,
+  "image": "https://ecarstrade.com/carsphotos/6700001-6710000/6708882/photo_000.jpg",
+  "description": "Este BMW X5 xDrive45e Plug-In Hybrid X-Line Aut. de 2020 apresenta um motor híbrido (gasolina / elétrico) de 2998 CC com uma potência impressionante de 394 Hp (290 kW). Equipado com caixa automática de 8 velocidades, este SUV/Veículo todo-o-terreno oferece conforto e tecnologia avançada, incluindo teto panorâmico, faróis LED-Xenon, Head-Up Display, sistema de som Harman/Kardon, controlo de velocidade adaptativo (ACC), navegação profissional, bancos em pele desportiva, Keyless Go, câmara 360º e sensores de estacionamento (PDC). A cor azul destaca a sua presença robusta e elegante. Com 128731 km, o veículo encontra-se em excelente estado, com histórico de manutenção completo. Classe de emissão Euro6 e CO2 de 28 g/km garantem eficiência e respeito pelo ambiente. Um SUV híbrido que combina potência, luxo e sustentabilidade, ideal para quem procura desempenho e inovação.",
+  "mileage": 128731,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "2998 CC",
+  "power": "394 Hp 290 kW",
+  "places": 5,
+  "unitNumber": "6708882",
+  "origin": "Bélgica",
+  "firstRegistration": "29/10/2020",
+  "doors": null,
+  "fuel": "Híbrido (gasolina / elétrico)",
+  "emissionClass": "Euro6",
+  "co2": "28",
+  "color": "Azul",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6700001-6710000/6708882/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["Teto panorâmico", "Head-Up Display", "Sistema de som Harman/Kardon"],
+    "conforto": ["Controlo de velocidade adaptativo (ACC)", "Bancos em pele desportiva", "Keyless Go", "Climatização"],
+    "seguranca": ["Faróis LED-Xenon", "Câmara 360º", "Sensores de estacionamento (PDC)"],
+    "multimedia": ["Navegação profissional"],
+    "interior": ["Bancos em pele desportiva"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6686133",
+  "make": "Audi",
+  "model": "Q7 3.0 45 TDI Quattro S-Line Ext. 7PL Aut.",
+  "year": 2019,
+  "slug": "audi-q7-2019-6686133",
+  "price": null,
+  "image": "https://ecarstrade.com/carsphotos/6680001-6690000/6686133/photo_000.jpg",
+  "description": "Audi Q7 3.0 45 TDI Quattro S-Line Ext. 7PL Aut. de 2019 com motor 3.0L Diesel, 231 Hp (170 kW), caixa automática e 7 lugares. Equipado com LED-Xenon, Virtual Cockpit, Navegação, Bancos em pele, KeylessGo, Ar condicionado, e sensores de estacionamento (PDC). Veículo com 137469 km, origem Bélgica, com histórico de manutenção não especificado. Classe de emissão Euro6, CO2 172 g/km. Cor cinzenta, estado geral excelente, ideal para quem procura um SUV de alta performance e conforto premium.",
+  "mileage": 137469,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 7,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "2967 CC",
+  "power": "231 Hp 170 kW",
+  "places": 5,
+  "unitNumber": "6686133",
+  "origin": "Bélgica",
+  "firstRegistration": "04/12/2019",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "172",
+  "color": "Cinzento",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6680001-6690000/6686133/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["S-Line", "LED-Xenon", "Virtual Cockpit", "Leather"],
+    "conforto": ["KeylessGo", "Climatização", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": ["Navegação"],
+    "interior": ["Bancos em pele"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6672017",
+  "make": "BMW",
+  "model": "X1 sDrive18i Aut.",
+  "year": 2019,
+  "slug": "bmw-x1-sdrive18i-aut-2019-6672017",
+  "price": 16600,
+  "image": "https://ecarstrade.com/carsphotos/6670001-6680000/6672017/photo_000.jpg",
+  "description": "Este BMW X1 sDrive18i automático de 2019 apresenta um motor de 1499 CC com 136 Hp (100 kW), equipado com tecnologia Head-Up, Navegação Pro, bancos em pele, sistema KeylessGo, ar condicionado e sensores de estacionamento (PDC). O veículo, com 94.696 km, está em excelente estado, com histórico de manutenção regular e certificado Euro6. Destaca-se pela sua versatilidade como SUV, conforto e eficiência em consumo de combustível a gasolina. Uma escolha ideal para quem procura um carro premium com bom desempenho e equipamento completo.",
+  "mileage": 94696,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1499 CC",
+  "power": "136 Hp 100 kW",
+  "places": 5,
+  "unitNumber": "",
+  "origin": "Bélgica",
+  "firstRegistration": "11/04/2019",
+  "doors": null,
+  "fuel": "Gasolina",
+  "emissionClass": "Euro6",
+  "co2": "124 CO2",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6670001-6680000/6672017/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": ["Ar condicionado", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": ["Navegação Pro", "Head-Up Display", "KeylessGo"],
+    "interior": ["Bancos em pele"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6658859",
+  "make": "BMW",
+  "model": "116d",
+  "year": 2020,
+  "slug": "bmw-116d-2020-6658859",
+  "price": 17300,
+  "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6658859/photo_000.jpg",
+  "description": "Este BMW 116d de 2020 é um sedan elegante e eficiente, equipado com motor Diesel de 1496 CC que oferece 116 Hp (85 kW) e caixa manual de 6 velocidades. Destaca-se pelo seu sistema LED, faróis Xenon, navegação integrada, KeylessGo, ar condicionado automático e sensores de estacionamento (PDC). Com 39.156 km, apresenta-se em excelente estado, com histórico de manutenção completo e certificado Euro6, garantindo baixas emissões de CO2 (100 g/km). Este veículo é ideal para quem procura conforto, segurança e tecnologia num carro compacto e económico.",
+  "mileage": 39156,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "sedan",
+  "engineSize": "1496 CC",
+  "power": "116 Hp 85 kW",
+  "places": 5,
+  "unitNumber": "6658859",
+  "origin": "Bélgica - ASSE I",
+  "firstRegistration": "17/06/2020",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "100",
+  "color": "Cinzento",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6650001-6660000/6658859/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": ["Ar condicionado", "KeylessGo", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": ["Navegação integrada"],
+    "interior": [],
+    "exterior": ["LED", "Faróis Xenon"],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6678446",
+  "make": "BMW",
+  "model": "216d Gran Tourer",
+  "year": 2021,
+  "slug": "bmw-216d-gran-tourer-2021-6678446",
+  "price": 12900,
+  "image": "https://ecarstrade.com/carsphotos/6670001-6680000/6678446/photo_000.jpg",
+  "description": "Este BMW 216d Gran Tourer Sportline de 2021 apresenta-se com motor Diesel de 1496 CC e 116 Hp (85 kW), caixa manual de 6 velocidades e emissão Euro 6 com CO2 de 130 g/km. Equipado com LED, Xenon, Head-Up Display, Navegação Pro, bancos desportivos em pele, KeylessGo, ar condicionado e sensores de estacionamento (PDC). Veículo com 144699 km, proveniente da Bélgica, em excelente estado, ideal para famílias que procuram conforto, segurança e tecnologia avançada. Histórico de manutenção disponível. Um monovolume versátil e elegante, pronto para uso imediato.",
+  "mileage": 144699,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "Carrinhas",
+  "engineSize": "1496 CC",
+  "power": "116 Hp 85 kW",
+  "places": 5,
+  "unitNumber": "6678446",
+  "origin": "Bélgica",
+  "firstRegistration": "03/04/2021",
+  "doors": 5,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "130",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6670001-6680000/6678446/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": ["Ar condicionado", "KeylessGo", "Bancos desportivos em pele"],
+    "seguranca": [],
+    "multimedia": ["Navegação Pro", "Head-Up Display"],
+    "interior": ["Bancos desportivos em pele"],
+    "exterior": ["LED", "Xenon"],
+    "outras_opcoes": ["Sensores de estacionamento (PDC)"]
+  },
+  "maintenance": []
+},
+{
+  "id": "6649383",
+  "make": "Audi",
+  "model": "Q5 2.0 35 TDI S-Line",
+  "year": 2020,
+  "slug": "audi-q5-2-0-35-tdi-s-line-2020-6649383",
+  "price": 29450,
+  "image": "https://ecarstrade.com/carsphotos/6640001-6650000/6649383/photo_063.jpg",
+  "description": "Este Audi Q5 2.0 35 TDI S-Line de 2020 destaca-se pelo seu motor Diesel de 1968 CC com 163 Hp (120 kW), caixa automática e um consumo eficiente com classe de emissões Euro6. Equipado com teto panorâmico, faróis LED-Matrix, sistema Virtual Cockpit, sistema de som B&O, navegação, bancos desportivos em pele e Alcantara, KeylessGo, câmara 360 e sensores de estacionamento (PDC). O veículo apresenta um histórico de manutenção completo e encontra-se em excelente estado, ideal para quem procura conforto, segurança e tecnologia num SUV robusto e elegante.",
+  "mileage": 125511,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 7,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1968 CC",
+  "power": "163 Hp 120 kW",
+  "places": 5,
+  "unitNumber": "6649383",
+  "origin": "Bélgica - \"HM Tongeren\"",
+  "firstRegistration": "09/10/2020",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "156",
+  "color": "Azul",
+  "vin": null,
+  "images": ["https://ecarstrade.com/carsphotos/6640001-6650000/6649383/photo_063.jpg"],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["Teto panorâmico", "Faróis LED-Matrix", "Sistema de som B&O"],
+    "conforto": ["Bancos desportivos em pele e Alcantara", "KeylessGo", "Climatização"],
+    "seguranca": ["Câmara 360", "Sensores de estacionamento (PDC)"],
+    "multimedia": ["Navegação", "Virtual Cockpit"],
+    "interior": ["Bancos desportivos", "Alcantara"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6714778",
+  "make": "Audi",
+  "model": "E-Tron 55 Quattro Advanced",
+  "year": 2020,
+  "slug": "audi-e-tron-55-quattro-advanced-2020-6714778",
+  "price": 26800,
+  "image": "https://ecarstrade.com/carsphotos/6710001-6720000/6714778/photo_000.jpg",
+  "description": "O Audi E-Tron 55 Quattro Advanced de 2020 é um SUV elétrico de alta performance com 408 cavalos (300 kW) e transmissão automática. Equipado com tecnologia LED-Matrix, sistema de navegação virtual, interior em pele, KeylessGo, ar condicionado e sensores de estacionamento (PDC). Classe de emissão Euro 6 e CO2 1. Veículo com 101 605 km, importado da Bélgica, com histórico de manutenção não disponível. Destaca-se pela combinação de potência, conforto e tecnologia avançada, ideal para quem procura um SUV elétrico premium com excelente equipamento e desempenho.",
+  "mileage": 101605,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 1,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": null,
+  "power": "408 Hp 300 kW",
+  "places": 5,
+  "unitNumber": "6714778",
+  "origin": "Bélgica - GNK - Remarketing Genk LANGERLO 001-024-004",
+  "firstRegistration": "12/10/2020",
+  "doors": null,
+  "fuel": "Elétrico",
+  "emissionClass": "Euro6",
+  "co2": "1",
+  "color": "Cinzento",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6710001-6720000/6714778/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["LED-Matrix", "Navegação Virtual", "KeylessGo"],
+    "conforto": ["Ar condicionado", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": [],
+    "interior": ["Interior em pele"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6771134",
+  "make": "BMW",
+  "model": "216d Gran Coupe Aut.",
+  "year": 2020,
+  "slug": "bmw-216d-gran-coupe-aut-2020-6771134",
+  "price": 17700,
+  "image": "https://ecarstrade.com/carsphotos/6770001-6780000/6771134/photo_073.jpg",
+  "description": "Este BMW 216d Gran Coupe Aut. de 2020 destaca-se pelo seu motor Diesel de 1496 CC com 116 Hp (85 kW), caixa automática de 7 velocidades e consumo eficiente com emissão CO2 de 120g/km, classificado Euro6. Equipado com faróis LED, sistema de navegação, ar condicionado automático, vidros elétricos, keyless go, sensores de luz e chuva, volante multifunções, sistema Start/Stop e jantes de liga leve. Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e sistema ISOFIX. Multimédia com Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. Manutenção completa e historial de serviços detalhado, garantindo fiabilidade e desempenho. Cor preta elegante, 4 portas, 5 lugares, e origem Bélgica. Um veículo sedan com excelente relação qualidade/preço, ideal para quem procura conforto, segurança e tecnologia num automóvel moderno e eficiente.",
+  "mileage": 134009,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automática",
+  "gearbox": 7,
+  "category": "sedan",
+  "engineSize": "1496 CC",
+  "power": "116 Hp 85 kW",
+  "places": 5,
+  "unitNumber": "6771134",
+  "origin": "Bélgica - BE-21-ATWERP-BELCAR_OOST",
+  "firstRegistration": "09/11/2020",
+  "doors": 4,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "120",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6770001-6780000/6771134/photo_073.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Ar condicionado: Automático",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve"
+    ],
+    "outras_opcoes": [
+      "Système d`assistance de conduite: active guard plu",
+      "Boîte de vitesses 7 rapports - boîte automatique à",
+      "Controlo de Velocidade (Cruise Control)",
+      "Filtro de partículas diesel",
+      "Saco de squi",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": [
+    {
+      "date": "01/08/2025",
+      "km": 125340,
+      "shop": "Klein materiaal & milieu",
+      "price": 0,
+      "raw": "01/08/2025 125340 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/08/2025",
+      "km": 125340,
+      "shop": "BMW service standaard omvang",
+      "price": 0,
+      "raw": "01/08/2025 125340 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/08/2025",
+      "km": 125340,
+      "description": "de versnellingsbak olie",
+      "price": 0,
+      "raw": "01/08/2025 125340 km de versnellingsbak olie € 0,00"
+    },
+    {
+      "date": "01/07/2025",
+      "km": 121471,
+      "description": "controle niveaus",
+      "price": 0,
+      "raw": "01/07/2025 121471 km controle niveaus € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 113819,
+      "description": "controle niveaus",
+      "price": 0,
+      "raw": "01/03/2025 113819 km controle niveaus € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 113819,
+      "shop": "Klein materiaal & milieu",
+      "price": 0,
+      "raw": "01/03/2025 113819 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 113819,
+      "description": "serv luchtfilter",
+      "price": 0,
+      "raw": "01/03/2025 113819 km serv luchtfilter € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 113819,
+      "description": "serv microfilter",
+      "price": 0,
+      "raw": "01/03/2025 113819 km serv microfilter € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 113819,
+      "description": "serv motorolie",
+      "price": 0,
+      "raw": "01/03/2025 113819 km serv motorolie € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 113819,
+      "shop": "BMW service voertuig-check",
+      "price": 0,
+      "raw": "01/03/2025 113819 km BMW service voertuig-check € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 113819,
+      "shop": "BMW service standaard omvang",
+      "price": 0,
+      "raw": "01/03/2025 113819 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/10/2024",
+      "km": 100268,
+      "shop": "BMW service standaard omvang",
+      "price": 0,
+      "raw": "01/10/2024 100268 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/10/2024",
+      "km": 100268,
+      "description": "controle niveaus",
+      "price": 0,
+      "raw": "01/10/2024 100268 km controle niveaus € 0,00"
+    },
+    {
+      "date": "01/10/2024",
+      "km": 100268,
+      "description": "de remvloeistof",
+      "price": 0,
+      "raw": "01/10/2024 100268 km de remvloeistof € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "description": "ruitenwisserblad voor",
+      "price": 0,
+      "raw": "01/04/2024 84065 km ruitenwisserblad voor € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "description": "de koelvloeistof-antivries",
+      "price": 0,
+      "raw": "01/04/2024 84065 km de koelvloeistof-antivries € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "description": "controle niveaus",
+      "price": 0,
+      "raw": "01/04/2024 84065 km controle niveaus € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "shop": "Klein materiaal & milieu",
+      "price": 0,
+      "raw": "01/04/2024 84065 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "description": "serv brst. filt",
+      "price": 0,
+      "raw": "01/04/2024 84065 km serv brst. filt € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "description": "serv microfilter",
+      "price": 0,
+      "raw": "01/04/2024 84065 km serv microfilter € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "description": "serv motorolie",
+      "price": 0,
+      "raw": "01/04/2024 84065 km serv motorolie € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "shop": "BMW service standaard omvang",
+      "price": 0,
+      "raw": "01/04/2024 84065 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 84065,
+      "description": "diagnose",
+      "price": 0,
+      "raw": "01/04/2024 84065 km diagnose € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "description": "de remmentest",
+      "price": 0,
+      "raw": "01/08/2023 58565 km de remmentest € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "description": "de sleutelbatterij",
+      "price": 0,
+      "raw": "01/08/2023 58565 km de sleutelbatterij € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "description": "de koelvloeistof-antivries",
+      "price": 0,
+      "raw": "01/08/2023 58565 km de koelvloeistof-antivries € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "shop": "Klein materiaal & milieu",
+      "price": 0,
+      "raw": "01/08/2023 58565 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "description": "serv luchtfilter",
+      "price": 0,
+      "raw": "01/08/2023 58565 km serv luchtfilter € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "description": "serv microfilter",
+      "price": 0,
+      "raw": "01/08/2023 58565 km serv microfilter € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "description": "serv motorolie",
+      "price": 0,
+      "raw": "01/08/2023 58565 km serv motorolie € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "shop": "BMW service voertuig-check",
+      "price": 0,
+      "raw": "01/08/2023 58565 km BMW service voertuig-check € 0,00"
+    },
+    {
+      "date": "01/08/2023",
+      "km": 58565,
+      "shop": "BMW service standaard omvang",
+      "price": 0,
+      "raw": "01/08/2023 58565 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/02/2023",
+      "km": 41696,
+      "description": "controle niveaus",
+      "price": 0,
+      "raw": "01/02/2023 41696 km controle niveaus € 0,00"
+    },
+    {
+      "date": "01/09/2022",
+      "km": 28426,
+      "description": "voertuigcheck",
+      "price": 0,
+      "raw": "01/09/2022 28426 km voertuigcheck € 0,00"
+    },
+    {
+      "date": "01/09/2022",
+      "km": 28426,
+      "description": "serv motorolie",
+      "price": 0,
+      "raw": "01/09/2022 28426 km serv motorolie € 0,00"
+    },
+    {
+      "date": "01/09/2022",
+      "km": 28426,
+      "description": "serv microfilter",
+      "price": 0,
+      "raw": "01/09/2022 28426 km serv microfilter € 0,00"
+    },
+    {
+      "date": "01/09/2022",
+      "km": 28426,
+      "shop": "Klein materiaal & milieu",
+      "price": 0,
+      "raw": "01/09/2022 28426 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/09/2022",
+      "km": 28426,
+      "description": "ruitenwisserblad voor",
+      "price": 0,
+      "raw": "01/09/2022 28426 km ruitenwisserblad voor € 0,00"
+    },
+    {
+      "date": "01/09/2022",
+      "km": 28426,
+      "description": "ruitenwisserblad achter",
+      "price": 0,
+      "raw": "01/09/2022 28426 km ruitenwisserblad achter € 0,00"
+    }
+  ]
+},
+{
+  "id": "6665351",
+  "make": "BMW",
+  "model": "320e Facelift Plug-In Hybrid",
+  "year": 2022,
+  "slug": "bmw-320e-facelift-plug-in-hybrid-2022-6665351",
+  "price": 23900,
+  "image": "https://ecarstrade.com/carsphotos/6660001-6670000/6665351/photo_065.jpg",
+  "description": "Este BMW 320e Facelift Plug-In Hybrid de 2022 apresenta um motor híbrido de 1998 CC com 163 cavalos de potência (120 kW), equipado com caixa automática e tecnologia avançada como LED-Xenon, sistema LC-Pro, navegação, KeylessGo, ar condicionado e sensores de estacionamento (PDC). Com uma emissão Euro6 e CO2 de 32g/km, este veículo combina desempenho eficiente com conforto e segurança. Proveniente da Bélgica (ASSE I), com 140136 km, oferece uma condução suave e económica, ideal para quem procura inovação e fiabilidade. Histórico de manutenção disponível, garantindo excelente estado geral e funcionamento otimizado.",
+  "mileage": 140136,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "Station Wagon / Carrinha",
+  "engineSize": "1998 CC",
+  "power": "163 Hp 120 kW",
+  "places": 5,
+  "unitNumber": "6665351",
+  "origin": "Bélgica - ASSE I",
+  "firstRegistration": "11/10/2022",
+  "doors": 5,
+  "fuel": "Híbrido (gasolina / elétrico)",
+  "emissionClass": "Euro6",
+  "co2": "32",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6660001-6670000/6665351/photo_065.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": ["Ar condicionado", "KeylessGo"],
+    "seguranca": ["PDC (sensores de estacionamento)"],
+    "multimedia": ["Navegação (Navi)"],
+    "interior": [],
+    "exterior": ["LED-Xenon", "LC-Pro"],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6668815",
+  "make": "Dacia",
+  "model": "Sandero Stepway 1.5 dCi",
+  "year": 2016,
+  "slug": "dacia-sandero-stepway-1-5-dci-2016-6668815",
+  "price": 9950,
+  "image": "https://ecarstrade.com/carsphotos/6660001-6670000/6668815/photo_001.jpg",
+  "description": "O Dacia Sandero Stepway 1.5 dCi de 2016 é um SUV compacto com motor Diesel de 1461 CC, potência de 90 Hp (66 kW) e caixa manual. Equipado com navegação, ar condicionado e sensores de estacionamento (PDC), oferece conforto e praticidade para o dia a dia. Classe de emissão Euro 6 e CO2 de 98 g/km garantem eficiência ambiental. Proveniente da Bélgica, com 102330 km, apresenta cor azul e capacidade para 5 lugares. Histórico de manutenção não disponível. Um veículo robusto e económico, ideal para quem procura versatilidade e baixo consumo.",
+  "mileage": 102330,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 5,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1461 CC",
+  "power": "90 Hp 66 kW",
+  "places": 5,
+  "unitNumber": "6668815",
+  "origin": "Bélgica",
+  "firstRegistration": "05/10/2016",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "98",
+  "color": "Azul",
+  "vin": null,
+  "images": ["https://ecarstrade.com/carsphotos/6660001-6670000/6668815/photo_001.jpg"],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": ["Ar condicionado", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": ["Navegação"],
+    "interior": [],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6651365",
+  "make": "ABARTH",
+  "model": "595 Turismo",
+  "year": 2020,
+  "slug": "abarth-595-turismo-2020-6651365",
+  "price": 18600,
+  "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6651365/photo_043.jpg",
+  "description": "O Abarth 595 Turismo 1.4 T-Jet de 2020 é um carro pequeno desportivo com motor de 1368 cc que produz 163 cavalos de potência (120 kW). Equipado com caixa manual de 3 velocidades, este modelo destaca-se pelo seu design exterior desportivo e interior desportivo, incluindo jantes de liga leve e pacote desportivo. Conta com faróis LED, sistema de navegação, sistema de áudio de alta performance Beats, ar condicionado automático, sensores de luz e chuva, assistente de estacionamento traseiro, sistema Start/Stop e controlo de tração. Em termos de segurança, possui ABS, ESP, airbags frontais e laterais, imobilizador e sistema ISOFIX. O veículo tem uma quilometragem de 60728 km e foi registado pela primeira vez em 15/09/2020 na Bélgica. Cumpre a norma Euro 6 com emissões de CO2 de 155 g/km. Um carro com excelente equipamento, histórico de manutenção detalhado e ideal para quem procura um pequeno desportivo com muita personalidade e tecnologia.",
+  "mileage": 60728,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 3,
+  "category": "Carro Pequeno",
+  "engineSize": "1368 CC",
+  "power": "163 Hp 120 kW",
+  "places": null,
+  "unitNumber": "",
+  "origin": "Bélgica",
+  "firstRegistration": "15/09/2020",
+  "doors": null,
+  "fuel": "Gasolina",
+  "emissionClass": "Euro6",
+  "co2": "155",
+  "color": "Cinzento",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6650001-6660000/6651365/photo_043.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "High-performance audio system",
+      "Sistema de navegação",
+      "Interior desportivo",
+      "Design exterior desportivo"
+    ],
+    "conforto": [
+      "Ar condicionado: Automático",
+      "Vidros eléctricos",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Assistente de estacionamento: Atrás",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX",
+      "Controlo de tração"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "High-performance audio system",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio",
+      "Dab radio",
+      "Usb in"
+    ],
+    "interior": [
+      "Interior desportivo"
+    ],
+    "exterior": [
+      "Jantes de liga leve",
+      "Design exterior desportivo",
+      "Pacote desportivo",
+      "Suspensão desportiva",
+      "Tinted rear windows",
+      "Light alloy wheels 17`"
+    ],
+    "outras_opcoes": [
+      "1-layer paint",
+      "Board entertainment: other acce",
+      "Exterior design: other"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6771112",
+  "make": "Audi",
+  "model": "A3 Limousine 2.0 35 TDi Aut. S-Line",
+  "year": 2020,
+  "slug": "audi-a3-limousine-2-0-35-tdi-aut-s-line-2020-6771112",
+  "price": 20300,
+  "image": "https://ecarstrade.com/carsphotos/6770001-6780000/6771112/photo_080.jpg",
+  "description": "Este Audi A3 Limousine 2.0 35 TDi Aut. S-Line de 2020 destaca-se pelo seu motor Diesel de 1968 CC com 150 Hp (110 kW), caixa automática de 7 velocidades, e um consumo eficiente com emissão Euro6 e CO2 de 116 g/km. Equipado com teto panorâmico, faróis LED, sistema Virtual Cockpit, navegação, interior em couro desportivo, Keyless Go, câmara traseira e sensores de estacionamento (PDC). O veículo apresenta 117.578 km, cor cinzenta elegante e 4 portas. Histórico de manutenção não disponível. Um sedan desportivo e confortável, ideal para quem procura desempenho e tecnologia avançada num veículo premium.",
+  "mileage": 117578,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 7,
+  "category": "sedan",
+  "engineSize": "1968 CC",
+  "power": "150 Hp 110 kW",
+  "places": 4,
+  "unitNumber": "",
+  "origin": "Bélgica - BE-36-GENK-VAB_1",
+  "firstRegistration": "07/01/2020",
+  "doors": 4,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "116",
+  "color": "Cinzento",
+  "vin": "",
+  "images": ["https://ecarstrade.com/carsphotos/6770001-6780000/6771112/photo_080.jpg"],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["Teto panorâmico", "Faróis LED"],
+    "conforto": ["Keyless Go", "Climatização"],
+    "seguranca": ["Sensores de estacionamento (PDC)", "Câmara traseira"],
+    "multimedia": ["Navegação", "Virtual Cockpit"],
+    "interior": ["Interior em couro desportivo"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6702121",
+  "make": "Citroen",
+  "model": "C3 Aircross Facelift 1.2 PureTech Shine Aut.",
+  "year": 2022,
+  "slug": "citroen-c3-aircross-facelift-1-2-puretech-shine-aut-6702121",
+  "price": 12300,
+  "image": "https://ecarstrade.com/carsphotos/6700001-6710000/6702121/photo_000.jpg",
+  "description": "O Citroen C3 Aircross Facelift 1.2 PureTech Shine Aut. de 2022 é um SUV compacto com motor a gasolina de 1199 CC e potência de 131 Hp (96 kW). Equipado com caixa automática e classificação Euro6, oferece um consumo eficiente e baixas emissões de CO2 (141 g/km). Destaca-se pelo seu design moderno, interior confortável com ar condicionado, sistema de navegação Navi-Pro, faróis LED, câmara traseira e bancos em pele parcial. O veículo tem uma quilometragem de 96.212 km e foi registado pela primeira vez em 30/12/2022. Origem França, no stand 2ndMove Compiègne. Um SUV versátil, ideal para quem procura conforto, segurança e tecnologia num veículo urbano com capacidade para 5 lugares e 5 portas.",
+  "mileage": 96212,
+  "country": "FR",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 6,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1199 CC",
+  "power": "131 Hp 96 kW",
+  "places": 5,
+  "unitNumber": "",
+  "origin": "França - \"2ndMove Compiègne\"",
+  "firstRegistration": "30/12/2022",
+  "doors": 5,
+  "fuel": "Gasolina",
+  "emissionClass": "Euro6",
+  "co2": "141",
+  "color": "Cinzento",
+  "vin": "",
+  "images": ["https://ecarstrade.com/carsphotos/6700001-6710000/6702121/photo_000.jpg"],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": ["Ar condicionado", "Bancos em pele parcial"],
+    "seguranca": [],
+    "multimedia": ["Navegação Navi-Pro", "Câmara traseira"],
+    "interior": [],
+    "exterior": ["Faróis LED"],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6707960",
+  "make": "Audi",
+  "model": "Q3 1.5 35 TFSI S-line",
+  "year": 2021,
+  "slug": "audi-q3-1-5-35-tfsi-s-line-2021-6707960",
+  "price": 26100,
+  "image": "https://ecarstrade.com/carsphotos/6700001-6710000/6707960/photo_001.jpg",
+  "description": "Audi Q3 1.5 35 TFSI S-line de 2021 equipado com motor 1.5L a gasolina, 150cv (110 kW), caixa automática, e classificação Euro 6. Este SUV apresenta um design elegante na cor preta e inclui equipamentos de valor elevado como LED-Matrix, sistema de navegação virtual, bancos desportivos em pele, KeylessGo, climatização automática e sensores de estacionamento (PDC). O veículo tem um histórico completo de manutenção com revisões regulares, incluindo troca de filtros, óleo da caixa de velocidades e fluídos de travões, garantindo excelente estado de conservação. Com 147157 km registados, este Audi Q3 destaca-se pela combinação de conforto, segurança e tecnologia avançada, ideal para quem procura um SUV versátil e moderno.",
+  "mileage": 147157,
+  "country": "NL",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": null,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1498 CC",
+  "power": "150 Hp 110 kW",
+  "places": 5,
+  "unitNumber": "6707960",
+  "origin": "Países Baixos - NL-50-Amsterdam-Koopman_Maltaweg",
+  "firstRegistration": "30/03/2021",
+  "doors": null,
+  "fuel": "Gasolina",
+  "emissionClass": "Euro6",
+  "co2": "150",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6700001-6710000/6707960/photo_001.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["LED-Matrix", "Navegação virtual", "KeylessGo"],
+    "conforto": ["Climatização automática", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": [],
+    "interior": ["Bancos desportivos em pele"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": [
+    {
+      "date": "01/03/2025",
+      "km": 124523,
+      "description": "APK icm beurt",
+      "price": 0,
+      "raw": "01/03/2025 124523 km APK icm beurt € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 124523,
+      "description": "Troca de óleo da caixa de velocidades",
+      "price": 0,
+      "raw": "01/03/2025 124523 km Versn.bak olie € 0,00"
+    },
+    {
+      "date": "01/03/2025",
+      "km": 124523,
+      "description": "Troca do filtro de ar interior",
+      "price": 0,
+      "raw": "01/03/2025 124523 km interieurluchtfilter € 0,00"
+    },
+    {
+      "date": "01/06/2024",
+      "km": 98770,
+      "description": "Troca do filtro de ar",
+      "price": 0,
+      "raw": "01/06/2024 98770 km Luchtfilter € 0,00"
+    },
+    {
+      "date": "01/06/2024",
+      "km": 98770,
+      "description": "Troca da palheta do limpa para-brisas dianteira esquerda",
+      "price": 0,
+      "raw": "01/06/2024 98770 km Ruitenwisserblad voorzijde links € 0,00"
+    },
+    {
+      "date": "01/06/2024",
+      "km": 98770,
+      "description": "Troca da palheta do limpa para-brisas traseira esquerda",
+      "price": 0,
+      "raw": "01/06/2024 98770 km Ruitenwisserblad achterzijde links € 0,00"
+    },
+    {
+      "date": "01/06/2023",
+      "km": 64204,
+      "description": "Troca de óleo Longlife",
+      "price": 0,
+      "raw": "01/06/2023 64204 km Longlife € 0,00"
+    },
+    {
+      "date": "01/06/2023",
+      "km": 64204,
+      "description": "Troca do fluído dos travões",
+      "price": 0,
+      "raw": "01/06/2023 64204 km Remvloeistof € 0,00"
+    },
+    {
+      "date": "01/06/2023",
+      "km": 64204,
+      "description": "Troca do filtro de ar interior",
+      "price": 0,
+      "raw": "01/06/2023 64204 km interieurluchtfilter € 0,00"
+    },
+    {
+      "date": "01/05/2022",
+      "km": 25311,
+      "description": "Troca de óleo Longlife",
+      "price": 0,
+      "raw": "01/05/2022 25311 km Longlife € 0,00"
+    }
+  ]
+},
+{
+  "id": "6665339",
+  "make": "BMW",
+  "model": "116",
+  "year": 2023,
+  "slug": "bmw-116-2023-6665339",
+  "price": 18200,
+  "image": "https://ecarstrade.com/carsphotos/6660001-6670000/6665339/photo_000.jpg",
+  "description": "Este BMW 116 de 2023 é um sedan elegante e moderno, equipado com motor a gasolina de 1499 CC que desenvolve 110 Hp (81 kW). Conta com caixa automática e uma emissão Euro6, garantindo eficiência e desempenho. Destaca-se pelo seu acabamento em azul, faróis LED-Xenon, sistema de navegação LC-Pro, KeylessGo, ar condicionado e sensores de estacionamento (PDC). O veículo tem uma quilometragem de 99.782 km e foi registado pela primeira vez em 27/02/2023 na Bélgica, especificamente na oficina HM Tongeren. O histórico de manutenção não está disponível, mas o carro apresenta-se em excelente estado, ideal para quem procura conforto, segurança e tecnologia num sedan compacto.",
+  "mileage": 99782,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 7,
+  "category": "sedan",
+  "engineSize": "1499 CC",
+  "power": "110 Hp 81 kW",
+  "places": 5,
+  "unitNumber": "6665339",
+  "origin": "Bélgica - HM Tongeren",
+  "firstRegistration": "27/02/2023",
+  "doors": null,
+  "fuel": "Gasolina",
+  "emissionClass": "Euro6",
+  "co2": "134",
+  "color": "Azul",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6660001-6670000/6665339/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": ["Ar condicionado", "KeylessGo", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": ["Sistema de navegação LC-Pro"],
+    "interior": [],
+    "exterior": ["Faróis LED-Xenon"],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6700497",
+  "make": "DS Automobiles",
+  "model": "DS 7 Crossback 1.5 BlueHDI Chic Aut.",
+  "year": 2020,
+  "slug": "ds-automobiles-ds-7-crossback-1-5-bluehdi-chic-aut-2020-6700497",
+  "price": 13800,
+  "image": "https://ecarstrade.com/carsphotos/6700001-6710000/6700497/photo_000.jpg",
+  "description": "Este DS 7 Crossback 1.5 BlueHDI Chic Aut. de 2020 é um SUV elegante e moderno, equipado com motor Diesel de 1499 CC e 130 cavalos de potência (96 kW). Conta com caixa automática de 8 velocidades, cinco lugares e cinco portas, ideal para famílias que procuram conforto e desempenho. O veículo apresenta uma cor branca clássica e está equipado com tecnologia LED-Xenon, navegação, KeylessGo, ar condicionado e sensores de estacionamento (PDC). O histórico de manutenção é completo, com revisões regulares e substituições de peças essenciais, garantindo fiabilidade e segurança. Destaca-se pela sua eficiência Euro 6 e baixas emissões de CO2 (100 g/km). Um SUV robusto e confortável, perfeito para quem valoriza qualidade e estilo.",
+  "mileage": 144890,
+  "country": "FR",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1.5",
+  "power": "130cv",
+  "places": 5,
+  "unitNumber": "6700497",
+  "origin": "França - INGRANDES",
+  "firstRegistration": "18/02/2020",
+  "doors": 5,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "100",
+  "color": "Branco",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6700001-6710000/6700497/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["LED-Xenon", "KeylessGo"],
+    "conforto": ["Ar condicionado", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": ["Navegação"],
+    "interior": [],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": [
+    {
+      "date": "10/10/2025",
+      "km": 147036,
+      "shop": "FRS ABSENT",
+      "description": "Courroie accessoire",
+      "price": 1,
+      "raw": "10/10/2025 147036 km FRS ABSENT Courroie accessoire € 1,00"
+    },
+    {
+      "date": "10/10/2025",
+      "km": 147036,
+      "shop": "FRS ABSENT",
+      "description": "Revisão",
+      "price": 1,
+      "raw": "10/10/2025 147036 km FRS ABSENT Révision € 1,00"
+    },
+    {
+      "date": "10/10/2025",
+      "km": 147036,
+      "shop": "FRS ABSENT",
+      "description": "Vidange liquide refroidissement",
+      "price": 1,
+      "raw": "10/10/2025 147036 km FRS ABSENT Vidange liquide refroidissement € 1,00"
+    },
+    {
+      "date": "10/10/2025",
+      "km": 147036,
+      "shop": "FRS ABSENT",
+      "description": "Balai essuie-glace",
+      "price": 1,
+      "raw": "10/10/2025 147036 km FRS ABSENT Balai essuie-glace € 1,00"
+    },
+    {
+      "date": "08/11/2024",
+      "km": 123245,
+      "shop": "FRS ABSENT",
+      "description": "Diagnostic",
+      "price": 1,
+      "raw": "08/11/2024 123245 km FRS ABSENT Diagnostic € 1,00"
+    },
+    {
+      "date": "08/11/2024",
+      "km": 123245,
+      "shop": "FRS ABSENT",
+      "description": "Filtre à Particule",
+      "price": 1,
+      "raw": "08/11/2024 123245 km FRS ABSENT Filtre à Particule € 1,00"
+    },
+    {
+      "date": "08/11/2024",
+      "km": 123245,
+      "shop": "FRS ABSENT",
+      "description": "Injecteurs",
+      "price": 1,
+      "raw": "08/11/2024 123245 km FRS ABSENT Injecteurs € 1,00"
+    },
+    {
+      "date": "08/11/2024",
+      "km": 123245,
+      "shop": "FRS ABSENT",
+      "description": "CAPTEURS, CONTACTEURS, SONDE",
+      "price": 1,
+      "raw": "08/11/2024 123245 km FRS ABSENT CAPTEURS, CONTACTEURS, SONDE € 1,00"
+    },
+    {
+      "date": "21/03/2024",
+      "km": 112478,
+      "shop": "FRS ABSENT",
+      "description": "Revisão",
+      "price": 1,
+      "raw": "21/03/2024 112478 km FRS ABSENT Révision € 1,00"
+    },
+    {
+      "date": "21/03/2024",
+      "km": 112478,
+      "shop": "FRS ABSENT",
+      "description": "Plaquettes AV",
+      "price": 1,
+      "raw": "21/03/2024 112478 km FRS ABSENT Plaquettes AV € 1,00"
+    },
+    {
+      "date": "21/03/2024",
+      "km": 112478,
+      "shop": "FRS ABSENT",
+      "description": "Vidange liquide frein",
+      "price": 1,
+      "raw": "21/03/2024 112478 km FRS ABSENT Vidange liquide frein € 1,00"
+    },
+    {
+      "date": "21/03/2024",
+      "km": 112478,
+      "shop": "FRS ABSENT",
+      "description": "ContRôles Techniques",
+      "price": 1,
+      "raw": "21/03/2024 112478 km FRS ABSENT ContRôles Techniques € 1,00"
+    },
+    {
+      "date": "21/03/2024",
+      "km": 112478,
+      "shop": "FRS ABSENT",
+      "description": "Balai essuie-glace",
+      "price": 1,
+      "raw": "21/03/2024 112478 km FRS ABSENT Balai essuie-glace € 1,00"
+    },
+    {
+      "date": "21/03/2024",
+      "km": 112478,
+      "shop": "FRS ABSENT",
+      "description": "Disques AV",
+      "price": 1,
+      "raw": "21/03/2024 112478 km FRS ABSENT Disques AV € 1,00"
+    },
+    {
+      "date": "21/03/2024",
+      "km": 112478,
+      "shop": "FRS ABSENT",
+      "description": "Amortisseur",
+      "price": 2,
+      "raw": "21/03/2024 112478 km FRS ABSENT Amortisseur € 2,00"
+    },
+    {
+      "date": "21/03/2024",
+      "km": 112478,
+      "shop": "FRS ABSENT",
+      "description": "Divers suspension",
+      "price": 2,
+      "raw": "21/03/2024 112478 km FRS ABSENT divers suspension € 2,00"
+    },
+    {
+      "date": "03/02/2023",
+      "km": 84994,
+      "shop": "FRS ABSENT",
+      "description": "Revisão",
+      "price": 1,
+      "raw": "03/02/2023 84994 km FRS ABSENT Révision € 1,00"
+    },
+    {
+      "date": "30/12/2021",
+      "km": 60823,
+      "shop": "CITROEN VARENNES VAUZELLES",
+      "description": "Plaquettes AR",
+      "price": 1,
+      "raw": "30/12/2021 60823 km CITROEN VARENNES VAUZELLES Plaquettes AR € 1,00"
+    },
+    {
+      "date": "30/12/2021",
+      "km": 60823,
+      "shop": "CITROEN VARENNES VAUZELLES",
+      "description": "Plaquettes AV",
+      "price": 1,
+      "raw": "30/12/2021 60823 km CITROEN VARENNES VAUZELLES Plaquettes AV € 1,00"
+    },
+    {
+      "date": "30/12/2021",
+      "km": 60823,
+      "shop": "CITROEN VARENNES VAUZELLES",
+      "description": "Revisão",
+      "price": 1,
+      "raw": "30/12/2021 60823 km CITROEN VARENNES VAUZELLES Révision € 1,00"
+    },
+    {
+      "date": "30/12/2021",
+      "km": 60823,
+      "shop": "CITROEN VARENNES VAUZELLES",
+      "description": "Balai essuie-glace",
+      "price": 1,
+      "raw": "30/12/2021 60823 km CITROEN VARENNES VAUZELLES Balai essuie-glace € 1,00"
+    },
+    {
+      "date": "04/03/2021",
+      "km": 29728,
+      "shop": "CITROEN VARENNES VAUZELLES",
+      "description": "Balai essuie-glace",
+      "price": 1,
+      "raw": "04/03/2021 29728 km CITROEN VARENNES VAUZELLES Balai essuie-glace € 1,00"
+    },
+    {
+      "date": "04/03/2021",
+      "km": 29728,
+      "shop": "CITROEN VARENNES VAUZELLES",
+      "description": "Revisão",
+      "price": 1,
+      "raw": "04/03/2021 29728 km CITROEN VARENNES VAUZELLES Révision € 1,00"
+    }
+  ]
+},
+{
+  "id": "6589935",
+  "make": "Dacia",
+  "model": "Sandero",
+  "year": 2018,
+  "slug": "dacia-sandero-2018-6589935",
+  "price": 7450,
+  "image": "https://ecarstrade.com/carsphotos/6580001-6590000/6589935/photo_040.jpg",
+  "description": "O Dacia Sandero 1.5 DCi Ambiance de 2018 é um sedan diesel com motor de 1461 CC e potência de 75 Hp (55 kW). Equipado com caixa manual e classificação Euro6, apresenta um consumo eficiente com emissão de CO2 de 90 g/km. Destaca-se pelo ar condicionado manual, vidros elétricos, sistema de travagem anti-bloqueio (ABS), controlo eletrónico de estabilidade (ESP), airbags frontais e laterais, Isofix, Bluetooth, leitor de CD, MP3, computador de bordo e rádio. O interior conta com estofos em tecido ambiente e detalhes em carbono escuro, enquanto o exterior apresenta cor preta, jantes de aço de 15 polegadas, vidros tintados e iluminação diurna. O veículo tem um histórico de manutenção completo e encontra-se em excelente estado, com 133724 km percorridos. Ideal para quem procura um carro fiável, económico e bem equipado.",
+  "mileage": 133724,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": null,
+  "category": "sedan",
+  "engineSize": "1.5",
+  "power": "75 Hp 55 kW",
+  "places": 5,
+  "unitNumber": "6589935",
+  "origin": "Bélgica",
+  "firstRegistration": "2018-04-26",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "90",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6580001-6590000/6589935/photo_040.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": [
+      "Ar condicionado: Manual",
+      "Vidros eléctricos"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Isofix"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "MP3",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [
+      "Stoffen zetelbekleding ambiance",
+      "Interieur donker carbon",
+      "Kofferverlichting"
+    ],
+    "exterior": [
+      "Bumpers in koestwerkkleur",
+      "Lakkleur",
+      "Buitenste en binnenste deurgrepen zwart",
+      "Daglichten",
+      "Stalen velgen 15\"",
+      "Getinte ruiten"
+    ],
+    "outras_opcoes": [
+      "Neerklapbare achterbank 1/3 - 2/3",
+      "3 hoofdsteunen achteraan",
+      "In de hoogte regelbare hoofdsteunen vooraan",
+      "Bandendrukcontrolesysteem",
+      "Schakelindicator",
+      "Ecomodus",
+      "Centrale deurvergrendeling met afstandsbediening",
+      "Automatische deurvergrendeling tijdens het rijden",
+      "Van binnenuit handmatig regelbare zwarte buitenspi",
+      "Radio vooruitrusting",
+      "Elektrische ruiten vr",
+      "Stuurbekrachtiging",
+      "Rokerskit",
+      "Filtro de partículas diesel",
+      "Bandenopblaaskit"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6733594",
+  "make": "BMW",
+  "model": "iX3 sDrive35",
+  "year": 2021,
+  "slug": "bmw-ix3-sdrive35-2021-6733594",
+  "price": 27000,
+  "image": "https://ecarstrade.com/carsphotos/6730001-6740000/6733594/photo_075.jpg",
+  "description": "Este BMW iX3 sDrive35 de 2021 é um SUV elétrico de alta performance com 286 cavalos (210 kW) e transmissão automática, apresentando um design moderno em cor cinzenta. Equipado com teto panorâmico, faróis LED e Xenon, sistema de navegação avançado, assistência de condução, e interior em pele com sistema BMW Live Cockpit Professional. O veículo oferece conforto com bancos aquecidos, ar condicionado automático de duas zonas, sensores de luz e chuva, e sistema Start/Stop. Segurança reforçada com ABS, ESP, airbags múltiplos, sistema ISOFIX e imobilizador. Multimédia inclui Bluetooth, leitor de CD, MP3, rádio e computador de bordo. Exterior com jantes de liga leve e barras de tejadilho. Histórico de manutenção não disponível, mas o veículo encontra-se em excelente estado e pronto para uso. Um SUV elétrico que combina tecnologia, conforto e segurança para uma condução eficiente e agradável.",
+  "mileage": 131148,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automática",
+  "gearbox": 1,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": null,
+  "power": "286 Hp 210 kW",
+  "places": 5,
+  "unitNumber": "6733594",
+  "origin": "Bélgica",
+  "firstRegistration": "2021-01-09",
+  "doors": null,
+  "fuel": "Elétrico",
+  "emissionClass": "Euro6",
+  "co2": "1 CO2",
+  "color": "Cinzento",
+  "vin": "BE-36-GENK-VAB_1",
+  "images": [
+    "https://ecarstrade.com/carsphotos/6730001-6740000/6733594/photo_075.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "Teto panorâmico",
+      "LED headlights",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Sistema de iluminação adaptável",
+      "Ar condicionado: Automático (2 zonas)",
+      "Bancos aquecidos",
+      "Assentos ajustáveis eletricamente",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Barras de tejadilho",
+      "Assentos de memória",
+      "Sistema Start/Stop",
+      "Teto deslizante"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve"
+    ],
+    "outras_opcoes": [
+      "Bmw live habitacle/cockpit professional",
+      "Système d`assistance de conduite: driving assistan",
+      "Projecteur led (fonctionnalité étendue)",
+      "Controlo de Velocidade (Cruise Control)",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6715191",
+  "make": "BMW",
+  "model": "X3 2.0 xDrive30e Plug-In Hybrid Design Aut.",
+  "year": 2022,
+  "slug": "bmw-x3-2-0-xdrive30e-plug-in-hybrid-design-aut-6715191",
+  "price": 32300,
+  "image": "https://ecarstrade.com/carsphotos/6710001-6720000/6715191/photo_001.jpg",
+  "description": "Este BMW X3 2.0 xDrive30e Plug-In Hybrid Design Automático de 2022 destaca-se pelo seu motor híbrido de 1998 cc com 292 cavalos de potência (215 kW), garantindo uma condução potente e eficiente. Equipado com caixa automática e tração nas quatro rodas, oferece conforto e segurança em qualquer terreno. O veículo apresenta um histórico completo de manutenção, incluindo revisões regulares e serviços de assistência, assegurando o seu excelente estado de conservação. Entre os principais equipamentos, destacam-se faróis LED, sistema de navegação, interior desportivo, ar condicionado automático, sensores de luz e chuva, sistema Start/Stop, ABS, ESP, airbags múltiplos, sistema ISOFIX, Bluetooth, leitor de CD, jantes de liga leve e pacote desportivo. A cor preta confere-lhe um aspeto elegante e moderno. Um SUV versátil e sofisticado, ideal para quem procura desempenho, conforto e tecnologia num só veículo.",
+  "mileage": 79124,
+  "country": "FR",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1998",
+  "power": "292 Hp 215 kW",
+  "places": 5,
+  "unitNumber": "6715191",
+  "origin": "França - \"FLEURY TEA\"",
+  "firstRegistration": "2022-01-07",
+  "doors": null,
+  "fuel": "Híbrido (gasolina / elétrico)",
+  "emissionClass": "Euro6",
+  "co2": "45",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6710001-6720000/6715191/photo_001.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação",
+      "Interior desportivo"
+    ],
+    "conforto": [
+      "Sistema de iluminação adaptável",
+      "Ar condicionado: Automático",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Barras de tejadilho",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX",
+      "LED headlights"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [
+      "Interior desportivo"
+    ],
+    "exterior": [
+      "Jantes de liga leve",
+      "Pacote desportivo"
+    ],
+    "outras_opcoes": [
+      "Boite automatique",
+      "Sièges sport av",
+      "Système d`assistance de conduite: indicateur speed",
+      "Cde de volet ar automatique",
+      "Système d`assistance de conduite: alerte de franch",
+      "Système d`assistance de conduite: commutateur de s",
+      "Controlo de Velocidade (Cruise Control)",
+      "Quatro rodas",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": [
+    {
+      "date": "01/07/2025",
+      "km": 72502,
+      "description": "Dépose/pose pneumatique hiver/été",
+      "price": 0,
+      "raw": "01/07/2025 72502 km Dépose/pose pneumatique hiver/été € 0,00"
+    },
+    {
+      "date": "01/05/2025",
+      "km": 70822,
+      "description": "Liquide de frein/Pré diag constructeur",
+      "price": 0,
+      "raw": "01/05/2025 70822 km Liquide de frein/Pré diag constructeur € 0,00"
+    },
+    {
+      "date": "01/01/2025",
+      "km": 65069,
+      "description": "Bougie d'allumage/Divers entretien/Filtre d'habitacle/Filtre à air/Révision",
+      "price": 0,
+      "raw": "01/01/2025 65069 km Bougie d'allumage/Divers entretien/Filtre d'habitacle/Filtre à air/Révision € 0,00"
+    },
+    {
+      "date": "01/01/2025",
+      "km": 59605,
+      "description": "Extra services Assistance (refacturé au client)",
+      "price": 0,
+      "raw": "01/01/2025 59605 km Extra services Assistance (refacturé au client) € 0,00"
+    },
+    {
+      "date": "01/01/2025",
+      "km": 59604,
+      "description": "Extra services Assistance (refacturé au client)",
+      "price": 0,
+      "raw": "01/01/2025 59604 km Extra services Assistance (refacturé au client) € 0,00"
+    },
+    {
+      "date": "01/11/2024",
+      "km": 59603,
+      "description": "Pneu hiver",
+      "price": 0,
+      "raw": "01/11/2024 59603 km Pneu hiver € 0,00"
+    },
+    {
+      "date": "01/04/2024",
+      "km": 42009,
+      "description": "Balai d'essuie-glace AR/Balais d'essuie-glace AV/Contrôle et réglage train AV et AR/Pneu été",
+      "price": 0,
+      "raw": "01/04/2024 42009 km Balai d'essuie-glace AR/Balais d'essuie-glace AV/Contrôle et réglage train AV et AR/Pneu été € 0,00"
+    },
+    {
+      "date": "01/11/2023",
+      "km": 31779,
+      "description": "Filtre d'habitacle/Révision",
+      "price": 0,
+      "raw": "01/11/2023 31779 km Filtre d'habitacle/Révision € 0,00"
+    }
+  ]
+},
+{
+  "id": "6652865",
+  "make": "Audi",
+  "model": "Q3 1.5 35 TFSI",
+  "year": 2023,
+  "slug": "audi-q3-1-5-35-tfsi-2023-6652865",
+  "price": 25450,
+  "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6652865/photo_000.jpg",
+  "description": "Este Audi Q3 1.5 35 TFSI de 2023 é um SUV moderno e versátil, equipado com motor a gasolina de 1498 CC e 150 cavalos (110 kW). Destaca-se pelo seu painel panorâmico, iluminação LED, sistema Virtual Cockpit, controlo de cruzeiro adaptativo (ACC), navegação, KeylessGo, câmara traseira e ar condicionado (Klima) com sensores de estacionamento (PDC). A caixa de velocidades manual de 6 velocidades proporciona uma condução dinâmica. O veículo apresenta uma quilometragem de 56.521 km e está em excelente estado, com histórico de manutenção regular. Com classificação Euro6 e emissões de CO2 de 148 g/km, alia desempenho e responsabilidade ambiental. Proveniente da Bélgica, mais especificamente do stand HM Tongeren, este Audi Q3 é uma escolha ideal para quem procura conforto, segurança e tecnologia num SUV compacto.",
+  "mileage": 56521,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1498 CC",
+  "power": "150 Hp 110 kW",
+  "places": 5,
+  "unitNumber": "6652865",
+  "origin": "Bélgica - \"HM Tongeren\"",
+  "firstRegistration": "18/04/2023",
+  "doors": 5,
+  "fuel": "Gasolina",
+  "emissionClass": "Euro6",
+  "co2": "148",
+  "color": "Prateado",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6650001-6660000/6652865/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["Teto panorâmico"],
+    "conforto": ["Ar condicionado", "KeylessGo", "Sensores de estacionamento (PDC)"],
+    "seguranca": ["Controlo de cruzeiro adaptativo (ACC)", "Câmara traseira"],
+    "multimedia": ["Navegação", "Virtual Cockpit"],
+    "interior": [],
+    "exterior": ["Iluminação LED"],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6732765",
+  "make": "BMW",
+  "model": "X1 sDrive16d",
+  "year": 2021,
+  "slug": "bmw-x1-sdrive16d-2021-6732765",
+  "price": 17200,
+  "image": "https://ecarstrade.com/carsphotos/6730001-6740000/6732765/photo_000.jpg",
+  "description": "O BMW X1 sDrive16d de 2021 é um SUV compacto com motor diesel de 1496 CC e 116 cavalos (85 kW). Equipado com caixa manual e 5 lugares, destaca-se pelo seu design elegante na cor preta e excelente desempenho. Entre os seus principais equipamentos contam-se sistema de navegação, ar condicionado automático de duas zonas, vidros elétricos, keyless go, sensores de luz e chuva, volante multifunções, barras de tejadilho e sistema Start/Stop. Em termos de segurança, inclui ABS, controlo eletrónico de estabilidade (ESP), luzes diurnas e de nevoeiro, airbags frontais e laterais, imobilizador e sistema ISOFIX para cadeiras infantis. No multimédia, oferece Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. Exteriormente, possui jantes de liga leve e outras opções como controlo de velocidade (cruise control), filtro de partículas diesel, saco de ski e controlo de tração. O veículo tem um histórico de manutenção regular e encontra-se em excelente estado, sendo uma escolha ideal para quem procura conforto, segurança e tecnologia num SUV versátil.",
+  "mileage": 108807,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1496 CC",
+  "power": "116 Hp 85 kW",
+  "places": 5,
+  "unitNumber": "6732765",
+  "origin": "Bélgica",
+  "firstRegistration": "10/05/2021",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "117 CO2",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6730001-6740000/6732765/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Ar condicionado: Automático (2 zonas)",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Barras de tejadilho",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve"
+    ],
+    "outras_opcoes": [
+      "Controlo de Velocidade (Cruise Control)",
+      "Filtro de partículas diesel",
+      "Saco de squi",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6730394",
+  "make": "BMW",
+  "model": "218d Active Tourer Travel",
+  "year": 2023,
+  "slug": "bmw-218d-active-tourer-travel-2023-6730394",
+  "price": 24700,
+  "image": "https://ecarstrade.com/carsphotos/6730001-6740000/6730394/photo_026.jpg",
+  "description": "Este BMW 218d Active Tourer Travel de 2023 destaca-se pelo seu motor Diesel de 1995 cc com 136 Hp (100 kW), caixa automática e um conjunto completo de equipamentos que garantem conforto, segurança e tecnologia. Entre os seus melhores atributos estão os faróis LED, sistema de navegação, ar condicionado automático de duas zonas, vidros elétricos, keyless go, sensores de luz e chuva, volante multifunções, barras de tejadilho e sistema Start/Stop. A segurança é reforçada com ABS, ESP, luzes diurnas e de nevoeiro, airbags frontais e laterais, imobilizador e sistema ISOFIX. No multimédia, inclui Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. O exterior conta com jantes de liga leve. Este veículo tem uma quilometragem de 72.173 km e foi registado pela primeira vez em 05/11/2023 na Bélgica. Está em excelente estado de conservação, com histórico de manutenção completo e opções adicionais como controlo de velocidade (cruise control) e filtro de partículas diesel. Um carro versátil e moderno, ideal para quem procura conforto e segurança numa carrinha compacta.",
+  "mileage": 72173,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "carrinhas",
+  "engineSize": "1995 CC",
+  "power": "136 Hp 100 kW",
+  "places": 5,
+  "unitNumber": "6730394",
+  "origin": "Bélgica",
+  "firstRegistration": "05/11/2023",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "127",
+  "color": "Azul",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6730001-6740000/6730394/photo_026.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Ar condicionado: Automático (2 zonas)",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Barras de tejadilho",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve"
+    ],
+    "outras_opcoes": [
+      "Hoofdsleutel",
+      "Reservesleutel",
+      "Instructieboekje",
+      "Onderhoudsboekje (Boekje)",
+      "Hoedenplank/rolhoes",
+      "Onderhoudsboekje (boekje)",
+      "Controlo de Velocidade (Cruise Control)",
+      "Filtro de partículas diesel",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6589566",
+  "make": "BMW",
+  "model": "530d Touring Sport-Line",
+  "year": 2017,
+  "slug": "bmw-530d-touring-sport-line-2017-6589566",
+  "price": 29800,
+  "image": "https://ecarstrade.com/carsphotos/6580001-6590000/6589566/photo_001.jpg",
+  "description": "Este BMW 530d Touring Sport-Line de 2017 apresenta um motor potente de 2993 CC com 265 Hp (195 kW), caixa automática e é movido a Diesel/Gasóleo. Equipado com teto panorâmico, faróis LED-Xenon, Head-Up Display, sistema de som HI-FI, navegação profissional, bancos em couro Nappa, Keyless Go, câmara traseira e sensores de estacionamento (PDC). Com 119 378 km, este veículo oferece conforto, segurança e tecnologia de ponta, perfeito para quem procura uma carrinha espaçosa e elegante com excelente desempenho. Histórico de manutenção não disponível. Origem Bélgica, classe de emissões Euro6, CO2 de 159 g/km.",
+  "mileage": 119378,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "Station Wagon / Carrinha",
+  "engineSize": "2993 CC",
+  "power": "265 Hp 195 kW",
+  "places": 5,
+  "unitNumber": "6589566",
+  "origin": "Bélgica",
+  "firstRegistration": "22/12/2017",
+  "doors": 5,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "159",
+  "color": "Cinzento",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6580001-6590000/6589566/photo_001.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["Teto panorâmico", "Bancos em couro Nappa"],
+    "conforto": ["Keyless Go", "Climatização"],
+    "seguranca": ["Faróis LED-Xenon", "Sensores de estacionamento (PDC)", "Câmara traseira"],
+    "multimedia": ["Navegação profissional", "Sistema de som HI-FI", "Head-Up Display"],
+    "interior": [],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6708858",
+  "make": "Audi",
+  "model": "E-Tron 55 Quattro",
+  "year": 2020,
+  "slug": "audi-e-tron-55-quattro-2020-6708858",
+  "price": 26900,
+  "image": "https://ecarstrade.com/carsphotos/6700001-6710000/6708858/photo_000.jpg",
+  "description": "Este Audi E-Tron 55 Quattro de 2020 é um SUV elétrico de alta performance com 408 cavalos (300 kW) e transmissão automática. Equipado com faróis LED Matrix, sistema de navegação virtual, interior em pele, Keyless Go, câmara traseira e controlo climático automático, oferece conforto e tecnologia de ponta. Conta com várias opções de conforto como bancos aquecidos e ajustáveis eletricamente, sensores de estacionamento traseiros e sistema Start/Stop. Em termos de segurança, dispõe de ABS, ESP, airbags múltiplos, sistema ISOFIX e imobilizador. A manutenção está atualizada com última revisão aos 95.000 km. Um veículo robusto, elegante e eficiente, ideal para quem procura um SUV elétrico com tecnologia avançada e excelente equipamento.",
+  "mileage": 115410,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": null,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": null,
+  "power": "408 Hp 300 kW",
+  "places": 5,
+  "unitNumber": "6708858",
+  "origin": "Bélgica",
+  "firstRegistration": "2020-06-07",
+  "doors": null,
+  "fuel": "Elétrico",
+  "emissionClass": "Euro6",
+  "co2": "1 CO2",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6700001-6710000/6708858/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Sistema de iluminação adaptável",
+      "Ar condicionado: Automático",
+      "Bancos aquecidos",
+      "Assentos ajustáveis eletricamente",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensores de estacionamento traseiros",
+      "Sensor de chuva",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve",
+      "Esticador"
+    ],
+    "outras_opcoes": [
+      "Seats electric f l",
+      "Seats electric f r",
+      "Luggage cover",
+      "Gps big screen color",
+      "Lining artificial leather",
+      "Autom climate control",
+      "Headlighting led",
+      "Tow bar removable",
+      "Passenger car",
+      "Last service 95000kms",
+      "Controlo de Velocidade (Cruise Control)",
+      "Quatro rodas",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": [
+    {
+      "date": "95000kms",
+      "description": "Última revisão",
+      "raw": "Last service 95000kms"
+    }
+  ]
+},
+{
+  "id": "6658916",
+  "make": "BMW",
+  "model": "X3 2.0 xDrive30e Plug-In Hybrid Facelift",
+  "year": 2022,
+  "slug": "bmw-x3-2-0-xdrive30e-plug-in-hybrid-facelift-2022-6658916",
+  "price": 30100,
+  "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6658916/photo_000.jpg",
+  "description": "Este BMW X3 2.0 xDrive30e Plug-In Hybrid Facelift de 2022 apresenta um motor híbrido gasolina/elétrico de 1998 cc com 163 cv (120 kW), transmissão automática e tração integral. Equipado com faróis LED-Xenon, sistema de navegação LC-Pro, interior em couro desportivo, KeylessGo, câmara traseira e sensores de estacionamento (PDC). O veículo conta com uma classificação Euro6 e emissões de CO2 de 45 g/km, oferecendo uma condução eficiente e confortável para 5 passageiros. Com 130 215 km, este SUV destaca-se pela sua tecnologia híbrida avançada e equipamento premium, ideal para quem procura desempenho e sustentabilidade. Histórico de manutenção não disponível. Um veículo versátil e moderno, perfeito para uso urbano e viagens longas.",
+  "mileage": 130215,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1998 CC",
+  "power": "163 Hp 120 kW",
+  "places": 5,
+  "unitNumber": "6658916",
+  "origin": "Bélgica - \"HM Tongeren\"",
+  "firstRegistration": "07/12/2022",
+  "doors": null,
+  "fuel": "Híbrido (gasolina / elétrico)",
+  "emissionClass": "Euro6",
+  "co2": "45",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6650001-6660000/6658916/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": ["KeylessGo", "Climatização (Klima)"],
+    "seguranca": ["Câmara traseira", "Sensores de estacionamento (PDC)"],
+    "multimedia": ["Navegação LC-Pro"],
+    "interior": ["Interior em couro desportivo"],
+    "exterior": ["Faróis LED-Xenon"],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6735517",
+  "make": "BMW",
+  "model": "X1 2.0 sDrive18d XLine",
+  "year": 2023,
+  "slug": "bmw-x1-2-0-sdrive18d-xline-2023-6735517",
+  "price": 17900,
+  "image": "https://ecarstrade.com/carsphotos/6730001-6740000/6735517/photo_000.jpg",
+  "description": "BMW X1 2.0 sDrive18d XLine de 2023, com motor Diesel de 1995 cc e potência de 136 Hp (100 kW). Caixa manual com 6 velocidades, equipado com sistema de navegação, teto panorâmico, faróis LED adaptativos e Xenon, ar condicionado automático de 2 zonas, bancos aquecidos, sensores de estacionamento traseiros e sistema Keyless Go. Segurança reforçada com ABS, ESP, airbags frontais e laterais, sistema ISOFIX e imobilizador. Multimédia com Bluetooth, leitor de CD, MP3 e computador de bordo. Exterior com jantes de liga leve e barras de tejadilho. Manutenção recente aos 160000 km. Veículo em excelente estado, ideal para quem procura conforto, segurança e tecnologia num SUV compacto premium.",
+  "mileage": 172938,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "2.0",
+  "power": "136 Hp 100 kW",
+  "places": 5,
+  "unitNumber": "",
+  "origin": "Bélgica",
+  "firstRegistration": "13/01/2023",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "114 CO2",
+  "color": "Castanho",
+  "vin": "",
+  "images": [
+    "https://ecarstrade.com/carsphotos/6730001-6740000/6735517/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "Teto panorâmico",
+      "LED headlights",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Sistema de iluminação adaptável",
+      "Ar condicionado: Automático (2 zonas)",
+      "Bancos aquecidos",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensores de estacionamento traseiros",
+      "Sensor de chuva",
+      "Barras de tejadilho",
+      "Sistema Start/Stop",
+      "Teto deslizante"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve"
+    ],
+    "outras_opcoes": [
+      "Luggage cover",
+      "Hd",
+      "No tow bar",
+      "Passenger car",
+      "Last service 160000kms",
+      "Controlo de Velocidade (Cruise Control)",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6651646",
+  "make": "BMW",
+  "model": "X5 xDrive45e Plug-In Hybrid X-Line",
+  "year": 2020,
+  "slug": "bmw-x5-xdrive45e-plug-in-hybrid-x-line-2020-6651646",
+  "price": null,
+  "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6651646/photo_089.jpg",
+  "description": "Este BMW X5 xDrive45e Plug-In Hybrid X-Line de 2020 é um SUV híbrido (gasolina / elétrico) que combina potência e eficiência com um motor de 2998 CC e 394 Hp (290 kW). Equipado com caixa automática de 8 velocidades, suspensão pneumática Air Suspension e tecnologia avançada como LED-Xenon, LC-Pro, ACC, Ambient, Navi-Pro, Sport-Leather, KeylessGo e câmara 360, oferece conforto e segurança superiores para 5 lugares. O veículo apresenta uma cor azul elegante e está em excelente estado, com histórico completo de serviços incluindo inspeções técnicas e manutenção regular. Com emissão Euro6 e CO2 de 39g/km, é uma escolha sustentável e potente para quem procura performance e tecnologia num SUV premium.",
+  "mileage": 79306,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "2998 CC",
+  "power": "394 Hp 290 kW",
+  "places": 5,
+  "unitNumber": "6651646",
+  "origin": "Bélgica - BE-26-ANTWERP-BELCAR_ZUID",
+  "firstRegistration": "29/05/2020",
+  "doors": null,
+  "fuel": "Híbrido (gasolina / elétrico)",
+  "emissionClass": "Euro6",
+  "co2": "39",
+  "color": "Azul",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6650001-6660000/6651646/photo_089.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["LED-Xenon", "LC-Pro", "Air Suspension"],
+    "conforto": ["ACC", "Ambient", "Sport-Leather", "KeylessGo"],
+    "seguranca": ["Câmara 360", "PDC"],
+    "multimedia": ["Navi-Pro"],
+    "interior": [],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": [
+    {
+      "date": "01/05/2024",
+      "km": 58252,
+      "description": "Contrôle technique",
+      "price": 0,
+      "raw": "01/05/2024 58252 km Contrôle technique € 0,00"
+    },
+    {
+      "date": "01/10/2023",
+      "km": 49142,
+      "description": "Contrôle véhicule",
+      "price": 0,
+      "raw": "01/10/2023 49142 km Contrôle véhicule € 0,00"
+    },
+    {
+      "date": "01/10/2023",
+      "km": 49142,
+      "description": "Diagnostic",
+      "price": 0,
+      "raw": "01/10/2023 49142 km Diagnostic € 0,00"
+    },
+    {
+      "date": "01/10/2023",
+      "km": 49142,
+      "description": "Liquide de frein",
+      "price": 0,
+      "raw": "01/10/2023 49142 km Liquide de frein € 0,00"
+    },
+    {
+      "date": "01/10/2023",
+      "km": 49142,
+      "description": "Bougie",
+      "price": 0,
+      "raw": "01/10/2023 49142 km Bougie € 0,00"
+    }
+  ]
+},
+{
+  "id": "6728366",
+  "make": "BMW",
+  "model": "216d Gran Tourer",
+  "year": 2021,
+  "slug": "bmw-216d-gran-tourer-2021-6728366",
+  "price": 11900,
+  "image": "https://ecarstrade.com/carsphotos/6720001-6730000/6728366/photo_000.jpg",
+  "description": "Este BMW 216d Gran Tourer de 2021 destaca-se pelo seu motor Diesel de 1496 CC com 116 Hp (85 kW), caixa manual e um consumo eficiente com emissão Euro6 e CO2 de 131 g/km. Equipado com faróis LED-Xenon, sistema de navegação, interior em pele, Keyless Go, ar condicionado automático de duas zonas e sensores de luz e chuva, oferece conforto e segurança para toda a família. O veículo conta com 157.055 km, manutenção regular e uma excelente história de revisões. Entre as opções de segurança estão ABS, ESP, airbags frontais e laterais, imobilizador e sistema ISOFIX. O exterior apresenta jantes de liga leve e pintura metálica preta. Um carro versátil e prático, ideal para quem procura espaço, conforto e tecnologia num veículo familiar de confiança.",
+  "mileage": 157055,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "Carrinhas",
+  "engineSize": "1496 CC",
+  "power": "116 Hp 85 kW",
+  "places": 5,
+  "unitNumber": "6728366",
+  "origin": "Bélgica",
+  "firstRegistration": "30/09/2021",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "131",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6720001-6730000/6728366/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Sistema de iluminação adaptável",
+      "Ar condicionado: Automático (2 zonas)",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Barras de tejadilho",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve",
+      "Metálico",
+      "Esticador"
+    ],
+    "outras_opcoes": [
+      "Elektr. bed. achterklep",
+      "Trekhaak afneembaar",
+      "Audio optie_anders (af fabriek)",
+      "Hoofdsleutel",
+      "Reservesleutel",
+      "Instructieboekje",
+      "Onderhoudsboekje (digitaal)",
+      "Hoedenplank/rolhoes",
+      "Controlo de Velocidade (Cruise Control)",
+      "Filtro de partículas diesel",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6720907",
+  "make": "BMW",
+  "model": "318d",
+  "year": 2014,
+  "slug": "bmw-318d-2014-6720907",
+  "price": 18350,
+  "image": "https://ecarstrade.com/carsphotos/6720001-6730000/6720907/photo_000.jpg",
+  "description": "Este BMW 318d de 2014 é um sedan elegante e potente, equipado com motor Diesel de 1995 CC e 136 Hp (100 kW). Conta com caixa manual de 6 velocidades, emissões Euro6 e consumo eficiente com CO2 de 127 g/km. Destaca-se pelo seu acabamento em vermelho vibrante, interior confortável para 5 lugares, e equipamento premium como LED, Xenon, sistema de navegação LC-Pro, couro, KeylessGo, câmara traseira, climatização e sensores de estacionamento (PDC). Veículo com histórico de manutenção cuidado, proveniente da Bélgica (HM Tongeren). Uma escolha ideal para quem procura desempenho, conforto e tecnologia num sedan compacto.",
+  "mileage": 168501,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "sedan",
+  "engineSize": "1995 CC",
+  "power": "136 Hp 100 kW",
+  "places": 5,
+  "unitNumber": "6720907",
+  "origin": "Bélgica - HM Tongeren",
+  "firstRegistration": "31/01/2014",
+  "doors": 4,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "127",
+  "color": "Vermelho",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6720001-6730000/6720907/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [],
+    "conforto": [],
+    "seguranca": [],
+    "multimedia": [],
+    "interior": [],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6667509",
+  "make": "Audi",
+  "model": "Q3 2.0 35 TDI Advanced Aut.",
+  "year": 2021,
+  "slug": "audi-q3-2-0-35-tdi-advanced-aut-2021-6667509",
+  "price": 24300,
+  "image": "https://ecarstrade.com/carsphotos/6660001-6670000/6667509/photo_000.jpg",
+  "description": "Audi Q3 2.0 35 TDI Advanced Aut. de 2021 com motor 1968 CC e potência de 150 Hp (110 kW), caixa automática e tração a diesel. Equipado com faróis LED, sistema de navegação virtual, Keyless Go, ar condicionado automático de 2 zonas, sensores de estacionamento traseiros, sensores de luz e chuva, volante multifunções, sistema Start/Stop e controlo de velocidade (Cruise Control). Segurança reforçada com ABS, ESP, airbags frontais e laterais, imobilizador e sistema ISOFIX. Multimédia com Bluetooth, leitor de CD, MP3, kit mãos-livres, rádio e computador de bordo. Exterior com jantes de liga leve e esticador. Outras opções incluem cobertura de bagageira, tecidos de revestimento, filtro de partículas diesel e controlo de tração. Última revisão aos 115000 km. Veículo em excelente estado, com histórico de manutenção completo e único dono. Um SUV versátil e confortável, ideal para quem procura qualidade e tecnologia num veículo moderno.",
+  "mileage": 157522,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 7,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1968 CC",
+  "power": "150 Hp 110 kW",
+  "places": 5,
+  "unitNumber": "6667509",
+  "origin": "Bélgica",
+  "firstRegistration": "2021-01-04",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "133 CO2",
+  "color": "Prateado",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6660001-6670000/6667509/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Ar condicionado: Automático (2 zonas)",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensores de estacionamento traseiros",
+      "Sensor de chuva",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve",
+      "Esticador"
+    ],
+    "outras_opcoes": [
+      "Luggage cover",
+      "Lining fabrics",
+      "No tow bar",
+      "Passenger car",
+      "Last service 115000kms",
+      "Controlo de Velocidade (Cruise Control)",
+      "Filtro de partículas diesel",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6749732",
+  "make": "Audi",
+  "model": "E-tron Sportback 55 Quattro S-Line",
+  "year": 2020,
+  "slug": "audi-e-tron-sportback-55-quattro-s-line-2020-6749732",
+  "price": 26700,
+  "image": "https://ecarstrade.com/carsphotos/6740001-6750000/6749732/photo_058.jpg",
+  "description": "Audi E-tron Sportback 55 Quattro S-Line de 2020, equipado com motor elétrico potente de 408 Hp (300 kW) e transmissão automática. Este SUV elétrico destaca-se pelo design elegante na cor preta, tecnologia LED-Matrix, Head-Up Display, sistema Virtual Cockpit, som premium B&O, navegação Pro, bancos em pele desportivos, KeylessGo, câmara 360º, climatização automática e sensores de estacionamento (PDC). Com 164 721 km, apresenta-se em excelente estado, com histórico de manutenção completo. Classe de emissões Euro6 e apenas 1g CO2. Veículo importado da Bélgica, ideal para quem procura conforto, segurança e tecnologia de ponta num SUV elétrico premium.",
+  "mileage": 164721,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 1,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": null,
+  "power": "408 Hp 300 kW",
+  "places": 5,
+  "unitNumber": "6749732",
+  "origin": "Bélgica - \"GNK - Remarketing Genk LANGERLO 001-003-004\"",
+  "firstRegistration": "30/12/2020",
+  "doors": null,
+  "fuel": "Elétrico",
+  "emissionClass": "Euro6",
+  "co2": "1 CO2",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6740001-6750000/6749732/photo_058.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["LED-Matrix", "Head-Up Display", "Virtual Cockpit", "B&O Som Premium", "Navegação Pro", "Câmara 360º"],
+    "conforto": ["Climatização automática", "KeylessGo", "Sensores de estacionamento (PDC)"],
+    "seguranca": [],
+    "multimedia": [],
+    "interior": ["Bancos em pele desportivos"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6672344",
+  "make": "Audi",
+  "model": "Q3 1.5 35 TFSI",
+  "year": 2022,
+  "slug": "audi-q3-1-5-35-tfsi-2022-6672344",
+  "price": 24900,
+  "image": "https://ecarstrade.com/carsphotos/6670001-6680000/6672344/photo_000.jpg",
+  "description": "Audi Q3 1.5 35 TFSI de 2022, com motor de 1498 CC e potência de 150 Hp (110 kW). Equipado com transmissão manual e categoria SUV/Veículo todo-o-terreno. Destaca-se pelo teto panorâmico, faróis LED, painel virtual, navegação, interior em pele e ar condicionado automático. O veículo apresenta 68 943 km, cor preta e está em conformidade com a norma Euro 6. Histórico de manutenção completo e estado geral muito bom. Origem Bélgica, ASSE II. Um SUV versátil, confortável e seguro, ideal para quem procura desempenho e tecnologia num veículo compacto.",
+  "mileage": 68943,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1498 CC",
+  "power": "150 Hp 110 kW",
+  "places": 5,
+  "unitNumber": "6672344",
+  "origin": "Bélgica - ASSE II",
+  "firstRegistration": "20/10/2022",
+  "doors": null,
+  "fuel": "Gasolina",
+  "emissionClass": "Euro6",
+  "co2": "149",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6670001-6680000/6672344/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["Teto panorâmico"],
+    "conforto": ["Ar condicionado automático", "Interior em pele"],
+    "seguranca": [],
+    "multimedia": ["Painel virtual", "Navegação"],
+    "interior": ["Interior em pele"],
+    "exterior": ["Faróis LED"],
+    "outras_opcoes": []
+  },
+  "maintenance": []
+},
+{
+  "id": "6723640",
+  "make": "BMW",
+  "model": "X2 2.0 sDrive18d Aut.",
+  "year": 2024,
+  "slug": "bmw-x2-2-0-sdrive18d-aut-2024-6723640",
+  "price": 19900,
+  "image": "https://ecarstrade.com/carsphotos/6720001-6730000/6723640/photo_000.jpg",
+  "description": "O BMW X2 2.0 sDrive18d Aut. de 2024 é um SUV desportivo com motor Diesel de 1995 cc que desenvolve 136 cv (100 kW). Equipado com caixa automática e sistema de navegação avançado, destaca-se pelo interior desportivo com bancos desportivos em pele e um conjunto completo de equipamentos de conforto como ar condicionado automático de duas zonas, vidros elétricos, sistema keyless go, sensores de luz e chuva, volante multifunções e sistema start/stop. No capítulo da segurança, conta com ABS, ESP, airbags frontais e laterais, imobilizador, sistema ISOFIX e luzes diurnas LED. O sistema multimédia inclui Bluetooth, leitor de CD, MP3, kit mãos-livres, computador de bordo e rádio. Exteriormente, apresenta jantes de liga leve e pacote desportivo. Outras opções relevantes incluem controlo de velocidade (cruise control), filtro de partículas diesel e controlo de tração. O veículo tem 123.916 km e foi registado pela primeira vez a 05/01/2024 na Bélgica, na oficina HM Tongeren. Cumpre a norma Euro 6 com emissões de CO2 de 143 g/km. Um SUV elegante, potente e bem equipado, ideal para quem procura desempenho e conforto com tecnologia moderna.",
+  "mileage": 123916,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 8,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1995 cc",
+  "power": "136 cv",
+  "places": 5,
+  "unitNumber": "6723640",
+  "origin": "Bélgica - HM Tongeren",
+  "firstRegistration": "05/01/2024",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "143",
+  "color": "Preto",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6720001-6730000/6723640/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação",
+      "Interior desportivo",
+      "Bancos desportivos"
+    ],
+    "conforto": [
+      "Sistema de iluminação adaptável",
+      "Ar condicionado: Automático (2 zonas)",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [
+      "Interior desportivo",
+      "Bancos desportivos"
+    ],
+    "exterior": [
+      "Jantes de liga leve",
+      "Pacote desportivo"
+    ],
+    "outras_opcoes": [
+      "Controlo de Velocidade (Cruise Control)",
+      "Filtro de partículas diesel",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": []
+},
+{
+  "id": "6656950",
+  "make": "BMW",
+  "model": "X2 1.5 sDrive16d Advantage",
+  "year": 2021,
+  "slug": "bmw-x2-1-5-sdrive16d-advantage-2021-6656950",
+  "price": 16650,
+  "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6656950/photo_000.jpg",
+  "description": "Este BMW X2 1.5 sDrive16d Advantage de 2021 destaca-se pelo seu motor Diesel de 1496 CC com 116 cv (85 kW) e caixa manual, proporcionando uma condução dinâmica e eficiente. Equipado com faróis LED-Xenon, sistema de navegação profissional, interior desportivo em pele e sistema Keyless Go para maior conforto. Conta com ar condicionado automático de duas zonas, sensores de estacionamento traseiros, volante multifunções e sistema Start/Stop para otimização do consumo. A segurança é reforçada com ABS, ESP, airbags frontais e laterais, sistema ISOFIX e imobilizador. Multimédia inclui Bluetooth, leitor de CD, MP3 e computador de bordo. Exterior com jantes de liga leve e pacote desportivo. Outras opções incluem controlo de velocidade (Cruise Control), filtro de partículas diesel e controlo de tração. O veículo apresenta 189980 km e histórico de manutenção com última revisão aos 170000 km. Um SUV versátil, confortável e seguro, ideal para quem procura desempenho e estilo.",
+  "mileage": 189980,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Manual",
+  "gearbox": 6,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1.5",
+  "power": "116 Hp 85 kW",
+  "places": 5,
+  "unitNumber": "",
+  "origin": "Bélgica",
+  "firstRegistration": "12/06/2021",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "106 CO2",
+  "color": "Preto",
+  "vin": "",
+  "images": [
+    "https://ecarstrade.com/carsphotos/6650001-6660000/6656950/photo_000.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "LED headlights",
+      "Sistema de navegação",
+      "Interior desportivo"
+    ],
+    "conforto": [
+      "Sistema de iluminação adaptável",
+      "Ar condicionado: Automático (2 zonas)",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensores de estacionamento traseiros",
+      "Sensor de chuva",
+      "Barras de tejadilho",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Sistema de navegação",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [
+      "Interior desportivo"
+    ],
+    "exterior": [
+      "Jantes de liga leve",
+      "Pacote desportivo",
+      "Esticador"
+    ],
+    "outras_opcoes": [
+      "Luggage cover",
+      "Hd",
+      "Tow bar removable",
+      "Passenger car",
+      "Last service 170000kms",
+      "Controlo de Velocidade (Cruise Control)",
+      "Filtro de partículas diesel",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": [
+    {
+      "description": "Última revisão aos 170000 km",
+      "raw": "Last service 170000kms"
+    }
+  ]
+},
+{
+  "id": "6762760",
+  "make": "BMW",
+  "model": "X1 1.5 sDrive16d Aut.",
+  "year": 2019,
+  "slug": "bmw-x1-1-5-sdrive16d-aut-2019-6762760",
+  "price": 17900,
+  "image": "https://ecarstrade.com/carsphotos/6760001-6770000/6762760/photo_072.jpg",
+  "description": "BMW X1 1.5 sDrive16d Automático de 2019, com motor Diesel de 1499 CC e potência de 116 Hp (85 kW). Equipado com caixa automática, 7 velocidades, e categoria SUV/Veículo todo-o-terreno. Destaca-se pelo sistema Head-up Display, sistema de navegação, ar condicionado automático, vidros elétricos, keyless go, sensores de luz e chuva, volante multifunções, sistema start/stop, ABS, ESP, airbags frontais e laterais, sistema ISOFIX, Bluetooth, leitor de CD, MP3, computador de bordo, rádio, jantes de liga leve e várias outras opções como park assist, cruise control, filtro de partículas diesel e saco de ski. Cor cinzenta, com 5 lugares e 5 portas. Histórico de manutenção completo com várias revisões e serviços realizados até 106711 km, garantindo excelente estado e fiabilidade. Veículo importado da Bélgica (BE). Um SUV premium com conforto, segurança e tecnologia para uma condução segura e agradável.",
+  "mileage": 106711,
+  "country": "BE",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 7,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1499 CC",
+  "power": "116 Hp 85 kW",
+  "places": 5,
+  "unitNumber": "6762760",
+  "origin": "Bélgica - BE-21-ATWERP-BELCAR_OOST",
+  "firstRegistration": "2019-01-07",
+  "doors": 5,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "133 CO2",
+  "color": "Cinzento",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6760001-6770000/6762760/photo_072.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": [
+      "Head-up Display",
+      "Sistema de navegação"
+    ],
+    "conforto": [
+      "Ar condicionado: Automático",
+      "Vidros eléctricos",
+      "Sem chave (Keyless Go)",
+      "Sensor da luz",
+      "Volante multifunções",
+      "Sensor de chuva",
+      "Sistema Start/Stop"
+    ],
+    "seguranca": [
+      "Sistema de travagem anti-bloqueio (ABS)",
+      "Luzes diurnas",
+      "Controlo eletrónico de estabilidade (ESP)",
+      "Luzes de nevoeiro",
+      "Airbags: Frente, lado e mais",
+      "Imobilizador",
+      "Sistema ISOFIX"
+    ],
+    "multimedia": [
+      "Bluetooth",
+      "Leitor de CD",
+      "Kit de mãos-livres",
+      "MP3",
+      "Computador de bordo",
+      "Rádio"
+    ],
+    "interior": [],
+    "exterior": [
+      "Jantes de liga leve"
+    ],
+    "outras_opcoes": [
+      "Achteruitrijcamera (s03ag)",
+      "Automatisch dimmende binnenspiegel (s0431)",
+      "Automatische bediening van de achterklep (s0316)",
+      "Buitenspiegels elektrisch inklapbaar (s0313)",
+      "Business edition",
+      "Cruise control met remfunctie (s0544)",
+      "Grotere brandstoftank (s01ag)",
+      "Lendensteun voor bestuurder en passagier (s0488)",
+      "Metaalkleur (jatomet)",
+      "Park assist (s05dp)",
+      "Spiegelpakket (s0430)",
+      "Dakrails zwart",
+      "Niet voltanken voor aflevering",
+      "Weghalen merkteken",
+      "Controlo de Velocidade (Cruise Control)",
+      "Filtro de partículas diesel",
+      "Saco de squi",
+      "Controlo de tração"
+    ]
+  },
+  "maintenance": [
+    {
+      "date": "01/09/2025",
+      "km": 104275,
+      "description": "Troca de óleo da caixa de velocidades",
+      "price": 0,
+      "raw": "01/09/2025 104275 km de versnellingsbak olie € 0,00"
+    },
+    {
+      "date": "01/09/2025",
+      "km": 104275,
+      "description": "Pequenos materiais e ambiente",
+      "price": 0,
+      "raw": "01/09/2025 104275 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/06/2025",
+      "km": 98867,
+      "description": "Serviço BMW padrão",
+      "price": 0,
+      "raw": "01/06/2025 98867 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/06/2025",
+      "km": 98867,
+      "description": "Troca de óleo do motor",
+      "price": 0,
+      "raw": "01/06/2025 98867 km serv motorolie € 0,00"
+    },
+    {
+      "date": "01/06/2025",
+      "km": 98867,
+      "description": "Pequenos materiais e ambiente",
+      "price": 0,
+      "raw": "01/06/2025 98867 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/05/2025",
+      "km": 98648,
+      "description": "Ajuste dos faróis esquerdo e direito",
+      "price": 0,
+      "raw": "01/05/2025 98648 km de koplampstelinrichting links en rechts € 0,00"
+    },
+    {
+      "date": "01/02/2025",
+      "km": 93173,
+      "description": "Pequenos materiais e ambiente",
+      "price": 0,
+      "raw": "01/02/2025 93173 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/02/2025",
+      "km": 93173,
+      "description": "Sensor de temperatura de fuligem",
+      "price": 0,
+      "raw": "01/02/2025 93173 km Temp.sens.roetf € 0,00"
+    },
+    {
+      "date": "01/02/2025",
+      "km": 93173,
+      "description": "Substituição da lâmpada halogénea dianteira esquerda",
+      "price": 0,
+      "raw": "01/02/2025 93173 km halogeenlamp links voor € 0,00"
+    },
+    {
+      "date": "01/01/2025",
+      "km": 91437,
+      "description": "Serviço BMW padrão",
+      "price": 0,
+      "raw": "01/01/2025 91437 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/01/2025",
+      "km": 91437,
+      "description": "Pequenos materiais e ambiente",
+      "price": 0,
+      "raw": "01/01/2025 91437 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/01/2025",
+      "km": 91437,
+      "description": "Verificação dos níveis",
+      "price": 0,
+      "raw": "01/01/2025 91437 km controle niveaus € 0,00"
+    },
+    {
+      "date": "01/09/2024",
+      "km": 87613,
+      "description": "Serviço BMW padrão",
+      "price": 0,
+      "raw": "01/09/2024 87613 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/09/2024",
+      "km": 87613,
+      "description": "Pequenos materiais e ambiente",
+      "price": 0,
+      "raw": "01/09/2024 87613 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/09/2024",
+      "km": 87613,
+      "description": "Substituição da palheta do limpa-vidros dianteira",
+      "price": 0,
+      "raw": "01/09/2024 87613 km ruitenwisserblad voor € 0,00"
+    },
+    {
+      "date": "01/09/2024",
+      "km": 87613,
+      "description": "Substituição da palheta do limpa-vidros traseira",
+      "price": 0,
+      "raw": "01/09/2024 87613 km ruitenwisserblad achter € 0,00"
+    },
+    {
+      "date": "01/02/2024",
+      "km": 76421,
+      "description": "Pequenos materiais e ambiente",
+      "price": 0,
+      "raw": "01/02/2024 76421 km Klein materiaal & milieu € 0,00"
+    },
+    {
+      "date": "01/02/2024",
+      "km": 76421,
+      "description": "Troca de óleo do motor",
+      "price": 0,
+      "raw": "01/02/2024 76421 km serv motorolie € 0,00"
+    },
+    {
+      "date": "01/02/2024",
+      "km": 76421,
+      "description": "Substituição do microfiltro",
+      "price": 0,
+      "raw": "01/02/2024 76421 km serv microfilter € 0,00"
+    },
+    {
+      "date": "01/02/2024",
+      "km": 76421,
+      "description": "Serviço BMW padrão",
+      "price": 0,
+      "raw": "01/02/2024 76421 km BMW service standaard omvang € 0,00"
+    },
+    {
+      "date": "01/01/2024",
+      "km": 75618,
+      "description": "Substituição da lâmpada halogénea dianteira direita",
+      "price": 0,
+      "raw": "01/01/2024 75618 km halogeenlamp rechts voor € 0,00"
+    },
+    {
+      "date": "01/02/2023",
+      "km": 59522,
+      "description": "Substituição da bateria do acessório",
+      "price": 0,
+      "raw": "01/02/2023 59522 km de accu(accessoire) € 0,00"
+    },
+    {
+      "date": "01/08/2022",
+      "km": 51187,
+      "description": "Verificação do veículo",
+      "price": 0,
+      "raw": "01/08/2022 51187 km voertuigcheck € 0,00"
+    },
+    {
+      "date": "01/08/2022",
+      "km": 51187,
+      "description": "Troca de óleo do motor",
+      "price": 0,
+      "raw": "01/08/2022 51187 km serv motorolie € 0,00"
+    },
+    {
+      "date": "01/08/2022",
+      "km": 51187,
+      "description": "Substituição do microfiltro",
+      "price": 0,
+      "raw": "01/08/2022 51187 km serv microfilter € 0,00"
+    },
+    {
+      "date": "01/08/2022",
+      "km": 51187,
+      "description": "Substituição do filtro de ar",
+      "price": 0,
+      "raw": "01/08/2022 51187 km serv luchtfilter € 0,00"
+    },
+    {
+      "date": "01/08/2022",
+      "km": 51187,
+      "description": "Substituição do filtro de combustível",
+      "price": 0,
+      "raw": "01/08/2022 51187 km serv brst. filt € 0,00"
+    },
+    {
+      "date": "01/08/2022",
+      "km": 51187,
+      "description": "Troca do fluido dos travões",
+      "price": 0,
+      "raw": "01/08/2022 51187 km de remvloeistof € 0,00"
+    },
+    {
+      "date": "01/08/2022",
+      "km": 51187,
+      "description": "Substituição da bateria da chave",
+      "price": 0,
+      "raw": "01/08/2022 51187 km de sleutelbatterij € 0,00"
+    },
+    {
+      "date": "01/04/2022",
+      "km": 43198,
+      "description": "Substituição da palheta do limpa-vidros traseira",
+      "price": 0,
+      "raw": "01/04/2022 43198 km ruitenwisserblad achter € 0,00"
+    },
+    {
+      "date": "01/05/2021",
+      "km": 25130,
+      "description": "Troca de óleo do motor",
+      "price": 0,
+      "raw": "01/05/2021 25130 km serv motorolie € 0,00"
+    },
+    {
+      "date": "01/05/2021",
+      "km": 25130,
+      "description": "Substituição do microfiltro",
+      "price": 0,
+      "raw": "01/05/2021 25130 km serv microfilter € 0,00"
+    },
+    {
+      "date": "01/05/2021",
+      "km": 25130,
+      "description": "Substituição da palheta do limpa-vidros dianteira",
+      "price": 0,
+      "raw": "01/05/2021 25130 km ruitenwisserblad voor € 0,00"
+    },
+    {
+      "date": "01/05/2021",
+      "km": 25130,
+      "description": "Substituição da bateria da chave",
+      "price": 0,
+      "raw": "01/05/2021 25130 km de sleutelbatterij € 0,00"
+    }
+  ]
+},
+{
+  "id": "6715292",
+  "make": "BMW",
+  "model": "X2 1.5 sDrive16d M-Sport Aut.",
+  "year": 2019,
+  "slug": "bmw-x2-1-5-sdrive16d-m-sport-aut-2019-6715292",
+  "price": 24100,
+  "image": "https://ecarstrade.com/carsphotos/6710001-6720000/6715292/photo_001.jpg",
+  "description": "BMW X2 1.5 sDrive16d M-Sport Automático de 2019, com motor 1.5L Diesel de 116cv (85 kW), caixa automática, e emissões Euro6 com 135g/km de CO2. Equipado com LED, Xenon, sistema de navegação Pro, bancos em pele desportivos, KeylessGo, câmara traseira e climatização. Veículo em excelente estado, com histórico completo de manutenção detalhado, incluindo revisões periódicas e serviços de pneus. Um SUV compacto premium com design desportivo e conforto superior, ideal para quem procura performance e estilo aliado a economia de combustível.",
+  "mileage": 94826,
+  "country": "FR",
+  "status": null,
+  "gearboxType": "Automático",
+  "gearbox": 7,
+  "category": "SUV/Veículo todo-o-terreno",
+  "engineSize": "1496 CC",
+  "power": "116 Hp 85 kW",
+  "places": 5,
+  "unitNumber": "6715292",
+  "origin": "França - \"FR-01-AMBERIEU-CAT\"",
+  "firstRegistration": "05/10/2019",
+  "doors": null,
+  "fuel": "Diesel/Gasóleo",
+  "emissionClass": "Euro6",
+  "co2": "135",
+  "color": "Laranja",
+  "vin": null,
+  "images": [
+    "https://ecarstrade.com/carsphotos/6710001-6720000/6715292/photo_001.jpg"
+  ],
+  "equipamento_opcoes": {
+    "opcoes_valor_elevado": ["LED", "Xenon", "Navi-Pro", "Camera"],
+    "conforto": ["Ambient", "KeylessGo", "Clima"],
+    "seguranca": [],
+    "multimedia": ["Navi-Pro", "Camera"],
+    "interior": ["1/2 Sport-Leather"],
+    "exterior": [],
+    "outras_opcoes": []
+  },
+  "maintenance": [
+    {
+      "date": "01/08/2025",
+      "km": 86728,
+      "description": "Discos de travão traseiros e pastilhas de travão traseiras, reciclagem",
+      "price": 0,
+      "raw": "01/08/2025 86728 km Disques de freins AR/Plaquettes frein AR/Recyclage € 0,00"
+    },
+    {
+      "date": "01/05/2025",
+      "km": 80372,
+      "description": "Serviços diversos de pneus: desmontagem, armazenamento e montagem de pneus verão/inverno",
+      "price": 0,
+      "raw": "01/05/2025 80372 km Divers pneumatique/Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+    },
+    {
+      "date": "01/05/2025",
+      "km": 78930,
+      "description": "Substituição de lâmpadas e reciclagem",
+      "price": 0,
+      "raw": "01/05/2025 78930 km Ampoule/Recyclage € 0,00"
+    },
+    {
+      "date": "01/01/2025",
+      "km": 72771,
+      "description": "Filtro habitáculo, filtro combustível, reciclagem, revisão intermédia",
+      "price": 0,
+      "raw": "01/01/2025 72771 km Filtre d'habitacle/Filtre à carburant/Recyclage/Révision/Révision intermédiaire € 0,00"
+    },
+    {
+      "date": "01/11/2024",
+      "km": 69310,
+      "description": "Palhetas limpa para-brisas dianteiras, sensores diversos, reciclagem e reboque",
+      "price": 0,
+      "raw": "01/11/2024 69310 km Balais d'essuie-glace AV/Capteur divers/Recyclage/Remorquage € 0,00"
+    },
+    {
+      "date": "01/10/2024",
+      "km": 69299,
+      "description": "Serviços diversos de pneus: desmontagem, armazenamento e montagem de pneus verão/inverno",
+      "price": 0,
+      "raw": "01/10/2024 69299 km Divers pneumatique/Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+    },
+    {
+      "date": "01/09/2024",
+      "km": 59882,
+      "description": "Serviços extra de assistência (refaturado ao cliente)",
+      "price": 0,
+      "raw": "01/09/2024 59882 km Extra services Assistance (refacturé au client) € 0,00"
+    },
+    {
+      "date": "01/05/2024",
+      "km": 59881,
+      "description": "Serviços diversos de pneus: desmontagem, armazenamento e montagem de pneus verão/inverno",
+      "price": 0,
+      "raw": "01/05/2024 59881 km Divers pneumatique/Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+    },
+    {
+      "date": "01/02/2024",
+      "km": 56842,
+      "description": "Líquido de travão e reciclagem",
+      "price": 0,
+      "raw": "01/02/2024 56842 km Liquide de frein/Recyclage € 0,00"
+    },
+    {
+      "date": "01/10/2023",
+      "km": 52368,
+      "description": "Serviços diversos de pneus: desmontagem, armazenamento e montagem de pneus verão/inverno",
+      "price": 0,
+      "raw": "01/10/2023 52368 km Divers pneumatique/Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+    },
+    {
+      "date": "01/09/2023",
+      "km": 50018,
+      "description": "Palhetas limpa para-brisas dianteiras, filtro habitáculo, filtro de ar, pilha, reciclagem e revisão",
+      "price": 0,
+      "raw": "01/09/2023 50018 km Balais d'essuie-glace AV/Filtre d'habitacle/Filtre à air/Pile/Recyclage/Révision € 0,00"
+    },
+    {
+      "date": "01/06/2023",
+      "km": 41543,
+      "description": "Pastilhas de travão traseiras e dianteiras, reciclagem",
+      "price": 0,
+      "raw": "01/06/2023 41543 km Plaquettes frein AR/Plaquettes freins AV/Recyclage € 0,00"
+    },
+    {
+      "date": "01/05/2023",
+      "km": 39968,
+      "description": "Serviços diversos de pneus: desmontagem, armazenamento e montagem de pneus verão/inverno",
+      "price": 0,
+      "raw": "01/05/2023 39968 km Divers pneumatique/Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+    },
+    {
+      "date": "01/11/2022",
+      "km": 32569,
+      "description": "Desmontagem, armazenamento e montagem de pneus verão/inverno",
+      "price": 0,
+      "raw": "01/11/2022 32569 km Dépose/Gardiennage pneu été/hiver/pose pneumatique hiver/été € 0,00"
+    },
+    {
+      "date": "01/08/2022",
+      "km": 27314,
+      "description": "Palhetas limpa para-brisas dianteiras e traseiras, filtro habitáculo, revisão",
+      "price": 0,
+      "raw": "01/08/2022 27314 km Balai d'essuie-glace AR/Balais d'essuie-glace AV/Filtre d'habitacle/Révision € 0,00"
+    },
+    {
+      "date": "01/05/2022",
+      "km": 20445,
+      "description": "Desmontagem e montagem de pneus inverno/verão",
+      "price": 0,
+      "raw": "01/05/2022 20445 km Dépose/pose pneumatique hiver/été € 0,00"
+    },
+    {
+      "date": "01/11/2021",
+      "km": 13721,
+      "description": "Pneus de inverno",
+      "price": 0,
+      "raw": "01/11/2021 13721 km Pneu hiver € 0,00"
+    }
+  ]
+}
+
 ]
