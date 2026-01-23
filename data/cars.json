@@ -18013,5 +18013,46 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6613204",
+    "make": "Audi",
+    "model": "Q3 Sportback 2.0 35 TDI S-Line Aut. LED-Matrix Virtual Navi 1/2 Sport-Leather Klima PDC",
+    "year": 2022,
+    "slug": "audi-q3-sportback-2022-6613204",
+    "price": 30900,
+    "image": "https://ecarstrade.com/carsphotos/6610001-6620000/6613204/photo_044.jpg",
+    "description": "Audi Q3 Sportback 2.0 35 TDI S-Line de 2022, equipado com motor de 1968 CC e potência de 150 Hp (110 kW). Caixa automática de 7 velocidades, com tração em SUV/Veículo todo-o-terreno. Este veículo diesel/gasóleo conta com 5 lugares e 5 portas, e está em excelente estado com 133824 km registados. Equipado com tecnologia LED-Matrix, sistema de navegação virtual, bancos desportivos em pele e ar condicionado. Classe de emissão Euro6 e CO2 de 142 g/km. Origem França - \"CERTINES\". Histórico de manutenção não disponível. Um SUV versátil e moderno, ideal para quem procura conforto, segurança e desempenho numa condução diária ou em viagens.",
+    "mileage": 133824,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 7,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "1968 CC",
+    "power": "150 Hp 110 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "França - \"CERTINES\"",
+    "firstRegistration": "22/09/2022",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "142 CO2",
+    "color": "Branco",
+    "vin": "WAUZZZF3XN1096964",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6610001-6620000/6613204/photo_044.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
