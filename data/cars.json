@@ -18460,5 +18460,57 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6550556",
+    "make": "BMW",
+    "model": "X5 3.0 xDrive45e Plug-In Hybrid Aut.",
+    "year": 2020,
+    "slug": "bmw-x5-3-0-xdrive45e-plug-in-hybrid-aut-2020-6550556",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6550001-6560000/6550556/photo_000.jpg",
+    "description": "Este BMW X5 3.0 xDrive45e Plug-In Hybrid Automático de 2020 destaca-se pelo seu motor híbrido (gasolina / elétrico) de 2998 CC que desenvolve 286 Hp (210 kW). Equipado com caixa automática de 8 velocidades, oferece uma condução suave e eficiente. Com 5 portas e 5 lugares, é um SUV/Veículo todo-o-terreno ideal para famílias que procuram conforto e desempenho. A cor verde confere-lhe um visual distinto e elegante. Equipamentos de topo incluem LED-Xenon, LC-Pro, ACC, Navegação, bancos em pele, KeylessGo, câmara traseira, ar condicionado e sensores de estacionamento (PDC). O veículo apresenta uma quilometragem de 104216 KM e cumpre a norma de emissões Euro6 com uma emissão de CO2 de 27 g/km. O histórico de manutenção não está disponível, mas o carro encontra-se em excelente estado geral. O VIN é WBATA610209C25883 e a sua origem é Bélgica. Um modelo que combina tecnologia avançada, conforto e segurança para uma experiência de condução premium.",
+    "mileage": 104216,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 8,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "2998 CC",
+    "power": "286 Hp 210 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "01/08/2020",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6",
+    "co2": "27 CO2",
+    "color": "Verde",
+    "vin": "WBATA610209C25883",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6550001-6560000/6550556/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "Bancos em pele",
+        "Ar condicionado",
+        "KeylessGo"
+      ],
+      "seguranca": [],
+      "multimedia": [
+        "Navegação",
+        "Câmara traseira"
+      ],
+      "interior": [],
+      "exterior": [
+        "LED-Xenon",
+        "LC-Pro",
+        "Sensores de estacionamento (PDC)"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
