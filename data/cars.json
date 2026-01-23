@@ -17088,5 +17088,81 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6721362",
+    "make": "BMW",
+    "model": "X1 2.0 sDrive18d Aut.",
+    "year": 2020,
+    "slug": "bmw-x1-2-0-sdrive18d-aut-2020-6721362",
+    "price": 31300,
+    "image": "https://ecarstrade.com/carsphotos/6720001-6730000/6721362/photo_000.jpg",
+    "description": "Este BMW X1 2.0 sDrive18d Aut. de 2020 é um SUV/Veículo todo-o-terreno que combina potência e conforto. Equipado com motor de 1995 CC e 136 Hp (100 kW), caixa automática de 8 velocidades, e sistema de navegação avançado. Destaca-se pelo seu equipamento de valor elevado, incluindo faróis LED, sistema de iluminação adaptável, ar condicionado automático a duas zonas, vidros elétricos, keyless go, sensores de luz e chuva, volante multifunções, barras de tejadilho e sistema Start/Stop. Em termos de segurança, oferece ABS, ESP, airbags frontais e laterais, imobilizador e sistema ISOFIX. Para multimédia, conta com Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. Exteriormente, apresenta jantes de liga leve e outras opções como controlo de velocidade (cruise control), filtro de partículas diesel e controlo de tração. O veículo tem uma quilometragem de 73694 km e origem na Bélgica (ASSE II). Está em excelente estado, ideal para quem procura um SUV versátil e bem equipado.",
+    "mileage": 73694,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 8,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "1995 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica - \"ASSE II\"",
+    "firstRegistration": "05/11/2020",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "129 CO2",
+    "color": "Azul",
+    "vin": "WBA11EG0305W27070",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6720001-6730000/6721362/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Sistema de iluminação adaptável",
+        "Ar condicionado: Automático (2 zonas)",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema Start/Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Sistema ISOFIX"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit de mãos-livres",
+        "MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo de Velocidade (Cruise Control)",
+        "Filtro de partículas diesel",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
