@@ -17417,5 +17417,90 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6658409",
+    "make": "BMW",
+    "model": "216d Gran Tourer",
+    "year": 2021,
+    "slug": "bmw-216d-gran-tourer-2021-6658409",
+    "price": 16950,
+    "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6658409/photo_065.jpg",
+    "description": "Este BMW 216d Gran Tourer de 2021 é uma carrinha versátil com 7 lugares, equipada com um motor Diesel de 1496 CC que desenvolve 116 Hp (85 kW). Conta com caixa manual de 6 velocidades e cumpre a norma Euro6 de emissões, emitindo 130 CO2. Destaca-se pelo seu equipamento completo, incluindo faróis LED, sistema de navegação, sistema de iluminação adaptável, ar condicionado automático a duas zonas, vidros elétricos, sistema keyless go, sensores de luz e chuva, volante multifunções, barras de tejadilho e sistema start/stop. Em termos de segurança, oferece ABS, controlo eletrónico de estabilidade (ESP), luzes diurnas e de nevoeiro, airbags frontais e laterais, imobilizador e sistema ISOFIX. No multimédia, dispõe de Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. O exterior apresenta jantes de liga leve e pintura metálica. Outras opções incluem controlo de velocidade (cruise control), filtro de partículas diesel e controlo de tração. O veículo tem uma quilometragem de 98.526 km e origem na Bélgica. O estado geral é muito bom, com manutenção regular e histórico de serviços disponível. Uma excelente escolha para famílias que procuram conforto, segurança e tecnologia num veículo espaçoso e eficiente.",
+    "mileage": 98526,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 6,
+    "category": "Carrinhas",
+    "engineSize": "1496 CC",
+    "power": "116 Hp 85 kW",
+    "places": 7,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "11/09/2021",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "130 CO2",
+    "color": "Branco",
+    "vin": "WBA6W510705U20245",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6650001-6660000/6658409/photo_065.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Sistema de iluminação adaptável",
+        "Ar condicionado: Automático (2 zonas)",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema Start/Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Sistema ISOFIX"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit de mãos-livres",
+        "MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve",
+        "Metálico"
+      ],
+      "outras_opcoes": [
+        "Elektr. bed. achterklep",
+        "Connectiviteit af fabriek",
+        "Audio optie_anders (af fabriek)",
+        "Hoofdsleutel",
+        "Reservesleutel",
+        "Instructieboekje",
+        "Onderhoudsboekje (digitaal)",
+        "Hoedenplank/rolhoes",
+        "Controlo de Velocidade (Cruise Control)",
+        "Filtro de partículas diesel",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
