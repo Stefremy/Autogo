@@ -18300,5 +18300,46 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6521857",
+    "make": "BMW",
+    "model": "X2 1.5 sDrive20i M-Sport Aut.",
+    "year": 2021,
+    "slug": "bmw-x2-1-5-sdrive20i-m-sport-aut-2021-6521857",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6520001-6530000/6521857/photo_059.jpg",
+    "description": "Este BMW X2 1.5 sDrive20i M-Sport Automático de 2021 destaca-se pelo seu motor de 1499 CC com 156 Hp (115 kW), equipado com uma caixa automática de 7 velocidades. Pertence à categoria SUV/Veículo todo-o-terreno, com 5 portas e 5 lugares, alimentado a Gasolina e classificado na emissão Euro6 com 138 CO2. O veículo apresenta uma cor preta elegante e um histórico de manutenção não disponível. Equipado com LED-Xenon, sistema de som Harman/Kardon, navegação, bancos em pele e Alcantara, KeylessGo, câmara traseira, ar condicionado e sensores de estacionamento (PDC). Origem França, com primeira matrícula em 02/01/2021 e quilometragem de 25169 km. Um SUV versátil e moderno, ideal para quem procura conforto, tecnologia e desempenho num só veículo.",
+    "mileage": 25169,
+    "country": "FR",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 7,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "1499 CC",
+    "power": "156 Hp 115 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "França - \"F2S CAVAILLON\"",
+    "firstRegistration": "02/01/2021",
+    "doors": 5,
+    "fuel": "Gasolina",
+    "emissionClass": "Euro6",
+    "co2": "138 CO2",
+    "color": "Preto",
+    "vin": "WBA21GM0305Z83345",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6520001-6530000/6521857/photo_059.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
