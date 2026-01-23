@@ -17543,5 +17543,46 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6735539",
+    "make": "BMW",
+    "model": "IX3 sDrive35 Impressive",
+    "year": 2021,
+    "slug": "bmw-ix3-sdrive35-impressive-2021-6735539",
+    "price": 28400,
+    "image": "https://ecarstrade.com/carsphotos/6730001-6740000/6735539/photo_000.jpg",
+    "description": "Este BMW IX3 sDrive35 Impressive de 2021 é um SUV elétrico com uma potência de 286 Hp (210 kW) e caixa automática de 1 velocidade. Equipado com teto panorâmico, faróis LED-Xenon, sistema de som Harman/Kardon, controlo de cruzeiro adaptativo (ACC), navegação, bancos em pele desportivos, KeylessGo, câmara traseira e ar condicionado. O veículo apresenta um histórico de manutenção não iniciado, com 113 425 km registados. Classe de emissão Euro6 e CO2 classificado como 1. Proveniente da Bélgica, este modelo destaca-se pela sua eficiência elétrica, conforto e tecnologia avançada, ideal para quem procura um SUV moderno e sustentável.",
+    "mileage": 113425,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 1,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "n/a",
+    "power": "286 Hp 210 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "21/12/2021",
+    "doors": 5,
+    "fuel": "Elétrico",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Azul",
+    "vin": "WBY7X41090S149901",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6730001-6740000/6735539/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
