@@ -17164,5 +17164,81 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6737723",
+    "make": "Audi",
+    "model": "A5 SB 2.0 30 TDI Advanced Aut.",
+    "year": 2021,
+    "slug": "audi-a5-sb-2-0-30-tdi-advanced-aut-2021-6737723",
+    "price": 24100,
+    "image": "https://ecarstrade.com/carsphotos/6730001-6740000/6737723/photo_000.jpg",
+    "description": "Este Audi A5 SB 2.0 30 TDI Advanced Aut. de 2021 apresenta um motor de 1968 CC com 136 Hp (100 kW), equipado com caixa automática de 7 velocidades. O veículo sedan conta com 5 portas e 5 lugares, funcionando a Diesel/Gasóleo e cumprindo a norma Euro6 com emissões de CO2 de 126 g/km. Destaca-se pelo seu equipamento completo, incluindo faróis LED, sistema de navegação, sistema de iluminação adaptável, ar condicionado automático de 2 zonas, bancos aquecidos, vidros elétricos, sistema keyless go, sensores de luz e chuva, volante multifunções e sistema start/stop. Em termos de segurança, dispõe de ABS, ESP, luzes diurnas e de nevoeiro, múltiplos airbags, imobilizador e sistema ISOFIX. No multimédia, inclui Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. Exteriormente, apresenta jantes de liga leve e outras opções como controlo de velocidade (cruise control), filtro de partículas diesel e controlo de tração. O carro tem uma quilometragem de 186745 km e origem na Bélgica (ASSE I). Um veículo com excelente relação qualidade/preço, ideal para quem procura conforto, segurança e tecnologia num sedan moderno.",
+    "mileage": 186745,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 7,
+    "category": "Veículo sedan",
+    "engineSize": "1968 CC",
+    "power": "136 Hp 100 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica - \"ASSE I\"",
+    "firstRegistration": "27/07/2021",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "126 CO2",
+    "color": "Prateado",
+    "vin": "WAUZZZF51NA000723",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6730001-6740000/6737723/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Sistema de iluminação adaptável",
+        "Ar condicionado: Automático (2 zonas)",
+        "Bancos aquecidos",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Sistema Start/Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Sistema ISOFIX"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit de mãos-livres",
+        "MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo de Velocidade (Cruise Control)",
+        "Filtro de partículas diesel",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
