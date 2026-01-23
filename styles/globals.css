@@ -86,3 +86,51 @@ h1, h2, h3, h4, h5, h6, .heading {
 @media (prefers-reduced-motion: reduce) {
   .snowflake { animation: none !important; display: none !important; }
 }
+/* ===== TEXTO ROLANTE CONTÍNUO ===== */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.marquee__group {
+  display: flex;
+}
+
+.marquee__group span {
+  margin: 0 2rem;
+  font-weight: 600;
+  color: #b42121;
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* === HERO MARQUEE / TEXTO ROLANTE CONTÍNUO === */
+.hero-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.hero-marquee-track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: hero-marquee-scroll 22s linear infinite;
+}
+
+@keyframes hero-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
