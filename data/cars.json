@@ -17940,5 +17940,78 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6642025",
+    "make": "BMW",
+    "model": "X1 1.5 sDrive16d Aut. Navi-Pro KeylessGo Camera Klima PDC",
+    "year": 2017,
+    "slug": "bmw-x1-2017-6642025",
+    "price": 19950,
+    "image": "https://ecarstrade.com/carsphotos/6640001-6650000/6642025/photo_057.jpg",
+    "description": "Este BMW X1 1.5 sDrive16d de 2017 é um SUV/Veículo todo-o-terreno elegante e funcional, equipado com motor de 1496 CC que desenvolve 116 Hp (85 kW). Conta com caixa automática de 7 velocidades, proporcionando uma condução suave e eficiente. Entre os seus destaques estão o sistema de navegação, ar condicionado automático a duas zonas, vidros elétricos, sistema keyless Go, sensores de luz e chuva, volante multifunções, barras de tejadilho e sistema Start/Stop. A segurança é garantida com ABS, ESP, luzes diurnas e de nevoeiro, airbags frontais e laterais, imobilizador e sistema ISOFIX para cadeiras infantis. O equipamento multimédia inclui Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. O exterior apresenta jantes de liga leve e outras opções como controlo de velocidade (cruise control), filtro de partículas diesel e controlo de tração. O veículo tem 71.446 km e origem na Bélgica, com primeira matrícula em 29/03/2017. Está em excelente estado de conservação, ideal para quem procura conforto, segurança e tecnologia num SUV compacto.",
+    "mileage": 71446,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 7,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "1496 CC",
+    "power": "116 Hp 85 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "29/03/2017",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "117 CO2",
+    "color": "Azul",
+    "vin": "WBA31AC0405U28469",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6640001-6650000/6642025/photo_057.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Sistema de navegação"
+      ],
+      "conforto": [
+        "Ar condicionado: Automático (2 zonas)",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Sistema Start/Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Sistema ISOFIX"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit de mãos-livres",
+        "MP3",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": [
+        "Controlo de Velocidade (Cruise Control)",
+        "Filtro de partículas diesel",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
