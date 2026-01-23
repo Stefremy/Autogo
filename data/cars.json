@@ -17502,5 +17502,46 @@
       ]
     },
     "maintenance": []
+  },
+  {
+    "id": "6652918",
+    "make": "DS Automobiles",
+    "model": "DS 7 Crossback 1.5 BlueHDI So Chic Aut. LED-Xenon Virtual Navi KeylessGo Camera Klima PDC ... #6652918 - DS Automobiles DS7 Crossback",
+    "year": 2020,
+    "slug": "ds-automobiles-ds-7-crossback-2020-6652918",
+    "price": 17450,
+    "image": "https://ecarstrade.com/carsphotos/6650001-6660000/6652918/photo_000.jpg",
+    "description": "Este DS 7 Crossback 1.5 BlueHDI So Chic de 2020 apresenta um motor de 1499 CC com 130 Hp (96 kW), caixa automática de 8 velocidades, e é um SUV/Veículo todo-o-terreno ideal para quem procura conforto e tecnologia. Equipado com LED-Xenon, navegação virtual, KeylessGo, câmara traseira e ar condicionado (Klima), oferece uma condução segura e confortável. O veículo tem 5 portas, 5 lugares, e funciona a Diesel/Gasóleo com classificação Euro6 e emissões de CO2 de 137 g/km. Com 107 122 KM registados, o carro vem da Bélgica (ASSE I) e possui histórico de manutenção não iniciado. O estado geral é excelente, pronto para uso imediato, destacando-se pela sua versatilidade e equipamento moderno.",
+    "mileage": 107122,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 8,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "1499 CC",
+    "power": "130 Hp 96 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica - \"ASSE I\"",
+    "firstRegistration": "18/08/2020",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "137 CO2",
+    "color": "Cinzento",
+    "vin": "VR1JCYHZRLY032205",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6650001-6660000/6652918/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
