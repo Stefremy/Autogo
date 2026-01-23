@@ -17373,5 +17373,49 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6589936",
+    "make": "Dacia",
+    "model": "Logan",
+    "year": 2020,
+    "slug": "dacia-logan-2020-6589936",
+    "price": 10500,
+    "image": "https://ecarstrade.com/carsphotos/6580001-6590000/6589936/photo_035.jpg",
+    "description": "O Dacia Logan 1.5 DCi Comfort Display Klima de 2020 é um veículo sedan robusto e económico, equipado com motor Diesel de 1461 CC e potência de 95 Hp (70 kW). Conta com caixa manual de 5 velocidades, cinco portas e cinco lugares, ideal para famílias ou uso diário. Destaca-se pela eficiência do motor e baixo consumo, aliado à classificação ambiental Euro6 e emissões de CO2 de 94 g/km. A cor preta confere-lhe um aspeto elegante e discreto. Com 80 629 km percorridos, apresenta-se em bom estado, pronto para uso imediato. Equipado com sistema de climatização, display de conforto e outras opções práticas, é uma escolha inteligente para quem procura fiabilidade e economia. Veículo importado da Bélgica, com histórico de manutenção não especificado. Um excelente equilíbrio entre preço e qualidade para quem valoriza funcionalidade e baixo custo de utilização.",
+    "mileage": 80629,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Manual",
+    "gearbox": 5,
+    "category": "Veículo sedan",
+    "engineSize": "1461 CC",
+    "power": "95 Hp 70 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "07/07/2020",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "94 CO2",
+    "color": "Preto",
+    "vin": "UU1L5220165563947",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6580001-6590000/6589936/photo_035.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [
+        "Climatização",
+        "Display"
+      ],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
