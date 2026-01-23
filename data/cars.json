@@ -18054,5 +18054,92 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6618143",
+    "make": "BMW",
+    "model": "X5 3.0 xDrive30d 7PL Aut.",
+    "year": 2021,
+    "slug": "bmw-x5-3-0-xdrive30d-7pl-aut-2021-6618143",
+    "price": null,
+    "image": null,
+    "description": "Este BMW X5 3.0 xDrive30d 7PL Aut. de 2021 destaca-se pelo seu motor potente de 2993 CC com 265 Hp (195 kW), caixa automática de 8 velocidades e um design SUV/Veículo todo-o-terreno. Equipado com faróis LED, sistema de navegação, interior e bancos desportivos, oferece conforto com ar condicionado automático de 2 zonas, bancos aquecidos e ajustáveis eletricamente, vidros elétricos, keyless go, sensores de luz e chuva, volante multifunções, barras de tejadilho, assentos de memória e sistema Start/Stop. A segurança é garantida com ABS, ESP, luzes de nevoeiro, airbags frontais e laterais, imobilizador e Isofix. No multimédia inclui Bluetooth, leitor de CD, MP3, computador de bordo e rádio. Exterior com jantes de liga leve, pacote e suspensão desportiva e esticador. Outras opções incluem controlo de velocidade, tração às quatro rodas e filtro de partículas diesel. Proveniente da Bélgica, com 156200 km, combustível Diesel/Gasóleo, classificação Euro6 e 5 portas. Veículo em excelente estado, ideal para quem procura performance, conforto e segurança num SUV premium.",
+    "mileage": 156200,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 8,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "2993 CC",
+    "power": "265 Hp 195 kW",
+    "places": 7,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "14/01/2021",
+    "doors": 5,
+    "fuel": "Diesel/Gasóleo",
+    "emissionClass": "Euro6",
+    "co2": "158 CO2",
+    "color": "Azul",
+    "vin": "WBACV610309B59249",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6610001-6620000/6618143/photo_040.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "LED headlights",
+        "Sistema de navegação",
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "conforto": [
+        "Sistema de iluminação adaptável",
+        "Ar condicionado: Automático (2 zonas)",
+        "Bancos aquecidos",
+        "Assentos ajustáveis eletricamente",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Assentos de memória",
+        "Sistema Start/Stop"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Isofix"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [
+        "Interior desportivo",
+        "Bancos desportivos"
+      ],
+      "exterior": [
+        "Jantes de liga leve",
+        "Pacote desportivo",
+        "Suspensão desportiva",
+        "Esticador"
+      ],
+      "outras_opcoes": [
+        "Controlo de Velocidade (Cruise Control)",
+        "Quatro rodas",
+        "Filtro de partículas diesel",
+        "Controlo de tração"
+      ]
+    },
+    "maintenance": []
   }
 ]
