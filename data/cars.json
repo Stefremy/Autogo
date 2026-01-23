@@ -17899,5 +17899,46 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6618291",
+    "make": "BMW",
+    "model": "745e Plug-In Hybrid Aut.",
+    "year": 2019,
+    "slug": "bmw-745e-plug-in-hybrid-aut-2019-6618291",
+    "price": null,
+    "image": "https://ecarstrade.com/carsphotos/6610001-6620000/6618291/photo_000.jpg",
+    "description": "Este BMW 745e Plug-In Hybrid Aut. de 2019 é um sedan de alta performance com motor híbrido (gasolina / elétrico) de 2998 CC e potência de 286 Hp (210 kW). Equipado com caixa automática de 8 velocidades, oferece conforto e tecnologia avançada, incluindo teto panorâmico, sistema de som Harman/Kardon, head-up display laser, sistema de navegação profissional, bancos em couro confortáveis, KeylessGo, câmara 360, controlo climático e sensores de estacionamento (PDC). Com 5 portas e 5 lugares, este veículo destaca-se pela eficiência e luxo, cumprindo a norma Euro6d de emissões com 49 CO2. O carro apresenta 152006 km e vem de origem da Bélgica. O histórico de manutenção não está disponível, mas o estado geral é excelente, ideal para quem procura um sedan híbrido premium com tecnologia de ponta e design sofisticado.",
+    "mileage": 152006,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 8,
+    "category": "Veículo sedan",
+    "engineSize": "2998 CC",
+    "power": "286 Hp 210 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica",
+    "firstRegistration": "28/02/2019",
+    "doors": 5,
+    "fuel": "Híbrido (gasolina / elétrico)",
+    "emissionClass": "Euro6d",
+    "co2": "49 CO2",
+    "color": "Preto",
+    "vin": "WBA7D61080BM68998",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6610001-6620000/6618291/photo_000.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [],
+      "conforto": [],
+      "seguranca": [],
+      "multimedia": [],
+      "interior": [],
+      "exterior": [],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
