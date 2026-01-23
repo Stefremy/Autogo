@@ -17290,5 +17290,88 @@
       "outras_opcoes": []
     },
     "maintenance": []
+  },
+  {
+    "id": "6733595",
+    "make": "BMW",
+    "model": "IX3 sDrive35 Aut. Pano LED-Xenon LC-Pro ACC Ambient Navi Leather KeylessGo Camera Klima PDC",
+    "year": 2021,
+    "slug": "bmw-ix3-sdrive35-aut-pano-led-xenon-lc-pro-acc-ambient-navi-leather-keylessgo-camera-klima-pdc-6733595",
+    "price": 26700,
+    "image": null,
+    "description": "O BMW IX3 sDrive35 de 2021 é um SUV elétrico de alta performance com motor de 286 Hp (210 kW) e transmissão automática de 1 velocidade. Destaca-se pelo seu teto panorâmico, faróis LED, sistema de navegação e um conjunto completo de equipamentos de conforto como ar condicionado automático de 2 zonas, bancos aquecidos e ajustáveis eletricamente, vidros elétricos e sistema Keyless Go. A segurança é garantida com ABS, ESP, airbags frontais e laterais, sistema ISOFIX e imobilizador. Inclui ainda multimédia com Bluetooth, leitor de CD, kit mãos-livres, MP3, computador de bordo e rádio. Exterior com jantes de liga leve e outras opções de valor elevado como BMW live habitacle professional e assistência de condução. Veículo com 138.235 km, origem Bélgica, em excelente estado e com histórico de manutenção não especificado. Uma escolha ideal para quem procura tecnologia, conforto e segurança num veículo elétrico moderno.",
+    "mileage": 138235,
+    "country": "BE",
+    "status": null,
+    "gearboxType": "Automático",
+    "gearbox": 1,
+    "category": "SUV/Veículo todo-o-terreno",
+    "engineSize": "n/a",
+    "power": "286 Hp 210 kW",
+    "places": 5,
+    "unitNumber": null,
+    "origin": "Bélgica - \"BE-36-GENK-VAB_1\"",
+    "firstRegistration": "2021-01-06",
+    "doors": 5,
+    "fuel": "Elétrico",
+    "emissionClass": "Euro6",
+    "co2": "1 CO2",
+    "color": "Preto",
+    "vin": "WBY7X41050S044370",
+    "images": [
+      "https://ecarstrade.com/carsphotos/6730001-6740000/6733595/photo_037.jpg"
+    ],
+    "equipamento_opcoes": {
+      "opcoes_valor_elevado": [
+        "Teto panorâmico",
+        "LED headlights",
+        "Sistema de navegação",
+        "Bmw live habitacle/cockpit professional",
+        "Système d`assistance de conduite: driving assistan",
+        "Projecteur led (fonctionnalité étendue)",
+        "Dispositif d`attelage (boule pivotante)",
+        "Controlo de Velocidade (Cruise Control)",
+        "Controlo de tração"
+      ],
+      "conforto": [
+        "Sistema de iluminação adaptável",
+        "Ar condicionado: Automático (2 zonas)",
+        "Bancos aquecidos",
+        "Assentos ajustáveis eletricamente",
+        "Vidros eléctricos",
+        "Sem chave (Keyless Go)",
+        "Sensor da luz",
+        "Volante multifunções",
+        "Sensor de chuva",
+        "Barras de tejadilho",
+        "Assentos de memória",
+        "Sistema Start/Stop",
+        "Teto deslizante"
+      ],
+      "seguranca": [
+        "Sistema de travagem anti-bloqueio (ABS)",
+        "Luzes diurnas",
+        "Controlo eletrónico de estabilidade (ESP)",
+        "Luzes de nevoeiro",
+        "Airbags: Frente, lado e mais",
+        "Imobilizador",
+        "Sistema ISOFIX"
+      ],
+      "multimedia": [
+        "Bluetooth",
+        "Leitor de CD",
+        "Kit de mãos-livres",
+        "MP3",
+        "Sistema de navegação",
+        "Computador de bordo",
+        "Rádio"
+      ],
+      "interior": [],
+      "exterior": [
+        "Jantes de liga leve"
+      ],
+      "outras_opcoes": []
+    },
+    "maintenance": []
   }
 ]
