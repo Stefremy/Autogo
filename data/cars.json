@@ -13268,8 +13268,8 @@
     "model": "XCeed HYB 1.6 GDI ISG PHEV BCK&WHT EDITION DCT6",
     "year": 2022,
     "slug": "kia-xceed-2022-6547363",
-    "price": 0,
-    "image": "/images/cars/kia_xceed_hybrid/kia_xceed_hybrid.jpg",
+    "price": 21900,
+    "image": "https://ecarstrade.com/carsphotos/6540001-6550000/6547363/photo_000.jpg",
     "description": "Kia XCeed Hybrid PHEV Black & White Edition (140 Hp), DCT6 Automático, Navegação, Cruise Control, Sensores de Chuva. VIN: U5YH5F1AGNL024581. Origem França (Castelnau-dEstrétefonds).",
     "mileage": 77915,
     "country": "FR",
@@ -13289,7 +13289,12 @@
     "co2": "32 g/km",
     "color": "Branco",
     "images": [
-      "/images/cars/kia_xceed_hybrid/kia_xceed_hybrid.jpg"
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547363/photo_000.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547363/photo_001.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547363/photo_003.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547363/photo_004.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547363/photo_006.jpg",
+      "https://ecarstrade.com/carsphotos/6540001-6550000/6547363/photo_007.jpg"
     ],
     "equipamento_opcoes": {
       "opcoes_valor_elevado": [
