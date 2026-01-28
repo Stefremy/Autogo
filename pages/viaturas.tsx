@@ -5,6 +5,7 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import SimuladorTabela from "../components/SimuladorTabela";
 import styles from "../components/PremiumCarCard.module.css";
@@ -16,6 +17,7 @@ import Seo from "../components/Seo";
 import { generateGEOFAQSchema } from "../utils/geoOptimization";
 
 export default function Viaturas() {
+  const router = useRouter();
   const { t } = useTranslation("common");
   const [marca, setMarca] = useState("");
   const [modelo, setModelo] = useState("");
@@ -75,12 +77,28 @@ export default function Viaturas() {
   };
 
   // Persist and restore filter inputs so user values are remembered across visits
-  const STORAGE_KEY = "viaturas_filters_v1";
+  const STORAGE_KEY = "autogo_filters_v1";
 
   // Restore saved filters on first client render (only runs in browser)
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || !router.isReady) return;
     try {
+      const q = router.query;
+      const hasUrlParams = !!(q.marca || q.modelo || q.minPrice || q.maxPrice || q.ano || q.page);
+
+      if (hasUrlParams) {
+        if (q.marca) setMarca(String(q.marca));
+        if (q.modelo) setModelo(String(q.modelo));
+        if (q.ano) setAno(String(q.ano));
+        if (q.minPrice) setMinPrice(String(q.minPrice));
+        if (q.maxPrice) setMaxPrice(String(q.maxPrice));
+        if (q.page) {
+          const p = parseInt(String(q.page), 10);
+          if (!isNaN(p) && p > 0) setItemsLoaded(p * itemsPerBatch);
+        }
+        return; // URL params take priority
+      }
+
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
       const saved = JSON.parse(raw || "{}");
@@ -99,11 +117,11 @@ export default function Viaturas() {
     } catch {
       // ignore parse errors
     }
-  }, [itemsPerBatch]);
+  }, [router.isReady, itemsPerBatch]);
 
   // Save filters whenever they change so the user's inputs are remembered
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || !router.isReady) return;
     try {
       const toSave = {
         marca,
@@ -119,10 +137,25 @@ export default function Viaturas() {
         ts: Date.now(),
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
+
+      // Sync to URL query parameters for back-button persistence and sharing
+      const query: any = { ...router.query };
+      const update = (key: string, val: string | number | null | undefined) => {
+        if (val) query[key] = String(val); else delete query[key];
+      };
+      update("marca", marca);
+      update("modelo", modelo);
+      update("minPrice", minPrice);
+      update("maxPrice", maxPrice);
+      update("ano", ano);
+      const pageNum = Math.ceil(itemsLoaded / itemsPerBatch);
+      if (pageNum > 1) query.page = String(pageNum); else delete query.page;
+
+      router.replace({ pathname: router.pathname, query }, undefined, { shallow: true });
     } catch {
       // ignore storage errors
     }
-  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded]);
+  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded, router.isReady]);
 
   // Unique options for selects
   const marcas = Array.from(
@@ -696,8 +729,8 @@ export default function Viaturas() {
                     (e.currentTarget.style.background = "rgba(213, 80, 80, 1)")
                   }
                   onMouseOut={(e) =>
-                    (e.currentTarget.style.background =
-                      "rgba(213, 80, 80, 0.85)")
+                  (e.currentTarget.style.background =
+                    "rgba(213, 80, 80, 0.85)")
                   }
                 >
                   {t("Encomendar")}
@@ -736,46 +769,46 @@ export default function Viaturas() {
                 </select>
               </div>
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                 <select
-                   value={modelo}
-                   onChange={(e) => setModelo(e.target.value)}
-                   disabled={!marca}
-                   aria-disabled={!marca}
-                   title={!marca ? 'Selecione uma marca primeiro' : undefined}
-                   className={`bg-transparent outline-none border-none text-base text-black w-32 ${!marca ? 'opacity-60 cursor-not-allowed' : ''}`}
-                 >
-                   <option value="">{t("Modelo")}</option>
-                   {marca && modelos.map((m) => (
-                     <option key={m} value={m}>
-                       {m}
-                     </option>
-                   ))}
-                 </select>
-                 {/* Price range inputs placed next to model select */}
-                 <div className="flex items-center gap-2 ml-2">
-                   <input
-                     type="number"
-                     min="0"
-                     step="100"
-                     value={minPrice}
-                     onChange={(e) => setMinPrice(e.target.value)}
-                     placeholder="Min €"
-                     className="bg-transparent outline-none border-none text-sm text-black w-20 px-2 py-1 rounded text-right"
-                     aria-label="Preço mínimo"
-                   />
-                   <span className="text-gray-400">—</span>
-                   <input
-                     type="number"
-                     min="0"
-                     step="100"
-                     value={maxPrice}
-                     onChange={(e) => setMaxPrice(e.target.value)}
-                     placeholder="Max €"
-                     className="bg-transparent outline-none border-none text-sm text-black w-20 px-2 py-1 rounded text-right"
-                     aria-label="Preço máximo"
-                   />
-                 </div>
-               </div>
+                <select
+                  value={modelo}
+                  onChange={(e) => setModelo(e.target.value)}
+                  disabled={!marca}
+                  aria-disabled={!marca}
+                  title={!marca ? 'Selecione uma marca primeiro' : undefined}
+                  className={`bg-transparent outline-none border-none text-base text-black w-32 ${!marca ? 'opacity-60 cursor-not-allowed' : ''}`}
+                >
+                  <option value="">{t("Modelo")}</option>
+                  {marca && modelos.map((m) => (
+                    <option key={m} value={m}>
+                      {m}
+                    </option>
+                  ))}
+                </select>
+                {/* Price range inputs placed next to model select */}
+                <div className="flex items-center gap-2 ml-2">
+                  <input
+                    type="number"
+                    min="0"
+                    step="100"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(e.target.value)}
+                    placeholder="Min €"
+                    className="bg-transparent outline-none border-none text-sm text-black w-20 px-2 py-1 rounded text-right"
+                    aria-label="Preço mínimo"
+                  />
+                  <span className="text-gray-400">—</span>
+                  <input
+                    type="number"
+                    min="0"
+                    step="100"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(e.target.value)}
+                    placeholder="Max €"
+                    className="bg-transparent outline-none border-none text-sm text-black w-20 px-2 py-1 rounded text-right"
+                    aria-label="Preço máximo"
+                  />
+                </div>
+              </div>
               {/* Global search input */}
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
                 <img
@@ -800,43 +833,43 @@ export default function Viaturas() {
                   className="inline-block"
                   style={{ width: "1.125rem", height: "1.125rem" }}
                 />
-                 <select
-                   value={dia}
-                   onChange={(e) => setDia(e.target.value)}
-                   className="bg-transparent outline-none border-none text-base text-black w-16"
-                 >
-                   <option value="">{t("Dia")}</option>
-                   {dias.map((d) => (
-                     <option key={d} value={d}>
-                       {d}
-                     </option>
-                   ))}
-                 </select>
-                 <select
-                   value={mes}
-                   onChange={(e) => setMes(e.target.value)}
-                   className="bg-transparent outline-none border-none text-base text-black w-20"
-                 >
-                   <option value="">{t("Mês")}</option>
-                   {meses.map((m) => (
-                     <option key={m} value={m.toString().padStart(2, "0")}>
-                       {m.toString().padStart(2, "0")}
-                     </option>
-                   ))}
-                 </select>
-                 <select
-                   value={ano}
-                   onChange={(e) => setAno(e.target.value)}
-                   className="bg-transparent outline-none border-none text-base text-black w-24"
-                 >
-                   <option value="">{t("Ano")}</option>
-                   {anos.map((a) => (
-                     <option key={a} value={a}>
-                       {a}
-                     </option>
-                   ))}
-                 </select>
-               </div>
+                <select
+                  value={dia}
+                  onChange={(e) => setDia(e.target.value)}
+                  className="bg-transparent outline-none border-none text-base text-black w-16"
+                >
+                  <option value="">{t("Dia")}</option>
+                  {dias.map((d) => (
+                    <option key={d} value={d}>
+                      {d}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={mes}
+                  onChange={(e) => setMes(e.target.value)}
+                  className="bg-transparent outline-none border-none text-base text-black w-20"
+                >
+                  <option value="">{t("Mês")}</option>
+                  {meses.map((m) => (
+                    <option key={m} value={m.toString().padStart(2, "0")}>
+                      {m.toString().padStart(2, "0")}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={ano}
+                  onChange={(e) => setAno(e.target.value)}
+                  className="bg-transparent outline-none border-none text-base text-black w-24"
+                >
+                  <option value="">{t("Ano")}</option>
+                  {anos.map((a) => (
+                    <option key={a} value={a}>
+                      {a}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
                 <FaTachometerAlt className="text-black text-lg" />
                 <input
@@ -1062,15 +1095,15 @@ export default function Viaturas() {
               ))}
             </div>
 
-          {/* sentinel element observed by IntersectionObserver to auto-load more when there is empty space */}
-          <div id="viaturas-sentinel" style={{ height: 1 }} />
-          
-          {/* IntersectionObserver to reveal cards smoothly as they scroll into view */}
-          <script /* injected for client-only observer */ />
-          {
-            /* Client-only effect: observe .card-anim and add .in-view when intersecting */
-          }
-          {process.browser && null}
+            {/* sentinel element observed by IntersectionObserver to auto-load more when there is empty space */}
+            <div id="viaturas-sentinel" style={{ height: 1 }} />
+
+            {/* IntersectionObserver to reveal cards smoothly as they scroll into view */}
+            <script /* injected for client-only observer */ />
+            {
+              /* Client-only effect: observe .card-anim and add .in-view when intersecting */
+            }
+            {process.browser && null}
             {/* infinite-scroll: no page selector — more items load as the user scrolls */}
             <div className="max-w-7xl mx-auto mt-6 px-4 text-center text-gray-500">
               {itemsLoaded < filteredCars.length ? (
