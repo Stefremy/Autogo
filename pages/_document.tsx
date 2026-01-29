@@ -22,6 +22,15 @@ class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="theme-color" content="#b42121" />
 
+          {/* Fonts - preconnect and stylesheets */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="stylesheet" href="https://use.typekit.net/mdg1mhk.css" />
+
           {/* Global Open Graph / Social defaults */}
           <meta property="og:site_name" content="AutoGo.pt" />
           <meta property="og:locale" content="pt_PT" />

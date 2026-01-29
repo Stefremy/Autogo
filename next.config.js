@@ -82,7 +82,7 @@ const nextConfig = {
     return carRedirects;
   },
 
-  // ✅ Adiciona estas duas linhas para o build da Vercel não quebrar
+  // ✅ TypeScript and ESLint configuration for builds
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
 };

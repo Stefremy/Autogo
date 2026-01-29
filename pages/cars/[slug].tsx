@@ -31,6 +31,7 @@ import carsData from "../../data/cars.json";
 import type { Car, MaintenanceItem } from '../../types/car.d';
 import MakeLogo from "../../components/MakeLogo";
 import { SITE_WIDE_KEYWORDS, joinKeywords } from "../../utils/seoKeywords";
+import { parseNumber } from "../../utils/carProcessors";
 
 // Static generation helpers: produce only valid paths and return 404 when car is missing.
 export async function getStaticPaths() {
@@ -60,13 +61,8 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
   }
 
   // Local numeric coercion (avoid depending on module-level helpers here to keep getStaticProps self-contained)
-  const numifyLocal = (v: any): number | null => {
-    if (v == null) return null;
-    if (typeof v === 'number') return v;
-    const cleaned = String(v).replace(/[^0-9.,-]/g, '').replace(/,/g, '.');
-    const n = parseFloat(cleaned);
-    return Number.isFinite(n) ? n : null;
-  };
+  // UPDATED: Using shared utility for consistency
+  const numifyLocal = parseNumber;
 
   // Build SEO-friendly keywords (site-wide + specific)
   const detailKeywords = (() => {
@@ -149,12 +145,7 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
 }
 
 function numify(v: any): number | null {
-  if (v == null) return null;
-  if (typeof v === 'number') return v;
-  // remove non-digit except dot and comma
-  const cleaned = String(v).replace(/[^0-9.,-]/g, '').replace(/,/g, '.');
-  const n = parseFloat(cleaned);
-  return Number.isFinite(n) ? n : null;
+  return parseNumber(v);
 }
 
 function fmtNumber(v: any, opts?: Intl.NumberFormatOptions) {
@@ -492,14 +483,14 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
   const primaryImage = displayedImages.length ? displayedImages[0] : null;
 
   // Fun facts dinâmicos (include full model + description when available, de-duplicated)
-    const fullModelLabel = [car.make, car.model, car.version].filter(Boolean).join(' ');
-    const funFacts = [
-      fullModelLabel ? `Modelo: ${fullModelLabel}` : null,
-      car.description && car.description !== fullModelLabel ? car.description : null,
-      car?.engineSize && car.engineSize.includes("1.2") && "Motor premiado pela eficiência na Europa.",
-      car?.fuel && car.fuel === "Gasolina" && "ISV reduzido devido às baixas emissões.",
-    ].filter(Boolean);
-    // Compute similar cars deterministically without using React hooks.
+  const fullModelLabel = [car.make, car.model, car.version].filter(Boolean).join(' ');
+  const funFacts = [
+    fullModelLabel ? `Modelo: ${fullModelLabel}` : null,
+    car.description && car.description !== fullModelLabel ? car.description : null,
+    car?.engineSize && car.engineSize.includes("1.2") && "Motor premiado pela eficiência na Europa.",
+    car?.fuel && car.fuel === "Gasolina" && "ISV reduzido devido às baixas emissões.",
+  ].filter(Boolean);
+  // Compute similar cars deterministically without using React hooks.
   // Placed before the early return so hook call order remains stable.
   function computeSimilarCars(target: Car | null, pool: Car[], maxResults = 8): Car[] {
     if (!target) return [];
@@ -930,7 +921,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
         className="fixed top-[64px] left-0 w-full z-40 pointer-events-none"
         style={{ height: "0" }}
       />
-      { /* Inject blur overlay styles only when the lightbox is open */ }
+      { /* Inject blur overlay styles only when the lightbox is open */}
       {lightboxOpen && (
         <style jsx global>{`
           /* Make common lightbox/dialog overlays translucent and blur the page behind them */
@@ -1318,7 +1309,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                   <FaChevronDown className="text-[#b42121]" />
                 )}
               </button>
-              
+
               {/* Detalhes extra, animados */}
               <div
                 className={`overflow-hidden transition-all duration-500 ${showMore ? "max-h-96 opacity-100 mb-2 bg-[#f5f6fa] px-6 py-4 rounded-2xl" : "max-h-0 opacity-0 mb-0"}`}
@@ -1354,42 +1345,42 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                     <li className="flex items-center gap-2 text-gray-700 text-lg">
                       <FaLayerGroup className="text-[#b42121]" /> <strong>Classe de Emissões:</strong> {car.emissionClass}
                     </li>
-                )}
+                  )}
                 </ul>
               </div>
               {/* Botões de ação - minimalist, side by side, no vibrant colors */}
               {/* Actions: responsive grid on mobile so 2/3 buttons fit per row, row on lg */}
               <div className="w-full flex justify-center">
                 <div className="w-full max-w-3xl flex flex-col sm:flex-row gap-3 mt-4 sm:mt-4 items-stretch">
-                <button
-                  className="flex items-center justify-center w-full sm:w-auto gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-2 px-2 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-sm"
-                  onClick={async () => {
-                    if (isSharing) return;
-                    setIsSharing(true);
-                    try {
-                      if (navigator.share) {
-                        await navigator.share({
-                          title: `${car.make} ${car.model} (${car.year}) em AutoGo.pt`,
-                          text: `Vê este carro: ${car.make} ${car.model} (${car.year})`,
-                          url: window.location.href,
-                        });
-                      } else {
-                        await navigator.clipboard.writeText(
-                          window.location.href,
-                        );
-                        alert("Link copiado para a área de transferência!");
+                  <button
+                    className="flex items-center justify-center w-full sm:w-auto gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-2 px-2 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-sm"
+                    onClick={async () => {
+                      if (isSharing) return;
+                      setIsSharing(true);
+                      try {
+                        if (navigator.share) {
+                          await navigator.share({
+                            title: `${car.make} ${car.model} (${car.year}) em AutoGo.pt`,
+                            text: `Vê este carro: ${car.make} ${car.model} (${car.year})`,
+                            url: window.location.href,
+                          });
+                        } else {
+                          await navigator.clipboard.writeText(
+                            window.location.href,
+                          );
+                          alert("Link copiado para a área de transferência!");
+                        }
+                      } catch {
+                        // Optionally handle error
                       }
-                    } catch {
-                      // Optionally handle error
-                    }
-                    setIsSharing(false);
-                  }}
-                  aria-label="Partilhar esta viatura"
-                  disabled={isSharing}
-                >
-                      <img src="/images/icons/share_logo.png" alt="Partilhar" className="w-4 h-4" />
+                      setIsSharing(false);
+                    }}
+                    aria-label="Partilhar esta viatura"
+                    disabled={isSharing}
+                  >
+                    <img src="/images/icons/share_logo.png" alt="Partilhar" className="w-4 h-4" />
                     <span className="ml-1 text-sm">Partilhar</span>
-                </button>
+                  </button>
                   <button
                     onClick={handleDownloadPDF}
                     className="flex items-center justify-center w-full sm:w-auto gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-2 px-2 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-sm"
@@ -1418,42 +1409,42 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
           <section className="w-full overflow-x-hidden">
             {/* Full-width on mobile so portrait shows 2 columns; center from md up */}
             <div className="w-full mx-0 md:mx-auto md:max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-3 px-4 md:px-12 lg:px-24 xl:px-32 justify-items-start box-border">
-            {car.doors && (
-              <div className="relative z-0 w-full min-w-0 max-w-full overflow-hidden bg-white rounded-xl shadow flex items-center gap-2 p-1.5 sm:p-2 md:p-2 lg:p-2 transform-gpu transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:z-10">
-                <FaDoorOpen className="text-sm sm:text-lg md:text-base lg:text-lg text-[#b42121] ml-0.5 sm:ml-1 md:ml-1 lg:ml-2 flex-shrink-0" />
-                <div className="flex-1 text-left py-1.5 md:py-1 lg:py-1 min-w-0">
-                  <div className="font-medium text-sm md:text-sm lg:text-sm break-all whitespace-normal">{car.doors}</div>
-                  <div className="text-[11px] md:text-xs lg:text-xs text-gray-500">Portas</div>
+              {car.doors && (
+                <div className="relative z-0 w-full min-w-0 max-w-full overflow-hidden bg-white rounded-xl shadow flex items-center gap-2 p-1.5 sm:p-2 md:p-2 lg:p-2 transform-gpu transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:z-10">
+                  <FaDoorOpen className="text-sm sm:text-lg md:text-base lg:text-lg text-[#b42121] ml-0.5 sm:ml-1 md:ml-1 lg:ml-2 flex-shrink-0" />
+                  <div className="flex-1 text-left py-1.5 md:py-1 lg:py-1 min-w-0">
+                    <div className="font-medium text-sm md:text-sm lg:text-sm break-all whitespace-normal">{car.doors}</div>
+                    <div className="text-[11px] md:text-xs lg:text-xs text-gray-500">Portas</div>
+                  </div>
                 </div>
-              </div>
-            )}
-            {car.color && (
-              <div className="relative z-0 w-full min-w-0 max-w-full overflow-hidden bg-white rounded-xl shadow flex items-center gap-2 p-1.5 sm:p-2 md:p-2 lg:p-2 transform-gpu transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:z-10">
-                <FaPalette className="text-sm sm:text-lg md:text-base lg:text-lg text-[#b42121] ml-0.5 sm:ml-1 md:ml-1 lg:ml-2 flex-shrink-0" />
-                <div className="flex-1 text-left py-1.5 md:py-1 lg:py-1 min-w-0">
-                  <div className="font-medium text-sm md:text-sm lg:text-sm break-all whitespace-normal">{car.color}</div>
-                  <div className="text-[11px] md:text-xs lg:text-xs text-gray-500">Cor</div>
+              )}
+              {car.color && (
+                <div className="relative z-0 w-full min-w-0 max-w-full overflow-hidden bg-white rounded-xl shadow flex items-center gap-2 p-1.5 sm:p-2 md:p-2 lg:p-2 transform-gpu transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:z-10">
+                  <FaPalette className="text-sm sm:text-lg md:text-base lg:text-lg text-[#b42121] ml-0.5 sm:ml-1 md:ml-1 lg:ml-2 flex-shrink-0" />
+                  <div className="flex-1 text-left py-1.5 md:py-1 lg:py-1 min-w-0">
+                    <div className="font-medium text-sm md:text-sm lg:text-sm break-all whitespace-normal">{car.color}</div>
+                    <div className="text-[11px] md:text-xs lg:text-xs text-gray-500">Cor</div>
+                  </div>
                 </div>
-              </div>
-            )}
-            {car.emissionClass && (
-              <div className="relative z-0 w-full min-w-0 max-w-full overflow-hidden bg-white rounded-xl shadow flex items-center gap-2 p-1.5 sm:p-2 md:p-2 lg:p-2 transform-gpu transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:z-10">
-                <FaLayerGroup className="text-sm sm:text-lg md:text-base lg:text-lg text-[#b42121] ml-0.5 sm:ml-1 md:ml-1 lg:ml-2 flex-shrink-0" />
-                <div className="flex-1 text-left py-1.5 md:py-1 lg:py-1 min-w-0">
-                  <div className="font-medium text-sm md:text-sm lg:text-sm break-all whitespace-normal">{car.emissionClass}</div>
-                  <div className="text-[11px] md:text-xs lg:text-xs text-gray-500">Classe Emissões</div>
+              )}
+              {car.emissionClass && (
+                <div className="relative z-0 w-full min-w-0 max-w-full overflow-hidden bg-white rounded-xl shadow flex items-center gap-2 p-1.5 sm:p-2 md:p-2 lg:p-2 transform-gpu transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:z-10">
+                  <FaLayerGroup className="text-sm sm:text-lg md:text-base lg:text-lg text-[#b42121] ml-0.5 sm:ml-1 md:ml-1 lg:ml-2 flex-shrink-0" />
+                  <div className="flex-1 text-left py-1.5 md:py-1 lg:py-1 min-w-0">
+                    <div className="font-medium text-sm md:text-sm lg:text-sm break-all whitespace-normal">{car.emissionClass}</div>
+                    <div className="text-[11px] md:text-xs lg:text-xs text-gray-500">Classe Emissões</div>
+                  </div>
                 </div>
-              </div>
-            )}
-            {car.co2 && (
-              <div className="relative z-0 w-full min-w-0 max-w-full overflow-hidden bg-white rounded-xl shadow flex items-center gap-2 p-1.5 sm:p-2 md:p-2 lg:p-2 transform-gpu transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:z-10">
-                <FaCloud className="text-sm sm:text-lg md:text-base lg:text-lg text-[#b42121] ml-0.5 sm:ml-1 md:ml-1 lg:ml-2 flex-shrink-0" />
-                <div className="flex-1 text-left py-1.5 md:py-1 lg:py-1 min-w-0">
-                  <div className="font-medium text-sm md:text-sm lg:text-sm break-all whitespace-normal">{car.co2}</div>
-                  <div className="text-[11px] md:text-xs lg:text-xs text-gray-500">CO₂</div>
+              )}
+              {car.co2 && (
+                <div className="relative z-0 w-full min-w-0 max-w-full overflow-hidden bg-white rounded-xl shadow flex items-center gap-2 p-1.5 sm:p-2 md:p-2 lg:p-2 transform-gpu transition-transform duration-200 hover:scale-105 hover:shadow-lg hover:z-10">
+                  <FaCloud className="text-sm sm:text-lg md:text-base lg:text-lg text-[#b42121] ml-0.5 sm:ml-1 md:ml-1 lg:ml-2 flex-shrink-0" />
+                  <div className="flex-1 text-left py-1.5 md:py-1 lg:py-1 min-w-0">
+                    <div className="font-medium text-sm md:text-sm lg:text-sm break-all whitespace-normal">{car.co2}</div>
+                    <div className="text-[11px] md:text-xs lg:text-xs text-gray-500">CO₂</div>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
             </div>
           </section>
 
@@ -1617,33 +1608,33 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                         }}
                       >
                         {similarCars.slice(0, similarExpanded ? 6 : 3).map((simCar) => (
-                        <div
-                          key={simCar.id}
-                          className={`bg-white rounded-2xl shadow-lg w-full cursor-pointer group relative overflow-hidden transition-all duration-300 hover:shadow-2xl`}
-                          data-id={simCar.id}
-                        >
-                          <a href={`/cars/${simCar.slug || simCar.id}`} className="block h-full">
-                            <div className="similar-swiper-item relative">
-                              <img
-                                src={normalizeImageClient(simCar.image) || '/images/auto-logo.png'}
-                                alt={`${simCar.make} ${simCar.model}`}
-                                loading="lazy"
-                                width={560}
-                                height={240}
-                                className="w-full h-40 object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-105"
-                              />
-                              <div className="slide-overlay absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                                <div className="car-info p-4 text-white w-full">
-                                  <span className="make font-bold block text-lg">{simCar.make}</span>
-                                  <span className="model block text-base">{simCar.model}</span>
-                                  <span className="year block text-sm">{simCar.year}</span>
-                                  <span className="km block text-sm">{fmtNumber(simCar.mileage, { minimumFractionDigits: 0 })} km</span>
+                          <div
+                            key={simCar.id}
+                            className={`bg-white rounded-2xl shadow-lg w-full cursor-pointer group relative overflow-hidden transition-all duration-300 hover:shadow-2xl`}
+                            data-id={simCar.id}
+                          >
+                            <a href={`/cars/${simCar.slug || simCar.id}`} className="block h-full">
+                              <div className="similar-swiper-item relative">
+                                <img
+                                  src={normalizeImageClient(simCar.image) || '/images/auto-logo.png'}
+                                  alt={`${simCar.make} ${simCar.model}`}
+                                  loading="lazy"
+                                  width={560}
+                                  height={240}
+                                  className="w-full h-40 object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-105"
+                                />
+                                <div className="slide-overlay absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                  <div className="car-info p-4 text-white w-full">
+                                    <span className="make font-bold block text-lg">{simCar.make}</span>
+                                    <span className="model block text-base">{simCar.model}</span>
+                                    <span className="year block text-sm">{simCar.year}</span>
+                                    <span className="km block text-sm">{fmtNumber(simCar.mileage, { minimumFractionDigits: 0 })} km</span>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </a>
-                        </div>
-                      ))}
+                            </a>
+                          </div>
+                        ))}
                       </div>
                       {/* top shadow */}
                       <div className={`pointer-events-none absolute left-0 right-0 top-0 h-6 transition-opacity ${canScrollUp ? 'opacity-100' : 'opacity-0'}`}>

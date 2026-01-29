@@ -1,9 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect, useMemo } from "react";
-import {
-  FaTachometerAlt,
-  FaSearch,
-} from "react-icons/fa";
+// Icons moved to sub-components, removed unused imports
+// (FaTachometerAlt, FaSearch removed)
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -15,6 +13,10 @@ import MakeLogo from "../components/MakeLogo";
 import { VIATURAS_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
 import { generateGEOFAQSchema } from "../utils/geoOptimization";
+import { normalizeMake, parseMileage, parsePrice } from "../utils/carProcessors";
+import ViaturasFilterBar from "../components/ViaturasFilterBar";
+import ViaturasGrid from "../components/ViaturasGrid";
+import { Car } from "../types/car";
 
 export default function Viaturas() {
   const router = useRouter();
@@ -62,19 +64,32 @@ export default function Viaturas() {
     setItemsLoaded((prev) => Math.max(prev, itemsPerBatch));
   }, [itemsPerBatch]);
 
-  // Normalize make strings for filtering (map common variants to canonical keys)
-  const normalizeMake = (m?: string) => {
-    if (!m) return "";
-    const s = String(m).toLowerCase().trim();
-    // create a compact key (remove non-alphanum) to match variants like "mercedes-benz", "mercedes benz", "mercedes"
-    const key = s.replace(/[^a-z0-9]/g, "");
-    const ALIASES: Record<string, string> = {
-      mercedes: "mercedes-benz",
-      mercedesbenz: "mercedes-benz",
-      // add more aliases here when needed
-    };
-    return ALIASES[key] || s;
+  // Persist logic for recent clicks
+  const onCarClick = (car: Car) => {
+    try {
+      const KEY = "autogo_clicked_v1";
+      const TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
+      const raw = localStorage.getItem(KEY);
+      let arr: any[] = [];
+      if (raw) {
+        arr = JSON.parse(raw) || [];
+        // filter out expired entries due to TTL
+        arr = arr.filter((it: any) => Date.now() - (it.ts || 0) < TTL);
+      }
+      // remove existing for this id
+      arr = arr.filter((it: any) => it.id !== car.id);
+      // add to front
+      arr.unshift({ id: car.id, ts: Date.now() });
+      // cap size
+      if (arr.length > 50) arr = arr.slice(0, 50);
+      localStorage.setItem(KEY, JSON.stringify(arr));
+    } catch {
+      // ignore
+    }
   };
+
+  // Normalize make strings using shared utility
+  // (local function removed in favor of import)
 
   // Persist and restore filter inputs so user values are remembered across visits
   const STORAGE_KEY = "autogo_filters_v1";
@@ -223,26 +238,10 @@ export default function Viaturas() {
     })();
 
     // safe mileage number
-    const mileageNum = (() => {
-      const v = (car as any).mileage;
-      if (v == null) return null;
-      if (typeof v === 'number') return v;
-      const n = parseInt(String(v).replace(/[^0-9]/g, ''), 10);
-      return Number.isFinite(n) ? n : null;
-    })();
+    const mileageNum = parseMileage((car as any).mileage);
 
     // safe numeric price for filtering
-    const priceNum = (() => {
-      const v = (car as any).price;
-      if (v == null) return null;
-      if (typeof v === 'number') return Number.isFinite(v) ? v : null;
-      if (typeof v === 'string') {
-        const digits = String(v).replace(/[^0-9.-]/g, '');
-        const n = Number(digits);
-        return Number.isFinite(n) ? n : null;
-      }
-      return null;
-    })();
+    const priceNum = parsePrice((car as any).price);
 
     return (
       (!marca || normalizeMake((car as any).make) === normalizeMake(marca)) &&
@@ -345,18 +344,7 @@ export default function Viaturas() {
   }, [itemsLoaded, filteredCars.length, itemsPerBatch]);
 
   // Status translation map
-  const statusLabels = {
-    disponivel: t("Disponível"),
-    vendido: t("Vendido"),
-    sob_consulta: t("Sob Consulta"),
-    novidade: t("Novidade"), // Added novidade label
-  };
-  const statusColors = {
-    disponivel: "bg-green-500",
-    vendido: "bg-gray-400",
-    sob_consulta: "bg-yellow-400",
-    novidade: "bg-blue-500", // Added novidade color
-  };
+  // Status labels and colors moved to ViaturasGrid component
 
   // Keep a stable reference to the runtime-mapped CSS class name so effects
   // don't need to list the `styles` module in dependency arrays.
@@ -739,361 +727,31 @@ export default function Viaturas() {
             </div>
             {/* (Pagination moved below the cards, right-aligned for a cleaner UI) */}
             {/* Filtros estilizados */}
-            <div
-              id="filtros-viaturas"
-              className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center mb-10 bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-[#b42121]/10 transition-all duration-300 hover:shadow-2xl"
-              style={{ color: "#000" }}
-            >
-              <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                {/* use SVG from public folder; size matches text-lg (1.125rem) */}
-                <img
-                  src="/images/icons/reshot-icon-car-.svg"
-                  alt="Car"
-                  className="inline-block"
-                  style={{ width: "1.125rem", height: "1.125rem" }}
-                />
-                <select
-                  value={marca}
-                  onChange={(e) => {
-                    setMarca(e.target.value);
-                    setModelo("");
-                  }}
-                  className="bg-transparent outline-none border-none text-base text-black"
-                >
-                  <option value="">{t("Marca")}</option>
-                  {marcas.map((m) => (
-                    <option key={m} value={m}>
-                      {m}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <select
-                  value={modelo}
-                  onChange={(e) => setModelo(e.target.value)}
-                  disabled={!marca}
-                  aria-disabled={!marca}
-                  title={!marca ? 'Selecione uma marca primeiro' : undefined}
-                  className={`bg-transparent outline-none border-none text-base text-black w-32 ${!marca ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                  <option value="">{t("Modelo")}</option>
-                  {marca && modelos.map((m) => (
-                    <option key={m} value={m}>
-                      {m}
-                    </option>
-                  ))}
-                </select>
-                {/* Price range inputs placed next to model select */}
-                <div className="flex items-center gap-2 ml-2">
-                  <input
-                    type="number"
-                    min="0"
-                    step="100"
-                    value={minPrice}
-                    onChange={(e) => setMinPrice(e.target.value)}
-                    placeholder="Min €"
-                    className="bg-transparent outline-none border-none text-sm text-black w-20 px-2 py-1 rounded text-right"
-                    aria-label="Preço mínimo"
-                  />
-                  <span className="text-gray-400">—</span>
-                  <input
-                    type="number"
-                    min="0"
-                    step="100"
-                    value={maxPrice}
-                    onChange={(e) => setMaxPrice(e.target.value)}
-                    placeholder="Max €"
-                    className="bg-transparent outline-none border-none text-sm text-black w-20 px-2 py-1 rounded text-right"
-                    aria-label="Preço máximo"
-                  />
-                </div>
-              </div>
-              {/* Global search input */}
-              <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <img
-                  src="/images/icons/reshot-icon.svg"
-                  alt="Pesquisar"
-                  className="inline-block"
-                  style={{ width: "1.125rem", height: "1.125rem" }}
-                />
-                <input
-                  type="search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Pesquisar: marca, modelo..."
-                  className="bg-transparent outline-none border-none text-sm text-black w-64"
-                  aria-label="Pesquisar viaturas"
-                />
-              </div>
-              <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <img
-                  src="/images/icons/reshot-icon-calendar-ZEQ49LUW6B.svg"
-                  alt="Calendário"
-                  className="inline-block"
-                  style={{ width: "1.125rem", height: "1.125rem" }}
-                />
-                <select
-                  value={dia}
-                  onChange={(e) => setDia(e.target.value)}
-                  className="bg-transparent outline-none border-none text-base text-black w-16"
-                >
-                  <option value="">{t("Dia")}</option>
-                  {dias.map((d) => (
-                    <option key={d} value={d}>
-                      {d}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={mes}
-                  onChange={(e) => setMes(e.target.value)}
-                  className="bg-transparent outline-none border-none text-base text-black w-20"
-                >
-                  <option value="">{t("Mês")}</option>
-                  {meses.map((m) => (
-                    <option key={m} value={m.toString().padStart(2, "0")}>
-                      {m.toString().padStart(2, "0")}
-                    </option>
-                  ))}
-                </select>
-                <select
-                  value={ano}
-                  onChange={(e) => setAno(e.target.value)}
-                  className="bg-transparent outline-none border-none text-base text-black w-24"
-                >
-                  <option value="">{t("Ano")}</option>
-                  {anos.map((a) => (
-                    <option key={a} value={a}>
-                      {a}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2 shadow border border-[#b42121]/10 focus-within:ring-2 focus-within:ring-[#b42121]/30 transition-all">
-                <FaTachometerAlt className="text-black text-lg" />
-                <input
-                  type="number"
-                  min="0"
-                  value={km}
-                  onChange={(e) => setKm(e.target.value)}
-                  placeholder={t("Máx. KM")}
-                  className="bg-transparent outline-none border-none text-base text-black w-24"
-                />
-              </div>
-              <button
-                className="flex items-center gap-2 rounded-xl px-6 py-2 font-bold shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
-                style={{ background: "rgba(213, 80, 80, 0.85)", color: "#fff" }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.background = "rgba(213, 80, 80, 1)")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.background = "rgba(213, 80, 80, 0.85)")
-                }
-              >
-                <FaSearch />
-                {t("Filtrar")}
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setMarca("");
-                  setModelo("");
-                  setAno("");
-                  setMes("");
-                  setDia("");
-                  setKm("");
-                  setCountryFilter("");
-                  setMinPrice("");
-                  setMaxPrice("");
-                  // remove persisted filters
-                  try {
-                    localStorage.removeItem(STORAGE_KEY);
-                  } catch {
-                    // ignore
-                  }
-                }}
-                className="flex items-center gap-2 bg-white border border-[#b42121]/30 text-[#b42121] rounded-xl px-6 py-2 font-bold shadow transition-all duration-200 hover:bg-[#b42121] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 focus:ring-offset-2"
-              >
-                {t("Limpar Filtros")}
-              </button>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10">
-              {displayedCars.map((car, idx) => (
-                <div
-                  key={car.id}
-                  className={`${styles["premium-car-card"]} ${styles["card-anim"]}`}
-                  data-card-index={idx}
-                  data-enter-delay="true"
-                  style={{ ['--enter-delay' as any]: `${idx * 45}ms` } as React.CSSProperties}
-                >
-                  {/* Status badge */}
-                  {car.status && (
-                    <span
-                      className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold shadow z-20 text-white ${statusColors[car.status] || "bg-gray-400"}`}
-                      style={{
-                        letterSpacing: "0.5px",
-                        minWidth: 90,
-                        textAlign: "center",
-                      }}
-                    >
-                      {statusLabels[car.status] || car.status}
-                    </span>
-                  )}
-                  {/* Mobile: existing horizontal thumbnail scroller (leave as-is) */}
-                  <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent md:hidden">
-                    {(() => {
-                      // Limit mobile thumbnails to first 5 images (main + up to 4 extras)
-                      const imgs = (car.images || [car.image]).slice(0, 5);
-                      return imgs.map((img, idx) => {
-                        const thumbSrc = Array.isArray(img) ? String(img[0]) : String(img || car.image || "");
-                        return (
-                          <button
-                            key={idx}
-                            type="button"
-                            className="focus:outline-none"
-                            onClick={() => {
-                              const modal = document.getElementById(
-                                `modal-img-${car.id}-${idx}`,
-                              );
-                              if (modal) (modal as HTMLDialogElement).showModal();
-                            }}
-                          >
-                            <img
-                              src={thumbSrc}
-                              loading="lazy"
-                              alt={`${car.make} ${car.model} foto ${idx + 1}`}
-                              className={styles["premium-car-image"]}
-                              style={{ minWidth: "11rem" }}
-                            />
-                          </button>
-                        );
-                      });
-                    })()}
-                  </div>
-
-                  {/* Desktop: make the main picture fill the card top and span full width (flush left/right) */}
-                  <div className="w-full mb-4 hidden md:block">
-                    {(() => {
-                      // On desktop prefer the single `car.image` string to avoid loading the whole images array
-                      const mainImg = (car && (car.image || (car.images && car.images[0]))) || "";
-                      return (
-                        <button
-                          type="button"
-                          className="focus:outline-none w-full"
-                          onClick={() => {
-                            const modal = document.getElementById(
-                              `modal-img-${car.id}-0`,
-                            );
-                            if (modal) (modal as HTMLDialogElement).showModal();
-                          }}
-                        >
-                          <img
-                            src={String(mainImg)}
-                            loading="lazy"
-                            alt={`${car.make} ${car.model} foto principal`}
-                            className={styles["premium-car-image"]}
-                            style={{ width: '100%', height: undefined }}
-                          />
-                        </button>
-                      );
-                    })()}
-                  </div>
-
-                  {/* Modais para expandir imagens (limit to first 5 to avoid loading many images on mobile) */}
-                  {(() => {
-                    const imgs = (car.images || [car.image]).slice(0, 5);
-                    return imgs.map((img, idx) => (
-                      <dialog
-                        key={idx}
-                        id={`modal-img-${car.id}-${idx}`}
-                        className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full"
-                      >
-                        <div className="flex flex-col items-center">
-                          <img
-                            src={String(img)}
-                            loading="lazy"
-                            alt="Foto expandida"
-                            className="max-h-[80vh] w-auto rounded-xl shadow-lg"
-                          />
-                          <button
-                            onClick={(e) =>
-                              (
-                                e.currentTarget.closest(
-                                  "dialog",
-                                ) as HTMLDialogElement
-                              )?.close()
-                            }
-                            className="mt-4 mb-2 px-6 py-2 bg-[#b42121] text-white rounded-full font-bold hover:bg-[#a11a1a] transition"
-                          >
-                            {t("Fechar")}
-                          </button>
-                        </div>
-                      </dialog>
-                    ));
-                  })()}
-                  {/* Make the info area (below the image) a single clickable link to the car detail.
-                      Clicking the image still opens the modal because image buttons are separate. */}
-                  <Link
-                    href={`/cars/${car.slug || car.id}`}
-                    className="relative flex flex-col items-center w-full mt-2 text-inherit no-underline clickable-open"
-                    onClick={() => {
-                      // Persist a list of recently clicked car ids for this visitor (7d TTL)
-                      try {
-                        const KEY = "autogo_clicked_v1";
-                        const TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
-                        const raw = localStorage.getItem(KEY);
-                        let arr: any[] = [];
-                        if (raw) {
-                          arr = JSON.parse(raw) || [];
-                          // filter out expired entries
-                          arr = arr.filter((it) => Date.now() - (it.ts || 0) < TTL);
-                        }
-                        // remove existing for this id
-                        arr = arr.filter((it) => it.id !== car.id);
-                        // add to front
-                        arr.unshift({ id: car.id, ts: Date.now() });
-                        // cap size
-                        if (arr.length > 50) arr = arr.slice(0, 50);
-                        localStorage.setItem(KEY, JSON.stringify(arr));
-                      } catch {
-                        // ignore
-                      }
-                    }}
-                    aria-label={`Ver detalhes ${String((car as any).make ?? "")} ${String((car as any).model ?? "")}`}
-                  >
-                    <div className="mb-2">
-                      {/* @ts-ignore */}
-                      <MakeLogo make={String((car as any).make ?? "")} size={36} className="h-12 w-auto mx-auto" />
-                    </div>
-                    <h2
-                      className="text-xl font-semibold mb-1 text-[#222] text-center px-2 w-full flex items-center justify-center gap-2"
-                      style={{ minHeight: "2.5rem" }}
-                    >
-                      {String((car as any).make ?? "")} {String((car as any).model ?? "")}
-                    </h2>
-                    <div className="text-gray-500 mb-1 text-center px-2">
-                      {String((car as any).year ?? "")} · {String((car as any).mileage ?? "")} km
-                    </div>
-                    <div className="font-bold text-black text-lg mb-3 text-center px-2">
-                      {(() => {
-                        // use format helper to render price or textual fallback
-                        const rawPrice = (car as any).price;
-                        const priceDisplay = (car as any).priceDisplay;
-                        let numeric = null as number | null;
-                        if (typeof rawPrice === 'number' && Number.isFinite(rawPrice)) numeric = rawPrice;
-                        else if (typeof rawPrice === 'string' && rawPrice.trim().length > 0) {
-                          const parsed = Number(String(rawPrice).replace(/[^0-9.-]/g, ''));
-                          if (!Number.isNaN(parsed) && Number.isFinite(parsed)) numeric = parsed;
-                        }
-                        const { formatPriceDisplay } = require('../utils/formatPrice');
-                        return formatPriceDisplay(numeric, priceDisplay ?? (typeof rawPrice === 'string' ? rawPrice : undefined));
-                      })()}
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
+            {/* Filtros estilizados - Extracted to ViaturasFilterBar */}
+            <ViaturasFilterBar
+              marca={marca} setMarca={setMarca}
+              modelo={modelo} setModelo={setModelo}
+              minPrice={minPrice} setMinPrice={setMinPrice}
+              maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+              searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+              dia={dia} setDia={setDia}
+              mes={mes} setMes={setMes}
+              ano={ano} setAno={setAno}
+              km={km} setKm={setKm}
+              marcas={marcas} modelos={modelos}
+              meses={meses} dias={dias} anos={anos}
+              onClearFilters={() => {
+                setMarca(""); setModelo(""); setAno(""); setMes(""); setDia(""); setKm("");
+                setCountryFilter(""); setMinPrice(""); setMaxPrice("");
+                try { localStorage.removeItem(STORAGE_KEY); } catch { }
+              }}
+            />
+            {/* Grid de resultados - Extracted to ViaturasGrid */}
+            <ViaturasGrid
+              cars={displayedCars as any}
+              styles={styles}
+              onCarClick={onCarClick}
+            />
 
             {/* sentinel element observed by IntersectionObserver to auto-load more when there is empty space */}
             <div id="viaturas-sentinel" style={{ height: 1 }} />

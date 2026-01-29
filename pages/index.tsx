@@ -35,11 +35,13 @@ export async function getServerSideProps({ locale }) {
           content.match(/!\[.*?\]\((.*?)\)/)?.[1] || "/images/auto-logo.png",
         excerpt:
           content
+            .replace(/!\[.*?\]\(.*?\)/g, "") // remove images
             .split("\n")
-            .slice(0, 3)
+            .filter((line) => line.trim().length > 0) // remove empty lines
             .join(" ")
             .replace(/[#*]/g, "")
-            .slice(0, 120) + "...",
+            .trim()
+            .slice(0, 150) + "...",
         link: `/blog/${filename.replace(/\.md$/, "")}`,
       };
     })
@@ -52,38 +54,7 @@ export async function getServerSideProps({ locale }) {
   };
 }
 
-// Placeholder reviews - replace with real data or API integration
-const googleReviews = [
-  {
-    name: "João Silva",
-    rating: 5,
-    text: "Serviço excelente! O processo foi rápido e transparente. Recomendo a AutoGo.pt a todos.",
-    date: "há 2 semanas",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    name: "Maria Fernandes",
-    rating: 5,
-    text: "Muito profissionais e sempre disponíveis para ajudar. O carro chegou impecável!",
-    date: "há 1 mês",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    name: "Carlos Pinto",
-    rating: 4,
-    text: "Boa experiência, recomendo. O processo foi simples e sem surpresas.",
-    date: "há 3 semanas",
-    avatar: "https://randomuser.me/api/portraits/men/65.jpg",
-  },
-  {
-    name: "Ana Costa",
-    rating: 5,
-    text: "Equipa fantástica! Fizeram tudo por mim, só tive de levantar o carro.",
-    date: "há 5 dias",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-  },
-];
-void googleReviews;
+
 
 export default function Home({ blogArticles }) {
   const { t } = useTranslation("common");
@@ -124,15 +95,15 @@ export default function Home({ blogArticles }) {
           }
         }
       }
-    } catch {}
+    } catch { }
 
     // otherwise build from pinned cars first, then clicked ids, then random fill
     try {
       // Pinned car IDs that should always be featured
       const PINNED_CAR_IDS = ["6547363", "FS44936"]; // Kia XCeed, Hyundai IONIQ
-      
+
       let picked = [];
-      
+
       // 1. Always add pinned cars first
       for (const pinnedId of PINNED_CAR_IDS) {
         const pinnedCar = cars.find((c) => c.id === pinnedId);
@@ -140,7 +111,7 @@ export default function Home({ blogArticles }) {
           picked.push(pinnedCar);
         }
       }
-      
+
       // 2. Then add recently clicked cars
       const rawClicks = localStorage.getItem(CLICKED_KEY);
       if (rawClicks) {
@@ -153,7 +124,7 @@ export default function Home({ blogArticles }) {
           if (picked.length >= 6) break;
         }
       }
-      
+
       // 3. Fill remaining slots with random cars
       if (picked.length < Math.min(6, cars.length)) {
         const others = cars.filter((c) => !picked.some((p) => p.id === c.id));
@@ -164,7 +135,7 @@ export default function Home({ blogArticles }) {
       try {
         const ids = picked.map((c) => c.id);
         localStorage.setItem(FEATURED_KEY, JSON.stringify({ ids, ts: Date.now() }));
-      } catch {}
+      } catch { }
       if (picked.length) setFeaturedCars(picked);
     } catch {
       // fallback already set
@@ -176,7 +147,7 @@ export default function Home({ blogArticles }) {
     const others = shuffle(cars).slice(0, Math.min(6, cars.length));
     try {
       localStorage.setItem(FEATURED_KEY, JSON.stringify({ ids: others.map((c) => c.id), ts: Date.now() }));
-    } catch {}
+    } catch { }
     setFeaturedCars(others);
   };
 
@@ -222,9 +193,9 @@ export default function Home({ blogArticles }) {
         };
         window.localStorage.setItem('viaturas_filters_v1', JSON.stringify(toSave));
       }
-    } catch {}
+    } catch { }
     // close mobile panel (if open) and navigate
-    try { setHeroFilterOpen(false); } catch {}
+    try { setHeroFilterOpen(false); } catch { }
     router.push({ pathname: '/viaturas', query: q });
   };
 
@@ -233,17 +204,17 @@ export default function Home({ blogArticles }) {
   const homeFaq = SEO_KEYWORDS?.home?.faq;
   const homeFaqJsonLd: any = homeFaq
     ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: homeFaq.map((q) => ({
-          '@type': 'Question',
-          name: q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Consulte o nosso guia ou contacte a AutoGo para uma explicação detalhada.',
-          },
-        })),
-      }
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: homeFaq.map((q) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Consulte o nosso guia ou contacte a AutoGo para uma explicação detalhada.',
+        },
+      })),
+    }
     : undefined;
 
   // GEO (Generative Engine Optimization) structured data
@@ -393,11 +364,10 @@ export default function Home({ blogArticles }) {
           <div className="relative z-10 flex flex-col items-start justify-center h-full pt-2 pb-4 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
             {/* Heading + intro wrapper: collapses on mobile when filter opens */}
             <div
-              className={`w-full transform-gpu transition-all duration-300 ease-in-out overflow-hidden ${
-                heroFilterOpen
-                  ? 'max-h-0 opacity-0 -translate-y-4 pointer-events-none sm:max-h-none sm:opacity-100 sm:translate-y-0 sm:pointer-events-auto'
-                  : 'max-h-[420px] opacity-100'
-              }`}
+              className={`w-full transform-gpu transition-all duration-300 ease-in-out overflow-hidden ${heroFilterOpen
+                ? 'max-h-0 opacity-0 -translate-y-4 pointer-events-none sm:max-h-none sm:opacity-100 sm:translate-y-0 sm:pointer-events-auto'
+                : 'max-h-[420px] opacity-100'
+                }`}
             >
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -422,11 +392,11 @@ export default function Home({ blogArticles }) {
               </motion.p>
             </div>
 
-        
+
 
             <div className="flex flex-row w-full max-w-xl rounded-full bg-white/60 backdrop-blur-md shadow-2xl py-2 px-3 sm:py-3 sm:px-4 items-center gap-2 mb-4 sm:mb-5 border border-gray-200 overflow-visible" style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.06)' }}>
               <Link href="/viaturas" legacyBehavior passHref>
-                <a href="/viaturas" 
+                <a href="/viaturas"
                   className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#b42121] shadow-sm transform-gpu no-underline transition hover:shadow-lg hover:brightness-110 hover:scale-105 hover:tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121] sm:px-6 sm:py-3 sm:text-base"
                   style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
@@ -435,7 +405,7 @@ export default function Home({ blogArticles }) {
                 </a>
               </Link>
               <Link href="/simulador" legacyBehavior passHref>
-                <a href="/simulador" 
+                <a href="/simulador"
                   className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
                   style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >
@@ -543,73 +513,72 @@ export default function Home({ blogArticles }) {
             <div className={`sm:hidden max-w-xl mx-auto mt-2`}>
               {/* outer wrapper handles clipping and max-height to animate smoothly */}
               <div
-                className={`transform-gpu transition-all duration-300 ease-in-out origin-top rounded-lg border border-gray-100 shadow-sm ${
-                  heroFilterOpen
-                    ? 'max-h-[54vh] opacity-100 translate-y-0'
-                    : 'max-h-0 opacity-0 -translate-y-2'
-                }`}
+                className={`transform-gpu transition-all duration-300 ease-in-out origin-top rounded-lg border border-gray-100 shadow-sm ${heroFilterOpen
+                  ? 'max-h-[54vh] opacity-100 translate-y-0'
+                  : 'max-h-0 opacity-0 -translate-y-2'
+                  }`}
                 id="hero-filter-panel"
                 aria-hidden={!heroFilterOpen}
                 style={{ overflow: 'hidden' }}
               >
                 <div className={`bg-white/60 px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
                   <div className="flex flex-col gap-2">
-                  <div className="relative w-full">
-                    <label className="sr-only">Marca</label>
-                    <select
-                      value={heroFilter.make}
-                      onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
-                      className="w-full text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full appearance-none pr-10 truncate transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                    >
-                      <option value="">Marca</option>
-                      {heroMakes.map((m) => (
-                        <option key={m} value={m}>{m}</option>
-                      ))}
-                    </select>
-                    <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
-                      <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-
-                  <div className="relative w-full">
-                    <label className="sr-only">Modelo</label>
-                    <select
-                      value={heroFilter.model}
-                      onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
-                      disabled={!heroModels.length}
-                      className="w-full text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full appearance-none pr-10 truncate transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                    >
-                      <option value="">Modelo</option>
-                      {heroModels.map((m) => (
-                        <option key={m} value={m}>{m}</option>
-                      ))}
-                    </select>
-                    <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
-                      <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="number"
-                        value={heroFilter.year}
-                        onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
-                        placeholder="Registo"
-                        className="text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                      />
-                    </div>
-
-                    <div className="pt-1 flex justify-center">
-                      <button
-                        onClick={onHeroSearch}
-                        type="button"
-                        className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1 rounded-full shadow text-xs ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03] w-auto max-w-[140px]"
+                    <div className="relative w-full">
+                      <label className="sr-only">Marca</label>
+                      <select
+                        value={heroFilter.make}
+                        onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
+                        className="w-full text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full appearance-none pr-10 truncate transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
                       >
-                        Procurar
-                      </button>
+                        <option value="">Marca</option>
+                        {heroMakes.map((m) => (
+                          <option key={m} value={m}>{m}</option>
+                        ))}
+                      </select>
+                      <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
                     </div>
-                  </div>
+
+                    <div className="relative w-full">
+                      <label className="sr-only">Modelo</label>
+                      <select
+                        value={heroFilter.model}
+                        onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
+                        disabled={!heroModels.length}
+                        className="w-full text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full appearance-none pr-10 truncate transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                      >
+                        <option value="">Modelo</option>
+                        {heroModels.map((m) => (
+                          <option key={m} value={m}>{m}</option>
+                        ))}
+                      </select>
+                      <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="number"
+                          value={heroFilter.year}
+                          onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
+                          placeholder="Registo"
+                          className="text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
+                        />
+                      </div>
+
+                      <div className="pt-1 flex justify-center">
+                        <button
+                          onClick={onHeroSearch}
+                          type="button"
+                          className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1 rounded-full shadow text-xs ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03] w-auto max-w-[140px]"
+                        >
+                          Procurar
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -629,7 +598,7 @@ export default function Home({ blogArticles }) {
         <section
           data-fullwidth
           className="relative w-screen py-12 sm:py-16 overflow-hidden mt-0 sm:mt-2 md:mt-4"
-          style={{ 
+          style={{
             backgroundColor: "#f5f6fa",
             marginLeft: "calc(-50vw + 50%)",
             marginRight: "calc(-50vw + 50%)"
@@ -1102,7 +1071,7 @@ export default function Home({ blogArticles }) {
                       id={car.id}
                       year={car.year}
                       make={car.make}
-                          mileage={car.mileage}
+                      mileage={car.mileage}
                       transmission={
                         car.gearboxType
                           ? car.gearboxType.toString()
@@ -1129,8 +1098,8 @@ export default function Home({ blogArticles }) {
           Google Reviews integration or verified source is available.
         */}
 
-  {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
-  <section data-fullwidth className="w-full py-10 sm:py-14 bg-[#f5f6fa]">
+        {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
+        <section data-fullwidth className="w-full py-10 sm:py-14 bg-[#f5f6fa]">
           <div className="flex flex-col items-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]">
               Novos Artigos

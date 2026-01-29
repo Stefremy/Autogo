@@ -1,7 +1,6 @@
 import "../styles/globals.scss";
 import "../styles/globals.css";
 import { useRouter } from "next/router";
-import Head from "next/head";
 import { useEffect } from "react";
 import { appWithTranslation } from "next-i18next";
 import type { UserConfig } from "next-i18next";
@@ -9,6 +8,7 @@ import type { AppProps } from "next/app";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import nextI18NextConfig from "../next-i18next.config.js";
 import { IndexNavbar } from "../components/IndexNavbar";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         // dataLayer is created by the GTM snippet in _document when configured
         (window as any).dataLayer = (window as any).dataLayer || [];
         (window as any).dataLayer.push({ event: 'page_view', page_path: url });
-      } catch {}
+      } catch { }
     };
 
     router.events.on('routeChangeComplete', onRouteChange);
@@ -35,18 +35,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://use.typekit.net/mdg1mhk.css" />
-      </Head>
+    <ErrorBoundary>
       {!hideNavbar && <IndexNavbar />}
       <Component {...pageProps} />
       {/* Speed Insights component (self-closing) - renders instrumentation for performance reporting */}
       <SpeedInsights />
-    </>
+    </ErrorBoundary>
   );
 }
 
