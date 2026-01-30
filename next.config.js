@@ -79,7 +79,20 @@ const nextConfig = {
 
   // 🔁 Redirecionamentos dinâmicos (id -> slug)
   async redirects() {
-    return carRedirects;
+    return [
+      ...carRedirects,
+      {
+        source: "/simulador",
+        destination: "/simulador-isv",
+        permanent: true,
+      },
+      // Locale-aware redirects for simulador
+      {
+        source: "/:locale/simulador",
+        destination: "/:locale/simulador-isv",
+        permanent: true,
+      },
+    ];
   },
 
   // ✅ TypeScript and ESLint configuration for builds

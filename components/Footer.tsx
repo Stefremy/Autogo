@@ -57,7 +57,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/simulador"
+                href="/simulador-isv"
                 className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
               >
                 {t("Simulador ISV")}

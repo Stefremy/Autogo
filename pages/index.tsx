@@ -404,8 +404,8 @@ export default function Home({ blogArticles }) {
                   <span className="hidden sm:inline">Ver Viaturas Disponíveis</span>
                 </a>
               </Link>
-              <Link href="/simulador" legacyBehavior passHref>
-                <a href="/simulador"
+              <Link href="/simulador-isv" legacyBehavior passHref>
+                <a href="/simulador-isv"
                   className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
                   style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
                 >

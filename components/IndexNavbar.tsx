@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 const NAV_LINKS = [
   { href: "/", label: "Início" },
   { href: "/viaturas", label: "Viaturas" },
-  { href: "/simulador", label: "Simulador ISV" },
+  { href: "/simulador-isv", label: "Simulador ISV" },
   { href: "/como-funciona", label: "Como Funciona" },
   { href: "/pedido", label: "Encomendar" },
   { href: "/blog", label: "Blog" },
@@ -92,7 +92,7 @@ export function IndexNavbar() {
   return (
     <>
       <nav
-  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-center px-2 sm:px-4 md:px-6 gap-2 sm:gap-4 md:gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-center px-2 sm:px-4 md:px-6 gap-2 sm:gap-4 md:gap-8 ${scrolled ? "backdrop-blur-xl shadow-xl" : "shadow-md"}`}
         style={{
           height: isLandscape ? "56px" : "64px",
           minWidth: 320,
@@ -106,7 +106,7 @@ export function IndexNavbar() {
         }}
       >
         {/* Logo */}
-  <div className="flex items-center justify-center relative mx-auto" style={{ marginTop: '-18px', marginLeft: '54px' }}>
+        <div className="flex items-center justify-center relative mx-auto" style={{ marginTop: '-18px', marginLeft: '54px' }}>
           <Link href="/">
             <div className="relative flex items-center group h-full">
               <img
@@ -167,43 +167,38 @@ export function IndexNavbar() {
           </div>
           <button
             onClick={toggleMobileMenu}
-            className={`group relative p-2 sm:p-3 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-3 focus:ring-[#b42121]/30 ${
-              mobileMenuOpen
+            className={`group relative p-2 sm:p-3 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-3 focus:ring-[#b42121]/30 ${mobileMenuOpen
                 ? "bg-[#b42121] shadow-lg scale-105"
                 : "bg-white hover:bg-[#f5f6fa] shadow-md hover:shadow-lg"
-            }`}
+              }`}
             aria-label="Toggle mobile menu"
           >
             {/* animated circular background */}
             <span
               aria-hidden
-              className={`absolute inset-0 m-auto w-8 h-8 sm:w-10 sm:h-10 rounded-full transition-transform duration-450 ease-[cubic-bezier(.22,1,.36,1)] transform ${
-                mobileMenuOpen ? "scale-110 bg-[#b42121]/20" : "scale-75 bg-black/4"
-              }`}
+              className={`absolute inset-0 m-auto w-8 h-8 sm:w-10 sm:h-10 rounded-full transition-transform duration-450 ease-[cubic-bezier(.22,1,.36,1)] transform ${mobileMenuOpen ? "scale-110 bg-[#b42121]/20" : "scale-75 bg-black/4"
+                }`}
               style={{ zIndex: 0 }}
             />
 
             <div className="w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center relative z-10">
               <span
-                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] transform ${
-                  mobileMenuOpen
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] transform ${mobileMenuOpen
                     ? "bg-white rotate-45 translate-y-[2px]"
                     : "bg-[#22272a] group-hover:bg-[#b42121] -translate-y-[3px]"
-                }`}
+                  }`}
               ></span>
               <span
-                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-200 ease-linear ${
-                  mobileMenuOpen
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-200 ease-linear ${mobileMenuOpen
                     ? "bg-white opacity-0 scale-90"
                     : "bg-[#22272a] group-hover:bg-[#b42121] opacity-100 scale-100"
-                }`}
+                  }`}
               ></span>
               <span
-                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] transform ${
-                  mobileMenuOpen
+                className={`block w-4 sm:w-5 h-0.5 rounded-full transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] transform ${mobileMenuOpen
                     ? "bg-white -rotate-45 -translate-y-[2px]"
                     : "bg-[#22272a] group-hover:bg-[#b42121] translate-y-[3px]"
-                }`}
+                  }`}
               ></span>
             </div>
           </button>
@@ -229,24 +224,23 @@ export function IndexNavbar() {
                     key={href}
                     href={href}
                     className={`group block ${isLandscape ? "text-xs py-2" : "text-lg py-3"} font-medium transition-all duration-300 px-4 sm:px-5 rounded-xl transform hover:scale-[1.02] hover:translate-x-1 translate-x-0 opacity-100 animate-in slide-in-from-left
-                    ${isActive 
-                      ? "text-white bg-gradient-to-r from-[#b42121] to-[#d55050] shadow-lg" 
-                      : "text-[#22272a] hover:text-[#b42121] hover:bg-gradient-to-r hover:from-[#f5f6fa] hover:to-[#fbe9e9] hover:shadow-md"
-                    }
+                    ${isActive
+                        ? "text-white bg-gradient-to-r from-[#b42121] to-[#d55050] shadow-lg"
+                        : "text-[#22272a] hover:text-[#b42121] hover:bg-gradient-to-r hover:from-[#f5f6fa] hover:to-[#fbe9e9] hover:shadow-md"
+                      }
                     focus:outline-none focus:ring-2 focus:ring-[#b42121]/30`}
-                    style={{ 
-                      letterSpacing: 0.2, 
+                    style={{
+                      letterSpacing: 0.2,
                       fontWeight: 500,
                       animationDelay: `${index * 50}ms`
                     }}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        isActive 
-                          ? "bg-white scale-100" 
+                      <span className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive
+                          ? "bg-white scale-100"
                           : "bg-[#b42121] scale-0 group-hover:scale-100"
-                      }`}></span>
+                        }`}></span>
                       {t(label)}
                     </span>
                   </Link>

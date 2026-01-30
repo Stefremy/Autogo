@@ -102,7 +102,7 @@ const staticRoutes = [
   },
   { path: '/como-funciona', changefreq: 'yearly', priority: '0.5', sources: [['pages', 'como-funciona.tsx']] },
   { path: '/pedido', changefreq: 'yearly', priority: '0.5', sources: [['pages', 'pedido.tsx']] },
-  { path: '/simulador', changefreq: 'yearly', priority: '0.7', sources: [['pages', 'simulador.tsx']] },
+  { path: '/simulador-isv', changefreq: 'yearly', priority: '0.7', sources: [['pages', 'simulador-isv.tsx']] },
   { path: '/sobre-nos', changefreq: 'yearly', priority: '0.5', sources: [['pages', 'sobre-nos.tsx']] },
   { path: '/contacto', changefreq: 'yearly', priority: '0.5', sources: [['pages', 'contacto.tsx']] },
   {
