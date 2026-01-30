@@ -175,6 +175,8 @@ export async function getStaticProps({ locale }) {
         tags: data.tags || [],
         lang: data.lang || "pt-PT",
         excerpt:
+          data.description ||
+          data.excerpt ||
           content
             .split("\n")
             .slice(0, 3)

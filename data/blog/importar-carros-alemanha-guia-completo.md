@@ -2,6 +2,7 @@
 title: "Como Importar Carros da Alemanha para Portugal: Guia Completo 2026"
 date: "2026-01-29"
 type: "news"
+description: "A Alemanha é o maior mercado de carros usados da Europa. Aprenda como importar o seu próximo veículo de forma segura, legal e económica."
 tags:
   - importação
   - Alemanha
