@@ -18645,7 +18645,7 @@
     "id": "6823597",
     "make": "Peugeot",
     "model": "208 E-208 Allure Pack Connect",
-    "year": null,
+    "year": 2023,
     "slug": "peugeot-208-e-208-allure-pack-connect-6823597",
     "price": 14900,
     "image": "https://ecarstrade.com/carsphotos/6820001-6830000/6823597/photo_000.jpg",
@@ -18698,13 +18698,27 @@
       "https://ecarstrade.com/carsphotos/6820001-6830000/6823597/photo_032.jpg"
     ],
     "equipamento_opcoes": {
-      "opcoes_valor_elevado": [],
+      "opcoes_valor_elevado": [
+        "Sistema de navegação"
+      ],
       "conforto": [],
       "seguranca": [],
-      "multimedia": [],
+      "multimedia": [
+        "Sistema de navegação"
+      ],
       "interior": [],
       "exterior": [],
-      "outras_opcoes": []
+      "outras_opcoes": [
+        "Chave principal",
+        "Chave reserva",
+        "Conjunto de cabos de carregamento",
+        "Manual de instruções",
+        "Livro de revisões",
+        "Chapeleira",
+        "Cabo de carregamento trifásico 6m",
+        "Pack de entrega",
+        "Preto Perla Nera (pintura metalizada)"
+      ]
     },
     "maintenance": []
   }
