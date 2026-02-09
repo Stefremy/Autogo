@@ -184,6 +184,20 @@ export default function Footer() {
               />
             </a>
           </div>
+          <div className="mt-6 flex justify-end">
+            <a
+              href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fautogo.pt%2F&hl=pt_PT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block opacity-90 hover:opacity-100 transition-opacity duration-200"
+            >
+              <img
+                src="/images/google-safe-browsing-logo.avif"
+                alt="Google Safe Browsing"
+                className="h-24 w-auto"
+              />
+            </a>
+          </div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-2 sm:pt-4 text-xs sm:text-sm text-gray-600 relative z-10">
