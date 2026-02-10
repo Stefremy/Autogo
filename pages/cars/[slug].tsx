@@ -1108,89 +1108,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                 style={{ objectPosition: 'center top' }}
               />
 
-              {/* overlayed imported-from flag: desktop only (top-left of main image)
-                  Keep the element in the DOM but animate opacity/translate when sticky bar shows */}
-              {car.country && (
-                <img
-                  src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.png`}
-                  alt={car.country}
-                  title={car.country}
-                  className="hidden lg:block absolute top-3 left-3"
-                  style={{
-                    width: 32,
-                    height: 22,
-                    borderRadius: '0.2rem',
-                    border: '1.5px solid #fff',
-                    boxShadow: '0 2px 8px rgba(44,62,80,0.10)',
-                    background: '#fff',
-                    objectFit: 'cover',
-                    pointerEvents: 'none', // ensure thumbnails/hover don't get blocked by the flag
-                    zIndex: 30,
-                    transition: 'opacity 220ms cubic-bezier(.2,.9,.2,1), transform 220ms cubic-bezier(.2,.9,.2,1)',
-                    opacity: showStickyBar ? 0 : 1,
-                    transform: showStickyBar ? 'translateY(-8px) scale(0.98)' : 'translateY(0) scale(1)'
-                  }}
-                />
-              )}
-
-              {/* Gallery thumbnails: render a larger first row (approx half the main image) then the rest */}
-              {(displayedImages && displayedImages.length > 1) && (
-                <>
-                  <div className="w-full mt-3 grid grid-cols-4 gap-2">
-                    {(displayedImages || []).slice(1, 5).map((img, i) => (
-                      <button
-                        key={`big-${i}`}
-                        type="button"
-                        onClick={() => {
-                          setLightboxIndex(i + 1); // +1 because main image is index 0
-                          setLightboxOpen(true);
-                        }}
-                        className="overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm p-0 photo-hoverable thumb-big"
-                      >
-                        <img
-                          src={img}
-                          alt={`${car.make} ${car.model} ${i + 2}`}
-                          loading="lazy"
-                          width={320}
-                          height={200}
-                          className="w-full h-24 sm:h-28 md:h-52 lg:h-60 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
-                        />
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* If there are many remaining images, show a vertical scroll area to avoid huge page length */}
-                  {(displayedImages || []).length > 5 && (
-                    <div
-                      className="w-full mt-2 max-h-[320px] md:max-h-[420px] overflow-y-auto space-y-2 pr-2"
-                      style={{ WebkitOverflowScrolling: 'touch' }}
-                    >
-                      {(displayedImages || []).slice(5).map((img, j) => (
-                        <button
-                          key={`small-${j}`}
-                          type="button"
-                          onClick={() => {
-                            const globalIndex = 5 + j; // main(0) + first 4 thumbs (1..4) + this offset
-                            setLightboxIndex(globalIndex);
-                            setLightboxOpen(true);
-                          }}
-                          className="w-full overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm p-0 photo-hoverable"
-                        >
-                          <img
-                            src={img}
-                            alt={`${car.make} ${car.model} ${j + 6}`}
-                            loading="lazy"
-                            width={240}
-                            height={140}
-                            className="w-full h-20 sm:h-24 md:h-28 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
-                          />
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </>
-              )}
-
+              {/* Lightbox */}
               <Lightbox
                 open={lightboxOpen}
                 close={() => setLightboxOpen(false)}
@@ -1201,40 +1119,6 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                 plugins={[Zoom]}
                 zoom={{ maxZoomPixelRatio: 3 }}
               />
-
-              {/* Hover styles for pointer devices only (desktop mice). Keeps mobile unchanged. */}
-              <style jsx global>{`
-                @media (hover: hover) and (pointer: fine) {
-                  .photo-hoverable img {
-                    transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease, filter 220ms ease;
-                    will-change: transform, box-shadow;
-                  }
-
-                  /* main image: subtle lift + scale */
-                  .main-photo:hover {
-                    transform: translateY(-6px) scale(1.02);
-                    box-shadow: 0 18px 40px rgba(12,18,26,0.12);
-                    filter: saturate(1.02);
-                  }
-
-                  /* larger first-row thumbs: slightly bigger hover */
-                  .thumb-big .thumb-img:hover {
-                    transform: translateY(-6px) scale(1.06) !important;
-                    box-shadow: 0 12px 28px rgba(12,18,26,0.10);
-                  }
-
-                  /* small thumbs: milder hover */
-                  .thumb-small .thumb-img:hover {
-                    transform: translateY(-4px) scale(1.045) !important;
-                    box-shadow: 0 10px 20px rgba(12,18,26,0.08);
-                  }
-
-                  /* make sure the hover doesn't create overflow of rounded corners */
-                  .photo-hoverable {
-                    overflow: visible;
-                  }
-                }
-              `}</style>
             </div>
             {/* Detalhes principais */}
             <div className="flex-1 space-y-6 px-0 lg:px-8 xl:px-16 mt-6 lg:mt-0">
@@ -1730,6 +1614,6 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
         jsonLd={vehicleJson}
       />
       {/* vehicleJson already injected via <Seo> above */}
-    </Layout>
+    </Layout >
   );
 }

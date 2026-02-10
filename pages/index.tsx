@@ -15,6 +15,7 @@ import Seo from "../components/Seo";
 import BlackFridayPromo from "../components/BlackFridayPromo";
 import Snowfall from "../components/Snowfall";
 import { CAR_IMPORT_GEO_DATA, generateGEOFAQSchema, generateGEOHowToSchema } from "../utils/geoOptimization";
+import HeroScrollAnimation from "../components/HeroScrollAnimation";
 
 // Some imported React helpers are used conditionally; to avoid linter warnings where they are assigned but not used in all builds, reference them in no-op expressions.
 void useRef; void useEffect;
@@ -316,276 +317,8 @@ export default function Home({ blogArticles }) {
           />
         </div>
 
-        {/* HERO SECTION FULL SCREEN EDGE TO EDGE - EXTENDED WHITE FADE LEFT */}
-        <motion.section
-          data-fullwidth
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative w-screen h-[320px] sm:h-[380px] md:h-[52vh] lg:h-[56vh] flex items-center overflow-hidden"
-        >
-          {/* Background image covers full width, fades left */}
-          <div
-            className="absolute inset-0 bg-cover bg-right"
-            style={{
-              backgroundImage: "url('/images/cars/bmw-black.png')",
-              zIndex: 1,
-            }}
-          >
-            {/* Fade gradiente ultra acentuado e mais diluído: branco puro até 25%, escuro forte até 60%, transição mais suave para transparente */}
-            <div
-              className="absolute inset-0 pointer-events-none hero-fade-overlay"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 12%, rgba(255,255,255,0.88) 30%, rgba(255,255,255,0.72) 50%, rgba(255,255,255,0.45) 68%, rgba(255,255,255,0.18) 82%, rgba(255,255,255,0.00) 90%)",
-                zIndex: 2,
-              }}
-            />
-
-            <style jsx>{`
-              @media (max-width: 640px) {
-                .hero-fade-overlay {
-                  /* More transparent toward the right on phones: fade to fully transparent earlier so the image shows through */
-                  background: linear-gradient(
-                    90deg,
-                    rgba(255,255,255,1) 0%,
-                    rgba(255,255,255,0.98) 30%,
-                    rgba(255,255,255,0.92) 50%,
-                    rgba(255,255,255,0.75) 65%,
-                    rgba(255,255,255,0.30) 82%,
-                    rgba(255,255,255,0.00) 90%
-                  ) !important;
-                }
-              }
-            `}</style>
-          </div>
-
-          {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full pt-2 pb-4 px-4 sm:px-6 md:pl-16 md:pr-0 w-full max-w-full md:max-w-2xl">
-            {/* Heading + intro wrapper: collapses on mobile when filter opens */}
-            <div
-              className={`w-full transform-gpu transition-all duration-300 ease-in-out overflow-hidden ${heroFilterOpen
-                ? 'max-h-0 opacity-0 -translate-y-4 pointer-events-none sm:max-h-none sm:opacity-100 sm:translate-y-0 sm:pointer-events-auto'
-                : 'max-h-[420px] opacity-100'
-                }`}
-            >
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.7 }}
-                className="text-black text-2xl sm:text-3xl md:text-6xl font-semibold mb-3 sm:mb-4 md:mb-6 leading-tight drop-shadow-xl"
-              >
-                {t("Rápido. Seguro. Teu.")}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.7 }}
-                className="text-black text-sm sm:text-base md:text-2xl mb-4 sm:mb-6 md:mb-10 max-w-xl drop-shadow-lg"
-              >
-                {t("O teu carro europeu,")}
-                <br />
-                {t("Legalizado e pronto a rolar em Portugal")}
-                <br />
-                <span className="font-semibold hidden sm:inline">{t("Sem complicações")}</span>
-                <br />
-              </motion.p>
-            </div>
-
-
-
-            <div className="flex flex-row w-full max-w-xl rounded-full bg-white/60 backdrop-blur-md shadow-2xl py-2 px-3 sm:py-3 sm:px-4 items-center gap-2 mb-4 sm:mb-5 border border-gray-200 overflow-visible" style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.06)' }}>
-              <Link href="/viaturas" legacyBehavior passHref>
-                <a href="/viaturas"
-                  className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-[#b42121] shadow-sm transform-gpu no-underline transition hover:shadow-lg hover:brightness-110 hover:scale-105 hover:tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#b42121] sm:px-6 sm:py-3 sm:text-base"
-                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
-                >
-                  <span className="sm:hidden">Ver Viaturas</span>
-                  <span className="hidden sm:inline">Ver Viaturas Disponíveis</span>
-                </a>
-              </Link>
-              <Link href="/simulador-isv" legacyBehavior passHref>
-                <a href="/simulador-isv"
-                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
-                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
-                >
-                  Simulador ISV
-                </a>
-              </Link>
-              <Link href="/pedido" legacyBehavior passHref>
-                <a href="/pedido"
-                  className="inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-black/90 transform-gpu no-underline hover:scale-105 hover:tracking-wide hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black sm:px-2 sm:py-1 sm:text-base"
-                  style={{ transitionProperty: 'transform, letter-spacing', transitionDuration: '200ms' }}
-                >
-                  Encomendar
-                </a>
-              </Link>
-
-              {/* Mobile toggle: placed inline so the panel opens immediately below the buttons */}
-              <button
-                type="button"
-                onClick={() => setHeroFilterOpen((s) => !s)}
-                className="ml-2 sm:hidden inline-flex items-center justify-center p-2 rounded-md bg-white/90 border border-gray-200 shadow-sm"
-                aria-expanded={heroFilterOpen}
-                aria-controls="hero-filter-panel"
-                aria-label={heroFilterOpen ? 'Fechar filtro' : 'Abrir filtro'}
-              >
-                {heroFilterOpen ? (
-                  <svg className="w-5 h-5 text-[#b42121]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M6 6l12 12" strokeLinecap="round" strokeLinejoin="round"></path>
-                    <path d="M18 6L6 18" strokeLinecap="round" strokeLinejoin="round"></path>
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M3 5h18" />
-                    <path d="M6 12h12" />
-                    <path d="M10 19h4" />
-                  </svg>
-                )}
-              </button>
-            </div>
-
-            {/* Minimal hero filter bar (desktop pill) - desktop/tablet only */}
-            <form onSubmit={onHeroSearch} className="hidden sm:flex w-full mx-auto mt-3">
-              <div className="flex items-center w-full bg-white/60 border border-gray-100 rounded-full shadow-2xl overflow-hidden divide-x divide-gray-200">
-                {/* Marca */}
-                <div className="relative flex items-center flex-1 min-w-0 px-6 py-4">
-                  <label className="sr-only">Marca</label>
-                  <select
-                    value={heroFilter.make}
-                    onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
-                    className="w-full bg-transparent text-sm text-gray-800 border-0 px-0 py-0 outline-none appearance-none focus:outline-none pr-10 truncate"
-                  >
-                    <option value="">Marca</option>
-                    {heroMakes.map((m) => (
-                      <option key={m} value={m}>{m}</option>
-                    ))}
-                  </select>
-                  <svg className="pointer-events-none absolute right-4 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
-                    <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-
-                {/* Modelo */}
-                <div className="relative flex items-center flex-1 min-w-0 px-6 py-4">
-                  <label className="sr-only">Modelo</label>
-                  <select
-                    value={heroFilter.model}
-                    onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
-                    disabled={!heroModels.length}
-                    className="w-full bg-transparent text-sm text-gray-800 border-0 px-0 py-0 outline-none appearance-none focus:outline-none pr-10 truncate"
-                  >
-                    <option value="">Modelo</option>
-                    {heroModels.map((m) => (
-                      <option key={m} value={m}>{m}</option>
-                    ))}
-                  </select>
-                  <svg className="pointer-events-none absolute right-4 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
-                    <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-
-                {/* Ano (Registration from) */}
-                <div className="flex items-center flex-1 min-w-0 px-6 py-4">
-                  <label className="sr-only">Ano</label>
-                  <input
-                    type="number"
-                    value={heroFilter.year}
-                    onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
-                    placeholder="Registo"
-                    className="w-full bg-transparent text-sm text-gray-800 border-0 px-0 py-0 outline-none focus:outline-none"
-                  />
-                </div>
-
-                {/* Search button */}
-                <div className="flex items-center pl-4 pr-4">
-                  <button
-                    type="submit"
-                    className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-4 py-1.5 rounded-full shadow-sm text-sm ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03]"
-                  >
-                    Procurar
-                  </button>
-                </div>
-              </div>
-            </form>
-
-            {/* Mobile collapsible filter panel (animated slide + fade) */}
-            <div className={`sm:hidden max-w-xl mx-auto mt-2`}>
-              {/* outer wrapper handles clipping and max-height to animate smoothly */}
-              <div
-                className={`transform-gpu transition-all duration-300 ease-in-out origin-top rounded-lg border border-gray-100 shadow-sm ${heroFilterOpen
-                  ? 'max-h-[54vh] opacity-100 translate-y-0'
-                  : 'max-h-0 opacity-0 -translate-y-2'
-                  }`}
-                id="hero-filter-panel"
-                aria-hidden={!heroFilterOpen}
-                style={{ overflow: 'hidden' }}
-              >
-                <div className={`bg-white/60 px-3 ${heroFilterOpen ? 'py-3 overflow-auto' : 'py-0'}`}>
-                  <div className="flex flex-col gap-2">
-                    <div className="relative w-full">
-                      <label className="sr-only">Marca</label>
-                      <select
-                        value={heroFilter.make}
-                        onChange={(e) => setHeroFilter({ ...heroFilter, make: e.target.value, model: '' })}
-                        className="w-full text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full appearance-none pr-10 truncate transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                      >
-                        <option value="">Marca</option>
-                        {heroMakes.map((m) => (
-                          <option key={m} value={m}>{m}</option>
-                        ))}
-                      </select>
-                      <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
-                        <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-
-                    <div className="relative w-full">
-                      <label className="sr-only">Modelo</label>
-                      <select
-                        value={heroFilter.model}
-                        onChange={(e) => setHeroFilter({ ...heroFilter, model: e.target.value })}
-                        disabled={!heroModels.length}
-                        className="w-full text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full appearance-none pr-10 truncate transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                      >
-                        <option value="">Modelo</option>
-                        {heroModels.map((m) => (
-                          <option key={m} value={m}>{m}</option>
-                        ))}
-                      </select>
-                      <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="none">
-                        <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <input
-                          type="number"
-                          value={heroFilter.year}
-                          onChange={(e) => setHeroFilter({ ...heroFilter, year: e.target.value })}
-                          placeholder="Registo"
-                          className="text-sm text-gray-800 bg-white border border-gray-100 px-4 py-3 rounded-full w-full transition-colors duration-150 hover:border-[#b42121]/40 focus:outline-none focus:ring-2 focus:ring-[#b42121]/20 focus:border-[#b42121]"
-                        />
-                      </div>
-
-                      <div className="pt-1 flex justify-center">
-                        <button
-                          onClick={onHeroSearch}
-                          type="button"
-                          className="bg-[#b42121] hover:bg-[#912323] text-white font-semibold px-3 py-1 rounded-full shadow text-xs ring-1 ring-white/30 transition-transform duration-300 ease-out transform hover:scale-[1.03] w-auto max-w-[140px]"
-                        >
-                          Procurar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </motion.section>
+        {/* HERO SCROLL ANIMATION */}
+        <HeroScrollAnimation data-fullwidth />
         {/* HERO SECTION END */}
 
         {/* SNOW EFFECT - Runs until 2026-01-06, dismissible via localStorage */}
@@ -597,7 +330,7 @@ export default function Home({ blogArticles }) {
         {/* Como Funciona section */}
         <section
           data-fullwidth
-          className="relative w-screen py-12 sm:py-16 overflow-hidden mt-0 sm:mt-2 md:mt-4"
+          className="relative w-screen pb-12 sm:pb-16 overflow-hidden mt-0"
           style={{
             backgroundColor: "#f5f6fa",
             marginLeft: "calc(-50vw + 50%)",
@@ -872,7 +605,7 @@ export default function Home({ blogArticles }) {
           />
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
-          <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-56 sm:pt-64 md:pt-80 lg:pt-56">
+          <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-64 sm:pt-72 md:pt-80 lg:pt-64">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
