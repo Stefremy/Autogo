@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { motion, useScroll, useTransform, useMotionValueEvent, useSpring, useMotionValue } from 'framer-motion';
+import { ShinyButton } from './ShinyButton';
+import { AuroraText } from './AuroraText';
+import { InteractiveHoverButton } from './InteractiveHoverButton';
 
 interface HeroScrollAnimationProps {
     totalFrames?: number;
@@ -206,13 +209,26 @@ export default function HeroScrollAnimation({
                     <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
                         <motion.div style={isMobile ? { opacity: 1, y: 0 } : { opacity: word1Opacity, y: word1Y }} className="inline-block">Rápido</motion.div>{' '}
                         <motion.div style={isMobile ? { opacity: 1, y: 0 } : { opacity: word2Opacity, y: word2Y }} className="inline-block">Seguro</motion.div>{' '}
-                        <motion.div style={isMobile ? { opacity: 1, y: 0 } : { opacity: word3Opacity, y: word3Y }} className="inline-block text-[#b42121]">Teu</motion.div>
+                        <motion.div style={isMobile ? { opacity: 1, y: 0 } : { opacity: word3Opacity, y: word3Y }} className="inline-block">
+                            <AuroraText>Teu</AuroraText>
+                        </motion.div>
                     </div>
 
                     <motion.div className="pointer-events-auto" style={isMobile ? { opacity: 1, y: 0 } : { opacity: ctaOpacity, y: ctaY }}>
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4 drop-shadow-2xl">O teu carro europeu, Legalizado e pronto a rolar em Portugal</h2>
-                        <div className="flex flex-wrap gap-4 justify-center mb-12">
-                            <button onClick={() => router.push('/viaturas')} className="px-8 py-4 bg-[#b42121] hover:bg-[#8a1919] text-white font-bold rounded-xl shadow-2xl transition-all transform hover:scale-105 active:scale-95">Ver Viaturas</button>
+                        <div className="flex flex-col gap-6 justify-center items-center mb-12">
+                            <ShinyButton
+                                onClick={() => router.push('/viaturas')}
+                                className="px-8 py-4 text-xl w-64"
+                            >
+                                Ver Viaturas
+                            </ShinyButton>
+                            <InteractiveHoverButton
+                                onClick={() => router.push('/simulador-isv')}
+                                className="px-8 py-4 text-xl w-64"
+                            >
+                                Simulador ISV
+                            </InteractiveHoverButton>
                         </div>
                     </motion.div>
                 </div>
