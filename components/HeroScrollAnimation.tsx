@@ -17,6 +17,7 @@ export default function HeroScrollAnimation({
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [imagesLoaded, setImagesLoaded] = useState(false);
+    const [posterReady, setPosterReady] = useState(false);
     const [prevFrame, setPrevFrame] = useState(-1);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -42,16 +43,36 @@ export default function HeroScrollAnimation({
         const loadFrames = async () => {
             const frames: HTMLImageElement[] = [];
 
-            // Priority 1: Load frame 0 immediately and draw it
+            // Priority 1: Load leader/poster frame immediately and draw it
             const firstImg = new Image();
-            firstImg.src = `/images/heroscroll/frame_000_delay-0.042s.jpg`;
+            // Try to load frameeleder.jpeg if it exists, otherwise fallback to frame_000
+            const posterSrc = `/images/heroscroll/frameeleder.jpeg`;
+            firstImg.src = posterSrc;
+
             await new Promise<void>((resolve) => {
-                firstImg.onload = () => {
+                const onFirstLoad = () => {
                     frames[0] = firstImg;
+                    framesRef.current = frames; // Set it early
                     requestAnimationFrame(() => drawFrame(0));
+                    setPosterReady(true);
                     resolve();
                 };
-                firstImg.onerror = () => resolve();
+                firstImg.onload = onFirstLoad;
+                firstImg.onerror = () => {
+                    // Fallback to original frame_000 if frameeleder fails
+                    const fallbackImg = new Image();
+                    fallbackImg.src = `/images/heroscroll/frame_000_delay-0.042s.jpg`;
+                    fallbackImg.onload = () => {
+                        frames[0] = fallbackImg;
+                        requestAnimationFrame(() => drawFrame(0));
+                        setPosterReady(true);
+                        resolve();
+                    };
+                    fallbackImg.onerror = () => {
+                        setPosterReady(true); // Don't block forever
+                        resolve();
+                    };
+                };
             });
 
             // Priority 2: Load the rest
@@ -201,6 +222,16 @@ export default function HeroScrollAnimation({
             }}
         >
             <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black z-0">
+                {/* Poster image for instant initial load (server-rendered) */}
+                <img
+                    src="/images/heroscroll/frameeleder.jpeg"
+                    alt="AutoGo Hero"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${imagesLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+                    style={{
+                        objectPosition: 'center',
+                        zIndex: 10
+                    } as any}
+                />
                 <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ willChange: 'transform', touchAction: 'none' }} />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 pointer-events-none" />
 
@@ -233,7 +264,7 @@ export default function HeroScrollAnimation({
                     </motion.div>
                 </div>
 
-                {!imagesLoaded && !isMobile && (
+                {!posterReady && !isMobile && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black z-50">
                         <div className="text-center"><div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-white/10 border-t-white"></div></div>
                     </div>
