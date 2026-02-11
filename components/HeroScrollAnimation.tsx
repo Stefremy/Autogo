@@ -23,7 +23,8 @@ export default function HeroScrollAnimation({
 
     // We'll use a local motion value for the "locked" progress on desktop
     const lockedProgress = useMotionValue(0);
-    const smoothLockedProgress = useSpring(lockedProgress, { stiffness: 100, damping: 30 });
+    // Smoother spring for desktop (stiffness 80, damping 40 for fluid feel)
+    const smoothLockedProgress = useSpring(lockedProgress, { stiffness: 80, damping: 40 });
 
     // For mobile, we'll use an auto-play progress
     const mobileProgress = useMotionValue(0);
@@ -33,13 +34,57 @@ export default function HeroScrollAnimation({
 
     const framesRef = useRef<HTMLImageElement[]>([]);
 
-    // Detect mobile
-    useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < 768);
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
+    // Optimized canvas drawing
+    const drawFrame = useCallback((idx: number) => {
+        const canvas = canvasRef.current;
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!canvas || !ctx) return;
+
+        let img = framesRef.current[idx];
+        // If the frame isn't loaded yet, fallback to a nearby loaded one or frame 0
+        if (!img || !img.complete || img.naturalWidth === 0) {
+            img = framesRef.current[0];
+        }
+        if (!img || !img.complete || img.naturalWidth === 0) return;
+
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const targetAspect = 16 / 9;
+        const viewportAspect = viewportWidth / viewportHeight;
+
+        let renderWidth, renderHeight;
+        if (viewportAspect > targetAspect) {
+            renderWidth = viewportWidth;
+            renderHeight = viewportWidth / targetAspect;
+        } else {
+            renderHeight = viewportHeight;
+            renderWidth = viewportHeight * targetAspect;
+        }
+
+        if (canvas.width !== viewportWidth || canvas.height !== viewportHeight) {
+            canvas.width = viewportWidth;
+            canvas.height = viewportHeight;
+        }
+        ctx.drawImage(img, (viewportWidth - renderWidth) / 2, (viewportHeight - renderHeight) / 2, renderWidth, renderHeight);
     }, []);
+
+    // Detect mobile & Handle Resize Redraw
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+            // Force redraw of current frame to update canvas size
+            if (framesRef.current.length > 0 && activeProgress) {
+                const currentProgress = activeProgress.get();
+                // Re-calculate index based on current progress
+                const idx = Math.min(totalFrames - 1, Math.floor(currentProgress * (totalFrames - 1)));
+                requestAnimationFrame(() => drawFrame(idx));
+            }
+        };
+
+        handleResize(); // Initial check
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [totalFrames, activeProgress, drawFrame]);
 
     // Map progress to frame index - Clamp to 1.0 to ensure car stops rotating at the end
     const frameIndex = useTransform(activeProgress, [0, 1, 1.2], [0, totalFrames - 1, totalFrames - 1]);
@@ -111,51 +156,17 @@ export default function HeroScrollAnimation({
             setImagesLoaded(true);
         };
         loadFrames();
-    }, [totalFrames]);
+    }, [totalFrames, drawFrame]);
 
     // Auto-play on mobile
     useEffect(() => {
         if (isMobile && imagesLoaded) {
             animate(mobileProgress, 1, {
-                duration: 2.5,
-                ease: "easeOut",
+                duration: 3.5, // Verify smoother mobile playback (less rushed)
+                ease: "easeInOut",
             });
         }
     }, [isMobile, imagesLoaded, mobileProgress]);
-
-    // Optimized canvas drawing
-    const drawFrame = useCallback((idx: number) => {
-        const canvas = canvasRef.current;
-        const ctx = canvas?.getContext('2d', { alpha: false });
-        if (!canvas || !ctx) return;
-
-        let img = framesRef.current[idx];
-        // If the frame isn't loaded yet, fallback to a nearby loaded one or frame 0
-        if (!img || !img.complete || img.naturalWidth === 0) {
-            img = framesRef.current[0];
-        }
-        if (!img || !img.complete || img.naturalWidth === 0) return;
-
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const targetAspect = 16 / 9;
-        const viewportAspect = viewportWidth / viewportHeight;
-
-        let renderWidth, renderHeight;
-        if (viewportAspect > targetAspect) {
-            renderWidth = viewportWidth;
-            renderHeight = viewportWidth / targetAspect;
-        } else {
-            renderHeight = viewportHeight;
-            renderWidth = viewportHeight * targetAspect;
-        }
-
-        if (canvas.width !== viewportWidth || canvas.height !== viewportHeight) {
-            canvas.width = viewportWidth;
-            canvas.height = viewportHeight;
-        }
-        ctx.drawImage(img, (viewportWidth - renderWidth) / 2, (viewportHeight - renderHeight) / 2, renderWidth, renderHeight);
-    }, []);
 
     // Frame update trigger
     useMotionValueEvent(frameIndex, "change", (latest) => {
@@ -172,19 +183,35 @@ export default function HeroScrollAnimation({
         if (isMobile) return;
 
         let isActivated = false;
-        let progress = 0;
+        // Initialize from current motion value to prevent reset on re-renders
+        let progress = lockedProgress.get();
 
         const handleWheel = (e: WheelEvent) => {
-            if (!containerRef.current || !imagesLoaded) return;
+            if (!containerRef.current) return;
+            // Removed !imagesLoaded check to allow locking immediately (poster/frame 0 fallback handles display)
+
             const rect = containerRef.current.getBoundingClientRect();
 
-            if (rect.top <= 2 && rect.top >= -2 && progress < 1.2) {
+            // Broaden check to catch fast scrolls:
+            // - rect.top <= 10: User has reached the top or scrolled past it
+            // - rect.top >= -100: User hasn't scrolled *too* far past it (avoid locking if way down page)
+            // - progress < 1.2: Animation isn't finished
+            if (rect.top <= 10 && rect.top >= -100 && progress < 1.2) {
                 isActivated = true;
+
+                // If we caught it slightly off-target (fast scroll), snap to top immediately
+                // but only if deviation is significant (> 1px) to avoid jitter
+                if (Math.abs(rect.top) > 1) {
+                    window.scrollTo({
+                        top: window.scrollY + rect.top,
+                        behavior: 'auto'
+                    });
+                }
             }
 
             if (isActivated && progress < 1.2) {
                 e.preventDefault();
-                const sensitivity = 0.0008;
+                const sensitivity = 0.0006; // Reduced sensitivity for smoother control
                 progress = Math.max(0, Math.min(1.2, progress + e.deltaY * sensitivity));
                 lockedProgress.set(progress);
                 if (progress >= 1.2) {
