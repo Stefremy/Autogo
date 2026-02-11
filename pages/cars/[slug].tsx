@@ -1108,6 +1108,63 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                 style={{ objectPosition: 'center top' }}
               />
 
+              {/* Gallery thumbnails: render a larger first row (approx half the main image) then the rest */}
+              {(displayedImages && displayedImages.length > 1) && (
+                <>
+                  <div className="w-full mt-3 grid grid-cols-4 gap-2">
+                    {(displayedImages || []).slice(1, 5).map((img, i) => (
+                      <button
+                        key={`big-${i}`}
+                        type="button"
+                        onClick={() => {
+                          setLightboxIndex(i + 1); // +1 because main image is index 0
+                          setLightboxOpen(true);
+                        }}
+                        className="focus:outline-none focus:ring-2 focus:ring-[#b42121] rounded-2xl"
+                      >
+                        <img
+                          src={img}
+                          alt={`${car.make} ${car.model} ${i + 2}`}
+                          loading="lazy"
+                          width={320}
+                          height={200}
+                          className="w-full h-24 sm:h-28 md:h-52 lg:h-60 object-cover rounded-2xl transition-transform duration-200 hover:scale-105 thumb-img"
+                        />
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* If there are many remaining images, show a vertical scroll area to avoid huge page length */}
+                  {(displayedImages || []).length > 5 && (
+                    <div
+                      className="w-full mt-2 max-h-[320px] md:max-h-[420px] overflow-y-auto space-y-2 pr-2"
+                      style={{ WebkitOverflowScrolling: 'touch' }}
+                    >
+                      {(displayedImages || []).slice(5).map((img, j) => (
+                        <button
+                          key={`small-${j}`}
+                          type="button"
+                          onClick={() => {
+                            setLightboxIndex(j + 5);
+                            setLightboxOpen(true);
+                          }}
+                          className="w-full focus:outline-none focus:ring-2 focus:ring-[#b42121] rounded-2xl"
+                        >
+                          <img
+                            src={img}
+                            alt={`${car.make} ${car.model} ${j + 6}`}
+                            loading="lazy"
+                            width={320}
+                            height={200}
+                            className="w-full h-32 sm:h-36 md:h-40 object-cover rounded-2xl transition-transform duration-200 hover:scale-105"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+
               {/* Lightbox */}
               <Lightbox
                 open={lightboxOpen}
