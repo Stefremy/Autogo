@@ -8,7 +8,7 @@
     "price": 49780,
     "image": "https://ecarstrade.com/carsphotos/6850001-6860000/6858060/photo_001.jpg",
     "description": "BMW iX BEV 77kWh xDrive40 de 2023, SUV elétrico com tração integral xDrive e 326cv (240 kW) de potência. Equipado com caixa automática, oferece uma experiência de condução suave, silenciosa e altamente tecnológica. Destaca-se pelo BMW Live Cockpit Professional, Connected Package Professional, sistema de navegação integrado, Parking Assistant Plus com câmaras 360º, bancos aquecidos e coluna de direção elétrica. Ao nível da segurança inclui ABS, ESP, assistente de faixa, aviso de ângulo morto, assistente de máximos, sistema de prevenção de colisão e proteção ativa de peões. Interior em Sensatec com volante em pele e múltiplas ligações USB-C. Veículo com documentação completa, incluindo COC, proveniente da Bélgica, ideal para quem procura um SUV elétrico premium com elevada autonomia, tecnologia avançada e excelente nível de equipamento.",
-    "mileage": null,
+    "mileage": 10017,
     "country": "BE",
     "status": null,
     "gearboxType": "Automática",
@@ -25,7 +25,7 @@
     "emissionClass": "A",
     "co2": null,
     "color": null,
-    "vin": null,
+    "vin": "WBY11CF000CP41627",
     "images": [
       "https://ecarstrade.com/carsphotos/6850001-6860000/6858060/photo_001.jpg",
       "https://ecarstrade.com/carsphotos/6850001-6860000/6858060/photo_003.jpg",
