@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { motion, useScroll, useTransform, useMotionValueEvent, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent, useSpring, useMotionValue, animate } from 'framer-motion';
 import { ShinyButton } from './ShinyButton';
 import { AuroraText } from './AuroraText';
 import { InteractiveHoverButton } from './InteractiveHoverButton';
@@ -21,9 +21,15 @@ export default function HeroScrollAnimation({
     const [prevFrame, setPrevFrame] = useState(-1);
     const [isMobile, setIsMobile] = useState(false);
 
-    // We'll use a local motion value for the "locked" progress
+    // We'll use a local motion value for the "locked" progress on desktop
     const lockedProgress = useMotionValue(0);
     const smoothLockedProgress = useSpring(lockedProgress, { stiffness: 100, damping: 30 });
+
+    // For mobile, we'll use an auto-play progress
+    const mobileProgress = useMotionValue(0);
+
+    // Use smoothLockedProgress for desktop (lock-based) and mobileProgress for phone (auto-play)
+    const activeProgress = isMobile ? mobileProgress : smoothLockedProgress;
 
     const framesRef = useRef<HTMLImageElement[]>([]);
 
@@ -36,7 +42,7 @@ export default function HeroScrollAnimation({
     }, []);
 
     // Map progress to frame index - Clamp to 1.0 to ensure car stops rotating at the end
-    const frameIndex = useTransform(smoothLockedProgress, [0, 1, 1.2], [0, totalFrames - 1, totalFrames - 1]);
+    const frameIndex = useTransform(activeProgress, [0, 1, 1.2], [0, totalFrames - 1, totalFrames - 1]);
 
     // Preload all frames - Using the verified % 3 pattern
     useEffect(() => {
@@ -107,6 +113,16 @@ export default function HeroScrollAnimation({
         loadFrames();
     }, [totalFrames]);
 
+    // Auto-play on mobile
+    useEffect(() => {
+        if (isMobile && imagesLoaded) {
+            animate(mobileProgress, 1, {
+                duration: 2.5,
+                ease: "easeOut",
+            });
+        }
+    }, [isMobile, imagesLoaded, mobileProgress]);
+
     // Optimized canvas drawing
     const drawFrame = useCallback((idx: number) => {
         const canvas = canvasRef.current;
@@ -143,7 +159,7 @@ export default function HeroScrollAnimation({
 
     // Frame update trigger
     useMotionValueEvent(frameIndex, "change", (latest) => {
-        if (isMobile) return; // No animation on mobile
+        // No animation guard removed to allow auto-play
         const idx = Math.min(totalFrames - 1, Math.floor(latest));
         if (idx !== prevFrame && imagesLoaded) {
             setPrevFrame(idx);
@@ -198,18 +214,18 @@ export default function HeroScrollAnimation({
         };
     }, [imagesLoaded, lockedProgress, isMobile]);
 
-    // Text & CTA Animations
-    const word1Opacity = useTransform(smoothLockedProgress, [0.05, 0.15], [0, 1]);
-    const word1Y = useTransform(smoothLockedProgress, [0.05, 0.15], [20, 0]);
+    // Text & CTA Animations - Using activeProgress for both desktop and mobile
+    const word1Opacity = useTransform(activeProgress, [0.05, 0.15], [0, 1]);
+    const word1Y = useTransform(activeProgress, [0.05, 0.15], [20, 0]);
 
-    const word2Opacity = useTransform(smoothLockedProgress, [0.25, 0.35], [0, 1]);
-    const word2Y = useTransform(smoothLockedProgress, [0.25, 0.35], [20, 0]);
+    const word2Opacity = useTransform(activeProgress, [0.25, 0.35], [0, 1]);
+    const word2Y = useTransform(activeProgress, [0.25, 0.35], [20, 0]);
 
-    const word3Opacity = useTransform(smoothLockedProgress, [0.45, 0.55], [0, 1]);
-    const word3Y = useTransform(smoothLockedProgress, [0.45, 0.55], [20, 0]);
+    const word3Opacity = useTransform(activeProgress, [0.45, 0.55], [0, 1]);
+    const word3Y = useTransform(activeProgress, [0.45, 0.55], [20, 0]);
 
-    const ctaOpacity = useTransform(smoothLockedProgress, [0.8, 0.95], [0, 1]);
-    const ctaY = useTransform(smoothLockedProgress, [0.8, 0.95], [30, 0]);
+    const ctaOpacity = useTransform(activeProgress, [0.8, 0.95], [0, 1]);
+    const ctaY = useTransform(activeProgress, [0.8, 0.95], [30, 0]);
 
     return (
         <div
@@ -238,14 +254,14 @@ export default function HeroScrollAnimation({
                 {/* Content Overlay */}
                 <div className="relative z-20 text-center px-4 max-w-5xl mx-auto pointer-events-none">
                     <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
-                        <motion.div style={isMobile ? { opacity: 1, y: 0 } : { opacity: word1Opacity, y: word1Y }} className="inline-block">Rápido</motion.div>{' '}
-                        <motion.div style={isMobile ? { opacity: 1, y: 0 } : { opacity: word2Opacity, y: word2Y }} className="inline-block">Seguro</motion.div>{' '}
-                        <motion.div style={isMobile ? { opacity: 1, y: 0 } : { opacity: word3Opacity, y: word3Y }} className="inline-block">
+                        <motion.div style={{ opacity: word1Opacity, y: word1Y }} className="inline-block">Rápido</motion.div>{' '}
+                        <motion.div style={{ opacity: word2Opacity, y: word2Y }} className="inline-block">Seguro</motion.div>{' '}
+                        <motion.div style={{ opacity: word3Opacity, y: word3Y }} className="inline-block">
                             <AuroraText>Teu</AuroraText>
                         </motion.div>
                     </div>
 
-                    <motion.div className="pointer-events-auto" style={isMobile ? { opacity: 1, y: 0 } : { opacity: ctaOpacity, y: ctaY }}>
+                    <motion.div className="pointer-events-auto" style={{ opacity: ctaOpacity, y: ctaY }}>
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4 drop-shadow-2xl">O teu carro europeu, Legalizado e pronto a rolar em Portugal</h2>
                         <div className="flex flex-col gap-6 justify-center items-center mb-12">
                             <ShinyButton
