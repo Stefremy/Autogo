@@ -8,6 +8,7 @@ import { useTranslation } from "next-i18next";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import Link from "next/link";
+import Image from "next/image";
 import Layout from "../../components/MainLayout";
 import Seo from "../../components/Seo";
 import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../../utils/seoKeywords";
@@ -82,11 +83,6 @@ export default function BlogPost({ post }) {
         <div
           className="fixed inset-0 w-full h-full z-0 pointer-events-none select-none"
           style={{
-            backgroundImage: `url('${backgroundImage}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "blur(2px) brightness(0.85)",
-            opacity: 0.35,
             bottom: "120px", // do not overlay footer
             position: "fixed",
             left: 0,
@@ -95,7 +91,19 @@ export default function BlogPost({ post }) {
           }}
           aria-hidden="true"
           data-fullwidth
-        />
+        >
+          <Image
+            src={backgroundImage}
+            alt="Background"
+            fill
+            priority
+            className="object-cover"
+            style={{
+              filter: "blur(2px) brightness(0.85)",
+              opacity: 0.35,
+            }}
+          />
+        </div>
       )}
       <main
         style={{
