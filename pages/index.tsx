@@ -16,6 +16,7 @@ import BlackFridayPromo from "../components/BlackFridayPromo";
 import Snowfall from "../components/Snowfall";
 import { CAR_IMPORT_GEO_DATA, generateGEOFAQSchema, generateGEOHowToSchema } from "../utils/geoOptimization";
 import HeroScrollAnimation from "../components/HeroScrollAnimation";
+import GoogleReviews from "../components/GoogleReviews";
 
 // Some imported React helpers are used conditionally; to avoid linter warnings where they are assigned but not used in all builds, reference them in no-op expressions.
 void useRef; void useEffect;
@@ -823,13 +824,8 @@ export default function Home({ blogArticles }) {
           </div>
         </section>
 
-        {/* GOOGLE REVIEWS SECTION - OMITTED TEMPORARILY */}
-        {/*
-          The "Os nossos clientes" (Our customers) Google Reviews section is
-          omitted for now because there is no verified integration with real
-          Google reviews. Re-add this section when a proper, GDPR-compliant
-          Google Reviews integration or verified source is available.
-        */}
+        {/* GOOGLE REVIEWS SECTION */}
+        <GoogleReviews />
 
         {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
         <section data-fullwidth className="w-full py-10 sm:py-14 bg-[#f5f6fa]">
