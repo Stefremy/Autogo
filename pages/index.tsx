@@ -878,12 +878,12 @@ export default function Home({ blogArticles }) {
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <div className="p-4 flex flex-col h-[180px]">
-                      <div className="text-xs text-gray-500 mb-1">
+                    <div className="p-5 flex flex-col h-[220px]">
+                      <div className="text-xs text-gray-500 mb-2">
                         {new Date(article.date).toLocaleDateString("pt-PT")}
                       </div>
                       <div
-                        className="font-bold text-lg text-gray-900 mb-1"
+                        className="font-bold text-lg text-gray-900 mb-3"
                         style={{
                           display: "-webkit-box",
                           WebkitLineClamp: 2,
@@ -893,16 +893,14 @@ export default function Home({ blogArticles }) {
                           wordBreak: "break-word",
                           overflowWrap: "break-word",
                           whiteSpace: "normal",
-                          // use em-based line height so the clamp scales with font-size
-                          lineHeight: "1.2em",
-                          maxHeight: `calc(1.2em * 2)`,
-                          boxSizing: "border-box",
+                          lineHeight: "1.5",
+                          minHeight: "3rem",
                         }}
                       >
                         {article.title}
                       </div>
                       <div
-                        className="text-gray-700 text-sm mb-4"
+                        className="text-gray-700 text-sm mb-4 flex-grow"
                         style={{
                           display: "-webkit-box",
                           WebkitLineClamp: 3,
@@ -912,14 +910,12 @@ export default function Home({ blogArticles }) {
                           wordBreak: "break-word",
                           overflowWrap: "break-word",
                           whiteSpace: "normal",
-                          lineHeight: "1rem",
-                          maxHeight: `calc(1rem * 3)`,
-                          boxSizing: "border-box",
+                          lineHeight: "1.6",
                         }}
                       >
                         {article.excerpt}
                       </div>
-                      <span className="mt-auto text-[#b42121] font-semibold hover:underline transition">
+                      <span className="text-[#b42121] font-semibold hover:underline transition">
                         Ler artigo &rarr;
                       </span>
                     </div>

@@ -70,10 +70,10 @@ const GUIDE_SLUGS = new Set([
   'importar-carros-alemanha-guia-completo',
   'isv-na-pratica-simulador-autogo',
   'pedir-matricula-veiculo-importado',
+  'iuc-carros-importados-2026',
   // Future guides (add new slugs here when created):
   // 'como-importar-carros-alemanha-portugal',
   // 'isv-2026-guia-completo',
-  // 'iuc-carros-importados-2026',
   // 'comprar-carro-importado-vs-usado-portugal',
   // 'melhores-carros-eletricos-importados-2026',
 ]);

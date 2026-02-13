@@ -62,6 +62,11 @@ const nextConfig = {
       "car-images.bauersecure.com",
       "tse2.mm.bing.net",
       "images.unsplash.com",
+      "drive-my.com",
+      "carscoops.com",
+      "ecarstrade.com",
+      "www.greencarguide.co.uk",
+      "www.activlease.nl",
     ],
   },
 
