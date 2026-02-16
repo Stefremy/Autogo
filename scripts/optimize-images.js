@@ -58,8 +58,10 @@ async function optimizeImages() {
         try {
             const originalStats = fs.statSync(imagePath);
 
-            // Convert to WebP
+            // Convert to WebP with proper color space handling
             await sharp(imagePath)
+                .rotate() // Auto-rotate based on EXIF
+                .toColorspace('srgb') // Ensure sRGB color space to prevent "green" tint on CMYK images
                 .webp({ quality: 75 })
                 .toFile(webpPath);
 
