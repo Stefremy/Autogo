@@ -475,13 +475,13 @@ export default function Viaturas() {
         title={`Carros Importados e Carros Usados - BMW, Audi, Mercedes à venda em Portugal | AutoGo.pt`}
         description={`Carros importados e carros usados europeus em Portugal. BMW, Mercedes, Audi, Peugeot com os melhores preços. Importação completa com ISV, transporte e legalização pela AutoGo.pt.`}
         url={`https://autogo.pt/viaturas`}
-        image={`https://autogo.pt/images/auto-logo.png`}
+        image={`https://autogo.pt/images/auto-logo.webp`}
         keywords={joinKeywords(SITE_WIDE_KEYWORDS, VIATURAS_KEYWORDS)}
         jsonLd={viaturasGEOSchema}
       />
       <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">
         <img
-          src="/images/viaturas-fundo.jpg"
+          src="/images/viaturas-fundo.webp"
           alt="Fundo"
           className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover object-center opacity-25 md:opacity-35 z-0 transition-all duration-700"
           style={{
@@ -811,7 +811,7 @@ export default function Viaturas() {
           aria-label={t("Abrir simulador ISV")}
         >
           <img
-            src="/images/auto-logo.png"
+            src="/images/auto-logo.webp"
             alt={t("Abrir simulador ISV")}
             className="w-12 h-12 object-contain"
           />

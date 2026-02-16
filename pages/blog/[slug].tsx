@@ -58,7 +58,7 @@ export default function BlogPost({ post }) {
     ? primaryImage.startsWith("http")
       ? primaryImage
       : `https://autogo.pt${primaryImage}`
-    : "https://autogo.pt/images/auto-logo.png";
+    : "https://autogo.pt/images/auto-logo.webp";
   const metaDescription =
     post.metaDescription ||
     buildMetaDescription(

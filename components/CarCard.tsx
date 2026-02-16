@@ -55,15 +55,14 @@ const CarCard: React.FC<CarCardProps> = ({
         {/* Status badge */}
         {status && (
           <span
-            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium shadow z-20 text-white ${
-              status === "disponivel"
-                ? "bg-green-500"
-                : status === "vendido"
-                  ? "bg-gray-400"
-                  : status === "sob_consulta"
-                    ? "bg-yellow-400"
-                    : "bg-gray-400"
-            }`}
+            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium shadow z-20 text-white ${status === "disponivel"
+              ? "bg-green-500"
+              : status === "vendido"
+                ? "bg-gray-400"
+                : status === "sob_consulta"
+                  ? "bg-yellow-400"
+                  : "bg-gray-400"
+              }`}
             style={{ letterSpacing: "0.5px", minWidth: 90, textAlign: "center" }}
           >
             {status === "disponivel"
@@ -102,7 +101,7 @@ const CarCard: React.FC<CarCardProps> = ({
 
           {country && (
             <img
-              src={`/images/flags/${country.toLowerCase()}.png`}
+              src={`/images/flags/${country.toLowerCase()}.webp`}
               alt={country}
               className="absolute top-2 left-2 w-7 h-7 rounded-full shadow border-2 border-white"
               title={
@@ -131,15 +130,14 @@ const CarCard: React.FC<CarCardProps> = ({
       {/* Status badge */}
       {status && (
         <span
-          className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium shadow z-20 text-white ${
-            status === "disponivel"
-              ? "bg-green-500"
-              : status === "vendido"
-                ? "bg-gray-400"
-                : status === "sob_consulta"
-                  ? "bg-yellow-400"
-                  : "bg-gray-400"
-          }`}
+          className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium shadow z-20 text-white ${status === "disponivel"
+            ? "bg-green-500"
+            : status === "vendido"
+              ? "bg-gray-400"
+              : status === "sob_consulta"
+                ? "bg-yellow-400"
+                : "bg-gray-400"
+            }`}
           style={{ letterSpacing: "0.5px", minWidth: 90, textAlign: "center" }}
         >
           {status === "disponivel"
@@ -177,7 +175,7 @@ const CarCard: React.FC<CarCardProps> = ({
         </div>
         {country && (
           <img
-            src={`/images/flags/${country.toLowerCase()}.png`}
+            src={`/images/flags/${country.toLowerCase()}.webp`}
             alt={country}
             className="absolute top-2 left-2 w-7 h-7 rounded-full shadow border-2 border-white"
             title={

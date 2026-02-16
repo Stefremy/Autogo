@@ -57,8 +57,9 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
 
     const list: string[] = [];
     for (const b of bases) {
-      // prefer SVG when available
+      // prefer WebP/SVG when available
       list.push(`/images/carmake/${b}-logo.svg`);
+      list.push(`/images/carmake/${b}-logo.webp`);
       list.push(`/images/carmake/${b}-logo.png`);
       list.push(`/images/carmake/${b}-logo.jpg`);
     }
@@ -68,17 +69,19 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
   const candidates = (() => {
     // special-case prioritized lists for known logos present in /public/images/carmake
     const SPECIAL_CASES: Record<string, string[]> = {
-      // prefer the svg/png paths first to get transparency where available
+      // prefer the svg/webp paths first to get transparency where available
       mazda: [
         '/images/carmake/mazda-logo.svg',
+        '/images/carmake/mazda-logo.webp',
         '/images/carmake/mazda-logo.png',
         '/images/carmake/Mazda-logo.png',
         '/images/carmake/mazda-logo.jpg',
         '/images/carmake/Mazda-logo.jpg',
       ],
-      // MG provided as JPG in the repo; try PNG/SVG variants before JPG
+      // MG provided as JPG in the repo; try WebP/PNG/SVG variants before JPG
       mg: [
         '/images/carmake/MG-logo.svg',
+        '/images/carmake/MG-logo.webp',
         '/images/carmake/MG-logo.png',
         '/images/carmake/MG-logo.jpg',
         '/images/carmake/mg-logo.jpg',
@@ -88,12 +91,14 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
       cupra: [
         '/images/carmake/cupra-logo.svg',
         '/images/carmake/Cupra-logo.svg',
+        '/images/carmake/cupra-logo.webp',
         '/images/carmake/cupra-logo.png',
         '/images/carmake/Cupra-logo.png',
         '/images/carmake/cupra-logo.jpg',
       ],
       // DS: prefer the provided JPG first (user requested DS-logo.jpg)
       ds: [
+        '/images/carmake/DS-logo.webp',
         '/images/carmake/DS-logo.jpg',
         '/images/carmake/DS-logo.png',
         '/images/carmake/ds-logo.jpg',
@@ -180,7 +185,7 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
           const src = (img.src || '').toLowerCase();
           if ((src.endsWith('.jpg') || src.endsWith('.jpeg')) && !img.dataset.processed) {
             // run async post-processing (no await) to avoid blocking rendering
-            removeWhiteBackground(img).catch(() => {});
+            removeWhiteBackground(img).catch(() => { });
           }
         } catch { /* ignore */ }
       }}

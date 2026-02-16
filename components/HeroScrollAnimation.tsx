@@ -96,8 +96,8 @@ export default function HeroScrollAnimation({
 
             // Priority 1: Load leader/poster frame immediately and draw it
             const firstImg = new Image();
-            // Try to load frameeleder.jpeg if it exists, otherwise fallback to frame_000
-            const posterSrc = `/images/heroscroll/frameeleder.jpeg`;
+            // Try to load frameeleder.webp if it exists, otherwise fallback to frame_000
+            const posterSrc = `/images/heroscroll/frameeleder.webp`;
             firstImg.src = posterSrc;
 
             await new Promise<void>((resolve) => {
@@ -112,7 +112,7 @@ export default function HeroScrollAnimation({
                 firstImg.onerror = () => {
                     // Fallback to original frame_000 if frameeleder fails
                     const fallbackImg = new Image();
-                    fallbackImg.src = `/images/heroscroll/frame_000_delay-0.042s.jpg`;
+                    fallbackImg.src = `/images/heroscroll/frame_000_delay-0.042s.webp`;
                     fallbackImg.onload = () => {
                         frames[0] = fallbackImg;
                         requestAnimationFrame(() => drawFrame(0));
@@ -132,13 +132,13 @@ export default function HeroScrollAnimation({
                 const img = new Image();
                 const frameNumber = String(i).padStart(3, '0');
                 const delay = i % 3 === 1 ? '0.041s' : '0.042s';
-                img.src = `/images/heroscroll/frame_${frameNumber}_delay-${delay}.jpg`;
+                img.src = `/images/heroscroll/frame_${frameNumber}_delay-${delay}.webp`;
 
                 const promise = new Promise<void>((resolve) => {
                     img.onload = () => resolve();
                     img.onerror = () => {
                         const fallbackDelay = delay === '0.042s' ? '0.041s' : '0.042s';
-                        img.src = `/images/heroscroll/frame_${frameNumber}_delay-${fallbackDelay}.jpg`;
+                        img.src = `/images/heroscroll/frame_${frameNumber}_delay-${fallbackDelay}.webp`;
                         img.onload = () => resolve();
                         img.onerror = () => resolve();
                     };
@@ -267,7 +267,7 @@ export default function HeroScrollAnimation({
             <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black z-0">
                 {/* Poster image for instant initial load (server-rendered) */}
                 <img
-                    src="/images/heroscroll/frameeleder.jpeg"
+                    src="/images/heroscroll/frameeleder.webp"
                     alt="AutoGo Hero"
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${imagesLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
                     style={{

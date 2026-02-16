@@ -282,7 +282,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
       if (watermarkEl) return watermarkEl;
       const img = document.createElement('img');
       img.id = 'autogo-watermark-portal';
-      img.src = '/images/autologonb.png';
+      img.src = '/images/autologonb.webp';
       img.alt = 'AutoGo watermark';
       img.style.pointerEvents = 'none';
       img.style.opacity = '0.40';
@@ -729,7 +729,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
     })();
 
     // Place site logo top-right (use autologonb.png from public)
-    const logoUrl = '/images/autologonb.png';
+    const logoUrl = '/images/autologonb.webp';
     const logoBase64 = await loadImageAsBase64(logoUrl);
     const pageW = doc.internal.pageSize.getWidth();
     const margin = 40;
@@ -1005,7 +1005,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
       `}
         >
           <img
-            src={displayedImages[0] || '/images/auto-logo.png'}
+            src={displayedImages[0] || '/images/auto-logo.webp'}
             alt={car.make + " " + car.model}
             width={160}
             height={96}
@@ -1193,7 +1193,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                   {/* Mobile-only flag: placed next to MakeLogo, same style as desktop rectangular flag; hidden on lg to avoid duplicate with overlay */}
                   {car.country && (
                     <img
-                      src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.png`}
+                      src={`/images/flags/${String((car as any).country ?? "").toLowerCase()}.webp`}
                       alt={car.country}
                       title={car.country}
                       className="ml-3 lg:hidden inline-block"
@@ -1319,14 +1319,14 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                     aria-label="Partilhar esta viatura"
                     disabled={isSharing}
                   >
-                    <img src="/images/icons/share_logo.png" alt="Partilhar" className="w-4 h-4" />
+                    <img src="/images/icons/share_logo.webp" alt="Partilhar" className="w-4 h-4" />
                     <span className="ml-1 text-sm">Partilhar</span>
                   </button>
                   <button
                     onClick={handleDownloadPDF}
                     className="flex items-center justify-center w-full sm:w-auto gap-2 border border-gray-300 bg-white text-gray-700 font-semibold py-2 px-2 rounded-2xl shadow-sm hover:bg-gray-100 transition-all duration-200 text-sm"
                   >
-                    <img src="/images/icons/pdf_logo.png" alt="Download PDF" className="w-4 h-4" />
+                    <img src="/images/icons/pdf_logo.webp" alt="Download PDF" className="w-4 h-4" />
                     <span className="ml-1 text-sm">PDF</span>
                   </button>
                   <div className="mt-2 sm:mt-0 sm:ml-3 flex-shrink-0">
@@ -1557,7 +1557,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                             <a href={`/cars/${simCar.slug || simCar.id}`} className="block h-full">
                               <div className="similar-swiper-item relative">
                                 <img
-                                  src={normalizeImageClient(simCar.image) || '/images/auto-logo.png'}
+                                  src={normalizeImageClient(simCar.image) || '/images/auto-logo.webp'}
                                   alt={`${simCar.make} ${simCar.model}`}
                                   loading="lazy"
                                   width={560}
@@ -1617,7 +1617,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                           <a href={`/cars/${simCar.slug || simCar.id}`} className="block h-full">
                             <div className="similar-swiper-item relative">
                               <img
-                                src={normalizeImageClient(simCar.image) || '/images/auto-logo.png'}
+                                src={normalizeImageClient(simCar.image) || '/images/auto-logo.webp'}
                                 alt={`${simCar.make} ${simCar.model}`}
                                 loading="lazy"
                                 width={280}

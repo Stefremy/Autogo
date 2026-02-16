@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -23,6 +22,8 @@ export default function ContactForm() {
     setError("");
     setSuccess(false);
     try {
+      // Lazy load emailjs only on submit
+      const emailjs = (await import("emailjs-com")).default;
       await emailjs.send(
         "service_ngduxdg",
         "template_3cb4rfl",

@@ -15,11 +15,11 @@ const NAV_LINKS = [
 
 // Dynamically generate available languages from /public/locales and match to flags
 const LOCALE_TO_FLAG = {
-  "pt-PT": { flag: "/images/flags/pt.png", label: "Português" },
-  es: { flag: "/images/flags/es.png", label: "Español" },
-  en: { flag: "/images/flags/en.png", label: "English" },
-  fr: { flag: "/images/flags/fr.png", label: "Français" },
-  de: { flag: "/images/flags/de.png", label: "Deutsch" },
+  "pt-PT": { flag: "/images/flags/pt.webp", label: "Português" },
+  es: { flag: "/images/flags/es.webp", label: "Español" },
+  en: { flag: "/images/flags/en.webp", label: "English" },
+  fr: { flag: "/images/flags/fr.webp", label: "Français" },
+  de: { flag: "/images/flags/de.webp", label: "Deutsch" },
 };
 const AVAILABLE_LANGS = Object.entries(LOCALE_TO_FLAG)
   .filter(([code]) => ["pt-PT", "es", "en", "fr", "de"].includes(code))
@@ -110,7 +110,7 @@ export function IndexNavbar() {
           <Link href="/">
             <div className="relative flex items-center group h-full">
               <img
-                src="/images/autologonb.png"
+                src="/images/autologonb.webp"
                 alt="AutoGo.pt"
                 className={`${isLandscape ? "h-12" : "h-16"} md:h-20 w-auto object-contain z-10 transition-transform duration-300 group-hover:scale-105`}
                 style={{
@@ -168,8 +168,8 @@ export function IndexNavbar() {
           <button
             onClick={toggleMobileMenu}
             className={`group relative p-2 sm:p-3 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-3 focus:ring-[#b42121]/30 ${mobileMenuOpen
-                ? "bg-[#b42121] shadow-lg scale-105"
-                : "bg-white hover:bg-[#f5f6fa] shadow-md hover:shadow-lg"
+              ? "bg-[#b42121] shadow-lg scale-105"
+              : "bg-white hover:bg-[#f5f6fa] shadow-md hover:shadow-lg"
               }`}
             aria-label="Toggle mobile menu"
           >
@@ -184,20 +184,20 @@ export function IndexNavbar() {
             <div className="w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center items-center relative z-10">
               <span
                 className={`block w-4 sm:w-5 h-0.5 rounded-full transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] transform ${mobileMenuOpen
-                    ? "bg-white rotate-45 translate-y-[2px]"
-                    : "bg-[#22272a] group-hover:bg-[#b42121] -translate-y-[3px]"
+                  ? "bg-white rotate-45 translate-y-[2px]"
+                  : "bg-[#22272a] group-hover:bg-[#b42121] -translate-y-[3px]"
                   }`}
               ></span>
               <span
                 className={`block w-4 sm:w-5 h-0.5 rounded-full transition-all duration-200 ease-linear ${mobileMenuOpen
-                    ? "bg-white opacity-0 scale-90"
-                    : "bg-[#22272a] group-hover:bg-[#b42121] opacity-100 scale-100"
+                  ? "bg-white opacity-0 scale-90"
+                  : "bg-[#22272a] group-hover:bg-[#b42121] opacity-100 scale-100"
                   }`}
               ></span>
               <span
                 className={`block w-4 sm:w-5 h-0.5 rounded-full transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] transform ${mobileMenuOpen
-                    ? "bg-white -rotate-45 -translate-y-[2px]"
-                    : "bg-[#22272a] group-hover:bg-[#b42121] translate-y-[3px]"
+                  ? "bg-white -rotate-45 -translate-y-[2px]"
+                  : "bg-[#22272a] group-hover:bg-[#b42121] translate-y-[3px]"
                   }`}
               ></span>
             </div>
@@ -238,8 +238,8 @@ export function IndexNavbar() {
                   >
                     <span className="flex items-center gap-2">
                       <span className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive
-                          ? "bg-white scale-100"
-                          : "bg-[#b42121] scale-0 group-hover:scale-100"
+                        ? "bg-white scale-100"
+                        : "bg-[#b42121] scale-0 group-hover:scale-100"
                         }`}></span>
                       {t(label)}
                     </span>

@@ -10,6 +10,14 @@ import nextI18NextConfig from "../next-i18next.config.js";
 import { IndexNavbar } from "../components/IndexNavbar";
 import ErrorBoundary from "../components/ErrorBoundary";
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-montserrat",
+});
+
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   // Hide IndexNavbar on /viaturas and /cars/[id]
@@ -36,10 +44,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ErrorBoundary>
-      {!hideNavbar && <IndexNavbar />}
-      <Component {...pageProps} />
-      {/* Speed Insights component (self-closing) - renders instrumentation for performance reporting */}
-      <SpeedInsights />
+      <div className={`${montserrat.variable} font-sans`}>
+        {!hideNavbar && <IndexNavbar />}
+        <Component {...pageProps} />
+        {/* Speed Insights component (self-closing) - renders instrumentation for performance reporting */}
+        <SpeedInsights />
+      </div>
     </ErrorBoundary>
   );
 }

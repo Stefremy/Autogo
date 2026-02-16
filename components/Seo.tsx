@@ -26,7 +26,7 @@ export default function Seo({
 }: SeoProps) {
   const router = useRouter();
   const finalKeywords = keywords || joinKeywords(SITE_WIDE_KEYWORDS);
-  const finalImage = image || 'https://autogo.pt/images/auto-logo.png';
+  const finalImage = image || 'https://autogo.pt/images/auto-logo.webp';
   const siteOrigin = 'https://autogo.pt';
 
   // --- PT-only indexation logic ---
@@ -106,11 +106,11 @@ export default function Seo({
                   url: 'https://autogo.pt',
                   logo: {
                     '@type': 'ImageObject',
-                    url: 'https://autogo.pt/images/auto-logo.png',
+                    url: 'https://autogo.pt/images/auto-logo.webp',
                     width: 512,
                     height: 512,
                   },
-                  image: 'https://autogo.pt/images/auto-logo.png',
+                  image: 'https://autogo.pt/images/auto-logo.webp',
                   priceRange: '€€',
                   telephone: '+351935179591',
                   email: 'AutoGO.stand@gmail.com',

@@ -152,7 +152,7 @@ export default function Contacto() {
                   aria-label="WhatsApp"
                 >
                   <img
-                    src="/images/whatsapp-logo.png"
+                    src="/images/whatsapp-logo.webp"
                     alt="WhatsApp"
                     className="w-6 h-6"
                     style={{ display: "inline" }}

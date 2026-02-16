@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import styles from "./PremiumCarCard.module.css";
 import { formatPriceDisplay } from "../utils/formatPrice";
 import MakeLogo from "./MakeLogo";
+import OptimizedImage from "./OptimizedImage";
 
 type PremiumCarCardProps = {
   name: string;
@@ -74,17 +75,16 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
         {/* Status badge */}
         {status && (
           <span
-            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold shadow z-20 text-white ${
-              status === "disponivel"
-                ? "bg-green-500"
-                : status === "vendido"
-                  ? "bg-gray-400"
-                  : status === "sob_consulta"
-                    ? "bg-yellow-400"
-                    : status === "novidade"
-                      ? "bg-blue-500"
-                      : "bg-gray-400"
-            }`}
+            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold shadow z-20 text-white ${status === "disponivel"
+              ? "bg-green-500"
+              : status === "vendido"
+                ? "bg-gray-400"
+                : status === "sob_consulta"
+                  ? "bg-yellow-400"
+                  : status === "novidade"
+                    ? "bg-blue-500"
+                    : "bg-gray-400"
+              }`}
             style={{
               letterSpacing: "0.5px",
               minWidth: 90,
@@ -96,21 +96,18 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
         )}
         <img src={image} alt={name} className={styles["premium-car-image"]} />
         {country && (
-          <img
-            src={`/images/flags/${country.toLowerCase()}.png`}
+          <OptimizedImage
+            src={`/images/flags/${country.toLowerCase()}.webp`}
             alt={country}
+            width={32}
+            height={22}
+            className="object-cover bg-white rounded-[0.2rem] border-[1.5px] border-white shadow-sm z-[2]"
             style={{
               position: "absolute",
               top: "0.9rem",
               left: "0.9rem",
               width: 32,
               height: 22,
-              borderRadius: "0.2rem",
-              border: "1.5px solid #fff",
-              boxShadow: "0 2px 8px rgba(44,62,80,0.10)",
-              zIndex: 2,
-              background: "#fff",
-              objectFit: "cover",
             }}
           />
         )}
@@ -131,23 +128,23 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             {make && (
               <MakeLogo make={make} size={30} className="drop-shadow(0 1px 2px rgba(0,0,0,0.10))" />
             )}
-              {/* Mileage next to the logo (thin Montserrat) */}
-              {mileage !== undefined && (
-                <div
-                  style={{
-                    marginLeft: "0.25rem",
-                    fontFamily: "Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
-                    fontWeight: 300,
-                    fontSize: "0.85rem",
-                    color: "#4b5563",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {(typeof mileage === "number" ? mileage : Number(mileage))
-                    .toLocaleString("pt-PT")}
-                  &nbsp;km
-                </div>
-              )}
+            {/* Mileage next to the logo (thin Montserrat) */}
+            {mileage !== undefined && (
+              <div
+                style={{
+                  marginLeft: "0.25rem",
+                  fontFamily: "Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
+                  fontWeight: 300,
+                  fontSize: "0.85rem",
+                  color: "#4b5563",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {(typeof mileage === "number" ? mileage : Number(mileage))
+                  .toLocaleString("pt-PT")}
+                &nbsp;km
+              </div>
+            )}
           </div>
           <div
             style={{

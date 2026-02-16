@@ -64,7 +64,7 @@ export default function SobreNos() {
 
       <div className="min-h-screen w-full bg-[#f5f6fa] flex flex-col overflow-x-hidden relative">
         <img
-          src="/images/icons/audi-wheel.jpg"
+          src="/images/icons/audi-wheel.webp"
           alt="Fundo"
           className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover z-0 transition-all duration-700"
           style={{ objectPosition: "center center", filter: "blur(0.5px)", opacity: 0.18 }}

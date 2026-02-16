@@ -31,7 +31,7 @@ export default function Footer() {
             )}
           </p>
           <img
-            src="/images/autologonb.png"
+            src="/images/autologonb.webp"
             alt="AutoGo.pt"
             className="w-32 sm:w-44 mb-2 drop-shadow-lg mt-0 rounded-xl"
           />
@@ -149,7 +149,7 @@ export default function Footer() {
               className="rounded-full bg-white/40 backdrop-blur-md border border-[#b42121]/30 shadow-lg hover:ring-2 hover:ring-[#FFD700] transition-all duration-200 p-1 flex items-center justify-center"
             >
               <img
-                src="/images/icons/icons8-whatsapp-48.png"
+                src="/images/icons/icons8-whatsapp-48.webp"
                 alt="WhatsApp"
                 className="h-6 w-6"
                 aria-hidden="true"
@@ -163,7 +163,7 @@ export default function Footer() {
               className="rounded-full bg-white/40 backdrop-blur-md border border-[#b42121]/30 shadow-lg hover:ring-2 hover:ring-[#FFD700] transition-all duration-200 p-1 flex items-center justify-center"
             >
               <img
-                src="/images/icons/icons8-facebook-48.png"
+                src="/images/icons/icons8-facebook-48.webp"
                 alt="Facebook"
                 className="h-6 w-6"
                 aria-hidden="true"
@@ -177,7 +177,7 @@ export default function Footer() {
               className="rounded-full bg-white/40 backdrop-blur-md border border-[#b42121]/30 shadow-lg hover:ring-2 hover:ring-[#FFD700] transition-all duration-200 p-1 flex items-center justify-center"
             >
               <img
-                src="/images/icons/icons8-instagram-48.png"
+                src="/images/icons/icons8-instagram-48.webp"
                 alt="Instagram"
                 className="h-6 w-6"
                 aria-hidden="true"
@@ -230,7 +230,7 @@ export default function Footer() {
             className="inline-flex items-center group"
           >
             <img
-              src="/images/linke-logo.png"
+              src="/images/linke-logo.webp"
               alt="Linke.pt"
               className="h-6 w-auto ml-1 mr-1 align-middle group-hover:scale-110 transition-transform duration-200"
               style={{ display: "inline-block", verticalAlign: "middle" }}

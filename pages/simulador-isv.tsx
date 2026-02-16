@@ -5,6 +5,7 @@ import MainLayout from "../components/MainLayout";
 import Seo from '../components/Seo';
 import { SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import { generateGEOFAQSchema } from "../utils/geoOptimization";
+import OptimizedImage from "../components/OptimizedImage";
 
 // Tabelas ISV Diário da República
 const TABELA_CILINDRADA_A = [
@@ -537,16 +538,13 @@ export default function Simulador() {
                     }}
                   />
                 </div>
-                <img
-                  src="/images/amgsimulador.png"
+                <OptimizedImage
+                  src="/images/amgsimulador.webp"
                   alt="Carro exemplo simulador ISV"
+                  width={800}
+                  height={300}
                   className="relative w-full max-w-4xl mx-auto object-cover z-10"
-                  style={{
-                    background: "none",
-                    border: "none",
-                    borderRadius: 0,
-                    boxShadow: "none",
-                  }}
+                  priority={true}
                 />
               </div>
             </div>
@@ -563,9 +561,11 @@ export default function Simulador() {
                 className="focus:outline-none mb-2"
                 style={{ marginTop: 0 }}
               >
-                <img
-                  src="/images/autogoblack.png"
+                <OptimizedImage
+                  src="/images/autogoblack.webp"
                   alt="AutoGo Logo"
+                  width={128}
+                  height={128}
                   className={`w-32 h-32 object-contain mx-auto drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg transition-transform duration-700 ${logoAnim ? "animate-spin-slow" : ""}`}
                 />
               </button>

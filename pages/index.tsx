@@ -9,14 +9,17 @@ import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from 'next/router';
 import MainLayout from "../components/MainLayout";
 import cars from "../data/cars.json";
+import OptimizedImage from "../components/OptimizedImage";
 import PremiumCarCard from "../components/PremiumCarCard";
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
-import BlackFridayPromo from "../components/BlackFridayPromo";
-import Snowfall from "../components/Snowfall";
 import { CAR_IMPORT_GEO_DATA, generateGEOFAQSchema, generateGEOHowToSchema } from "../utils/geoOptimization";
 import HeroScrollAnimation from "../components/HeroScrollAnimation";
-import GoogleReviews from "../components/GoogleReviews";
+import dynamic from 'next/dynamic';
+
+const GoogleReviews = dynamic(() => import('../components/GoogleReviews'), {
+  ssr: false,
+});
 
 // Some imported React helpers are used conditionally; to avoid linter warnings where they are assigned but not used in all builds, reference them in no-op expressions.
 void useRef; void useEffect;
@@ -34,7 +37,7 @@ export async function getServerSideProps({ locale }) {
         title: data.title || filename,
         date: data.date || "",
         image:
-          content.match(/!\[.*?\]\((.*?)\)/)?.[1] || "/images/auto-logo.png",
+          content.match(/!\[.*?\]\((.*?)\)/)?.[1] || "/images/auto-logo.webp",
         excerpt:
           content
             .replace(/!\[.*?\]\(.*?\)/g, "") // remove images
@@ -71,10 +74,11 @@ export default function Home({ blogArticles }) {
   const initialFeatured = cars.slice(0, Math.min(6, cars.length));
   const [featuredCars, setFeaturedCars] = useState(initialFeatured);
   // prefer bundled PNG icon for hand-over feature (from public/images/icons)
-  const handIconPath = '/images/icons/hand-over.png';
+  const handIconPath = '/images/icons/hand-over.webp';
 
   // shuffle helper
   const shuffle = (arr) => {
+
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -245,7 +249,7 @@ export default function Home({ blogArticles }) {
           title="Carros Importados e Carros Usados - Simulador ISV | AutoGo.pt"
           description="Carros importados e carros usados com os melhores preços. AutoGo.pt — simulador ISV gratuito, importação completa de viaturas da Europa. BMW, Mercedes, Audi com ISV, transporte e legalização incluídos."
           url="https://autogo.pt/"
-          image="https://autogo.pt/images/auto-logo.png"
+          image="https://autogo.pt/images/auto-logo.webp"
           keywords={seoKeywords}
           jsonLd={combinedJsonLd}
         />
@@ -322,11 +326,7 @@ export default function Home({ blogArticles }) {
         <HeroScrollAnimation data-fullwidth />
         {/* HERO SECTION END */}
 
-        {/* SNOW EFFECT - Runs until 2026-01-06, dismissible via localStorage */}
-        <Snowfall />
 
-        {/* Black Friday Promo (large image + Contactar) */}
-        <BlackFridayPromo />
 
         {/* Como Funciona section */}
         <section
