@@ -23,8 +23,6 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#b42121" />
 
           {/* Fonts - preconnect and stylesheets */}
-          {/* Fonts - preconnect and stylesheets */}
-          <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
           <link rel="stylesheet" href="https://use.typekit.net/mdg1mhk.css" />
 
           {/* Global Open Graph / Social defaults */}

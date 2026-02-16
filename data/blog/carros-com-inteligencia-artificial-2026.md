@@ -14,10 +14,10 @@ tags:
   - BYD Seal U
   - Ford Kuga PHEV
 lang: pt-PT
-image: "/images/blog/mercedes-mbux-superscreen.png"
+image: "/images/blog/mercedes-mbux-superscreen.webp"
 ---
 
-![Mercedes-Benz Classe E MBUX](/images/blog/mercedes-mbux-superscreen.png)
+![Mercedes-Benz Classe E MBUX](/images/blog/mercedes-mbux-superscreen.webp)
 
 A inteligência artificial deixou de ser ficção científica e tornou-se realidade nos automóveis modernos. Desde assistentes virtuais que respondem a comandos naturais até sistemas de condução autónoma, a IA está a transformar a experiência ao volante. Se procura um carro com tecnologia de ponta, aqui estão os 7 modelos mais relevantes disponíveis no mercado português em 2026.
 

@@ -28,88 +28,88 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
     'ds-automobiles': 'DS',
   };
 
-  const resolvedMake = (ALIASES[(make || '').trim().toLowerCase()] || make).toString();
-
-  // generate a prioritized list of candidate filenames covering
-  // spaces, hyphens, camelCase (insert hyphen between lowercase+Uppercase),
-  // lowercase variants, and no-hyphen variants
-  const genCandidates = (s: string) => {
-    const clean = s.replace(/[^A-Za-z0-9\s-]/g, "").trim();
-    const withSpaces = clean.replace(/\s+/g, " ");
-    const kebab = withSpaces.replace(/\s+/g, "-"); // e.g. Mercedes-Benz
-    const lowerKebab = kebab.toLowerCase(); // e.g. mercedes-benz
-    const camelHyphen = clean.replace(/([a-z])([A-Z])/g, "$1-$2"); // MercedesBenz -> Mercedes-Benz
-    const lowerCamelHyphen = camelHyphen.toLowerCase();
-    const noHyphen = clean.replace(/-/g, ""); // MercedesBenz
-    const lowerNoHyphen = noHyphen.toLowerCase();
-
-    // Prioritize the exact resolved string (preserves original capitalization)
-    // so filenames like `Mercedes-Benz-logo.jpg` are tried early.
-    const bases = Array.from(new Set([
-      s,
-      kebab,
-      lowerKebab,
-      camelHyphen,
-      lowerCamelHyphen,
-      noHyphen,
-      lowerNoHyphen,
-    ]));
-
-    const list: string[] = [];
-    for (const b of bases) {
-      // prefer WebP/SVG when available
-      list.push(`/images/carmake/${b}-logo.svg`);
-      list.push(`/images/carmake/${b}-logo.webp`);
-      list.push(`/images/carmake/${b}-logo.png`);
-      list.push(`/images/carmake/${b}-logo.jpg`);
-    }
-    return list;
+  // Map of normalized make (lowercase, minimal punctuation) to the exact filename in /public/images/carmake/
+  // Verified via filesystem audit on 2026-02-16
+  const KNOWN_LOGOS: Record<string, string> = {
+    "abarth": "Abarth-logo.webp",
+    "alfa romeo": "Alfa-Romeo-logo.webp",
+    "alfaromeo": "Alfa-Romeo-logo.webp",
+    "alpine": "Alpine-logo.webp",
+    "amg": "AMG-logo.webp",
+    "audi": "audi-logo.webp",
+    "audi sport": "Audi-Sport-logo.webp",
+    "bmw": "bmw-logo.webp",
+    "bmw m": "BMW-M-logo.webp",
+    "bugatti": "Bugatti-logo.webp",
+    "byd": "BYD-logo.webp",
+    "chery": "Chery-logo.webp",
+    "chevrolet": "Chevrolet-logo.webp",
+    "citroen": "Citroen-logo.webp",
+    "cupra": "cupra-logo.svg",
+    "dacia": "Dacia-logo.webp",
+    "ds": "DS-logo.webp",
+    "ferrari": "ferrari-logo.webp",
+    "fiat": "Fiat-logo.webp",
+    "ford": "ford-logo.webp",
+    "honda": "honda-logo.webp",
+    "hyundai": "hyundai-logo.webp",
+    "jaguar": "jaguar-logo.webp",
+    "jeep": "jeep-logo.webp",
+    "kia": "Kia-logo.webp",
+    "lamborghini": "lamborghini-logo.webp",
+    "lancia": "Lancia-logo.webp",
+    "land rover": "Land-Rover-logo.webp",
+    "landrover": "Land-Rover-logo.webp",
+    "lexus": "Lexus-logo.webp",
+    "maserati": "maserati-logo.webp",
+    "mazda": "mazda-logo.webp",
+    "mclaren": "McLaren-logo.webp", // Hypothetical if added later
+    "mercedes": "Mercedes-Benz-logo.webp",
+    "mercedes-benz": "Mercedes-Benz-logo.webp",
+    "mg": "MG-logo.webp",
+    "mini": "Mini-logo.webp",
+    "mitsubishi": "Mitsubishi-logo.webp",
+    "nio": "nio-logo.webp",
+    "nissan": "nissan-logo.webp",
+    "opel": "Opel-logo.webp",
+    "pagani": "Pagani-logo.webp",
+    "peugeot": "Peugeot-logo.webp",
+    "porsche": "porsche-logo.webp",
+    "renault": "Renault-logo.webp",
+    "seat": "SEAT-logo.webp",
+    "skoda": "Skoda-logo.webp",
+    "smart": "Smart-logo.webp",
+    "suzuki": "Suzuki-logo.webp",
+    "tata": "Tata-logo.webp",
+    "tesla": "tesla-logo.webp",
+    "toyota": "toyota-logo.webp",
+    "volkswagen": "Volkswagen-logo.webp",
+    "vw": "Volkswagen-logo.webp",
+    "volvo": "Volvo-logo.webp"
   };
 
   const candidates = (() => {
-    // special-case prioritized lists for known logos present in /public/images/carmake
-    const SPECIAL_CASES: Record<string, string[]> = {
-      // prefer the svg/webp paths first to get transparency where available
-      mazda: [
-        '/images/carmake/mazda-logo.svg',
-        '/images/carmake/mazda-logo.webp',
-        '/images/carmake/mazda-logo.png',
-        '/images/carmake/Mazda-logo.png',
-        '/images/carmake/mazda-logo.jpg',
-        '/images/carmake/Mazda-logo.jpg',
-      ],
-      // MG provided as JPG in the repo; try WebP/PNG/SVG variants before JPG
-      mg: [
-        '/images/carmake/MG-logo.svg',
-        '/images/carmake/MG-logo.webp',
-        '/images/carmake/MG-logo.png',
-        '/images/carmake/MG-logo.jpg',
-        '/images/carmake/mg-logo.jpg',
-        '/images/carmake/mg-logo.png',
-      ],
-      // Cupra: repo has lowercase svg — prefer that first
-      cupra: [
-        '/images/carmake/cupra-logo.svg',
-        '/images/carmake/Cupra-logo.svg',
-        '/images/carmake/cupra-logo.webp',
-        '/images/carmake/cupra-logo.png',
-        '/images/carmake/Cupra-logo.png',
-        '/images/carmake/cupra-logo.jpg',
-      ],
-      // DS: prefer the provided JPG first (user requested DS-logo.jpg)
-      ds: [
-        '/images/carmake/DS-logo.webp',
-        '/images/carmake/DS-logo.jpg',
-        '/images/carmake/DS-logo.png',
-        '/images/carmake/ds-logo.jpg',
-        '/images/carmake/DS-logo.svg',
-        '/images/carmake/ds-logo.png',
-      ],
-    };
+    const key = (make || '').trim().toLowerCase();
 
-    const key = (resolvedMake || '').toString().trim().toLowerCase();
-    if (SPECIAL_CASES[key]) return SPECIAL_CASES[key];
-    return genCandidates(resolvedMake);
+    // Check known map first
+    if (KNOWN_LOGOS[key]) {
+      return [`/images/carmake/${KNOWN_LOGOS[key]}`];
+    }
+
+    // Check strict aliases if not found in map
+    const alias = ALIASES[key];
+    if (alias && KNOWN_LOGOS[alias.toLowerCase()]) {
+      return [`/images/carmake/${KNOWN_LOGOS[alias.toLowerCase()]}`];
+    }
+
+    // Fallback (only for unknown makes)
+    // We limit fallback to just .webp and .png to avoid 404 storms
+    const resolved = alias || make || '';
+    const clean = resolved.replace(/[^A-Za-z0-9\s-]/g, "").trim();
+    return [
+      `/images/carmake/${clean}-logo.webp`,
+      `/images/carmake/${clean}-logo.png`
+    ];
   })();
 
   // lightweight SVG fallback (keeps space visible instead of broken icon)

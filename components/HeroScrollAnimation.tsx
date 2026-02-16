@@ -89,73 +89,100 @@ export default function HeroScrollAnimation({
     // Map progress to frame index - Clamp to 1.0 to ensure car stops rotating at the end
     const frameIndex = useTransform(activeProgress, [0, 1, 1.2], [0, totalFrames - 1, totalFrames - 1]);
 
-    // Preload all frames - Using the verified % 3 pattern
+    // Preload frames in chunks to avoid blocking main thread and massive network spike
     useEffect(() => {
+        let isMounted = true;
+
         const loadFrames = async () => {
             const frames: HTMLImageElement[] = [];
 
             // Priority 1: Load leader/poster frame immediately and draw it
             const firstImg = new Image();
-            // Try to load frameeleder.webp if it exists, otherwise fallback to frame_000
             const posterSrc = `/images/heroscroll/frameeleder.webp`;
             firstImg.src = posterSrc;
 
             await new Promise<void>((resolve) => {
                 const onFirstLoad = () => {
+                    if (!isMounted) return;
                     frames[0] = firstImg;
-                    framesRef.current = frames; // Set it early
+                    framesRef.current = frames;
                     requestAnimationFrame(() => drawFrame(0));
                     setPosterReady(true);
                     resolve();
                 };
                 firstImg.onload = onFirstLoad;
                 firstImg.onerror = () => {
-                    // Fallback to original frame_000 if frameeleder fails
                     const fallbackImg = new Image();
                     fallbackImg.src = `/images/heroscroll/frame_000_delay-0.042s.webp`;
                     fallbackImg.onload = () => {
+                        if (!isMounted) return;
                         frames[0] = fallbackImg;
                         requestAnimationFrame(() => drawFrame(0));
                         setPosterReady(true);
                         resolve();
                     };
                     fallbackImg.onerror = () => {
-                        setPosterReady(true); // Don't block forever
+                        setPosterReady(true);
                         resolve();
                     };
                 };
             });
 
-            // Priority 2: Load the rest
-            const loadPromises: Promise<void>[] = [];
-            for (let i = 1; i < totalFrames; i++) {
-                const img = new Image();
-                const frameNumber = String(i).padStart(3, '0');
-                const delay = i % 3 === 1 ? '0.041s' : '0.042s';
-                img.src = `/images/heroscroll/frame_${frameNumber}_delay-${delay}.webp`;
+            if (!isMounted) return;
 
-                const promise = new Promise<void>((resolve) => {
-                    img.onload = () => resolve();
-                    img.onerror = () => {
-                        const fallbackDelay = delay === '0.042s' ? '0.041s' : '0.042s';
-                        img.src = `/images/heroscroll/frame_${frameNumber}_delay-${fallbackDelay}.webp`;
+            // Priority 2: Load the rest in chunks
+            const CHUNK_SIZE = 24; // Load 1 second of animation at a time
+
+            for (let i = 1; i < totalFrames; i += CHUNK_SIZE) {
+                if (!isMounted) break;
+
+                const chunkPromises: Promise<void>[] = [];
+                const end = Math.min(i + CHUNK_SIZE, totalFrames);
+
+                for (let j = i; j < end; j++) {
+                    const img = new Image();
+                    const frameNumber = String(j).padStart(3, '0');
+                    const delay = j % 3 === 1 ? '0.041s' : '0.042s';
+                    img.src = `/images/heroscroll/frame_${frameNumber}_delay-${delay}.webp`;
+
+                    // We don't await individual images, just the chunk batch
+                    const p = new Promise<void>((resolve) => {
                         img.onload = () => resolve();
-                        img.onerror = () => resolve();
-                    };
-                });
-                loadPromises.push(promise);
-                frames[i] = img;
-            }
-            framesRef.current = frames;
+                        img.onerror = () => {
+                            // try fallback if needed, but don't block
+                            const fallbackDelay = delay === '0.042s' ? '0.041s' : '0.042s';
+                            img.src = `/images/heroscroll/frame_${frameNumber}_delay-${fallbackDelay}.webp`;
+                            img.onload = () => resolve();
+                            img.onerror = () => resolve();
+                        };
+                    });
 
-            // Wait for a few more frames to mark as "imagesLoaded" for interaction
-            await Promise.race([
-                Promise.all(loadPromises.slice(0, 30)),
-                new Promise(resolve => setTimeout(resolve, 2000))
-            ]);
-            setImagesLoaded(true);
+                    frames[j] = img;
+                    chunkPromises.push(p);
+                }
+
+                // Wait for this chunk to settle before starting next one
+                // This yields back to main thread between chunks
+                await Promise.all(chunkPromises);
+
+                // Extra yield to ensure UI responsiveness
+                await new Promise(r => setTimeout(r, 50));
+
+                // Update ref progressively so frames are available if user scrolls fast
+                framesRef.current = [...frames];
+
+                // If we have loaded enough initial frames, mark as ready for interaction
+                if (i + CHUNK_SIZE >= 48 && !imagesLoaded) {
+                    setImagesLoaded(true);
+                }
+            }
+
+            if (isMounted) setImagesLoaded(true);
         };
+
         loadFrames();
+
+        return () => { isMounted = false; };
     }, [totalFrames, drawFrame]);
 
     // Auto-play on mobile
@@ -274,6 +301,8 @@ export default function HeroScrollAnimation({
                         objectPosition: 'center',
                         zIndex: 10
                     } as any}
+                    fetchPriority="high"
+                    loading="eager"
                 />
                 <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ willChange: 'transform', touchAction: 'none' }} />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 pointer-events-none" />

@@ -100,14 +100,14 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             src={`/images/flags/${country.toLowerCase()}.webp`}
             alt={country}
             width={32}
-            height={22}
+            height={32}
             className="object-cover bg-white rounded-[0.2rem] border-[1.5px] border-white shadow-sm z-[2]"
             style={{
               position: "absolute",
               top: "0.9rem",
               left: "0.9rem",
               width: 32,
-              height: 22,
+              height: 32,
             }}
           />
         )}

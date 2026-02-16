@@ -1199,7 +1199,7 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
                       className="ml-3 lg:hidden inline-block"
                       style={{
                         width: 32,
-                        height: 22,
+                        height: 32,
                         borderRadius: '0.2rem',
                         border: '1.5px solid #fff',
                         boxShadow: '0 2px 8px rgba(44,62,80,0.10)',
