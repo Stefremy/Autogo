@@ -202,7 +202,7 @@ export default function Simulador() {
             const age = Date.now() - savedAt;
             if (age > SIMULADOR_FORM_TTL_MS) {
               // expired -> remove and fall through to default
-              try { localStorage.removeItem('simuladorISVForm'); } catch {}
+              try { localStorage.removeItem('simuladorISVForm'); } catch { }
             } else {
               return { ...defaultForm, ...savedForm };
             }
@@ -211,7 +211,7 @@ export default function Simulador() {
             return { ...defaultForm, ...savedForm };
           }
         }
-      } catch {}
+      } catch { }
     }
     return defaultForm;
   });
@@ -224,7 +224,7 @@ export default function Simulador() {
         if (typeof window !== "undefined") {
           try {
             localStorage.setItem("simuladorISVForm", JSON.stringify({ savedAt: Date.now(), ...updated }));
-          } catch {}
+          } catch { }
         }
         return updated;
       });
@@ -236,7 +236,7 @@ export default function Simulador() {
     if (typeof window !== "undefined") {
       try {
         localStorage.setItem("simuladorISVForm", JSON.stringify({ savedAt: Date.now(), ...form }));
-      } catch {}
+      } catch { }
     }
   }, [form]);
   const [erroData, setErroData] = useState<string | null>(null);
@@ -360,17 +360,17 @@ export default function Simulador() {
   const simuladorFaq = SEO_KEYWORDS?.simulador_isv?.faq;
   const simuladorFaqJsonLd: any = simuladorFaq
     ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: simuladorFaq.map((q) => ({
-          '@type': 'Question',
-          name: q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Use o simulador e consulte a nossa equipa para ajuda detalhada.',
-          },
-        })),
-      }
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: simuladorFaq.map((q) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use o simulador e consulte a nossa equipa para ajuda detalhada.',
+        },
+      })),
+    }
     : undefined;
 
   // HowTo JSON-LD to help Google understand usage steps
@@ -437,7 +437,7 @@ export default function Simulador() {
       <MainLayout>
         <Seo
           title={`Simulador ISV Portugal - Calcule o ISV de Importação em Segundos | AutoGo.pt`}
-          description={`Calcule o ISV em Portugal com o Simulador AutoGo.pt — estimativa rápida para carros novos, usados, híbridos e elétricos.`}
+          description={`Simulador ISV online gratuito AutoGo.pt – descubra em segundos quanto paga de imposto sobre veículos na importação ou compra em Portugal, com resultados simples e transparentes.`}
           url={`https://autogo.pt/simulador`}
           keywords={joinKeywords(SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS)}
           jsonLd={combinedJsonLd}
@@ -463,8 +463,8 @@ export default function Simulador() {
                 {t(
                   "O nosso simulador de ISV (Imposto Sobre Veículos) é a ferramenta mais prática e fiável para calcular o custo de legalização de um veículo importado.",
                 )}
-                 <br />
-               </p>
+                <br />
+              </p>
               {/* Visible FAQ block to match JSON-LD */}
               <div className="w-full mt-4">
                 <details className="mb-2 p-3 bg-white rounded-lg border">
