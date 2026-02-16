@@ -11,7 +11,7 @@ export interface Car {
     price: number;
     priceDisplay?: string;
     image: string;
-    description: string;
+    description?: string;
     mileage: number | null;
     country: string;
     status?: CarStatus | null | '';

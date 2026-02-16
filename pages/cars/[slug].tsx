@@ -27,7 +27,7 @@ import jsPDF from "jspdf";
 import Head from "next/head";
 import Layout from "../../components/MainLayout";
 import Seo from '../../components/Seo';
-import carsData from "../../data/cars.json";
+// carsData import removed (now loaded server-side only in getStaticProps)
 import type { Car, MaintenanceItem } from '../../types/car.d';
 import MakeLogo from "../../components/MakeLogo";
 import { SITE_WIDE_KEYWORDS, joinKeywords } from "../../utils/seoKeywords";
@@ -51,6 +51,42 @@ export async function getStaticPaths() {
   };
 }
 
+// Helper to compute similar cars (moved from component to module scope for SSG usage)
+function computeSimilarCars(target: any, pool: any[], maxResults = 8): any[] {
+  if (!target) return [];
+  const parseNum = (v?: any) => {
+    if (v == null) return NaN;
+    const s = String(v).replace(/[,\.\s]/g, '').replace(/[^\d]/g, '');
+    const n = Number(s);
+    return Number.isFinite(n) ? n : NaN;
+  };
+
+  const tPower = parseNum(target.power);
+  const tEngine = parseNum(target.engineSize);
+
+  return pool
+    .filter((c) => String(c.id) !== String(target.id))
+    .map((c) => {
+      let score = 0;
+      if (c.make && target.make && c.make === target.make) score += 100;
+      if (c.fuel && target.fuel && c.fuel === target.fuel) score += 40;
+      const p = parseNum(c.power);
+      if (!Number.isNaN(p) && !Number.isNaN(tPower)) {
+        const diff = Math.abs(p - tPower);
+        score += Math.max(0, 30 - Math.min(diff, 30));
+      }
+      const e = parseNum(c.engineSize);
+      if (!Number.isNaN(e) && !Number.isNaN(tEngine)) {
+        const diff = Math.abs(e - tEngine);
+        score += Math.max(0, 20 - Math.min(diff, 20));
+      }
+      return { c, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, maxResults)
+    .map((s) => s.c);
+}
+
 export async function getStaticProps({ params, locale }: { params: any; locale?: string }) {
   const slug = params?.slug;
   const cars = (await import("../../data/cars.json")).default as any[];
@@ -59,6 +95,24 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
   if (!car) {
     return { notFound: true };
   }
+
+  // Compute similar cars server-side
+  const similarCarsFull = computeSimilarCars(car, cars);
+  // Map similar cars to lightweight structure (same as viaturas)
+  const similarCars = similarCarsFull.map(c => ({
+    id: c.id,
+    make: c.make,
+    model: c.model,
+    price: c.price,
+    priceDisplay: c.priceDisplay || null,
+    year: c.year,
+    mileage: c.mileage,
+    slug: c.slug,
+    country: c.country,
+    status: c.status || null,
+    image: c.image || null,
+    images: Array.isArray(c.images) ? c.images.slice(0, 5) : [],
+  }));
 
   // Local numeric coercion (avoid depending on module-level helpers here to keep getStaticProps self-contained)
   // UPDATED: Using shared utility for consistency
@@ -136,8 +190,9 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
   return {
     props: {
       ...(await serverSideTranslations(locale || "pt-PT", ["common"])),
-      // minimal props: id for client use, plus SEO metadata and vehicle JSON-LD computed server-side
-      carId: car.id,
+      // Pass full car object and similar cars (lightweight)
+      car,
+      similarCars,
       detailKeywords,
       vehicleJson,
     },
@@ -173,13 +228,14 @@ function fmtNumberForMeta(v: any) {
 }
 
 type Props = {
+  car: Car;
+  similarCars: Car[];
   detailKeywords: string;
   vehicleJson: any;
 };
 
-export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
+export default function CarDetail({ car, similarCars, detailKeywords, vehicleJson }: Props) {
   const router = useRouter();
-  const { slug } = router.query;
 
   // Always call hooks unconditionally
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -440,13 +496,14 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
   // provided by getStaticProps as a stable fallback) so React hooks remain in the same order
   // across renders; this prevents conditional hook invocation during client-side navigation.
 
-  // Allow accessing car by numeric id or by human-friendly slug (case-insensitive)
-  const requested = String(slug).toLowerCase();
-  // We assert non-null here with `!` to satisfy TypeScript - there's an
-  // immediate runtime guard below that returns a 404 when `car` is missing,
-  // so this assertion is safe and prevents many 'possibly undefined' warnings
-  // in the JSX and event handlers.
-  const car = (carsData as Car[]).find((c) => String(c.id) === requested || (c.slug && c.slug.toLowerCase() === requested))!;
+  // car and similarCars are now passed as props from getStaticProps
+  if (!car) {
+    return (
+      <Layout>
+        <div className="p-8">Car not found.</div>
+      </Layout>
+    );
+  }
 
   // Client-side image normalization (mirror server-side logic but safe for client runtime)
   const siteOriginClient = process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt';
@@ -490,56 +547,9 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
     car?.engineSize && car.engineSize.includes("1.2") && "Motor premiado pela eficiência na Europa.",
     car?.fuel && car.fuel === "Gasolina" && "ISV reduzido devido às baixas emissões.",
   ].filter(Boolean);
-  // Compute similar cars deterministically without using React hooks.
-  // Placed before the early return so hook call order remains stable.
-  function computeSimilarCars(target: Car | null, pool: Car[], maxResults = 8): Car[] {
-    if (!target) return [];
-    const parseNum = (v?: any) => {
-      if (v == null) return NaN;
-      // remove common non-digit characters then parse
-      const s = String(v).replace(/[,\.\s]/g, '').replace(/[^\d]/g, '');
-      const n = Number(s);
-      return Number.isFinite(n) ? n : NaN;
-    };
-
-    const tPower = parseNum(target.power);
-    const tEngine = parseNum(target.engineSize);
-
-    return pool
-      .filter((c) => String(c.id) !== String(target.id))
-      .map((c) => {
-        let score = 0;
-        if (c.make && target.make && c.make === target.make) score += 100;
-        if (c.fuel && target.fuel && c.fuel === target.fuel) score += 40;
-        const p = parseNum(c.power);
-        if (!Number.isNaN(p) && !Number.isNaN(tPower)) {
-          const diff = Math.abs(p - tPower);
-          score += Math.max(0, 30 - Math.min(diff, 30));
-        }
-        const e = parseNum(c.engineSize);
-        if (!Number.isNaN(e) && !Number.isNaN(tEngine)) {
-          const diff = Math.abs(e - tEngine);
-          score += Math.max(0, 20 - Math.min(diff, 20));
-        }
-        return { c, score };
-      })
-      .sort((a, b) => b.score - a.score)
-      .slice(0, maxResults)
-      .map((s) => s.c);
-  }
-
-  if (!car) {
-    return (
-      <Layout>
-        <div className="p-8">Car not found.</div>
-      </Layout>
-    );
-  }
-
-  // Find similar cars (show all except current)
-  const similarCars = computeSimilarCars(car, carsData as Car[]);
 
   // meta keywords are computed server-side and passed via props (detailKeywords)
+
   // (previous client-side computation removed to avoid duplication)
 
   // Download PDF handler
@@ -1658,10 +1668,10 @@ export default function CarDetail({ detailKeywords, vehicleJson }: Props) {
         </footer>
       </div>
       <Seo
-        title={car ? `${car.make} ${car.model} importado europeu à venda em Portugal | AutoGo.pt` : 'Carro importado europeu à venda | AutoGo.pt'}
+        title={car ? `${car.year} ${car.make} ${car.model} Importado | €${fmtNumberForMeta(car.price)} | AutoGo.pt` : 'Carro importado europeu à venda | AutoGo.pt'}
         description={
           car
-            ? `${car.make} ${car.model} — €${fmtNumberForMeta(car.price)} — ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })} km. Comprar carro importado europeu em AutoGo.pt.`
+            ? `${car.make} ${car.model} ${car.year} importado da ${car.origin || 'Europa'}, ${fmtNumber(car.mileage, { minimumFractionDigits: 0 })}km, €${fmtNumberForMeta(car.price)}. ISV e legalização incluídos. ${car.fuel} ${car.gearboxType || car.transmission}. Entrega Portugal. Ver!`
             : 'Carro importado europeu à venda em AutoGo.pt'
         }
         url={vehicleJson?.url ?? `${process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt'}/cars/${car.slug || car.id}`}

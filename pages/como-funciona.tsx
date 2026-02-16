@@ -59,8 +59,8 @@ export default function ComoFunciona() {
   return (
     <Layout>
       <Seo
-        title="Como funciona a AutoGo.pt | Importação e legalização de viaturas"
-        description="Guia AutoGo.pt: veja como funciona a importação de carros, com pesquisa, inspeção, transporte e legalização tratados pela nossa equipa especializada."
+        title="Como Funciona | Importação Chave na Mão Completa | AutoGo"
+        description="Importação chave na mão em 3-6 semanas: escolha o carro, simule ISV, receba legalizado em Portugal. Acompanhamento total, zero surpresas. Guimarães."
         url="https://autogo.pt/como-funciona"
         keywords={joinKeywords(SITE_WIDE_KEYWORDS, COMO_FUNCIONA_KEYWORDS)}
         jsonLd={combinedJsonLd}

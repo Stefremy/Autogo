@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import FrInput from "./FrInput";
 
 const TABELA_CILINDRADA_A = [
   { min: 0, max: 1000, taxa: 1.09, abate: 849.03 },
@@ -272,19 +273,14 @@ export default function SimuladorTabela() {
         </div>
 
         {form.combustivel !== 'eletrico' && (
-          <div className="flex flex-col gap-1">
-            <label className="font-semibold text-[#b42121]">
-              Cilindrada (cm³)
-            </label>
-            <input
-              name="cilindrada"
-              type="number"
-              value={form.cilindrada}
-              onChange={handleChange}
-              required={form.combustivel !== 'eletrico'}
-              className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
-            />
-          </div>
+          <FrInput
+            label="Cilindrada (cm³)"
+            name="cilindrada"
+            type="number"
+            value={form.cilindrada}
+            onChange={handleChange}
+            required={form.combustivel !== 'eletrico'}
+          />
         )}
         {form.tipo === "passageiro" && (
           <>
@@ -304,19 +300,14 @@ export default function SimuladorTabela() {
                     <option value="nedc">NEDC</option>
                   </select>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <label className="font-semibold text-[#b42121]">
-                    Emissões CO₂ (g/km)
-                  </label>
-                  <input
-                    name="co2"
-                    type="number"
-                    value={form.co2}
-                    onChange={handleChange}
-                    required={form.combustivel !== 'eletrico'}
-                    className="rounded-xl border border-[#b42121]/20 px-3 py-2 sm:px-4 sm:py-2 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
-                  />
-                </div>
+                <FrInput
+                  label="Emissões CO₂ (g/km)"
+                  name="co2"
+                  type="number"
+                  value={form.co2}
+                  onChange={handleChange}
+                  required={form.combustivel !== 'eletrico'}
+                />
               </>
             )}
           </>
@@ -370,14 +361,15 @@ export default function SimuladorTabela() {
                 </option>
               ))}
             </select>
-            <input
+            <FrInput
+              label=""
               name="ano"
               type="number"
               min="1970"
               max="2025"
               value={form.ano}
               onChange={handleChange}
-              className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+              className="w-1/3"
               required
               placeholder="Ano"
             />

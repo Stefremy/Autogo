@@ -78,7 +78,7 @@ export default function Blog({ posts }) {
       />
       <div className="min-h-screen w-full flex flex-col overflow-x-hidden relative">
         <img
-          src="/images/japans-car-magazines.jpg"
+          src="/images/japans-car-magazines.webp"
           alt="Fundo Blog"
           className="pointer-events-none select-none fixed inset-0 w-full h-full object-cover opacity-60 z-0 transition-all duration-700"
           style={{ objectPosition: "center top", filter: "blur(0.5px)" }}

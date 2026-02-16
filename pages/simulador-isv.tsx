@@ -437,9 +437,9 @@ export default function Simulador() {
     <>
       <MainLayout>
         <Seo
-          title={`Simulador ISV Portugal - Calcule o ISV de Importação em Segundos | AutoGo.pt`}
-          description={`Simulador ISV online gratuito AutoGo.pt – descubra em segundos quanto paga de imposto sobre veículos na importação ou compra em Portugal, com resultados simples e transparentes.`}
-          url={`https://autogo.pt/simulador`}
+          title={`Simulador ISV 2026 GRÁTIS Portugal | Resultado Instantâneo`}
+          description={`Calcule o ISV em segundos com o simulador mais preciso de Portugal. Grátis, sem registo, atualizado 2026. Carros novos, usados e elétricos. AutoGo.pt`}
+          url={`https://autogo.pt/simulador-isv`}
           keywords={joinKeywords(SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS)}
           jsonLd={combinedJsonLd}
         />
@@ -566,7 +566,7 @@ export default function Simulador() {
                   alt="AutoGo Logo"
                   width={128}
                   height={128}
-                  className={`w-32 h-32 object-contain mx-auto drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg transition-transform duration-700 ${logoAnim ? "animate-spin-slow" : ""}`}
+                  className={`w-32 h-32 mx-auto drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg transition-transform duration-700 overflow-hidden p-6 flex items-center justify-center ${logoAnim ? "animate-spin-slow" : ""}`}
                 />
               </button>
               <div

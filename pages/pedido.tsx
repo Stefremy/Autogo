@@ -64,8 +64,8 @@ export default function Pedido() {
   return (
     <Layout>
       <Seo
-        title="Encomendar viatura importada | AutoGo.pt"
-        description="Peça a importação da sua próxima viatura com a AutoGo.pt. Indique o carro desejado e tratamos da pesquisa, negociação, transporte e legalização por si."
+        title="Pedir Importação | Proposta Gratuita em 24h | AutoGo.pt"
+        description="Peça proposta GRATUITA de importação em 24h. Indicamos o carro ideal, negociamos preço, tratamos legalização. Processo transparente, zero risco."
         url="https://autogo.pt/pedido"
         keywords={joinKeywords(SITE_WIDE_KEYWORDS)}
       />
@@ -128,7 +128,7 @@ export default function Pedido() {
       />
       <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col overflow-x-hidden relative">
         <img
-          src="/images/pedido-fundo.jpg"
+          src="/images/pedido-fundo.webp"
           alt="Fundo"
           className="pointer-events-none select-none fixed inset-0 w-full h-full object-cover opacity-60 z-0 transition-all duration-700"
           style={{ objectPosition: "center top", filter: "blur(0.5px)" }}

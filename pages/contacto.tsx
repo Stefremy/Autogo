@@ -11,8 +11,8 @@ export default function Contacto() {
   return (
     <Layout>
       <Seo
-        title={`Contacto AutoGo.pt | Fale connosco`}
-        description={`Contacte a AutoGo.pt para importar o seu carro ou esclarecer dúvidas. Estamos disponíveis por email, telefone e WhatsApp.`}
+        title={`Contacto AutoGo Guimarães | +351 935 179 591 | Importação Automovél`}
+        description={`AutoGo Guimarães: +351 935 179 591 | WhatsApp disponível. Tire dúvidas sobre importação, ISV e stock. Atendimento personalizado, resposta em 24h.`}
         url={`https://autogo.pt/contacto`}
         keywords={joinKeywords(SITE_WIDE_KEYWORDS)}
       />
@@ -75,7 +75,7 @@ export default function Contacto() {
       />
       <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col overflow-x-hidden relative">
         <img
-          src="/images/audi-scotland.jpg"
+          src="/images/audi-scotland.webp"
           alt="Fundo"
           className="pointer-events-none select-none fixed inset-0 w-screen h-screen object-cover opacity-60 z-0 transition-all duration-700"
           style={{ objectPosition: "center top", filter: "blur(0.5px)" }}

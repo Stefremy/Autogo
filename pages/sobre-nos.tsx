@@ -8,8 +8,8 @@ export default function SobreNos() {
   return (
     <MainLayout>
       <Seo
-        title={`Sobre a AutoGo.pt | Importação de viaturas`}
-        description={`AutoGo.pt importa e legaliza viaturas europeias para Portugal. Conheça a equipa e o serviço completo: pesquisa, compra, transporte e matrícula.`}
+        title={`Sobre a AutoGo.pt | Especialistas Importação Portugal, Guimarães`}
+        description={`AutoGo.pt, especialista em importação e legalização de viaturas europeias . Equipa dedicada em Guimarães. Serviço completo, 100% transparente.`}
         url={`https://autogo.pt/sobre-nos`}
         keywords={joinKeywords(SITE_WIDE_KEYWORDS, ABOUT_KEYWORDS)}
       />

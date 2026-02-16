@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { Car } from '../types/car';
 import MakeLogo from './MakeLogo';
 import { formatPriceDisplay } from '../utils/formatPrice';
+import OptimizedImage from './OptimizedImage';
 
 // Define status constants to avoid magic strings
 const STATUS_LABELS = {
@@ -68,12 +69,14 @@ export default function ViaturasGrid({ cars, styles, onCarClick }: ViaturasGridP
                                         if (modal) modal.showModal();
                                     }}
                                 >
-                                    <img
+                                    <OptimizedImage
                                         src={String(mainImg)}
-                                        loading="lazy"
+                                        priority={idx < 4} // Eager load first row
                                         alt={`${car.make} ${car.model} foto principal`}
                                         className={styles["premium-car-image"]}
-                                        style={{ width: '100%', height: undefined }}
+                                        width={400}
+                                        height={300}
+                                        style={{ width: '100%', height: 'auto', objectFit: 'cover', aspectRatio: '4/3' }}
                                     />
                                 </button>
                             );
@@ -84,25 +87,27 @@ export default function ViaturasGrid({ cars, styles, onCarClick }: ViaturasGridP
                     <div className="w-full h-44 mb-4 flex gap-2 overflow-x-auto scrollbar-thin scrollbar-thumb-[#b42121]/60 scrollbar-track-gray-200 bg-transparent md:hidden">
                         {(() => {
                             const imgs = (car.images || (car.image ? [car.image] : [])).slice(0, 5);
-                            return imgs.map((img, idx) => {
+                            return imgs.map((img, imgIdx) => {
                                 const thumbSrc = Array.isArray(img) ? String(img[0]) : String(img);
                                 return (
                                     <button
-                                        key={idx}
+                                        key={imgIdx}
                                         type="button"
-                                        className="focus:outline-none"
+                                        className="focus:outline-none flex-shrink-0"
                                         onClick={() => {
-                                            const modalId = `modal-img-${car.id}-${idx}`;
+                                            const modalId = `modal-img-${car.id}-${imgIdx}`;
                                             const modal = document.getElementById(modalId) as HTMLDialogElement | null;
                                             if (modal) modal.showModal();
                                         }}
                                     >
-                                        <img
+                                        <OptimizedImage
                                             src={thumbSrc}
-                                            loading="lazy"
-                                            alt={`${car.make} ${car.model} foto ${idx + 1}`}
+                                            priority={idx < 2 && imgIdx === 0} // Eager load first mobile item
+                                            alt={`${car.make} ${car.model} foto ${imgIdx + 1}`}
                                             className={styles["premium-car-image"]}
-                                            style={{ minWidth: "11rem" }}
+                                            width={300}
+                                            height={200}
+                                            style={{ minWidth: "11rem", height: "100%", objectFit: 'cover' }}
                                         />
                                     </button>
                                 );
@@ -115,13 +120,16 @@ export default function ViaturasGrid({ cars, styles, onCarClick }: ViaturasGridP
               but preserving existing logic for now means keeping dialogs here. */}
                     {(() => {
                         const imgs = (car.images || (car.image ? [car.image] : [])).slice(0, 5);
-                        return imgs.map((img, idx) => (
+                        return imgs.map((img, imgIdx) => (
                             <dialog
-                                key={idx}
-                                id={`modal-img-${car.id}-${idx}`}
+                                key={imgIdx}
+                                id={`modal-img-${car.id}-${imgIdx}`}
                                 className="backdrop:bg-black/70 rounded-xl p-0 border-none max-w-3xl w-full"
+                                onClick={(e) => {
+                                    if (e.target === e.currentTarget) (e.currentTarget as HTMLDialogElement).close();
+                                }}
                             >
-                                <div className="flex flex-col items-center">
+                                <div className="flex flex-col items-center bg-transparent">
                                     <img
                                         src={String(img)}
                                         loading="lazy"

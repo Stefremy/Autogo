@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import SimuladorTabela from "../components/SimuladorTabela";
 import styles from "../components/PremiumCarCard.module.css";
-import cars from "../data/cars.json";
+// cars.json import removed to reduce bundle size
 import MainLayout from "../components/MainLayout";
 import MakeLogo from "../components/MakeLogo";
 import { VIATURAS_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
@@ -18,7 +18,7 @@ import ViaturasFilterBar from "../components/ViaturasFilterBar";
 import ViaturasGrid from "../components/ViaturasGrid";
 import { Car } from "../types/car";
 
-export default function Viaturas() {
+export default function Viaturas({ cars = [] }: { cars: Car[] }) {
   const router = useRouter();
   const { t } = useTranslation("common");
   const [marca, setMarca] = useState("");
@@ -472,8 +472,8 @@ export default function Viaturas() {
   return (
     <>
       <Seo
-        title={`Carros Importados e Carros Usados - BMW, Audi, Mercedes à venda em Portugal | AutoGo.pt`}
-        description={`Carros importados e carros usados europeus em Portugal. BMW, Mercedes, Audi, Peugeot com os melhores preços. Importação completa com ISV, transporte e legalização pela AutoGo.pt.`}
+        title={`Carros Importados BMW, Mercedes, Audi Portugal | AutoGo.pt`}
+        description={`Stock de BMW, Mercedes, Audi importados e legalizados. Poupe até 8.000€ vs mercado nacional. ISV incluído, entrega em todo país. Ver disponíveis!`}
         url={`https://autogo.pt/viaturas`}
         image={`https://autogo.pt/images/auto-logo.webp`}
         keywords={joinKeywords(SITE_WIDE_KEYWORDS, VIATURAS_KEYWORDS)}
@@ -845,9 +845,32 @@ export default function Viaturas() {
 }
 
 export async function getStaticProps({ locale }) {
+  // Load cars data server-side only
+  // We use require here to avoid bundling the large JSON on the client
+  const carsData = require('../data/cars.json');
+
+  // Map to lightweight structure for list view
+  const lightCars = carsData.map(car => ({
+    id: car.id,
+    make: car.make,
+    model: car.model,
+    price: car.price,
+    priceDisplay: car.priceDisplay || null,
+    year: car.year,
+    month: car.month || null,
+    mileage: car.mileage,
+    slug: car.slug,
+    country: car.country,
+    status: car.status || null,
+    image: car.image || null,
+    // Only send first 5 images for thumbnails to save bandwidth
+    images: Array.isArray(car.images) ? car.images.slice(0, 5) : [],
+  }));
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
+      cars: lightCars,
     },
   };
 }

@@ -246,8 +246,8 @@ export default function Home({ blogArticles }) {
       <MainLayout>
         {/* Add your content here */}
         <Seo
-          title="Carros Importados e Carros Usados - Simulador ISV | AutoGo.pt"
-          description="Carros importados e carros usados com os melhores preços. AutoGo.pt — simulador ISV gratuito, importação completa de viaturas da Europa. BMW, Mercedes, Audi com ISV, transporte e legalização incluídos."
+          title="Importação de Carros | BMW, Mercedes, Audi + Simulador ISV | AutoGo.pt"
+          description="Poupe até 7000€ ao importar com AutoGo. BMW, Mercedes, Audi da Europa, preço chave na mão com ISV incluído. SIMULADOR ISV GRÁTIS, Guimarães, Portugal."
           url="https://autogo.pt/"
           image="https://autogo.pt/images/auto-logo.webp"
           keywords={seoKeywords}
