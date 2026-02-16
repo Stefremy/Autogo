@@ -1106,7 +1106,7 @@ export default function CarDetail({ car, similarCars, detailKeywords, vehicleJso
               </div>
               {/* Main image (first image) */}
               <img
-                src={displayedImages[0] || '/images/giulia-2024.jpg'}
+                src={displayedImages[0] || '/images/giulia-2024.webp'}
                 alt={car.make + " " + car.model}
                 width={1200}
                 height={720}
@@ -1179,7 +1179,7 @@ export default function CarDetail({ car, similarCars, detailKeywords, vehicleJso
               <Lightbox
                 open={lightboxOpen}
                 close={() => setLightboxOpen(false)}
-                slides={(displayedImages.length ? displayedImages : ["/images/giulia-2024.jpg"]).map((img) => ({
+                slides={(displayedImages.length ? displayedImages : ["/images/giulia-2024.webp"]).map((img) => ({
                   src: img,
                 }))}
                 index={lightboxIndex}
