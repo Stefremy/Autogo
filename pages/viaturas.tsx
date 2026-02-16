@@ -844,33 +844,45 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
   );
 }
 
-export async function getStaticProps({ locale }) {
-  // Load cars data server-side only
-  // We use require here to avoid bundling the large JSON on the client
-  const carsData = require('../data/cars.json');
+export async function getStaticProps(context) {
+  try {
+    const locale = context.locale || context.defaultLocale || 'pt';
 
-  // Map to lightweight structure for list view
-  const lightCars = carsData.map(car => ({
-    id: car.id,
-    make: car.make,
-    model: car.model,
-    price: car.price,
-    priceDisplay: car.priceDisplay || null,
-    year: car.year,
-    month: car.month || null,
-    mileage: car.mileage,
-    slug: car.slug,
-    country: car.country,
-    status: car.status || null,
-    image: car.image || null,
-    // Only send first 5 images for thumbnails to save bandwidth
-    images: Array.isArray(car.images) ? car.images.slice(0, 5) : [],
-  }));
+    // Load cars data server-side only
+    // We use require here to avoid bundling the large JSON on the client
+    const carsData = require('../data/cars.json');
 
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-      cars: lightCars,
-    },
-  };
+    // Map to lightweight structure for list view
+    const lightCars = carsData.map(car => ({
+      id: car.id,
+      make: car.make,
+      model: car.model,
+      price: car.price,
+      priceDisplay: car.priceDisplay || null,
+      year: car.year,
+      month: car.month || null,
+      mileage: car.mileage,
+      slug: car.slug,
+      country: car.country,
+      status: car.status || null,
+      image: car.image || null,
+      // Only send first 5 images for thumbnails to save bandwidth
+      images: Array.isArray(car.images) ? car.images.slice(0, 5) : [],
+    }));
+
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common"])),
+        cars: lightCars,
+      },
+    };
+  } catch (error) {
+    console.error("Error in getStaticProps /viaturas:", error);
+    return {
+      props: {
+        cars: [], // fallback to empty list to avoid crashing
+        error: "Failed to load cars",
+      }
+    };
+  }
 }

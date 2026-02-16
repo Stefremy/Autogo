@@ -71,6 +71,8 @@ const nextConfig = {
       "ecarstrade.com",
       "www.greencarguide.co.uk",
       "www.activlease.nl",
+      "img-pa.auto1.com",
+      "ecarstrade.com",
     ],
   },
 

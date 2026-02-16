@@ -9,6 +9,18 @@ interface GoogleReviewsProps {
 export default function GoogleReviews({
     widgetId = 'd41fa191-d79b-43fe-8f75-90157772dbd7'
 }: GoogleReviewsProps) {
+    const [showWidget, setShowWidget] = React.useState(false);
+
+    React.useEffect(() => {
+        // Delay loading the heavy Elfsight script by 5 seconds
+        // This ensures TBT/LCP are not affected by this 3rd party script
+        const timer = setTimeout(() => {
+            setShowWidget(true);
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <section
             data-fullwidth
@@ -30,19 +42,22 @@ export default function GoogleReviews({
                 </motion.h2>
 
                 {/* Elfsight Widget Integration */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="mb-8"
-                >
-                    <Script
-                        src="https://elfsightcdn.com/platform.js"
-                        strategy="lazyOnload"
-                    />
-                    <div className={`elfsight-app-${widgetId}`} data-elfsight-app-lazy />
-                </motion.div>
+                <div className="min-h-[400px]"> {/* Placeholder height to prevent layout shift */}
+                    {showWidget && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="mb-8"
+                        >
+                            <Script
+                                src="https://elfsightcdn.com/platform.js"
+                                strategy="lazyOnload"
+                            />
+                            <div className={`elfsight-app-${widgetId}`} data-elfsight-app-lazy />
+                        </motion.div>
+                    )}
+                </div>
 
                 {/* Call-to-Action Button to View All Reviews */}
                 <motion.div

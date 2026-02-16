@@ -8,7 +8,7 @@ import matter from "gray-matter";
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from 'next/router';
 import MainLayout from "../components/MainLayout";
-import cars from "../data/cars.json";
+// cars.json import removed to avoid client bundling
 import OptimizedImage from "../components/OptimizedImage";
 import PremiumCarCard from "../components/PremiumCarCard";
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
@@ -25,6 +25,26 @@ const GoogleReviews = dynamic(() => import('../components/GoogleReviews'), {
 void useRef; void useEffect;
 
 export async function getServerSideProps({ locale }) {
+  // Load cars data server-side
+  const carsData = require('../data/cars.json');
+
+  // Filter featured cars (first 6 for homepage)
+  const featuredCars = carsData.slice(0, 6).map(car => ({
+    id: car.id,
+    make: car.make,
+    model: car.model,
+    price: car.price,
+    priceDisplay: car.priceDisplay || null,
+    image: car.image || null,
+    slug: car.slug,
+    year: car.year,
+    mileage: car.mileage,
+    fuel: car.fuel,
+    gearbox: car.gearbox,
+    status: car.status || null,
+    country: car.country || null,
+  }));
+
   // Fetch blog articles from markdown files
   const blogDir = path.join(process.cwd(), "data/blog"); // FIXED PATH
   const files = fs.readdirSync(blogDir).filter((f) => f.endsWith(".md"));
@@ -50,115 +70,46 @@ export async function getServerSideProps({ locale }) {
         link: `/blog/${filename.replace(/\.md$/, "")}`,
       };
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  // Compute filter data (Makes and Models map) to avoid sending full JSON to client
+  const uniqueMakes = Array.from(new Set(carsData.map(c => c.make))).filter(Boolean).sort();
+  const modelsByMake = {};
+  carsData.forEach(c => {
+    if (!c.make || !c.model) return;
+    if (!modelsByMake[c.make]) modelsByMake[c.make] = new Set();
+    modelsByMake[c.make].add(c.model);
+  });
+  // Convert Sets to Arrays
+  Object.keys(modelsByMake).forEach(k => {
+    modelsByMake[k] = Array.from(modelsByMake[k]).sort();
+  });
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
       blogArticles,
+      featuredCars,
+      filtersData: {
+        makes: uniqueMakes,
+        modelsByMake
+      }
     },
   };
 }
 
 
 
-export default function Home({ blogArticles }) {
+export default function Home({ blogArticles, featuredCars: serverFeaturedCars, filtersData }) {
   const { t } = useTranslation("common");
-  // State for filtered cars (used by listing)
-  const [_filteredCars, _setFilteredCars] = useState(cars);
+
   // Featured cars: persistent per visitor with click-priority
   const FEATURED_KEY = "autogo_featured_v1";
-  const CLICKED_KEY = "autogo_clicked_v1";
-  const FEATURED_TTL = 1000 * 60 * 60 * 24; // 24h
 
-  // initial deterministic fallback (prevents SSR/client mismatch)
-  const initialFeatured = cars.slice(0, Math.min(6, cars.length));
-  const [featuredCars, setFeaturedCars] = useState(initialFeatured);
-  // prefer bundled PNG icon for hand-over feature (from public/images/icons)
+  // Use server provided cars directly. 
+  // We removed the complex client-side persistence logic because it required the full "cars.json" bundle.
+  const [featuredCars, setFeaturedCars] = useState(serverFeaturedCars || []);
+
   const handIconPath = '/images/icons/hand-over.webp';
-
-  // shuffle helper
-  const shuffle = (arr) => {
-
-    const a = [...arr];
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  };
-
-  // on mount, try to load persisted featured or build one prioritizing clicked cars and pinned cars
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(FEATURED_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (parsed && parsed.ids && parsed.ts && Date.now() - parsed.ts < FEATURED_TTL) {
-          const preserved = parsed.ids.map((id) => cars.find((c) => c.id === id)).filter(Boolean);
-          if (preserved.length) {
-            setFeaturedCars(preserved);
-            return;
-          }
-        }
-      }
-    } catch { }
-
-    // otherwise build from pinned cars first, then clicked ids, then random fill
-    try {
-      // Pinned car IDs that should always be featured
-      const PINNED_CAR_IDS = ["6547363", "FS44936"]; // Kia XCeed, Hyundai IONIQ
-
-      let picked = [];
-
-      // 1. Always add pinned cars first
-      for (const pinnedId of PINNED_CAR_IDS) {
-        const pinnedCar = cars.find((c) => c.id === pinnedId);
-        if (pinnedCar && !picked.includes(pinnedCar)) {
-          picked.push(pinnedCar);
-        }
-      }
-
-      // 2. Then add recently clicked cars
-      const rawClicks = localStorage.getItem(CLICKED_KEY);
-      if (rawClicks) {
-        const parsed = JSON.parse(rawClicks) || [];
-        // keep only recent clicks (7d inside viaturas logic) and map to car objects
-        const recent = parsed.filter((it) => Date.now() - (it.ts || 0) < 1000 * 60 * 60 * 24 * 7).map((it) => it.id);
-        for (const id of recent) {
-          const c = cars.find((x) => x.id === id);
-          if (c && !picked.includes(c)) picked.push(c);
-          if (picked.length >= 6) break;
-        }
-      }
-
-      // 3. Fill remaining slots with random cars
-      if (picked.length < Math.min(6, cars.length)) {
-        const others = cars.filter((c) => !picked.some((p) => p.id === c.id));
-        const shuffled = shuffle(others).slice(0, Math.min(6 - picked.length, others.length));
-        picked = picked.concat(shuffled);
-      }
-      // persist ids
-      try {
-        const ids = picked.map((c) => c.id);
-        localStorage.setItem(FEATURED_KEY, JSON.stringify({ ids, ts: Date.now() }));
-      } catch { }
-      if (picked.length) setFeaturedCars(picked);
-    } catch {
-      // fallback already set
-    }
-  }, [FEATURED_TTL]);
-
-  // helper to force refresh featured selection for visitor
-  const _refreshFeaturedForVisitor = () => {
-    const others = shuffle(cars).slice(0, Math.min(6, cars.length));
-    try {
-      localStorage.setItem(FEATURED_KEY, JSON.stringify({ ids: others.map((c) => c.id), ts: Date.now() }));
-    } catch { }
-    setFeaturedCars(others);
-  };
-
-  // intentionally reference to avoid compiler unused warnings
-  void _filteredCars; void _setFilteredCars; void _refreshFeaturedForVisitor;
 
   // --- Hero filter state (minimal: Marca, Modelo, Ano, KM, Preço) ---
   const router = useRouter();
@@ -171,9 +122,10 @@ export default function Home({ blogArticles }) {
   });
   const [heroFilterOpen, setHeroFilterOpen] = useState(false);
 
-  const heroMakes = Array.from(new Set(cars.map((c) => c.make))).filter(Boolean).sort();
-  const heroModels = heroFilter.make
-    ? Array.from(new Set(cars.filter((c) => c.make === heroFilter.make).map((c) => c.model))).sort()
+  // Use pre-computed filter data from server
+  const heroMakes = filtersData?.makes || [];
+  const heroModels = (heroFilter.make && filtersData?.modelsByMake?.[heroFilter.make])
+    ? filtersData.modelsByMake[heroFilter.make]
     : [];
 
   const onHeroSearch = (e) => {

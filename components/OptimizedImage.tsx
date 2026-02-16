@@ -29,20 +29,31 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     // But strictly for the migration task, if we changed files on disk, we must pass the new path.
     // We will handle the path update at the usage site, so this component just renders what it's given.
 
+    // If src is missing/empty, use fallback or return nothing to avoid "src is missing" error
+    const validSrc = (src && src.trim().length > 0) ? src : fallbackSrc;
+    // If even fallback is invalid (unlikely), prevent crash
+    if (!validSrc) return null;
+
+    // If fill is used, we shouldn't set width/height on the wrapper or the image
+    // Next.js 'fill' mode forces absolute positioning + full width/height
+    const styleSpecs = props.fill
+        ? { objectFit: 'cover', ...props.style }
+        : { maxWidth: '100%', height: 'auto', ...props.style };
+
+    const wrapperStyle = props.fill
+        ? { display: 'block', width: '100%', height: '100%', ...props.style } // Ensure wrapper fills parent
+        : { width: props.width, height: props.height };
+
     return (
-        <div className={`relative ${className || ''}`} style={{ width: props.width, height: props.height }}>
+        <div className={`relative ${className || ''}`} style={wrapperStyle as any}>
             <Image
-                src={error ? fallbackSrc : src}
-                alt={alt}
+                src={error ? fallbackSrc : validSrc}
+                alt={alt || "Imagem"}
                 priority={priority}
                 quality={75}
                 onError={() => setError(true)}
                 {...props}
-                style={{
-                    maxWidth: '100%',
-                    height: 'auto',
-                    ...props.style
-                }}
+                style={styleSpecs as any}
             />
         </div>
     );

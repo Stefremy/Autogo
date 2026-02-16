@@ -94,7 +94,14 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             {statusLabels[status] || status}
           </span>
         )}
-        <img src={image} alt={name} className={styles["premium-car-image"]} />
+        <OptimizedImage
+          src={image}
+          alt={name}
+          className={styles["premium-car-image"]}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          loading="lazy"
+        />
         {country && (
           <OptimizedImage
             src={`/images/flags/${country.toLowerCase()}.webp`}

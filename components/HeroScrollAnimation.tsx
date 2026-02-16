@@ -10,7 +10,8 @@ interface HeroScrollAnimationProps {
     "data-fullwidth"?: boolean;
 }
 
-export default function HeroScrollAnimation({
+// Internal component containing the heavy logic
+function AnimatedHero({
     totalFrames = 192
 }: HeroScrollAnimationProps) {
     const router = useRouter();
@@ -344,4 +345,51 @@ export default function HeroScrollAnimation({
             </div>
         </div>
     );
+}
+
+export default function HeroScrollAnimation(props: HeroScrollAnimationProps) {
+    const [animationLoaded, setAnimationLoaded] = useState(false);
+    const staticImage = '/images/heroscroll/frameeleder.webp'; // Using existing poster
+
+    useEffect(() => {
+        // Only load animation after page is ready + delay
+        const timer = setTimeout(() => {
+            setAnimationLoaded(true);
+        }, 2000); // 2 seconds delay
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (!animationLoaded) {
+        // Show static first frame/poster while waiting
+        return (
+            <div
+                className="relative w-screen bg-black overflow-visible"
+                style={{
+                    height: '100vh',
+                    marginLeft: 'calc(-50vw + 50%)',
+                    marginRight: 'calc(-50vw + 50%)'
+                }}
+            >
+                <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black z-0">
+                    <img
+                        src={staticImage}
+                        alt="AutoGo Hero"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{
+                            objectPosition: 'center',
+                            zIndex: 10
+                        }}
+                        fetchPriority="high"
+                        loading="eager"
+                    />
+                    {/* Overlay to ensure text readability if we decide to show text later, or just match visual style */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 pointer-events-none" />
+                </div>
+            </div>
+        );
+    }
+
+    // Load full animation component after delay
+    return <AnimatedHero {...props} />;
 }
