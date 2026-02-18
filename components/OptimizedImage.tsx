@@ -38,11 +38,12 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     // Next.js 'fill' mode forces absolute positioning + full width/height
     const styleSpecs = props.fill
         ? { objectFit: 'cover', ...props.style }
-        : { maxWidth: '100%', height: 'auto', ...props.style };
+        : { width: '100%', height: 'auto', ...props.style };
 
     const wrapperStyle = props.fill
-        ? { display: 'block', width: '100%', height: '100%', ...props.style } // Ensure wrapper fills parent
-        : { width: props.width, height: props.height, maxWidth: '100%' };
+        ? { display: 'block', width: '100%', height: '100%', ...props.style }
+        // Non-fill: let the className drive sizing (aspect-ratio via CSS), don't hard-code height
+        : { display: 'block', width: '100%' };
 
     return (
         <div className={`relative ${className || ''}`} style={wrapperStyle as any}>

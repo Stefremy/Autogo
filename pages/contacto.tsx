@@ -4,17 +4,17 @@ import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
 import ContactForm from "../components/ContactForm";
 import Seo from "../components/Seo";
-import { SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import { SITE_WIDE_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Contacto() {
   const { t } = useTranslation("common");
   return (
     <Layout>
       <Seo
-        title={`Contacto AutoGo Guimarães | +351 935 179 591 | Importação Automovél`}
-        description={`AutoGo Guimarães: +351 935 179 591 | WhatsApp disponível. Tire dúvidas sobre importação, ISV e stock. Atendimento personalizado, resposta em 24h.`}
+        title={SEO_KEYWORDS.contacto.title ?? 'Contacto | AutoGo.pt'}
+        description={SEO_KEYWORDS.contacto.description ?? ''}
         url={`https://autogo.pt/contacto`}
-        keywords={joinKeywords(SITE_WIDE_KEYWORDS)}
+        keywords={joinKeywords(SEO_KEYWORDS.contacto.keywords ?? [], SITE_WIDE_KEYWORDS)}
       />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div

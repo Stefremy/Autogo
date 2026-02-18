@@ -1,17 +1,17 @@
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
-import { ABOUT_KEYWORDS, joinKeywords, SITE_WIDE_KEYWORDS } from "../utils/seoKeywords";
+import { ABOUT_KEYWORDS, SEO_KEYWORDS, joinKeywords, SITE_WIDE_KEYWORDS } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
 
 export default function SobreNos() {
   return (
     <MainLayout>
       <Seo
-        title={`Sobre a AutoGo.pt | Especialistas Importação Portugal, Guimarães`}
-        description={`AutoGo.pt, especialista em importação e legalização de viaturas europeias . Equipa dedicada em Guimarães. Serviço completo, 100% transparente.`}
+        title={SEO_KEYWORDS.sobre_nos.title ?? 'Sobre a AutoGo.pt'}
+        description={SEO_KEYWORDS.sobre_nos.description ?? ''}
         url={`https://autogo.pt/sobre-nos`}
-        keywords={joinKeywords(SITE_WIDE_KEYWORDS, ABOUT_KEYWORDS)}
+        keywords={joinKeywords(SEO_KEYWORDS.sobre_nos.keywords ?? [], SITE_WIDE_KEYWORDS, ABOUT_KEYWORDS)}
       />
       <div>
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}

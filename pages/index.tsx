@@ -1,23 +1,24 @@
 import fs from "fs";
 import path from "path";
+import dynamic from 'next/dynamic';
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import matter from "gray-matter";
 import React, { useState, useRef, useEffect } from "react";
-import { useRouter } from 'next/router';
 import MainLayout from "../components/MainLayout";
 // cars.json import removed to avoid client bundling
-import OptimizedImage from "../components/OptimizedImage";
-import PremiumCarCard from "../components/PremiumCarCard";
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
 import { CAR_IMPORT_GEO_DATA, generateGEOFAQSchema, generateGEOHowToSchema } from "../utils/geoOptimization";
 import HeroScrollAnimation from "../components/HeroScrollAnimation";
-import dynamic from 'next/dynamic';
 
 const GoogleReviews = dynamic(() => import('../components/GoogleReviews'), {
+  ssr: false,
+});
+
+const PremiumCarCard = dynamic(() => import('../components/PremiumCarCard'), {
   ssr: false,
 });
 
@@ -99,65 +100,14 @@ export async function getServerSideProps({ locale }) {
 
 
 
-export default function Home({ blogArticles, featuredCars: serverFeaturedCars, filtersData }) {
+export default function Home({ blogArticles, featuredCars: serverFeaturedCars }) {
   const { t } = useTranslation("common");
 
-  // Featured cars: persistent per visitor with click-priority
-  const FEATURED_KEY = "autogo_featured_v1";
-
-  // Use server provided cars directly. 
-  // We removed the complex client-side persistence logic because it required the full "cars.json" bundle.
-  const [featuredCars, setFeaturedCars] = useState(serverFeaturedCars || []);
+  // Use server provided cars directly.
+  const [featuredCars] = useState(serverFeaturedCars || []);
 
   const handIconPath = '/images/icons/hand-over.webp';
 
-  // --- Hero filter state (minimal: Marca, Modelo, Ano, KM, Preço) ---
-  const router = useRouter();
-  const [heroFilter, setHeroFilter] = useState({
-    make: "",
-    model: "",
-    year: "",
-    km: "",
-    price: "",
-  });
-  const [heroFilterOpen, setHeroFilterOpen] = useState(false);
-
-  // Use pre-computed filter data from server
-  const heroMakes = filtersData?.makes || [];
-  const heroModels = (heroFilter.make && filtersData?.modelsByMake?.[heroFilter.make])
-    ? filtersData.modelsByMake[heroFilter.make]
-    : [];
-
-  const onHeroSearch = (e) => {
-    e && e.preventDefault && e.preventDefault();
-    const q: any = {};
-    if (heroFilter.make) q.marca = heroFilter.make;
-    if (heroFilter.model) q.modelo = heroFilter.model;
-    if (heroFilter.year) q.ano = heroFilter.year;
-    if (heroFilter.km) q.km = heroFilter.km;
-    if (heroFilter.price) q.maxPrice = heroFilter.price;
-
-    // Persist to viaturas storage key so /viaturas picks it up on mount
-    try {
-      if (typeof window !== 'undefined') {
-        const toSave = {
-          marca: heroFilter.make || undefined,
-          modelo: heroFilter.model || undefined,
-          ano: heroFilter.year || undefined,
-          minPrice: undefined,
-          maxPrice: heroFilter.price || undefined,
-          km: heroFilter.km || undefined,
-          ts: Date.now(),
-        };
-        window.localStorage.setItem('viaturas_filters_v1', JSON.stringify(toSave));
-      }
-    } catch { }
-    // close mobile panel (if open) and navigate
-    try { setHeroFilterOpen(false); } catch { }
-    router.push({ pathname: '/viaturas', query: q });
-  };
-
-  const seoKeywords = joinKeywords(SITE_WIDE_KEYWORDS, HOME_KEYWORDS);
   // Build FAQ JSON-LD from SEO_KEYWORDS.home.faq when available
   const homeFaq = SEO_KEYWORDS?.home?.faq;
   const homeFaqJsonLd: any = homeFaq
@@ -198,11 +148,11 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars, f
       <MainLayout>
         {/* Add your content here */}
         <Seo
-          title="Importação de Carros | BMW, Mercedes, Audi + Simulador ISV | AutoGo.pt"
-          description="Poupe até 7000€ ao importar com AutoGo. BMW, Mercedes, Audi da Europa, preço chave na mão com ISV incluído. SIMULADOR ISV GRÁTIS, Guimarães, Portugal."
+          title={SEO_KEYWORDS.home.title ?? 'AutoGo.pt | Importação de Carros'}
+          description={SEO_KEYWORDS.home.description ?? ''}
           url="https://autogo.pt/"
           image="https://autogo.pt/images/auto-logo.webp"
-          keywords={seoKeywords}
+          keywords={joinKeywords(SEO_KEYWORDS.home.keywords ?? [], SITE_WIDE_KEYWORDS, HOME_KEYWORDS)}
           jsonLd={combinedJsonLd}
         />
 

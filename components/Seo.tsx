@@ -36,18 +36,43 @@ export default function Seo({
 }: SeoProps) {
   const finalKeywords = keywords || joinKeywords(SITE_WIDE_KEYWORDS);
   const finalImage = image || 'https://autogo.pt/images/auto-logo.png';
-  const siteOrigin = process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt';
-  const finalUrl = url || siteOrigin || 'https://autogo.pt/';
+  const siteOrigin = (process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt').replace(/\/+$/, '');
+  const finalUrl = url || `${siteOrigin}/`;
 
-  // Build hreflang alternates from configured locales
-  const alternates = configuredLocales.length
-    ? configuredLocales.map((loc) => {
-        // Normalize locale folder to hreflang value
-        const hreflang = loc === 'pt-PT' ? 'pt-PT' : loc;
-        const href = loc === 'pt-PT' ? `${siteOrigin}/` : `${siteOrigin}/${loc.replace('_', '-')}/`;
-        return { hreflang, href };
-      })
-    : [];
+  // Extract just the path+query from finalUrl so we can build locale-aware alternates
+  // that point to the SAME page path, not always the homepage.
+  const getPagePath = (): string => {
+    try {
+      const u = new URL(finalUrl);
+      return u.pathname + u.search;
+    } catch {
+      return '/';
+    }
+  };
+  const pagePath = getPagePath();
+
+  // Build hreflang alternates: each locale points to the same page path under its prefix.
+  // pt-PT is the canonical/default, served at the root (no locale prefix).
+  // Other locales are served under /<locale>/<path>.
+  const alternates: { hreflang: string; href: string }[] = [];
+  if (configuredLocales.length) {
+    for (const loc of configuredLocales) {
+      if (loc === 'pt-PT') {
+        // Default locale: no prefix, page lives at root path
+        alternates.push({ hreflang: 'pt-PT', href: `${siteOrigin}${pagePath}` });
+      } else {
+        // Other locales: prefixed with locale code
+        const locPrefix = loc.replace('_', '-').toLowerCase();
+        // Avoid double slash when pagePath is just '/'
+        const locHref = pagePath === '/'
+          ? `${siteOrigin}/${locPrefix}/`
+          : `${siteOrigin}/${locPrefix}${pagePath}`;
+        alternates.push({ hreflang: loc, href: locHref });
+      }
+    }
+    // x-default always points to the pt-PT (canonical) version
+    alternates.push({ hreflang: 'x-default', href: `${siteOrigin}${pagePath}` });
+  }
 
   return (
     <Head>
@@ -59,7 +84,7 @@ export default function Seo({
       {/* Canonical */}
       <link rel="canonical" href={finalUrl} />
 
-      {/* hreflang alternates */}
+      {/* hreflang alternates — same page path per locale + x-default */}
       {alternates.map((a) => (
         <link key={a.hreflang} rel="alternate" hrefLang={a.hreflang} href={a.href} />
       ))}

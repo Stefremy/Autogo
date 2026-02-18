@@ -3,7 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Layout from "../components/MainLayout";
 import Seo from "../components/Seo";
-import { COMO_FUNCIONA_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import { COMO_FUNCIONA_KEYWORDS, SITE_WIDE_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import { generateGEOHowToSchema, CAR_IMPORT_GEO_DATA } from "../utils/geoOptimization";
 
 export default function ComoFunciona() {
@@ -59,10 +59,10 @@ export default function ComoFunciona() {
   return (
     <Layout>
       <Seo
-        title="Como Funciona | Importação Chave na Mão Completa | AutoGo"
-        description="Importação chave na mão em 3-6 semanas: escolha o carro, simule ISV, receba legalizado em Portugal. Acompanhamento total, zero surpresas. Guimarães."
+        title={SEO_KEYWORDS.como_funciona.title ?? 'Como Funciona | AutoGo.pt'}
+        description={SEO_KEYWORDS.como_funciona.description ?? ''}
         url="https://autogo.pt/como-funciona"
-        keywords={joinKeywords(SITE_WIDE_KEYWORDS, COMO_FUNCIONA_KEYWORDS)}
+        keywords={joinKeywords(SEO_KEYWORDS.como_funciona.keywords ?? [], SITE_WIDE_KEYWORDS, COMO_FUNCIONA_KEYWORDS)}
         jsonLd={combinedJsonLd}
       />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}

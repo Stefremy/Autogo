@@ -9,8 +9,7 @@ import SimuladorTabela from "../components/SimuladorTabela";
 import styles from "../components/PremiumCarCard.module.css";
 // cars.json import removed to reduce bundle size
 import MainLayout from "../components/MainLayout";
-import MakeLogo from "../components/MakeLogo";
-import { VIATURAS_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import { VIATURAS_KEYWORDS, SITE_WIDE_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import Seo from "../components/Seo";
 import { generateGEOFAQSchema } from "../utils/geoOptimization";
 import { normalizeMake, parseMileage, parsePrice } from "../utils/carProcessors";
@@ -132,7 +131,7 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
     } catch {
       // ignore parse errors
     }
-  }, [router.isReady, itemsPerBatch]);
+  }, [router.isReady, router.query, itemsPerBatch]);
 
   // Save filters whenever they change so the user's inputs are remembered
   useEffect(() => {
@@ -170,7 +169,7 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
     } catch {
       // ignore storage errors
     }
-  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded, router.isReady]);
+  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded, itemsPerBatch, router]);
 
   // Unique options for selects
   const marcas = Array.from(
@@ -472,11 +471,11 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
   return (
     <>
       <Seo
-        title={`Carros Importados BMW, Mercedes, Audi Portugal | AutoGo.pt`}
-        description={`Stock de BMW, Mercedes, Audi importados e legalizados. Poupe até 8.000€ vs mercado nacional. ISV incluído, entrega em todo país. Ver disponíveis!`}
+        title={SEO_KEYWORDS.viaturas?.title ?? 'Carros Importados Portugal | AutoGo.pt'}
+        description={SEO_KEYWORDS.viaturas?.description ?? ''}
         url={`https://autogo.pt/viaturas`}
         image={`https://autogo.pt/images/auto-logo.webp`}
-        keywords={joinKeywords(SITE_WIDE_KEYWORDS, VIATURAS_KEYWORDS)}
+        keywords={joinKeywords(SEO_KEYWORDS.viaturas?.keywords ?? [], SITE_WIDE_KEYWORDS, VIATURAS_KEYWORDS)}
         jsonLd={viaturasGEOSchema}
       />
       <div className="min-h-screen w-full bg-gradient-to-br from-[#f5f6fa] via-[#fbe9e9] to-[#f5f6fa] flex flex-col">

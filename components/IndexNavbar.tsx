@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { href: "/", label: "Início" },
   { href: "/viaturas", label: "Viaturas" },
   { href: "/simulador-isv", label: "Simulador ISV" },
+  { href: "/simulador-iuc", label: "Simulador IUC" },
   { href: "/como-funciona", label: "Como Funciona" },
   { href: "/pedido", label: "Encomendar" },
   { href: "/blog", label: "Blog" },

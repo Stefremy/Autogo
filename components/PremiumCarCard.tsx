@@ -94,11 +94,15 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
             {statusLabels[status] || status}
           </span>
         )}
+        {/* Use explicit dimensions so the image box never collapses.
+            The CSS class (.premium-car-image) drives aspect-ratio + object-fit: cover,
+            so the actual width/height values here just supply Next.js with an aspect hint. */}
         <OptimizedImage
           src={image}
           alt={name}
           className={styles["premium-car-image"]}
-          fill
+          width={800}
+          height={600}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           loading="lazy"
         />

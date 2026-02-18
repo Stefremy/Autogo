@@ -32,8 +32,9 @@
 }
 .premium-car-image {
   display: block; /* remove inline gaps */
-  width: 100%;
-  height: auto; /* allow aspect-ratio to control height */
+  width: 100% !important; /* override OptimizedImage wrapper width */
+  height: auto !important; /* let aspect-ratio control height, not intrinsic pixels */
+  max-width: 100%;
   aspect-ratio: 16 / 9; /* consistent visual ratio, fills width */
   object-fit: cover; /* crop to fill */
   object-position: center top; /* anchor to top so image doesn't appear pushed down */
@@ -41,6 +42,17 @@
   border-radius: 1.1rem 1.1rem 0 0; /* keep rounded top corners */
   box-shadow: none;
   transition: transform 260ms cubic-bezier(.16,.84,.24,1), opacity 260ms ease;
+}
+/* The OptimizedImage component wraps the <img> in a <div class="relative …">
+   — ensure that wrapper doesn't introduce extra height or gap */
+.premium-car-image > img,
+.premium-car-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 1.1rem 1.1rem 0 0;
 }
 .premium-car-card:hover .premium-car-image {
   transform: scale(1.03);

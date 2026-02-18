@@ -437,10 +437,10 @@ export default function Simulador() {
     <>
       <MainLayout>
         <Seo
-          title={`Simulador ISV 2026 GRÁTIS Portugal | Resultado Instantâneo`}
-          description={`Calcule o ISV em segundos com o simulador mais preciso de Portugal. Grátis, sem registo, atualizado 2026. Carros novos, usados e elétricos. AutoGo.pt`}
+          title={SEO_KEYWORDS.simulador_isv.title ?? 'Simulador ISV 2026 GRÁTIS Portugal'}
+          description={SEO_KEYWORDS.simulador_isv.description ?? ''}
           url={`https://autogo.pt/simulador-isv`}
-          keywords={joinKeywords(SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS)}
+          keywords={joinKeywords(SEO_KEYWORDS.simulador_isv.keywords ?? [], SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS)}
           jsonLd={combinedJsonLd}
         />
         <div className="relative w-full flex-1 z-10">

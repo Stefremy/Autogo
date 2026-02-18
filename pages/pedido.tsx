@@ -17,7 +17,7 @@ import {
 import emailjs from "emailjs-com";
 import Layout from "../components/MainLayout";
 import Seo from "../components/Seo";
-import { SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import { SITE_WIDE_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Pedido() {
   const { t } = useTranslation("common");
@@ -64,10 +64,10 @@ export default function Pedido() {
   return (
     <Layout>
       <Seo
-        title="Pedir Importação | Proposta Gratuita em 24h | AutoGo.pt"
-        description="Peça proposta GRATUITA de importação em 24h. Indicamos o carro ideal, negociamos preço, tratamos legalização. Processo transparente, zero risco."
+        title={SEO_KEYWORDS.pedido.title ?? 'Pedir Importação | AutoGo.pt'}
+        description={SEO_KEYWORDS.pedido.description ?? ''}
         url="https://autogo.pt/pedido"
-        keywords={joinKeywords(SITE_WIDE_KEYWORDS)}
+        keywords={joinKeywords(SEO_KEYWORDS.pedido.keywords ?? [], SITE_WIDE_KEYWORDS)}
       />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div

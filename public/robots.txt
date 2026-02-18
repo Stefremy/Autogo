@@ -3,7 +3,9 @@
 
 User-agent: *
 Allow: /
+Allow: /_next/static/
 Disallow: /api/
-Disallow: /_next/
+Disallow: /_next/server/
+Disallow: /_next/image?*
 
 Sitemap: https://autogo.pt/sitemap.xml

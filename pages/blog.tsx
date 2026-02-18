@@ -6,10 +6,9 @@ import matter from "gray-matter";
 import Link from "next/link";
 import Layout from "../components/MainLayout";
 import Seo from "../components/Seo";
-import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
+import { BLOG_KEYWORDS, SITE_WIDE_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Blog({ posts }) {
-  const keywords = joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS);
   const categoryLinks = [
     {
       href: "/blog/categoria/noticias",
@@ -25,10 +24,10 @@ export default function Blog({ posts }) {
   return (
     <Layout>
       <Seo
-        title="Blog AutoGo.pt — Notícias e reviews sobre carros importados"
-        description="Blog AutoGo.pt com notícias, reviews e guias sobre carros importados europeus. Saiba como escolher, legalizar e negociar a sua próxima viatura em Portugal."
+        title={SEO_KEYWORDS.blog.title ?? 'Blog AutoGo.pt'}
+        description={SEO_KEYWORDS.blog.description ?? ''}
         url="https://autogo.pt/blog"
-        keywords={keywords}
+        keywords={joinKeywords(SEO_KEYWORDS.blog.keywords ?? [], SITE_WIDE_KEYWORDS, BLOG_KEYWORDS)}
       />
       {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
       <div

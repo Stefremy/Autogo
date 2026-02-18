@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import {
   FaTachometerAlt,
@@ -168,24 +167,81 @@ export async function getStaticProps({ params, locale }: { params: any; locale?:
     /* ignore */
   }
 
-  const vehicleJson: any = {
-    '@context': 'https://schema.org',
-    '@type': 'Vehicle',
-    name: `${make} ${model}`.trim() || null,
-    description: car.description ? String(car.description).slice(0, 300) : null,
-    brand: make ? { '@type': 'Brand', name: make } : null,
-    image: images.length ? images : null,
-    url: `${siteOrigin}/cars/${car.slug || car.id}`,
-    sku: car.id != null ? String(car.id) : null,
-    mileageFromOdometer: mileageNum != null ? mileageNum : null,
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'EUR',
-      price: priceNum != null ? priceNum : null,
-      availability: car.sold ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
-      url: `${siteOrigin}/cars/${car.slug || car.id}`,
-    },
+  // Map fuel string to schema.org URL
+  const fuelTypeMap: Record<string, string> = {
+    gasoline: 'https://schema.org/Gasoline',
+    gasolina: 'https://schema.org/Gasoline',
+    petrol: 'https://schema.org/Gasoline',
+    diesel: 'https://schema.org/Diesel',
+    electric: 'https://schema.org/Electric',
+    elétrico: 'https://schema.org/Electric',
+    eletrico: 'https://schema.org/Electric',
+    hybrid: 'https://schema.org/Hybrid',
+    híbrido: 'https://schema.org/Hybrid',
+    hibrido: 'https://schema.org/Hybrid',
+    'plug-in hybrid': 'https://schema.org/Hybrid',
+    phev: 'https://schema.org/Hybrid',
+    lpg: 'https://schema.org/LPG',
+    gpl: 'https://schema.org/LPG',
+    cng: 'https://schema.org/CNG',
+    gas: 'https://schema.org/LPG',
   };
+  const fuelRaw = String(car.fuel || '').toLowerCase().trim();
+  const fuelTypeUrl = fuelTypeMap[fuelRaw] || null;
+
+  const carPageUrl = `${siteOrigin}/cars/${car.slug || car.id}`;
+
+  // Build the JSON-LD object — use @type Car (schema.org subtype of Vehicle recognised by Google)
+  // All values must be defined (no undefined/null leaked into final object)
+  const vehicleJsonBase: Record<string, any> = {
+    '@context': 'https://schema.org',
+    '@type': 'Car',
+    name: `${make} ${model}`.trim() || undefined,
+    url: carPageUrl,
+    sku: car.id != null ? String(car.id) : undefined,
+  };
+  if (car.description) vehicleJsonBase.description = String(car.description).slice(0, 300);
+  if (make) vehicleJsonBase.brand = { '@type': 'Brand', name: make };
+  if (images.length) vehicleJsonBase.image = images;
+  if (car.year) vehicleJsonBase.vehicleModelDate = String(car.year);
+  if (car.model) vehicleJsonBase.model = String(car.model);
+  if (car.color) vehicleJsonBase.color = String(car.color);
+  if (fuelTypeUrl) vehicleJsonBase.fuelType = fuelTypeUrl;
+  if (car.gearboxType || car.transmission) {
+    const gearRaw = String(car.gearboxType || car.transmission || '').toLowerCase();
+    vehicleJsonBase.vehicleTransmission = gearRaw.includes('auto') || gearRaw.includes('automatic') || gearRaw.includes('automática')
+      ? 'https://schema.org/AutomaticTransmission'
+      : 'https://schema.org/ManualTransmission';
+  }
+  if (mileageNum != null) {
+    vehicleJsonBase.mileageFromOdometer = {
+      '@type': 'QuantitativeValue',
+      value: mileageNum,
+      unitCode: 'KMT',
+      unitText: 'km',
+    };
+  }
+  if (car.vin) vehicleJsonBase.vehicleIdentificationNumber = String(car.vin);
+  if (car.engineSize) {
+    const engNum = numifyLocal(car.engineSize);
+    if (engNum != null) vehicleJsonBase.engineDisplacement = { '@type': 'QuantitativeValue', value: engNum, unitCode: 'CMQ', unitText: 'cm³' };
+  }
+  if (car.power) {
+    const powNum = numifyLocal(car.power);
+    if (powNum != null) vehicleJsonBase.vehicleEngine = { '@type': 'EngineSpecification', enginePower: { '@type': 'QuantitativeValue', value: powNum, unitCode: 'BHP', unitText: 'cv' } };
+  }
+  // Offer block — only emit price when it is a valid positive number
+  const offerBlock: Record<string, any> = {
+    '@type': 'Offer',
+    priceCurrency: 'EUR',
+    availability: car.sold ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
+    url: carPageUrl,
+    seller: { '@type': 'Organization', name: 'AutoGo.pt', url: siteOrigin },
+  };
+  if (priceNum != null && priceNum > 0) offerBlock.price = priceNum;
+  vehicleJsonBase.offers = offerBlock;
+
+  const vehicleJson: any = vehicleJsonBase;
 
   return {
     props: {
@@ -235,8 +291,6 @@ type Props = {
 };
 
 export default function CarDetail({ car, similarCars, detailKeywords, vehicleJson }: Props) {
-  const router = useRouter();
-
   // Always call hooks unconditionally
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -492,20 +546,7 @@ export default function CarDetail({ car, similarCars, detailKeywords, vehicleJso
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // If slug (or id) is not available yet, do not return early here (we rely on the carId prop
-  // provided by getStaticProps as a stable fallback) so React hooks remain in the same order
-  // across renders; this prevents conditional hook invocation during client-side navigation.
-
-  // car and similarCars are now passed as props from getStaticProps
-  if (!car) {
-    return (
-      <Layout>
-        <div className="p-8">Car not found.</div>
-      </Layout>
-    );
-  }
-
-  // Client-side image normalization (mirror server-side logic but safe for client runtime)
+  // Client-side image normalization — must be declared before any early return (Rules of Hooks)
   const siteOriginClient = process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt';
   const normalizeImageClient = useCallback((img: any): string | null => {
     if (!img) return null;
@@ -517,7 +558,7 @@ export default function CarDetail({ car, similarCars, detailKeywords, vehicleJso
     return `${siteOriginClient}/${img.replace(/^\/+/, '')}`;
   }, [siteOriginClient]);
 
-  // Derive displayed images from server-side vehicleJson when available to avoid missing resources
+  // Derive displayed images — also must be before early return
   const displayedImages: string[] = React.useMemo(() => {
     try {
       if (Array.isArray(vehicleJson?.image) && vehicleJson.image.length) {
@@ -536,6 +577,15 @@ export default function CarDetail({ car, similarCars, detailKeywords, vehicleJso
       return [];
     }
   }, [vehicleJson, car?.image, car?.images, normalizeImageClient]);
+
+  // car and similarCars are now passed as props from getStaticProps
+  if (!car) {
+    return (
+      <Layout>
+        <div className="p-8">Car not found.</div>
+      </Layout>
+    );
+  }
 
   const primaryImage = displayedImages.length ? displayedImages[0] : null;
 

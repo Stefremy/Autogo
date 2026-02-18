@@ -166,6 +166,7 @@ const tier1Routes = [
     ],
   },
   { path: '/simulador-isv', changefreq: 'weekly', priority: '0.9', sources: [['pages', 'simulador-isv.tsx']] },
+  { path: '/simulador-iuc', changefreq: 'weekly', priority: '0.9', sources: [['pages', 'simulador-iuc.tsx']] },
 ];
 
 // ---- TIER 2: Conversion pages ----
@@ -265,22 +266,20 @@ allStaticRoutes.forEach((route) => {
 });
 
 // TIER 7: Car listings (priority 0.6, weekly)
+// Only include cars that have a proper SEO slug — bare numeric IDs produce
+// low-quality URLs that Semrush (and Google) flag as "incorrect pages in sitemap".
+let carSitemapCount = 0;
 cars.forEach((car) => {
-  const id = car.id || car.ID || car._id || '';
-  const slug = car.slug || '';
-  const urlId = slug || id;
-  if (!urlId) return;
+  const slug = car.slug && String(car.slug).trim();
+  // Skip cars without a slug: they will redirect to the slug URL once one exists,
+  // so including the bare-ID URL in the sitemap would cause "incorrect page" errors.
+  if (!slug) return;
 
   const rawLast = car.updatedAt || car.updated || car.date || car.lastModified || null;
   const lastDate = latestDate([rawLast, carsFileMtime], buildDate);
   const last = isoDate(lastDate);
-  const carPath = `/cars/${urlId}`;
-  xml += entry(
-    `${baseUrl}${carPath}`,
-    last,
-    'weekly',
-    '0.6',
-  );
+  xml += entry(`${baseUrl}/cars/${slug}`, last, 'weekly', '0.6');
+  carSitemapCount++;
 });
 
 xml += '</urlset>\n';
@@ -288,10 +287,9 @@ xml += '</urlset>\n';
 fs.writeFileSync(outPath, xml, 'utf8');
 
 // Summary
-const carCount = cars.filter((c) => (c.slug || c.id || c.ID || c._id)).length;
 console.log(`Generated sitemap at ${outPath}`);
 console.log(`  Blog posts: ${blogPosts.length} (Guides: ${blogPosts.filter((p) => p.priority === '0.8').length}, Reviews: ${blogPosts.filter((p) => p.priority === '0.5').length}, News: ${blogPosts.filter((p) => p.priority === '0.4').length}, Other: ${blogPosts.filter((p) => p.priority === '0.6').length})`);
 console.log(`  Static pages: ${allStaticRoutes.length}`);
-console.log(`  Car listings: ${carCount}`);
+console.log(`  Car listings (slug only): ${carSitemapCount}`);
 console.log(`  Categories: ${Object.keys(categoryStats).length}`);
-console.log(`  Total URLs: ${allStaticRoutes.length + blogPosts.length + carCount + Object.keys(categoryStats).length}`);
+console.log(`  Total URLs: ${allStaticRoutes.length + blogPosts.length + carSitemapCount + Object.keys(categoryStats).length}`);
