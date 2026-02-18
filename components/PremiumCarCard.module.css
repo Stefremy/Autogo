@@ -13,8 +13,8 @@
     box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.18s;
-  transform-origin: top center; /* make hover expansion originate from top */
-  transform-style: preserve-3d; /* keep children in same transformed space */
+  transform-origin: top center;
+  transform-style: preserve-3d;
   backface-visibility: hidden;
   will-change: transform, box-shadow;
 }
@@ -31,16 +31,17 @@
   z-index: 40;
 }
 .premium-car-image {
-  display: block; /* remove inline gaps */
-  width: 100% !important; /* override OptimizedImage wrapper width */
-  height: auto !important; /* let aspect-ratio control height, not intrinsic pixels */
+  display: block;
+  width: 100% !important;
+  height: auto !important;
   max-width: 100%;
-  aspect-ratio: 16 / 9; /* consistent visual ratio, fills width */
-  object-fit: cover; /* crop to fill */
-  object-position: center top; /* anchor to top so image doesn't appear pushed down */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center top;
   background: #f5f6fa;
-  border-radius: 1.1rem 1.1rem 0 0; /* keep rounded top corners */
+  border-radius: 1.1rem 1.1rem 0 0;
   box-shadow: none;
+  overflow: hidden;
   transition: transform 260ms cubic-bezier(.16,.84,.24,1), opacity 260ms ease;
 }
 /* The OptimizedImage component wraps the <img> in a <div class="relative …">
@@ -219,16 +220,9 @@
   }
 }
 
-/* Mobile fix: remove thin border gap between image and card content caused by subpixel rounding
-   Push the image down slightly to cover the top border and reduce top padding of the info area
-   so the visual spacing remains the same. Scoped to small viewports only. */
+/* Mobile: ensure no subpixel gap — overflow:hidden on the image wrapper handles this */
 @media (max-width: 640px) {
   .premium-car-image {
-    display: block;
-    margin-bottom: -1.5px; /* overlap the card border to hide the hairline */
-    border-radius: 1.1rem 1.1rem 0 0; /* ensure corners stay rounded */
-  }
-  .premium-car-info {
-    padding-top: calc(1.5rem - 1.5px); /* keep visible padding while compensating for overlap */
+    border-radius: 1.1rem 1.1rem 0 0;
   }
 }

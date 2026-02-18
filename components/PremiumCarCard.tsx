@@ -38,7 +38,6 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   mileage,
 }) => {
   const { t } = useTranslation("common");
-  // Status translation
   const statusLabels: Record<string, string> = {
     disponivel: t("Disponível"),
     vendido: t("Vendido"),
@@ -47,27 +46,22 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
   };
   const path = slug ? `/cars/${slug}` : `/cars/${id}`;
 
-  // Normalize inputs and use shared formatter
   let numericPrice: number | null = null;
   if (typeof price === "number" && Number.isFinite(price)) numericPrice = price;
-  // If price is a numeric string, try to parse it
   if (numericPrice === null && typeof price === "string" && price.trim().length > 0) {
     const p = Number(String(price).replace(/[^0-9.-]/g, ""));
     if (!Number.isNaN(p) && Number.isFinite(p)) numericPrice = p;
   }
   const display = formatPriceDisplay(numericPrice, priceDisplay ?? (typeof price === "string" ? price : undefined));
 
-  // Display only the year portion (handles '2019-12-10' and numeric years)
   const displayYear = (() => {
-    if (typeof year === 'number') return String(year);
-    if (typeof year === 'string') {
+    if (typeof year === "number") return String(year);
+    if (typeof year === "string") {
       const m = year.match(/^(\d{4})/);
       return m ? m[1] : year;
     }
-    return '';
+    return "";
   })();
-
-  // Note: accept `type` prop in the props type for compatibility, but we don't need to use it here.
 
   return (
     <a href={path} className={styles["premium-car-card"]} style={bgColor ? { background: bgColor } : undefined}>
@@ -75,28 +69,22 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
         {/* Status badge */}
         {status && (
           <span
-            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold shadow z-20 text-white ${status === "disponivel"
-              ? "bg-green-500"
-              : status === "vendido"
-                ? "bg-gray-400"
-                : status === "sob_consulta"
-                  ? "bg-yellow-400"
-                  : status === "novidade"
-                    ? "bg-blue-500"
-                    : "bg-gray-400"
-              }`}
-            style={{
-              letterSpacing: "0.5px",
-              minWidth: 90,
-              textAlign: "center",
-            }}
+            className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold shadow z-20 text-white ${
+              status === "disponivel"
+                ? "bg-green-500"
+                : status === "vendido"
+                  ? "bg-gray-400"
+                  : status === "sob_consulta"
+                    ? "bg-yellow-400"
+                    : status === "novidade"
+                      ? "bg-blue-500"
+                      : "bg-gray-400"
+            }`}
+            style={{ letterSpacing: "0.5px", minWidth: 90, textAlign: "center" }}
           >
             {statusLabels[status] || status}
           </span>
         )}
-        {/* Use explicit dimensions so the image box never collapses.
-            The CSS class (.premium-car-image) drives aspect-ratio + object-fit: cover,
-            so the actual width/height values here just supply Next.js with an aspect hint. */}
         <OptimizedImage
           src={image}
           alt={name}
@@ -106,19 +94,25 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           loading="lazy"
         />
+        {/* Flag — top-right corner of the image */}
         {country && (
-          <OptimizedImage
+          <img
             src={`/images/flags/${country.toLowerCase()}.webp`}
             alt={country}
             width={32}
-            height={32}
-            className="object-cover bg-white rounded-[0.2rem] border-[1.5px] border-white shadow-sm z-[2]"
+            height={22}
             style={{
               position: "absolute",
               top: "0.9rem",
-              left: "0.9rem",
+              right: "0.9rem",
               width: 32,
-              height: 32,
+              height: 22,
+              borderRadius: "0.2rem",
+              border: "1.5px solid #fff",
+              boxShadow: "0 2px 8px rgba(44,62,80,0.10)",
+              zIndex: 2,
+              objectFit: "cover",
+              display: "block",
             }}
           />
         )}
@@ -135,11 +129,9 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            {/* Car make logo with robust fallback for different filename patterns (hyphens, case, png/jpg) */}
             {make && (
               <MakeLogo make={make} size={30} className="drop-shadow(0 1px 2px rgba(0,0,0,0.10))" />
             )}
-            {/* Mileage next to the logo (thin Montserrat) */}
             {mileage !== undefined && (
               <div
                 style={{
@@ -151,8 +143,7 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
                   whiteSpace: "nowrap",
                 }}
               >
-                {(typeof mileage === "number" ? mileage : Number(mileage))
-                  .toLocaleString("pt-PT")}
+                {(typeof mileage === "number" ? mileage : Number(mileage)).toLocaleString("pt-PT")}
                 &nbsp;km
               </div>
             )}
@@ -167,7 +158,6 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
               textAlign: "right",
             }}
           >
-            {/* Price drop display for Kia XCeed 6547363 and Hyundai IONIQ FS44936 */}
             {id === "6547363" ? (
               <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", lineHeight: 1.1 }}>
                 <span style={{ textDecoration: "line-through", color: "#888", fontWeight: 400, fontSize: "0.98em", marginBottom: 2 }}>
@@ -203,12 +193,8 @@ const PremiumCarCard: React.FC<PremiumCarCardProps> = ({
           </div>
           {transmission && (
             <div>
-              <div className={styles["premium-car-meta-label"]}>
-                {t("Transmissão")}
-              </div>
-              <div className={styles["premium-car-meta-value"]}>
-                {transmission}
-              </div>
+              <div className={styles["premium-car-meta-label"]}>{t("Transmissão")}</div>
+              <div className={styles["premium-car-meta-value"]}>{transmission}</div>
             </div>
           )}
         </div>

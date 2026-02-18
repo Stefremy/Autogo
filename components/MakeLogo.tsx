@@ -172,7 +172,7 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
         // start hidden and fade in when the real image has loaded to avoid flash
         opacity: 0,
         transition: "opacity 180ms ease-in-out, filter 180ms ease-in-out",
-        backgroundColor: 'transparent',
+        backgroundColor: '#fff',
       }}
       loading={"lazy"}
       onLoad={(e) => {
@@ -207,7 +207,7 @@ const MakeLogo: React.FC<MakeLogoProps> = ({ make, size = 28, className }) => {
             // final fallback: keep visible but show neutral placeholder (no hide)
             img.src = svgFallback;
             img.style.objectFit = "contain";
-            img.style.backgroundColor = "transparent";
+            img.style.backgroundColor = "#fff";
             img.style.opacity = "1";
           }
         } catch { img.src = svgFallback; img.style.opacity = "1"; }
