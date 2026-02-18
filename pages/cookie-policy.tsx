@@ -1,13 +1,23 @@
-import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import MainLayout from "../components/MainLayout";
+import Seo from "../components/Seo";
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default function CookiePolicy() {
   return (
     <MainLayout>
-      <Head>
-        <title>Política de Cookies | Autogo</title>
-        <meta name="description" content="Política de Cookies da Autogo" />
-      </Head>
+      <Seo
+        title="Política de Cookies | AutoGo.pt"
+        description="Política de Cookies da AutoGo.pt — como utilizamos cookies para melhorar a sua experiência de navegação e para fins de análise."
+        url="https://autogo.pt/cookie-policy"
+      />
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "2rem" }}>
         <h1
           style={{

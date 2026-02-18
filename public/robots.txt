@@ -7,5 +7,10 @@ Allow: /_next/static/
 Disallow: /api/
 Disallow: /_next/server/
 Disallow: /_next/image?*
+# Block paginated filter URLs on /viaturas to avoid crawl budget waste
+# (canonical tag on the page already points to /viaturas — this is belt-and-braces)
+Disallow: /viaturas?*page=
+# Block Google Search Console verification file from indexing
+Disallow: /google396d4a609845ed19.html
 
 Sitemap: https://autogo.pt/sitemap.xml

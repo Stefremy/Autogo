@@ -1,5 +1,16 @@
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import MainLayout from "../components/MainLayout";
+import Seo from "../components/Seo";
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default function PoliticaDePrivacidade() {
   const { t } = useTranslation();
@@ -8,6 +19,12 @@ export default function PoliticaDePrivacidade() {
   const dataAtual = hoje.toLocaleDateString("pt-PT");
 
   return (
+    <MainLayout>
+      <Seo
+        title="Política de Privacidade | AutoGo.pt"
+        description="Política de Privacidade da AutoGo.pt — como recolhemos, utilizamos e protegemos os seus dados pessoais em conformidade com o RGPD."
+        url="https://autogo.pt/politica-de-privacidade"
+      />
     <div className="max-w-4xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
   <p className="text-gray-700 mb-4">Na AutoGo.pt respeitamos a sua privacidade e procuramos ser transparentes sobre a forma como tratamos os seus dados pessoais. Esta página descreve as práticas que aplicamos em todas as interações realizadas através do nosso website.</p>
   <p className="text-gray-700 mb-6">Se tiver alguma dúvida sobre esta política ou sobre como processamos os seus dados, por favor contacte-nos pelo email <a href="mailto:autogo.stand@gmail.com" className="underline">autogo.stand@gmail.com</a> e teremos todo o gosto em esclarecer.</p>
@@ -78,5 +95,6 @@ export default function PoliticaDePrivacidade() {
         <Link href="/cookie-policy" className="text-sm text-gray-600 underline hover:text-[#b42121]">Política de Cookies</Link>
       </div>
     </div>
+    </MainLayout>
   );
 }

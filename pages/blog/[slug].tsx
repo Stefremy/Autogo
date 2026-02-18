@@ -156,7 +156,7 @@ export async function getStaticPaths() {
   const paths = files.map((filename) => ({
     params: { slug: filename.replace(/\.md$/, "") },
   }));
-  return { paths, fallback: true };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params, locale }) {
