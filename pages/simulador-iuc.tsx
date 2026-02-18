@@ -10,176 +10,241 @@ import {
   joinKeywords,
 } from "../utils/seoKeywords";
 
-// ─── Tabelas IUC 2026 (Código do IUC — Lei n.º 22-A/2007, atualizado OE 2026) ──
+// ─── Tabelas IUC 2026 (impostosobreveiculos.info) ───────────────────────────
 
-// Categoria A — Automóveis de passageiros matriculados a partir de 01/07/2007
-// Componente cilindrada (€/cm³)
-const IUC_CAT_A_CIL = [
-  { min: 0,    max: 1000, taxa: 0.01776 },
-  { min: 1001, max: 1250, taxa: 0.02878 },
-  { min: 1251, max: 1750, taxa: 0.05384 },
-  { min: 1751, max: 2500, taxa: 0.10909 },
-  { min: 2501, max: Infinity, taxa: 0.18031 },
+// ── CATEGORIA A (1ª matrícula PT/UE/EEE até 30 Jun 2007) ────────────────────
+// Colunas: t9607 = 1996–Jun2007 | t9095 = 1990–1995 | t8189 = 1981–1989
+// Gasolina — taxa fixa por escalão de cilindrada × período
+const IUC_CAT_A_GASOLINA: { max: number; t9607: number; t9095: number; t8189: number }[] = [
+  { max: 1000,     t9607: 19.90,  t9095: 12.20,  t8189: 8.80  },
+  { max: 1300,     t9607: 39.95,  t9095: 22.45,  t8189: 12.55 },
+  { max: 1750,     t9607: 62.40,  t9095: 34.87,  t8189: 17.49 },
+  { max: 2600,     t9607: 158.31, t9095: 83.49,  t8189: 36.09 },
+  { max: 3500,     t9607: 287.49, t9095: 156.54, t8189: 79.72 },
+  { max: Infinity, t9607: 512.23, t9095: 263.11, t8189: 120.90 },
 ];
 
-// Componente ambiental (€/gCO2/km) — gasolina/GPL/GN
-const IUC_CAT_A_CO2_GASOLINA = [
-  { min: 0,   max: 120,  taxa: 0.0 },
-  { min: 121, max: 140,  taxa: 0.82 },
-  { min: 141, max: 160,  taxa: 2.26 },
-  { min: 161, max: 180,  taxa: 4.59 },
-  { min: 181, max: 200,  taxa: 9.89 },
-  { min: 201, max: 250,  taxa: 20.19 },
-  { min: 251, max: Infinity, taxa: 34.37 },
+// Gasóleo — taxa fixa (já inclui taxa adicional gasóleo)
+const IUC_CAT_A_DIESEL: { max: number; t9607: number; t9095: number; t8189: number }[] = [
+  { max: 1500,     t9607: 22.48,  t9095: 14.18, t8189: 10.19 },
+  { max: 2000,     t9607: 45.13,  t9095: 25.37, t8189: 14.18 },
+  { max: 3000,     t9607: 70.50,  t9095: 39.40, t8189: 19.76 },
+  { max: Infinity, t9607: 178.86, t9095: 94.33, t8189: 40.77 },
 ];
 
-// Componente ambiental — diesel
-const IUC_CAT_A_CO2_DIESEL = [
-  { min: 0,   max: 100,  taxa: 0.0 },
-  { min: 101, max: 120,  taxa: 0.82 },
-  { min: 121, max: 140,  taxa: 2.26 },
-  { min: 141, max: 160,  taxa: 4.59 },
-  { min: 161, max: 180,  taxa: 9.89 },
-  { min: 181, max: 200,  taxa: 20.19 },
-  { min: 201, max: Infinity, taxa: 34.37 },
+// Elétricos Cat A (voltagem total)
+const IUC_CAT_A_ELETRICO: { max: number; t9607: number; t9095: number; t8189: number }[] = [
+  { max: 100,      t9607: 19.90, t9095: 12.55, t8189: 8.80  },
+  { max: Infinity, t9607: 39.95, t9095: 22.45, t8189: 12.55 },
 ];
 
-// Categoria B — Automóveis de passageiros matriculados antes de 01/07/2007
-// (taxa única por escalão de cilindrada, anual)
-const IUC_CAT_B = [
-  { min: 0,    max: 1000, taxa: 9.12 },
-  { min: 1001, max: 1250, taxa: 14.61 },
-  { min: 1251, max: 1500, taxa: 23.65 },
-  { min: 1501, max: 1750, taxa: 36.47 },
-  { min: 1751, max: 2000, taxa: 55.23 },
-  { min: 2001, max: 2500, taxa: 85.60 },
-  { min: 2501, max: 3000, taxa: 141.65 },
-  { min: 3001, max: Infinity, taxa: 219.99 },
+// ── CATEGORIA B (1ª matrícula PT/UE/EEE a partir de 1 Jul 2007) ─────────────
+// Passo 1 — taxa cilindrada (igual gasolina e gasóleo)
+const IUC_CAT_B_CIL: { max: number; taxa: number }[] = [
+  { max: 1250,     taxa: 31.77  },
+  { max: 1750,     taxa: 63.74  },
+  { max: 2500,     taxa: 127.35 },
+  { max: Infinity, taxa: 435.84 },
 ];
 
-// Coeficiente de desvalorização para Categoria A (antiguidade desde matrícula)
-// Os valores finais de IUC Cat A são multiplicados por este coeficiente
-const IUC_COEF_ANTIGUIDADE = [
-  { min: 0,  max: 1,  coef: 1.00 },
-  { min: 1,  max: 2,  coef: 0.95 },
-  { min: 2,  max: 3,  coef: 0.90 },
-  { min: 3,  max: 4,  coef: 0.85 },
-  { min: 4,  max: 5,  coef: 0.80 },
-  { min: 5,  max: 6,  coef: 0.75 },
-  { min: 6,  max: 7,  coef: 0.70 },
-  { min: 7,  max: 8,  coef: 0.65 },
-  { min: 8,  max: 9,  coef: 0.60 },
-  { min: 9,  max: 10, coef: 0.55 },
-  { min: 10, max: Infinity, coef: 0.50 },
+// Passo 2 — taxa CO₂ NEDC + taxa adicional (matrículas ≥ 2017)
+const IUC_CAT_B_CO2_NEDC: { max: number; taxa: number; taxaAdicional: number }[] = [
+  { max: 120,      taxa: 65.15,  taxaAdicional: 0     },
+  { max: 180,      taxa: 97.63,  taxaAdicional: 0     },
+  { max: 250,      taxa: 212.04, taxaAdicional: 31.77 },
+  { max: Infinity, taxa: 363.25, taxaAdicional: 63.74 },
 ];
 
-function getEscalao(tabela: { min: number; max: number; [k: string]: any }[], valor: number) {
-  return tabela.find((e) => valor >= e.min && valor <= e.max) ?? tabela[tabela.length - 1];
+// Passo 2 — taxa CO₂ WLTP + taxa adicional (matrículas ≥ 2017)
+const IUC_CAT_B_CO2_WLTP: { max: number; taxa: number; taxaAdicional: number }[] = [
+  { max: 140,      taxa: 65.15,  taxaAdicional: 0     },
+  { max: 205,      taxa: 97.63,  taxaAdicional: 0     },
+  { max: 260,      taxa: 212.04, taxaAdicional: 31.77 },
+  { max: Infinity, taxa: 363.25, taxaAdicional: 63.74 },
+];
+
+// Passo 3 — coeficiente ano matrícula Cat B
+function getCatBCoef(ano: number): number {
+  if (ano <= 2007) return 1.00;
+  if (ano === 2008) return 1.05;
+  if (ano === 2009) return 1.10;
+  return 1.15; // 2010 e seguintes
 }
 
-function calcAnosDesdeMatricula(anoMatricula: number): number {
-  return new Date().getFullYear() - anoMatricula;
+// Passo 4 (gasóleo) — taxa adicional gasóleo Cat B
+const IUC_CAT_B_DIESEL_ADICIONAL: { max: number; taxa: number }[] = [
+  { max: 1250,     taxa: 5.02  },
+  { max: 1750,     taxa: 10.07 },
+  { max: 2500,     taxa: 20.12 },
+  { max: Infinity, taxa: 68.85 },
+];
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+function getEscalao<T extends { max: number }>(tabela: T[], valor: number): T {
+  return tabela.find((e) => valor <= e.max) ?? tabela[tabela.length - 1];
 }
+
+function getCatAKey(ano: number): "t9607" | "t9095" | "t8189" | null {
+  if (ano >= 1996) return "t9607";
+  if (ano >= 1990) return "t9095";
+  if (ano >= 1981) return "t8189";
+  return null; // anterior a 1981 → isento
+}
+
+// ── Types ────────────────────────────────────────────────────────────────────
+type BreakdownItem = { label: string; valor: number | null; texto?: string };
 
 type IUCResult = {
-  componente_cilindrada: number;
-  componente_co2: number;
-  iuc_bruto: number;
-  coef_antiguidade: number;
   iuc_final: number;
-  categoria: 'A' | 'B' | 'eletrico';
+  categoria: "A" | "B" | "isento";
+  breakdown: BreakdownItem[];
   info: string[];
+  isento: boolean;
+  isentoRazao?: string;
 };
 
+// ── Lógica de cálculo ────────────────────────────────────────────────────────
 function calcularIUC(form: {
+  combustivel: string;
   cilindrada: string;
   co2: string;
-  combustivel: string;
+  normaCO2: string;
   anoMatricula: string;
+  origemUEEEE: string;
 }): IUCResult | null {
-  const cil = Number(form.cilindrada);
-  const co2 = Number(form.co2);
   const ano = Number(form.anoMatricula);
+  if (!ano || isNaN(ano)) return null;
 
-  if (!cil || !ano || isNaN(cil) || isNaN(ano)) return null;
+  // Categoria A: 1ª matrícula PT/UE/EEE até 30 Jun 2007
+  // Categoria B: tudo o resto (a partir de 1 Jul 2007, inclusive importados fora UE/EEE pós-Jul 2007)
+  const isCatA = ano < 2007 || (ano === 2007 && form.origemUEEEE === "sim");
+
+  // ── Elétrico Cat B → isento ──────────────────────────────────────────────
+  if (form.combustivel === "eletrico" && !isCatA) {
+    return {
+      iuc_final: 0,
+      categoria: "isento",
+      breakdown: [],
+      info: [],
+      isento: true,
+      isentoRazao: "Automóveis ligeiros exclusivamente elétricos (Cat. B, matrícula a partir de Jul 2007) estão isentos de IUC.",
+    };
+  }
+
+  // ── Categoria A ──────────────────────────────────────────────────────────
+  if (isCatA) {
+    if (ano < 1981) {
+      return {
+        iuc_final: 0, categoria: "isento", breakdown: [], info: [],
+        isento: true,
+        isentoRazao: "Veículos com 1ª matrícula PT/UE/EEE anterior a 1981 estão isentos de IUC.",
+      };
+    }
+
+    const key = getCatAKey(ano)!;
+    const cil = Number(form.cilindrada);
+    if (!cil || isNaN(cil) || cil <= 0) return null;
+
+    let tabela = form.combustivel === "diesel"
+      ? IUC_CAT_A_DIESEL
+      : form.combustivel === "eletrico"
+        ? IUC_CAT_A_ELETRICO
+        : IUC_CAT_A_GASOLINA;
+
+    const esc = getEscalao(tabela, cil);
+    const valor = esc[key];
+    const periodos = { t9607: "1996–Jun 2007", t9095: "1990–1995", t8189: "1981–1989" };
+    const unidade = form.combustivel === "eletrico" ? "V" : "cm³";
+    const labelComb = form.combustivel === "diesel" ? "Gasóleo" : form.combustivel === "eletrico" ? "Elétrico" : "Gasolina";
+
+    const isIsentoVal = valor < 10;
+
+    return {
+      iuc_final: isIsentoVal ? 0 : valor,
+      categoria: "A",
+      breakdown: [{ label: `Taxa ${labelComb} (${cil}${unidade}, período ${periodos[key]})`, valor }],
+      info: [
+        `Categoria A — ${labelComb}. ${cil}${unidade}, matrícula ${ano} (período ${periodos[key]}).`,
+        form.combustivel === "diesel" ? "Taxa inclui a taxa adicional gasóleo." : "",
+      ].filter(Boolean),
+      isento: isIsentoVal,
+      isentoRazao: isIsentoVal ? "Valor inferior a €10 — isento." : undefined,
+    };
+  }
+
+  // ── Categoria B ──────────────────────────────────────────────────────────
+  const cil = Number(form.cilindrada);
+  if (!cil || isNaN(cil) || cil <= 0) return null;
 
   const info: string[] = [];
+  const breakdown: BreakdownItem[] = [];
 
-  // Veículos elétricos: IUC mínimo fixo (taxa fixa anual)
-  if (form.combustivel === "eletrico") {
-    return {
-      componente_cilindrada: 0,
-      componente_co2: 0,
-      iuc_bruto: 0,
-      coef_antiguidade: 1,
-      iuc_final: 0,
-      categoria: "eletrico",
-      info: ["Veículos elétricos puros: isento de IUC em Portugal."],
-    };
+  // Passo 1: taxa cilindrada
+  const escCil = getEscalao(IUC_CAT_B_CIL, cil);
+  const taxaCil = escCil.taxa;
+  breakdown.push({ label: "Passo 1 — Taxa cilindrada", valor: taxaCil });
+  info.push(`Passo 1: cilindrada ${cil}cm³ → €${taxaCil.toFixed(2)}`);
+
+  // Passo 2: taxa CO₂
+  const co2Val = Number(form.co2);
+  let taxaCO2 = 0;
+  let taxaCO2Adicional = 0;
+
+  if (!isNaN(co2Val) && co2Val >= 0) {
+    const tabelaCO2 = form.normaCO2 === "wltp" ? IUC_CAT_B_CO2_WLTP : IUC_CAT_B_CO2_NEDC;
+    const escCO2 = getEscalao(tabelaCO2, co2Val);
+    taxaCO2 = escCO2.taxa;
+    const temAdicionalCO2 = ano >= 2017;
+    taxaCO2Adicional = temAdicionalCO2 ? escCO2.taxaAdicional : 0;
+
+    breakdown.push({ label: `Passo 2 — Taxa CO₂ (${form.normaCO2.toUpperCase()}, ${co2Val}g/km)`, valor: taxaCO2 });
+    info.push(`Passo 2: ${co2Val}g/km (${form.normaCO2.toUpperCase()}) → €${taxaCO2.toFixed(2)}`);
+
+    // Passo 3: taxa adicional CO₂ (só matrículas ≥ 2017)
+    if (taxaCO2Adicional > 0) {
+      breakdown.push({ label: "Passo 3 — Taxa adicional CO₂ (matrícula ≥ 2017)", valor: taxaCO2Adicional });
+      info.push(`Passo 3: taxa adicional CO₂ (matrícula ≥ 2017) → €${taxaCO2Adicional.toFixed(2)}`);
+    }
+  } else {
+    breakdown.push({ label: "Passo 2 — Taxa CO₂", valor: 0 });
+    info.push("Passo 2: CO₂ não introduzido — usar 0.");
   }
 
-  const anos = calcAnosDesdeMatricula(ano);
+  // Passo 4: coeficiente ano — multiplica (Passo 1 + Passo 2 + Passo 3)
+  const coef = getCatBCoef(ano);
+  const somaAntesCoef = taxaCil + taxaCO2 + taxaCO2Adicional;
+  const base = somaAntesCoef * coef;
+  const passoCoef = taxaCO2Adicional > 0 ? 4 : 3;
+  breakdown.push({
+    label: `Passo ${passoCoef} — × Coeficiente ano (${coef.toFixed(2)})`,
+    valor: null,
+    texto: `(€${taxaCil.toFixed(2)} + €${taxaCO2.toFixed(2)}${taxaCO2Adicional > 0 ? ` + €${taxaCO2Adicional.toFixed(2)}` : ""}) × ${coef.toFixed(2)} = €${base.toFixed(2)}`,
+  });
+  info.push(`Passo ${passoCoef}: (${taxaCil.toFixed(2)} + ${taxaCO2.toFixed(2)}${taxaCO2Adicional > 0 ? ` + ${taxaCO2Adicional.toFixed(2)}` : ""}) × ${coef.toFixed(2)} = €${base.toFixed(2)}`);
 
-  // Categoria B: matriculados antes de 01/07/2007
-  if (ano < 2007) {
-    const esc = getEscalao(IUC_CAT_B, cil);
-    // Para Cat B os valores já estão fixos por escalão — sem desvalorização por antiguidade
-    return {
-      componente_cilindrada: esc.taxa,
-      componente_co2: 0,
-      iuc_bruto: esc.taxa,
-      coef_antiguidade: 1,
-      iuc_final: esc.taxa,
-      categoria: "B",
-      info: [
-        `Categoria B (anterior a 2007). Cilindrada ${cil}cm³ → escalão €${esc.taxa.toFixed(2)}/ano.`,
-        "Componente ambiental não aplicável (Cat. B).",
-      ],
-    };
+  // Passo 5 (gasóleo): taxa adicional gasóleo — adicionada depois do coeficiente
+  let taxaDieselAdicional = 0;
+  if (form.combustivel === "diesel") {
+    const escD = getEscalao(IUC_CAT_B_DIESEL_ADICIONAL, cil);
+    taxaDieselAdicional = escD.taxa;
+    const passoDiesel = passoCoef + 1;
+    breakdown.push({ label: `Passo ${passoDiesel} — Taxa adicional gasóleo`, valor: taxaDieselAdicional });
+    info.push(`Passo ${passoDiesel} (gasóleo): ${cil}cm³ → €${taxaDieselAdicional.toFixed(2)}`);
   }
 
-  // Categoria A: matriculados a partir de 01/07/2007
-  const escCil = getEscalao(IUC_CAT_A_CIL, cil);
-  const compCil = cil * escCil.taxa;
-
-  let compCO2 = 0;
-  if (!isNaN(co2) && co2 > 0) {
-    const tabelaCO2 =
-      form.combustivel === "diesel"
-        ? IUC_CAT_A_CO2_DIESEL
-        : IUC_CAT_A_CO2_GASOLINA;
-    const escCO2 = getEscalao(tabelaCO2, co2);
-    compCO2 = co2 * escCO2.taxa;
-    info.push(
-      `CO₂: ${co2}g/km → taxa ${escCO2.taxa.toFixed(4)}€/g = €${compCO2.toFixed(2)}`
-    );
-  }
-
-  const iucBruto = compCil + compCO2;
-
-  // Coeficiente de antiguidade
-  const escCoef = getEscalao(IUC_COEF_ANTIGUIDADE, anos);
-  const coef = escCoef.coef;
-  const iucFinal = iucBruto * coef;
-
-  info.unshift(
-    `Categoria A. Cilindrada ${cil}cm³ × €${escCil.taxa.toFixed(5)} = €${compCil.toFixed(2)}`,
-    `Antiguidade: ${anos} anos → coeficiente ${(coef * 100).toFixed(0)}%`
-  );
+  const iucFinal = base + taxaDieselAdicional;
 
   return {
-    componente_cilindrada: compCil,
-    componente_co2: compCO2,
-    iuc_bruto: iucBruto,
-    coef_antiguidade: coef,
     iuc_final: iucFinal,
-    categoria: "A",
+    categoria: "B",
+    breakdown,
     info,
+    isento: iucFinal < 10,
+    isentoRazao: iucFinal < 10 ? "Valor inferior a €10 — isento." : undefined,
   };
 }
 
 // ─── JSON-LD ────────────────────────────────────────────────────────────────
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -191,7 +256,7 @@ const jsonLd = {
       url: "https://autogo.pt/simulador-iuc",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
       description:
-        "Calculadora gratuita do IUC (Imposto Único de Circulação) para Portugal, atualizada 2026. Categorias A e B, elétricos, com coeficiente de antiguidade.",
+        "Calculadora gratuita do IUC (Imposto Único de Circulação) para Portugal, atualizada 2026. Categorias A e B, elétricos isentos, taxa adicional gasóleo, normas NEDC e WLTP.",
     },
     {
       "@type": "FAQPage",
@@ -201,7 +266,7 @@ const jsonLd = {
           name: "O que é o IUC?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O IUC (Imposto Único de Circulação) é o imposto anual pago pelos proprietários de veículos em Portugal. Substitui o antigo Imposto de Circulação e Cadastro. O valor depende da cilindrada, das emissões de CO₂ e do ano de matrícula do veículo.",
+            text: "O IUC (Imposto Único de Circulação) é o imposto anual pago pelos proprietários de veículos em Portugal. O valor depende da cilindrada, das emissões de CO₂, do combustível e do ano de matrícula.",
           },
         },
         {
@@ -209,7 +274,7 @@ const jsonLd = {
           name: "Como é calculado o IUC em 2026?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Para veículos matriculados a partir de 01/07/2007 (Categoria A): IUC = (cilindrada × taxa de cilindrada) + (CO₂ × taxa ambiental), multiplicado por um coeficiente de antiguidade que vai de 100% (novo) a 50% (mais de 10 anos). Para veículos anteriores a 2007 (Categoria B): taxa fixa por escalão de cilindrada. Elétricos estão isentos.",
+            text: "Veículos Cat. A (até Jun 2007): taxa fixa por cilindrada e período de matrícula. Veículos Cat. B (a partir Jul 2007): (taxa cilindrada + taxa CO₂) × coeficiente ano + taxa adicional gasóleo. Elétricos Cat. B: isentos.",
           },
         },
         {
@@ -217,7 +282,15 @@ const jsonLd = {
           name: "Carros elétricos pagam IUC em Portugal?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Não. Veículos 100% elétricos estão isentos de IUC em Portugal, por despacho governamental como incentivo à mobilidade elétrica.",
+            text: "Automóveis ligeiros 100% elétricos com matrícula a partir de 01/07/2007 (Cat. B) estão isentos. Híbridos e plug-in não estão isentos.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "As taxas do IUC aumentaram em 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Não. As taxas do IUC para 2026 são exatamente as mesmas de 2024 e 2025.",
           },
         },
         {
@@ -225,68 +298,68 @@ const jsonLd = {
           name: "Qual a diferença entre ISV e IUC?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O ISV (Imposto Sobre Veículos) é pago uma única vez no momento da primeira matrícula em Portugal (ou importação). O IUC é pago anualmente enquanto o veículo circular. Ambos dependem da cilindrada e emissões de CO₂, mas as tabelas e fórmulas são diferentes.",
+            text: "O ISV é pago uma única vez na primeira matrícula em Portugal. O IUC é pago anualmente enquanto o veículo estiver matriculado.",
           },
         },
-        {
-          "@type": "Question",
-          name: "Quando se paga o IUC?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "O IUC é pago anualmente no mês do aniversário da matrícula do veículo. Pode ser pago nas Finanças, CTT, MB Way, ou homebanking. O não pagamento implica coimas e juros.",
-          },
-        },
-      ],
-    },
-    {
-      "@type": "HowTo",
-      name: "Como calcular o IUC do meu carro",
-      description: "Passos para estimar o IUC anual de um veículo em Portugal",
-      step: [
-        { "@type": "HowToStep", name: "Introduza a cilindrada", text: "Insira a cilindrada do motor em cm³ (encontra-se no documento único do veículo)" },
-        { "@type": "HowToStep", name: "Indique as emissões CO₂", text: "Insira os g/km de CO₂ (para veículos Cat. A pós-2007)" },
-        { "@type": "HowToStep", name: "Selecione o combustível", text: "Escolha gasolina, diesel, GPL/GN ou elétrico" },
-        { "@type": "HowToStep", name: "Insira o ano de matrícula", text: "O ano determina a categoria (A ou B) e o coeficiente de antiguidade" },
-        { "@type": "HowToStep", name: "Clique em Calcular", text: "Veja o IUC estimado, discriminado por componentes" },
       ],
     },
   ],
 };
 
 // ─── Component ──────────────────────────────────────────────────────────────
-
 export default function SimuladorIUC() {
   const [form, setForm] = useState({
+    combustivel: "gasolina",
     cilindrada: "",
     co2: "",
-    combustivel: "gasolina",
+    normaCO2: "nedc",
     anoMatricula: "",
+    origemUEEEE: "sim",
   });
   const [resultado, setResultado] = useState<IUCResult | null>(null);
   const [erro, setErro] = useState<string | null>(null);
 
+  const ano = Number(form.anoMatricula);
+  const validAno = !isNaN(ano) && ano >= 1970;
+  const isCatA = validAno && (ano < 2007 || (ano === 2007 && form.origemUEEEE === "sim"));
+  const isCatB = validAno && !isCatA;
+  const isEletrico = form.combustivel === "eletrico";
+  const isEletricoCatBIsento = isEletrico && isCatB;
+  const isEletricoCatA = isEletrico && isCatA;
+  const mostrarCO2 = !isEletrico && isCatB;
+  const mostrarNorma = mostrarCO2;
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     const { name, value } = e.target;
-    if (name === "combustivel" && value === "eletrico") {
-      setForm((f) => ({ ...f, combustivel: value, cilindrada: "0", co2: "0" }));
-      return;
-    }
-    setForm((f) => ({ ...f, [name]: value }));
+    setForm((f) => {
+      const updated = { ...f, [name]: value };
+      if (name === "anoMatricula") {
+        const y = Number(value);
+        if (y >= 2020) updated.normaCO2 = "wltp";
+        else if (y > 0 && y <= 2017) updated.normaCO2 = "nedc";
+      }
+      return updated;
+    });
+    setResultado(null);
+    setErro(null);
   }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setErro(null);
 
-    if (form.combustivel !== "eletrico") {
-      if (!form.cilindrada || isNaN(Number(form.cilindrada)) || Number(form.cilindrada) <= 0) {
-        setErro("Introduza uma cilindrada válida (em cm³).");
-        return;
-      }
-    }
-    if (!form.anoMatricula || isNaN(Number(form.anoMatricula)) || Number(form.anoMatricula) < 1970 || Number(form.anoMatricula) > new Date().getFullYear()) {
+    const anoNum = Number(form.anoMatricula);
+    if (!form.anoMatricula || isNaN(anoNum) || anoNum < 1970 || anoNum > new Date().getFullYear()) {
       setErro("Introduza um ano de matrícula válido (ex: 2018).");
       return;
+    }
+
+    if (!isEletricoCatBIsento) {
+      const cilNum = Number(form.cilindrada);
+      if (!form.cilindrada || isNaN(cilNum) || cilNum <= 0) {
+        setErro(isEletricoCatA ? "Introduza a voltagem total da bateria (V)." : "Introduza uma cilindrada válida (em cm³).");
+        return;
+      }
     }
 
     const r = calcularIUC(form);
@@ -298,28 +371,24 @@ export default function SimuladorIUC() {
   }
 
   function handleReset() {
-    setForm({ cilindrada: "", co2: "", combustivel: "gasolina", anoMatricula: "" });
+    setForm({ combustivel: "gasolina", cilindrada: "", co2: "", normaCO2: "nedc", anoMatricula: "", origemUEEEE: "sim" });
     setResultado(null);
     setErro(null);
   }
 
-  const isEletrico = form.combustivel === "eletrico";
-
   return (
     <MainLayout>
       <Seo
-        title={SEO_KEYWORDS.simulador_iuc.title ?? 'Simulador IUC 2026 GRÁTIS Portugal | Cálculo Instantâneo | AutoGo.pt'}
-        description={SEO_KEYWORDS.simulador_iuc.description ?? ''}
+        title={SEO_KEYWORDS.simulador_iuc?.title ?? "Simulador IUC 2026 GRÁTIS Portugal | Cálculo Instantâneo | AutoGo.pt"}
+        description={SEO_KEYWORDS.simulador_iuc?.description ?? ""}
         url="https://autogo.pt/simulador-iuc"
-        keywords={joinKeywords(SEO_KEYWORDS.simulador_iuc.keywords ?? [], IUC_KEYWORDS, SITE_WIDE_KEYWORDS)}
+        keywords={joinKeywords(SEO_KEYWORDS.simulador_iuc?.keywords ?? [], IUC_KEYWORDS, SITE_WIDE_KEYWORDS)}
         jsonLd={jsonLd}
       />
 
       {/* Red accent bar */}
-      <div id="hero-redline" className="fixed top-[64px] left-0 w-full z-40 pointer-events-none" style={{ height: "0" }}>
-        <div id="hero-redline-bar" className="w-full flex justify-center">
-          <span className="block h-1.5 rounded-full bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90 shadow-[0_0_16px_4px_rgba(213,0,50,0.18)] transition-all duration-700" style={{ width: "100%" }} />
-        </div>
+      <div className="fixed top-[64px] left-0 w-full z-40 pointer-events-none">
+        <span className="block h-1.5 bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90" />
       </div>
 
       <div className="min-h-screen bg-white pt-20 pb-16 px-4">
@@ -335,7 +404,7 @@ export default function SimuladorIUC() {
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Calcule o <strong>Imposto Único de Circulação</strong> do seu veículo em segundos.
-              Categorias A e B, elétricos isentos, coeficiente de antiguidade incluído.
+              Tabelas oficiais 2026 — Categorias A e B, elétricos isentos, taxa adicional gasóleo incluída.
             </p>
           </div>
 
@@ -362,54 +431,20 @@ export default function SimuladorIUC() {
                     className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121] bg-white"
                   >
                     <option value="gasolina">Gasolina / GPL / GN</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="eletrico">Elétrico</option>
+                    <option value="diesel">Gasóleo</option>
+                    <option value="eletrico">Elétrico (100% elétrico)</option>
                   </select>
+                  {isEletrico && (
+                    <p className="text-xs text-amber-600 mt-1.5 bg-amber-50 rounded px-2 py-1.5">
+                      ⚠️ Híbridos e plug-in híbridos <strong>não</strong> estão isentos — selecione gasolina ou gasóleo.
+                    </p>
+                  )}
                 </div>
 
-                {/* Cilindrada */}
-                {!isEletrico && (
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-                      Cilindrada (cm³)
-                    </label>
-                    <input
-                      type="number"
-                      name="cilindrada"
-                      value={form.cilindrada}
-                      onChange={handleChange}
-                      placeholder="ex: 1598"
-                      min={1}
-                      max={9999}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121]"
-                    />
-                    <p className="text-xs text-gray-400 mt-1">Encontra no Documento Único do veículo (campo N° de referência da motor)</p>
-                  </div>
-                )}
-
-                {/* CO2 — só Cat A (pós 2007) */}
-                {!isEletrico && Number(form.anoMatricula) >= 2007 && (
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-                      Emissões CO₂ (g/km) <span className="text-gray-400 font-normal text-xs">— apenas para veículos pós-2007</span>
-                    </label>
-                    <input
-                      type="number"
-                      name="co2"
-                      value={form.co2}
-                      onChange={handleChange}
-                      placeholder="ex: 130"
-                      min={0}
-                      max={999}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121]"
-                    />
-                  </div>
-                )}
-
-                {/* Ano matrícula */}
+                {/* Ano de matrícula */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-                    Ano de 1ª Matrícula
+                    Ano de 1ª Matrícula (PT/UE/EEE)
                   </label>
                   <input
                     type="number"
@@ -422,9 +457,103 @@ export default function SimuladorIUC() {
                     className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121]"
                   />
                   <p className="text-xs text-gray-400 mt-1">
-                    Veículos matriculados antes de 2007 → Categoria B (taxa fixa)
+                    Importados UE/EEE: use a data da matrícula original (não a portuguesa).
                   </p>
                 </div>
+
+                {/* Origem UE/EEE — relevante para ano = 2007 */}
+                {validAno && ano === 2007 && (
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                      Primeira matrícula em Portugal, UE ou EEE?
+                    </label>
+                    <select
+                      name="origemUEEEE"
+                      value={form.origemUEEEE}
+                      onChange={handleChange}
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121] bg-white"
+                    >
+                      <option value="sim">Sim (PT/UE/EEE) — antes de Julho → Cat. A</option>
+                      <option value="nao">Não (ex: Suíça, EUA…) → Cat. B</option>
+                    </select>
+                  </div>
+                )}
+
+                {/* Indicador de categoria */}
+                {validAno && ano !== 2007 && (
+                  <div className={`text-xs px-3 py-2 rounded-lg font-medium ${isCatA ? "bg-gray-100 text-gray-600" : "bg-[#b42121]/5 text-[#b42121]"}`}>
+                    {isCatA
+                      ? "📋 Categoria A — taxa fixa por cilindrada e período de matrícula"
+                      : isEletricoCatBIsento
+                        ? "⚡ Categoria B — Elétrico: isento de IUC"
+                        : "📊 Categoria B — cálculo por cilindrada + CO₂ × coeficiente ano"}
+                  </div>
+                )}
+
+                {/* Cilindrada / Voltagem */}
+                {!isEletricoCatBIsento && (
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                      {isEletricoCatA ? "Voltagem total da bateria (V)" : "Cilindrada (cm³)"}
+                    </label>
+                    <input
+                      type="number"
+                      name="cilindrada"
+                      value={form.cilindrada}
+                      onChange={handleChange}
+                      placeholder={isEletricoCatA ? "ex: 72" : "ex: 1598"}
+                      min={1}
+                      max={9999}
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121]"
+                    />
+                    <p className="text-xs text-gray-400 mt-1">
+                      {isEletricoCatA ? "Voltagem total do sistema (campo no DUA)." : "Campo P.1 no Documento Único Automóvel (DUA)."}
+                    </p>
+                  </div>
+                )}
+
+                {/* CO₂ — só Cat B, não elétrico */}
+                {mostrarCO2 && (
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                      Emissões CO₂ (g/km)
+                    </label>
+                    <input
+                      type="number"
+                      name="co2"
+                      value={form.co2}
+                      onChange={handleChange}
+                      placeholder="ex: 130"
+                      min={0}
+                      max={999}
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121]"
+                    />
+                    <p className="text-xs text-gray-400 mt-1">
+                      Campo V.7 no DUA. Em carros novos pós-2018 pode não estar — consulte o manual ou COC.
+                    </p>
+                  </div>
+                )}
+
+                {/* Norma CO₂ */}
+                {mostrarNorma && (
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                      Norma de homologação CO₂
+                    </label>
+                    <select
+                      name="normaCO2"
+                      value={form.normaCO2}
+                      onChange={handleChange}
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121] bg-white"
+                    >
+                      <option value="nedc">NEDC (regra geral: até 2017, maioria de 2018)</option>
+                      <option value="wltp">WLTP (regra geral: maioria de 2019, todos de 2020+)</option>
+                    </select>
+                    <p className="text-xs text-gray-400 mt-1">
+                      NEDC: limites mais baixos. WLTP: limites mais altos. Em dúvida consulte o COC do veículo.
+                    </p>
+                  </div>
+                )}
 
                 {/* Erro */}
                 {erro && (
@@ -470,52 +599,44 @@ export default function SimuladorIUC() {
                     Resultado
                   </h2>
 
-                  {resultado.categoria === "eletrico" ? (
+                  {resultado.isento ? (
                     <div className="bg-green-50 border border-green-200 rounded-xl p-5 text-center">
-                      <div className="text-4xl mb-2">⚡</div>
-                      <p className="text-2xl font-bold text-green-700 mb-1">IUC: Isento</p>
-                      <p className="text-green-600 text-sm">Veículos 100% elétricos não pagam IUC em Portugal.</p>
+                      <div className="text-4xl mb-2">{resultado.categoria === "isento" ? "⚡" : "✅"}</div>
+                      <p className="text-2xl font-bold text-green-700 mb-2">IUC: Isento</p>
+                      <p className="text-green-600 text-sm">{resultado.isentoRazao}</p>
                     </div>
                   ) : (
                     <>
-                      {/* Valor final destaque */}
+                      {/* Valor final */}
                       <div className="bg-[#b42121]/5 border border-[#b42121]/20 rounded-xl p-5 text-center mb-5">
                         <p className="text-sm text-gray-500 mb-1">IUC Anual Estimado</p>
                         <p className="text-4xl font-black text-[#b42121]">
                           {resultado.iuc_final.toLocaleString("pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €
                         </p>
-                        <p className="text-xs text-gray-400 mt-1">
-                          Categoria {resultado.categoria} · {resultado.coef_antiguidade < 1 ? `Coef. antiguidade ${(resultado.coef_antiguidade * 100).toFixed(0)}%` : "Veículo novo"}
-                        </p>
+                        <p className="text-xs text-gray-400 mt-1">Categoria {resultado.categoria}</p>
                       </div>
 
                       {/* Breakdown */}
-                      {resultado.categoria === "A" && (
-                        <div className="space-y-2 mb-5">
-                          <div className="flex justify-between text-sm py-2 border-b border-gray-100">
-                            <span className="text-gray-600">Componente cilindrada</span>
-                            <span className="font-semibold">€{resultado.componente_cilindrada.toFixed(2)}</span>
+                      <div className="space-y-2 mb-5">
+                        {resultado.breakdown.map((item, i) => (
+                          <div key={i} className="flex justify-between text-sm py-2 border-b border-gray-100">
+                            <span className="text-gray-600">{item.label}</span>
+                            <span className="font-semibold text-right">
+                              {item.texto
+                                ? <span className="text-xs">{item.texto}</span>
+                                : item.valor != null
+                                  ? `€${item.valor.toFixed(2)}`
+                                  : "—"}
+                            </span>
                           </div>
-                          <div className="flex justify-between text-sm py-2 border-b border-gray-100">
-                            <span className="text-gray-600">Componente CO₂</span>
-                            <span className="font-semibold">€{resultado.componente_co2.toFixed(2)}</span>
-                          </div>
-                          <div className="flex justify-between text-sm py-2 border-b border-gray-100">
-                            <span className="text-gray-600">IUC bruto</span>
-                            <span className="font-semibold">€{resultado.iuc_bruto.toFixed(2)}</span>
-                          </div>
-                          <div className="flex justify-between text-sm py-2 border-b border-gray-100">
-                            <span className="text-gray-600">Coef. antiguidade</span>
-                            <span className="font-semibold text-green-600">× {(resultado.coef_antiguidade * 100).toFixed(0)}%</span>
-                          </div>
-                          <div className="flex justify-between text-base py-2 font-bold">
-                            <span className="text-gray-800">IUC Final</span>
-                            <span className="text-[#b42121]">€{resultado.iuc_final.toFixed(2)}</span>
-                          </div>
+                        ))}
+                        <div className="flex justify-between text-base py-2 font-bold">
+                          <span className="text-gray-800">IUC Final</span>
+                          <span className="text-[#b42121]">€{resultado.iuc_final.toFixed(2)}</span>
                         </div>
-                      )}
+                      </div>
 
-                      {/* Detalhes cálculo */}
+                      {/* Info detalhada */}
                       {resultado.info.length > 0 && (
                         <div className="bg-gray-50 rounded-lg p-4 space-y-1">
                           {resultado.info.map((line, i) => (
@@ -526,30 +647,23 @@ export default function SimuladorIUC() {
                     </>
                   )}
 
-                  {/* Aviso legal */}
                   <p className="text-xs text-gray-400 mt-4 leading-relaxed">
-                    * Valor estimado com base nas tabelas do Código do IUC (OE 2026). Para valor exato consulte o Portal das Finanças ou a AT. Não inclui juros de mora ou coimas.
+                    * Valor estimado com base nas tabelas IUC 2026 (impostosobreveiculos.info / AT). Há isenção quando o valor calculado é inferior a €10. Para valor exato consulte o Portal das Finanças.
                   </p>
                 </div>
               )}
 
-              {/* CTA legalização */}
+              {/* CTA */}
               <div className="mt-5 bg-gray-900 rounded-2xl p-5 text-white">
                 <p className="text-sm font-semibold mb-1">A importar um carro?</p>
                 <p className="text-xs text-gray-300 mb-3">
                   Para além do IUC anual, precisará de calcular também o <strong className="text-white">ISV</strong> (pago uma vez na importação). Use o nosso simulador ISV gratuito.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2">
-                  <Link
-                    href="/simulador-isv"
-                    className="flex-1 text-center bg-[#b42121] hover:bg-[#9a1c1c] text-white text-sm font-bold py-2.5 px-4 rounded-lg transition-colors"
-                  >
+                  <Link href="/simulador-isv" className="flex-1 text-center bg-[#b42121] hover:bg-[#9a1c1c] text-white text-sm font-bold py-2.5 px-4 rounded-lg transition-colors">
                     Simulador ISV →
                   </Link>
-                  <Link
-                    href="/pedido"
-                    className="flex-1 text-center bg-white/10 hover:bg-white/20 text-white text-sm font-bold py-2.5 px-4 rounded-lg transition-colors"
-                  >
+                  <Link href="/pedido" className="flex-1 text-center bg-white/10 hover:bg-white/20 text-white text-sm font-bold py-2.5 px-4 rounded-lg transition-colors">
                     Pedir Proposta Grátis
                   </Link>
                 </div>
@@ -557,72 +671,95 @@ export default function SimuladorIUC() {
             </div>
           </div>
 
-          {/* ── ISV vs IUC explainer ── */}
+          {/* ── Como se calcula ── */}
           <section className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">ISV vs IUC — Qual a diferença?</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Como se calcula o IUC em 2026?</h2>
+            <p className="text-center text-gray-500 text-sm mb-8">As taxas não foram atualizadas em 2026 — são exatamente as mesmas de 2024 e 2025.</p>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="w-10 h-10 bg-[#b42121] text-white rounded-xl flex items-center justify-center font-black text-sm">ISV</span>
+                  <span className="w-10 h-10 bg-gray-700 text-white rounded-xl flex items-center justify-center font-black text-sm">A</span>
                   <div>
-                    <p className="font-bold text-gray-800">Imposto Sobre Veículos</p>
-                    <p className="text-xs text-gray-500">Pago uma única vez</p>
+                    <p className="font-bold text-gray-800">Categoria A</p>
+                    <p className="text-xs text-gray-500">1ª matrícula PT/UE/EEE até 30 Jun 2007</p>
                   </div>
                 </div>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">→</span>Pago no momento da 1ª matrícula em Portugal</li>
-                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">→</span>Calculado sobre cilindrada + CO₂</li>
-                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">→</span>Elétricos: isentos</li>
-                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">→</span>Usados: redução 10%–80% por idade</li>
-                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">→</span>Pode custar €0 a €10.000+</li>
+                  <li className="flex gap-2"><span className="font-bold text-gray-700 mt-0.5">→</span>Taxa fixa por escalão de cilindrada</li>
+                  <li className="flex gap-2"><span className="font-bold text-gray-700 mt-0.5">→</span>3 períodos: 1981–89 / 1990–95 / 1996–Jun 2007</li>
+                  <li className="flex gap-2"><span className="font-bold text-gray-700 mt-0.5">→</span>Anterior a 1981: <strong>isento</strong></li>
+                  <li className="flex gap-2"><span className="font-bold text-gray-700 mt-0.5">→</span>Gasóleo: taxa inclui adicional</li>
+                  <li className="flex gap-2"><span className="font-bold text-gray-700 mt-0.5">→</span>Sem componente CO₂</li>
                 </ul>
-                <Link href="/simulador-isv" className="mt-4 inline-block text-[#b42121] text-sm font-semibold hover:underline">
-                  Calcular ISV →
-                </Link>
               </div>
               <div className="border border-gray-200 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="w-10 h-10 bg-gray-800 text-white rounded-xl flex items-center justify-center font-black text-sm">IUC</span>
+                  <span className="w-10 h-10 bg-[#b42121] text-white rounded-xl flex items-center justify-center font-black text-sm">B</span>
                   <div>
-                    <p className="font-bold text-gray-800">Imposto Único de Circulação</p>
-                    <p className="text-xs text-gray-500">Pago todos os anos</p>
+                    <p className="font-bold text-gray-800">Categoria B</p>
+                    <p className="text-xs text-gray-500">1ª matrícula PT/UE/EEE a partir de 1 Jul 2007</p>
                   </div>
                 </div>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex gap-2"><span className="text-gray-800 font-bold mt-0.5">→</span>Pago anualmente no mês de aniversário da matrícula</li>
-                  <li className="flex gap-2"><span className="text-gray-800 font-bold mt-0.5">→</span>Cat. A (pós-2007): cilindrada + CO₂ × coef. antiguidade</li>
-                  <li className="flex gap-2"><span className="text-gray-800 font-bold mt-0.5">→</span>Cat. B (pré-2007): taxa fixa por escalão de cilindrada</li>
-                  <li className="flex gap-2"><span className="text-gray-800 font-bold mt-0.5">→</span>Elétricos: isentos</li>
-                  <li className="flex gap-2"><span className="text-gray-800 font-bold mt-0.5">→</span>Redução de 50% para veículos com +10 anos</li>
+                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">1.</span>Taxa cilindrada (4 escalões: €31,77 a €435,84)</li>
+                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">2.</span>+ Taxa CO₂ (NEDC ou WLTP)</li>
+                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">3.</span>+ Taxa adicional CO₂ (se matrícula ≥ 2017)</li>
+                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">4.</span>× Coeficiente ano — multiplica (1+2+3) — (1,00 / 1,05 / 1,10 / 1,15)</li>
+                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">5.</span>+ Taxa adicional gasóleo (se gasóleo)</li>
+                  <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">→</span>Elétricos 100%: <strong>isentos</strong></li>
                 </ul>
               </div>
             </div>
           </section>
 
-          {/* ── FAQ visível ── */}
+          {/* ── ISV vs IUC ── */}
+          <section className="mt-8">
+            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+              <h3 className="font-bold text-gray-800 mb-3">ISV vs IUC — Qual a diferença?</h3>
+              <div className="grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">ISV — pago uma vez</p>
+                  <p>Pago na 1ª matrícula em Portugal. Calculado sobre cilindrada + CO₂. Elétricos: isentos.</p>
+                  <Link href="/simulador-isv" className="mt-2 inline-block text-[#b42121] font-semibold hover:underline text-xs">
+                    Calcular ISV →
+                  </Link>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">IUC — pago todos os anos</p>
+                  <p>Pago anualmente no mês do aniversário da matrícula. Há isenção quando o valor é inferior a €10.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ── FAQ ── */}
           <section className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Perguntas Frequentes — IUC</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Perguntas Frequentes — IUC 2026</h2>
             <div className="space-y-4 max-w-3xl mx-auto">
               {[
                 {
                   q: "O que é o IUC e quem tem de pagar?",
-                  a: "O IUC (Imposto Único de Circulação) é pago anualmente por todos os proprietários de veículos matriculados em Portugal. O valor depende da cilindrada, CO₂ e ano de matrícula. Veículos elétricos estão isentos.",
+                  a: "O IUC (Imposto Único de Circulação) é pago anualmente por todos os proprietários de veículos matriculados em Portugal. Há isenção quando o valor calculado é inferior a €10, e para elétricos Cat. B.",
+                },
+                {
+                  q: "As taxas do IUC aumentaram em 2026?",
+                  a: "Não. As taxas do IUC para 2026 são exatamente as mesmas de 2024 e 2025. Não houve qualquer atualização.",
+                },
+                {
+                  q: "O IUC de um carro importado da UE é calculado como?",
+                  a: "Desde 2020, para usados importados de países da UE/EEE, é a data da primeira matrícula nesses países que conta. Para importados de fora da UE/EEE (ex: Suíça, EUA), usa-se sempre a data da matrícula portuguesa.",
                 },
                 {
                   q: "Quando e como se paga o IUC?",
-                  a: "O IUC é pago anualmente no mês do aniversário da matrícula do veículo. Pode ser pago online no Portal das Finanças (AT), por Multibanco, nos CTT, ou via homebanking. O não pagamento gera coimas e juros.",
+                  a: "O pagamento deve ser feito entre o 1º dia do mês anterior ao mês da matrícula e o final do mês da matrícula. Na compra de carro novo ou importação: até 90 dias após a matrícula. Pode pagar no Portal das Finanças (AT), Multibanco, CTT ou homebanking.",
                 },
                 {
-                  q: "O IUC de um carro importado é diferente?",
-                  a: "Não. Após a legalização e atribuição de matrícula portuguesa, o IUC é calculado exactamente da mesma forma que para qualquer outro veículo nacional. O que muda é o ISV, pago uma única vez na importação.",
+                  q: "Híbridos e plug-in híbridos estão isentos de IUC?",
+                  a: "Não. Apenas os automóveis 100% elétricos com matrícula a partir de 01/07/2007 (Cat. B) estão isentos. Híbridos e plug-in pagam o valor normal como qualquer outro veículo.",
                 },
                 {
-                  q: "Como reduzir o IUC que pago?",
-                  a: "O IUC reduz naturalmente com a idade do veículo (coeficiente de antiguidade: -5% por ano até ao mínimo de 50% para veículos com +10 anos). A única forma de isenção total é ter um veículo 100% elétrico.",
-                },
-                {
-                  q: "O simulador IUC é exato?",
-                  a: "O simulador usa as tabelas oficiais do Código do IUC (OE 2026) e deve dar um valor muito próximo do real. Para o valor exato e definitivo, consulte o Portal das Finanças (AT) ou um técnico oficial.",
+                  q: "O que é a norma NEDC vs WLTP no IUC?",
+                  a: "São dois métodos de medição de emissões CO₂. Até 2017: NEDC. A partir de 2020: todos WLTP. Em 2018-2019 coexistiram. O IUC usa tabelas com limites diferentes para cada norma (WLTP tem limites mais altos porque mede mais emissões). Verifique no COC ou DUA do veículo.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="border border-gray-200 rounded-xl overflow-hidden group">
@@ -640,7 +777,7 @@ export default function SimuladorIUC() {
             </div>
           </section>
 
-          {/* ── Breadcrumb + links ── */}
+          {/* Breadcrumb */}
           <div className="mt-12 flex flex-wrap gap-3 justify-center text-sm text-gray-500">
             <Link href="/" className="hover:text-[#b42121] transition-colors">Início</Link>
             <span>·</span>
