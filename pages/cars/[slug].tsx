@@ -620,13 +620,27 @@ export default function CarDetail({ car, similarCars, detailKeywords, vehicleJso
       }
     };
 
+    // Route any URL through the server-side proxy so CORS is never an issue.
+    // Relative paths are turned into absolute URLs first.
+    const proxyUrl = (url: string): string => {
+      if (!url) return url;
+      if (url.startsWith('data:')) return url; // already a data URL — no proxy needed
+      // Make absolute
+      const abs = /^https?:\/\//i.test(url)
+        ? url
+        : url.startsWith('//')
+          ? `https:${url}`
+          : `${window.location.origin}${url.startsWith('/') ? '' : '/'}${url}`;
+      return `/api/image-proxy?url=${encodeURIComponent(abs)}`;
+    };
+
     // Load image and convert to data URL with fallbacks. Fast-paths return quickly.
     const loadImageAsBase64 = async (url: string): Promise<string | null> => {
       if (!url) return null;
       if (typeof url === 'string' && url.startsWith('data:')) return url;
 
       try {
-        const resp = await fetchWithTimeout(url, 10000);
+        const resp = await fetchWithTimeout(proxyUrl(url), 10000);
         if (!resp || !resp.ok) throw new Error('fetch-failed');
         const blob = await resp.blob();
 
@@ -753,7 +767,8 @@ export default function CarDetail({ car, similarCars, detailKeywords, vehicleJso
             if (!settled) resolve(null);
           };
           try {
-            img.src = url;
+            // Use proxy even in last-ditch attempt so CORS can't block it
+            img.src = proxyUrl(url);
           } catch {
             clearTimeout(to);
             resolve(null);
@@ -810,14 +825,14 @@ export default function CarDetail({ car, similarCars, detailKeywords, vehicleJso
       doc.text('AutoGo.pt', logoX, logoY + 20);
     }
 
-    // Prepare gallery images: include main `image` and any `images` array
-    const gallerySrcs: string[] = [];
-    if (car.image) gallerySrcs.push(car.image);
-    if (car.images && Array.isArray(car.images)) {
-      for (const s of car.images) if (s) gallerySrcs.push(s);
-    }
-    // dedupe and limit to 4 images for speed
-    const uniqueGallery = Array.from(new Set(gallerySrcs)).slice(0, 4);
+    // Prepare gallery images — use displayedImages (already normalized to absolute URLs)
+    // Fall back to raw car fields if displayedImages is empty for some reason
+    const gallerySrcs: string[] = displayedImages.length > 0
+      ? displayedImages
+      : [car.image, ...(Array.isArray(car.images) ? car.images : [])].filter(Boolean) as string[];
+
+    // dedupe and limit to 6 images for speed
+    const uniqueGallery = Array.from(new Set(gallerySrcs)).slice(0, 6);
 
     // Prefetch base64s in parallel (small number, safe to run concurrently)
     const galleryBase64s = await Promise.all(uniqueGallery.map((s) => loadImageAsBase64(s).catch(() => null)));
