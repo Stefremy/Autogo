@@ -21,6 +21,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         {/* Google Consent Mode v2 & gtag.js (only when MEASUREMENT_ID is provided) */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>

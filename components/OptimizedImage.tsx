@@ -42,7 +42,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
     const wrapperStyle = props.fill
         ? { display: 'block', width: '100%', height: '100%', ...props.style } // Ensure wrapper fills parent
-        : { width: props.width, height: props.height };
+        : { width: props.width, height: props.height, maxWidth: '100%' };
 
     return (
         <div className={`relative ${className || ''}`} style={wrapperStyle as any}>

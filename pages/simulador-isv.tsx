@@ -444,10 +444,10 @@ export default function Simulador() {
           jsonLd={combinedJsonLd}
         />
         <div className="relative w-full flex-1 z-10">
-          <section className="relative w-full flex flex-col lg:flex-row items-start justify-between gap-16 py-6 px-2 sm:px-6 md:px-12 bg-transparent">
+          <section className="relative w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-16 py-6 px-4 sm:px-6 md:px-12 bg-transparent overflow-x-hidden">
             {/* Info block */}
-            <div className="w-full max-w-3xl mb-10 lg:mb-0 pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left z-10">
-              <h1 className="text-3xl font-bold text-[#b42121] mb-3 leading-tight">
+            <div className="w-full max-w-full md:max-w-3xl mb-10 lg:mb-0 lg:pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left z-10 box-border overflow-hidden">
+              <h1 className="text-2xl sm:text-3xl font-bold text-[#b42121] mb-3 leading-tight break-words w-full">
                 {t("Simule o ISV da sua viatura em segundos!")}
               </h1>
               <p className="mb-4 text-lg">
@@ -498,7 +498,7 @@ export default function Simulador() {
               <div className="relative w-full flex items-center mt-6">
                 {/* 3 horizontal, thick, long CSS red stripes behind car */}
                 <div
-                  className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 pointer-events-none"
+                  className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0 pointer-events-none overflow-hidden"
                   style={{ zIndex: 0, height: "100%" }}
                 >
                   <div
@@ -538,18 +538,19 @@ export default function Simulador() {
                     }}
                   />
                 </div>
-                <OptimizedImage
-                  src="/images/amgsimulador.webp"
-                  alt="Carro exemplo simulador ISV"
-                  width={800}
-                  height={300}
-                  className="relative w-full max-w-4xl mx-auto object-cover z-10"
-                  priority={true}
-                />
+                <div className="relative w-full max-w-4xl h-[150px] sm:h-[250px] md:h-[300px] mx-auto z-10">
+                  <OptimizedImage
+                    src="/images/amgsimulador.webp"
+                    alt="Carro exemplo simulador ISV"
+                    fill
+                    className="object-cover rounded-xl"
+                    priority={true}
+                  />
+                </div>
               </div>
             </div>
             {/* Simulator card toggleable by logo */}
-            <div className="relative w-full max-w-lg ml-auto flex flex-col items-center pt-8">
+            <div className="relative w-full max-w-full sm:max-w-lg mx-auto lg:ml-auto lg:mx-0 flex flex-col items-center pt-8">
               <button
                 type="button"
                 aria-label="Abrir/Fechar Simulador"
@@ -573,7 +574,7 @@ export default function Simulador() {
                 className={`w-full transition-all duration-700 ${simulatorOpen ? "opacity-100 scale-100 max-h-[2000px] pointer-events-auto" : "opacity-0 scale-95 max-h-0 pointer-events-none overflow-hidden"}`}
               >
                 <div className="bg-white/80 rounded-3xl shadow-2xl border border-[#b42121]/10 backdrop-blur-md p-2 sm:p-6 md:p-10 flex flex-col items-center w-full max-w-full overflow-x-auto">
-                  <h2 className="text-3xl font-extrabold text-[#b42121] mb-8 text-center tracking-tight drop-shadow">
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#b42121] mb-8 text-center tracking-tight drop-shadow break-words w-full">
                     Simulador ISV Portugal
                   </h2>
                   <form
@@ -688,12 +689,12 @@ export default function Simulador() {
                       <label className="font-semibold text-[#b42121]">
                         {t("Ano da 1ª matrícula (UE)")}
                       </label>
-                      <div className="flex gap-2">
+                      <div className="flex flex-col sm:flex-row gap-2">
                         <select
                           name="dia"
                           value={form.dia}
                           onChange={handleChange}
-                          className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/4 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                          className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-full sm:w-1/4 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
                           required
                         >
                           <option value="">Dia</option>
@@ -707,7 +708,7 @@ export default function Simulador() {
                           name="mes"
                           value={form.mes}
                           onChange={handleChange}
-                          className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                          className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-full sm:w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
                           required
                         >
                           <option value="">Mês</option>
@@ -724,7 +725,7 @@ export default function Simulador() {
                           max="2025"
                           value={form.ano}
                           onChange={handleChange}
-                          className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
+                          className="rounded-xl border border-[#b42121]/20 px-2 py-2 w-full sm:w-1/3 focus:ring-2 focus:ring-[#b42121]/30 transition-all shadow-sm"
                           required
                           placeholder="Ano"
                         />
