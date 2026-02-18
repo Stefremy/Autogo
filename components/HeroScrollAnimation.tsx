@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { motion, useScroll, useTransform, useMotionValueEvent, useSpring, useMotionValue, animate } from 'framer-motion';
+import { motion, useTransform, useMotionValueEvent, useSpring, useMotionValue, animate } from 'framer-motion';
 import { ShinyButton } from './ShinyButton';
 import { AuroraText } from './AuroraText';
 import { InteractiveHoverButton } from './InteractiveHoverButton';
@@ -19,7 +19,7 @@ function AnimatedHero({
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [imagesLoaded, setImagesLoaded] = useState(false);
     const [posterReady, setPosterReady] = useState(false);
-    const [prevFrame, setPrevFrame] = useState(-1);
+    const prevFrameRef = useRef(-1);
     const [isMobile, setIsMobile] = useState(false);
 
     // We'll use a local motion value for the "locked" progress on desktop
@@ -170,10 +170,10 @@ function AnimatedHero({
                 await new Promise(r => setTimeout(r, 50));
 
                 // Update ref progressively so frames are available if user scrolls fast
-                framesRef.current = [...frames];
+                framesRef.current = frames;
 
-                // If we have loaded enough initial frames, mark as ready for interaction
-                if (i + CHUNK_SIZE >= 48 && !imagesLoaded) {
+                // Mark ready as soon as the first full chunk (frames 1-24) is done
+                if (end >= 24 && !imagesLoaded) {
                     setImagesLoaded(true);
                 }
             }
@@ -184,24 +184,24 @@ function AnimatedHero({
         loadFrames();
 
         return () => { isMounted = false; };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [totalFrames, drawFrame]);
 
-    // Auto-play on mobile
+    // Auto-play on mobile — start as soon as the poster is ready, don't wait for all chunks
     useEffect(() => {
-        if (isMobile && imagesLoaded) {
+        if (isMobile && posterReady) {
             animate(mobileProgress, 1, {
-                duration: 3.5, // Verify smoother mobile playback (less rushed)
+                duration: 3.5,
                 ease: "easeInOut",
             });
         }
-    }, [isMobile, imagesLoaded, mobileProgress]);
+    }, [isMobile, posterReady, mobileProgress]);
 
     // Frame update trigger
     useMotionValueEvent(frameIndex, "change", (latest) => {
-        // No animation guard removed to allow auto-play
         const idx = Math.min(totalFrames - 1, Math.floor(latest));
-        if (idx !== prevFrame && imagesLoaded) {
-            setPrevFrame(idx);
+        if (idx !== prevFrameRef.current && imagesLoaded) {
+            prevFrameRef.current = idx;
             requestAnimationFrame(() => drawFrame(idx));
         }
     });
@@ -222,9 +222,9 @@ function AnimatedHero({
 
             // Broaden check to catch fast scrolls:
             // - rect.top <= 10: User has reached the top or scrolled past it
-            // - rect.top >= -100: User hasn't scrolled *too* far past it (avoid locking if way down page)
+            // - rect.top >= -300: Wider range to catch fast scrolls
             // - progress < 1.2: Animation isn't finished
-            if (rect.top <= 10 && rect.top >= -100 && progress < 1.2) {
+            if (rect.top <= 10 && rect.top >= -300 && progress < 1.2) {
                 isActivated = true;
 
                 // If we caught it slightly off-target (fast scroll), snap to top immediately
@@ -267,7 +267,7 @@ function AnimatedHero({
             window.removeEventListener('wheel', handleWheel);
             window.removeEventListener('scroll', checkStatus);
         };
-    }, [imagesLoaded, lockedProgress, isMobile]);
+    }, [lockedProgress, isMobile]);
 
     // Text & CTA Animations - Using activeProgress for both desktop and mobile
     const word1Opacity = useTransform(activeProgress, [0.05, 0.15], [0, 1]);
@@ -305,7 +305,7 @@ function AnimatedHero({
                     fetchPriority="high"
                     loading="eager"
                 />
-                <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ willChange: 'transform', touchAction: 'none' }} />
+                <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ willChange: 'contents', touchAction: 'none' }} />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 pointer-events-none" />
 
                 {/* Content Overlay */}
@@ -352,12 +352,17 @@ export default function HeroScrollAnimation(props: HeroScrollAnimationProps) {
     const staticImage = '/images/heroscroll/frameeleder.webp'; // Using existing poster
 
     useEffect(() => {
-        // Only load animation after page is ready + delay
-        const timer = setTimeout(() => {
-            setAnimationLoaded(true);
-        }, 2000); // 2 seconds delay
-
-        return () => clearTimeout(timer);
+        // Mount the animation component once the browser is idle (max 800ms wait)
+        const ric = (window as any).requestIdleCallback;
+        const cic = (window as any).cancelIdleCallback;
+        if (ric) {
+            const id = ric(() => setAnimationLoaded(true), { timeout: 800 });
+            return () => cic?.(id);
+        } else {
+            // Fallback for Safari which doesn't support requestIdleCallback
+            const id = setTimeout(() => setAnimationLoaded(true), 300);
+            return () => clearTimeout(id);
+        }
     }, []);
 
     if (!animationLoaded) {
