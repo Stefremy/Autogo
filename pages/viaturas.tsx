@@ -133,9 +133,15 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
     }
   }, [router.isReady, router.query, itemsPerBatch]);
 
+  // Keep a ref to router so the effect below doesn't re-run every render cycle
+  const routerRef = React.useRef(router);
+  useEffect(() => { routerRef.current = router; }, [router]);
+
   // Save filters whenever they change so the user's inputs are remembered
   useEffect(() => {
-    if (typeof window === "undefined" || !router.isReady) return;
+    if (typeof window === "undefined" || !routerRef.current.isReady) return;
+    // Guard: only sync URL when we are still on the viaturas page
+    if (routerRef.current.pathname !== "/viaturas") return;
     try {
       const toSave = {
         marca,
@@ -153,7 +159,7 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
 
       // Sync to URL query parameters for back-button persistence and sharing
-      const query: any = { ...router.query };
+      const query: any = { ...routerRef.current.query };
       const update = (key: string, val: string | number | null | undefined) => {
         if (val) query[key] = String(val); else delete query[key];
       };
@@ -165,11 +171,11 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
       const pageNum = Math.ceil(itemsLoaded / itemsPerBatch);
       if (pageNum > 1) query.page = String(pageNum); else delete query.page;
 
-      router.replace({ pathname: router.pathname, query }, undefined, { shallow: true });
+      routerRef.current.replace({ pathname: "/viaturas", query }, undefined, { shallow: true });
     } catch {
       // ignore storage errors
     }
-  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded, itemsPerBatch, router]);
+  }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded, itemsPerBatch]);
 
   // Unique options for selects
   const marcas = Array.from(

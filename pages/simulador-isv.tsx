@@ -5,7 +5,6 @@ import MainLayout from "../components/MainLayout";
 import Seo from '../components/Seo';
 import { SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 import { generateGEOFAQSchema } from "../utils/geoOptimization";
-import OptimizedImage from "../components/OptimizedImage";
 
 // Tabelas ISV Diário da República
 const TABELA_CILINDRADA_A = [
@@ -594,13 +593,18 @@ export default function Simulador() {
                     }}
                   />
                 </div>
-                <div className="relative w-full max-w-4xl h-[150px] sm:h-[250px] md:h-[300px] mx-auto z-10">
-                  <OptimizedImage
+                <div className="relative w-full max-w-4xl mx-auto z-10">
+                  <img
                     src="/images/amgsimulador.webp"
                     alt="Carro exemplo simulador ISV"
-                    fill
-                    className="object-cover rounded-xl"
-                    priority={true}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      maxHeight: "300px",
+                      objectFit: "contain",
+                      objectPosition: "center bottom",
+                      display: "block",
+                    }}
                   />
                 </div>
               </div>
@@ -618,13 +622,15 @@ export default function Simulador() {
                 className="focus:outline-none mb-2"
                 style={{ marginTop: 0 }}
               >
-                <OptimizedImage
-                  src="/images/autogoblack.webp"
-                  alt="AutoGo Logo"
-                  width={128}
-                  height={128}
-                  className={`w-32 h-32 mx-auto drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg transition-transform duration-700 overflow-hidden p-6 flex items-center justify-center ${logoAnim ? "animate-spin-slow" : ""}`}
-                />
+                <div className={`w-32 h-32 mx-auto drop-shadow-lg bg-white rounded-full border-4 border-white shadow-lg overflow-hidden flex items-center justify-center transition-transform duration-700 ${logoAnim ? "animate-spin-slow" : ""}`}>
+                  <img
+                    src="/images/autogoblack.webp"
+                    alt="AutoGo Logo"
+                    width={72}
+                    height={72}
+                    style={{ width: 72, height: 72, objectFit: "contain", display: "block" }}
+                  />
+                </div>
               </button>
               <div
                 className={`w-full transition-all duration-700 ${simulatorOpen ? "opacity-100 scale-100 max-h-[2000px] pointer-events-auto" : "opacity-0 scale-95 max-h-0 pointer-events-none overflow-hidden"}`}
