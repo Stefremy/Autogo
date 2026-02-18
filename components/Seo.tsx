@@ -1,7 +1,17 @@
 import Head from 'next/head';
 import React from 'react';
-import { useRouter } from 'next/router';
 import { SITE_WIDE_KEYWORDS, joinKeywords } from '../utils/seoKeywords';
+
+// Import i18n config to get locales (safely)
+let configuredLocales: string[] = [];
+try {
+  // require returns CommonJS; handle both shapes
+   
+  const ni = require('../next-i18next.config');
+  configuredLocales = (ni && ni.i18n && Array.isArray(ni.i18n.locales)) ? ni.i18n.locales : [];
+} catch {
+  configuredLocales = [];
+}
 
 type SeoProps = {
   title: string;
@@ -24,52 +34,40 @@ export default function Seo({
   ogType = 'website',
   jsonLd,
 }: SeoProps) {
-  const router = useRouter();
   const finalKeywords = keywords || joinKeywords(SITE_WIDE_KEYWORDS);
-  const finalImage = image || 'https://autogo.pt/images/auto-logo.webp';
-  const siteOrigin = 'https://autogo.pt';
+  const finalImage = image || 'https://autogo.pt/images/auto-logo.png';
+  const siteOrigin = process.env.NEXT_PUBLIC_SITE_ORIGIN || 'https://autogo.pt';
+  const finalUrl = url || siteOrigin || 'https://autogo.pt/';
 
-  // --- PT-only indexation logic ---
-  const currentLocale = router.locale || 'pt-PT';
-  const isPT = currentLocale === 'pt-PT' || currentLocale === 'pt';
-
-  // Canonical always points to the PT version (strip locale prefix if present)
-  let canonicalPath = router.asPath || '/';
-  if (!isPT) {
-    // Remove locale prefix from path: /en/viaturas → /viaturas
-    canonicalPath = canonicalPath.replace(new RegExp(`^/${currentLocale}`), '') || '/';
-  }
-  const canonicalUrl = `${siteOrigin}${canonicalPath}`;
+  // Build hreflang alternates from configured locales
+  const alternates = configuredLocales.length
+    ? configuredLocales.map((loc) => {
+        // Normalize locale folder to hreflang value
+        const hreflang = loc === 'pt-PT' ? 'pt-PT' : loc;
+        const href = loc === 'pt-PT' ? `${siteOrigin}/` : `${siteOrigin}/${loc.replace('_', '-')}/`;
+        return { hreflang, href };
+      })
+    : [];
 
   return (
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-
-      {/* Task 1: noindex for non-PT locales */}
-      {isPT ? (
-        <meta name="robots" content="index, follow" />
-      ) : (
-        <meta name="robots" content="noindex, follow" />
-      )}
-
+      <meta name="robots" content="index,follow" />
       <meta name="keywords" content={finalKeywords} />
 
-      {/* Task 2: Canonical always points to PT version */}
-      <link rel="canonical" href={canonicalUrl} />
+      {/* Canonical */}
+      <link rel="canonical" href={finalUrl} />
 
-      {/* Task 3: hreflang only on PT pages */}
-      {isPT && (
-        <>
-          <link rel="alternate" hrefLang="pt" href={canonicalUrl} />
-          <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
-        </>
-      )}
+      {/* hreflang alternates */}
+      {alternates.map((a) => (
+        <link key={a.hreflang} rel="alternate" hrefLang={a.hreflang} href={a.href} />
+      ))}
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={finalUrl} />
       <meta property="og:image" content={finalImage} />
       <meta property="og:type" content={ogType} />
 
@@ -106,11 +104,11 @@ export default function Seo({
                   url: 'https://autogo.pt',
                   logo: {
                     '@type': 'ImageObject',
-                    url: 'https://autogo.pt/images/auto-logo.webp',
+                    url: 'https://autogo.pt/images/auto-logo.png',
                     width: 512,
                     height: 512,
                   },
-                  image: 'https://autogo.pt/images/auto-logo.webp',
+                  image: 'https://autogo.pt/images/auto-logo.png',
                   priceRange: '€€',
                   telephone: '+351935179591',
                   email: 'AutoGO.stand@gmail.com',
