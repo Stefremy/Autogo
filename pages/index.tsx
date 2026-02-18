@@ -108,22 +108,53 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
 
   const handIconPath = '/images/icons/hand-over.webp';
 
-  // Build FAQ JSON-LD from SEO_KEYWORDS.home.faq when available
-  const homeFaq = SEO_KEYWORDS?.home?.faq;
-  const homeFaqJsonLd: any = homeFaq
-    ? {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: homeFaq.map((q) => ({
+  // Build FAQ JSON-LD with real answers for SEO
+  const homeFaqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
         '@type': 'Question',
-        name: q,
+        name: 'Quanto custa importar um carro para Portugal?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Consulte o nosso guia ou contacte a AutoGo para uma explicação detalhada.',
+          text: 'O custo total depende do veículo, mas inclui o preço de compra, ISV (Imposto sobre Veículos), transporte (geralmente €400–€800), e taxas de legalização (IMT, inspeção tipo B, matrícula — cerca de €300–€500). Em média, poupa-se 3.000€ a 7.000€ face ao mercado nacional.',
         },
-      })),
-    }
-    : undefined;
+      },
+      {
+        '@type': 'Question',
+        name: 'Quanto posso poupar ao importar um carro da Europa?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A poupança média é de 3.000€ a 7.000€ face ao mesmo carro no mercado português, mesmo após ISV e custos de legalização. Modelos premium (BMW, Mercedes, Audi) podem ter poupanças ainda maiores. Use o nosso simulador ISV para calcular o custo exato.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Qual é o prazo para receber o carro importado?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'O processo completo demora tipicamente 3 a 6 semanas: 1–2 semanas para seleção e negociação, 1–2 semanas para transporte, e 1–2 semanas para legalização completa em Portugal (inspeção tipo B, DAV, matrícula).',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Os carros elétricos importados pagam ISV?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Não. Veículos 100% elétricos estão completamente isentos de ISV em Portugal, o que os torna especialmente vantajosos para importar. Ainda assim, existem taxas de legalização administrativas (IMT, matrícula) que continuam a aplicar-se.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'O que está incluído no serviço chave-na-mão da AutoGo?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'O serviço chave-na-mão da AutoGo inclui: pesquisa e seleção do veículo, negociação de preço com o vendedor europeu, inspeção prévia, transporte até Portugal, cálculo e pagamento do ISV, inspeção tipo B, DAV/homologação IMT, emissão de matrícula portuguesa e entrega do carro pronto a circular.',
+        },
+      },
+    ],
+  };
 
   // GEO (Generative Engine Optimization) structured data
   const geoEnhancedFAQ = generateGEOFAQSchema(CAR_IMPORT_GEO_DATA.commonQuestions);
@@ -139,7 +170,7 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
     '@graph': [
       geoEnhancedFAQ,
       geoHowTo,
-      ...(homeFaqJsonLd ? [homeFaqJsonLd] : []),
+      homeFaqJsonLd,
     ],
   };
 
@@ -729,6 +760,53 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
         {/* GOOGLE REVIEWS SECTION */}
         <GoogleReviews />
 
+        {/* FAQ SECTION */}
+        <section className="w-full py-14 sm:py-20 bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-semibold text-black mb-3 text-center tracking-tight"
+            >
+              Perguntas Frequentes
+            </motion.h2>
+            <p className="text-center text-gray-500 mb-10 text-base">Tudo o que precisas de saber sobre importação de carros</p>
+            <div className="flex flex-col gap-4">
+              {[
+                {
+                  q: "Quanto custa importar um carro para Portugal?",
+                  a: "O custo total depende do veículo, mas inclui o preço de compra, ISV, transporte (€400–€800) e taxas de legalização (€300–€500). Em média, poupa-se 3.000€ a 7.000€ face ao mercado nacional — mesmo depois de todos os custos.",
+                },
+                {
+                  q: "Quanto posso poupar ao importar um carro da Europa?",
+                  a: "A poupança média é de 3.000€ a 7.000€ face ao mesmo carro no mercado português. Modelos premium como BMW, Mercedes e Audi podem ter poupanças ainda maiores. Usa o nosso simulador ISV para calculares o teu caso concreto.",
+                },
+                {
+                  q: "Qual é o prazo para receber o carro importado?",
+                  a: "O processo completo demora tipicamente 3 a 6 semanas: 1–2 semanas para seleção e negociação, 1–2 semanas para transporte, e 1–2 semanas para legalização em Portugal (inspeção tipo B, DAV, matrícula).",
+                },
+                {
+                  q: "Os carros elétricos importados pagam ISV?",
+                  a: "Não. Veículos 100% elétricos estão completamente isentos de ISV em Portugal, tornando-os especialmente vantajosos para importar. Apenas se aplicam as taxas administrativas de legalização (IMT, matrícula).",
+                },
+                {
+                  q: "O que está incluído no serviço chave-na-mão da AutoGo?",
+                  a: "Tudo: pesquisa e seleção do veículo, negociação de preço, inspeção prévia, transporte para Portugal, cálculo e pagamento do ISV, inspeção tipo B, homologação IMT, matrícula portuguesa e entrega do carro pronto a circular.",
+                },
+              ].map((item, i) => (
+                <HomeFaqItem key={i} question={item.q} answer={item.a} />
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <Link href="/como-funciona" className="inline-block text-[#b42121] font-semibold hover:underline text-base">
+                Ver como funciona o processo completo &rarr;
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* NOVOS ARTIGOS SECTION - SCROLLABLE CAROUSEL */}
         <section data-fullwidth className="w-full py-10 sm:py-14 bg-[#f5f6fa]">
           <div className="flex flex-col items-center">
@@ -844,6 +922,30 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
         </section>
       </MainLayout>
     </>
+  );
+}
+
+// Small component: accordion FAQ item for the homepage FAQ section
+function HomeFaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div className="rounded-2xl border border-gray-200 bg-[#f9fafb] overflow-hidden shadow-sm transition-all duration-200">
+      <button
+        className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+      >
+        <span className="font-semibold text-gray-900 text-base md:text-lg pr-4">{question}</span>
+        <span className={`flex-shrink-0 w-7 h-7 rounded-full bg-[#b42121]/10 text-[#b42121] flex items-center justify-center text-xl font-bold transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
+          +
+        </span>
+      </button>
+      <div
+        className={`px-6 text-gray-600 text-sm md:text-base leading-relaxed transition-all duration-300 ease-in-out overflow-hidden ${open ? "pb-5 max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+      >
+        {answer}
+      </div>
+    </div>
   );
 }
 

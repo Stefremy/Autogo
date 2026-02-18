@@ -51,9 +51,56 @@ export default function ComoFunciona() {
     },
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Como funciona o serviço chave-na-mão da AutoGo?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A AutoGo trata de todo o processo por si: pesquisa e seleção do veículo no mercado europeu, negociação de preço, inspeção prévia, transporte até Portugal, cálculo e pagamento do ISV, inspeção tipo B, homologação IMT, e entrega do carro com matrícula portuguesa pronto a circular.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Quanto tempo demora a importar um carro?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'O processo completo demora tipicamente 3 a 6 semanas: 1–2 semanas para seleção e negociação com o vendedor europeu, 1–2 semanas para transporte, e 1–2 semanas para legalização completa em Portugal (inspeção tipo B, DAV, emissão de matrícula).',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'O que está incluído no serviço de importação?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Estão incluídos: pesquisa e seleção, negociação, inspeção prévia, transporte, seguro de transporte, cálculo e pagamento de ISV, inspeção tipo B em Portugal, certificado de conformidade (COC), homologação IMT, e atribuição de matrícula portuguesa.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Posso pedir um carro específico que não esteja no stock?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sim. A AutoGo aceita encomendas personalizadas. Basta indicar a marca, modelo, versão, ano e orçamento desejados. A nossa equipa localiza o veículo no mercado europeu e apresenta-lhe opções com preço e condições transparentes antes de avançar.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Quanto posso poupar ao importar um carro da Europa pela AutoGo?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A poupança média é de 3.000€ a 7.000€ face ao mesmo carro no mercado português, mesmo depois de ISV, transporte e legalização. Modelos premium (BMW, Mercedes, Audi) podem apresentar poupanças ainda maiores. Use o nosso simulador ISV para calcular o seu caso específico.',
+        },
+      },
+    ],
+  };
+
   const combinedJsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [geoHowTo, geoServiceSchema],
+    '@graph': [geoHowTo, geoServiceSchema, faqSchema],
   };
 
   return (
@@ -207,6 +254,38 @@ export default function ComoFunciona() {
             ))}
           </ul>
         </div>
+        {/* FAQ SECTION */}
+        <div className="mt-10 p-6 rounded-2xl bg-white border border-[#b42121]/10 shadow-lg flex flex-col gap-3">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="font-bold text-black text-xl tracking-tight">Perguntas Frequentes</span>
+          </div>
+          <div className="flex flex-col gap-3">
+            {[
+              {
+                q: "Como funciona o serviço chave-na-mão da AutoGo?",
+                a: "A AutoGo trata de todo o processo: pesquisa e seleção do veículo na Europa, negociação de preço, inspeção prévia, transporte, cálculo e pagamento do ISV, inspeção tipo B, homologação IMT e entrega do carro com matrícula portuguesa pronto a circular.",
+              },
+              {
+                q: "Quanto tempo demora a importar um carro?",
+                a: "O processo completo demora tipicamente 3 a 6 semanas: 1–2 semanas para seleção e negociação, 1–2 semanas para transporte, e 1–2 semanas para legalização em Portugal (inspeção tipo B, DAV, matrícula).",
+              },
+              {
+                q: "O que está incluído no serviço de importação?",
+                a: "Pesquisa e seleção, negociação, inspeção prévia, transporte, seguro de transporte, ISV, inspeção tipo B, certificado de conformidade (COC), homologação IMT e matrícula portuguesa.",
+              },
+              {
+                q: "Posso pedir um carro específico que não esteja no stock?",
+                a: "Sim. A AutoGo aceita encomendas personalizadas. Indica-nos marca, modelo, versão, ano e orçamento e a nossa equipa localiza o veículo no mercado europeu com total transparência.",
+              },
+              {
+                q: "Quanto posso poupar ao importar um carro da Europa pela AutoGo?",
+                a: "A poupança média é de 3.000€ a 7.000€ face ao mercado nacional, mesmo após ISV, transporte e legalização. Use o nosso simulador ISV para calcular o seu caso concreto.",
+              },
+            ].map((item, i) => (
+              <ComoFuncionaFaqItem key={i} question={item.q} answer={item.a} />
+            ))}
+          </div>
+        </div>
       </main>
       <div
         className="w-screen relative left-1/2 right-1/2 -translate-x-1/2 z-10"
@@ -241,6 +320,25 @@ export default function ComoFunciona() {
         </svg>
       </div>
     </Layout>
+  );
+}
+
+function ComoFuncionaFaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div className="rounded-xl border border-[#d50032]/15 bg-[#fdf5f5] overflow-hidden">
+      <button
+        className="w-full flex items-center justify-between px-5 py-4 text-left focus:outline-none"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+      >
+        <span className="font-semibold text-gray-900 text-sm md:text-base pr-4">{question}</span>
+        <span className={`flex-shrink-0 w-6 h-6 rounded-full bg-[#b42121]/10 text-[#b42121] flex items-center justify-center text-lg font-bold transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
+      </button>
+      <div className={`px-5 text-gray-600 text-sm leading-relaxed transition-all duration-300 ease-in-out overflow-hidden ${open ? "pb-4 max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+        {answer}
+      </div>
+    </div>
   );
 }
 

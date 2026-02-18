@@ -218,8 +218,10 @@ export const SEO_KEYWORDS: Record<string, SEOSet> = {
     ],
     faq: [
       "Quanto custa importar um carro para Portugal?",
-      "Que documentos preciso para a atribuição de matrícula?",
-      "Como funciona o ISV para carros usados importados?",
+      "Quanto posso poupar ao importar um carro da Europa?",
+      "Qual é o prazo para receber o carro importado?",
+      "Os carros elétricos importados pagam ISV?",
+      "O que está incluído no serviço chave-na-mão da AutoGo?",
     ],
   },
 
@@ -237,9 +239,11 @@ export const SEO_KEYWORDS: Record<string, SEOSet> = {
       "ISV importados UE",
     ],
     faq: [
-      "Como calcular o ISV passo a passo?",
-      "Que dados preciso (cilindrada, CO₂, combustível)?",
-      "Como pedir isenção de ISV por mudança de residência?",
+      "Como calcular o ISV de um carro importado?",
+      "Qual é a diferença entre NEDC e WLTP no cálculo do ISV?",
+      "Os carros elétricos pagam ISV em Portugal?",
+      "Como funciona a redução do ISV para carros usados?",
+      "O simulador de ISV da AutoGo é gratuito?",
     ],
   },
 
@@ -293,6 +297,13 @@ export const SEO_KEYWORDS: Record<string, SEOSet> = {
       "atribuição de matrícula",
       "prazos e taxas",
     ],
+    faq: [
+      "Como funciona o serviço chave-na-mão da AutoGo?",
+      "Quanto tempo demora a importar um carro?",
+      "O que está incluído no serviço de importação?",
+      "Posso pedir um carro específico que não esteja no stock?",
+      "Quanto posso poupar ao importar um carro da Europa pela AutoGo?",
+    ],
   },
 
   contacto: {
@@ -323,24 +334,34 @@ export const SEO_KEYWORDS: Record<string, SEOSet> = {
 
   simulador_iuc: {
     title: 'Simulador IUC 2026 GRÁTIS Portugal | Cálculo Instantâneo | AutoGo.pt',
-    description: 'Calcule o IUC anual do seu carro em segundos — grátis, sem registo, atualizado para 2026. Categoria A (pós-2007), Categoria B (pré-2007) e elétricos isentos. AutoGo.pt',
-    keywords: ['simulador iuc', 'simulador iuc 2026', 'iuc calculadora', 'calcular iuc portugal', 'tabela iuc 2026', 'iuc 2026', 'imposto único de circulação'],
-    primary: ['Simulador IUC', 'calcular IUC'],
+    description: 'Calcule o IUC 2026 do seu carro em segundos — grátis, sem registo. Tabelas oficiais atualizadas: Categoria A (até Jun 2007, taxa fixa), Categoria B (a partir Jul 2007: cilindrada + CO₂ NEDC/WLTP × coeficiente), taxa adicional gasóleo, elétricos isentos. AutoGo.pt',
+    keywords: [
+      'simulador iuc', 'simulador iuc 2026', 'iuc calculadora', 'calcular iuc portugal',
+      'tabela iuc 2026', 'iuc 2026', 'imposto único de circulação',
+      'iuc categoria a', 'iuc categoria b', 'iuc gasolina 2026', 'iuc gasóleo 2026',
+      'iuc elétrico isento', 'iuc nedc wltp', 'iuc coeficiente ano',
+      'taxa adicional gasóleo iuc', 'iuc carros importados', 'isv vs iuc',
+    ],
+    primary: ['Simulador IUC 2026', 'calcular IUC', 'IUC 2026 Portugal'],
     supporting: [
       'tabela IUC 2026',
-      'IUC categoria A',
-      'IUC categoria B',
+      'IUC categoria A até 2007',
+      'IUC categoria B pós 2007',
       'IUC elétricos isenção',
-      'coeficiente antiguidade IUC',
+      'taxa adicional gasóleo IUC',
+      'IUC NEDC vs WLTP',
       'IUC carros importados',
       'ISV vs IUC diferença',
+      'coeficiente ano matrícula IUC',
     ],
     faq: [
       'Qual a diferença entre ISV e IUC?',
       'Como calcular o IUC de um carro importado?',
       'Os carros elétricos pagam IUC?',
-      'O que é o coeficiente de antiguidade no IUC?',
+      'As taxas do IUC aumentaram em 2026?',
+      'O que é a norma NEDC vs WLTP no IUC?',
       'Quando se paga o IUC em Portugal?',
+      'Híbridos e plug-in híbridos estão isentos de IUC?',
     ],
   },
 };

@@ -160,6 +160,25 @@ function descontoIdade(ano) {
 // no-op references to avoid unused-var warnings where these tables/helpers are intentionally kept
 void TABELA_AMBIENTAL_NEDC_GASOLINA; void TABELA_AMBIENTAL_NEDC_DIESEL; void getEscalaoTabela; void descontoIdade;
 
+function ISVFaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div className="rounded-2xl border border-gray-200 bg-[#f9fafb] overflow-hidden shadow-sm">
+      <button
+        className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+      >
+        <span className="font-semibold text-gray-900 text-base md:text-lg pr-4">{question}</span>
+        <span className={`flex-shrink-0 w-7 h-7 rounded-full bg-[#b42121]/10 text-[#b42121] flex items-center justify-center text-xl font-bold transition-transform duration-200 ${open ? "rotate-45" : ""}`}>+</span>
+      </button>
+      <div className={`px-6 text-gray-600 text-sm md:text-base leading-relaxed transition-all duration-300 ease-in-out overflow-hidden ${open ? "pb-5 max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+        {answer}
+      </div>
+    </div>
+  );
+}
+
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -358,21 +377,53 @@ export default function Simulador() {
     });
   }
 
-  const simuladorFaq = SEO_KEYWORDS?.simulador_isv?.faq;
-  const simuladorFaqJsonLd: any = simuladorFaq
-    ? {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: simuladorFaq.map((q) => ({
+  // FAQ JSON-LD with real answers
+  const simuladorFaqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
         '@type': 'Question',
-        name: q,
+        name: 'Como calcular o ISV de um carro importado?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Use o simulador e consulte a nossa equipa para ajuda detalhada.',
+          text: 'O ISV é calculado somando a componente cilindrada (taxa × cm³ menos abate) e a componente ambiental (taxa × CO₂ g/km menos abate). Para carros usados aplica-se uma redução de 10% a 80% conforme a idade. Introduza os dados no simulador para um resultado instantâneo.',
         },
-      })),
-    }
-    : undefined;
+      },
+      {
+        '@type': 'Question',
+        name: 'Qual é a diferença entre NEDC e WLTP no cálculo do ISV?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'NEDC e WLTP são normas de medição de emissões de CO₂. O WLTP (aplicado a carros a partir de setembro de 2017) produz valores tipicamente 20–25% mais elevados que o NEDC. O ISV usa tabelas ambientais diferentes para cada norma. O documento COC/certificado de conformidade indica qual a norma aplicável ao seu veículo.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Os carros elétricos pagam ISV em Portugal?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Não. Veículos 100% elétricos estão completamente isentos de ISV em Portugal, o que os torna especialmente vantajosos para importar. Apenas se aplicam as taxas administrativas de legalização (IMT, inspeção, matrícula).',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Como funciona a redução do ISV para carros usados?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Os carros usados beneficiam de uma redução progressiva do ISV de acordo com a idade (data da 1ª matrícula): 10% com menos de 1 ano, 20% com 1–2 anos, até um máximo de 80% para veículos com mais de 10 anos. Esta redução aplica-se ao valor bruto do ISV (cilindrada + ambiental).',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'O simulador de ISV da AutoGo é gratuito?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sim, o simulador ISV da AutoGo.pt é completamente gratuito e não requer registo. Está atualizado com as tabelas de 2026 do Diário da República e cobre veículos a gasolina, diesel, elétricos, híbridos e plug-in híbridos.',
+        },
+      },
+    ],
+  };
 
   // HowTo JSON-LD to help Google understand usage steps
   const howToJsonLd = {
@@ -392,12 +443,12 @@ export default function Simulador() {
   const geoISVFAQ = generateGEOFAQSchema([
     {
       question: 'Como é calculado o ISV em Portugal?',
-      answer: 'O ISV (Imposto Sobre Veículos) é calculado através de duas componentes: componente cilindrada (baseada na capacidade do motor em cm³) e componente ambiental (baseada nas emissões de CO2 em g/km). Cada componente tem taxas progressivas definidas por lei. Veículos elétricos estão isentos de ISV.',
+      answer: 'O ISV (Imposto Sobre Veículos) é calculado através de duas componentes: componente cilindrada (baseada na capacidade do motor em cm³) e componente ambiental (baseada nas emissões de CO₂ em g/km). Cada componente tem taxas progressivas definidas por lei. Veículos elétricos estão isentos de ISV.',
       keywords: ['ISV', 'cálculo', 'imposto', 'Portugal', 'cilindrada', 'CO2'],
     },
     {
       question: 'Quanto custa legalizar um carro importado?',
-      answer: 'O custo de legalização inclui: ISV (variável conforme o veículo, calculado pelo simulador), taxas IMT (cerca de €195), inspeção técnica (€50-€100), e despesas administrativas. O valor total depende muito do ISV, que pode ir de €0 (elétricos) a milhares de euros.',
+      answer: 'O custo de legalização inclui: ISV (variável conforme o veículo), taxas IMT (cerca de €195), inspeção técnica (€50–€100), e despesas administrativas. O valor total depende muito do ISV, que pode ir de €0 (elétricos) a milhares de euros.',
       keywords: ['custo', 'legalização', 'IMT', 'taxas'],
     },
     {
@@ -407,8 +458,13 @@ export default function Simulador() {
     },
     {
       question: 'Como usar o simulador de ISV?',
-      answer: 'Introduza a cilindrada do motor em cm³, as emissões de CO2 em g/km (segundo norma WLTP ou NEDC), o tipo de combustível, e a data da primeira matrícula. O simulador calcula automaticamente o ISV total, incluindo descontos para viaturas usadas.',
+      answer: 'Introduza a cilindrada do motor em cm³, as emissões de CO₂ em g/km (segundo norma WLTP ou NEDC), o tipo de combustível, e a data da primeira matrícula. O simulador calcula automaticamente o ISV total, incluindo descontos para viaturas usadas.',
       keywords: ['simulador', 'usar', 'tutorial'],
+    },
+    {
+      question: 'Qual é a diferença entre NEDC e WLTP?',
+      answer: 'NEDC e WLTP são normas de medição de emissões de CO₂. O WLTP (obrigatório desde setembro de 2017) produz valores 20–25% mais elevados que o NEDC. O ISV usa tabelas ambientais distintas para cada norma. Consulte o COC do seu veículo para saber qual aplicar.',
+      keywords: ['NEDC', 'WLTP', 'CO₂', 'norma', 'emissões'],
     },
   ]);
 
@@ -417,7 +473,7 @@ export default function Simulador() {
     '@graph': [
       geoISVFAQ,
       howToJsonLd,
-      ...(simuladorFaqJsonLd ? [simuladorFaqJsonLd] : []),
+      simuladorFaqJsonLd,
       {
         '@type': 'SoftwareApplication',
         name: 'Simulador ISV AutoGo.pt',
@@ -839,6 +895,39 @@ export default function Simulador() {
                     </a>
                   </div>
                 </div>
+              </div>
+            </div>
+            {/* FAQ SECTION */}
+            <div className="w-full max-w-3xl mx-auto mt-16 px-2 sm:px-0">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-2 text-center tracking-tight">
+                Perguntas Frequentes — Simulador ISV
+              </h2>
+              <p className="text-center text-gray-500 mb-8 text-sm">Respostas rápidas sobre o ISV e o simulador</p>
+              <div className="flex flex-col gap-4">
+                {[
+                  {
+                    q: "Como calcular o ISV de um carro importado?",
+                    a: "O ISV soma a componente cilindrada (taxa × cm³ − abate) e a componente ambiental (taxa × CO₂ g/km − abate). Para carros usados aplica-se uma redução de 10% a 80% conforme a idade. Use o simulador acima para um resultado imediato.",
+                  },
+                  {
+                    q: "Qual é a diferença entre NEDC e WLTP no ISV?",
+                    a: "NEDC e WLTP são normas de medição de emissões de CO₂. O WLTP (obrigatório desde setembro de 2017) gera valores 20–25% mais elevados. O ISV usa tabelas ambientais distintas para cada norma — consulte o COC do veículo para saber qual aplicar.",
+                  },
+                  {
+                    q: "Os carros elétricos pagam ISV em Portugal?",
+                    a: "Não. Veículos 100% elétricos estão isentos de ISV em Portugal. Apenas se aplicam as taxas administrativas de legalização (IMT, inspeção tipo B, matrícula).",
+                  },
+                  {
+                    q: "Como funciona a redução do ISV para carros usados?",
+                    a: "A redução varia entre 10% (menos de 1 ano) e 80% (mais de 10 anos), aplicando-se ao valor bruto do ISV. Por exemplo, um carro com 5 anos beneficia de uma redução de 43%.",
+                  },
+                  {
+                    q: "O simulador de ISV da AutoGo é gratuito?",
+                    a: "Sim, completamente gratuito e sem registo. Está atualizado com as tabelas 2026 do Diário da República e cobre gasolina, diesel, elétricos, híbridos e plug-in híbridos.",
+                  },
+                ].map((item, i) => (
+                  <ISVFaqItem key={i} question={item.q} answer={item.a} />
+                ))}
               </div>
             </div>
             <style jsx global>{`

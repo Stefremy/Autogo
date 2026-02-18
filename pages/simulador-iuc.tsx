@@ -263,10 +263,10 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "O que é o IUC?",
+          name: "O que é o IUC em Portugal?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O IUC (Imposto Único de Circulação) é o imposto anual pago pelos proprietários de veículos em Portugal. O valor depende da cilindrada, das emissões de CO₂, do combustível e do ano de matrícula.",
+            text: "O IUC (Imposto Único de Circulação) é um imposto anual obrigatório para todos os veículos matriculados em Portugal. Ao contrário do ISV — que se paga uma única vez na importação — o IUC paga-se todos os anos para manter o veículo legal na estrada.",
           },
         },
         {
@@ -274,23 +274,7 @@ const jsonLd = {
           name: "Como é calculado o IUC em 2026?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Veículos Cat. A (até Jun 2007): taxa fixa por cilindrada e período de matrícula. Veículos Cat. B (a partir Jul 2007): (taxa cilindrada + taxa CO₂) × coeficiente ano + taxa adicional gasóleo. Elétricos Cat. B: isentos.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Carros elétricos pagam IUC em Portugal?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Automóveis ligeiros 100% elétricos com matrícula a partir de 01/07/2007 (Cat. B) estão isentos. Híbridos e plug-in não estão isentos.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "As taxas do IUC aumentaram em 2026?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Não. As taxas do IUC para 2026 são exatamente as mesmas de 2024 e 2025.",
+            text: "O IUC é calculado com base na cilindrada (cc), nas emissões de CO₂ (g/km) e no ano de matrícula do veículo. Carros mais antigos e com menos emissões pagam menos IUC. O simulador IUC gratuito da AutoGo calcula o valor exato em segundos.",
           },
         },
         {
@@ -298,7 +282,39 @@ const jsonLd = {
           name: "Qual a diferença entre ISV e IUC?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O ISV é pago uma única vez na primeira matrícula em Portugal. O IUC é pago anualmente enquanto o veículo estiver matriculado.",
+            text: "O ISV paga-se uma única vez quando importas ou compras um carro novo em Portugal. O IUC é anual — pagas todos os anos enquanto o carro estiver matriculado em Portugal. Ao importar com a AutoGo, o ISV está incluído no preço chave-na-mão.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Os carros elétricos pagam IUC?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Os veículos 100% elétricos matriculados até 2022 estavam isentos de IUC. A partir de 2023, passaram a pagar uma taxa reduzida com base no peso e potência do veículo. Usa o simulador para calculares o IUC do elétrico que queres importar.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quando se paga o IUC em Portugal?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O IUC paga-se anualmente no mês de aniversário da matrícula do veículo. Por exemplo, se o carro foi matriculado em março, o IUC vence em março de cada ano. O não pagamento gera coimas e juros.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O IUC é mais barato num carro importado?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Depende do carro. O IUC baseia-se na cilindrada e CO₂ — não na origem do veículo. Um carro importado da Alemanha com baixas emissões pode ter um IUC significativamente mais baixo do que um carro nacional equivalente de maior cilindrada.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O simulador IUC da AutoGo é gratuito?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim, 100% gratuito e sem registo. Introduzes a cilindrada, ano de matrícula, tipo de combustível e emissões de CO₂ e obtens o valor do IUC atualizado para 2026 com base nas tabelas oficiais portuguesas.",
           },
         },
       ],
@@ -738,28 +754,32 @@ export default function SimuladorIUC() {
             <div className="space-y-4 max-w-3xl mx-auto">
               {[
                 {
-                  q: "O que é o IUC e quem tem de pagar?",
-                  a: "O IUC (Imposto Único de Circulação) é pago anualmente por todos os proprietários de veículos matriculados em Portugal. Há isenção quando o valor calculado é inferior a €10, e para elétricos Cat. B.",
+                  q: "O que é o IUC em Portugal?",
+                  a: "O IUC (Imposto Único de Circulação) é um imposto anual obrigatório para todos os veículos matriculados em Portugal. Ao contrário do ISV — que se paga uma única vez na importação — o IUC paga-se todos os anos para manter o veículo legal na estrada.",
                 },
                 {
-                  q: "As taxas do IUC aumentaram em 2026?",
-                  a: "Não. As taxas do IUC para 2026 são exatamente as mesmas de 2024 e 2025. Não houve qualquer atualização.",
+                  q: "Como é calculado o IUC em 2026?",
+                  a: "O IUC é calculado com base na cilindrada (cc), nas emissões de CO₂ (g/km) e no ano de matrícula do veículo. Carros mais antigos e com menos emissões pagam menos IUC. O simulador IUC gratuito da AutoGo calcula o valor exato em segundos.",
                 },
                 {
-                  q: "O IUC de um carro importado da UE é calculado como?",
-                  a: "Desde 2020, para usados importados de países da UE/EEE, é a data da primeira matrícula nesses países que conta. Para importados de fora da UE/EEE (ex: Suíça, EUA), usa-se sempre a data da matrícula portuguesa.",
+                  q: "Qual a diferença entre ISV e IUC?",
+                  a: "O ISV paga-se uma única vez quando importas ou compras um carro novo em Portugal. O IUC é anual — pagas todos os anos enquanto o carro estiver matriculado em Portugal. Ao importar com a AutoGo, o ISV está incluído no preço chave-na-mão.",
                 },
                 {
-                  q: "Quando e como se paga o IUC?",
-                  a: "O pagamento deve ser feito entre o 1º dia do mês anterior ao mês da matrícula e o final do mês da matrícula. Na compra de carro novo ou importação: até 90 dias após a matrícula. Pode pagar no Portal das Finanças (AT), Multibanco, CTT ou homebanking.",
+                  q: "Os carros elétricos pagam IUC?",
+                  a: "Os veículos 100% elétricos matriculados até 2022 estavam isentos de IUC. A partir de 2023, passaram a pagar uma taxa reduzida com base no peso e potência do veículo. Usa o simulador para calculares o IUC do elétrico que queres importar.",
                 },
                 {
-                  q: "Híbridos e plug-in híbridos estão isentos de IUC?",
-                  a: "Não. Apenas os automóveis 100% elétricos com matrícula a partir de 01/07/2007 (Cat. B) estão isentos. Híbridos e plug-in pagam o valor normal como qualquer outro veículo.",
+                  q: "Quando se paga o IUC em Portugal?",
+                  a: "O IUC paga-se anualmente no mês de aniversário da matrícula do veículo. Por exemplo, se o carro foi matriculado em março, o IUC vence em março de cada ano. O não pagamento gera coimas e juros.",
                 },
                 {
-                  q: "O que é a norma NEDC vs WLTP no IUC?",
-                  a: "São dois métodos de medição de emissões CO₂. Até 2017: NEDC. A partir de 2020: todos WLTP. Em 2018-2019 coexistiram. O IUC usa tabelas com limites diferentes para cada norma (WLTP tem limites mais altos porque mede mais emissões). Verifique no COC ou DUA do veículo.",
+                  q: "O IUC é mais barato num carro importado?",
+                  a: "Depende do carro. O IUC baseia-se na cilindrada e CO₂ — não na origem do veículo. Um carro importado da Alemanha com baixas emissões pode ter um IUC significativamente mais baixo do que um carro nacional equivalente de maior cilindrada.",
+                },
+                {
+                  q: "O simulador IUC da AutoGo é gratuito?",
+                  a: "Sim, 100% gratuito e sem registo. Introduzes a cilindrada, ano de matrícula, tipo de combustível e emissões de CO₂ e obtens o valor do IUC atualizado para 2026 com base nas tabelas oficiais portuguesas.",
                 },
               ].map(({ q, a }, i) => (
                 <details key={i} className="border border-gray-200 rounded-xl overflow-hidden group">
