@@ -38,6 +38,22 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
   // Sorting state: relevance, alphabetical, yearDesc, priceAsc, mileageAsc
   const [sortBy, setSortBy] = useState<string>("relevance");
   const [showSortMenu, setShowSortMenu] = useState(false);
+  const sortMenuRef = React.useRef<HTMLDivElement>(null);
+  // Close sort dropdown when user taps/clicks outside it — prevents stale overlay on mobile
+  useEffect(() => {
+    if (!showSortMenu) return;
+    const handler = (e: MouseEvent | TouchEvent) => {
+      if (sortMenuRef.current && !sortMenuRef.current.contains(e.target as Node)) {
+        setShowSortMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handler, { passive: true });
+    document.addEventListener('touchstart', handler, { passive: true });
+    return () => {
+      document.removeEventListener('mousedown', handler);
+      document.removeEventListener('touchstart', handler);
+    };
+  }, [showSortMenu]);
   // Load strategy: load N rows at a time. Grid columns determine items per row.
   const ROWS_PER_BATCH = 2; // user request: load 2 rows per load
   const [columnsCount, setColumnsCount] = useState(4); // default to desktop columns
@@ -620,7 +636,7 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
               </h1>
               <div className="flex gap-2 justify-center sm:justify-end relative">
                 {/* Sort dropdown button */}
-                <div className="mr-2 relative inline-block text-left">
+                <div className="mr-2 relative inline-block text-left" ref={sortMenuRef}>
                   <button
                     type="button"
                     onClick={() => setShowSortMenu((s) => !s)}
@@ -790,13 +806,6 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
 
             {/* sentinel element observed by IntersectionObserver to auto-load more when there is empty space */}
             <div id="viaturas-sentinel" style={{ height: 1 }} />
-
-            {/* IntersectionObserver to reveal cards smoothly as they scroll into view */}
-            <script /* injected for client-only observer */ />
-            {
-              /* Client-only effect: observe .card-anim and add .in-view when intersecting */
-            }
-            {process.browser && null}
             {/* infinite-scroll: no page selector — more items load as the user scrolls */}
             <div className="max-w-7xl mx-auto mt-6 px-4 text-center text-gray-500">
               {itemsLoaded < filteredCars.length ? (
@@ -860,7 +869,7 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
           <div className="bg-white/95 rounded-3xl shadow-2xl border border-[#b42121]/10 backdrop-blur-md p-4 sm:p-6 flex flex-col items-center relative">
             <button
               onClick={() => setShowSimulador(false)}
-              className="absolute top-3 right-4 text-[#b42121] text-2xl font-bold hover:scale-125 transition"
+              className="absolute top-3 right-4 text-[#b42121] text-2xl font-bold transition-opacity duration-150 hover:opacity-70 active:opacity-50"
               aria-label={t("Fechar simulador")}
             >
               ×

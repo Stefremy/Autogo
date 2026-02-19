@@ -14,8 +14,7 @@
     transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.18s;
   transform-origin: top center;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+  /* preserve-3d + backface-visibility were forcing GPU layer on ALL cards — removed */
   /* Don't promote all cards to GPU layer — only on hover/focus */
   /* Skip rendering for off-screen cards — significant INP/layout win on mobile */
   content-visibility: auto;

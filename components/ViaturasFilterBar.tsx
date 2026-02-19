@@ -197,10 +197,7 @@ function ViaturasFilterBar(props: ViaturasFilterProps) {
 
             {/* Action Buttons */}
             <button
-                className="flex items-center gap-2 rounded-xl px-6 py-2 font-bold shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
-                style={{ background: "rgba(213, 80, 80, 0.85)", color: "#fff" }}
-                onMouseOver={(e) => (e.currentTarget.style.background = "rgba(213, 80, 80, 1)")}
-                onMouseOut={(e) => (e.currentTarget.style.background = "rgba(213, 80, 80, 0.85)")}
+                className="flex items-center gap-2 rounded-xl px-6 py-2 font-bold shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0 bg-[rgba(213,80,80,0.85)] hover:bg-[rgba(213,80,80,1)] active:bg-[rgba(180,33,33,1)] text-white"
             >
                 <FaSearch />
                 {t("Filtrar")}
