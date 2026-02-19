@@ -119,6 +119,14 @@ export default function Footer() {
                 {t("Importar Carros Portugal")}
               </Link>
             </li>
+            <li>
+              <Link
+                href="/legalizar-carro-importado"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
+              >
+                {t("Legalizar Carro Importado")}
+              </Link>
+            </li>
           </ul>
         </div>
         <div>

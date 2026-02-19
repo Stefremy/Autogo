@@ -608,6 +608,7 @@ export default function ImportarCarrosPortugal() {
               {[
                 { href: "/simulador-isv", label: "Simulador ISV 2026" },
                 { href: "/simulador-iuc", label: "Simulador IUC 2026" },
+                { href: "/legalizar-carro-importado", label: "Legalizar Carro Importado" },
                 { href: "/viaturas", label: "Carros Importados em Stock" },
                 { href: "/como-funciona", label: "Como Funciona" },
                 { href: "/pedido", label: "Encomendar Viatura" },
