@@ -434,39 +434,14 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
       {
         '@type': 'ItemList',
         '@id': 'https://autogo.pt/viaturas#carlist',
-        name: 'Carros Importados e Usados em Portugal',
-        description: 'Catálogo de carros importados da Europa e viaturas usadas à venda em Portugal pela AutoGo.pt',
-        numberOfItems: filteredCars.length,
-        itemListElement: displayedCars.slice(0, 10).map((car, idx) => ({
+        name: 'Carros Importados — AutoGo.pt',
+        description: 'Carros europeus disponíveis para importação e legalização em Portugal',
+        numberOfItems: sortedCars.length,
+        itemListElement: sortedCars.slice(0, 10).map((car, idx) => ({
           '@type': 'ListItem',
           position: idx + 1,
-          item: {
-            '@type': 'Car',
-            '@id': `https://autogo.pt/cars/${car.slug}`,
-            name: `${car.make} ${car.model}`,
-            brand: {
-              '@type': 'Brand',
-              name: car.make,
-            },
-            model: car.model,
-            vehicleModelDate: car.year,
-            mileageFromOdometer: {
-              '@type': 'QuantitativeValue',
-              value: car.mileage,
-              unitCode: 'KMT',
-            },
-            offers: {
-              '@type': 'Offer',
-              price: car.price,
-              priceCurrency: 'EUR',
-              availability: 'https://schema.org/InStock',
-              seller: {
-                '@id': 'https://autogo.pt/#organization',
-              },
-            },
-            image: car.image?.startsWith('http') ? car.image : `https://autogo.pt${car.image}`,
-            url: `https://autogo.pt/cars/${car.slug}`,
-          },
+          url: `https://autogo.pt/cars/${car.slug}`,
+          name: `${car.make} ${car.model} — €${car.price}`,
         })),
       },
       generateGEOFAQSchema([
@@ -515,7 +490,7 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
         ],
       },
     ],
-  }), [filteredCars.length, displayedCars]);
+  }), [sortedCars]);
 
   return (
     <>
