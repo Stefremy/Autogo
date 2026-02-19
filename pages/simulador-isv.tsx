@@ -498,6 +498,22 @@ export default function Simulador() {
           keywords={joinKeywords(SEO_KEYWORDS.simulador_isv.keywords ?? [], SITE_WIDE_KEYWORDS, SIMULADOR_KEYWORDS)}
           jsonLd={combinedJsonLd}
         />
+        {/* Full-screen background image */}
+        <div
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+          style={{ backgroundImage: "url('/images/simulador-fundo.webp')" }}
+          aria-hidden="true"
+        />
+        <div
+          className="fixed inset-0 z-0"
+          style={{ background: "linear-gradient(120deg, rgba(245,246,250,0.93) 0%, rgba(245,246,250,0.40) 60%, rgba(245,246,250,0.93) 100%)" }}
+          aria-hidden="true"
+        />
+        <div
+          className="fixed inset-0 z-0"
+          style={{ background: "linear-gradient(120deg, rgba(245,246,250,0.80) 0%, rgba(251,233,233,0.18) 60%, rgba(245,246,250,0.80) 100%)" }}
+          aria-hidden="true"
+        />
         <div className="relative w-full flex-1 z-10">
           <section className="relative w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-16 py-6 px-4 sm:px-6 md:px-12 bg-transparent overflow-x-hidden">
             {/* Info block */}

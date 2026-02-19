@@ -17,7 +17,7 @@ import {
 // Gasolina — taxa fixa por escalão de cilindrada × período
 const IUC_CAT_A_GASOLINA: { max: number; t9607: number; t9095: number; t8189: number }[] = [
   { max: 1000,     t9607: 19.90,  t9095: 12.20,  t8189: 8.80  },
-  { max: 1300,     t9607: 39.95,  t9095: 22.45,  t8189: 12.55 },
+  { max: 1250,     t9607: 39.95,  t9095: 22.45,  t8189: 12.55 },
   { max: 1750,     t9607: 62.40,  t9095: 34.87,  t8189: 17.49 },
   { max: 2600,     t9607: 158.31, t9095: 83.49,  t8189: 36.09 },
   { max: 3500,     t9607: 287.49, t9095: 156.54, t8189: 79.72 },
@@ -407,7 +407,24 @@ export default function SimuladorIUC() {
         <span className="block h-1.5 bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90" />
       </div>
 
-      <div className="min-h-screen bg-white pt-20 pb-16 px-4">
+      {/* Full-screen background image */}
+      <div
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{ backgroundImage: "url('/images/viaturasfundo.webp')" }}
+        aria-hidden="true"
+      />
+      <div
+        className="fixed inset-0 z-0"
+        style={{ background: "linear-gradient(120deg, rgba(245,246,250,0.93) 0%, rgba(245,246,250,0.40) 60%, rgba(245,246,250,0.93) 100%)" }}
+        aria-hidden="true"
+      />
+      <div
+        className="fixed inset-0 z-0"
+        style={{ background: "linear-gradient(120deg, rgba(245,246,250,0.80) 0%, rgba(251,233,233,0.18) 60%, rgba(245,246,250,0.80) 100%)" }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 min-h-screen pt-20 pb-16 px-4">
         <div className="max-w-5xl mx-auto">
 
           {/* Header */}
@@ -692,7 +709,7 @@ export default function SimuladorIUC() {
             <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Como se calcula o IUC em 2026?</h2>
             <p className="text-center text-gray-500 text-sm mb-8">As taxas não foram atualizadas em 2026 — são exatamente as mesmas de 2024 e 2025.</p>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="border border-gray-200 rounded-2xl p-6">
+              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="w-10 h-10 bg-gray-700 text-white rounded-xl flex items-center justify-center font-black text-sm">A</span>
                   <div>
@@ -708,7 +725,7 @@ export default function SimuladorIUC() {
                   <li className="flex gap-2"><span className="font-bold text-gray-700 mt-0.5">→</span>Sem componente CO₂</li>
                 </ul>
               </div>
-              <div className="border border-gray-200 rounded-2xl p-6">
+              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="w-10 h-10 bg-[#b42121] text-white rounded-xl flex items-center justify-center font-black text-sm">B</span>
                   <div>
@@ -782,14 +799,14 @@ export default function SimuladorIUC() {
                   a: "Sim, 100% gratuito e sem registo. Introduzes a cilindrada, ano de matrícula, tipo de combustível e emissões de CO₂ e obtens o valor do IUC atualizado para 2026 com base nas tabelas oficiais portuguesas.",
                 },
               ].map(({ q, a }, i) => (
-                <details key={i} className="border border-gray-200 rounded-xl overflow-hidden group">
-                  <summary className="flex justify-between items-center px-5 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 transition-colors list-none">
+                <details key={i} className="bg-blue-50 border border-blue-200 rounded-2xl overflow-hidden group">
+                  <summary className="flex justify-between items-center px-5 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-blue-100 transition-colors list-none">
                     <span>{q}</span>
-                    <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-blue-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-5 py-4 text-gray-600 text-sm leading-relaxed bg-gray-50 border-t border-gray-100">
+                  <div className="px-5 py-4 text-gray-600 text-sm leading-relaxed bg-blue-50 border-t border-blue-200">
                     {a}
                   </div>
                 </details>

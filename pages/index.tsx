@@ -521,7 +521,6 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
             loop
             muted
             playsInline
-            preload="none"
           />
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
