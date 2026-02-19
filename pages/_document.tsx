@@ -22,8 +22,20 @@ class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="theme-color" content="#b42121" />
 
-          {/* Fonts - preconnect and stylesheets */}
-          <link rel="stylesheet" href="https://use.typekit.net/mdg1mhk.css" />
+          {/* Fonts — preconnect first so the browser can resolve DNS + TLS before the stylesheet request */}
+          <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+          <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
+          {/* Load Typekit non-render-blocking: preload then swap in with media trick */}
+          <link
+            rel="preload"
+            as="style"
+            href="https://use.typekit.net/mdg1mhk.css"
+            // @ts-ignore — onLoad is valid on link[rel=preload] for font-swap technique
+            onLoad="this.onload=null;this.rel='stylesheet'"
+          />
+          <noscript>
+            <link rel="stylesheet" href="https://use.typekit.net/mdg1mhk.css" />
+          </noscript>
 
           {/* Global Open Graph / Social defaults */}
           <meta property="og:site_name" content="AutoGo.pt" />

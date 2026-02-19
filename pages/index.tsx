@@ -2,11 +2,10 @@ import fs from "fs";
 import path from "path";
 import dynamic from 'next/dynamic';
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import matter from "gray-matter";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import MainLayout from "../components/MainLayout";
 // cars.json import removed to avoid client bundling
 import { SITE_WIDE_KEYWORDS, HOME_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
@@ -25,7 +24,7 @@ const PremiumCarCard = dynamic(() => import('../components/PremiumCarCard'), {
 // Some imported React helpers are used conditionally; to avoid linter warnings where they are assigned but not used in all builds, reference them in no-op expressions.
 void useRef; void useEffect;
 
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   // Load cars data server-side
   const carsData = require('../data/cars.json');
 
@@ -83,20 +82,20 @@ export async function getServerSideProps({ locale }) {
   // Convert Sets to Arrays
   Object.keys(modelsByMake).forEach(k => {
     modelsByMake[k] = Array.from(modelsByMake[k]).sort();
-  });
-
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-      blogArticles,
-      featuredCars,
-      filtersData: {
-        makes: uniqueMakes,
-        modelsByMake
-      }
-    },
-  };
-}
+  });    return {
+      props: {
+        ...(await serverSideTranslations(locale, ["common"])),
+        blogArticles,
+        featuredCars,
+        filtersData: {
+          makes: uniqueMakes,
+          modelsByMake
+        }
+      },
+      // ISR: revalidate every 10 minutes — keeps data fresh without SSR latency
+      revalidate: 600,
+    };
+  }
 
 
 
@@ -108,71 +107,65 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
 
   const handIconPath = '/images/icons/hand-over.webp';
 
-  // Build FAQ JSON-LD with real answers for SEO
-  const homeFaqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Quanto custa importar um carro para Portugal?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'O custo total depende do veículo, mas inclui o preço de compra, ISV (Imposto sobre Veículos), transporte (geralmente €400–€800), e taxas de legalização (IMT, inspeção tipo B, matrícula — cerca de €300–€500). Em média, poupa-se 3.000€ a 7.000€ face ao mercado nacional.',
+  // Build all JSON-LD once — static data, never changes
+  const combinedJsonLd = useMemo(() => {
+    const homeFaqJsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Quanto custa importar um carro para Portugal?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'O custo total depende do veículo, mas inclui o preço de compra, ISV (Imposto sobre Veículos), transporte (geralmente €400–€800), e taxas de legalização (IMT, inspeção tipo B, matrícula — cerca de €300–€500). Em média, poupa-se 3.000€ a 7.000€ face ao mercado nacional.',
+          },
         },
-      },
-      {
-        '@type': 'Question',
-        name: 'Quanto posso poupar ao importar um carro da Europa?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'A poupança média é de 3.000€ a 7.000€ face ao mesmo carro no mercado português, mesmo após ISV e custos de legalização. Modelos premium (BMW, Mercedes, Audi) podem ter poupanças ainda maiores. Use o nosso simulador ISV para calcular o custo exato.',
+        {
+          '@type': 'Question',
+          name: 'Quanto posso poupar ao importar um carro da Europa?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'A poupança média é de 3.000€ a 7.000€ face ao mesmo carro no mercado português, mesmo após ISV e custos de legalização. Modelos premium (BMW, Mercedes, Audi) podem ter poupanças ainda maiores. Use o nosso simulador ISV para calcular o custo exato.',
+          },
         },
-      },
-      {
-        '@type': 'Question',
-        name: 'Qual é o prazo para receber o carro importado?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'O processo completo demora tipicamente 3 a 6 semanas: 1–2 semanas para seleção e negociação, 1–2 semanas para transporte, e 1–2 semanas para legalização completa em Portugal (inspeção tipo B, DAV, matrícula).',
+        {
+          '@type': 'Question',
+          name: 'Qual é o prazo para receber o carro importado?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'O processo completo demora tipicamente 3 a 6 semanas: 1–2 semanas para seleção e negociação, 1–2 semanas para transporte, e 1–2 semanas para legalização completa em Portugal (inspeção tipo B, DAV, matrícula).',
+          },
         },
-      },
-      {
-        '@type': 'Question',
-        name: 'Os carros elétricos importados pagam ISV?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Não. Veículos 100% elétricos estão completamente isentos de ISV em Portugal, o que os torna especialmente vantajosos para importar. Ainda assim, existem taxas de legalização administrativas (IMT, matrícula) que continuam a aplicar-se.',
+        {
+          '@type': 'Question',
+          name: 'Os carros elétricos importados pagam ISV?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Não. Veículos 100% elétricos estão completamente isentos de ISV em Portugal, o que os torna especialmente vantajosos para importar. Ainda assim, existem taxas de legalização administrativas (IMT, matrícula) que continuam a aplicar-se.',
+          },
         },
-      },
-      {
-        '@type': 'Question',
-        name: 'O que está incluído no serviço chave-na-mão da AutoGo?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'O serviço chave-na-mão da AutoGo inclui: pesquisa e seleção do veículo, negociação de preço com o vendedor europeu, inspeção prévia, transporte até Portugal, cálculo e pagamento do ISV, inspeção tipo B, DAV/homologação IMT, emissão de matrícula portuguesa e entrega do carro pronto a circular.',
+        {
+          '@type': 'Question',
+          name: 'O que está incluído no serviço chave-na-mão da AutoGo?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'O serviço chave-na-mão da AutoGo inclui: pesquisa e seleção do veículo, negociação de preço com o vendedor europeu, inspeção prévia, transporte até Portugal, cálculo e pagamento do ISV, inspeção tipo B, DAV/homologação IMT, emissão de matrícula portuguesa e entrega do carro pronto a circular.',
+          },
         },
-      },
-    ],
-  };
-
-  // GEO (Generative Engine Optimization) structured data
-  const geoEnhancedFAQ = generateGEOFAQSchema(CAR_IMPORT_GEO_DATA.commonQuestions);
-  const geoHowTo = generateGEOHowToSchema(
-    'Como importar um carro para Portugal',
-    'Processo completo de importação de viaturas da Europa para Portugal com a AutoGo.pt',
-    CAR_IMPORT_GEO_DATA.processSteps
-  );
-
-  // Combine all JSON-LD for comprehensive GEO optimization
-  const combinedJsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      geoEnhancedFAQ,
-      geoHowTo,
-      homeFaqJsonLd,
-    ],
-  };
+      ],
+    };
+    const geoEnhancedFAQ = generateGEOFAQSchema(CAR_IMPORT_GEO_DATA.commonQuestions);
+    const geoHowTo = generateGEOHowToSchema(
+      'Como importar um carro para Portugal',
+      'Processo completo de importação de viaturas da Europa para Portugal com a AutoGo.pt',
+      CAR_IMPORT_GEO_DATA.processSteps
+    );
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [geoEnhancedFAQ, geoHowTo, homeFaqJsonLd],
+    };
+  }, []);
 
   return (
     <>
@@ -197,58 +190,50 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
             <div id="hero-redline-bar" className="w-full flex justify-center">
               <span
                 id="hero-redline-span"
-                className="block h-1.5 rounded-full bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90 shadow-[0_0_16px_4px_rgba(213,0,50,0.18)] animate-pulse transition-all duration-700"
+                className="block h-1.5 rounded-full bg-gradient-to-r from-[#b42121] via-[#d50032] to-[#b42121] opacity-90 shadow-[0_0_16px_4px_rgba(213,0,50,0.18)]"
                 style={{ width: "16rem", margin: "0 auto" }}
               />
             </div>
           </div>
           <script
             dangerouslySetInnerHTML={{
-              __html: `
+          __html: `
 (function(){
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function clamp(x, min, max) { return Math.max(min, Math.min(max, x)); }
-  function onScroll() {
-    var el = document.getElementById('hero-redline-span');
-    var bar = document.getElementById('hero-redline-bar');
-    var footer = document.querySelector('footer');
-    if (!el || !bar || !footer) return;
-    var scrollY = window.scrollY;
-    var footerTop = footer.getBoundingClientRect().top + window.scrollY;
-    var maxScroll = Math.max(footerTop - window.innerHeight, 1); // progress=1 when bottom de viewport reaches footer
-    var progress = clamp(scrollY / maxScroll, 0, 1);
-    var minW = 16 * 16; // 16rem
-    var maxW = window.innerWidth; // allow edge-to-edge
-    var newW = lerp(minW, maxW, progress);
-    // Apply computed width and center the span horizontally
-    try {
-      el.style.width = Math.max(0, Math.round(newW)) + 'px';
-      var sideMargin = Math.max(0, Math.round((window.innerWidth - newW) / 2));
-      el.style.marginLeft = sideMargin + 'px';
-      el.style.marginRight = sideMargin + 'px';
-    } catch {
-      // ignore style errors
+  function lerp(a,b,t){return a+(b-a)*t;}
+  function clamp(x,min,max){return Math.max(min,Math.min(max,x));}
+  var rafPending=false;
+  var cachedFooterTop=0;
+  function applyFrame(){
+    rafPending=false;
+    var el=document.getElementById('hero-redline-span');
+    if(!el) return;
+    var scrollY=window.scrollY;
+    var maxScroll=Math.max(cachedFooterTop-window.innerHeight,1);
+    var progress=clamp(scrollY/maxScroll,0,1);
+    var minW=16*16;
+    var maxW=window.innerWidth;
+    var newW=lerp(minW,maxW,progress);
+    try{
+      el.style.width=Math.max(0,Math.round(newW))+'px';
+      el.style.marginLeft=el.style.marginRight='auto';
+    }catch(e){}
+    var fadeStart=0.98;
+    var fadeProgress=clamp((progress-fadeStart)/(1-fadeStart),0,1);
+    el.style.opacity=0.9-0.6*fadeProgress;
+  }
+  function onScroll(){if(!rafPending){rafPending=true;requestAnimationFrame(applyFrame);}}
+  function recacheFooter(){var f=document.querySelector('footer');if(f)cachedFooterTop=f.getBoundingClientRect().top+window.scrollY;}
+  function init(){
+    if(!document.getElementById('hero-redline-span')||!document.querySelector('footer')){
+      setTimeout(init,100);return;
     }
-    // Fade out as we approach the footer
-    var fadeStart = 0.98;
-    var fadeProgress = clamp((progress - fadeStart) / (1 - fadeStart), 0, 1);
-    el.style.opacity = 0.9 - 0.6 * fadeProgress;
-    el.style.marginLeft = el.style.marginRight = 'auto';
+    recacheFooter();
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',function(){recacheFooter();onScroll();},{passive:true});
+    onScroll();
   }
-  function initUnderline() {
-    if (!document.getElementById('hero-redline-span') || !document.querySelector('footer')) {
-      setTimeout(initUnderline, 100);
-      return;
-    }
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('resize', onScroll);
-    setTimeout(onScroll, 100);
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initUnderline);
-  } else {
-    initUnderline();
-  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}
+  else{init();}
 })();
 `,
             }}
@@ -536,19 +521,17 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
             loop
             muted
             playsInline
+            preload="none"
           />
           {/* Overlay for readability */}
           <div className="absolute inset-0 bg-[#f5f6fa]/80 z-10" />
           <div className="relative z-20 max-w-5xl mx-auto text-center px-2 sm:px-4 pt-64 sm:pt-72 md:pt-80 lg:pt-64">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+            <h2
               className="text-4xl md:text-5xl font-semibold text-black mb-8 tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
+              style={{ animation: 'fadeInUp 0.7s ease both' }}
             >
               {t("Como Funciona")}
-            </motion.h2>
+            </h2>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-10">
               <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-2xl bg-white/80 border border-gray-200 text-gray-900 text-sm sm:text-lg font-semibold shadow-lg backdrop-blur-md transition hover:scale-105">
                 {t("Simples")}
@@ -706,27 +689,16 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
           }}
         >
           <div className="max-w-7xl mx-auto px-2 sm:px-7 lg:px-4">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+            <h2
               className="text-3xl md:text-4xl font-semibold text-black mb-12 text-center tracking-tight"
             >
               Carros usados em Destaque
-            </motion.h2>
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
               {featuredCars.map((car) => (
-                <motion.div
-                  key={car.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
+                <div key={car.id}>
                   <div className="relative">
                     {/* Recent-view badge (minimal) */}
-                    {/* rendered client-side only: we'll derive recent clicks in an effect */}
                     {typeof window !== "undefined" && (
                       <RecentBadge carId={car.id} />
                     )}
@@ -751,7 +723,7 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
                       status={car.status}
                     />
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -763,15 +735,11 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
         {/* FAQ SECTION */}
         <section className="w-full py-14 sm:py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <h2
               className="text-3xl md:text-4xl font-semibold text-black mb-3 text-center tracking-tight"
             >
               Perguntas Frequentes
-            </motion.h2>
+            </h2>
             <p className="text-center text-gray-500 mb-10 text-base">Tudo o que precisas de saber sobre importação de carros</p>
             <div className="flex flex-col gap-4">
               {[
@@ -929,7 +897,7 @@ export default function Home({ blogArticles, featuredCars: serverFeaturedCars })
 function HomeFaqItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = React.useState(false);
   return (
-    <div className="rounded-2xl border border-gray-200 bg-[#f9fafb] overflow-hidden shadow-sm transition-all duration-200">
+    <div className="rounded-2xl border border-gray-200 bg-[#f9fafb] overflow-hidden shadow-sm">
       <button
         className="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none"
         onClick={() => setOpen((o) => !o)}
@@ -941,9 +909,17 @@ function HomeFaqItem({ question, answer }: { question: string; answer: string })
         </span>
       </button>
       <div
-        className={`px-6 text-gray-600 text-sm md:text-base leading-relaxed transition-all duration-300 ease-in-out overflow-hidden ${open ? "pb-5 max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+        style={{
+          display: 'grid',
+          gridTemplateRows: open ? '1fr' : '0fr',
+          transition: 'grid-template-rows 280ms ease',
+        }}
       >
-        {answer}
+        <div style={{ overflow: 'hidden' }}>
+          <div className="px-6 pb-5 text-gray-600 text-sm md:text-base leading-relaxed">
+            {answer}
+          </div>
+        </div>
       </div>
     </div>
   );
