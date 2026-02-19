@@ -37,8 +37,22 @@ export const TIER3_KEYWORDS = [
 
 export const IUC_KEYWORDS = [
   "simulador iuc",
+  "iuc",
+  "iuc 2026",
+  "calcular iuc",
+  "tabela iuc 2026",
   "simulador iuc 2026",
   "iuc calculadora",
+  // ✅ Intenção comercial — carros importados
+  "iuc carros importados",
+  "iuc carro importado alemanha",
+  "simulador iuc carro importado",
+  "iuc importação automóvel",
+  // ✅ Trending 2026 — nova regra data única pagamento
+  "iuc 2026 quando pagar",
+  "iuc 2026 data pagamento",
+  "iuc carros elétricos 2026",
+  "iuc híbridos 2026",
   "simulador legalização auto",
   "simulador legalização automóvel",
 ];
@@ -132,10 +146,18 @@ export const BLOG_KEYWORDS = [
 export const SIMULADOR_KEYWORDS = [
   "simulador isv",
   "isv simulador",
+  "simulador isv 2026",
   "isv simulador 2026",
   "calcular isv portugal",
   "tabela isv 2026",
-  "simulador isv 2026",
+  // ✅ Evergreen — utilizadores que pesquisam anos anteriores (alto volume residual)
+  "isv simulador 2021",
+  "simulador isv 2021",
+  "isv simulador 2022",
+  "simulador isv 2022",
+  "simulador isv 2023",
+  "simulador isv 2024",
+  "simulador isv 2025",
   "isv",
   "ISV Portugal",
   "cálculo ISV",
@@ -228,7 +250,7 @@ export const SEO_KEYWORDS: Record<string, SEOSet> = {
   simulador_isv: {
     title: 'Simulador ISV 2026 GRÁTIS Portugal | Resultado Instantâneo | AutoGo.pt',
     description: 'Calcule o ISV em segundos — o simulador mais preciso de Portugal. Grátis, sem registo, atualizado 2026. Carros novos, usados e elétricos. AutoGo.pt',
-    keywords: ['simulador isv', 'isv simulador', 'isv simulador 2026', 'calcular isv portugal', 'tabela isv 2026', 'simulador isv 2026', 'isv'],
+    keywords: ['simulador isv', 'isv simulador', 'simulador isv 2026', 'isv simulador 2026', 'calcular isv portugal', 'tabela isv 2026', 'simulador isv 2026', 'isv', 'isv simulador 2021', 'simulador isv 2021', 'isv simulador 2022', 'simulador isv 2022', 'simulador isv 2023', 'simulador isv 2024', 'simulador isv 2025', 'simulador legalização auto'],
     primary: ["Simulador ISV", "calcular ISV"],
     supporting: [
       "tabela ISV 2026",
@@ -333,14 +355,18 @@ export const SEO_KEYWORDS: Record<string, SEOSet> = {
   },
 
   simulador_iuc: {
-    title: 'Simulador IUC 2026 GRÁTIS Portugal | Cálculo Instantâneo | AutoGo.pt',
-    description: 'Calcule o IUC 2026 do seu carro em segundos — grátis, sem registo. Tabelas oficiais atualizadas: Categoria A (até Jun 2007, taxa fixa), Categoria B (a partir Jul 2007: cilindrada + CO₂ NEDC/WLTP × coeficiente), taxa adicional gasóleo, elétricos isentos. AutoGo.pt',
+    title: 'Simulador IUC 2026 GRÁTIS | Calcular IUC Portugal | AutoGo.pt',
+    description: 'Calcule o IUC 2026 grátis em segundos — tabelas oficiais, carros importados, elétricos e híbridos. Nova data de pagamento IUC 2026 explicada. AutoGo.pt',
     keywords: [
-      'simulador iuc', 'simulador iuc 2026', 'iuc calculadora', 'calcular iuc portugal',
-      'tabela iuc 2026', 'iuc 2026', 'imposto único de circulação',
+      'simulador iuc', 'iuc', 'iuc 2026', 'calcular iuc', 'tabela iuc 2026',
+      'simulador iuc 2026', 'iuc calculadora', 'calcular iuc portugal',
       'iuc categoria a', 'iuc categoria b', 'iuc gasolina 2026', 'iuc gasóleo 2026',
       'iuc elétrico isento', 'iuc nedc wltp', 'iuc coeficiente ano',
       'taxa adicional gasóleo iuc', 'iuc carros importados', 'isv vs iuc',
+      // ✅ Intenção comercial
+      'iuc carro importado alemanha', 'simulador iuc carro importado', 'iuc importação automóvel',
+      // ✅ Trending 2026 — data única pagamento
+      'iuc 2026 quando pagar', 'iuc 2026 data pagamento', 'iuc carros elétricos 2026', 'iuc híbridos 2026',
     ],
     primary: ['Simulador IUC 2026', 'calcular IUC', 'IUC 2026 Portugal'],
     supporting: [
@@ -355,13 +381,14 @@ export const SEO_KEYWORDS: Record<string, SEOSet> = {
       'coeficiente ano matrícula IUC',
     ],
     faq: [
+      'O que é o IUC em Portugal?',
+      'Como é calculado o IUC em 2026?',
+      'Quando se paga o IUC em 2026? — Nova data única',
+      'Os carros elétricos pagam IUC em 2026?',
+      'IUC híbridos 2026 — qual o valor?',
       'Qual a diferença entre ISV e IUC?',
-      'Como calcular o IUC de um carro importado?',
-      'Os carros elétricos pagam IUC?',
-      'As taxas do IUC aumentaram em 2026?',
-      'O que é a norma NEDC vs WLTP no IUC?',
-      'Quando se paga o IUC em Portugal?',
-      'Híbridos e plug-in híbridos estão isentos de IUC?',
+      'Como calcular o IUC de um carro importado da Alemanha?',
+      'O simulador IUC da AutoGo é gratuito?',
     ],
   },
 };

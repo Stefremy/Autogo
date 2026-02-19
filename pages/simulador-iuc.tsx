@@ -259,6 +259,36 @@ const jsonLd = {
         "Calculadora gratuita do IUC (Imposto Único de Circulação) para Portugal, atualizada 2026. Categorias A e B, elétricos isentos, taxa adicional gasóleo, normas NEDC e WLTP.",
     },
     {
+      "@type": "Service",
+      name: "Simulador IUC 2026 — Calcular IUC Portugal",
+      serviceType: "Calculadora IUC",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "AutoGo",
+        url: "https://autogo.pt",
+        telephone: "+351935179591",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "R. Rómulo de Carvalho 388 SITIO",
+          addressLocality: "Guimarães",
+          postalCode: "4800-019",
+          addressCountry: "PT",
+        },
+      },
+      areaServed: "Portugal",
+      description:
+        "Calcule o IUC 2026 do seu veículo de forma gratuita e instantânea. Tabelas oficiais atualizadas: Categoria A e B, carros elétricos isentos, iuc carros importados, taxa adicional gasóleo, normas NEDC e WLTP.",
+      url: "https://autogo.pt/simulador-iuc",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: "https://autogo.pt" },
+        { "@type": "ListItem", position: 2, name: "Simulador IUC 2026", item: "https://autogo.pt/simulador-iuc" },
+      ],
+    },
+    {
       "@type": "FAQPage",
       mainEntity: [
         {
@@ -274,7 +304,31 @@ const jsonLd = {
           name: "Como é calculado o IUC em 2026?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "O IUC é calculado com base na cilindrada (cc), nas emissões de CO₂ (g/km) e no ano de matrícula do veículo. Carros mais antigos e com menos emissões pagam menos IUC. O simulador IUC gratuito da AutoGo calcula o valor exato em segundos.",
+            text: "O IUC 2026 é calculado com base na cilindrada (cc), nas emissões de CO₂ (g/km) e no ano de matrícula do veículo. Carros mais antigos e com menos emissões pagam menos IUC. O simulador IUC gratuito da AutoGo calcula o valor exato em segundos com a tabela iuc 2026 oficial.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quando se paga o IUC em 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O OE 2026 introduziu uma data única de pagamento do IUC: todos os proprietários passam a pagar o IUC até fevereiro de cada ano, independentemente do mês de matrícula do veículo. Esta mudança é faseada — consulte o Portal das Finanças para confirmar se já se aplica ao seu veículo.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Os carros elétricos pagam IUC em 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Veículos 100% elétricos da Categoria B (matrícula a partir de julho de 2007) continuam isentos de IUC em 2026. Atenção: híbridos e plug-in híbridos não estão isentos — pagam como gasolina ou gasóleo.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "IUC híbridos 2026 — qual o valor?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Os híbridos e plug-in híbridos não beneficiam de isenção de IUC em 2026. Pagam com base na cilindrada e CO₂ como um veículo a gasolina equivalente. Use o simulador selecionando 'Gasolina' para calcular o valor.",
           },
         },
         {
@@ -287,26 +341,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "Os carros elétricos pagam IUC?",
+          name: "Como calcular o IUC de um carro importado da Alemanha?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Os veículos 100% elétricos matriculados até 2022 estavam isentos de IUC. A partir de 2023, passaram a pagar uma taxa reduzida com base no peso e potência do veículo. Usa o simulador para calculares o IUC do elétrico que queres importar.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Quando se paga o IUC em Portugal?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "O IUC paga-se anualmente no mês de aniversário da matrícula do veículo. Por exemplo, se o carro foi matriculado em março, o IUC vence em março de cada ano. O não pagamento gera coimas e juros.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "O IUC é mais barato num carro importado?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Depende do carro. O IUC baseia-se na cilindrada e CO₂ — não na origem do veículo. Um carro importado da Alemanha com baixas emissões pode ter um IUC significativamente mais baixo do que um carro nacional equivalente de maior cilindrada.",
+            text: "Para calcular o IUC de um carro importado da Alemanha, usa a data de primeira matrícula alemã (não a portuguesa), a cilindrada em cm³ e as emissões de CO₂ do certificado de conformidade (COC). O simulador IUC carro importado da AutoGo faz este cálculo automaticamente e de graça.",
           },
         },
         {
@@ -433,11 +471,12 @@ export default function SimuladorIUC() {
               Grátis · Atualizado 2026
             </span>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-              Simulador IUC 2026
+              Simulador IUC 2026 — Calcular IUC Grátis
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Calcule o <strong>Imposto Único de Circulação</strong> do seu veículo em segundos.
-              Tabelas oficiais 2026 — Categorias A e B, elétricos isentos, taxa adicional gasóleo incluída.
+            <p className="text-lg text-gray-900 max-w-2xl mx-auto">
+              Calcule o <strong>IUC 2026</strong> do seu veículo em segundos — grátis, sem registo.
+              Tabelas oficiais atualizadas: Categoria A e B, <strong>carros elétricos isentos</strong>, taxa adicional gasóleo incluída.
+              Ideal para <strong>calcular o IUC de carros importados</strong> da Alemanha e da Europa.
             </p>
           </div>
 
@@ -707,11 +746,11 @@ export default function SimuladorIUC() {
           {/* ── Como se calcula ── */}
           <section className="mt-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Como se calcula o IUC em 2026?</h2>
-            <p className="text-center text-gray-500 text-sm mb-8">As taxas não foram atualizadas em 2026 — são exatamente as mesmas de 2024 e 2025.</p>
+            <p className="text-center text-gray-900 text-sm mb-8">As taxas base não foram alteradas em 2026 — são as mesmas de 2024/2025. A novidade do OE 2026 é a <strong>data única de pagamento</strong> (ver abaixo).</p>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6">
+              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition-all duration-200 hover:shadow-xl hover:border-gray-400 hover:-translate-y-1 cursor-default">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="w-10 h-10 bg-gray-700 text-white rounded-xl flex items-center justify-center font-black text-sm">A</span>
+                  <span className="w-10 h-10 bg-gray-700 text-white rounded-xl flex items-center justify-center font-black text-sm transition-colors duration-200 group-hover:bg-gray-900">A</span>
                   <div>
                     <p className="font-bold text-gray-800">Categoria A</p>
                     <p className="text-xs text-gray-500">1ª matrícula PT/UE/EEE até 30 Jun 2007</p>
@@ -725,7 +764,7 @@ export default function SimuladorIUC() {
                   <li className="flex gap-2"><span className="font-bold text-gray-700 mt-0.5">→</span>Sem componente CO₂</li>
                 </ul>
               </div>
-              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6">
+              <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 transition-all duration-200 hover:shadow-xl hover:border-[#b42121]/40 hover:-translate-y-1 cursor-default">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="w-10 h-10 bg-[#b42121] text-white rounded-xl flex items-center justify-center font-black text-sm">B</span>
                   <div>
@@ -741,6 +780,30 @@ export default function SimuladorIUC() {
                   <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">5.</span>+ Taxa adicional gasóleo (se gasóleo)</li>
                   <li className="flex gap-2"><span className="text-[#b42121] font-bold mt-0.5">→</span>Elétricos 100%: <strong>isentos</strong></li>
                 </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* ── IUC 2026 Novidades ── */}
+          <section className="mt-8">
+            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+              <h3 className="font-bold text-gray-800 mb-1 flex items-center gap-2">
+                <span className="text-amber-500">⚡</span> IUC 2026 — O que mudou?
+              </h3>
+              <p className="text-xs text-gray-500 mb-4">Novidades do Orçamento de Estado 2026</p>
+              <div className="grid sm:grid-cols-3 gap-4 text-sm">
+                <div className="bg-white rounded-xl p-4 border border-amber-100 transition-all duration-200 hover:shadow-md hover:border-amber-300 hover:-translate-y-1 cursor-default">
+                  <p className="font-bold text-gray-800 mb-1">Data única de pagamento</p>
+                  <p className="text-gray-600 text-xs">O OE 2026 introduz uma <strong>data única de pagamento do IUC até fevereiro</strong> para todos os veículos, substituindo o pagamento no mês de aniversário da matrícula. A regra aplica-se progressivamente.</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-amber-100 transition-all duration-200 hover:shadow-md hover:border-amber-300 hover:-translate-y-1 cursor-default">
+                  <p className="font-bold text-gray-800 mb-1">IUC carros elétricos 2026</p>
+                  <p className="text-gray-600 text-xs">Veículos 100% elétricos da <strong>Categoria B continuam isentos</strong> de IUC. Híbridos e plug-in híbridos <strong>não estão isentos</strong> — pagam IUC com base na cilindrada e CO₂ como qualquer gasolina.</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-amber-100 transition-all duration-200 hover:shadow-md hover:border-amber-300 hover:-translate-y-1 cursor-default">
+                  <p className="font-bold text-gray-800 mb-1">IUC carros importados</p>
+                  <p className="text-gray-600 text-xs">O IUC de um <strong>carro importado da Alemanha</strong> calcula-se pela data de <strong>primeira matrícula</strong> no país de origem — não pela data de matrícula portuguesa. Use o simulador para calcular o IUC exato.</p>
+                </div>
               </div>
             </div>
           </section>
@@ -776,23 +839,31 @@ export default function SimuladorIUC() {
                 },
                 {
                   q: "Como é calculado o IUC em 2026?",
-                  a: "O IUC é calculado com base na cilindrada (cc), nas emissões de CO₂ (g/km) e no ano de matrícula do veículo. Carros mais antigos e com menos emissões pagam menos IUC. O simulador IUC gratuito da AutoGo calcula o valor exato em segundos.",
+                  a: "O IUC 2026 é calculado com base na cilindrada (cc), nas emissões de CO₂ (g/km) e no ano de matrícula do veículo. Carros mais antigos e com menos emissões pagam menos IUC. O simulador IUC gratuito da AutoGo calcula o valor exato em segundos com a tabela iuc 2026 oficial.",
+                },
+                {
+                  q: "Quando se paga o IUC em 2026? — Nova data única",
+                  a: "O OE 2026 introduziu uma data única de pagamento do IUC: todos os proprietários passam a pagar o IUC até fevereiro de cada ano, independentemente do mês de matrícula do veículo. Esta mudança é faseada — consulte o Portal das Finanças para confirmar se já se aplica ao seu veículo.",
+                },
+                {
+                  q: "Os carros elétricos pagam IUC em 2026?",
+                  a: "Veículos 100% elétricos da Categoria B (matrícula a partir de julho de 2007) continuam isentos de IUC em 2026. Os iuc carros elétricos 2026 da Categoria A pagam uma taxa reduzida com base na voltagem. Atenção: híbridos e plug-in híbridos não estão isentos — pagam como gasolina ou gasóleo.",
+                },
+                {
+                  q: "IUC híbridos 2026 — qual o valor?",
+                  a: "Os híbridos e plug-in híbridos não beneficiam de isenção de IUC. Em 2026 pagam IUC com base na cilindrada e CO₂ exatamente como um veículo a gasolina equivalente. Apenas os 100% elétricos (Categoria B) estão isentos. Use o simulador acima selecionando 'Gasolina' para calcular o iuc híbridos 2026.",
                 },
                 {
                   q: "Qual a diferença entre ISV e IUC?",
                   a: "O ISV paga-se uma única vez quando importas ou compras um carro novo em Portugal. O IUC é anual — pagas todos os anos enquanto o carro estiver matriculado em Portugal. Ao importar com a AutoGo, o ISV está incluído no preço chave-na-mão.",
                 },
                 {
-                  q: "Os carros elétricos pagam IUC?",
-                  a: "Os veículos 100% elétricos matriculados até 2022 estavam isentos de IUC. A partir de 2023, passaram a pagar uma taxa reduzida com base no peso e potência do veículo. Usa o simulador para calculares o IUC do elétrico que queres importar.",
-                },
-                {
-                  q: "Quando se paga o IUC em Portugal?",
-                  a: "O IUC paga-se anualmente no mês de aniversário da matrícula do veículo. Por exemplo, se o carro foi matriculado em março, o IUC vence em março de cada ano. O não pagamento gera coimas e juros.",
+                  q: "Como calcular o IUC de um carro importado da Alemanha?",
+                  a: "Para calcular o IUC de um carro importado da Alemanha, usa a data de primeira matrícula alemã (não a portuguesa), a cilindrada em cm³ e as emissões de CO₂ do certificado de conformidade (COC). O simulador IUC carro importado da AutoGo faz este cálculo automaticamente e de graça.",
                 },
                 {
                   q: "O IUC é mais barato num carro importado?",
-                  a: "Depende do carro. O IUC baseia-se na cilindrada e CO₂ — não na origem do veículo. Um carro importado da Alemanha com baixas emissões pode ter um IUC significativamente mais baixo do que um carro nacional equivalente de maior cilindrada.",
+                  a: "Depende do carro. O IUC de carros importados baseia-se na cilindrada e CO₂ — não na origem do veículo. Um carro importado da Alemanha com baixas emissões pode ter um IUC significativamente mais baixo do que um equivalente nacional de maior cilindrada.",
                 },
                 {
                   q: "O simulador IUC da AutoGo é gratuito?",
@@ -815,7 +886,7 @@ export default function SimuladorIUC() {
           </section>
 
           {/* Breadcrumb */}
-          <div className="mt-12 flex flex-wrap gap-3 justify-center text-sm text-gray-500">
+          <div className="mt-12 flex flex-wrap gap-3 justify-center text-sm text-gray-900">
             <Link href="/" className="hover:text-[#b42121] transition-colors">Início</Link>
             <span>·</span>
             <Link href="/simulador-isv" className="hover:text-[#b42121] transition-colors">Simulador ISV</Link>
