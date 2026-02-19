@@ -95,6 +95,10 @@ export default function Seo({
       <meta property="og:url" content={finalUrl} />
       <meta property="og:image" content={finalImage} />
       <meta property="og:type" content={ogType} />
+      <meta property="og:locale" content="pt_PT" />
+
+      {/* Author */}
+      <meta name="author" content="AutoGo.pt" />
 
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />

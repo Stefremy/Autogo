@@ -6,6 +6,80 @@ import Seo from "../components/Seo";
 import { SITE_WIDE_KEYWORDS, SEO_KEYWORDS, joinKeywords } from "../utils/seoKeywords";
 
 export default function Contacto() {
+  const contactoJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ContactPage',
+        '@id': 'https://autogo.pt/contacto',
+        url: 'https://autogo.pt/contacto',
+        name: 'Contacto — AutoGo.pt | Importação Automóvel Guimarães',
+        description: 'Contacte a AutoGo.pt em Guimarães — especialistas em importação e legalização de carros europeus. WhatsApp disponível, resposta em 24h.',
+        inLanguage: 'pt-PT',
+      },
+      {
+        '@type': 'LocalBusiness',
+        '@id': 'https://autogo.pt/#organization',
+        name: 'AutoGo.pt',
+        alternateName: 'AutoGo Portugal',
+        url: 'https://autogo.pt',
+        telephone: '+351935179591',
+        email: 'AutoGO.stand@gmail.com',
+        image: 'https://autogo.pt/images/auto-logo.png',
+        priceRange: '€€',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'R. Rómulo de Carvalho 388 SITIO',
+          addressLocality: 'Guimarães',
+          addressRegion: 'Braga',
+          postalCode: '4800-019',
+          addressCountry: 'PT',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 41.4444,
+          longitude: -8.2962,
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '09:00',
+            closes: '18:00',
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: 'Saturday',
+            opens: '09:00',
+            closes: '13:00',
+          },
+        ],
+        areaServed: { '@type': 'Country', name: 'Portugal' },
+        sameAs: [
+          'https://www.facebook.com/AutoGo.pt',
+          'https://www.instagram.com/AutoGo.pt',
+        ],
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            telephone: '+351935179591',
+            contactType: 'customer service',
+            areaServed: 'PT',
+            availableLanguage: ['Portuguese', 'Spanish', 'English'],
+            contactOption: 'TollFree',
+          },
+        ],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://autogo.pt/' },
+          { '@type': 'ListItem', position: 2, name: 'Contacto', item: 'https://autogo.pt/contacto' },
+        ],
+      },
+    ],
+  };
+
   return (
     <Layout>
       <Seo
@@ -13,6 +87,7 @@ export default function Contacto() {
         description={SEO_KEYWORDS.contacto.description ?? ''}
         url="https://autogo.pt/contacto"
         keywords={joinKeywords(SEO_KEYWORDS.contacto.keywords ?? [], SITE_WIDE_KEYWORDS)}
+        jsonLd={contactoJsonLd}
       />
 
       {/* Red accent bar */}

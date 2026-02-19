@@ -68,6 +68,54 @@ export default function BlogPost({ post }) {
   const keywords = joinKeywords(SITE_WIDE_KEYWORDS, BLOG_KEYWORDS, post.tags || []);
   const canonicalUrl = `https://autogo.pt/blog/${post.slug}`;
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        '@id': `${canonicalUrl}#article`,
+        headline: post.title,
+        description: metaDescription,
+        url: canonicalUrl,
+        datePublished: post.date || undefined,
+        dateModified: post.date || undefined,
+        image: metaImage,
+        inLanguage: post.lang || 'pt-PT',
+        author: {
+          '@type': 'Organization',
+          '@id': 'https://autogo.pt/#organization',
+          name: 'AutoGo.pt',
+          url: 'https://autogo.pt',
+        },
+        publisher: {
+          '@type': 'Organization',
+          '@id': 'https://autogo.pt/#organization',
+          name: 'AutoGo.pt',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://autogo.pt/images/auto-logo.png',
+            width: 512,
+            height: 512,
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalUrl,
+        },
+        keywords: post.tags?.join(', ') || '',
+        articleSection: post.type === 'review' ? 'Reviews' : 'Notícias',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://autogo.pt/' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://autogo.pt/blog' },
+          { '@type': 'ListItem', position: 3, name: post.title, item: canonicalUrl },
+        ],
+      },
+    ],
+  };
+
   // Blog post background image (if any) should not extend under the footer
   return (
     <Layout>
@@ -78,6 +126,7 @@ export default function BlogPost({ post }) {
         image={metaImage}
         keywords={keywords}
         ogType="article"
+        jsonLd={articleJsonLd}
       />
       {backgroundImage && (
         <div

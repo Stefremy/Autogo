@@ -518,9 +518,12 @@ export default function Simulador() {
           <section className="relative w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-16 py-6 px-4 sm:px-6 md:px-12 bg-transparent overflow-x-hidden">
             {/* Info block */}
             <div className="w-full max-w-full md:max-w-3xl mb-10 lg:mb-0 lg:pr-8 pt-8 pb-8 flex flex-col items-start text-left lg:items-start lg:text-left z-10 box-border overflow-hidden">
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#b42121] mb-3 leading-tight break-words w-full">
-                {t("Simule o ISV da sua viatura em segundos!")}
+              <h1 className="text-2xl sm:text-3xl font-bold text-[#b42121] mb-1 leading-tight break-words w-full">
+                Simulador ISV 2026 — Calcule Grátis
               </h1>
+              <p className="text-base text-gray-700 mb-3 italic">
+                {t("Simule o ISV da sua viatura em segundos!")}
+              </p>
               <p className="mb-4 text-lg">
                 {t(
                   "Introduza cilindrada, emissões (CO₂) e data da 1ª matrícula — o simulador estima o ISV (cilindrada + ambiental) imediatamente.",

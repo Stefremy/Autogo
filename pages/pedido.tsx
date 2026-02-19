@@ -49,6 +49,57 @@ export default function Pedido() {
   const inputClass = "w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#b42121]/40 focus:border-[#b42121] bg-white";
   const labelClass = "block text-sm font-semibold text-gray-700 mb-1.5";
 
+  const pedidoJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ContactPage',
+        '@id': 'https://autogo.pt/pedido',
+        url: 'https://autogo.pt/pedido',
+        name: 'Pedir Importação — Proposta Gratuita em 24h | AutoGo.pt',
+        description: 'Peça a sua proposta gratuita de importação de carro em 24 horas. A AutoGo.pt trata de tudo: pesquisa, negociação, ISV e legalização.',
+        inLanguage: 'pt-PT',
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://autogo.pt/pedido#service',
+        name: 'Importação de Automóveis — Proposta Gratuita',
+        serviceType: 'Importação e Legalização de Automóveis',
+        description: 'Serviço chave-na-mão de importação de carros da Europa para Portugal. Inclui pesquisa, negociação, transporte, cálculo de ISV e legalização completa.',
+        provider: {
+          '@type': 'LocalBusiness',
+          '@id': 'https://autogo.pt/#organization',
+          name: 'AutoGo.pt',
+          telephone: '+351935179591',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'R. Rómulo de Carvalho 388 SITIO',
+            addressLocality: 'Guimarães',
+            postalCode: '4800-019',
+            addressCountry: 'PT',
+          },
+        },
+        areaServed: { '@type': 'Country', name: 'Portugal' },
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'EUR',
+          name: 'Proposta de Importação Gratuita',
+          description: 'Orçamento personalizado gratuito em menos de 24 horas.',
+          availability: 'https://schema.org/InStock',
+          url: 'https://autogo.pt/pedido',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://autogo.pt/' },
+          { '@type': 'ListItem', position: 2, name: 'Pedir Importação', item: 'https://autogo.pt/pedido' },
+        ],
+      },
+    ],
+  };
+
   return (
     <Layout>
       <Seo
@@ -56,6 +107,7 @@ export default function Pedido() {
         description={SEO_KEYWORDS.pedido.description ?? ''}
         url="https://autogo.pt/pedido"
         keywords={joinKeywords(SEO_KEYWORDS.pedido.keywords ?? [], SITE_WIDE_KEYWORDS)}
+        jsonLd={pedidoJsonLd}
       />
 
       {/* Red accent bar */}

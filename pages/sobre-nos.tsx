@@ -5,6 +5,67 @@ import { ABOUT_KEYWORDS, SEO_KEYWORDS, joinKeywords, SITE_WIDE_KEYWORDS } from "
 import Seo from "../components/Seo";
 
 export default function SobreNos() {
+  const sobreNosJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'AboutPage',
+        '@id': 'https://autogo.pt/sobre-nos',
+        url: 'https://autogo.pt/sobre-nos',
+        name: 'Sobre a AutoGo.pt — Especialistas em Importação Automóvel',
+        description: 'A AutoGo.pt é especialista em importação e legalização de viaturas europeias para Portugal. Equipa dedicada em Guimarães com serviço completo e 100% transparente.',
+        inLanguage: 'pt-PT',
+        mainEntity: {
+          '@id': 'https://autogo.pt/#organization',
+        },
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://autogo.pt/#organization',
+        name: 'AutoGo.pt',
+        alternateName: 'AutoGo Portugal',
+        url: 'https://autogo.pt',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://autogo.pt/images/auto-logo.png',
+          width: 512,
+          height: 512,
+        },
+        foundingDate: '2020',
+        description: 'Especialista em importação e legalização de viaturas europeias para Portugal. Serviço chave-na-mão: pesquisa, negociação, transporte, ISV e legalização.',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'R. Rómulo de Carvalho 388 SITIO',
+          addressLocality: 'Guimarães',
+          addressRegion: 'Braga',
+          postalCode: '4800-019',
+          addressCountry: 'PT',
+        },
+        telephone: '+351935179591',
+        email: 'AutoGO.stand@gmail.com',
+        areaServed: { '@type': 'Country', name: 'Portugal' },
+        sameAs: [
+          'https://www.facebook.com/AutoGo.pt',
+          'https://www.instagram.com/AutoGo.pt',
+        ],
+        knowsAbout: [
+          'Importação de veículos para Portugal',
+          'ISV - Imposto Sobre Veículos',
+          'Legalização de carros importados',
+          'Carros usados importados da Europa',
+          'Transporte de veículos da Europa',
+        ],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://autogo.pt/' },
+          { '@type': 'ListItem', position: 2, name: 'Sobre Nós', item: 'https://autogo.pt/sobre-nos' },
+        ],
+      },
+    ],
+  };
+
   return (
     <MainLayout>
       <Seo
@@ -12,6 +73,7 @@ export default function SobreNos() {
         description={SEO_KEYWORDS.sobre_nos.description ?? ''}
         url={`https://autogo.pt/sobre-nos`}
         keywords={joinKeywords(SEO_KEYWORDS.sobre_nos.keywords ?? [], SITE_WIDE_KEYWORDS, ABOUT_KEYWORDS)}
+        jsonLd={sobreNosJsonLd}
       />
       <div>
         {/* Premium red underline accent fixed below navbar, expands on scroll and can go edge to edge */}
