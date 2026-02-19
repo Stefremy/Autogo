@@ -1,11 +1,12 @@
 import Link from "next/link";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback, useRef, lazy, Suspense } from "react";
 // Icons moved to sub-components, removed unused imports
 // (FaTachometerAlt, FaSearch removed)
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import SimuladorTabela from "../components/SimuladorTabela";
+// SimuladorTabela lazy-loaded — only needed when the drawer is opened
+const SimuladorTabela = lazy(() => import("../components/SimuladorTabela"));
 import styles from "../components/PremiumCarCard.module.css";
 // cars.json import removed to reduce bundle size
 import MainLayout from "../components/MainLayout";
@@ -15,6 +16,7 @@ import { generateGEOFAQSchema } from "../utils/geoOptimization";
 import { normalizeMake, parseMileage, parsePrice } from "../utils/carProcessors";
 import ViaturasFilterBar from "../components/ViaturasFilterBar";
 import ViaturasGrid from "../components/ViaturasGrid";
+import { matchesQuery } from "../utils/search";
 import { Car } from "../types/car";
 
 export default function Viaturas({ cars = [] }: { cars: Car[] }) {
@@ -30,6 +32,9 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
   const [countryFilter, setCountryFilter] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  // Search query state — kept here so ViaturasFilterBar can update it
+  const [searchQuery, setSearchQuery] = React.useState("");
+
   // Sorting state: relevance, alphabetical, yearDesc, priceAsc, mileageAsc
   const [sortBy, setSortBy] = useState<string>("relevance");
   const [showSortMenu, setShowSortMenu] = useState(false);
@@ -63,8 +68,8 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
     setItemsLoaded((prev) => Math.max(prev, itemsPerBatch));
   }, [itemsPerBatch]);
 
-  // Persist logic for recent clicks
-  const onCarClick = (car: Car) => {
+  // Persist logic for recent clicks — stable reference prevents ViaturasGrid re-render
+  const onCarClick = useCallback((car: Car) => {
     try {
       const KEY = "autogo_clicked_v1";
       const TTL = 1000 * 60 * 60 * 24 * 7; // 7 days
@@ -85,13 +90,29 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
     } catch {
       // ignore
     }
-  };
+  }, []);
 
   // Normalize make strings using shared utility
   // (local function removed in favor of import)
 
   // Persist and restore filter inputs so user values are remembered across visits
   const STORAGE_KEY = "autogo_filters_v1";
+
+  // Stable setter callbacks for ViaturasFilterBar — prevents React.memo bust on every render
+  const handleSetMarca = useCallback((v: string) => setMarca(v), []);
+  const handleSetModelo = useCallback((v: string) => setModelo(v), []);
+  const handleSetMinPrice = useCallback((v: string) => setMinPrice(v), []);
+  const handleSetMaxPrice = useCallback((v: string) => setMaxPrice(v), []);
+  const handleSetSearchQuery = useCallback((v: string) => setSearchQuery(v), []);
+  const handleSetDia = useCallback((v: string) => setDia(v), []);
+  const handleSetMes = useCallback((v: string) => setMes(v), []);
+  const handleSetAno = useCallback((v: string) => setAno(v), []);
+  const handleSetKm = useCallback((v: string) => setKm(v), []);
+  const handleClearFilters = useCallback(() => {
+    setMarca(""); setModelo(""); setAno(""); setMes(""); setDia(""); setKm("");
+    setCountryFilter(""); setMinPrice(""); setMaxPrice("");
+    try { localStorage.removeItem(STORAGE_KEY); } catch { }
+  }, [STORAGE_KEY]);
 
   // Restore saved filters on first client render (only runs in browser)
   useEffect(() => {
@@ -137,6 +158,9 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
   const routerRef = React.useRef(router);
   useEffect(() => { routerRef.current = router; }, [router]);
 
+  // Debounce timer ref for URL sync — prevents router.replace on every keystroke
+  const urlSyncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   // Save filters whenever they change so the user's inputs are remembered
   useEffect(() => {
     if (typeof window === "undefined" || !routerRef.current.isReady) return;
@@ -158,74 +182,77 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
 
-      // Sync to URL query parameters for back-button persistence and sharing
-      const query: any = { ...routerRef.current.query };
-      const update = (key: string, val: string | number | null | undefined) => {
-        if (val) query[key] = String(val); else delete query[key];
-      };
-      update("marca", marca);
-      update("modelo", modelo);
-      update("minPrice", minPrice);
-      update("maxPrice", maxPrice);
-      update("ano", ano);
-      const pageNum = Math.ceil(itemsLoaded / itemsPerBatch);
-      if (pageNum > 1) query.page = String(pageNum); else delete query.page;
+      // Debounce URL sync to avoid router.replace on every keystroke (major INP win)
+      if (urlSyncTimerRef.current) clearTimeout(urlSyncTimerRef.current);
+      urlSyncTimerRef.current = setTimeout(() => {
+        if (routerRef.current.pathname !== "/viaturas") return;
+        const query: any = { ...routerRef.current.query };
+        const update = (key: string, val: string | number | null | undefined) => {
+          if (val) query[key] = String(val); else delete query[key];
+        };
+        update("marca", marca);
+        update("modelo", modelo);
+        update("minPrice", minPrice);
+        update("maxPrice", maxPrice);
+        update("ano", ano);
+        const pageNum = Math.ceil(itemsLoaded / itemsPerBatch);
+        if (pageNum > 1) query.page = String(pageNum); else delete query.page;
 
-      routerRef.current.replace({ pathname: "/viaturas", query }, undefined, { shallow: true });
+        routerRef.current.replace({ pathname: "/viaturas", query }, undefined, { shallow: true });
+      }, 400);
     } catch {
       // ignore storage errors
     }
   }, [marca, modelo, ano, mes, dia, km, countryFilter, minPrice, maxPrice, itemsLoaded, itemsPerBatch]);
 
-  // Unique options for selects
-  const marcas = Array.from(
-    new Set(cars.map((car) => String((car as any).make ?? ""))),
-  ).filter(Boolean);
-  const modelos = Array.from(
-    new Set(
-      cars
-        .filter((car) => !marca || String((car as any).make ?? "") === marca)
-        .map((car) => String((car as any).model ?? "")),
-    ),
-  ).filter(Boolean);
+  // Unique options for selects — memoized so they don't recompute on every keystroke
+  const marcas = useMemo(
+    () => Array.from(new Set(cars.map((car) => String((car as any).make ?? "")))).filter(Boolean),
+    [cars],
+  );
+  const modelos = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          cars
+            .filter((car) => !marca || String((car as any).make ?? "") === marca)
+            .map((car) => String((car as any).model ?? "")),
+        ),
+      ).filter(Boolean),
+    [cars, marca],
+  );
   // Normalize year values to numbers (handles strings like "2019-12-10")
-  const anos: number[] = Array.from(
-    new Set(
-      cars
-        .map((car) => {
-          const y = (car as any).year;
-          if (typeof y === 'number') return y;
-          if (typeof y === 'string') {
-            const m = y.match(/^(\d{4})/);
-            if (m) return Number(m[1]);
-            const n = Number(y);
-            if (!Number.isNaN(n)) return n;
-          }
-          return null;
-        })
-        .filter((v) => v !== null) as number[],
-    ),
-  ).sort((a, b) => Number(b) - Number(a));
+  const anos: number[] = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          cars
+            .map((car) => {
+              const y = (car as any).year;
+              if (typeof y === 'number') return y;
+              if (typeof y === 'string') {
+                const m = y.match(/^(\d{4})/);
+                if (m) return Number(m[1]);
+                const n = Number(y);
+                if (!Number.isNaN(n)) return n;
+              }
+              return null;
+            })
+            .filter((v) => v !== null) as number[],
+        ),
+      ).sort((a, b) => Number(b) - Number(a)),
+    [cars],
+  );
   const meses = Array.from({ length: 12 }, (_, i) => i + 1);
   const dias = Array.from({ length: 31 }, (_, i) => i + 1);
 
-  // Reset loaded items when filters change
+  // Reset loaded items when filters or sort change — single effect instead of three
   React.useEffect(() => {
     setItemsLoaded(itemsPerBatch);
-  }, [marca, modelo, ano, mes, km, minPrice, maxPrice, itemsPerBatch]);
-
-  // Reset loaded items when country filter changes
-  React.useEffect(() => {
-    setItemsLoaded(itemsPerBatch);
-  }, [countryFilter, itemsPerBatch]);
-
-  // Reset itemsLoaded when sort changes so user sees top of sorted list
-  React.useEffect(() => {
-    setItemsLoaded(itemsPerBatch);
-  }, [sortBy, itemsPerBatch]);
+  }, [marca, modelo, ano, mes, km, minPrice, maxPrice, countryFilter, sortBy, itemsPerBatch]);
 
   // Filtering logic por dia, mês e ano (campos day, month, year)
-  const filteredCars = cars.map((car, index) => ({ ...car, originalIndex: index })).filter((car) => {
+  const filteredCars = useMemo(() => cars.map((car, index) => ({ ...car, originalIndex: index })).filter((car) => {
     const carCountry = String(car.country ?? "").toLowerCase();
     const cf = String(countryFilter ?? "").toLowerCase();
 
@@ -258,7 +285,7 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
       (!minPrice || (priceNum !== null && priceNum >= parseInt(minPrice || '0', 10))) &&
       (!maxPrice || (priceNum !== null && priceNum <= parseInt(maxPrice || '0', 10)))
     );
-  });
+  }), [cars, marca, modelo, countryFilter, ano, mes, km, minPrice, maxPrice]);
 
   // Apply sorting to filtered results before slicing for infinite scroll
   const sortedCars = useMemo(() => {
@@ -294,40 +321,36 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
     return copy;
   }, [filteredCars, sortBy]);
 
-  // Displayed cars for infinite scroll (slice the sorted list up to itemsLoaded)
-  // Apply query matching: if a searchQuery is present, filter using matchesQuery helper
-  // (matchesQuery uses normalize/tokenize and supports aliases like "segunda mao"/"usados").
-  const [searchQuery, setSearchQuery] = React.useState("");
-  // lazy-import helper to avoid blocking initial render
-  const { matchesQuery } = (function tryImport() {
-    try {
-      return require('../utils/search');
-    } catch {
-      // fallback stub
-      return { matchesQuery: (c: any, q: string) => !q || String(q).trim() === '' };
-    }
-  })();
+  // Displayed cars for infinite scroll (slice the sorted+searched list up to itemsLoaded)
+  const displayedCars = useMemo(
+    () => sortedCars.filter((c) => matchesQuery(c, searchQuery)).slice(0, itemsLoaded),
+    [sortedCars, searchQuery, itemsLoaded],
+  );
 
-  const displayedCars = sortedCars.filter((c) => matchesQuery(c, searchQuery)).slice(0, itemsLoaded);
+  // Keep filteredCars.length in a ref so the IntersectionObserver effect
+  // doesn't disconnect/reconnect every time a new batch loads
+  const filteredCarsLengthRef = useRef(filteredCars.length);
+  useEffect(() => { filteredCarsLengthRef.current = filteredCars.length; }, [filteredCars.length]);
 
   // Infinite scroll: load more when there is empty space using a sentinel
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
     const sentinel = document.getElementById('viaturas-sentinel');
     if (!sentinel) return; // sentinel not in DOM yet
-    if (itemsLoaded >= filteredCars.length) return; // nothing to load
 
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setItemsLoaded((prev) => Math.min(filteredCars.length, prev + itemsPerBatch));
+            setItemsLoaded((prev) => {
+              if (prev >= filteredCarsLengthRef.current) return prev;
+              return Math.min(filteredCarsLengthRef.current, prev + itemsPerBatch);
+            });
           }
         });
       },
       {
         root: null,
-        // Become visible a bit before the bottom so content loads early when there's empty space
         rootMargin: '0px 0px 300px 0px',
         threshold: 0.01,
       },
@@ -339,14 +362,18 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
     try {
       const rect = sentinel.getBoundingClientRect();
       if (rect.top < window.innerHeight) {
-        setItemsLoaded((prev) => Math.min(filteredCars.length, prev + itemsPerBatch));
+        setItemsLoaded((prev) => {
+          if (prev >= filteredCarsLengthRef.current) return prev;
+          return Math.min(filteredCarsLengthRef.current, prev + itemsPerBatch);
+        });
       }
     } catch {
       // ignore
     }
 
     return () => io.disconnect();
-  }, [itemsLoaded, filteredCars.length, itemsPerBatch]);
+  // Only re-create the observer when itemsPerBatch changes — filteredCarsLength is read via ref
+  }, [itemsPerBatch]);
 
   // Status translation map
   // Status labels and colors moved to ViaturasGrid component
@@ -384,8 +411,8 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
     };
   }, [displayedCars.length, animClassRef]);
 
-  // GEO-optimized structured data for "carros importados" and "carros usados"
-  const viaturasGEOSchema = {
+  // GEO-optimized structured data — memoized to avoid rebuilding on every render
+  const viaturasGEOSchema = useMemo(() => ({
     '@context': 'https://schema.org',
     '@graph': [
       {
@@ -472,7 +499,7 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
         ],
       },
     ],
-  };
+  }), [filteredCars.length, displayedCars]);
 
   return (
     <>
@@ -526,32 +553,39 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
 (function(){
   function lerp(a, b, t) { return a + (b - a) * t; }
   function clamp(x, min, max) { return Math.max(min, Math.min(max, x)); }
-  function onScroll() {
+  var rafPending = false;
+  var cachedFooterTop = 0;
+  function applyFrame() {
+    rafPending = false;
     var el = document.getElementById('hero-redline-span');
-    var bar = document.getElementById('hero-redline-bar');
-    var footer = document.querySelector('footer');
-    if (!el || !bar || !footer) return;
+    if (!el) return;
     var scrollY = window.scrollY;
-    var footerTop = footer.getBoundingClientRect().top + window.scrollY;
-    var maxScroll = Math.max(footerTop - window.innerHeight, 1); // progress=1 when bottom de viewport reaches footer
+    var maxScroll = Math.max(cachedFooterTop - window.innerHeight, 1);
     var progress = clamp(scrollY / maxScroll, 0, 1);
-    var minW = 16 * 16; // 16rem
-    var maxW = window.innerWidth; // allow edge-to-edge
+    var minW = 16 * 16;
+    var maxW = window.innerWidth;
     var newW = lerp(minW, maxW, progress);
-    // Fade out as we approach the footer
     var fadeStart = 0.98;
     var fadeProgress = clamp((progress - fadeStart) / (1 - fadeStart), 0, 1);
+    el.style.width = newW + 'px';
     el.style.opacity = 0.9 - 0.6 * fadeProgress;
-    el.style.marginLeft = el.style.marginRight = 'auto';
+  }
+  function onScroll() {
+    if (!rafPending) { rafPending = true; requestAnimationFrame(applyFrame); }
+  }
+  function recacheFooter() {
+    var footer = document.querySelector('footer');
+    if (footer) cachedFooterTop = footer.getBoundingClientRect().top + window.scrollY;
   }
   function initUnderline() {
     if (!document.getElementById('hero-redline-span') || !document.querySelector('footer')) {
       setTimeout(initUnderline, 100);
       return;
     }
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('resize', onScroll);
-    setTimeout(onScroll, 100);
+    recacheFooter();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function() { recacheFooter(); onScroll(); });
+    setTimeout(applyFrame, 100);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initUnderline);
@@ -734,22 +768,18 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
             {/* Filtros estilizados */}
             {/* Filtros estilizados - Extracted to ViaturasFilterBar */}
             <ViaturasFilterBar
-              marca={marca} setMarca={setMarca}
-              modelo={modelo} setModelo={setModelo}
-              minPrice={minPrice} setMinPrice={setMinPrice}
-              maxPrice={maxPrice} setMaxPrice={setMaxPrice}
-              searchQuery={searchQuery} setSearchQuery={setSearchQuery}
-              dia={dia} setDia={setDia}
-              mes={mes} setMes={setMes}
-              ano={ano} setAno={setAno}
-              km={km} setKm={setKm}
+              marca={marca} setMarca={handleSetMarca}
+              modelo={modelo} setModelo={handleSetModelo}
+              minPrice={minPrice} setMinPrice={handleSetMinPrice}
+              maxPrice={maxPrice} setMaxPrice={handleSetMaxPrice}
+              searchQuery={searchQuery} setSearchQuery={handleSetSearchQuery}
+              dia={dia} setDia={handleSetDia}
+              mes={mes} setMes={handleSetMes}
+              ano={ano} setAno={handleSetAno}
+              km={km} setKm={handleSetKm}
               marcas={marcas} modelos={modelos}
               meses={meses} dias={dias} anos={anos}
-              onClearFilters={() => {
-                setMarca(""); setModelo(""); setAno(""); setMes(""); setDia(""); setKm("");
-                setCountryFilter(""); setMinPrice(""); setMaxPrice("");
-                try { localStorage.removeItem(STORAGE_KEY); } catch { }
-              }}
+              onClearFilters={handleClearFilters}
             />
             {/* Grid de resultados - Extracted to ViaturasGrid */}
             <ViaturasGrid
@@ -838,9 +868,11 @@ export default function Viaturas({ cars = [] }: { cars: Car[] }) {
             <h2 className="text-xl font-semibold mb-2 text-[#b42121]">
               {t("Simulador ISV")}
             </h2>
-            {/* Simulador ISV compacto (apenas tabela) */}
+            {/* Simulador ISV compacto — lazy loaded so it doesn't block initial render */}
             <div className="w-full">
-              <SimuladorTabela />
+              <Suspense fallback={<div className="text-center py-4 text-gray-400 text-sm">A carregar...</div>}>
+                <SimuladorTabela />
+              </Suspense>
             </div>
           </div>
         </div>

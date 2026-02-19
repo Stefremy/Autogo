@@ -29,7 +29,7 @@ interface ViaturasFilterProps {
     onClearFilters: () => void;
 }
 
-export default function ViaturasFilterBar(props: ViaturasFilterProps) {
+function ViaturasFilterBar(props: ViaturasFilterProps) {
     const { t } = useTranslation('common');
     const {
         marca, setMarca,
@@ -197,7 +197,7 @@ export default function ViaturasFilterBar(props: ViaturasFilterProps) {
 
             {/* Action Buttons */}
             <button
-                className="flex items-center gap-2 rounded-xl px-6 py-2 font-bold shadow-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
+                className="flex items-center gap-2 rounded-xl px-6 py-2 font-bold shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#b42121]/60 focus:ring-offset-2 border-0"
                 style={{ background: "rgba(213, 80, 80, 0.85)", color: "#fff" }}
                 onMouseOver={(e) => (e.currentTarget.style.background = "rgba(213, 80, 80, 1)")}
                 onMouseOut={(e) => (e.currentTarget.style.background = "rgba(213, 80, 80, 0.85)")}
@@ -209,10 +209,12 @@ export default function ViaturasFilterBar(props: ViaturasFilterProps) {
             <button
                 type="button"
                 onClick={onClearFilters}
-                className="flex items-center gap-2 bg-white border border-[#b42121]/30 text-[#b42121] rounded-xl px-6 py-2 font-bold shadow transition-all duration-200 hover:bg-[#b42121] hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 focus:ring-offset-2"
+                className="flex items-center gap-2 bg-white border border-[#b42121]/30 text-[#b42121] rounded-xl px-6 py-2 font-bold shadow transition-colors duration-200 hover:bg-[#b42121] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#b42121]/30 focus:ring-offset-2"
             >
                 {t("Limpar Filtros")}
             </button>
         </div>
     );
 }
+
+export default React.memo(ViaturasFilterBar);

@@ -16,13 +16,20 @@
   transform-origin: top center;
   transform-style: preserve-3d;
   backface-visibility: hidden;
+  /* Don't promote all cards to GPU layer — only on hover/focus */
+  /* Skip rendering for off-screen cards — significant INP/layout win on mobile */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}
+.premium-car-card:hover,
+.premium-car-card:focus-visible {
   will-change: transform, box-shadow;
 }
 .premium-car-card:hover {
   box-shadow: 0 18px 64px rgba(44, 62, 80, 0.24);
   border-color: #b3b3b3;
   transform: translateY(-10px) scale(1.06);
-  z-index: 40; /* lift above neighbors */
+  z-index: 40;
 }
 .premium-car-card:focus-visible {
   outline: none;
@@ -159,12 +166,12 @@
     opacity 420ms cubic-bezier(.16,.84,.24,1),
     transform 420ms cubic-bezier(.16,.84,.24,1),
     filter 360ms ease;
-  will-change: transform, opacity, filter;
+  /* will-change only while entry animation is pending — removed once in-view to free GPU memory */
+  will-change: transform, opacity;
 }
 
 /* Ensure .card-anim rules override any base .premium-car-card transitions */
 .premium-car-card.card-anim {
-  /* mirror .card-anim initial state but scoped to the premium card class for higher specificity */
   opacity: 0;
   transform: translateY(20px) translateX(-12px) scale(0.997);
   filter: blur(6px) saturate(0.96);
@@ -172,17 +179,20 @@
     opacity 420ms cubic-bezier(.16,.84,.24,1),
     transform 420ms cubic-bezier(.16,.84,.24,1),
     filter 360ms ease;
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
 }
 .premium-car-card.card-anim:global(.in-view) {
   opacity: 1;
   transform: translateY(0) translateX(0) scale(1);
   filter: none;
+  /* Release GPU layer after entry is done — hover will re-promote via transform */
+  will-change: auto;
 }
 .card-anim:global(.in-view) {
   opacity: 1;
   transform: translateY(0) translateX(0) scale(1);
   filter: none;
+  will-change: auto;
 }
 
 /* Ensure hover still scales the entire card when it has already transitioned into view */
