@@ -111,6 +111,14 @@ export default function Footer() {
                 {t("Sobre Nós")}
               </Link>
             </li>
+            <li>
+              <Link
+                href="/importar-carros-portugal"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
+              >
+                {t("Importar Carros Portugal")}
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
