@@ -644,3 +644,10 @@ Footer (global)
 ---
 
 *Document last updated: 19 February 2026*
+
+
+<iframe src="https://storage.googleapis.com/maps-solutions-pzck4o9vqm/locator-plus/cmtg/locator-plus.html"
+  width="100%" height="100%"
+  style="border:0;"
+  loading="lazy">
+</iframe>

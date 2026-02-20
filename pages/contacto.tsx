@@ -201,17 +201,29 @@ export default function Contacto() {
                   Falar no WhatsApp
                 </a>
 
+                {/* Business Profile button */}
+                <a
+                  href="https://www.google.com/search?q=Autogo&tbm=lcl#rlfi=hd:;si:953265091519708215,l,CgZBdXRvZ29I0pLTw-29gIAIWhYQABgAIgZhdXRvZ28qBAgCEAAyAnB0kgEPdXNlZF9jYXJfZGVhbGVy,y,luPQ412DPiQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-white border border-gray-200 hover:border-[#4285F4] hover:text-[#4285F4] text-gray-700 rounded-xl font-semibold text-sm shadow-sm transition-colors duration-200"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  Ver Perfil Google
+                </a>
+
                 {/* Map */}
-                <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm" style={{ height: 400 }}>
                   <iframe
                     title="Localização AutoGo"
-                    src="https://www.google.com/maps?q=R.+Rómulo+de+Carvalho+388+SITIO,+4800-019+Guimarães&output=embed"
+                    src="https://storage.googleapis.com/maps-solutions-pzck4o9vqm/locator-plus/vrvt/locator-plus.html"
                     width="100%"
-                    height="200"
-                    allowFullScreen
+                    height="100%"
                     loading="lazy"
                     aria-label="Mapa com a localização da empresa"
-                    style={{ display: 'block' }}
+                    style={{ border: 0, display: 'block' }}
                   />
                 </div>
               </div>
