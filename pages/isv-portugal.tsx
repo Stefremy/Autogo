@@ -97,10 +97,10 @@ export default function IsvPortugal() {
   ];
 
   const isencoesTable = [
-    { situacao: "⚡ Veículos elétricos", isencao: "100%", condicoes: "Sem emissões de CO₂" },
-    { situacao: "🏠 Mudança de residência", isencao: "Total", condicoes: "Carro registado no país de origem há +6 meses, uso pessoal" },
-    { situacao: "👨‍👩‍👧‍👦 Família numerosa", isencao: "50%", condicoes: "+3 dependentes, lotação mín. 6 lugares, CO₂ ≤ 173g/km WLTP, limite €7.800" },
-    { situacao: "♿ Portadores de deficiência", isencao: "Redução", condicoes: "Condições específicas por grau de incapacidade" },
+    { situacao: "Veículos elétricos", isencao: "100%", condicoes: "Sem emissões de CO₂" },
+    { situacao: "Mudança de residência", isencao: "Total", condicoes: "Carro registado no país de origem há +6 meses, uso pessoal" },
+    { situacao: "Família numerosa", isencao: "50%", condicoes: "+3 dependentes, lotação mín. 6 lugares, CO₂ ≤ 173g/km WLTP, limite €7.800" },
+    { situacao: "Portadores de deficiência", isencao: "Redução", condicoes: "Condições específicas por grau de incapacidade" },
   ];
 
   const faqs = [
@@ -189,8 +189,8 @@ export default function IsvPortugal() {
               ))}
               <div className="grid grid-cols-3 gap-0 px-6 py-4 items-center">
                 <div className="text-sm font-semibold text-gray-700">Simulador AutoGo</div>
-                <div className="text-center"><Link href="/simulador-isv" className="text-[#b42121] font-bold hover:underline text-sm">✅ Simular ISV →</Link></div>
-                <div className="text-center"><Link href="/simulador-iuc" className="text-blue-600 font-bold hover:underline text-sm">✅ Simular IUC →</Link></div>
+                <div className="text-center"><Link href="/simulador-isv" className="text-[#b42121] font-bold hover:underline text-sm">Simular ISV →</Link></div>
+                <div className="text-center"><Link href="/simulador-iuc" className="text-blue-600 font-bold hover:underline text-sm">Simular IUC →</Link></div>
               </div>
             </div>
           </div>
@@ -250,7 +250,7 @@ export default function IsvPortugal() {
               ))}
             </div>
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
-              <p className="text-amber-800 text-sm font-semibold mb-1">💡 Exemplo prático</p>
+              <p className="text-amber-800 text-sm font-semibold mb-1">Exemplo prático</p>
               <p className="text-amber-700 text-sm">Um carro de <strong>5 anos</strong> com ISV base de <strong>€8.000</strong> paga apenas <strong>€3.840</strong> após desconto de 52%.</p>
             </div>
           </div>
@@ -278,7 +278,7 @@ export default function IsvPortugal() {
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-4">Elétricos — Continuam Isentos</h3>
             <div className="bg-green-50 border border-green-200 rounded-2xl p-5 flex gap-4 items-start transition-all duration-200 hover:shadow-md hover:border-green-300 hover:-translate-y-0.5">
-              <span className="w-10 h-10 flex-shrink-0 bg-green-500 text-white rounded-xl flex items-center justify-center text-lg">⚡</span>
+              <span className="w-10 h-10 flex-shrink-0 bg-green-500 text-white rounded-xl flex items-center justify-center text-lg font-bold">E</span>
               <div>
                 <p className="font-bold text-gray-800 mb-1">Isenção total de ISV para veículos 100% elétricos</p>
                 <p className="text-gray-600 text-sm">Os veículos 100% elétricos continuam totalmente isentos de ISV em 2026. É uma das maiores vantagens na importação de elétricos.</p>
