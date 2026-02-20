@@ -467,12 +467,21 @@ export default function Simulador() {
     },
   ]);
 
+  // Merge all FAQ questions into a single FAQPage to avoid duplicate FAQPage schema error
+  const mergedFaqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      ...(simuladorFaqJsonLd.mainEntity || []),
+      ...(geoISVFAQ?.mainEntity || []),
+    ],
+  };
+
   const combinedJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
-      geoISVFAQ,
+      mergedFaqJsonLd,
       howToJsonLd,
-      simuladorFaqJsonLd,
       {
         '@type': 'SoftwareApplication',
         name: 'Simulador ISV AutoGo.pt',
