@@ -8,7 +8,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Article",
+      "@type": "WebPage",
       "@id": "https://autogo.pt/isv-portugal",
       headline: "ISV em Portugal 2026 — O que é e Como Calcular",
       description: "Tudo sobre o ISV em Portugal 2026 — tabelas oficiais, cálculo, isenções, elétricos e híbridos.",
@@ -168,6 +168,13 @@ export default function IsvPortugal() {
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-3">O que é o ISV — Imposto Sobre Veículos?</h2>
             <p className="text-center text-gray-500 text-sm mb-10 max-w-2xl mx-auto">
               O ISV é um imposto nacional obrigatório pago uma única vez na primeira matrícula de um veículo em Portugal, seja ele novo ou importado usado. Ao contrário do IUC — que se paga anualmente — o ISV é liquidado no momento da legalização junto das Finanças.
+            </p>
+            <p className="text-center text-gray-500 text-sm mb-6 max-w-2xl mx-auto">
+              O ISV é um dos principais custos a considerar ao{" "}
+              <Link href="/importar-carros-portugal" className="text-[#b42121] font-semibold hover:underline">
+                importar carros para Portugal
+              </Link>{" "}
+              — seja da Alemanha, França ou outro país europeu.
             </p>
             <h3 className="text-xl font-bold text-gray-800 text-center mb-6">ISV vs IUC — Qual a Diferença?</h3>
             <div className="bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden">
@@ -339,7 +346,10 @@ export default function IsvPortugal() {
         <section className="py-20 px-4 bg-white/60 backdrop-blur-sm">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Calcule o ISV do Seu Carro Agora</h2>
-            <p className="text-gray-600 mb-10 max-w-xl mx-auto">Não deixe o ISV ser uma surpresa. Use o simulador AutoGo para calcular o valor exato em segundos — grátis, sem registo.</p>
+            <p className="text-gray-600 mb-10 max-w-xl mx-auto">
+              Mais de 9.000 utilizadores já simularam o ISV do seu carro na AutoGo.
+              Não deixe o ISV ser uma surpresa — simule agora em segundos, grátis.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/simulador-isv" className="bg-[#b42121] hover:bg-[#9a1c1c] text-white font-bold py-4 px-8 rounded-xl text-base transition-colors shadow-lg">
                 Simular ISV Grátis →
