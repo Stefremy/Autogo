@@ -127,6 +127,14 @@ export default function Footer() {
                 {t("Legalizar Carro Importado")}
               </Link>
             </li>
+            <li>
+              <Link
+                href="/isv-portugal"
+                className="hover:text-[#b42121] transition-all duration-200 hover:scale-110 inline-block font-medium no-underline shadow-sm"
+              >
+                {t("ISV em Portugal 2026")}
+              </Link>
+            </li>
           </ul>
         </div>
         <div>

@@ -167,6 +167,7 @@ const tier1Routes = [
   },
   { path: '/simulador-isv', changefreq: 'weekly', priority: '0.9', sources: [['pages', 'simulador-isv.tsx']] },
   { path: '/simulador-iuc', changefreq: 'weekly', priority: '0.9', sources: [['pages', 'simulador-iuc.tsx']] },
+  { path: '/isv-portugal', changefreq: 'monthly', priority: '0.8', sources: [['pages', 'isv-portugal.tsx']] },
 ];
 
 // ---- TIER 2: Conversion pages ----
